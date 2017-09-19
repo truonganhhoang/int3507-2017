@@ -10,6 +10,6 @@ Các nhóm viết báo cáo bằng cách fork repo này, rồi tạo thư mục 
 Hàng tuần, các nhóm cập nhật tài liệu và tạo pull request để giáo viên merge vào repo chính.
 
 ## Tạo file trình chiếu
-Sử dụng https://slides.com/ hoặc https://gitpitch.com/ trừ khi khó thể hiện bằng công cụ này và cần dùng Pwerpoint, GSlides, v.v.
+Sử dụng https://gitpitch.com/ trừ khi khó thể hiện bằng công cụ này và cần dùng Pwerpoint, GSlides, v.v.
 
 
