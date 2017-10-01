@@ -34,8 +34,12 @@ Giảng viên: Trương Anh Hoàng
 - Xây dựng thông tin liên hệ và nơi làm việc của trên 100 GV và hướng nghiên cứu của trên 40 GV.
 - Xây dựng xong chức năng tra cứu GV và hướng nghiên cứu dựa trên dữ liệu đã xây dựng được.
 
+![Tra cứu giảng viên](https://image.prntscr.com/image/iJbhPw6FQDuaxW1VgXb2kg.png)
+
 #### 2. Xây dựng chức năng cho người dùng đóng góp ý kiến / phản hồi
 Để tăng tính cộng đồng của dự án, nhóm đã thêm chức năng cho phép người dùng đóng góp ý kiến / phản hồi. Những đóng góp này sẽ được các thành viên đội phát triển duyệt và đưa vào CSDL hoặc chỉnh sửa cho phù hợp.
+
+![Form đóng góp thông tin](https://image.prntscr.com/image/yeLHT5B5S1usn_NX8vXmWQ.png)
 
 ### III. Các mục tiêu dự định thực hiện trong tuần tới
 1. Tiếp tục thu thập thêm thông tin về GV và hướng nghiên cứu

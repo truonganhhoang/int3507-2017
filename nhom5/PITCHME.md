@@ -23,8 +23,16 @@ Giảng viên: Trương Anh Hoàng
 
 +++
 
+![Tra cứu giảng viên](https://image.prntscr.com/image/iJbhPw6FQDuaxW1VgXb2kg.png)
+
++++
+
 #### 2. Xây dựng chức năng cho người dùng đóng góp ý kiến / phản hồi
 Để tăng tính cộng đồng của dự án, nhóm đã thêm chức năng cho phép người dùng đóng góp ý kiến / phản hồi. Những đóng góp này sẽ được các thành viên đội phát triển duyệt và đưa vào CSDL hoặc chỉnh sửa cho phù hợp.
+
++++
+
+![Form đóng góp thông tin](https://image.prntscr.com/image/yeLHT5B5S1usn_NX8vXmWQ.png)
 
 +++
 
