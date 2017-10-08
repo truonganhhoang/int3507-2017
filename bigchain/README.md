@@ -77,7 +77,27 @@ Các thứ tự hàm AES sẽ thực hiện:
 
 ## Báo cáo tiến độ project
 ### Thiết kế
-Cho ảnh với desgin vào
+
+##### Thiết kế:
+![this art][assets/architecture.png]
+
+
+Tác dụng của từng thành phần:
+* BigchainDB Server: Lưu trữ điểm, bảo đảm dữ liệu
+* MongoDB Server: Lưu trữ thông tin của người dùng, index dữ liệu hỗ trợ truy cập nhanh vào BigchainDB
+* Node Server: Cung cấp API thao tác với database
+* Angular Server: Cung cấp giao diện cho người dùng
+
+##### Actor:
+
+Đối tượng là người dùng:
+* Sinh viên
+* Giảng viên
+* Quản trị viên
+
+Đối tượng là Hệ thống khác:
+* Hệ thống đăng ký môn học
+* Hệ thống quản lý đào tạo
 
   (T viết phần này)
 ### Server
