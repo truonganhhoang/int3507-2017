@@ -51,22 +51,24 @@ Blockchain (chuỗi khối), tên ban đầu block chain là một cơ sở dữ
 ## Báo cáo tiến độ project
 
 ### Thiết kế
-    Thiết kế:
-     ![this art][assets/architecture.jpg]
-    Tác dụng của từng thành phần:
-    * BigchainDB Server: Lưu trữ điểm, bảo đảm dữ liệu
-    * MongoDB Server: Lưu trữ thông tin của người dùng, index dữ liệu hỗ trợ truy cập nhanh vào BigchainDB
-    * Node Server: Cung cấp API thao tác với database
-    * Angular Server: Cung cấp giao diện cho người dùng
+##### Thiết kế:
+![this art][assets/architecture.jpg]
+Tác dụng của từng thành phần:
+* BigchainDB Server: Lưu trữ điểm, bảo đảm dữ liệu
+* MongoDB Server: Lưu trữ thông tin của người dùng, index dữ liệu hỗ trợ truy cập nhanh vào BigchainDB
+* Node Server: Cung cấp API thao tác với database
+* Angular Server: Cung cấp giao diện cho người dùng
 
-    Actor:
-    Đối tượng là người dùng:
-       * Sinh viên
-       * Giảng viên
-       * Quản trị viên
-    Đối tượng là Hệ thống khác:
-       * Hệ thống đăng ký môn học
-       * Hệ thống quản lý đào tạo
+##### Actor:
+
+Đối tượng là người dùng:
+* Sinh viên
+* Giảng viên
+* Quản trị viên
+
+Đối tượng là Hệ thống khác:
+* Hệ thống đăng ký môn học
+* Hệ thống quản lý đào tạo
 
 ### Server
 ### Cài đặt bigchaindb
