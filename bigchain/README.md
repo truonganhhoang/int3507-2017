@@ -20,19 +20,19 @@ Blockchain (chuỗi khối), tên ban đầu block chain là một cơ sở dữ
 ### Giới thiệu về bigchaindb
   BigchainDB là một cơ sở dữ liệu blockchain có thể mở rộng, phân cấp, không thể thay đổi được đối tượng và sở hữu cá nhân. BigchainDB cho phép triển khai các ứng dụng quy mô lớn trong nhiều trường hợp sử dụng và các ngành công nghiệp từ sở hữu trí tuệ, định danh đến các chuỗi cung ứng, IoT và trí tuệ nhân tạo. BigchainDB cung cấp giả pháp độc nhất cho các nhà phát triển, các dự án khởi nghiệp và các doanh nghiệp để xây dựng thành công các khái niệm, nền tảng và các ứng dụng mơ ước.
 
-  Chúng ta có thể xây dựng một blockchain truyền thống như một cơ sở dữ liệu (DB), theo nghĩa nó cung cấp một cơ chế lưu trữ.   
-  Nếu chúng ta đo Bitcoin blockchain bằng các tiêu chí DB truyền thống: 
-    +thông lượng:  một vài giao dịch mỗi giây (tps), 
-    +độ trễ: trước khi một đơn xác nhận viết là 10 phút, 
+  Chúng ta có thể xây dựng một blockchain truyền thống như một cơ sở dữ liệu (DB), theo nghĩa nó cung cấp một cơ chế lưu trữ.
+  Nếu chúng ta đo Bitcoin blockchain bằng các tiêu chí DB truyền thống:
+    +thông lượng:  một vài giao dịch mỗi giây (tps),
+    +độ trễ: trước khi một đơn xác nhận viết là 10 phút,
     +khả năng lưu trữ:  một vài chục GB. Hơn nữa
-  Nó về cơ bản cũng không có khả năng truy vấn như một cơ sở dữ liệu NoSQL. 
-  
+  Nó về cơ bản cũng không có khả năng truy vấn như một cơ sở dữ liệu NoSQL.
+
   Ngược lại, một DB phân phối hiện đại:
     +thông lượng: vượt quá 1 triệu tps.
     +độ trễ: của một phần nhỏ của một giây.
     +khả năng lưu trữ: đạt hàng petabyte và nhiều hơn nữa.
-    +thông lượng và năng lực tăng lên khi các nút được thêm vào. 
-  Cơ sở dữ liệu hiện đại cũng có khả thực hiện các truy vấn, và kiểm soát truy cập bằng SQL hoặc NoSQL,.. 
+    +thông lượng và năng lực tăng lên khi các nút được thêm vào.
+  Cơ sở dữ liệu hiện đại cũng có khả thực hiện các truy vấn, và kiểm soát truy cập bằng SQL hoặc NoSQL,..
   Trên thực tế SQL là một tiêu chuẩn quốc tế ANSI và ISO.
 
   Các công nghệ phân tán với khả năng kết nối các hệ thống tài chính hiện đại, các chuỗi cung ứng, các ngành công nghiệp sáng tạo và ngay cả bản thân mạng Internet đòi hỏi các yêu cầu rất cao về thông lượng, độ trễ và khả năng lưu trữ và nó vượt quá khả năng của bitcoin
@@ -40,7 +40,7 @@ Blockchain (chuỗi khối), tên ban đầu block chain là một cơ sở dữ
   | ------------------- | :---------------: | :---------------: | :---------------: |
   | Thông lượng lớn, tăng với số lượng nút | - | x | x |
   | Độ trễ thấp | - | x | x |
-  | Khả năng lưu trữ lớn | - | x | x | 
+  | Khả năng lưu trữ lớn | - | x | x |
   | Truy vấn đa dạng | - | x | x |
   | Permission đa dạng | - | x | x |
   | Điều khiển phân quyền | x | - | x |
@@ -131,6 +131,18 @@ mặc định bigchaindb chạy ở http://127.0.0.1:9984/
 ```
 
 ### Client
+ Yêu cầu: Nodejs
+
+#### Cài đặt client
+```
+    cd int3507-2017/bigchain/client
+    npm install
+```
+
+#### Chạy client
+```
+    npm start
+```
   (**Trung** viết phần này)
 ### Hình ảnh demo
 
