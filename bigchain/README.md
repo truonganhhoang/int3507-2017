@@ -53,6 +53,9 @@ Blockchain (chuỗi khối), tên ban đầu block chain là một cơ sở dữ
 ### Thiết kế
 ##### Thiết kế:
 ![this art][assets/architecture.jpg]
+![this art][https://github.com/sunado/int3507-2017/tree/master/bigchain/assets/architecture.jpg]
+
+
 Tác dụng của từng thành phần:
 * BigchainDB Server: Lưu trữ điểm, bảo đảm dữ liệu
 * MongoDB Server: Lưu trữ thông tin của người dùng, index dữ liệu hỗ trợ truy cập nhanh vào BigchainDB
