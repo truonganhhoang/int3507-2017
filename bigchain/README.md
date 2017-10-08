@@ -16,19 +16,22 @@ Blockchain (chuỗi khối), tên ban đầu block chain là một cơ sở dữ
 (Nguồn wikipedia)
 
 ### Giới thiệu về mã hoá chữ kí số ed25519 và mã hoá dữ liệu AES
-
+ (**Tú** viết phần này)
 ### Giới thiệu về bigchaindb
 BigchainDB
 (Dịch từ docs bigchain)
+
+ (**Thảo** viết phần này)
 
 ## Báo cáo tiến độ project
 ### Thiết kế
 Cho ảnh với desgin vào
 
+  (T viết phần này)
 ### Phần server
-
+  (T viết phần này)
 ### Phần client
-
+  (**Trung** viết phần này)
 ### Hình ảnh demo
 
 ### Đánh giá ưu nhược điểm
