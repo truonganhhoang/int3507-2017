@@ -8,7 +8,7 @@
 * Phan Thế Thảo
 
 ### Mô tả đề tài của nhóm:
-Xây dựng công cụ quản lý và chia sẻ điểm an toàn dựa vào bigchaindb
+Xây dựng công cụ quản lý và chia sẻ điểm an toàn dựa vào BigchainDB
 
 ### Giới thiệu về blockchain
 Blockchain (chuỗi khối), tên ban đầu block chain là một cơ sở dữ liệu phân cấp lưu trữ thông tin trong các khối thông tin được liên kết với nhau bằng mã hóa và mở rộng theo thời gian. Mỗi khối thông tin đều chứa thông tin về thời gian khởi tạo và được liên kết tới khối trước đó, kèm một mã thời gian và dữ liệu giao dịch. Blockchain được thiết kế để chống lại việc thay đổi của dữ liệu: Một khi dữ liệu đã được mạng lưới chấp nhận thì sẽ không có cách nào thay đổi được nó.
@@ -18,7 +18,35 @@ Blockchain (chuỗi khối), tên ban đầu block chain là một cơ sở dữ
 ### Giới thiệu về mã hoá chữ kí số ed25519 và mã hoá dữ liệu AES
  (**Tú** viết phần này)
 ### Giới thiệu về bigchaindb
-BigchainDB
+  BigchainDB là một cơ sở dữ liệu blockchain có thể mở rộng, phân cấp, không thể thay đổi được đối tượng và sở hữu cá nhân. BigchainDB cho phép triển khai các ứng dụng quy mô lớn trong nhiều trường hợp sử dụng và các ngành công nghiệp từ sở hữu trí tuệ, định danh đến các chuỗi cung ứng, IoT và trí tuệ nhân tạo. BigchainDB cung cấp giả pháp độc nhất cho các nhà phát triển, các dự án khởi nghiệp và các doanh nghiệp để xây dựng thành công các khái niệm, nền tảng và các ứng dụng mơ ước.
+
+  Chúng ta có thể xây dựng một blockchain truyền thống như một cơ sở dữ liệu (DB), theo nghĩa nó cung cấp một cơ chế lưu trữ.   
+  Nếu chúng ta đo Bitcoin blockchain bằng các tiêu chí DB truyền thống: 
+    +thông lượng:  một vài giao dịch mỗi giây (tps), 
+    +độ trễ: trước khi một đơn xác nhận viết là 10 phút, 
+    +khả năng lưu trữ:  một vài chục GB. Hơn nữa
+  Nó về cơ bản cũng không có khả năng truy vấn như một cơ sở dữ liệu NoSQL. 
+  
+  Ngược lại, một DB phân phối hiện đại:
+    +thông lượng: vượt quá 1 triệu tps.
+    +độ trễ: của một phần nhỏ của một giây.
+    +khả năng lưu trữ: đạt hàng petabyte và nhiều hơn nữa.
+    +thông lượng và năng lực tăng lên khi các nút được thêm vào. 
+  Cơ sở dữ liệu hiện đại cũng có khả thực hiện các truy vấn, và kiểm soát truy cập bằng SQL hoặc NoSQL,.. 
+  Trên thực tế SQL là một tiêu chuẩn quốc tế ANSI và ISO.
+
+  Các công nghệ phân tán với khả năng kết nối các hệ thống tài chính hiện đại, các chuỗi cung ứng, các ngành công nghiệp sáng tạo và ngay cả bản thân mạng Internet đòi hỏi các yêu cầu rất cao về thông lượng, độ trễ và khả năng lưu trữ và nó vượt quá khả năng của bitcoin
+  |                   |Blockchain truyển thống|CSDL phân tán truyền thống|BigchainDB|
+  |-------------------|:---------------:|:---------------:|:---------------:|
+  |Thông lượng lớn, tăng với số lượng nút|-|x|x|
+  |Độ trễ thấp|-|x|x|
+  |Khả năng lưu trữ lớn|-|x|x| 
+  |Truy vấn đa dạng|-|x|x|
+  |Permission đa dạng|-|x|x|
+  |Điều khiển phân quyền|x|-|x|
+  |Immutability|x|-|x|
+  |Tạo và di chuyển tài sản điện tử|x|-|x|
+
 (Dịch từ docs bigchain)
 
  (**Thảo** viết phần này)
