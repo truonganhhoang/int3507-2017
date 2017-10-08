@@ -52,8 +52,7 @@ Blockchain (chuỗi khối), tên ban đầu block chain là một cơ sở dữ
 
 ### Thiết kế
 ##### Thiết kế:
-![this art][assets/architecture.jpg]
-![this art][https://github.com/sunado/int3507-2017/tree/master/bigchain/assets/architecture.jpg]
+![this art][assets/architecture.png]
 
 
 Tác dụng của từng thành phần:
