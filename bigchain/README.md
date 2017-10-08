@@ -15,7 +15,31 @@ Blockchain (chuỗi khối), tên ban đầu block chain là một cơ sở dữ
 
 (Nguồn wikipedia)
 
-### Giới thiệu về mã hoá chữ kí số ed25519 và mã hoá dữ liệu AES
+### Giới thiệu về mã hoá chữ ký số ed25519 và mã hoá dữ liệu AES
+
+#### Chữ ký số ed25519
+Ed25519 là một hệ thống chữ ký số khóa công khai với nhiều tính năng nổi trội:
+* Kiểm tra chữ ký đơn nhanh
+* Kiểm tra chữ ký nhanh trong cả trường hợp kiểm tra hàng loạt
+* Việc ký được thực hiện rất nhanh
+* Sinh khóa nhanh
+* Mức độ an toàn cao
+* Khóa phiên dễ dùng
+* Chống xung đột
+* Không dùng mảng chỉ số bí mật
+* Không có các điều kiện bí mật nhánh
+* Độ dài chữ ký nhỏ
+* Độ dài khóa nhỏ
+
+#### Mã hóa dữ liệu AES
+ AES là thuật toán được phát triển dựa trên bản thiết kế Square bởi 2 nhà mật mã học người bỉ là Joan Daemen và Vincent Rijmen.AES là một thuật toán mã hóa khối đối xứng với độ dài khóa là 128 bít (một chữ số nhị phân có giá trị 0 hoặc 1), 192 bít và 256 bít tương ứng gọi là AES-128, AES-192 và AES-256. tùy vào độ dài của key khi sử dụng mà ta có số vòng lặp khác nhau AES-128 sử dụng 10 vòng (round), AES-192 sử dụng 12 vòng và AES-256 sử dụng 14 vòng.
+Các thứ tự hàm AES sẽ thực hiện:
+
+* Trộn từng byte (SubBytes): mỗi byte được thay thế với các byte khác.
+* Trộn từng hàng (ShiftRows): Phép biến đổi dùng trong phép mã hóa áp dụng lên trạng thái bằng cách chuyển dịch vòng ba hàng cuối của trạng thái theo số lượng byte các offset khác nhau.
+* Trộn từng cột (MixColumns): mỗi cột được chuyển đổi tuyến tính bằng cách nhân nó với một ma trận trong trường hữu hạn
+* Mã hóa (AddRoundKey): mỗi byte trong bảng trạng thái được thực hiện phép XOR với một khoá vòng, quá trình xử lý AES thu được 11 khoá vòng từ các key mã hoá được phân phát cho kỹ thuật mã hoá.
+
  (**Tú** viết phần này)
 ### Giới thiệu về bigchaindb
   BigchainDB là một cơ sở dữ liệu blockchain có thể mở rộng, phân cấp, không thể thay đổi được đối tượng và sở hữu cá nhân. BigchainDB cho phép triển khai các ứng dụng quy mô lớn trong nhiều trường hợp sử dụng và các ngành công nghiệp từ sở hữu trí tuệ, định danh đến các chuỗi cung ứng, IoT và trí tuệ nhân tạo. BigchainDB cung cấp giả pháp độc nhất cho các nhà phát triển, các dự án khởi nghiệp và các doanh nghiệp để xây dựng thành công các khái niệm, nền tảng và các ứng dụng mơ ước.
@@ -48,26 +72,14 @@ Blockchain (chuỗi khối), tên ban đầu block chain là một cơ sở dữ
   | Tạo và di chuyển tài sản điện tử | x | - | x |
 
 (Dịch từ docs bigchain)
+
+ (**Thảo** viết phần này)
+
 ## Báo cáo tiến độ project
-
 ### Thiết kế
-    Thiết kế:
-     ![this art][assets/architecture.jpg]
-    Tác dụng của từng thành phần:
-    * BigchainDB Server: Lưu trữ điểm, bảo đảm dữ liệu
-    * MongoDB Server: Lưu trữ thông tin của người dùng, index dữ liệu hỗ trợ truy cập nhanh vào BigchainDB
-    * Node Server: Cung cấp API thao tác với database
-    * Angular Server: Cung cấp giao diện cho người dùng
+Cho ảnh với desgin vào
 
-    Actor:
-    Đối tượng là người dùng:
-       * Sinh viên
-       * Giảng viên
-       * Quản trị viên
-    Đối tượng là Hệ thống khác:
-       * Hệ thống đăng ký môn học
-       * Hệ thống quản lý đào tạo
-
+  (T viết phần này)
 ### Server
 ### Cài đặt bigchaindb
   Yêu cầu:
