@@ -59,16 +59,18 @@ Các thứ tự hàm AES sẽ thực hiện:
   Trên thực tế SQL là một tiêu chuẩn quốc tế ANSI và ISO.
 
   Các công nghệ phân tán với khả năng kết nối các hệ thống tài chính hiện đại, các chuỗi cung ứng, các ngành công nghiệp sáng tạo và ngay cả bản thân mạng Internet đòi hỏi các yêu cầu rất cao về thông lượng, độ trễ và khả năng lưu trữ và nó vượt quá khả năng của bitcoin
-  |                   | Blockchain truyển thống | CSDL phân tán truyền thống | BigchainDB |
-  | ------------------- | :---------------: | :---------------: | :---------------: |
-  | Thông lượng lớn, tăng với số lượng nút | - | x | x |
-  | Độ trễ thấp | - | x | x |
-  | Khả năng lưu trữ lớn | - | x | x |
-  | Truy vấn đa dạng | - | x | x |
-  | Permission đa dạng | - | x | x |
-  | Điều khiển phân quyền | x | - | x |
-  | Immutability | x | - | x |
-  | Tạo và di chuyển tài sản điện tử | x | - | x |
+
+|| Blockchain truyển thống | CSDL phân tán truyền thống| BigchainDB |
+| :-------: | :--: | :---: | :---: |
+| Thông lượng lớn, tăng với số lượng nút | - | x | x | 
+| Độ trễ thấp | - | x | x | 
+| Khả năng lưu trữ lớn | - | x | x |
+| Truy vấn đa dạng | - | x | x | 
+| Permission đa dạng | - | x | x | 
+| Điều khiển phân quyền | x | - | x | 
+| Immutability | x | - | x | 
+| Tạo và di chuyển tài sản điện tử | x | - | x |
+
 
 (Dịch từ docs bigchain)
 
