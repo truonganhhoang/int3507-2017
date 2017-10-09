@@ -45,17 +45,19 @@ Các thứ tự hàm AES sẽ thực hiện:
 
   Chúng ta có thể xây dựng một blockchain truyền thống như một cơ sở dữ liệu (DB), theo nghĩa nó cung cấp một cơ chế lưu trữ.
   Nếu chúng ta đo Bitcoin blockchain bằng các tiêu chí DB truyền thống:
-    +thông lượng:  một vài giao dịch mỗi giây (tps),
-    +độ trễ: trước khi một đơn xác nhận viết là 10 phút,
-    +khả năng lưu trữ:  một vài chục GB. Hơn nữaiết
-  Nó về cơ bản cũng không có khả năng truy vấn như một cơ sở dữ liệu NoSQL.
+  * thông lượng:  một vài giao dịch mỗi giây (tps),
+  * độ trễ: trước khi một đơn xác nhận viết là 10 phút,
+  * khả năng lưu trữ:  một vài chục GB. 
+  Hơn nữa nó về cơ bản cũng không có khả năng truy vấn như một cơ sở dữ liệu NoQL.
 
   Ngược lại, một DB phân phối hiện đại:
-    +thông lượng: vượt quá 1 triệu tps.
-    +độ trễ: của một phần nhỏ của một giây.
-    +khả năng lưu trữ: đạt hàng petabyte và nhiều hơn nữa.
-    +thông lượng và năng lực tăng lên khi các nút được thêm vào.
+  * thông lượng: vượt quá 1 triệu tps.
+  * độ trễ: của một phần nhỏ của một giây.
+  * khả năng lưu trữ: đạt hàng petabyte và nhiều hơn nữa.
+  * thông lượng và khả năng lưu trữ tăng lên khi các nút được thêm vào.
+  
   Cơ sở dữ liệu hiện đại cũng có khả thực hiện các truy vấn, và kiểm soát truy cập bằng SQL hoặc NoSQL,..
+  
   Trên thực tế SQL là một tiêu chuẩn quốc tế ANSI và ISO.
 
   Các công nghệ phân tán với khả năng kết nối các hệ thống tài chính hiện đại, các chuỗi cung ứng, các ngành công nghiệp sáng tạo và ngay cả bản thân mạng Internet đòi hỏi các yêu cầu rất cao về thông lượng, độ trễ và khả năng lưu trữ và nó vượt quá khả năng của bitcoin
