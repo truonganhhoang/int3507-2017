@@ -40,7 +40,6 @@ Các thứ tự hàm AES sẽ thực hiện:
 * Trộn từng cột (MixColumns): mỗi cột được chuyển đổi tuyến tính bằng cách nhân nó với một ma trận trong trường hữu hạn
 * Mã hóa (AddRoundKey): mỗi byte trong bảng trạng thái được thực hiện phép XOR với một khoá vòng, quá trình xử lý AES thu được 11 khoá vòng từ các key mã hoá được phân phát cho kỹ thuật mã hoá.
 
- (**Tú** viết phần này)
 ### Giới thiệu về bigchaindb
   BigchainDB là một cơ sở dữ liệu blockchain có thể mở rộng, phân cấp, không thể thay đổi được đối tượng và sở hữu cá nhân. BigchainDB cho phép triển khai các ứng dụng quy mô lớn trong nhiều trường hợp sử dụng và các ngành công nghiệp từ sở hữu trí tuệ, định danh đến các chuỗi cung ứng, IoT và trí tuệ nhân tạo. BigchainDB cung cấp giả pháp độc nhất cho các nhà phát triển, các dự án khởi nghiệp và các doanh nghiệp để xây dựng thành công các khái niệm, nền tảng và các ứng dụng mơ ước.
 
@@ -48,7 +47,7 @@ Các thứ tự hàm AES sẽ thực hiện:
   Nếu chúng ta đo Bitcoin blockchain bằng các tiêu chí DB truyền thống:
     +thông lượng:  một vài giao dịch mỗi giây (tps),
     +độ trễ: trước khi một đơn xác nhận viết là 10 phút,
-    +khả năng lưu trữ:  một vài chục GB. Hơn nữa
+    +khả năng lưu trữ:  một vài chục GB. Hơn nữaiết
   Nó về cơ bản cũng không có khả năng truy vấn như một cơ sở dữ liệu NoSQL.
 
   Ngược lại, một DB phân phối hiện đại:
@@ -73,7 +72,6 @@ Các thứ tự hàm AES sẽ thực hiện:
 
 (Dịch từ docs bigchain)
 
- (**Thảo** viết phần này)
 
 ## Báo cáo tiến độ project
 ### Thiết kế
@@ -99,7 +97,12 @@ Tác dụng của từng thành phần:
 * Hệ thống đăng ký môn học
 * Hệ thống quản lý đào tạo
 
-  (T viết phần này)
+#### Chức năng chính:
+* Thêm điểm (Giảng viên)
+* Chia điểm  (Sinh viên)
+* Lấy điểm  (Giảng viên & sinh viên)
+
+
 ### Server
 ### Cài đặt bigchaindb
   Yêu cầu:
@@ -109,29 +112,29 @@ Tác dụng của từng thành phần:
 
 #### Cài đặt python-pip
 ```
-    sudo apt-get update
-    sudo apt-get install libffi-dev libssl-dev
-    sudo apt-get install python3-pip
-    sudo pip3 install --upgrade pip setuptools
+    $ sudo apt-get update
+    $ sudo apt-get install libffi-dev libssl-dev
+    $ sudo apt-get install python3-pip
+    $ sudo pip3 install --upgrade pip setuptools
 ```
 #### Cài đặt mongodb bản mới nhất
 ```
-    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
-    echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
-    sudo apt-get update
-    sudo apt-get install -y mongodb-org
+    $ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
+    $ echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+    $ sudo apt-get update
+    $ sudo apt-get install -y mongodb-org
 ```
 
 #### Cài đặt bigchaindb
 ```
-    sudo pip3 install bigchaindb
+    $ sudo pip3 install bigchaindb
 ```
 
 #### Chạy Bigchaindb
 ```
-    sudo mongod --replSet=bigchain-rs
-    bigchaindb -y configure mongodb
-    bigchaindb start
+    $ sudo mongod --replSet=bigchain-rs
+    $ bigchaindb -y configure mongodb
+    $ bigchaindb start
 ```
 
 mặc định bigchaindb chạy ở http://127.0.0.1:9984/
@@ -143,39 +146,46 @@ mặc định bigchaindb chạy ở http://127.0.0.1:9984/
 
 #### Cài đặt nodejs
 ```
-    curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-    sudo apt-get install -y nodejs
-    sudo apt-get install -y build-essential
+    $ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+    $ sudo apt-get install -y nodejs
+    $ sudo apt-get install -y build-essential
 ```
 
 #### Cài đặt server
 ```
-    git clone https://github.com/truonganhhoang/int3507-2017.git
-    cd int3507-2017/bigchain/
-    npm install
+    $ git clone https://github.com/truonganhhoang/int3507-2017.git
+    $ cd int3507-2017/bigchain/
+    $ npm install
 ```
 
 #### Chạy server
 ```
-    node app.js
-    or
-    npm start
+    $ node app.js
+     or
+    $ npm start
 ```
-
+ mặc định server chạy ở http://127.0.0.1:3000
 ### Client
  Yêu cầu: Nodejs
 
 #### Cài đặt client
 ```
-    cd int3507-2017/bigchain/client
-    npm install
+    $ cd int3507-2017/bigchain/client
+    $ npm install
 ```
 
 #### Chạy client
 ```
-    npm start
+    $ npm start
 ```
-  (**Trung** viết phần này)
+
+mặc định client chạy ở http://127.0.0.1:4200
 ### Hình ảnh demo
 
 ### Đánh giá ưu nhược điểm
+#### Ưu điểm
+* Sử dụng blockchain cho phép ngăn chặn các hành vi thao tác trái phép vào trong database, dễ dàng mở rộng, phân tán mà không cần một server điểu khiển.
+* Sử dụng thuật toán mã hoá AES giúp ngăn chặn đánh căp thông tin
+#### Nhược điểm
+* Việc mã hoá và giải mã làm hao tốn tài nguyên hơn các thao tác truy xuất database thông thường.
+* Việc đồng bộ dữ liệu giữa các node có độ trễ.
