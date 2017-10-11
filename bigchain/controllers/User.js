@@ -2,6 +2,8 @@ var User = require('../models/User');
 var jwt = require('jsonwebtoken');
 var config = require('../config/config');
 var driver = require('bigchaindb-driver');
+var cryto = require('crypto-js');
+
 const conn = new driver.Connection(config.DB_API);
 
 exports.filter = function (req, res, next) {
@@ -96,10 +98,12 @@ exports.createUser = function (req, res, next) {
 
 exports.createTransaction = function (req, res, next) {
     var userData = req.decoded;
-    var json = req.body
+    var json = req.body;
+    var encode = cryto.AES.encrypt(json,userData.privateKey);
+    var date = new Date();
     const tx = driver.Transaction.makeCreateTransaction(
-        json,
-        { what: 'TEST 1234567890' },
+        encode,
+        { time: date },
         [ driver.Transaction.makeOutput(
             driver.Transaction.makeEd25519Condition(userData.publicKey))
         ],
@@ -110,3 +114,4 @@ exports.createTransaction = function (req, res, next) {
         .then(() => conn.pollStatusAndFetchTransaction(txSigned.id))
         .then(retrievedTx => next(retrievedTx))
 };
+

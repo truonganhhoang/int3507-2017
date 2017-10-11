@@ -20,6 +20,6 @@ router.get('/users', controller.listUser);
 
 router.post('/user', controller.createUser);
 
-router.post('/create', );
+router.post('/create', controller.createTransaction);
 
 module.exports = router;
