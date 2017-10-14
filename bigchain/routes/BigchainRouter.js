@@ -1,7 +1,7 @@
 'use strict';
 var express = require('express');
 var router = express.Router();
-var controller = require('../controllers/Bigchain');
+var controller = require('../controllers/BigchainController');
 const sampleJson = {
   "name": "Hello It's me",
   "score": 10

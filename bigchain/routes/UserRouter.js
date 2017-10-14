@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/User');
+var User = require('../models/UserModel');
 var jwt = require('jsonwebtoken');
 var config = require('../config/config');
 var driver = require('bigchaindb-driver');
 const conn = new driver.Connection(config.DB_API);
-var controller = require('../controllers/User');
+var controller = require('../controllers/UserController');
 
 router.use(controller.filter);
 

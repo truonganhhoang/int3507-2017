@@ -1,4 +1,4 @@
-var User = require('../models/User');
+var User = require('../models/UserModel');
 var jwt = require('jsonwebtoken');
 var config = require('../config/config');
 var driver = require('bigchaindb-driver');
@@ -101,6 +101,7 @@ exports.createTransaction = function (req, res, next) {
     var json = req.body;
     var encode = cryto.AES.encrypt(json,userData.privateKey);
     var date = new Date();
+
     const tx = driver.Transaction.makeCreateTransaction(
         encode,
         { time: date },
@@ -115,3 +116,9 @@ exports.createTransaction = function (req, res, next) {
         .then(retrievedTx => next(retrievedTx))
 };
 
+
+exports.tranferTransaction = function (req, res, next) {
+    var userData = req.decoded;
+    var json = req.body;
+
+};

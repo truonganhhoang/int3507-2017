@@ -5,11 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var jwt    = require('jsonwebtoken');
-var User   = require('./models/User');
+var User   = require('./models/UserModel');
 var mongoose    = require('mongoose');
 var index = require('./routes/index');
-var users = require('./routes/users');
-var bigchain = require('./routes/bigchain');
+var users = require('./routes/UserRouter');
+var bigchain = require('./routes/BigchainRouter');
 var config = require('./config/config');
 var app = express();
 
