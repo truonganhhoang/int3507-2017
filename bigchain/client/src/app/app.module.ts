@@ -7,19 +7,21 @@ import { RouterModule }   from '@angular/router';
 import { AppComponent } from './app.component';
 import { ScoreFormComponent } from './score-form/score-form.component';
 import { CourseComponent } from './course/course.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ScoreFormComponent,
-    CourseComponent
+    CourseComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: '/create_score', pathMatch: 'full' },
+      //{ path: '', redirectTo: '/create_score', pathMatch: 'full' },
       {
         path: 'create_score',
         component: ScoreFormComponent
