@@ -20,7 +20,7 @@ router.get('/users', controller.listUser);
 
 router.post('/createUser', controller.createUser);
 
-router.post('/create', controller.createTransaction);
+router.post('/create', controller.createPoint);
 
 router.post('/transfer', controller.tranferTransaction);
 

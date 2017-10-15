@@ -3,11 +3,13 @@ var jwt = require('jsonwebtoken');
 var config = require('../config/config');
 var driver = require('bigchaindb-driver');
 var cryto = require('crypto-js');
-var bcrypt = require('bcryptjs');
+var bcrypt = require('bcrypt');
+var coinSecret =  require('../config/config').COIN;
+const saltRounds = 10;
 const conn = new driver.Connection(config.DB_API);
 
 exports.filter = function (req, res, next) {
-    if (req.url == '/authenticate' || req.url == '/user') {
+    if (req.url == '/authenticate' || req.url == '/createUser') {
         next();
     } else {
         // check header or url parameters or post parameters for token
@@ -37,7 +39,7 @@ exports.filter = function (req, res, next) {
 };
 
 exports.authenticate = function (req, res, next) {
-    console.log(req.body.publicKey);
+    console.log(req.body.publicKey,"  ",req.body.privateKey);
     User.findOne({
         publicKey: req.body.publicKey
     }, function (err, user) {
@@ -49,14 +51,15 @@ exports.authenticate = function (req, res, next) {
             res.json({success: false, message: 'Authentication failed. User not found.'});
             console.log("User not found")
         } else {
-            var hash = bcrypt.hashSync(req.body.privateKey, "");
-            if (hash != user.hashPwd) {
+            const compare = bcrypt.compareSync(req.body.privateKey, user.hashPwd);
+            if (compare != true) {
                 res.json({success: false, message: 'Authentication failed. Wrong password.'});
             } else {
                 const payload = {
                     admin: user.admin,
                     privateKey: req.body.privateKey,
-                    publicKey: user.publicKey
+                    publicKey: user.publicKey,
+                    is_lec: user.is_lec
                 };
                 var token = jwt.sign(payload, req.app.get('superSecret'), {
                     expiresIn: 60 * 60 * 24 // expires in 24 hours
@@ -64,7 +67,9 @@ exports.authenticate = function (req, res, next) {
                 res.json({
                     success: true,
                     message: 'Enjoy your token!',
-                    token: token
+                    token: token,
+                    name: user.name,
+                    email: user.email
                 });
             }
         }
@@ -79,13 +84,18 @@ exports.listUser = function (req, res, next) {
 
 exports.createUser = function (req, res, next) {
     var key =  new driver.Ed25519Keypair();
-    var hash = bcrypt.hashSync(key.privateKey, "");
-    var json = JSON.parse(req.body);
-    var is_lec = json["is_lec"] || false;
+    var hash = bcrypt.hashSync(key.privateKey, saltRounds);
+    var is_lec = req.body.is_lec == 'true' || false;
+    var is_admin = req.body.is_admin == 'true' || false;
+    var name = req.body.name;
+    var email = req.body.email;
     var user = new User({
         publicKey: key.publicKey,
         hashPwd: hash,
-        admin: is_lec
+        admin: is_admin,
+        is_lec: is_lec,
+        email:  email,
+        name: name
     });
     user.save(function (err) {
         if (err) throw err;
@@ -95,17 +105,18 @@ exports.createUser = function (req, res, next) {
             success: true,
             publicKey: key.publicKey,
             privateKey: key.privateKey,
-            admin: false
+            is_lec: is_lec,
+            admin: is_admin,
+            email: email,
+            name: name
         });
     });
 };
 
-exports.createTransaction = function (req, res, next) {
+exports.createPoint = function (req, res, next) {
     var userData = req.decoded;
-    var json = req.body;
     var encode = cryto.AES.encrypt(json,userData.privateKey);
     var date = new Date();
-
     const tx = driver.Transaction.makeCreateTransaction(
         json,
         { time: date },
@@ -119,6 +130,7 @@ exports.createTransaction = function (req, res, next) {
         .then(() => conn.pollStatusAndFetchTransaction(txSigned.id))
         .then(retrievedTx => next(retrievedTx))
 };
+
 
 
 exports.tranferTransaction = function (req, res, next) {
