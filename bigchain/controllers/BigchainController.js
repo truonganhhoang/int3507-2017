@@ -51,12 +51,53 @@ exports.getTransaction = function (transaction_id,next) {
         .then(json => next(json))
 };
 
+exports.getSortedTransactions = function(assetId,next) {
+    conn.listTransactions(assetId)
+        .then((txList) => {
+            if (txList.length <= 1) {
+                next(txList)
+            }
+            const inputTransactions = [];
+            txList.forEach((tx) =>
+                tx.inputs.forEach(input => {
+                    if (input.fulfills) {
+                        inputTransactions.push(input.fulfills.transaction_id)
+                    }
+                })
+            );
+            const unspents = txList.filter((tx) => inputTransactions.indexOf(tx.id) === -1);
+            if (unspents.length) {
+                let tipTransaction = unspents[0];
+                let tipTransactionId = tipTransaction.inputs[0].fulfills.transaction_id;
+                const sortedTxList = [];
+                while (true) { // eslint-disable-line no-constant-condition
+                    sortedTxList.push(tipTransaction);
+                    try {
+                        tipTransactionId = tipTransaction.inputs[0].fulfills.transaction_id
+                    } catch (e) {
+                        break
+                    }
+                    if (!tipTransactionId) {
+                        break
+                    }
+                    tipTransaction = txList.filter((tx) => // eslint-disable-line no-loop-func
+                        tx.id === tipTransactionId)[0]
+                }
+                return sortedTxList.reverse()
+            } else {
+                console.error('something went wrong while sorting transactions',
+                    txList, inputTransactions)
+            }
+            next(txList);
+        })
+};
+
 exports.listScore = function (name ,next) {
     conn.searchAssets(name)
         .then(json => {
             let output = [];
-            for (var i=0 ; i< json.length; i++) {
-                var data = json[i];
+            for (const i=0 ; i< json.length; i++) {
+                const data = json[i];
                 console.log(i,data.data);
                 output.push(data.data);
             }

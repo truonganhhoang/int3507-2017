@@ -140,8 +140,8 @@ exports.createPoint = function (req, res) {
         ],
         userData.publicKey
     );
-    console.log("created Transaction",tx);
     const txSigned = driver.Transaction.signTransaction(tx, userData.privateKey);
+    console.log("created Transaction",txSigned);
     conn.postTransaction(txSigned)
         .then(() => conn.pollStatusAndFetchTransaction(txSigned.id))
         .then(retrievedTx => {
@@ -199,18 +199,45 @@ function checkOwner(assetId,public_key, next) {
     })
 }
 
-exports.tranferPoint = function (req, res, next) {
-    
+exports.tranferPoint = function (req, res) {
+    const userData = req.decoded;
+    const receiver = req.body.receiver;
+    const pointID = req.body.point;
+    tranferOnePoint(userData,receiver,pointID, function (json) {
+        res.send(json);
+    })
+
 };
 
-exports.tranferOnePoint = function (userData,assetId,next) {
-    bigchainAPI.listTransaction(assetId, function (json) {
+ function tranferOnePoint(userData,receiver,assetId,next) {
+    const date = new Date();
+    console.log(userData.publicKey," ",userData.privateKey);
+    bigchainAPI.getSortedTransactions(assetId, function (json) {
+        // console.log(json);
+        // next(json);
         if(json.length != 0) {
             const lastTransaction = json[json.length-1];
+            console.log(lastTransaction);
+            const transferTx = driver.Transaction.makeTransferTransaction(
+                lastTransaction,
+                {data: date},
+                [ driver.Transaction.makeOutput(
+                    driver.Transaction.makeEd25519Condition(receiver))
+                ],
+                0
+            );
 
-            
-
-            next(null,compare);
+            const txSigned = driver.Transaction.signTransaction(transferTx, userData.privateKey);
+            console.log(txSigned);
+            conn.postTransaction(txSigned)
+                .then(() => conn.pollStatusAndFetchTransaction(txSigned.id))
+                .then(retrievedTx => {
+                    "use strict";
+                    next({
+                        success: true,
+                        transactionID: retrievedTx
+                    })
+                });
         }
     })
-};
+}
