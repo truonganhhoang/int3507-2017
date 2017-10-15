@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 module.exports = mongoose.model('User', new Schema({
     publicKey: String,
-    privateKey: String,
+    hashPwd: String,
     admin: Boolean
 }));
 

@@ -3,7 +3,7 @@ var jwt = require('jsonwebtoken');
 var config = require('../config/config');
 var driver = require('bigchaindb-driver');
 var cryto = require('crypto-js');
-
+var bcrypt = require('bcryptjs');
 const conn = new driver.Connection(config.DB_API);
 
 exports.filter = function (req, res, next) {
@@ -49,12 +49,13 @@ exports.authenticate = function (req, res, next) {
             res.json({success: false, message: 'Authentication failed. User not found.'});
             console.log("User not found")
         } else {
-            if (user.privateKey != req.body.privateKey) {
+            var hash = bcrypt.hashSync(req.body.privateKey, "");
+            if (hash != user.hashPwd) {
                 res.json({success: false, message: 'Authentication failed. Wrong password.'});
             } else {
                 const payload = {
                     admin: user.admin,
-                    privateKey: user.privateKey,
+                    privateKey: req.body.privateKey,
                     publicKey: user.publicKey
                 };
                 var token = jwt.sign(payload, req.app.get('superSecret'), {
@@ -78,10 +79,13 @@ exports.listUser = function (req, res, next) {
 
 exports.createUser = function (req, res, next) {
     var key =  new driver.Ed25519Keypair();
+    var hash = bcrypt.hashSync(key.privateKey, "");
+    var json = JSON.parse(req.body);
+    var is_lec = json["is_lec"] || false;
     var user = new User({
         publicKey: key.publicKey,
-        privateKey: key.privateKey,
-        admin: false
+        hashPwd: hash,
+        admin: is_lec
     });
     user.save(function (err) {
         if (err) throw err;
@@ -103,7 +107,7 @@ exports.createTransaction = function (req, res, next) {
     var date = new Date();
 
     const tx = driver.Transaction.makeCreateTransaction(
-        encode,
+        json,
         { time: date },
         [ driver.Transaction.makeOutput(
             driver.Transaction.makeEd25519Condition(userData.publicKey))
