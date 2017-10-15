@@ -70,4 +70,11 @@ router.get('/listScore/course=:name', function (req,res) {
     })
 });
 
+router.get('/transaction/:id', function( req,res){
+   controller.getTransaction(req.params.id, function(json) {
+       console.log("transaction ",req.params.id," :", json);
+       res.send(json);
+   })
+});
+
 module.exports = router;

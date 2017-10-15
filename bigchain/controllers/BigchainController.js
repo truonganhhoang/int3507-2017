@@ -36,8 +36,18 @@ exports.listTransaction = function (assetId,operation,next) {
         .then(json => next(json))
 };
 
+exports.listTransaction = function (assetId,next) {
+    conn.listTransactions(assetId)
+        .then(json => next(json))
+};
+
 exports.listOutputs = function (publickey,spent,next) {
     conn.listOutputs(publickey,spent)
+        .then(json => next(json))
+};
+
+exports.getTransaction = function (transaction_id,next) {
+    conn.getTransaction(transaction_id)
         .then(json => next(json))
 };
 

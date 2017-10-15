@@ -18,10 +18,12 @@ router.post('/authenticate', controller.authenticate);
 
 router.get('/users', controller.listUser);
 
-router.post('/createUser', controller.createUser);
+router.post('/create_user', controller.createUser);
 
-router.post('/create', controller.createPoint);
+router.get('/create', controller.createPoint);
 
-router.post('/transfer', controller.tranferTransaction);
+router.post('/transfer', controller.tranferPoint);
+
+router.get('/current', controller.currentPoint);
 
 module.exports = router;

@@ -4,12 +4,17 @@ var config = require('../config/config');
 var driver = require('bigchaindb-driver');
 var cryto = require('crypto-js');
 var bcrypt = require('bcrypt');
-var coinSecret =  require('../config/config').COIN;
+var bigchainAPI = require('./BigchainController');
+var async = require('async');
+const coinSecret =  "Hello";
+const coinName = "SunadoPoint";
 const saltRounds = 10;
+const saltCoin = 10;
+
 const conn = new driver.Connection(config.DB_API);
 
 exports.filter = function (req, res, next) {
-    if (req.url == '/authenticate' || req.url == '/createUser') {
+    if (req.url == '/authenticate' || req.url == '/create_user') {
         next();
     } else {
         // check header or url parameters or post parameters for token
@@ -22,6 +27,7 @@ exports.filter = function (req, res, next) {
                     return res.json({success: false, message: 'Failed to authenticate token.'});
                 } else {
                     // if everything is good, save to request for use in other routes
+                    console.log("Token valid");
                     req.decoded = decoded;
                     next();
                 }
@@ -39,9 +45,9 @@ exports.filter = function (req, res, next) {
 };
 
 exports.authenticate = function (req, res, next) {
-    console.log(req.body.publicKey,"  ",req.body.privateKey);
+    console.log(req.body);
     User.findOne({
-        publicKey: req.body.publicKey
+        publicKey: req.body.public_key
     }, function (err, user) {
         if (err) {
             throw err;
@@ -51,13 +57,13 @@ exports.authenticate = function (req, res, next) {
             res.json({success: false, message: 'Authentication failed. User not found.'});
             console.log("User not found")
         } else {
-            const compare = bcrypt.compareSync(req.body.privateKey, user.hashPwd);
+            const compare = bcrypt.compareSync(req.body.private_key, user.hashPwd);
             if (compare != true) {
                 res.json({success: false, message: 'Authentication failed. Wrong password.'});
             } else {
                 const payload = {
                     admin: user.admin,
-                    privateKey: req.body.privateKey,
+                    privateKey: req.body.private_key,
                     publicKey: user.publicKey,
                     is_lec: user.is_lec
                 };
@@ -113,28 +119,98 @@ exports.createUser = function (req, res, next) {
     });
 };
 
-exports.createPoint = function (req, res, next) {
-    var userData = req.decoded;
-    var encode = cryto.AES.encrypt(json,userData.privateKey);
-    var date = new Date();
+exports.createPoint = function (req, res) {
+    const userData = req.decoded;
+    console.log(userData);
+    const date = new Date();
+    const base = coinSecret + date.toDateString();
+    console.log("base String: ",base);
+    const encode = bcrypt.hashSync(base,saltCoin);
+    const json = {
+        name: coinName,
+        coinToken: encode
+    };
+    console.log(json);
+
     const tx = driver.Transaction.makeCreateTransaction(
         json,
         { time: date },
         [ driver.Transaction.makeOutput(
             driver.Transaction.makeEd25519Condition(userData.publicKey))
         ],
-        key.publicKey
+        userData.publicKey
     );
+    console.log("created Transaction",tx);
     const txSigned = driver.Transaction.signTransaction(tx, userData.privateKey);
     conn.postTransaction(txSigned)
         .then(() => conn.pollStatusAndFetchTransaction(txSigned.id))
-        .then(retrievedTx => next(retrievedTx))
+        .then(retrievedTx => {
+            "use strict";
+            res.json({
+                success: true,
+                transactionID: retrievedTx
+            })
+        });
+    console.log("sent Transaction");
 };
 
+exports.currentPoint = function (req,res) {
+    const userData = req.decoded;
+    //console.log(userData.publicKey);
+    bigchainAPI.searchAssets(coinName, function (json) {
+        //console.log(json);
+        var tasks = {};
+        for (index in json){
+           const id = json[index].id;
+           tasks[index] = function (callback) {
+               checkOwner(id,userData.publicKey,callback)
+           };
+        }
 
+        async.parallel(tasks, function(err,result) {
+            var count = 0;
+            var point_list = {};
+            //console.log(result);
+            for (index in json) {
+                if (result[index] == true) {
+                    point_list[count] = json[index].id;
+                    count++;
+                }
+            }
+            //console.log(count);
+            res.send({
+                point: count,
+                point_list: point_list
+            });
 
-exports.tranferTransaction = function (req, res, next) {
-    var userData = req.decoded;
-    var json = req.body;
+        });
+    })
+};
 
+function checkOwner(assetId,public_key, next) {
+    bigchainAPI.listTransaction(assetId, function (json) {
+        if(json.length != 0) {
+            const lastTransaction = json[json.length-1];
+            const ownerId = lastTransaction.outputs[0].public_keys[0] || '';
+            const compare = public_key == ownerId;
+            //console.log(assetId," result ",compare);
+            next(null,compare);
+        }
+    })
+}
+
+exports.tranferPoint = function (req, res, next) {
+    
+};
+
+exports.tranferOnePoint = function (userData,assetId,next) {
+    bigchainAPI.listTransaction(assetId, function (json) {
+        if(json.length != 0) {
+            const lastTransaction = json[json.length-1];
+
+            
+
+            next(null,compare);
+        }
+    })
 };
