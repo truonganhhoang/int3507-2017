@@ -36,7 +36,7 @@ router.get('/listblocks/transactionID=:id/status=:status', function (req,res) {
 });
 
 router.get('/listTransactions/assetId=:id', function (req,res) {
-    controller.listTransaction(req.params.id,"", function (json) {
+    controller.listTransaction(req.params.id, function (json) {
         console.log("ListTransaction output:\n",json);
         res.send(json);
     })

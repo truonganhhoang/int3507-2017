@@ -91,16 +91,3 @@ exports.getSortedTransactions = function(assetId,next) {
             next(txList);
         })
 };
-
-exports.listScore = function (name ,next) {
-    conn.searchAssets(name)
-        .then(json => {
-            let output = [];
-            for (const i=0 ; i< json.length; i++) {
-                const data = json[i];
-                console.log(i,data.data);
-                output.push(data.data);
-            }
-            next(output)
-        })
-};
