@@ -6,4 +6,4 @@ export class Score {
     public mid_term_score: number,
     public final_score:number) {
   }
- }
+}

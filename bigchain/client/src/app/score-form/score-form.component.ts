@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/Rx';
 
-import { Score } from '../score.model';
+import { Score } from '../_models/score.model';
 
 @Component({
   selector: 'score-form',
