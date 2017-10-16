@@ -1,6 +1,10 @@
 # NHÓM 2 - BLOCKCHAIN
 
-
+Thành viên:
+1. Hoàng Thị Tuyết
+2. Vũ Hoàng Linh
+3. Phạm Văn Lượng
+4. Lê Thị Thu Trang
 
 
 # Mở đầu
