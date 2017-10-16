@@ -18,13 +18,14 @@
 \usepackage{kbordermatrix}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{subfiles}
 
 \usepackage[T1,T5]{fontenc}
 \usepackage[left=2cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
 \hypersetup{
     bookmarks=true,
     pdftitle={Báo cáo số 1},
-    pdfauthor={Nguyễn Mạnh Cường (nhóm trưởng), Phạm Bảo Cường, Trần Xuân Đạt, Phạm Minh Đức, Hoàng Thanh Hằng, Nguyễn Việt Long},                     % author
+    pdfauthor={Nguyễn Mạnh Cường, Phạm Minh Đức, Vũ Nam Tước, Bùi Thị Chung Thủy},                     % author
     pdfsubject={TeX and LaTeX},
     pdfkeywords={TeX, LaTeX, graphics, images}, % list of keywords
     colorlinks=true,       % false: boxed links; true: colored links
@@ -41,7 +42,7 @@
 \Huge{BÁO CÁO CÁC VẤN ĐỀ HIỆN ĐẠI}\\
 \rule{16cm}{2pt}\vskip1cm
 \vspace{0.5cm}
-ĐỀ TÀI: TÌM HIỀU VỀ ETHEREUM\\
+ĐỀ TÀI: TÌM HIỂU VỀ ETHEREUM\\
 \vspace{2cm}
 \large Nhóm 8\\
 \vspace{2cm}
@@ -52,7 +53,7 @@
 \setlength{\parindent}{24pt}
 \setlength{\parskip}{.5\baselineskip}
 \newpagestyle{short}
-{\sethead{Nhóm 8}{}{Quản lý tiền tiết kiệm}\headrule
+{\sethead{Nhóm 8}{}{Tìm hiểu về Ethereum}\headrule
   \setfoot{}{\thepage}{}}
 \newpagestyle{long}
 {\sethead{\thesection. \sectiontitle}{}{\subsectiontitle}\headrule
@@ -69,6 +70,22 @@
 	\newpage
 	\pagestyle{long}
 	
+	\section{Lịch sử sửa đổi}
+	Bảng \ref{table:one} là bảng phân công công việc cho các thành viên trong nhóm.
+	\newline
+	\begin{table}[ht]
+		\centering
+		
+		\begin{tabular}{| p{6cm} | p{5cm} | p{5cm} |}
+			\hline
+			\textbf{Ngày}  & \textbf{Thành viên} & \textbf{Nội dung công việc}\\
+			\hline
+			
+		\end{tabular}
+		\label{table:one}
+		\caption{Bảng lịch sử sửa đổi}
+	\end{table}
+	\newpage
 	\section{Giới thiệu}
 		\subsection{Giới thiệu chung về BlockChain}
 		BlockChain có thể coi như một quyển sổ ghi chép tài chính được phân phối ngang hàng như Torrent. Không có nhà nước hay công ty nào cai quản, BlockChain được mã hóa một cách rất cầu kỳ để ngăn chặn tuyệt đối việc giả mạo thông tin.\newline
@@ -78,7 +95,7 @@
 			\item Mật mã bất đối xứng: Một cách cho phép những máy tính này gửi các tin nhắn được mã hóa cho những người nhận đã được xác định
 			\item Phép băm mật mã: Một các để sinh một "fingerprint" nhỏ, duy nhất cho bất kỳ dữ liệu nào, cho phép so sánh một cách nhanh chóng các tập dữ liệu lớn và là một cách an toàn để xác nhận rằng dữ liệu đã được thay đổi hay chưa.
 		\end{itemize}
-		\subsection{Ethereum}
+		\subsection{Tổng quan Ethereum}
 		Ethereum (ETH) hay còn được gọi là Bitcoin 2.0 \newline
 		\indent Là một nền tảng điện toán phân tán khối chuỗi, chạy trên blockchain, thông qua việc sử dụng chức năng Hợp đồng thông minh (Smart Contract) \newline
 		\indent Tiền ảo Ethereum có thể thực hiện các giao dịch, hợp đồng mạng ngang hàng thông qua đơn vị tiền ảo là Ether
@@ -133,21 +150,24 @@
 			
 		\end{itemize}
 	\newpage
-	\section{Phân công}
-	Bảng \ref{table:one} là bảng phân công công việc cho các thành viên trong nhóm.
-	\newline
-	\begin{table}[ht]
-		\centering
-		
-		\begin{tabular}{| p{6cm} | p{5cm} | p{5cm} |}
-			\hline
-			\textbf{Công việc}  & \textbf{Thành viên} & \textbf{Hoàn thành công việc}\\
-			\hline
-			
-		\end{tabular}
-		\label{table:one}
-		\caption{Bảng Phân Công}
-	\end{table}
-	\newpage
-	\section{Các thành phần trong Ethereum}
+	
+	\section{Chi tiết trong Ethereum}
+	
+	\subsection{Tổng quan}
+	\subfile{contain/DrivingFactor}
+	
+	\subsection{Mô hình BlockChain}
+	\subfile{contain/BlockChainParadigm}
+	
+	\subsection{Những qui tắc}
+	\subfile{contain/Conventions}
+	
+	\subsection{Khối, Trạng thái và các giao dịch}
+	\subfile{contain/BST}
+	
+	\subsection{Gas và sự thanh toán}
+	\subfile{contain/GasPayment}
+	
+	\subsection{Thực hiện giao dịch}
+	\subfile{contain/transaction}
 \end{document}
