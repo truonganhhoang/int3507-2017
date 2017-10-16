@@ -1,0 +1,32 @@
+<div class="container">
+  <h3>Score Form</h3>
+  <form>
+    <div class="form-group">
+      <label for="course_id">Course ID:</label>
+      <input type="text" class="form-control" id="course_id" required [(ngModel)]="score.course_id" name="course_id">
+    </div>
+    <div class="form-group">
+      <label for="student_name">Student Name:</label>
+      <input type="text" class="form-control" id="student_name" required [(ngModel)]="score.student_name" name="student_name">
+    </div>
+    <div class="form-group">
+      <label for="student_id">Student ID:</label>
+      <input type="text" class="form-control" id="student_id" [(ngModel)]="score.student_id" name="student_id">
+    </div>
+    <div class="form-group">
+      <label for="mid_term_score">Mid term score:</label>
+      <input type="number" class="form-control" id="mid_term_score" [(ngModel)]="score.mid_term_score" name="mid_term_score">
+    </div>
+    <div class="form-group">
+      <label for="final_score">Final score:</label>
+      <input type="number" class="form-control" id="final_score" [(ngModel)]="score.final_score" name="final_score">
+    </div>
+    <!-- <button type="submit" class="btn btn-default">Save</button> -->
+    <button type="button" class="btn btn-default" (click)="saveScore()">Save</button>
+   </form>
+ </div>
+
+ <div>
+   <h3>Score:</h3>
+   {{ currentScore }}
+ </div>
