@@ -7,9 +7,8 @@ Giảng viên: Trương Anh Hoàng
 - Nguyễn Thị Lan
 - Nguyễn Văn Nhật
 
-## Báo cáo tiến độ: Tuần 4
 
-### I. Vấn đề đang tìm hiểu, bài toán đặt ra và tài liệu đang tìm hiểu
+<center><h2>I. Vấn đề đang tìm hiểu, bài toán đặt ra và tài liệu đang tìm hiểu</h1></center>
 Đề tài mà nhóm 5 đang thực hiện là Facebook Chatbot, với đề tài này nhóm đang thực hiện bài toán như sau:
 
 <center><h4>“Ứng dụng chatbot tương tác hỗ trợ sinh viên UET”</h4></center>
@@ -35,7 +34,9 @@ Giảng viên: Trương Anh Hoàng
 - [NodeJS](https://nodejs.org/) with [Express Framework](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
 - [Ngrok](https://ngrok.com)
-#II. Cách thức xây dựng chatbot
+
+<center><h2>II. Cách thức xây dựng chatbot</h2></center>
+
 ##1. Các khái niệm cơ bản và cơ chế hoạt động của Facebook chatbot
 ###1.1. Tổng quan về webhook.
 Webhook, hiểu đơn giản là là thì đây là một công cụ để truy vấn và lưu dữ liệu của một Event xác định. Khi một trong những sự kiện đã đăng ký được kích hoạt, webhook sẽ gửi một HTTP POST đến một địa chỉ URL được đăng ký từ trước.
@@ -79,6 +80,7 @@ Sau đó mở quay trở lại, dán đoạn mã này vào PAGE_TOKEN trong file
  ![Webhook](https://i.imgur.com/cGF7ra6.png  "Webhook")
  Đến đây, việc thiết lập đã hoàn thành. Nhắn tin đến fanpage đăng ký để kiểm tra kết quả.
 ## 3. Xây dựng chatbot server nhận, xử lý tin nhắn và phản hồi tin nhắn phù hợp.
+![](https://i.imgur.com/2nhYvKB.png) 
 - Việc xây dựng chatbot server như thế nào, phản hồi thông điệp ra sao phụ thuộc rất nhiều vào mục đích của chatbot để tạo nên các hàm cũng như gọi các API để lấy dữ liệu tương ứng.
 - Tuy nhiên, do các ứng dụng chatbot đều xây dựng dựa trên API mà facebook cung cấp, chính vì vậy mà các sự kiện xử lý và luồng dữ liệu đều xoay quanh các API này.
 - Phần này sẽ trình bày cách tổ chức và xây dựng mã nguồn nhằm đáp ứng mụch đích của chatbot mà chúng tôi xây dựng, bao gồm 2 tính năng chính là tra cứu và hỏi đáp thông tin.
