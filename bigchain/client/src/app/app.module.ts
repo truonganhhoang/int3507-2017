@@ -8,31 +8,58 @@ import { AppComponent } from './app.component';
 import { ScoreFormComponent } from './score-form/score-form.component';
 import { CourseComponent } from './course/course.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+
+import { AuthGuard } from './_guards/auth.guard';
+import { AuthenticationService } from './_services/authentication.service';
+import { UserService } from './_services/user.service';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ScoreFormComponent,
     CourseComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-      //{ path: '', redirectTo: '/create_score', pathMatch: 'full' },
       {
-        path: 'create_score',
-        component: ScoreFormComponent
+        path: '',
+        component: LayoutComponent,
+        //canActivate: [AuthGuard],
+        children: [
+          {
+            path: 'create_score',
+            component: ScoreFormComponent
+          },
+          {
+            path: 'course',
+            component: CourseComponent
+          }
+        ]
       },
       {
-        path: 'course',
-        component: CourseComponent
-      }
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
+      },
+      { path: '**', redirectTo: '' }
     ])
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    AuthenticationService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
