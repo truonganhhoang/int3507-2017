@@ -10,6 +10,8 @@
 ### Mô tả đề tài của nhóm:
 Xây dựng công cụ quản lý và chia sẻ điểm an toàn dựa vào BigchainDB
 
+Sau đây là giới thiệu một số công nghệ sử dụng : 
+
 ### Giới thiệu về blockchain
 Blockchain (chuỗi khối), tên ban đầu block chain là một cơ sở dữ liệu phân cấp lưu trữ thông tin trong các khối thông tin được liên kết với nhau bằng mã hóa và mở rộng theo thời gian. Mỗi khối thông tin đều chứa thông tin về thời gian khởi tạo và được liên kết tới khối trước đó, kèm một mã thời gian và dữ liệu giao dịch. Blockchain được thiết kế để chống lại việc thay đổi của dữ liệu: Một khi dữ liệu đã được mạng lưới chấp nhận thì sẽ không có cách nào thay đổi được nó.
 
@@ -81,7 +83,7 @@ Các thứ tự hàm AES sẽ thực hiện:
 ### Thiết kế
 
 ##### Thiết kế:
-![this art][assets/architecture.png]
+![Alt text](/bigchain/assets/architecture.jpg?raw=true "architecture")
 
 
 Tác dụng của từng thành phần:
