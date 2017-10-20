@@ -1,0 +1,72 @@
+## Pipeline
+Một item sau khi đã được cào bởi Spider sẽ được chuyển đến Item Pipeline để xử lí thông qua một số thành phần được thực hiện tuần tự.
+Mỗi thành phần item pipeline là một lớp Python thực hiện một phương thức đơn giản. Các lớp này nhận item và thực hiện các hành động đối với item và đồng thời quyết định xem item đó có tiếp tục pipeline, bị bỏ hoặc không còn được xử lí.
+
+Các ứng dụng tiêu biểu của item pipeline:
+-	Dọn dẹp dữ liệu HTML
+-	Xác nhận dữ liệu được cào (kiểm tra các items chứa các trường nhất định)
+-	Kiểm tra (và bỏ)  các bản sao
+-	Lưu trữ các item được cào trong cơ sở dữ liệu
+### Ghi item pipeline
+Mỗi thành phần item pipeline là một lớp Python thực hiện một phương thức cơ bản:
+```lightning
+process_item(self, item, spider)
+open_spider(self, spider)
+close_spider(self, spider)
+from_crawler(cls, crawler)
+```
+### Ví dụ về item pipeline
+##### Xác nhận giá và bỏ các item không có giá.
+Giả sử rằng điều chỉnh thuộc tính giá các items không bao gồm thuế VAT (price_excludes_vat atrribute), và bỏ các items không có giá:
+```python
+from scrapy.exceptions import DropItem
+class PricePipeline(object):
+    vat_factor = 1.15
+    def process_item(self,item,spider):
+        if item['price']:
+            if item['price_excludes_vat']:
+                item['price'] = item['price'] * self.vat_factor
+            return item
+        else:
+            raise DropItem("Missing price in %s" % item)
+```
+##### Ghi các Items vào thư mục JSON
+Pipeline sau đây lưu trữ tất cả các items đã cào (từ tất cả spiders) vào một tệp .jl, chứa mỗi item trên mỗi dòng, được tuần tự theo định dạng JSON:
+
+```python
+import json
+class jsonWriterPipeline (object):
+    def open_spider (self,spider):
+        self.file = open('item.jl','w')
+    def close_spider(self,spider):
+        self.file.close()
+    def process_item(self,item,spider):
+        line = json.dumps(dict(item)) + "\n"
+        self.file.write(line)
+        return item
+```
+##### Ghi các Items vào MongoDB
+Ghi các items vào MongoDB bắng cách dùng pymongo. Địa chỉ MongoDB và tên cơ sở dữ liệu được chỉ định trong cài đặt Scrapy.
+Điểm chính của ví dụ này là chỉ ra cách sử dụng phương thức from_crawler() và cách làm sạch các tài nguyên đúng cách:
+```python
+import pymongo
+class MongoPipeline(object):
+    collection_name = 'Scrapy_items'
+    def __init__(self,mongo_url, mongo_db):
+        self.mongo_url = mongo_url
+        self.mongo_db = mongo_db
+    @classmethod
+    def from_crawler(cls,crawler):
+        return cls (
+            mongo_url=crawler.settings.get('MONGO_URL'),
+            mongo_db=crawler.settings.get('MONGO_DATABASE','items')
+        )
+    def open_spider(self,spider):
+        self.client = pymongo.MongoClient(self.mongo_url)
+        self.db = self.client[self.mongo_db]
+    def close_spider(self,spider):
+        self.client.close()
+    def process_item(self,item,spider):
+        self.db[self.collection_name].insert_one(dict(item))
+        return item
+```
