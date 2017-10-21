@@ -1,25 +1,12 @@
 <template>
   <div class="account">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="container">
+      <button class="button is-primary" @click="showModal">Create Account</button>
       <div v-for="(account, index) in account_list" :key="index">
         <account-card :account="account"></account-card>
       </div>
-
-      <form>
-        <div class="form-group">
-          <label for="email">Username:</label>
-          <input type="text" class="form-control" id="email" v-model="account.username">
-        </div>
-        <div class="form-group">
-          <label for="pwd">PassPhrase:</label>
-          <input type="password" class="form-control" id="pwd" v-model="account.passphrase">
-        </div>
-        <div class="form-group">
-          <label for="repwd">PassPhrase:</label>
-          <input type="password" class="form-control" id="repwd" v-model="account.repassphrase">
-        </div>
-        <button @click="createAccount">Submit</button>
-      </form> 
+      <account-modal v-if="show_modal" @close="hideModal"
+        @ok="newAccount"></account-modal>
     </div>
   </div>
 </template>
@@ -27,22 +14,25 @@
 <script>
 import axios from 'axios'
 import AccountCard from '@/components/AccountCard'
+import AccountModal from '@/components/AccountModal'
 
 export default {
   data () {
     return {
-      account: {
-        username: '',
-        passphrase: '',
-        repassphrase: ''
-      },
-      account_list: []
+      account_list: [],
+      show_modal: false
     }
   },
   mounted() {
     this.updateAccountList()
   },
   methods: {
+    showModal() {
+      this.show_modal = true
+    },
+    hideModal() {
+      this.show_modal = false
+    },
     updateAccountList() {
       const self = this
       axios.get('http://localhost:3333/api/v1/account')
@@ -50,31 +40,13 @@ export default {
         self.account_list = res.data.accountList
       })
     },
-    createAccount() {
-      const self = this
-      if(self.account.passphrase != self.account.repassphrase) {
-        alert('repass is not match')
-        return
-      }
-      axios.post('http://localhost:3333/api/v1/account',
-        self.account
-      )
-      .then(function(res) {
-        // alert('create success')
-        var account = res.data.account
-        self.account_list.push(account)
-        self.account.username = ''
-        self.account.passphrase = ''
-        self.account.repassphrase = ''
-      })
-      .catch(function(err) {
-        localStorage.removeItem('x-auth-token-app')
-        // location.reload()
-      })
+    newAccount(account) {
+      this.account_list.push(account)
     }
   },
   components: {
-    AccountCard
+    AccountCard,
+    AccountModal
   }
 }
 </script>
