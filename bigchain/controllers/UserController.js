@@ -84,6 +84,7 @@ exports.authenticate = function (req, res, next) {
 
 exports.listUser = function (req, res, next) {
     User.find({}, function (err, users) {
+        if(err) throw err;
         res.json(users);
     });
 };
@@ -150,6 +151,12 @@ exports.createPoint = function (req, res) {
                 success: true,
                 transactionID: retrievedTx
             })
+        }).catch(function (reason) {
+            console.log(reason);
+            res.json({
+                success: false,
+                reason: reason.toString()
+            })
         });
     console.log("sent Transaction");
 };
@@ -160,8 +167,10 @@ exports.currentPoint = function (req,res) {
     bigchainAPI.searchAssets(coinName, function (json) {
         //console.log(json);
         var tasks = {};
+        console.log("make tasks");
         for (index in json){
            const id = json[index].id;
+           console.log(id);
            tasks[index] = function (callback) {
                checkOwner(id,userData.publicKey,callback)
            };
@@ -199,21 +208,70 @@ function checkOwner(assetId,public_key, next) {
     })
 }
 
+function getPointList(publicKey,next) {
+    bigchainAPI.searchAssets(coinName, function (json) {
+        //console.log(json);
+        var tasks = {};
+        for (index in json){
+            const id = json[index].id;
+            tasks[index] = function (callback) {
+                checkOwner(id,publicKey,callback)
+            };
+        }
+
+        async.parallel(tasks, function(err,result) {
+            if (err) next(err);
+            var count = 0;
+            var point_list = {};
+            //console.log(result);
+            for (index in json) {
+                if (result[index] == true) {
+                    point_list[count] = json[index].id;
+                    count++;
+                }
+            }
+            //console.log(count);
+            next(null,count,point_list);
+        });
+    })
+}
+
 exports.tranferPoint = function (req, res) {
     const userData = req.decoded;
     const receiver = req.body.receiver;
-    const pointID = req.body.point;
-    tranferOnePoint(userData,receiver,pointID, function (json) {
-        res.send(json);
-    })
-
+    const numOfPoint = req.body.number;
+    console.log("start ",numOfPoint);
+    getPointList(userData.publicKey, function (err,count,list) {
+        if (err) throw err;
+        console.log("get pointlist success ",count," ",list);
+       if (count < numOfPoint ) {
+           res.send({
+               success: false,
+               reason: "Not enough point"
+           })
+       } else {
+           console.log("transfer point");
+           var tasks = {};
+           for (i = 0; i < numOfPoint; i++){
+               tasks[i] = function(i){ return function (callback) {
+                   tranferOnePoint(userData,receiver,list[i],callback) ;
+               }}(i);
+           }
+           async.parallel(tasks, function (err,result) {
+               if (err) throw err;
+               res.json({
+                   success: true
+               })
+           })
+       }
+    });
 };
 
  function tranferOnePoint(userData,receiver,assetId,next) {
     const date = new Date();
     console.log(userData.publicKey," ",userData.privateKey);
     bigchainAPI.getSortedTransactions(assetId, function (json) {
-        // console.log(json);
+         console.log(json);
         // next(json);
         if(json.length != 0) {
             const lastTransaction = json[json.length-1];
@@ -233,11 +291,14 @@ exports.tranferPoint = function (req, res) {
                 .then(() => conn.pollStatusAndFetchTransaction(txSigned.id))
                 .then(retrievedTx => {
                     "use strict";
-                    next({
+                    next(null,{
                         success: true,
                         transactionID: retrievedTx
                     })
-                });
+                }).catch(function (reason) {
+                    console.log(reason);
+                    next(reason);
+            });
         }
     })
 }

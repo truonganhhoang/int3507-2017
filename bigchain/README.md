@@ -1,21 +1,27 @@
 
 ## Nhóm BigChain
 
-#### Thành viên trong nhóm:
+1 Giwois thieu
+2 Kien thuc nen tang
+3 mo ta bai toan
+4 Thiet ke
+5 trich dan
+#### Thành viên trong nhóm
 * Đỗ Văn Quang
 * Nguyễn Ngọc Trung
 * Nguyễn Bá Tú
 * Phan Thế Thảo
 
-### Mô tả đề tài của nhóm:
-Xây dựng công cụ quản lý và chia sẻ điểm an toàn dựa vào BigchainDB
+### Mô tả đề tài của nhóm
+Xây dựng công cụ quản lý và chia sẻ điểm an toàn dựa vào BigchainDB [1].
+Các phần sau đây trình bày thông tin về một số công nghệ sử dụng
 
-### Giới thiệu về blockchain
-Blockchain (chuỗi khối), tên ban đầu block chain là một cơ sở dữ liệu phân cấp lưu trữ thông tin trong các khối thông tin được liên kết với nhau bằng mã hóa và mở rộng theo thời gian. Mỗi khối thông tin đều chứa thông tin về thời gian khởi tạo và được liên kết tới khối trước đó, kèm một mã thời gian và dữ liệu giao dịch. Blockchain được thiết kế để chống lại việc thay đổi của dữ liệu: Một khi dữ liệu đã được mạng lưới chấp nhận thì sẽ không có cách nào thay đổi được nó.
+### Giới thiệu về chuỗi khối
+Chuỗi khối (blockchain) là một cơ sở dữ liệu phân cấp lưu trữ thông tin trong các khối thông tin được liên kết với nhau bằng mã hóa và mở rộng theo thời gian. Mỗi khối thông tin đều chứa thông tin về thời gian khởi tạo và được liên kết tới khối trước đó, kèm một mã thời gian và dữ liệu giao dịch. Blockchain được thiết kế để chống lại việc thay đổi của dữ liệu: Một khi dữ liệu đã được mạng lưới chấp nhận thì sẽ không có cách nào thay đổi được nó.
 
 (Nguồn wikipedia)
 
-### Giới thiệu về mã hoá chữ ký số ed25519 và mã hoá dữ liệu AES
+### Giới thiệu về mã hoá chữ ký số ed25519[2] và mã hoá dữ liệu AES[3]
 
 #### Chữ ký số ed25519
 Ed25519 là một hệ thống chữ ký số khóa công khai với nhiều tính năng nổi trội:
@@ -33,7 +39,7 @@ Ed25519 là một hệ thống chữ ký số khóa công khai với nhiều tí
 
 #### Mã hóa dữ liệu AES
  AES là thuật toán được phát triển dựa trên bản thiết kế Square bởi 2 nhà mật mã học người bỉ là Joan Daemen và Vincent Rijmen.AES là một thuật toán mã hóa khối đối xứng với độ dài khóa là 128 bít (một chữ số nhị phân có giá trị 0 hoặc 1), 192 bít và 256 bít tương ứng gọi là AES-128, AES-192 và AES-256. tùy vào độ dài của key khi sử dụng mà ta có số vòng lặp khác nhau AES-128 sử dụng 10 vòng (round), AES-192 sử dụng 12 vòng và AES-256 sử dụng 14 vòng.
-Các thứ tự hàm AES sẽ thực hiện:
+Các thứ tự hàm AES sẽ thực hiện
 
 * Trộn từng byte (SubBytes): mỗi byte được thay thế với các byte khác.
 * Trộn từng hàng (ShiftRows): Phép biến đổi dùng trong phép mã hóa áp dụng lên trạng thái bằng cách chuyển dịch vòng ba hàng cuối của trạng thái theo số lượng byte các offset khác nhau.
@@ -76,6 +82,13 @@ Các thứ tự hàm AES sẽ thực hiện:
 
 (Dịch từ docs bigchain)
 
+Một số khái niệm của bigchaindb:
+
+* Block: Một khối
+* Dfasfshfkhksjsdkadasj
+* _Hello_
+
+
 
 ## Báo cáo tiến độ project
 ### Thiết kế
@@ -105,6 +118,10 @@ Tác dụng của từng thành phần:
 * Thêm điểm (Giảng viên)
 * Chia điểm  (Sinh viên)
 * Lấy điểm  (Giảng viên & sinh viên)
+
+#### Cơ chế lưu trữ và phân chia điểm
+
+
 
 
 ### Server
@@ -193,3 +210,5 @@ mặc định client chạy ở http://127.0.0.1:4200
 #### Nhược điểm
 * Việc mã hoá và giải mã làm hao tốn tài nguyên hơn các thao tác truy xuất database thông thường.
 * Việc đồng bộ dữ liệu giữa các node có độ trễ.
+
+ten tac gia - website - ngay thang
