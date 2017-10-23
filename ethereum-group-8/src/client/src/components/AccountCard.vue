@@ -18,7 +18,7 @@
             </button>
           </p>
           <p class="control">
-            <button class="button" @click="vote(account.id)">
+            <button class="button" @click="vote()">
               Vote App
             </button>
           </p>
@@ -38,10 +38,20 @@ export default {
       return 'data:text/json;charset=utf-8,' + encodeURIComponent(encrypt)
     },
     deleteAccount(id) {
-      alert('delete')
+      const self = this
+      axios.delete('http://localhost:3333/api/v1/account/' + id)
+      .then(function(res) {
+        self.$emit('delete', id)
+      })
+      .catch(err => {
+        alert('cannot delete this account')
+      })
     },
     vote(id) {
-      this.$router.push({name: 'Vote', params: {id}})
+      const encrypt = this.account.encrypt
+      const info = JSON.parse(encrypt)
+      const address = info.address
+      this.$router.push({name: 'Vote', params: {address}})
     }
   }
 }

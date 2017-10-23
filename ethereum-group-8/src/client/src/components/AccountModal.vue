@@ -84,12 +84,12 @@
           self.close()
         })
         .catch(function(err) {
-          localStorage.removeItem('x-auth-token-app')
+          localStorage.removeItem('Authorization')
           self.clearAccount()
           self.close()
           this.$router.push({name: 'Main'})
         })
-      }
+      },
     }
   }
 </script>

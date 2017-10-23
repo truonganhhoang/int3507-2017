@@ -13,7 +13,7 @@ export default new Router({
       component: Main
     },
     {
-      path: '/vote/:id',
+      path: '/vote/:address',
       name: 'Vote',
       component: Vote
     }

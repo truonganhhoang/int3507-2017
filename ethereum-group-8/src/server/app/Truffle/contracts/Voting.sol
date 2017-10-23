@@ -37,7 +37,7 @@ contract Voting {
     }
 
     // This function returns the total votes a candidate has received so far
-    function totalVotesFor(bytes32 candidate) returns (uint8) {
+    function totalVotesFor(bytes32 candidate) constant returns (uint8) {
         if (validCandidate(candidate) == false) 
             revert();
         return votesReceived[candidate];

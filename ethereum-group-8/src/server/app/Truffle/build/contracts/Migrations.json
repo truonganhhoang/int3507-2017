@@ -67,49 +67,19 @@
       "address": "0x33665c9dd36e7c84ce8aa42a431b26214849c71a",
       "updated_at": 1506781889843
     },
-    "1506782674832": {
+    "1508638426793": {
       "events": {},
       "links": {},
-      "address": "0xe1741870980ff5dc43aa1c9439a7ebd2a155b1ee",
-      "updated_at": 1506782680855
+      "address": "0xafb220e6d70ebfec3e14250018fbaf61db9e49b0",
+      "updated_at": 1508638481409
     },
-    "1506837733649": {
+    "1508681256438": {
       "events": {},
       "links": {},
-      "address": "0xa97476ce029ab1c419521fca1a79fbf13de53a13",
-      "updated_at": 1506842633577
-    },
-    "1506924251206": {
-      "events": {},
-      "links": {},
-      "address": "0x8fec8b8c50fb4a895c129fc2a4be6c5d1f8478bb",
-      "updated_at": 1506924645150
-    },
-    "1507459386090": {
-      "events": {},
-      "links": {},
-      "address": "0xb33344402356818d268c46df85bbbbe2bbf582bf",
-      "updated_at": 1507479695055
-    },
-    "1508001601576": {
-      "events": {},
-      "links": {},
-      "address": "0x66526431722883568d754bb472362506e54e8154",
-      "updated_at": 1508002314564
-    },
-    "1508030641821": {
-      "events": {},
-      "links": {},
-      "address": "0x307e79d29ab2a1dc3ceba80264b474d8825445cb",
-      "updated_at": 1508030651031
-    },
-    "1508053566735": {
-      "events": {},
-      "links": {},
-      "address": "0xe2be59541cde1afd7c8741604f9831c79c51ed48",
-      "updated_at": 1508053582307
+      "address": "0x71a0563b5884aedcda3710e1d264029eac1aa920",
+      "updated_at": 1508689010503
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1508053582307
+  "updated_at": 1508689010503
 }

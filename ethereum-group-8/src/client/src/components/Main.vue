@@ -1,5 +1,9 @@
 <template>
   <div class="main">
+    <h1 class="title" v-if="user">
+      UID: {{user.username}}
+    </h1>
+
     <div v-if="login">
       <account></account>
     </div>
@@ -11,27 +15,33 @@ import axios from 'axios'
 import Account from '@/components/Account'
 
 export default {
-  name: 'HelloWorld',
+  name: 'Main',
   data () {
     return {
-      login: false
+      login: false,
+      user: null,
     }
   },
   mounted () {
     var self = this
-    const token = localStorage.getItem('x-auth-token-app')
+    const token = localStorage.getItem('Authorization')
     if(token) {
-      axios.defaults.headers.common['x-auth-token-app'] = token
+      axios.defaults.headers.common['Authorization'] = token
     }
     axios.get('http://localhost:3333/api/v1/login')
       .then(function(res) {
         const data = res.data
         self.login = true
-        if(data.login) {
+        if(data.user) {
+          self.user = data.user
           return
         }
-        localStorage.setItem('x-auth-token-app', data.token)
-        axios.defaults.headers.common['x-auth-token-app'] = localStorage.getItem('x-auth-token-app')
+        localStorage.setItem('Authorization', 'Bearer ' + data.token)
+        axios.defaults.headers.common['Authorization'] = localStorage.getItem('Authorization')
+      })
+      .catch(err => {
+        localStorage.removeItem('Authorization')
+        this.$router.push({name: 'Main'})
       })
   },
   components: {

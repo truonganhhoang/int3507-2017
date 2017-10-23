@@ -28,13 +28,13 @@ module.exports = {
   | state for a given user.
   |
   */
-  session: {
-    serializer: 'Lucid',
-    model: 'App/Model/User',
-    scheme: 'session',
-    uid: 'email',
-    password: 'password'
-  },
+  // session: {
+  //   serializer: 'Lucid',
+  //   model: 'App/Model/User',
+  //   scheme: 'session',
+  //   uid: 'email',
+  //   password: 'password'
+  // },
 
   /*
   |--------------------------------------------------------------------------
@@ -44,13 +44,13 @@ module.exports = {
   | Basic Authentication works on Http Basic auth header.
   |
   */
-  basic: {
-    serializer: 'Lucid',
-    model: 'App/Model/User',
-    scheme: 'basic',
-    uid: 'email',
-    password: 'password'
-  },
+  // basic: {
+  //   serializer: 'Lucid',
+  //   model: 'App/Model/User',
+  //   scheme: 'basic',
+  //   uid: 'email',
+  //   password: 'password'
+  // },
 
   /*
   |--------------------------------------------------------------------------
@@ -63,14 +63,11 @@ module.exports = {
   */
   jwt: {
     serializer: 'Lucid',
-    // model: 'App/Model/User',
+    model: 'App/Model/User',
     scheme: 'jwt',
-    // uid: 'email',
-    // password: 'password',
-    secret: Config.get('app.appKey'),
-    options: {
-      expiresIn: '24h'
-    }
+    uid: 'username',
+    password: 'password',
+    secret: Config.get('app.appKey')
   },
 
   /*
@@ -85,10 +82,10 @@ module.exports = {
   | in documentation
   |
   */
-  api: {
-    serializer: 'Lucid',
-    model: 'App/Model/Token',
-    scheme: 'api'
-  }
+  // api: {
+  //   serializer: 'Lucid',
+  //   model: 'App/Model/Token',
+  //   scheme: 'api'
+  // }
 
 }

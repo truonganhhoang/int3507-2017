@@ -8,6 +8,7 @@ class AccountsTableSchema extends Schema {
     this.create('accounts', (table) => {
       table.increments()
       table.string('username', 80).notNullable()
+      table.string('address', 80).notNullable().unique()
       table.text('encrypt').notNullable()
       table.integer('user_id').unsigned().references('id').inTable('users')
       table.timestamps()
