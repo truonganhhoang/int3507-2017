@@ -11,7 +11,8 @@ GraphQL do Facebook tạo ra từ năm 2012 cung cấp giao thức chung cho ph�
 
 Người dùng truy vấn đến máy chủ GraphQL bằng các truy vấn với đặc điểm: format của dữ liệu trả về được mô tả trong câu truy vấn và được định nghĩa ở phía người dùng thay vì ở máy chủ. Nói đơn giản hơn, đây là truy vấn hướng người dùng, cấu trúc dữ liệu không khô cứng 1 khuôn mẫu từ máy chủ (REST API) mà thay đổi theo từng ngữ cảnh sao cho hiệu quả nhất đối với người dùng mà chỉ cần dùng duy nhất 1 địa điểm cuối.
 
-[![Hình 1: Mô hình GraphQL](https://www.businesscard.vn/blog/wp-content/uploads/2016/03/graphql-la-gi-1024x593.png)](https://www.businesscard.vn/blog/wp-content/uploads/2016/03/graphql-la-gi-1024x593.png "Hình 1: Mô hình GraphQL")
+[![Hình 1: Mô hình GraphQL](https://www.businesscard.vn/blog/wp-content/uploads/2016/03/graphql-la-gi-1024x593.png)](https://www.businesscard.vn/blog/wp-content/uploads/2016/03/graphql-la-gi-1024x593.png)
+
 <center>Hình 1: Mô hình GraphQL</center>
 
 ### 2. Tổng quan về GraphQL
@@ -40,7 +41,7 @@ Các bạn có thể tìm hiểu thêm ở [đây](https://facebook.github.io/gr
 
 Ví dụ muốn hiển thị một list ‘posts’, và ở dưới mỗi ‘post’ là một list ‘like’, bao gồm cả tên người dùng và avatar. Cách giải quyết đơn giản là thay đổi API của ‘posts’ để nó bao gồm một mảng ‘like’ chứa thông tin về người dùng.
 
-```json
+<pre><code>
 [
   {
     type: 'post 1',
@@ -61,7 +62,7 @@ Ví dụ muốn hiển thị một list ‘posts’, và ở dưới mỗi ‘po
   ]
   }
 ]
-```
+</code></pr
 
 Nhưng khi làm như vậy cho các app mobile thì tốc độ của chúng chạy quá chậm. Vì thế sẽ cần tới 2 endpoints, một với likes và một thiếu chúng.
 
@@ -87,7 +88,7 @@ REST Contraints:
 - Chuẩn hóa các interface : Đây là một trong những đặc tính quan trọng của hệ thống REST. Bằng cách tạo ra các quy ước chuẩn để giao tiếp giữa các thành phần trong hệ thống, bạn đã đơn giản hóa việc client có thể tương tác với server. Các quy ước này áp dụng cho toàn bộ các service giúp cho người sử dụng hệ thống của bạn dễ dụng hơn. Dễ hiểu hơn trên hệ thống bạn đặt ra 1 chuẩn API để người dùng dù là mobile, web đều có thể kết nối vào được. Hệ thống REST có yếu điểm ở đây vì khi chuẩn hóa rồi ta không thế tối ưu từng kết nối.-
 - Phân lớp hệ thống : trong hệ thống REST bạn chia tách các thành phần hệ thống theo từng lớp, mỗi lớp chỉ sử dụng lớp ở dưới nó và giao tiếp với lớp ở ngay trên nó mà thôi. Điều này giúp bạn giảm độ phức tạp của hệ thống,giúp các thành phần tách biệt nhau từ đó dễ dàng mở rộng từng thành phần:
 
-[![Hình 2: Mô hình REST](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/8.3.rest.png_3fj7x7kqlj "Hình 2: Mô hình REST")](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/8.3.rest.png_3fj7x7kqlj "Hình 2: Mô hình REST")
+[![Hình 2: Mô hình REST](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/8.3.rest.png_3fj7x7kqlj)](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/8.3.rest.png_3fj7x7kqlj)
 <center>Hình 2: Mô hình REST</center>
 
 <b>So sánh REST và GraphQL</b>
@@ -114,4 +115,5 @@ REST Contraints:
 | Bạn xây dựng hình dạng của response của chính mình | Hình dạng của response được xây dựng bởi thư viện thực hiện GraphQL để phù hợp với hình dạng của truy vấn |
 
 <b>CÓ NÊN ÁP DỤNG GRAPHQL KHÔNG?</b>
+
 <i>Bạn nên áp dụng GraphQL nếu bạn có định hướng phát triển nhiều dòng sản phẩm, vì đặc tính của GraphQL là phục vụ client, nên càng nhiều client thì GraphQL càng tỏ rõ ưu điểm.</i>
