@@ -3,10 +3,9 @@
 ##### Giảng viên: Trương Anh Hoàng
 - Nhóm 11
 Thành viên:
-1. Hoàng Thị Tuyết
-2. Vũ Hoàng Linh
-3. Phạm Văn Lượng
-4. Lê Thị Thu Trang
+1. Trần Hữu Minh
+2. Nguyễn Đức Tài
+3. Nguyễn Thị Tâm
 -------------------------------------------------------------
 
 ## Đề tài: ỨNG DỤNG TẠO MÃ VÀ NHẬN DIỆN MÃ TRÊN THIẾT BỊ DI ĐỘNG
