@@ -1,7 +1,7 @@
 #### BÁO CÁO BÀI TẬP LỚN
 ##### MÔN: Các vấn đề hiện đại trong công nghệ thông tin
 ##### Giảng viên: Trương Anh Hoàng
-Nhóm 11
+- Nhóm 11
 Thành viên:
 1. Hoàng Thị Tuyết
 2. Vũ Hoàng Linh
