@@ -2,7 +2,7 @@
 ##### MÔN: Các vấn đề hiện đại trong công nghệ thông tin
 ##### Giảng viên: Trương Anh Hoàng
 - Nhóm 11
-Thành viên:
+- Thành viên:
 1. Trần Hữu Minh
 2. Nguyễn Đức Tài
 3. Nguyễn Thị Tâm
