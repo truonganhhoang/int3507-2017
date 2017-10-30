@@ -3,10 +3,9 @@
 ## Các thành viên:
 - Nguyễn Mạnh Cường
 - Nguyễn Minh Đức 
-- Bùi Thị Chung Thuỷ
 - Vũ Nam Tước
  
-## Mô tả đề tài nhóm
+## Mô tả đề tài
 
 * Tìm hiểu về Ethereum
 * Xây dựng một chương trình bỏ phiếu dựa vào Ethereum 
@@ -25,9 +24,9 @@ Theo cuốn *"Introducing Ethereum and Solidity"*: *[3]*
 
 >Một chuỗi khối là một mạng lưới phần mềm (software network) có tính chất ngang hàng (peer-to-peer) và hoàn toàn phân tán, nó sử dụng mật mã (cryptography) để lưu trữ an toàn các ứng dụng, dữ liệu, và dễ dàng chuyển các chứng thực số (digital instrument) mang giá trị đại diện cho tiền thực.
 
-<center>![](https://raw.githubusercontent.com/nesso99/int3507-2017/c9616ae75f6b12f43922bdc3a0d2d097b28e0548/ethereum-group-8/img/howtowork.PNG)
+<center> ![alt text](https://raw.githubusercontent.com/nesso99/int3507-2017/c9616ae75f6b12f43922bdc3a0d2d097b28e0548/ethereum-group-8/img/howtowork.PNG)
 
-*Hình 1: Cách hoạt động của chuỗi khối [4]*</center>
+*Hình 1: Cách hoạt động của chuỗi khối [4]* </center>
 
 ### Ba thành phần (công nghệ) của chuỗi khối:
 * Mạng ngang hàng: Một nhóm các máy tính có khả năng giao tiếp với nhau mà không phải phụ thuộc vào một người cầm quyền ở trung tâm và vì vậy không xảy ra hiện tượng điểm lỗi chí tử (single point of failure).
@@ -81,7 +80,7 @@ Gas là một đơn vị công việc, nó không phải là một đơn vị ti
 
 Việc này khác so với ở Bitcoin, nơi mà chi phí được tính bằng kích thước của giao dịch tính bằng kilobytes, việc tính phí dựa trên khối lượng tính toán hợp lý hơn nhiều.
 
-<center>![](https://raw.githubusercontent.com/nesso99/int3507-2017/c9616ae75f6b12f43922bdc3a0d2d097b28e0548/ethereum-group-8/img/value.png)
+<center>![alt text](https://raw.githubusercontent.com/nesso99/int3507-2017/c9616ae75f6b12f43922bdc3a0d2d097b28e0548/ethereum-group-8/img/value.png)
 
 *Hình 2: Giá trị của một số toán tử (trên EVM) phổ biến*</center>
 
