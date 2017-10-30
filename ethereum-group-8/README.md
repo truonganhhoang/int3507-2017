@@ -24,7 +24,7 @@ Theo cuốn *"Introducing Ethereum and Solidity"*: *[3]*
 
 >Một chuỗi khối là một mạng lưới phần mềm (software network) có tính chất ngang hàng (peer-to-peer) và hoàn toàn phân tán, nó sử dụng mật mã (cryptography) để lưu trữ an toàn các ứng dụng, dữ liệu, và dễ dàng chuyển các chứng thực số (digital instrument) mang giá trị đại diện cho tiền thực.
 
-<center> ![alt text](https://raw.githubusercontent.com/nesso99/int3507-2017/c9616ae75f6b12f43922bdc3a0d2d097b28e0548/ethereum-group-8/img/howtowork.PNG)
+<center> ![howtowork](https://user-images.githubusercontent.com/14819179/32156473-3b9cc172-bd70-11e7-8f44-9c2104d3fd53.PNG)
 
 *Hình 1: Cách hoạt động của chuỗi khối [4]* </center>
 
@@ -80,15 +80,16 @@ Gas là một đơn vị công việc, nó không phải là một đơn vị ti
 
 Việc này khác so với ở Bitcoin, nơi mà chi phí được tính bằng kích thước của giao dịch tính bằng kilobytes, việc tính phí dựa trên khối lượng tính toán hợp lý hơn nhiều.
 
-<center>![alt text](https://raw.githubusercontent.com/nesso99/int3507-2017/c9616ae75f6b12f43922bdc3a0d2d097b28e0548/ethereum-group-8/img/value.png)
+<center>
+![value](https://user-images.githubusercontent.com/14819179/32156474-3bd89468-bd70-11e7-9604-7d9689b4c65b.png)
 
-*Hình 2: Giá trị của một số toán tử (trên EVM) phổ biến*</center>
+*Hình 2: Giá trị của một số toán tử (trên EVM) phổ biến* </center>
 
-###  Ethereum Virtual Machine (EVM)
+### Ethereum Virtual Machine (EVM)
 
 Máy ảo Ethereum (EVM) là một môi trường chạy các hợp đồng thông minh Ethereum. Định nghĩa chính thức của EVM được quy định trong Ethereum Yellow Paper của Gavin Wood. Nó được hoàn toàn cô lập từ mạng, hệ thống tập tin và các quá trình khác của hệ thống máy chủ. Mỗi nút Ethereum trong mạng chạy một EVM và thực hiện các hướng dẫn giống nhau. Ethereum Virtual Machines đã được lập trình trong C++, Go, Haskell, Java, Python, Ruby, Rust và WebAssembly (hiện đang được phát triển)
 
-###  Hợp đồng thông minh
+### Hợp đồng thông minh
 
 Hợp đồng thông minh (smart contract)  là một cơ chế trao đổi xác định, được kiểm soát bởi các phương tiện kỹ thuật số mà có thể giúp cho việc thực hiện giao dịch trực tiếp giữa các thực thể mà không cần tin cậy nhau. Các hợp đồng này được định nghĩa bằng cách lập trình và được chạy chính xác như mong muốn mà không bị kiểm duyệt, lừa đảo hay sự can thiệp từ bên thứ ba trung gian.
 
@@ -100,7 +101,7 @@ Sự khác biệt giữa hợp đồng truyền thống và hợp đồng hiện
 
 * Hợp đồng thông minh được tạo ra bởi hệ thống máy tính bằng ngôn ngữ lập trình. Trong đó nêu rõ các điều khoản và hình phạt tương đương với các hợp đồng truyền thống đưa ra. Nhưng hợp đồng thông minh không cần sự can thiệp của con người, do đó đảm bảo việc thự thi hợp đồng được chính xác và công minh nhất. Toàn bộ đoàn mã của hợp đồng thông minh được thực hiện bởi hệ thống sổ cái phân tán chuỗi khối.
 
-###Solidity
+### Solidity
 Solidity là một ngôn ngữ lập trình sử dụng để viết các chương trình được gọi là hợp đồng thông minh (smart contract), thứ mà sẽ được chạy trên EVM. Ngôn ngữ mới này là một sự pha trộn các công ước từ mạng, hợp ngữ (assembly language) và phát triển web.Solidity là một ngôn ngữ cấp cao có định hướng hợp đồng, có cú pháp tương tự như của JavaScript và nó được thiết kế để nhắm mục tiêu Ethereum Virtual Machine (EVM).
  
 Solidity là ngôn ngữ bậc cao được compile bằng bytecode và đươc đưa lên chuỗi khối Ethereum bằng cách dùng các phần mềm phía người dùng như Mist browser hoặc node. Ngôn ngữ Solidity định kiểu mạnh, hỗ trợ thừa kế, thư viện và các loại người dùng xác định  và phức tạp giữa các tính năng khác.
@@ -144,13 +145,13 @@ Phiên bản Ethereum của Ghost chỉ rơi vào bảy cấp độ - hoặc tr�
 	3. Một uncle phải có tiêu đề khối hợp lệ, nhưng trước đó không cần xác minh hay thậm chí là một khối hợp lệ
 	4. Một Uncle phải khác mọi Uncle khác bao gồm trong các khối trước và tất cả những Uncle khác nằm trong cùng một khối (không bao gồm hai lần)
 
-###Whisper và Swarm 
+### Whisper và Swarm 
 Các ứng dụng máy chủ hiện đại làm tốt 3 việc: tính toán, chạy chương trình và ghi nhớ lưu trữ dữ liệu, tạo ra sự thuận lợi trong việc tương tác giữa người với người.
 Trong Ethereum, với EVM ta có thể tính toán nhưng không thể lưu trữ nhiều dữ liệu cũng không thể phục vụ như một người trung gian trong giao tiếp người với người. Vì vậy Whisper và Swarm ra đời.
 
-####Whisper
+#### Whisper
 Whisper là một hệ thống nhắn tin phân tán, là một phần của giao thức Ethereum và sẽ có sẵn cho các ứng dụng web sử dụng EVM phần back-end. Nói một cách ngắn gọn, Whisper là một giao thức truyền thông cho phép DApps giao tiếp được với nhau
-####Swarm
+#### Swarm
 Swarm là một giao thức thanh toán được định rõ nội dung. Nó hoạt động với dữ liệu không thay đổi, phân mảnh nó và lưu trữ nó trên một mạng lưới được phân bố theo cách làm cho nó dễ dàng được gọi lại khi một ứng dụng cần. 
 
 Mục tiêu của Swarm là để có thể tìm các phiên bản khác nhau của một tệp tin cùng một địa chỉ bộ nhớ, giống đường dẫn tên miền trong các URL hiện tại, với cấu trúc thư mục của chúng. Giao thức này chỉ đơn thuần phục vụ mục đích của một chỉ mục của nơi mà các khối dữ liệu được lưu t. Kịch bản lưu trữ này là một ứng dụng phổ biến cho các hệ thống phân quyền và Swarrm làm nó trở nên dễ dàng hơn, nhờ vào một số sáng kiến tiên phong của BitTorrent
