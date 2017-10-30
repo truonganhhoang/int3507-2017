@@ -41,8 +41,7 @@ trọng của việc thu thập và đánh chỉ mục lượng dữ liệu vô 
 
 ### Scrapy
 
-![Scrapy]()
-
+![Scrapy](https://github.com/tuantmtb/int3507-2017/blob/master/group3/img/Scrapy-Logo.png?raw=true)
 Scrapy [2] là một framework được viết bằng Python, nó cấp sẵn 1 cấu trúc tương đối hoàn chỉnh để thực hiện việc thu thập 
 thông tin và trích xuất dữ liệu từ trang web một cách nhanh chóng và dễ dàng.
 
@@ -62,7 +61,7 @@ mạnh và linh hoạt.
 
 ### Selenium
 
-![Selenium]()
+![Selenium](https://github.com/tuantmtb/int3507-2017/blob/master/group3/img/Selenium-logo.jpg?raw=true)
 
 Do các framework thu thập dữ liệu dưới dạng HTML nên với các xử lý về JS bên trong, chúng ta thường phải làm trình tự 
 các bước giống như trong hàm JS. Nếu ta gặp phải hàm JS khởi tạo đến hàng nghìn dòng lệnh thì dùng các framework thu 
@@ -74,7 +73,7 @@ HTML, JS, hình ảnh,.. Do đó, sử dụng selenium có thể khiến tốc �
 
 ### Nutch
 
-![Nutch]()
+![Nutch](https://github.com/tuantmtb/int3507-2017/blob/master/group3/img/Nutch-logo.png?raw=true)
 
 Apache Nutch [4] là một framework mã nguồn mở được viết bằng Java. Đây là một dự án phổ biến sử dụng Apache Lucene. Mục tiêu 
 chính của framework này là cào các dữ liệu phi cấu trúc từ các tài nguyên khác nhau như RSS, HTML, CSV, PDF, và kết cấu 
@@ -92,23 +91,29 @@ sẽ không cào nội dung từ các trang web bị hạn chế.
 ### Crawler4j
 Crawler4j [5] cung cấp một giao diện đơn giản để thu thập thông tin Web.
 
-a) Ưu điểm:
+#### Ưu điểm:
 -	Giao diện đơn giản, dễ dùng
 -	Dễ dàng scale đến 20M trang
 -	Rất nhanh (Ví dụ: Đã thu thập và xử lý toàn bộ Wikipedia tiếng Anh trong 10 giờ kể cả thời gian giải nén và lưu trữ 
 cấu trúc liên kết và text của các bài viết)
 
-b) Nhược điểm:
+#### Nhược điểm:
 -	Không tôn trọng những hạn chế của robots.txt
 -	Không giới hạn số lượng yêu cầu gửi đến host (Ví dụ: Chính sách của Wikipedia không cho phép các chương trình gửi 
 requests nhanh hơn 1 request/giây. Crawler4j có lịch sử gửi 200 requests/giây)
 -	Chỉ thu thập nội dung văn bản-text (không hình ảnh hay bất cứ nội dung khác)
 -	Chỉ với các trang có định dạng UTF-8
-[1]:
-[2]:
-[3]:
-[4]:
-[5]:
+
+
+\[1] https://medium.com/@cabot_solutions/web-crawlers-everything-you-need-to-know-6dce26ee8ad8
+
+\[2] https://www.quora.com/Why-would-some-use-scrapy-instead-of-just-crawling-with-requests-or-urllib2
+
+\[3] https://viblo.asia/p/web-crawler-voi-selenium-webdriver-va-phantomjs-phan-1-PwRkgnRxeEd
+
+\[4] https://wiki.apache.org/nutch/FrontPage#What_is_Apache_Nutch.3F
+
+\[5] https://madurangasblogs.blogspot.com/2014/06/simple-web-crawler-with-crawler4j.html
 ## Chi tiết về Scrapy
 ## Kiến trúc Scrapy
 Kiến trúc Scrapy [1]
@@ -123,17 +128,18 @@ Kiến trúc Scrapy [1]
 - **Scrapy Engine**: quản lý các thành phần trên.
 
 ### Luồng dữ liệu
-    Bước 1: Cung cấp URL xuất phát (start_url), được tạo thành một Request lưu trong Scheduler.
-    Bước 2 - 3: Scheduler lần lượt lấy các Requests gửi đến Downloader.
-    Bước 4 - 5: Downloader tải dữ liệu từ internet, được Responses gửi đến Spiders.
-    Bước 6 - 7: Spiders thực hiện:
-    •	Bóc tách dữ liệu, thu được Item, gửi đến Item Pipeline.
-    •	Tách được URLs, tạo các Requests gửi đến Scheduler.
-    Bước 8: Item Pipeline thực hiện xử lý dữ liệu bóc tách được. Đơn giản nhất là thực hiện lưu dữ liệu vào database.
-    Bước 9: kiểm tra Scheduler còn Request?
-    •	Đúng: quay lại Bước 2.
-    •	Sai: kết thúc.
-[1]:scrapy.org
+- Bước 1: Cung cấp URL xuất phát (start_url), được tạo thành một Request lưu trong Scheduler.
+- Bước 2 - 3: Scheduler lần lượt lấy các Requests gửi đến Downloader.
+- Bước 4 - 5: Downloader tải dữ liệu từ internet, được Responses gửi đến Spiders.
+- Bước 6 - 7: Spiders thực hiện:
+    - Bóc tách dữ liệu, thu được Item, gửi đến Item Pipeline.
+    - Tách được URLs, tạo các Requests gửi đến Scheduler.
+- Bước 8: Item Pipeline thực hiện xử lý dữ liệu bóc tách được. Đơn giản nhất là thực hiện lưu dữ liệu vào database.
+- Bước 9: Kiểm tra Scheduler còn Request?
+    - Đúng: Quay lại Bước 2.
+    - Sai: Kết thúc.
+
+[1] https://doc.scrapy.org/en/latest/topics/architecture.html
 ## Cài đặt scrapy
 
 Scrapy chạy trên Python 2.7 và Python 3.3 trở lên 
@@ -168,7 +174,7 @@ scrapy startproject tutorial
 
 ```
 #### Viết một spider
-Spider là class chúng ta định nghĩa và được scrapy sử dụng để scrape thông tin từ một domain (hoặc một nhóm domain)
+[Spider](#spider) là class chúng ta định nghĩa và được scrapy sử dụng để scrape thông tin từ một domain (hoặc một nhóm domain)
 
 Chúng ta định nghĩa một danh sách khởi tạo của URLs để download, cách follow links, và cách parse nội dung của pages để 
 trích xuất items.
@@ -265,6 +271,7 @@ Cách đơn giản để lưu trữ dữ liệu thu thập được là sử d�
 scrapy crawl spider_name -o quotes.json
 ```
 
+## Spider <a id="spider"></a>
 
 ## Các vấn đề cần giải quyết với scrapy
 
