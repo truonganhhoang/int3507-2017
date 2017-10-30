@@ -9,7 +9,8 @@ https://hub.docker.com/_/mongo/
 
 Tạo file docker-compose.yml có nội dung:
 
-    version: "2"
+```
+version: "2"
     
     services:
         mongodb:
@@ -26,6 +27,7 @@ Tạo file docker-compose.yml có nội dung:
             # restart: always
             # stdin_open: true
             # tty: true
+```
 
 Tham chiếu thuật ngữ tương đương giữa MongoDB và MySQL
 
