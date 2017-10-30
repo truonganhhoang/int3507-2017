@@ -6,7 +6,7 @@
 - Bùi Thị Chung Thuỷ
 - Vũ Nam Tước
  
-##Mô tả đề tài nhóm
+## Mô tả đề tài nhóm
 
 * Tìm hiểu về Ethereum
 * Xây dựng một chương trình bỏ phiếu dựa vào Ethereum 
@@ -25,7 +25,7 @@ Theo cuốn *"Introducing Ethereum and Solidity"*: *[3]*
 
 >Một chuỗi khối là một mạng lưới phần mềm (software network) có tính chất ngang hàng (peer-to-peer) và hoàn toàn phân tán, nó sử dụng mật mã (cryptography) để lưu trữ an toàn các ứng dụng, dữ liệu, và dễ dàng chuyển các chứng thực số (digital instrument) mang giá trị đại diện cho tiền thực.
 
-<center>![](a.png)
+<center>![](https://raw.githubusercontent.com/nesso99/int3507-2017/c9616ae75f6b12f43922bdc3a0d2d097b28e0548/ethereum-group-8/img/howtowork.PNG)
 
 *Hình 1: Cách hoạt động của chuỗi khối [4]*</center>
 
@@ -47,17 +47,17 @@ Theo cuốn *"Introducing Ethereum and Solidity"*: *[3]*
 ## 2. Tổng quan về Ethereum
 Khái niệm "Ethereum" có thể được sử dụng để chỉ ba thứ khác nhau: giao thức Ethereum, mạng Ethereum, và dự án Ethereum bao gồm cả hai thứ trên. Có thể thấy sức mạnh chủ yếu của nó đến từ giao thức.
 
-> Ethereum là một nền tảng điện toán có tính chất phân tán, công cộng, mã nguồn mở dựa trên công nghệ Blockchain. Nó có tính năng Hợp đồng thông minh (Smart Contracts), tạo thuận lợi cho các thỏa thuận hợp đồng trực tuyến.*[6]*
+Ethereum là một nền tảng điện toán có tính chất phân tán, công cộng, mã nguồn mở dựa trên công nghệ Blockchain. Nó có tính năng Hợp đồng thông minh (Smart Contracts), tạo thuận lợi cho các thỏa thuận hợp đồng trực tuyến.*[6]*
 
 | Điểm khác biệt | Bitcoin | Ethereum |
-| :-------: | :---: | :---: |
+| :------: | :---: | :---: |
 | Nguồn gốc | Được tạo ra như một loại tiền tệ và để lưu trữ giá trị | Được tạo ra như một nền tảng giao dịch hợp đồng thông minh phân tán | 
 | Thời gian tạo khối mới | 10 phút | 14 - 15 giây | 
 | Tốc độ giao dịch | Chậm | Nhanh |
 | Phí giao dịch | Bị giới hạn, bị cạnh tranh trực tiếp với nhau để được vào khối của Bitcoin | Được tính dựa trên khối lượng tính toán, băng thông lưu trữ |
 | "Đào mỏ" tập trung | Cho phép | Không cho phép |
 
-*Bảng 1: Các điểm khác biệt cơ bản của Ethereum so với Bitcoin*
+<center> *Bảng 1: Các điểm khác biệt cơ bản của Ethereum so với Bitcoin* </center>
 
 ## 3. Các khái niệm trong Ethereum
 
@@ -81,7 +81,7 @@ Gas là một đơn vị công việc, nó không phải là một đơn vị ti
 
 Việc này khác so với ở Bitcoin, nơi mà chi phí được tính bằng kích thước của giao dịch tính bằng kilobytes, việc tính phí dựa trên khối lượng tính toán hợp lý hơn nhiều.
 
-<center>![](https://i.imgur.com/Xc6ZdMq.png)
+<center>![](https://raw.githubusercontent.com/nesso99/int3507-2017/c9616ae75f6b12f43922bdc3a0d2d097b28e0548/ethereum-group-8/img/value.png)
 
 *Hình 2: Giá trị của một số toán tử (trên EVM) phổ biến*</center>
 
@@ -96,6 +96,7 @@ Hợp đồng thông minh (smart contract)  là một cơ chế trao đổi xác
 Chúng có thể được sử dụng để tạo điều kiện, xác minh và thực thi việc đàm phán hoặc thực hiện các hướng dẫn thủ tục kinh tế và có khả năng tránh được sự kiểm duyệt, thông đồng và rủi ro từ phía đối tác. Trong Ethereum, các hợp đồng thông minh được coi là các kịch bản tự trị hoặc các ứng dụng phân cấp được lưu trữ trong chuỗi khối Ethereum để thực hiện sau đó bởi EVM. Các hướng dẫn được nhúng trong các hợp đồng Ethereum được thanh toán bằng ether và có thể được thực hiện bằng nhiều ngôn ngữ Turing-complete khác nhau
 
 Sự khác biệt giữa hợp đồng truyền thống và hợp đồng hiện đại:
+
 * Hợp đồng truyền thống được tạo bởi các chuyên gia pháp lí để biên soạn và thực thi. Điều này rất mất thời gian và không minh bạch. Hợp đồng có sự cố sảy ra thì phải dựa vào hệ thống pháp lí giải quyết và điều này tốn các chi phí liên quan.
 
 * Hợp đồng thông minh được tạo ra bởi hệ thống máy tính bằng ngôn ngữ lập trình. Trong đó nêu rõ các điều khoản và hình phạt tương đương với các hợp đồng truyền thống đưa ra. Nhưng hợp đồng thông minh không cần sự can thiệp của con người, do đó đảm bảo việc thự thi hợp đồng được chính xác và công minh nhất. Toàn bộ đoàn mã của hợp đồng thông minh được thực hiện bởi hệ thống sổ cái phân tán chuỗi khối.
