@@ -1,5 +1,5 @@
 ## createUser
-**URL: `/api/create_user`**
+**URL: `/api/create_user`** \
 **Method: `POST`**
 
 **Tham số**
@@ -9,7 +9,7 @@
 - blah blah
 
 ## login
-**URL: `/api/authenticate`**
+**URL: `/api/authenticate`** \
 **Method: `POST`**
 
 **Tham số**
@@ -19,27 +19,27 @@
 - blah blah
 
 ## listUser
-**URL: `/api/users`**
+**URL: `/api/users`** \
 **Method: `GET`**
 
 **Tham số**
 - blah blah
 
-**Kết quả trả về**
+**Kết quả trả về** 
 - blah blah
 
 ## makeCoin
-**URL: `/api/create`**
+**URL: `/api/create`** \
 **Method: `GET`**
 
 **Tham số**
 - blah blah
 
-**Kết quả trả về**
+**Kết quả trả về** 
 - blah blah
 
 ## listOutput
-**URL: `/apiv1/listOutputs`**
+**URL: `/apiv1/listOutputs`** \
 **Method: `GET`**
 
 **Tham số**
@@ -49,7 +49,7 @@
 - blah blah
 
 ## getTransaction
-**URL: `/apiv1/transaction/`**
+**URL: `/apiv1/transaction/`** \
 **Method: `GET`**
 
 **Tham số**
@@ -59,7 +59,7 @@
 - blah blah
 
 ## searchAsset
-**URL: `/apiv1/search=SunadoPoint`**
+**URL: `/apiv1/search=SunadoPoint`** \
 **Method: `GET`**
 
 **Tham số**
@@ -69,7 +69,7 @@
 - blah blah 
 
 ## currentPoint
-**URL: `/api/current`**
+**URL: `/api/current`** \
 **Method: `GET`**
 
 **Tham số**
@@ -79,7 +79,7 @@
 - blah blah
 
 ## transferPoint
-**URL: `/api/transfer`**
+**URL: `/api/transfer`** \
 **Method: `POST`**
 
 **Tham số**
@@ -89,7 +89,7 @@
 - blah blah
 
 ## listTransaction
-**URL: `/apiv1/listTransactions/`**
+**URL: `/apiv1/listTransactions/`** \
 **Method: `GET`**
 
 **Tham số**
