@@ -2,8 +2,7 @@
 
 ## Các thành viên:
 - Nguyễn Mạnh Cường
-- Nguyễn Minh Đức
-- Bùi Thị Chung Thuỷ 
+- Nguyễn Minh Đức 
 - Vũ Nam Tước
  
 ## Mô tả đề tài
@@ -25,7 +24,7 @@ Theo cuốn *"Introducing Ethereum and Solidity"*: *[3]*
 
 >Một chuỗi khối là một mạng lưới phần mềm (software network) có tính chất ngang hàng (peer-to-peer) và hoàn toàn phân tán, nó sử dụng mật mã (cryptography) để lưu trữ an toàn các ứng dụng, dữ liệu, và dễ dàng chuyển các chứng thực số (digital instrument) mang giá trị đại diện cho tiền thực.
 
-<center> ![Alt text](/ethereum-group-8/img/howtowork.PNG?raw=true)
+<center> ![alt text](https://raw.githubusercontent.com/nesso99/int3507-2017/c9616ae75f6b12f43922bdc3a0d2d097b28e0548/ethereum-group-8/img/howtowork.PNG)
 
 *Hình 1: Cách hoạt động của chuỗi khối [4]* </center>
 
@@ -81,7 +80,7 @@ Gas là một đơn vị công việc, nó không phải là một đơn vị ti
 
 Việc này khác so với ở Bitcoin, nơi mà chi phí được tính bằng kích thước của giao dịch tính bằng kilobytes, việc tính phí dựa trên khối lượng tính toán hợp lý hơn nhiều.
 
-<center> ![Alt text](/ethereum-group-8/img/value.png?raw=true)
+<center>![alt text](https://raw.githubusercontent.com/nesso99/int3507-2017/c9616ae75f6b12f43922bdc3a0d2d097b28e0548/ethereum-group-8/img/value.png)
 
 *Hình 2: Giá trị của một số toán tử (trên EVM) phổ biến*</center>
 
