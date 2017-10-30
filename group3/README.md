@@ -260,26 +260,22 @@ scrapy crawl spider_name -o quotes.json
 ```
 
 
-## Các vấn đề cần giải quyết với scrapy (Todo - Tuấn)
+## Các vấn đề cần giải quyết với scrapy
 
-### Lấy dữ liệu
-- Thư viện các mẫu lấy dữ liệu, các ví dụ lấy dữ liệu
-- Duyệt trang để lấy dữ liệu
-- Lưu dữ liệu vào cơ sở dữ liệu
+Hệ thống crawler cơ bản gồm 4 bước chính là lựa chọn các trang lấy dữ liệu, đọc html, tách html và lưu trữ. Tuy nhiên không phải mọi trang ta lấy đều đơn giản như vậy. Một số trang web ngăn chặn truy cập bằng tường lửa, yêu cầu đăng nhập mới xem được nội dung, hay một số trang yêu cầu sinh dữ liệu từ phía máy khách. Ta cần xử lý riêng với từng trường hợp đặc biệt. Cụ thể như sau:
 
-### Tăng tốc độ, hiệu năng
-- Sử dụng proxy với scrapy
-- Scrapy không hỗ trợ đa luồng nhưng hỗ trợ cơ chế bất đồng bộ
-- Duyệt lại trang để cập nhật dữ liệu
-- Sử dụng scrapy với docker
+### Trang yêu cầu chặn tường lửa
+Đối với trang web không cho phép truy cập liên tục trong một thời gian, ta có thể sử dụng cơ chế truy cập có độ trễ. Trong hệ thống scrapy phần cấu hình tham số: AUTOTHROTTLE_ENABLED, AUTOTHROTTLE_START_DELAY AUTOTHROTTLE_MAX_DELAY.
+Với một số trang không cho phép truy cập quá nhiều, scrapy cho phép sử dụng tầng proxy để đổi địa chỉ IP cho mỗi lần truy cập. Một số tường lửa có thể cho phép truy cập nếu ta đặt trường header phù hợp, ví dụ như ta đặt header là "'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'"
 
-### Scrapy cho phát triển
-- Hạn chế tổng số lời yêu cầu (request)
-- Gỡ rối Scrapy
-### Lấy dữ liệu nhiều cấp
-### Bài toán chống trùng
-### Nhiều spider
+### Trang yêu cầu đăng nhập để truy cập nội dung
+Đối với trang yêu cầu đăng nhập để truy cập nội dung, ta cần chèn thông tin header để giữ cookie hiện tại. Phần này ở scrapy ta cấu hình trong tệp settings.py
 
+### Dữ liệu được sinh từ phía máy khách
+Với trường hợp máy khách tải dữ liệu bằng cơ chế không đồng bộ (ajax), scrapy thông thường khó xử lý được. Do đó ta nên sử dụng các web driver thay thế cho scrapy. Có thể dùng selelium, phantom Js để xử lý
+
+### Đánh dấu các trang đã lấy
+Scrapy hỗ trợ việc lưu trữ các trang đã truy cập vào queue cũng như lưu cache các truy cập đó. Ngoài ra ta nên lưu trữ các đường dẫn vào trong cơ sử dữ liệu như mongo để thuận tiện cho việc kiểm tra cũng như phân tích sau này.
 
 ## Lưu dữ liệu vào cơ sở dữ liệu
 
