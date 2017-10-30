@@ -1,1 +1,182 @@
-[{"_id": "59a9946d4a9c7f202d2df4de", "correct_answer": 1, "has_suggest_answer": true, "id": "59a9946d4a9c7f202d2df4de", "suggest_answer": {"blocks": [{"depth": 0, "entityRanges": [], "inlineStyleRanges": [], "key": "d55da", "text": " Nhấn trọng âm ở âm tiết thứ nhất, còn lại nhấn âm 2", "type": "unstyled"}]}}, {"_id": "59a9946d4a9c7f202d2df4e0", "correct_answer": 2, "has_suggest_answer": true, "id": "59a9946d4a9c7f202d2df4e0", "suggest_answer": {"blocks": [{"depth": 0, "entityRanges": [], "inlineStyleRanges": [], "key": "9kch0", "text": " Nhấn trọng âm ở âm tiết thứ 3, còn lại nhấn âm thứ 2", "type": "unstyled"}]}}, {"_id": "59a9946d4a9c7f202d2df4e2", "correct_answer": 3, "has_suggest_answer": true, "id": "59a9946d4a9c7f202d2df4e2", "suggest_answer": {"blocks": [{"depth": 0, "entityRanges": [], "inlineStyleRanges": [], "key": "94t40", "text": " Nhấn trọng âm ở âm tiết thứ 2 , còn lại nhấn âm thứ 1 ", "type": "unstyled"}]}}, {"_id": "59a9946d4a9c7f202d2df4e4", "correct_answer": 2, "has_suggest_answer": true, "id": "59a9946d4a9c7f202d2df4e4", "suggest_answer": {"blocks": [{"depth": 0, "entityRanges": [], "inlineStyleRanges": [], "key": "8soc9", "text": " Nhấn trọng âm ở âm tiết thứ 1, còn lại nhấn âm thứ 2 ", "type": "unstyled"}]}}, {"_id": "59a9946d4a9c7f202d2df4e6", "correct_answer": 2, "has_suggest_answer": true, "id": "59a9946d4a9c7f202d2df4e6", "suggest_answer": {"blocks": [{"depth": 0, "entityRanges": [], "inlineStyleRanges": [], "key": "8s74i", "text": " Nhấn trọng âm ở âm tiết thứ 1, còn lại nhấn âm thứ 2 ", "type": "unstyled"}]}}, {"_id": "59a9946d4a9c7f202d2df4e8", "correct_answer": 1, "has_suggest_answer": true, "id": "59a9946d4a9c7f202d2df4e8", "suggest_answer": {"blocks": [{"depth": 0, "entityRanges": [], "inlineStyleRanges": [], "key": "769bp", "text": " Nhấn trọng âm ở âm tiết thứ 1, còn lại nhấn âm thứ 3 ", "type": "unstyled"}]}}, {"_id": "59a9946d4a9c7f202d2df4ea", "correct_answer": 3, "has_suggest_answer": true, "id": "59a9946d4a9c7f202d2df4ea", "suggest_answer": {"blocks": [{"depth": 0, "entityRanges": [], "inlineStyleRanges": [], "key": "3vu9s", "text": " Nhấn trọng âm ở âm tiết thứ 1, còn lại nhấn âm thứ 2", "type": "unstyled"}]}}, {"_id": "59a9946d4a9c7f202d2df4ec", "correct_answer": 2, "has_suggest_answer": true, "id": "59a9946d4a9c7f202d2df4ec", "suggest_answer": {"blocks": [{"depth": 0, "entityRanges": [], "inlineStyleRanges": [], "key": "ov1k", "text": " Nhấn trọng âm ở âm tiết thứ 2 , còn lại nhấn âm thứ 1", "type": "unstyled"}]}}, {"_id": "59a9946d4a9c7f202d2df4ee", "correct_answer": 0, "has_suggest_answer": true, "id": "59a9946d4a9c7f202d2df4ee", "suggest_answer": {"blocks": [{"depth": 0, "entityRanges": [], "inlineStyleRanges": [], "key": "67kof", "text": " Nhấn trọng âm ở âm tiết thứ 1 , còn lại nhấn âm thứ 2", "type": "unstyled"}]}}, {"_id": "59a9946d4a9c7f202d2df4f0", "correct_answer": 3, "has_suggest_answer": true, "id": "59a9946d4a9c7f202d2df4f0", "suggest_answer": {"blocks": [{"depth": 0, "entityRanges": [], "inlineStyleRanges": [], "key": "5br10", "text": " Nhấn trọng âm ở âm tiết thứ 2 , còn lại nhấn âm thứ 1   ", "type": "unstyled"}]}}]
+[
+  {
+    "_id": "59a9946d4a9c7f202d2df4de",
+    "correct_answer": 1,
+    "has_suggest_answer": true,
+    "id": "59a9946d4a9c7f202d2df4de",
+    "suggest_answer": {
+      "blocks": [
+        {
+          "depth": 0,
+          "entityRanges": [],
+          "inlineStyleRanges": [],
+          "key": "d55da",
+          "text": " Nhấn trọng âm ở âm tiết thứ nhất, còn lại nhấn âm 2",
+          "type": "unstyled"
+        }
+      ]
+    }
+  },
+  {
+    "_id": "59a9946d4a9c7f202d2df4e0",
+    "correct_answer": 2,
+    "has_suggest_answer": true,
+    "id": "59a9946d4a9c7f202d2df4e0",
+    "suggest_answer": {
+      "blocks": [
+        {
+          "depth": 0,
+          "entityRanges": [],
+          "inlineStyleRanges": [],
+          "key": "9kch0",
+          "text": " Nhấn trọng âm ở âm tiết thứ 3, còn lại nhấn âm thứ 2",
+          "type": "unstyled"
+        }
+      ]
+    }
+  },
+  {
+    "_id": "59a9946d4a9c7f202d2df4e2",
+    "correct_answer": 3,
+    "has_suggest_answer": true,
+    "id": "59a9946d4a9c7f202d2df4e2",
+    "suggest_answer": {
+      "blocks": [
+        {
+          "depth": 0,
+          "entityRanges": [],
+          "inlineStyleRanges": [],
+          "key": "94t40",
+          "text": " Nhấn trọng âm ở âm tiết thứ 2 , còn lại nhấn âm thứ 1 ",
+          "type": "unstyled"
+        }
+      ]
+    }
+  },
+  {
+    "_id": "59a9946d4a9c7f202d2df4e4",
+    "correct_answer": 2,
+    "has_suggest_answer": true,
+    "id": "59a9946d4a9c7f202d2df4e4",
+    "suggest_answer": {
+      "blocks": [
+        {
+          "depth": 0,
+          "entityRanges": [],
+          "inlineStyleRanges": [],
+          "key": "8soc9",
+          "text": " Nhấn trọng âm ở âm tiết thứ 1, còn lại nhấn âm thứ 2 ",
+          "type": "unstyled"
+        }
+      ]
+    }
+  },
+  {
+    "_id": "59a9946d4a9c7f202d2df4e6",
+    "correct_answer": 2,
+    "has_suggest_answer": true,
+    "id": "59a9946d4a9c7f202d2df4e6",
+    "suggest_answer": {
+      "blocks": [
+        {
+          "depth": 0,
+          "entityRanges": [],
+          "inlineStyleRanges": [],
+          "key": "8s74i",
+          "text": " Nhấn trọng âm ở âm tiết thứ 1, còn lại nhấn âm thứ 2 ",
+          "type": "unstyled"
+        }
+      ]
+    }
+  },
+  {
+    "_id": "59a9946d4a9c7f202d2df4e8",
+    "correct_answer": 1,
+    "has_suggest_answer": true,
+    "id": "59a9946d4a9c7f202d2df4e8",
+    "suggest_answer": {
+      "blocks": [
+        {
+          "depth": 0,
+          "entityRanges": [],
+          "inlineStyleRanges": [],
+          "key": "769bp",
+          "text": " Nhấn trọng âm ở âm tiết thứ 1, còn lại nhấn âm thứ 3 ",
+          "type": "unstyled"
+        }
+      ]
+    }
+  },
+  {
+    "_id": "59a9946d4a9c7f202d2df4ea",
+    "correct_answer": 3,
+    "has_suggest_answer": true,
+    "id": "59a9946d4a9c7f202d2df4ea",
+    "suggest_answer": {
+      "blocks": [
+        {
+          "depth": 0,
+          "entityRanges": [],
+          "inlineStyleRanges": [],
+          "key": "3vu9s",
+          "text": " Nhấn trọng âm ở âm tiết thứ 1, còn lại nhấn âm thứ 2",
+          "type": "unstyled"
+        }
+      ]
+    }
+  },
+  {
+    "_id": "59a9946d4a9c7f202d2df4ec",
+    "correct_answer": 2,
+    "has_suggest_answer": true,
+    "id": "59a9946d4a9c7f202d2df4ec",
+    "suggest_answer": {
+      "blocks": [
+        {
+          "depth": 0,
+          "entityRanges": [],
+          "inlineStyleRanges": [],
+          "key": "ov1k",
+          "text": " Nhấn trọng âm ở âm tiết thứ 2 , còn lại nhấn âm thứ 1",
+          "type": "unstyled"
+        }
+      ]
+    }
+  },
+  {
+    "_id": "59a9946d4a9c7f202d2df4ee",
+    "correct_answer": 0,
+    "has_suggest_answer": true,
+    "id": "59a9946d4a9c7f202d2df4ee",
+    "suggest_answer": {
+      "blocks": [
+        {
+          "depth": 0,
+          "entityRanges": [],
+          "inlineStyleRanges": [],
+          "key": "67kof",
+          "text": " Nhấn trọng âm ở âm tiết thứ 1 , còn lại nhấn âm thứ 2",
+          "type": "unstyled"
+        }
+      ]
+    }
+  },
+  {
+    "_id": "59a9946d4a9c7f202d2df4f0",
+    "correct_answer": 3,
+    "has_suggest_answer": true,
+    "id": "59a9946d4a9c7f202d2df4f0",
+    "suggest_answer": {
+      "blocks": [
+        {
+          "depth": 0,
+          "entityRanges": [],
+          "inlineStyleRanges": [],
+          "key": "5br10",
+          "text": " Nhấn trọng âm ở âm tiết thứ 2 , còn lại nhấn âm thứ 1   ",
+          "type": "unstyled"
+        }
+      ]
+    }
+  }
+]
