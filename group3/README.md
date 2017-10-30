@@ -12,79 +12,109 @@
 # Đặt vấn đề
 
 ## Web crawler gì?
-```
-    Web crawler là một chương trình hoạt động như là một tập lệnh tự động duyệt qua các trang web trên internet một cách có hệ thống. Web crawler xác định từ khóa chính trên một trang, loại nội dung của trang đó và các đường link có trong trang, trước khi trả kết quả về cho máy tìm kiếm. Tiến trình này được gọi là thu thập thông tin web.
-       
-    Trang cần lấy dữ liệu được đánh chỉ mục bởi một phần mềm (web crawler). Một web crawler gom các trang của một trang web và đánh chỉ mục nó theo cách tối ưu và tự động, nhằm phục vụ cho yêu cầu của máy tìm kiếm. Crawler cũng giúp ích trong việc thẩm định mã HTML và kiểm tra các đường link có hoạt động hay không.
+```lightning
+Web crawler [1] là một chương trình hoạt động như là một tập lệnh tự động duyệt qua các trang web trên internet một cách có 
+hệ thống. Web crawler xác định từ khóa chính trên một trang, loại nội dung của trang đó và các đường link có trong trang, 
+trước khi trả kết quả về cho máy tìm kiếm. Tiến trình này được gọi là thu thập thông tin web.
+Trang cần lấy dữ liệu được đánh chỉ mục bởi một phần mềm (web crawler). Một web crawler gom các trang của một trang web 
+và đánh chỉ mục nó theo cách tối ưu và tự động, nhằm phục vụ cho yêu cầu của máy tìm kiếm. Crawler cũng giúp ích trong 
+việc thẩm định mã HTML và kiểm tra các đường link có hoạt động hay không.
 ```
 
 ## Vì sao Web Crawler lại quan trọng?
+```lightning
+Dữ liệu có vai trò rất quan trọng, là trái tim của bất kỳ doanh nghiệp nào. Ngày nay, với tất cả các open standard như 
+RSS feeds hoặc APIs chia sẻ dữ liệu qua các hệ thống đã trở nên khá dễ dàng.
 
-    Dữ liệu có vai trò rất quan trọng, là trái tim của bất kỳ doanh nghiệp nào. Ngày nay, với tất cả các open standard như RSS feeds hoặc APIs chia sẻ dữ liệu qua các hệ thống đã trở nên khá dễ dàng.
-    
-    Nhưng đối với dữ liệu không được cấu trúc hoặc chúng ta không có RSS feeds để dùng, vậy làm cách nào để lấy chúng đây? Lấy một ví dụ đơn giản: bạn có một trang web bán hàng trực tuyến với 1000 sản phẩm. Bạn muốn giá cả của bạn phải cạnh tranh so với các trang web bán hàng khác. Để làm được điều đó, bạn cần phải giám sát trang web của đối thủ và giá cả của các sản phẩm mà bạn cũng đang bán. Nếu có rất nhiều sản phẩm và đối thủ khác nhau, việc lấy dữ liệu trở lên vô cùng khó khăn nếu không có một tiến trình tự động. Đây chính là lý do mà Web Crawler ra đời. Web crawler có thể tự động thu thập thông tin web, tập hợp dữ liệu và giúp ích cho việc đưa ra các quyết định kinh doanh.
-    
-    Công nghệ Web Crawling trở nên nổi tiếng bởi được ứng dụng vào công cụ tìm kiếm của Google. Họ đã phát hiện ra tầm quan trọng của việc thu thập và đánh chỉ mục lượng dữ liệu vô cùng lớn trên internet. Nhờ đó mà công cụ tìm kiếm của Google được biết đến là một trong những công cụ hoạt động tốt nhất hiện nay.
+Nhưng đối với dữ liệu không được cấu trúc hoặc chúng ta không có RSS feeds để dùng, vậy làm cách nào để lấy chúng đây? 
+Lấy một ví dụ đơn giản: bạn có một trang web bán hàng trực tuyến với 1000 sản phẩm. Bạn muốn giá cả của bạn phải cạnh 
+tranh so với các trang web bán hàng khác. Để làm được điều đó, bạn cần phải giám sát trang web của đối thủ và giá cả của 
+các sản phẩm mà bạn cũng đang bán. Nếu có rất nhiều sản phẩm và đối thủ khác nhau, việc lấy dữ liệu trở lên vô cùng khó 
+khăn nếu không có một tiến trình tự động. Đây chính là lý do mà Web Crawler ra đời. Web crawler có thể tự động thu thập 
+thông tin web, tập hợp dữ liệu và giúp ích cho việc đưa ra các quyết định kinh doanh.
 
+Công nghệ Web Crawling trở nên nổi tiếng bởi được ứng dụng vào công cụ tìm kiếm của Google. Họ đã phát hiện ra tầm quan 
+trọng của việc thu thập và đánh chỉ mục lượng dữ liệu vô cùng lớn trên internet. Nhờ đó mà công cụ tìm kiếm của Google 
+được biết đến là một trong những công cụ hoạt động tốt nhất hiện nay.
+```
 ## Các mã nguồn mở phổ biến:
 
 ### Scrapy
-Scrapy là một framework được viết bằng Python, nó cấp sẵn 1 cấu trúc tương đối hoàn chỉnh để thực hiện việc thu thập thông tin và trích xuất dữ liệu từ trang web một cách nhanh chóng và dễ dàng.
+```lightning
+Scrapy [2] là một framework được viết bằng Python, nó cấp sẵn 1 cấu trúc tương đối hoàn chỉnh để thực hiện việc thu thập 
+thông tin và trích xuất dữ liệu từ trang web một cách nhanh chóng và dễ dàng.
+```
 
-Scrapy cho phép thu thập thông tin trang web đồng thời mà không phải đối mặt với vấn đề về luồng, tiến trình, đồng bộ hóa, … Nó xử lý các yêu cầu không đồng bộ một cách nhanh chóng. Scrapy đã phát triển được nhiều năm dựa trên kinh nghiệm của những người thực hiện thu thập thông tin web trên quy mô lớn, vì vậy nó giải quyết được rất nhiều thách thức mà các nhà phát triển đang phải đối mặt hàng ngày như là:
+Scrapy cho phép thu thập thông tin trang web đồng thời mà không phải đối mặt với vấn đề về 
+luồng, tiến trình, đồng bộ hóa, … Nó xử lý các yêu cầu không đồng bộ một cách nhanh chóng. 
+Scrapy đã phát triển được nhiều năm dựa trên kinh nghiệm của những người thực hiện thu thập 
+thông tin web trên quy mô lớn, vì vậy nó giải quyết được rất nhiều thách thức mà các nhà 
+phát triển đang phải đối mặt hàng ngày như là:
 -	Cung cấp cơ chế auto-throttling tự động điều chỉnh tốc độ thu thập dữ liệu dựa trên cả máy chủ web và máy tính người dùng.
--	Tự động giữ lại các phiên làm việc. Nó xử lý cookies, đi qua nó một cách dễ dàng thông qua các request. Xác thực cũng không phải là trở ngại ngay cả khi mẫu đăng nhập có CSRF token.
--	Nó có thể tránh các bẫy đổi hướng <noscript>
+-	Tự động giữ lại các phiên làm việc. Nó xử lý cookies, đi qua nó một cách dễ dàng thông qua các request. Xác thực cũng 
+không phải là trở ngại ngay cả khi mẫu đăng nhập có CSRF token.
+-	Nó có thể tránh các bẫy đổi hướng 
 -	Lọc các yêu cầu trùng lặp và cho phép tùy chỉnh hành vi lọc
 
-Hơn nữa, kiến trúc của Scrapy được tách ra, đủ để cho phép người dùng tùy chỉnh gần như mọi thứ. Đây là một công cụ rất mạnh và linh hoạt.
+Hơn nữa, kiến trúc của Scrapy được tách ra, đủ để cho phép người dùng tùy chỉnh gần như mọi thứ. Đây là một công cụ rất 
+mạnh và linh hoạt.
 
 ### Selenium
-Do các framework thu thập dữ liệu dưới dạng HTML nên với các xử lý về JS bên trong, chúng ta thường phải làm trình tự các bước giống như trong hàm JS. Nếu ta gặp phải hàm JS khởi tạo đến hàng nghìn dòng lệnh thì dùng các framework thu thập dữ liệu thông thường là không thể. Selenium webdriver là một công cụ rất hay có thể xử lý được những rắc rối này.
+Do các framework thu thập dữ liệu dưới dạng HTML nên với các xử lý về JS bên trong, chúng ta thường phải làm trình tự 
+các bước giống như trong hàm JS. Nếu ta gặp phải hàm JS khởi tạo đến hàng nghìn dòng lệnh thì dùng các framework thu 
+thập dữ liệu thông thường là không thể. Selenium webdriver là một công cụ rất hay có thể xử lý được những rắc rối này.
 
-Selenium Webdriver là một công cụ tự động hóa các thao tác của một người dùng bình thường trên browser như: truy cập vào máy chủ, click link, điền thông tin, gửi form,.. Selenium giống như một người dùng, nó yêu cầu trang web tải toàn bộ HTML, JS, hình ảnh,.. Do đó, sử dụng selenium có thể khiến tốc độ xử lý chậm hơn và tốn bộ nhớ hơn.
+Selenium Webdriver [3] là một công cụ tự động hóa các thao tác của một người dùng bình thường trên browser như: truy cập vào 
+máy chủ, click link, điền thông tin, gửi form,.. Selenium giống như một người dùng, nó yêu cầu trang web tải toàn bộ 
+HTML, JS, hình ảnh,.. Do đó, sử dụng selenium có thể khiến tốc độ xử lý chậm hơn và tốn bộ nhớ hơn.
 
 ### Nutch
 
-Apache Nutch là một framework mã nguồn mở được viết bằng Java. Đây là một dự án phổ biến sử dụng Apache Lucene. Mục tiêu chính của framework này là cào các dữ liệu phi cấu trúc từ các tài nguyên khác nhau như RSS, HTML, CSV, PDF, và kết cấu nó cho quá trình tìm kiếm. Apache Nutch có thể quản lý thu thập dữ liệu hiệu quả. Apache Lucene đóng một vai trò rất quan trọng trong việc giúp Nutch lập chỉ mục và tìm kiếm. 
+Apache Nutch [4] là một framework mã nguồn mở được viết bằng Java. Đây là một dự án phổ biến sử dụng Apache Lucene. Mục tiêu 
+chính của framework này là cào các dữ liệu phi cấu trúc từ các tài nguyên khác nhau như RSS, HTML, CSV, PDF, và kết cấu 
+nó cho quá trình tìm kiếm. Apache Nutch có thể quản lý thu thập dữ liệu hiệu quả. Apache Lucene đóng một vai trò rất 
+quan trọng trong việc giúp Nutch lập chỉ mục và tìm kiếm. 
 
 Chức năng của Apache Nutch cũng tương tự như các crawlers khác. Các khác biệt chính của Apache Nutch bao gồm:
 
--	Khả năng mở rộng: giúp mở rộng chức năng tùy biến của người dùng với sự trợ giúp của một số giao diện như Parse, Index và ScoringFilter.
+-	Khả năng mở rộng: giúp mở rộng chức năng tùy biến của người dùng với sự trợ giúp của một số giao diện như Parse, 
+Index và ScoringFilter.
 -	Pluggale: Cấu hình Apache Nutch dựa trên kiểu plug và chạy, giúp thêm hoặc loại bỏ các chức năng bắt buộc từ cấu hình.
--	Tuân thủ các quy tắc robots.txt: Lấy nội dung từ các trang web có tác nhân-người dùng thích hợp cho robots.txt. Nutch sẽ không cào nội dung từ các trang web bị hạn chế.
+-	Tuân thủ các quy tắc robots.txt: Lấy nội dung từ các trang web có tác nhân-người dùng thích hợp cho robots.txt. Nutch 
+sẽ không cào nội dung từ các trang web bị hạn chế.
 
 ### Crawler4j
-Crawler4j cung cấp một giao diện đơn giản để thu thập thông tin Web.
+Crawler4j [5] cung cấp một giao diện đơn giản để thu thập thông tin Web.
 
 a) Ưu điểm:
 -	Giao diện đơn giản, dễ dùng
 -	Dễ dàng scale đến 20M trang
--	Rất nhanh (Ví dụ: Đã thu thập và xử lý toàn bộ Wikipedia tiếng Anh trong 10 giờ kể cả thời gian giải nén và lưu trữ cấu trúc liên kết và text của các bài viết)
+-	Rất nhanh (Ví dụ: Đã thu thập và xử lý toàn bộ Wikipedia tiếng Anh trong 10 giờ kể cả thời gian giải nén và lưu trữ 
+cấu trúc liên kết và text của các bài viết)
 
 b) Nhược điểm:
 -	Không tôn trọng những hạn chế của robots.txt
--	Không giới hạn số lượng yêu cầu gửi đến host (Ví dụ: Chính sách của Wikipedia không cho phép các chương trình gửi requests nhanh hơn 1 request/giây. Crawler4j có lịch sử gửi 200 requests/giây)
+-	Không giới hạn số lượng yêu cầu gửi đến host (Ví dụ: Chính sách của Wikipedia không cho phép các chương trình gửi 
+requests nhanh hơn 1 request/giây. Crawler4j có lịch sử gửi 200 requests/giây)
 -	Chỉ thu thập nội dung văn bản-text (không hình ảnh hay bất cứ nội dung khác)
 -	Chỉ với các trang có định dạng UTF-8
-
-
+[1]:
+[2]:
+[3]:
+[4]:
+[5]:
 ## Chi tiết về Scrapy
-
 ## Kiến trúc Scrapy
-
-TODO: update hình
-
-Scrapy Architecture (source: scrapy.org)
-
+Kiến trúc Scrapy [1]
+![Kiến trúc Scrapy](https://doc.scrapy.org/en/latest/_images/scrapy_architecture_02.png)
 
 ### Thành phần
 
-- Scheduler: bộ lập lịch thứ tự các URL download.
-- Downloader: thực hiện tải dữ liệu. Quản lý các lỗi khi download. Chống trùng.
-- Spiders: bóc tách dữ liệu thành các items và requests
-- Item Pipeline: xử lý dữ liệu bóc tách được và lưu vào cơ sở dữ liệu.
-- Scrapy Engine: quản lý các thành phần trên.
+- **Scheduler**: bộ lập lịch thứ tự các URL download.
+- **Downloader**: thực hiện tải dữ liệu. Quản lý các lỗi khi download. Chống trùng.
+- **Spiders**: bóc tách dữ liệu thành các items và requests
+- **Item Pipeline**: xử lý dữ liệu bóc tách được và lưu vào cơ sở dữ liệu.
+- **Scrapy Engine**: quản lý các thành phần trên.
 
 ### Luồng dữ liệu
     Bước 1: Cung cấp URL xuất phát (start_url), được tạo thành một Request lưu trong Scheduler.
@@ -97,55 +127,32 @@ Scrapy Architecture (source: scrapy.org)
     Bước 9: kiểm tra Scheduler còn Request?
     •	Đúng: quay lại Bước 2.
     •	Sai: kết thúc.
-
-## Kiến trúc Scrapy
-
-TODO: update hình
-
-Scrapy Architecture (source: scrapy.org)
-
-
-### Thành phần
-
-- Scheduler: bộ lập lịch thứ tự các URL download.
-- Downloader: thực hiện tải dữ liệu. Quản lý các lỗi khi download. Chống trùng.
-- Spiders: bóc tách dữ liệu thành các items và requests
-- Item Pipeline: xử lý dữ liệu bóc tách được và lưu vào cơ sở dữ liệu.
-- Scrapy Engine: quản lý các thành phần trên.
-
-### Luồng dữ liệu
-    Bước 1: Cung cấp URL xuất phát (start_url), được tạo thành một Request lưu trong Scheduler.
-    Bước 2 - 3: Scheduler lần lượt lấy các Requests gửi đến Downloader.
-    Bước 4 - 5: Downloader tải dữ liệu từ internet, được Responses gửi đến Spiders.
-    Bước 6 - 7: Spiders thực hiện:
-    •	Bóc tách dữ liệu, thu được Item, gửi đến Item Pipeline.
-    •	Tách được URLs, tạo các Requests gửi đến Scheduler.
-    Bước 8: Item Pipeline thực hiện xử lý dữ liệu bóc tách được. Đơn giản nhất là thực hiện lưu dữ liệu vào database.
-    Bước 9: kiểm tra Scheduler còn Request?
-    •	Đúng: quay lại Bước 2.
-    •	Sai: kết thúc.
-
+[1]:scrapy.org
 ## Cài đặt scrapy
 
 Scrapy chạy trên Python 2.7 và Python 3.3 trở lên 
 
 Cài đặt Scarpy:
 - Cách cài đặt qua pip:
-
-        pip install Scrapy
+```lightning
+pip install Scrapy
+```
 - Cách anaconda:
-
-        conda install -c conda-forge scrapy
+```lightning
+conda install -c conda-forge scrapy
+```
 
 ## Ví dụ về thiết lập Scrapy:
 
 ### Tạo một Scrapy project mới:
-    
-    scrapy startproject tutorial
-    
-#### Danh sách mã nguồn:
 
-    ├── __init__.py
+```lightning
+scrapy startproject tutorial
+```
+
+#### Danh sách mã nguồn:
+```lightning
+├── __init__.py
     ├── items.py : định nghĩa cấu trúc dữ liệu sẽ bóc tách.
     ├── pipelines.py : định nghĩa hàm thực hiện việc chèn dữ liệu vào database.
     ├── settings.py : cài đặt cấu hình.
@@ -153,187 +160,139 @@ Cài đặt Scarpy:
         ├── __init__.py
         └── vietnamnet_vn.py : định nghĩa hàm bóc tách dữ liệu
 
+```
 #### Viết một spider
 Spider là class chúng ta định nghĩa và được scrapy sử dụng để scrape thông tin từ một domain (hoặc một nhóm domain)
 
-Chúng ta định nghĩa một danh sách khởi tạo của URLs để download, cách follow links, và cách parse nội dung của pages để trích xuất items.
+Chúng ta định nghĩa một danh sách khởi tạo của URLs để download, cách follow links, và cách parse nội dung của pages để 
+trích xuất items.
  
 Để tạo một spider, chúng ta tạo một subclass scrapy.Spider và định nghĩa một số thuộc tính:
 - name: định danh spider và nó là duy nhất
-- start_urls: một danh sách urls cho spider bắt đầu thực hiện crawl. Các trang được download đầu tiên sẽ bắt đầu từ đây, còn lại sẽ được tạo từ dữ liệu đã được lấy về
-- parse(): một phương thức sẽ được gọi tới để giải quyết một phản hồi đã được download của mỗi start urls. Phản hồi sẽ được truyền tới phương thức như là tham số đầu tiên và duy nhất của phương thức. Phương thức này có trách nhiệm phân tích dữ liệu phản hồ, trích xuất dữ liệu đã được thu thập, tìm kiếm các url mới và tạo các yêu cầu mới trên các url đó.
+- start_urls: một danh sách urls cho spider bắt đầu thực hiện crawl. Các trang được download đầu tiên sẽ bắt đầu từ đây, 
+còn lại sẽ được tạo từ dữ liệu đã được lấy về.
+- parse(): một phương thức sẽ được gọi tới để giải quyết một phản hồi đã được download của mỗi start urls. Phản hồi sẽ 
+được truyền tới phương thức như là tham số đầu tiên và duy nhất của phương thức. Phương thức này có trách nhiệm phân 
+tích dữ liệu phản hồ, trích xuất dữ liệu đã được thu thập, tìm kiếm các url mới và tạo các yêu cầu mới trên các url đó.
 
 #### Chạy spider
 Tới thư mục gốc của project và chạy lệnh:
 
-    scrapy crawl spider_name  
+```lightning
+scrapy crawl spider_name  
+```
 
-Dòng lệnh sẽ gửi một số request tới miền spider_name.toscrape.com
+Dòng lệnh sẽ gửi một số yêu cầu (request)tới miền quotes.toscrape.com
 
 Quá trình thực hiện:
-- Scrapy tạo scrapy.Request và gán chúng cho mỗi URL trong danh sách start_urls của spider, phương thức parse được gọi bởi hàm callback.
-- Các Request được lập lịch rồi thực thi và trả về đối tượng scrapy.http.Response, sau đó được đưa trở lại spider thông qua phương thức parse().
+- Scrapy tạo scrapy.Request và gán chúng cho mỗi URL trong danh sách start_urls của spider, phương thức parse được gọi 
+bởi hàm callback.
+- Các Request được lập lịch rồi thực thi và trả về đối tượng scrapy.http.Response, sau đó được đưa trở lại spider thông 
+qua phương thức parse().
 
 #### Trích xuất dữ liệu
 
 Cách tốt nhất để trích xuất dữ liệu là thử các selector sử dụng Scrapy shell. Chạy lệnh:
-        
-        scrapy shell 'http://pider_name.toscrape.com/page/1/'
+
+```lightning
+scrapy shell 'http://quotes.toscrape.com/page/1/'
+```
 
 - Sử dụng cơ chế dựa trên Xpath hoặc biểu thức CSS gọi là Scrapy Selector.
 
 Selector bằng XPath mạnh mẽ hơn CSS
 
-- Scrapy cung cấp class Selector và một số quy ước, shortcut để làm việc với biểu thức xpath và css.
-- Đối tượng Selector đại diện các nodes ở trong một văn bản có cấu trúc. Vì thế đầu tiên khởi tạo một selector gắn với node gốc hoặc toàn bộ tài liệu.
+- Scrapy cung cấp class Selector và một số quy ước, cú pháp để làm việc với biểu thức xpath và css.
+- Đối tượng Selector đại diện các nodes ở trong một văn bản có cấu trúc. Vì thế đầu tiên khởi tạo một selector gắn với 
+node gốc hoặc toàn bộ tài liệu.
 - Selector có 4 phương thức cơ bản:
 
-        - xpath(): trả về danh sách các selectors, mỗi cái đại diện cho một node đã được chọn bằng tham số biểu thức xpath truyền vào.
-        - css(): trả về danh sách các selectors, mỗi cái đại diện cho một node đã được chọn bằng tham số biểu thức css truyền vào.
-        - extract(): trả về một list unicode string với dữ liệu được chọn -> có thể dùng extract_first() để lấy 1 phần tử đầu tiên 
-        - re(): trả về danh sách unicode string đã được trích xuất bằng applying tham số biểu thức chính quy truyền vào.
+```lightning
+    - xpath(): trả về danh sách các selectors, mỗi cái đại diện cho một node đã được chọn bằng tham số biểu thức xpath truyền vào.
+    - css(): trả về danh sách các selectors, mỗi cái đại diện cho một node đã được chọn bằng tham số biểu thức css truyền vào.
+    - extract(): trả về một list unicode string với dữ liệu được chọn -> có thể dùng extract_first() để lấy 1 phần tử đầu tiên 
+    - re(): trả về danh sách unicode string đã được trích xuất bằng applying tham số biểu thức chính quy truyền vào.
+```
 
-Đối tượng response có thuộc tính selector là thực thể của lớp Selector. Chúng ta có thể truy vấn bằng cách: response.selector.xpath() hoặc response.selector.css() hoặc sử dụng shortcut: response.xpath() hoặc response.css()
+Đối tượng kết quả (response)có thuộc tính selector là thực thể của lớp Selector. Chúng ta có thể truy vấn bằng cách: 
+```lightning
+response.selector.xpath() 
+```
+hoặc 
+```lightning
+response.selector.css() 
+```
+hoặc sử dụng shortcut (một trong hai): 
+```lightning
+response.xpath()
+response.css()
+```
 
-##### Sử dụng item:
+##### Sử dụng item (dữ liệu trả về của một trang):
 
 Có thể truy cập vào các trường bằng cách:
 
-    item = DmozItem() //DmozItem là tên class định nghĩa item
-    item['title'] = 'Example title'
+```lightning
+item = DmozItem() //DmozItem là tên class định nghĩa item
+item['title'] = 'Example title'
+```
 
 Sử dụng item trong phương thức parse() (đối tượng yield Item)
-yield là gì : http://phocode.com/python/python-iterator-va-generator/
+```lightning
+yield có chức năng giống như return nhưng chỉ khác ở chỗ: Khi hàm 
+được gọi lần thứ nhất, nó trả về các phần tử/giá trị tại từ khóa 
+yield đầu tiên, khi hàm được gọi lần thứ 2, thì hàm lại bắt đầu chạy 
+ngay phía sau từ khóa yield thứ nhất cho đến khi không gặp từ khóa 
+yield nào nữa.
+```
+nguồn : http://phocode.com/python/python-iterator-va-generator/
 
-Các link kéo theo:
-        url = response.urljoin(href.extract())
-        yield scrapy.Request(url, callback=self.parse_dir_contents)
-
+Các link kéo theo bởi link đầu tiên (follow links):
+```lightning
+url = response.urljoin(href.extract())
+yield scrapy.Request(url, callback=self.parse_dir_contents)
+```
 ##### Lưu trữ dữ liệu đã thu thập được.
 Cách đơn giản để lưu trữ dữ liệu thu thập được là sử dụng Feed exports, sử dụng câu lệnh:
-    
-    scrapy crawl spider_name -o quotes.json
+
+```lightning
+scrapy crawl spider_name -o quotes.json
+```
 
 
-## Cài đặt scrapy
+## Các vấn đề cần giải quyết với scrapy (Todo - Tuấn)
 
-Scrapy chạy trên Python 2.7 và Python 3.3 trở lên 
+### Lấy dữ liệu
+- Thư viện các mẫu lấy dữ liệu, các ví dụ lấy dữ liệu
+- Duyệt trang để lấy dữ liệu
+- Lưu dữ liệu vào cơ sở dữ liệu
 
-Cài đặt Scarpy:
-- Cách cài đặt qua pip:
+### Tăng tốc độ, hiệu năng
+- Sử dụng proxy với scrapy
+- Scrapy không hỗ trợ đa luồng nhưng hỗ trợ cơ chế bất đồng bộ
+- Duyệt lại trang để cập nhật dữ liệu
+- Sử dụng scrapy với docker
 
-        pip install Scrapy
-- Cách anaconda:
-        conda install -c conda-forge scrapy
+### Scrapy cho phát triển
+- Hạn chế tổng số lời yêu cầu (request)
+- Gỡ rối Scrapy
+### Lấy dữ liệu nhiều cấp
+### Bài toán chống trùng
+### Nhiều spider
 
-## Ví dụ về thiết lập Scrapy:
-
-### Tạo một Scrapy project mới:
-    
-    scrapy startproject tutorial
-    
-#### Danh sách mã nguồn:
-
-    ├── __init__.py
-    ├── items.py : định nghĩa cấu trúc dữ liệu sẽ bóc tách.
-    ├── pipelines.py : định nghĩa hàm thực hiện việc chèn dữ liệu vào database.
-    ├── settings.py : cài đặt cấu hình.
-    └── spiders
-        ├── __init__.py
-        └── vietnamnet_vn.py : định nghĩa hàm bóc tách dữ liệu
-
-#### Viết một spider
-Spider là class chúng ta định nghĩa và được scrapy sử dụng để scrape thông tin từ một domain (hoặc một nhóm domain)
-
-Chúng ta định nghĩa một danh sách khởi tạo của URLs để download, cách follow links, và cách parse nội dung của pages để trích xuất items.
- 
-Để tạo một spider, chúng ta tạo một subclass scrapy.Spider và định nghĩa một số thuộc tính:
-- name: định danh spider và nó là duy nhất
-- start_urls: một danh sách urls cho spider bắt đầu thực hiện crawl. Các trang được download đầu tiên sẽ bắt đầu từ đây, còn lại sẽ được tạo từ dữ liệu đã được lấy về
-- parse(): một phương thức sẽ được gọi tới để giải quyết một phản hồi đã được download của mỗi start urls. Phản hồi sẽ được truyền tới phương thức như là tham số đầu tiên và duy nhất của phương thức. Phương thức này có trách nhiệm phân tích dữ liệu phản hồ, trích xuất dữ liệu đã được thu thập, tìm kiếm các url mới và tạo các yêu cầu mới trên các url đó.
-
-#### Chạy spider
-Tới thư mục gốc của project và chạy lệnh:
-
-    scrapy crawl spider_name  
-
-Dòng lệnh sẽ gửi một số request tới miền spider_name.toscrape.com
-
-Quá trình thực hiện:
-- Scrapy tạo scrapy.Request và gán chúng cho mỗi URL trong danh sách start_urls của spider, phương thức parse được gọi bởi hàm callback.
-- Các Request được lập lịch rồi thực thi và trả về đối tượng scrapy.http.Response, sau đó được đưa trở lại spider thông qua phương thức parse().
-
-#### Trích xuất dữ liệu
-
-Cách tốt nhất để trích xuất dữ liệu là thử các selector sử dụng Scrapy shell. Chạy lệnh:
-        
-        scrapy shell 'http://pider_name.toscrape.com/page/1/'
-
-- Sử dụng cơ chế dựa trên Xpath hoặc biểu thức CSS gọi là Scrapy Selector.
-
-Selector bằng XPath mạnh mẽ hơn CSS
-
-- Scrapy cung cấp class Selector và một số quy ước, shortcut để làm việc với biểu thức xpath và css.
-- Đối tượng Selector đại diện các nodes ở trong một văn bản có cấu trúc. Vì thế đầu tiên khởi tạo một selector gắn với node gốc hoặc toàn bộ tài liệu.
-- Selector có 4 phương thức cơ bản:
-
-        - xpath(): trả về danh sách các selectors, mỗi cái đại diện cho một node đã được chọn bằng tham số biểu thức xpath truyền vào.
-        - css(): trả về danh sách các selectors, mỗi cái đại diện cho một node đã được chọn bằng tham số biểu thức css truyền vào.
-        - extract(): trả về một list unicode string với dữ liệu được chọn -> có thể dùng extract_first() để lấy 1 phần tử đầu tiên 
-        - re(): trả về danh sách unicode string đã được trích xuất bằng applying tham số biểu thức chính quy truyền vào.
-
-Đối tượng response có thuộc tính selector là thực thể của lớp Selector. Chúng ta có thể truy vấn bằng cách: response.selector.xpath() hoặc response.selector.css() hoặc sử dụng shortcut: response.xpath() hoặc response.css()
-
-##### Sử dụng item:
-
-Có thể truy cập vào các trường bằng cách:
-
-    item = DmozItem() //DmozItem là tên class định nghĩa item
-    item['title'] = 'Example title'
-
-Sử dụng item trong phương thức parse() (đối tượng yield Item)
-yield là gì : http://phocode.com/python/python-iterator-va-generator/
-
-Các link kéo theo:
-        url = response.urljoin(href.extract())
-        yield scrapy.Request(url, callback=self.parse_dir_contents)
-
-##### Lưu trữ dữ liệu đã thu thập được.
-Cách đơn giản để lưu trữ dữ liệu thu thập được là sử dụng Feed exports, sử dụng câu lệnh:
-    
-    scrapy crawl spider_name -o quotes.json
-
-
-## Các vấn đề cần giải quyết scrapy
-
-### Scrapy (todo update tiêu đề)
-
-- re-extractor (ví dụ như dùng caching)
-- download continue
-- re-visit for update. 
-- Xử lí vấn đề caching. Thử nghiệm.
-
-### Monitoring scrapy, status, log:
- 
-Tìm cách lấy các thông tin về tình trạng crawler, như Scrapy stats nhưng ở dạng realtime. Mục đích là để biết tình trạng crawler như thế nào.
-
-### Using scrapy with Docker: Đóng gói scrapy vào docker. Chạy trong docker
-
-### Lưu dữ liệu vào cơ sở dữ liệu
 
 ## Lưu dữ liệu vào cơ sở dữ liệu
 
 ### MongoDB: là kiểu noSQL
 
-Tải docker image của mongodb về và chạy.
-mongodb
-
-https://hub.docker.com/_/mongo/
+Tải docker image của mongodb [1] về và chạy.
+```lightning
+mongod
+```
 
 Tạo file docker-compose.yml có nội dung:
 
-```
-version: "2"
+    version: "2"
     
     services:
         mongodb:
@@ -342,15 +301,14 @@ version: "2"
                 - "27017:27017"
             volumes:
                 - ./mongodb-data/:/data/db
-            # hostname: mongodb
-            # domainname: coclab.lan
+            hostname: mongodb
+            domainname: coclab.lan
             cpu_shares: 512             # 0.5 CPU
             mem_limit: 536870912        # 512 MB RAM
-            # privileged: true
-            # restart: always
-            # stdin_open: true
-            # tty: true
-```
+            privileged: true
+            restart: always
+            stdin_open: true
+            tty: true
 
 Tham chiếu thuật ngữ tương đương giữa MongoDB và MySQL
 
@@ -358,21 +316,61 @@ Tham chiếu thuật ngữ tương đương giữa MongoDB và MySQL
 	Collection == Table
 	Document == Row
 
-Query Mongo : https://docs.mongodb.org/getting-started/python/query/
+Các vấn đề gặp phải khi sử dụng mongodb
 
-https://blog.scrapinghub.com/2013/05/13/mongo-bad-for-scraped-data/
+1.	Locking
+2.	Poor space efficiency
+3.	Too Many Databases
+4.	Ordered data
+5.	Skip + Limit Queries are slow
+6.	Restrictions
+7.	Impossible to keep the working set in memory
+8.	Data that should be good, ends up bad!
 
-đề cập các vấn đề gặp phải khi sử dụng mongodb
+### Lưu dữ liệu vào cơ sở dữ liệu Mongo
+#### Khung thư mục pipeline
+```python
+import pymongo
+class MongoPipeline(object):
+    collection_name = 'scrapy_items'
 
-    1.	Locking
-    2.	Poor space efficiency
-    3.	Too Many Databases
-    4.	Ordered data
-    5.	Skip + Limit Queries are slow
-    6.	Restrictions
-    7.	Impossible to keep the working set in memory
-    8.	Data that should be good, ends up bad!
+def __init__(self, mongo_uri, mongo_db):
+    self.mongo_uri = mongo_uri
+    self.mongo_db = mongo_db
 
+@classmethod
+def from_crawler(cls, crawler):
+    return cls(
+        mongo_uri=crawler.settings.get('MONGO_URI'),
+        mongo_db=crawler.settings.get('MONGO_DATABASE', 'items')
+    )
+
+def open_spider(self, spider):
+    self.client = pymongo.MongoClient(self.mongo_uri)
+    self.db = self.client[self.mongo_db]
+
+def close_spider(self, spider):
+    self.client.close()
+def process_item(self, item, spider):
+        self.db[self.collection_name].insert(dict(item))
+        return item
+```
+#### Xuất/ Nhập dữ liệu vào Mongodb
+##### Xuất dữ liệu từ máy chủ
+
+```lightning
+mongodump --archive=crawler.`date +%Y-%m-%d"_"%H-%M-%S`.gz --gzip --db crawler
+```
+##### Nhập dữ liệu vào Mongodb
+Sao chép thư mục gzip từ chỗ hiện tại đến thư mục chứa nó
+```lightning
+D:\uet\van_de_hien_dai\int3507-2017\group3\report\3.4 Lưu dữ liệu.md
+```
+Khôi phục
+```lightning
+mongorestore --gzip --archive=/root/crawler.2016-04-18_07-40-11.gz --db crawler
+```
+[1] : https://hub.docker.com/_/mongo/
 # Pipeline
 
 Một item sau khi đã được cào bởi spider sẽ được chuyển đến Item Pipeline để xử lí thông qua một số thành phần được thực hiện tuần tự.
@@ -553,7 +551,19 @@ Giống với XMLFeedSpider, CSVFeedSpider lặp qua các hàng thay vì các n�
 SitemapSpider cho phép thu thập thông tin trang web bằng cách tìm kiếm các URL sử dụng [Sitemaps](https://www.sitemaps.org/index.html).
 Spider này hỗ trợ sơ đồ trang web lồng nhau và tìm kiếm sơ đồ trang web URL từ [robots.txt](http://www.robotstxt.org/).
 
-# Cài đặt Scrapy
+## Cấu hình nâng cao Scrapy
+### Cấu hình trong thư mục Setting
+#### ITEM_PIPELINES
+Mặc định: {}
+ITEM_PIPELINES là một từ điển (dict) ban đầu mặc định là rỗng. Điều cần làm là xác định một trật tự trong đó pipeline
+được áp dụng. Số pipeline có thể định nghĩa trong khoảng 0-1000. Đây là lý do tại sao cần chỉ định một số từ 0 đến 1000 
+cho mỗi pipeline được định nghĩa.
+```lightning
+ITEM_PIPELINES = {
+    'mybot.pipelines.validate.ValidateMyItem': 300,
+    'mybot.pipelines.validate.StoreMyItem': 800,
+}
+```
 
 ## Tùy chọn dòng lệnh
 
