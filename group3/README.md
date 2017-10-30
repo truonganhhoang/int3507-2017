@@ -475,7 +475,7 @@ Mỗi thành phần item pipeline là một lớp Python thực hiện các phư
         return item
   ```
 
-# Spider
+## Spider
 
 Spider là lớp định nghĩa cách cào một hay nhiều trang, bao gồm cách thực hiện thu thập thông tin và trích xuất dữ liệu có cấu trúc. Nói cách khác, Spider là nơi xác định hành vi tùy chỉnh để thu thập dữ liệu và phân tích cú pháp các trang cho một trang web cụ thể.
 
@@ -487,13 +487,13 @@ Chu kỳ cào dữ liệu đối với Spider như sau:
 
 Mặc dù chu kỳ này được áp dụng cho bất kỳ loại spider nào nhưng có nhiều loại spider mặc định khác nhau trong Scrapy cho các mục đích khác nhau:
 
-## crapy.Spider
+### crapy.Spider
 
 `class scrapy.spider.Spider`
 
 Đây là spider đơn giản nhất và tất cả các spider khác đều phải kế thừa. Nó không cung cấp bất kì một chức năng đặc biệt nào, chỉ cung cấp `start_menu()` gửi các request từ thuộc tính `start_urls` spider và gọi các phương thức `parse` của spider cho mỗi kết quả phản hồi.
 
-## Spider arguments
+### Spider arguments
 
 Spider có thể nhận được các đối số (argument) sửa đổi hành vi của chúng. Một số cách sử dụng phổ biến cho đối số spider là xác định URL bắt đầu hoặc để hạn chế thu thập thông tin đến các phần nhất định của trang web nhưng chúng có thể được dùng để cấu hình bất kì chức năng nào của spider.
 
@@ -522,29 +522,29 @@ Phương thức mặc định *\__init__* sẽ lấy bất kỳ đối số spid
         yield scrapy.Request('http://www.example.com/categories/%s' % self.category)
 ```
 
-## Các spider phổ biến
+### Các spider phổ biến
 
 Scrapy đi kèm với một số spdier phổ biến hữu ích, có thể dùng để phân lớp spider. Mục tiêu của chúng là cung cấp chức năng tiện lợi cho một số trường hợp cào thông thường như theo tất cả các liên kết trên một trang web dựa trên các quy tắc nhất định, thu thập thông tin từ [Sitemaps](https://www.sitemaps.org/index.html) hoặc phân tích nguồn cấp dữ liệu XML/CSV.
 
-### CrawlSpider
+#### CrawlSpider
 
 `class scrapy.spiders.CrawlSpider`
 
 Đây là spider phổ biến nhất được dùng để thu thập dữ liệu các trang web thông thường. Vì nó cung cấp cơ chế thuận tiện cho việc liên kết sau bằng cách định nghĩa một bộ quy tắc. Nó có thể không phù hợp nhất cho các trang web hoặc dự án cụ thể của người dùng, vì thế người dùng có thể bắt đầu từ CrawlSpider và ghi đè theo theo nhu cầu cho nhiều chức năng tùy chỉnh hoặc chỉ thực hiện spider riêng của mình.
 
-### XMLFeedSpider
+#### XMLFeedSpider
 
 `class scrapy.spiders.XMLFeedSpider`
 
 XMLFeedSpider được thiết kế để phân tích các nguồn cung cấp dữ liệu XML bằng cách lặp lại chúng thông qua tên nút nhất định. Trình lặp có thể được chọn từ *iternodes*, *xml* và *html*.
 
-### CSVFeedSpider
+#### CSVFeedSpider
 
 `class scrapy.spiders.CSVFeedSpider`
 
 Giống với XMLFeedSpider, CSVFeedSpider lặp qua các hàng thay vì các nút như XMLFeedSpider. Phương thức được gọi trong mỗi lần lặp là `parse_row()`.
 
-### SitemapSpider
+#### SitemapSpider
 
 `class scrapy.spiders.SitemapSpider`
 
