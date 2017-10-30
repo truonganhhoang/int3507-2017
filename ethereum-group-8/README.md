@@ -22,12 +22,13 @@ Chuỗi khối (block chain) là một cơ sở dữ liệu phân cấp lưu tr�
 
 Theo cuốn *"Introducing Ethereum and Solidity"*: *[3]*
 
-
 >Một chuỗi khối là một mạng lưới phần mềm (software network) có tính chất ngang hàng (peer-to-peer) và hoàn toàn phân tán, nó sử dụng mật mã (cryptography) để lưu trữ an toàn các ứng dụng, dữ liệu, và dễ dàng chuyển các chứng thực số (digital instrument) mang giá trị đại diện cho tiền thực.
 
-<center> ![howtowork](https://uphinhnhanh.com/images/2017/10/30/howtowork.png)
-
-*Hình 1: Cách hoạt động của chuỗi khối [4]* </center>
+<p align="center">
+<img src="https://github.com/nesso99/int3507-2017/blob/master/ethereum-group-8/img/howtowork.PNG?raw=true"/>
+<br/>
+<i>Hình 1: Cách hoạt động của chuỗi khối [4]</i>
+</p>
 
 ### Ba thành phần (công nghệ) của chuỗi khối:
 * Mạng ngang hàng: Một nhóm các máy tính có khả năng giao tiếp với nhau mà không phải phụ thuộc vào một người cầm quyền ở trung tâm và vì vậy không xảy ra hiện tượng điểm lỗi chí tử (single point of failure).
@@ -81,10 +82,11 @@ Gas là một đơn vị công việc, nó không phải là một đơn vị ti
 
 Việc này khác so với ở Bitcoin, nơi mà chi phí được tính bằng kích thước của giao dịch tính bằng kilobytes, việc tính phí dựa trên khối lượng tính toán hợp lý hơn nhiều.
 
-<center>
-![value](https://uphinhnhanh.com/images/2017/10/30/value.png)
-
-*Hình 2: Giá trị của một số toán tử (trên EVM) phổ biến* </center>
+<p align="center">
+<img src="https://github.com/nesso99/int3507-2017/blob/master/ethereum-group-8/img/value.png?raw=true"/>
+<br/>
+<i>Hình 2: Giá trị của một số toán tử (trên EVM) phổ biến</i>
+</p>
 
 ### Ethereum Virtual Machine (EVM)
 
