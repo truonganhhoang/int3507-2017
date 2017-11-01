@@ -1,1 +1,108 @@
-[{"_id": "596eec4094f4c20939de4ed8", "correct_answer": 3, "has_suggest_answer": true, "id": "596eec4094f4c20939de4ed8", "suggest_answer": {"blocks": [{"depth": 0, "entityRanges": [], "inlineStyleRanges": [], "key": "8c9nm", "text": "Chỉ có đáp án D.howling: tiếng hú là hợp lý nhất, còn các đáp án không phù hợp", "type": "unstyled"}, {"depth": 0, "entityRanges": [], "inlineStyleRanges": [], "key": "66vhe", "text": "A. growling : gầm gừ, B: roaring: ầm ầm, gầm thét, C: barking: sủa ", "type": "unstyled"}, {"depth": 0, "entityRanges": [], "inlineStyleRanges": [], "key": "9d2up", "text": "Họ nghe thấy tiếng hú của những con chó sói kêu thảm trong khu rừng gần đó ", "type": "unstyled"}]}}, {"_id": "596eec4094f4c20939de4eda", "correct_answer": 1, "has_suggest_answer": true, "id": "596eec4094f4c20939de4eda", "suggest_answer": {"blocks": [{"depth": 0, "entityRanges": [], "inlineStyleRanges": [], "key": "8jtk3", "text": "     Giải thích: Cấu trúc   S + to be (not) + Adj + enough + to do st : Đủ (không đủ)…để làm gì.      ", "type": "unstyled"}]}}, {"_id": "596eec4094f4c20939de4edc", "correct_answer": 0, "has_suggest_answer": true, "id": "596eec4094f4c20939de4edc", "suggest_answer": {"blocks": [{"depth": 0, "entityRanges": [], "inlineStyleRanges": [], "key": "3vr4", "text": "     Giải thích: Cụm động   từ go away nghĩa là “đi xa, đi vắng” nên đáp án A là hợp lí nhất.         ", "type": "unstyled"}]}}, {"_id": "596eec4094f4c20939de4ede", "correct_answer": 2, "has_suggest_answer": true, "id": "596eec4094f4c20939de4ede", "suggest_answer": {"blocks": [{"depth": 0, "entityRanges": [], "inlineStyleRanges": [], "key": "747l2", "text": "     Giải thích: Từ cần   điền phải là một danh từ chỉ nghề nghiệp, do vậy “biologist” (nhà sinh v ật   học) là đáp án đúng.    ", "type": "unstyled"}]}}, {"_id": "596eec4094f4c20939de4ee0", "correct_answer": 3, "has_suggest_answer": true, "id": "596eec4094f4c20939de4ee0", "suggest_answer": {"blocks": [{"depth": 0, "entityRanges": [], "inlineStyleRanges": [], "key": "3srrt", "text": "     Giải thích: Câu trên   là m ệnh đề chỉ nguyên nhân – k ết quả, nên ta chọn Because hoặc Because of,   nhưng sau Because + mệnh đề trong khi đó Because of + danh t ừ/cụm danh từ.   Chọn D là đúng.        ", "type": "unstyled"}]}}]
+[
+  {
+    "_id": "596eec4094f4c20939de4ed8",
+    "correct_answer": 3,
+    "has_suggest_answer": true,
+    "id": "596eec4094f4c20939de4ed8",
+    "suggest_answer": {
+      "blocks": [
+        {
+          "depth": 0,
+          "entityRanges": [],
+          "inlineStyleRanges": [],
+          "key": "8c9nm",
+          "text": "Chỉ có đáp án D.howling: tiếng hú là hợp lý nhất, còn các đáp án không phù hợp",
+          "type": "unstyled"
+        },
+        {
+          "depth": 0,
+          "entityRanges": [],
+          "inlineStyleRanges": [],
+          "key": "66vhe",
+          "text": "A. growling : gầm gừ, B: roaring: ầm ầm, gầm thét, C: barking: sủa ",
+          "type": "unstyled"
+        },
+        {
+          "depth": 0,
+          "entityRanges": [],
+          "inlineStyleRanges": [],
+          "key": "9d2up",
+          "text": "Họ nghe thấy tiếng hú của những con chó sói kêu thảm trong khu rừng gần đó ",
+          "type": "unstyled"
+        }
+      ]
+    }
+  },
+  {
+    "_id": "596eec4094f4c20939de4eda",
+    "correct_answer": 1,
+    "has_suggest_answer": true,
+    "id": "596eec4094f4c20939de4eda",
+    "suggest_answer": {
+      "blocks": [
+        {
+          "depth": 0,
+          "entityRanges": [],
+          "inlineStyleRanges": [],
+          "key": "8jtk3",
+          "text": "     Giải thích: Cấu trúc   S + to be (not) + Adj + enough + to do st : Đủ (không đủ)…để làm gì.      ",
+          "type": "unstyled"
+        }
+      ]
+    }
+  },
+  {
+    "_id": "596eec4094f4c20939de4edc",
+    "correct_answer": 0,
+    "has_suggest_answer": true,
+    "id": "596eec4094f4c20939de4edc",
+    "suggest_answer": {
+      "blocks": [
+        {
+          "depth": 0,
+          "entityRanges": [],
+          "inlineStyleRanges": [],
+          "key": "3vr4",
+          "text": "     Giải thích: Cụm động   từ go away nghĩa là “đi xa, đi vắng” nên đáp án A là hợp lí nhất.         ",
+          "type": "unstyled"
+        }
+      ]
+    }
+  },
+  {
+    "_id": "596eec4094f4c20939de4ede",
+    "correct_answer": 2,
+    "has_suggest_answer": true,
+    "id": "596eec4094f4c20939de4ede",
+    "suggest_answer": {
+      "blocks": [
+        {
+          "depth": 0,
+          "entityRanges": [],
+          "inlineStyleRanges": [],
+          "key": "747l2",
+          "text": "     Giải thích: Từ cần   điền phải là một danh từ chỉ nghề nghiệp, do vậy “biologist” (nhà sinh v ật   học) là đáp án đúng.    ",
+          "type": "unstyled"
+        }
+      ]
+    }
+  },
+  {
+    "_id": "596eec4094f4c20939de4ee0",
+    "correct_answer": 3,
+    "has_suggest_answer": true,
+    "id": "596eec4094f4c20939de4ee0",
+    "suggest_answer": {
+      "blocks": [
+        {
+          "depth": 0,
+          "entityRanges": [],
+          "inlineStyleRanges": [],
+          "key": "3srrt",
+          "text": "     Giải thích: Câu trên   là m ệnh đề chỉ nguyên nhân – k ết quả, nên ta chọn Because hoặc Because of,   nhưng sau Because + mệnh đề trong khi đó Because of + danh t ừ/cụm danh từ.   Chọn D là đúng.        ",
+          "type": "unstyled"
+        }
+      ]
+    }
+  }
+]

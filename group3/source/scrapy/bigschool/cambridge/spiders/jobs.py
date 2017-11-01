@@ -45,6 +45,7 @@ class JobsSpider(scrapy.Spider):
 
             record = {'question': question, 'subject': subject, 'grade': grade, 'url': url}
             print(record)
+
             # new_word = {'word': word,
             #             'pos': pos,
             #             'pron': pron,
