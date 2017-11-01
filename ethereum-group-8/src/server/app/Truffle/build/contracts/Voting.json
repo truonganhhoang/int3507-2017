@@ -1,0 +1,196 @@
+{
+  "contract_name": "Voting",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getCandidates",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32[]"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "candidate",
+          "type": "bytes32"
+        }
+      ],
+      "name": "totalVotesFor",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "candidate",
+          "type": "bytes32"
+        }
+      ],
+      "name": "validCandidate",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "votesReceived",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "candidateList",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "candidate",
+          "type": "bytes32"
+        }
+      ],
+      "name": "voteForCandidate",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "accountList",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "candidateNames",
+          "type": "bytes32[]"
+        }
+      ],
+      "payable": false,
+      "type": "constructor"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b6040516104b83803806104b88339810160405280805190910190505b600281805161003e929160200190610046565b505b506100b5565b828054828255906000526020600020908101928215610083579160200282015b828111156100835782518255602090920191600190910190610066565b5b50610090929150610094565b5090565b6100b291905b80821115610090576000815560010161009a565b5090565b90565b6103f4806100c46000396000f300606060405236156100805763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166306a49fce81146100855780632f265cf7146100ec578063392e6678146101185780637021939f14610142578063b13c744b1461016e578063cc9ab26714610196578063d3a07fcd146101ae575b600080fd5b341561009057600080fd5b6100986101ee565b60405160208082528190810183818151815260200191508051906020019060200280838360005b838110156100d85780820151818401525b6020016100bf565b505050509050019250505060405180910390f35b34156100f757600080fd5b61010260043561024e565b60405160ff909116815260200160405180910390f35b341561012357600080fd5b61012e60043561027d565b604051901515815260200160405180910390f35b341561014d57600080fd5b6101026004356102cf565b60405160ff909116815260200160405180910390f35b341561017957600080fd5b6101846004356102e4565b60405190815260200160405180910390f35b34156101a157600080fd5b6101ac600435610307565b005b34156101b957600080fd5b61012e73ffffffffffffffffffffffffffffffffffffffff600435166103a1565b604051901515815260200160405180910390f35b6101f66103b6565b600280548060200260200160405190810160405280929190818152602001828054801561024357602002820191906000526020600020905b8154815260019091019060200180831161022e575b505050505090505b90565b60006102598261027d565b151561026457600080fd5b5060008181526020819052604090205460ff165b919050565b6000805b6002548110156102c457600280548491908390811061029c57fe5b906000526020600020900160005b505414156102bb57600191506102c9565b5b600101610281565b600091505b50919050565b60006020819052908152604090205460ff1681565b60028054829081106102f257fe5b906000526020600020900160005b5054905081565b73ffffffffffffffffffffffffffffffffffffffff331660009081526001602052604090205460ff161561033a57600080fd5b6103438161027d565b151561034e57600080fd5b600081815260208181526040808320805460ff19808216600160ff9384168101909316179092553373ffffffffffffffffffffffffffffffffffffffff16855292839052922080549092161790555b5b50565b60016020526000908152604090205460ff1681565b602060405190810160405260008152905600a165627a7a72305820e77786e92987bef7e0912307605933dca94d3c05607759275d11cd1b28b8814c0029",
+  "networks": {
+    "4": {
+      "events": {},
+      "links": {},
+      "address": "0x34de031d1c6040daf017c31fef80e4b12deb1ec4",
+      "updated_at": 1505223001592
+    },
+    "1505030560505": {
+      "events": {},
+      "links": {},
+      "address": "0x6cc85c6988a6df206bfb1bebd47c288ca318fddb",
+      "updated_at": 1505030664674
+    },
+    "1506837733649": {
+      "events": {},
+      "links": {},
+      "address": "0x9337bca63cc12ff8fd90b1e4fa42fcd61501a1ca",
+      "updated_at": 1506842633575
+    },
+    "1506924251206": {
+      "events": {},
+      "links": {},
+      "address": "0x3fae51283a97f33808d97ea6bdcdbbbad9e4fe3a",
+      "updated_at": 1506924645149
+    },
+    "1507459386090": {
+      "events": {},
+      "links": {},
+      "address": "0x0df8665857d25ea73331ee6df02e42fbcbe3215b",
+      "updated_at": 1507479695054
+    },
+    "1508001601576": {
+      "events": {},
+      "links": {},
+      "address": "0x368de0887154d8f7f1fc7e5f497987f6cb655f96",
+      "updated_at": 1508002314563
+    },
+    "1508030641821": {
+      "events": {},
+      "links": {},
+      "address": "0xc4c3374eaa3fdb1a1de7e739dd0476b8248ba8b2",
+      "updated_at": 1508030651030
+    },
+    "1508053566735": {
+      "events": {},
+      "links": {},
+      "address": "0x60b27c30c97efb0129793b62e761bd18bc921f19",
+      "updated_at": 1508053582306
+    },
+    "1508638426793": {
+      "events": {},
+      "links": {},
+      "address": "0xcf92b9dd1e3c71e87b8647fc41637bdc97bf4f9b",
+      "updated_at": 1508638481408
+    },
+    "1508681256438": {
+      "events": {},
+      "links": {},
+      "address": "0x61a676fbb3e1f49f415a898e365096e4749bdb54",
+      "updated_at": 1508689010502
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1508689010502
+}

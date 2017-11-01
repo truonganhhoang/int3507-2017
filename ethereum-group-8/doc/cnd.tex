@@ -1,0 +1,223 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage{titleps}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{underscore}
+\usepackage[bookmarks=true]{hyperref}
+\usepackage{amsmath}
+\usepackage{pgfmath,pgffor}
+\usepackage{indentfirst}
+\usepackage{pdflscape}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage[export]{adjustbox}
+\usepackage[utf8]{inputenc}
+\usepackage{longtable}
+\usepackage{subcaption}
+\usepackage{kbordermatrix}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{subfiles}
+
+\usepackage[T1,T5]{fontenc}
+\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
+\hypersetup{
+    bookmarks=true,
+    pdftitle={Báo cáo số 1},
+    pdfauthor={Nguyễn Mạnh Cường, Phạm Minh Đức, Vũ Nam Tước, Bùi Thị Chung Thủy},                     % author
+    pdfsubject={TeX and LaTeX},
+    pdfkeywords={TeX, LaTeX, graphics, images}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,       % color of internal links
+    citecolor=black,       % color of links to bibliography
+    filecolor=black,        % color of file links
+    urlcolor=purple,        % color of external links
+    linktoc=page            % only page is linked
+}
+\date{}
+\def\members{{"Nguyễn Mạnh Cường", "Phạm Minh Đức", "Vũ Nam Tước", "Bùi Thị Chung Thủy"}}
+\title{
+\rule{16cm}{1pt}\vskip0.5cm
+\Huge{BÁO CÁO CÁC VẤN ĐỀ HIỆN ĐẠI}\\
+\rule{16cm}{2pt}\vskip1cm
+\vspace{0.5cm}
+ĐỀ TÀI: TÌM HIỂU VỀ ETHEREUM\\
+\vspace{2cm}
+\large Nhóm 8\\
+\vspace{2cm}
+\large Thành Viên:\\
+\foreach \i in {0,...,3} {
+	\pgfmathparse{\members[\i]}\pgfmathresult\\ }	
+}
+\setlength{\parindent}{24pt}
+\setlength{\parskip}{.5\baselineskip}
+\newpagestyle{short}
+{\sethead{Nhóm 8}{}{Tìm hiểu về Ethereum}\headrule
+  \setfoot{}{\thepage}{}}
+\newpagestyle{long}
+{\sethead{\thesection. \sectiontitle}{}{\subsectiontitle}\headrule
+  \setfoot{}{\thepage}{}}
+
+\begin{document}
+	\maketitle
+	\thispagestyle{empty}
+	
+	\newpage
+	\pagestyle{short}
+	\tableofcontents
+	
+	\newpage
+	\pagestyle{long}
+	
+	\section{Lịch sử sửa đổi}
+	Bảng \ref{table:one} là bảng phân công công việc cho các thành viên trong nhóm.
+	\newline
+	\begin{table}[ht]
+		\centering
+		
+		\begin{tabular}{| p{6cm} | p{5cm} | p{5cm} |}
+			\hline
+			\textbf{Ngày}  & \textbf{Thành viên} & \textbf{Nội dung công việc}\\
+			\hline
+			
+		\end{tabular}
+		\label{table:one}
+		\caption{Bảng lịch sử sửa đổi}
+	\end{table}
+	\newpage
+	\section{Giới thiệu}
+		\subsection{Giới thiệu chung về BlockChain}
+		BlockChain có thể coi như một quyển sổ ghi chép tài chính được phân phối ngang hàng như Torrent. Không có nhà nước hay công ty nào cai quản, BlockChain được mã hóa một cách rất cầu kỳ để ngăn chặn tuyệt đối việc giả mạo thông tin.\newline
+		\indent Ba thành phần công nghệ của BlockChain
+		\begin{itemize}
+			\item Mạng ngang hàng: Một nhóm các máy tính ví dụ như mạng BitTorrent có khả năng giao tiếp với nhau mà không phải phụ thuộc vào một người cầm quyền ở trung tâm
+			\item Mật mã bất đối xứng: Một cách cho phép những máy tính này gửi các tin nhắn được mã hóa cho những người nhận đã được xác định
+			\item Phép băm mật mã: Một các để sinh một "fingerprint" nhỏ, duy nhất cho bất kỳ dữ liệu nào, cho phép so sánh một cách nhanh chóng các tập dữ liệu lớn và là một cách an toàn để xác nhận rằng dữ liệu đã được thay đổi hay chưa.
+		\end{itemize}
+		\subsection{Tổng quan Ethereum}
+		Ethereum (ETH) hay còn được gọi là Bitcoin 2.0 \newline
+		\indent Là một nền tảng điện toán phân tán khối chuỗi, chạy trên blockchain, thông qua việc sử dụng chức năng Hợp đồng thông minh (Smart Contract) \newline
+		\indent Tiền ảo Ethereum có thể thực hiện các giao dịch, hợp đồng mạng ngang hàng thông qua đơn vị tiền ảo là Ether
+		\subsubsection{Lịch sử ra đời}
+		Ethereum được đề xuất vào cuối năm 2013 bởi Vitalik Buterin người Nga sinh năm 1994, một cậu thanh niên chuyên nghiên cứu về lập trình tiền ảo\newline
+		\indent Vốn hoá của Ethereum đạt 25 triệu USD trong đợt mở bán lần đầu năm 2014. Kể từ đó Ethereum bắt đầu phát triển Blockchain cho riêng cũng như phát triển ngôn ngữ lập trình của mình \newline
+		\indent Phiên bản beta được phát hành vào tháng 7/2015 \newline
+		\indent Kể từ đầu năm trở lại đây, giá Ethereum tăng hơn 2000% trong khi Bitcoin là 150%
+		
+		\subsubsection{Các thành phần cơ bản của Ethereum}
+		\paragraph{Gas}
+		\begin{itemize}
+			\item Gas là chi phí nội bộ để thực hiện một giao dịch hoặc hợp đồng trong Ethereum. 
+			\item Giá trị của Gas được trả bằng một lượng ether.
+			\item Giá gas cho mỗi giao dịch hay hợp đồng được thiết lập để xử lý bản chất Turing Complete của Ethereum và EVM của nó (tức là mã Ethereum Virtual Machine)- đây là một trong những ý tưởng được đưa ra để hạn chế vòng lặp vô hạn.
+		\end{itemize}
+		\indent Ví dụ 10 Szabo, tương đương với 0.00001 Ether hay 1 Gas có thể thực hiện một dòng mã hay vài câu lệnh. Nếu không có đủ Ether trong tài khoản để hiển thị một cuộc giao dịch hay một tin nhắn thì nó được coi là không hợp lệ.
+		
+		\paragraph{Hợp đồng thông minh}
+		\begin{itemize}
+			\item Hợp đồng thông minh là một cơ chế trao đổi xác định, được kiểm soát bởi các phương tiện kỹ thuật số mà có thể giúp cho việc thực hiện giao dịch trực tiếp giữa các thực thể mà không cần tin cậy nhau
+			\item Các hợp đồng này được định nghĩa bằng cách lập trình và được chạy chính xác như mong muốn mà không bị kiểm duyệt, lừa đảo hay sự can thiệp từ bên thứ ba trung gian.
+			\item Trong Ethereum, các hợp đồng thông minh được coi là các kịch bản tự trị hoặc các ứng dụng phân cấp được lưu trữ trong chuỗi khối Ethereum để thực hiện sau đó bởi EVM.
+			
+		\end{itemize}
+		\paragraph{Máy ảo Ethereum (EVM)}
+		\begin{itemize}
+			\item Viết tắt của cụm từ Ethereum Virtual Machine. 
+			\item Là một môi trường chạy các hợp đồng thông minh Ethereum.
+			\item Nó được hoàn toàn cô lập từ mạng, hệ thống tập tin và các quá trình khác của hệ thống máy chủ.
+			\item Mỗi nút Ethereum trong mạng chạy một EVM và thực hiện các hướng dẫn giống nhau.
+			\item Ethereum Virtual Machines đã được lập trình trong C++, Go, Haskell, Java, Python, Ruby, Rust và WebAssembly.
+			
+		\end{itemize}
+		\subsection{Một vài ứng của Ethereum}
+		\paragraph{Hiện tại}
+		\begin{itemize}
+			\item Hệ thống thanh toán
+			\item Đầu tư vàng
+			\item Gây quỹ cộng đồng
+			\item Quản lý tài chính doanh nghiệp
+			
+		\end{itemize}
+		\paragraph{Tương lai}
+		\begin{itemize}
+			\item Internet of Things
+			
+			\item Web hosting
+			
+			\item Thị trường tài chính, bầu cử, bất động sản,…
+			
+			
+		\end{itemize}
+	\newpage
+	
+	\section{Chi tiết trong Ethereum}
+	
+	% Tước
+	\subsection{Tổng quan}
+	\subfile{contain/DrivingFactor}
+	% Cường
+	\subsection{Mô hình BlockChain}
+	\subfile{contain/BlockChainParadigm}
+	% Cường
+	\subsection{Những qui tắc}
+	\subfile{contain/Conventions}
+	% Cường
+	\subsection{Khối, Trạng thái và các giao dịch}
+	\subfile{contain/BST}
+	% Cường
+	\subsection{Gas và sự thanh toán}
+	\subfile{contain/GasPayment}
+	% Đức
+	\subsection{Sự đồng thuận về việc chấp nhận khối}
+	Trên một mạng ngang hàng, mọi dữ liệu ở các nút cục bộ đều có thể bị thay đổi túy ý bởi người sở hữu nút đó và khi thực hiện nhân bản thì sẽ có các xung đột và ta khó có thể xác định đâu mới là chuỗi khối đúng. Vì vậy, để đảm bảo sự tin cậy của mạng cũng như chuỗi khối, ta phải có các cơ chế để làm sao tất các nút trên mạng đều đồng thuận khối thêm vào chuỗi đó là khối hợp lệ và sẽ phát hiện ra các hành vi phá hoại mạng bằng cascch đưa và các khối giả. Nói về cơ chế đồng thuận này thì hiện nay phổ biến nhất sẽ có hai cớ chế là chứng nhận công việc  (Proof Of Work - POW) và chứng nhận cổ phần (Proof Of Stake - POS). Ngoài ra còn mô hình chứng nhận thẩm quyền (Proof Of Authority - POA) nhưng trước hết ta sẽ đi vào giải thích POW và POS.
+	\subsubsection{POW}
+	Ta đã quá quen thuộc với việc các thợ mỏ mua các cỗ máy đắt tiền (gồm nhiều card đồ họa) để về đào coin. Việc này chúng tỏ họ đang tham gia vào một mạng lưới tiền ảo sử dụng mô hình POW. POW là một trong các cách để xác định sự đồng thuận của cộng đồng. Ở mô hình hay giải thuật này, để thêm mới một khối và blockchain đồi hỏi phải thực hiện các hàm tính toán rất phức tạp để tạo nên một giá trị băm hợp lệ (khó để tạo ra nhưng rất dễ dàng để xác định nó hợp lệ). Việc giải mã này ngoài việc cần những cấu hình mạnh còn tiêu tốn rất rất nhiều điện năng và gây nguy hại đến môi trường. Cộng đồng sẽ công nhận khối anh tạo ra dựa vào lượng công việc anh đã thực hiện được. Một yếu tố đặc trưng của mô hình này đó là sự xuất hiện của các khối dư thừa (orphan block) do có nhiều người tham gia cùng tạo nên một khối nên sẽ có trường hợp hai người tạo ra hai khối đều hợp lệ nhưng ta chỉ có thể chọn khối đến trước và khối kia (tốn rất nhiều năng lượng tạo ra) bị lãng phí và bỏ đi. Những đặc trưng kể trên phần nào nói lên nhược điểm của giải thuật mà phần lớn các đồng tiền ảo đang sử dụng
+
+Khi độ khó để tạo ra một khối càng ngày càng tăng lên, việc đào ra một khối của các thợ mỏ ngày càng thấp và họ bắt đầu thua lỗ,một số sẽ quyết định từ bỏ hoặc tham gia vào các bể đào (mining pool). Việc này tạo ra các cỗ máy tập trung (trái với các tính chất phân tán mà mô hình mong muốn). Và còn một vấn đề hệ quả nữa là tấn công 51% (51% attack) sẽ được nên ở sau
+
+Nhưng nó phổ biến có nguyên nhân của nó. Giá trị sử dụng của nó là khi một đồng tiền ảo mới được phát hành, lượng tiền chưa được nhiều. Hầu hết các đồng tiền ảo sẽ chọn mô hình này để gia tăng lượng tiền mà vẫn kiểm soát được phần nào lạm phát của nó (điều mà ETH đã làm), tiền chỉ được tạo ra không hề dễ dàng.
+	\subsubsection{POS}
+	Khi mà POW bộc lộ rõ các yếu điểm thì là lúc các mô hình và các giải thuật khác được đề xuất, trong đó có POS. Thực tế thì POS đã được áp dụng ở một số đồng tiền ảo, tiên phong trong đó là PeerCoin và Ethereum sẽ là cái tên tiếp theo áp dụng mô hình này. Mô hình POS thay vì công nhận công việc của anh bằng sức lực anh bỏ ra (chi cho phần cứng và năng lượng) thì lại công nhận bằng nó bằng cổ phần hay số tiền mà anh đặt cọc vào mỗi khối người đó sinh ra. Và giờ đây, mỗi khối không phải là cuộc chạy đua xem ai giải mã được chính xác và nhanh nhất (có thể gây lãng phí với các khối thừa) mà việc tạo khối được chỉ định cho người nào góp cổ phần nhiều nhất vì hệ thống tự động hiểu rằng nếu anh góp vào nhiều tiền như vậy thì anh cũng sẽ có đủ khả năng tính toán để tạo ra khối mới.Và một điều quan trọng nữa là sẽ không còn tồn tại việc thưởng ETH theo mỗi khối đào được mà chỉ trả cho người tạo khối một khoản tiền vì đã thực hiện giao dịch (transaction fee).
+
+Việc sử dụng POS sẽ dẫn đến các lợi ích như sau. Tiết kiệm năng lượng, giúp mạng lưới phân tán hơn, giúp đảm bảo lợi ích người đào. 
+	% Đức
+	\subsection{Máy ảo Ethereum (Ethereum Virtual Machine)}
+	\subfile{contain/transaction}
+	
+	% Đức
+	\subsection{Lộ trình của Ethereum}
+	Mặc dù việc phát triển phần mềm có thể rất khó dự đoán, các nhà phát triển của Ethereum đã có các dự đoán về các mốc thời gian khá rõ ràng. Cụ thể sẽ có các giai đoạn sau.
+	\subsubsection{Frontier Release (2015)}
+	Frontier đã hoàn thành một số mục tiêu đúng hạn . Trong giai đoạn này việc giao tiếp chủ yếu được thực hiện trên các dòng lệnh. Các ưu tiên trong giai đoạn này gồm có:
+	\begin{itemize}
+  		\item Đảm bảo hệ thống mining chạy được
+  		\item Hợp pháp hóa đồng ETH như là một loại tiền ảo chính thống
+  		\item Phát hành một môi trường để thử nghiệm dapp
+  		\item Tạo ra các công cụ để cung cấp ether miễn phí cho các mạng thử nghiệm
+  		\item Cho phép các nhà phát triển tải lên và thự thi các hợp đồng thông minh
+	\end{itemize}
+
+	\subsubsection{Homestead Release (2016)}
+	Giai đoạn này cung cấp thêm một công cụ hữu ích hơn cho việc giao tiếp với Ethereum bằng Mist Browser. Các đặc điểm chính của giai đoạn này bao gồm:
+	\begin{itemize}
+  		\item Việc đào Ether đã được trả công 100\% giá trị như dự định
+  		\item Không có sự ngắt quãng trên toàn mạng
+  		\item Gần như bước ra khỏi quá trình thử nghiệm
+  		\item Có thêm các tài liệu cho việc sử dụng dòng lệnh và Mist
+	\end{itemize}
+	
+	\subsubsection{Metropolis (2017)}
+	Đây là pha thứ hai trong việc phát triển giao thức Ethereum. Bản phát hành này sẽ mở ra việc phát hành chính thức cho Mist với đầy đủ các tính năng. Tiếp theo đó nó sẽ được hỗ trợ bởi các phần mềm bên thứ ba một cách mạnh mẽ. Hơn nữa, Swarm và Whisper sẽ được đưa vào vận hành.
+
+	\subsubsection{Serenity (2018)}
+	Đây sẽ là giai đoạn chuyển mô hình từ POW to POS với thuật toán có tên gọi Casper. Việc chuyển dịch này là cần thiết với các ưu diểm được nêu từ trước. Quá trình chuyển dịch này sẽ được thực hiện từ từ chứ không chuyển hẳn sang mô hình mới trong một lần. Việc chuyển dịch này sẽ rất cần sự tính toán cũng như chứng minh tính đúng đắn của nó.
+	% Đức
+	%\section{Cài đặt}
+	%\subfile{contain/setting}
+	
+	%\section{Voting app}
+	%\subfile{contain/voting}
+	\section{Reference}
+	\subfile{contain/reference}
+\end{document}
