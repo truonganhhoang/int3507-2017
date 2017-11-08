@@ -122,6 +122,26 @@ Một mô hình điển hình có cấu trúc như sau:
 #### *Về phần chữ ký xác thực(signing)*
 Sau khi nhận được mô hình cho các khối(blocks) và các bình chọn(votes), ta thấy chúng có một chữ ký đi kèm từ nút tạo ra nó. Câu hỏi là tại sao ở lúc tạo giao dịch không có công đoạn ký xác thực? Câu trả lời là chúng đã được ký ẩn bên trong các chuỗi hoàn chỉnh(fulfillment) khi chúng được tạo ra.
 
+### Mô hình tài sản(the asset model)
+Để tránh việc dư thừa dữ liệu trong các giao dịch, mô hình tài sản sẽ khác nhau với các giao dịch tạo mới(create) và chuyển đổi(transfer): </br>
+* Trong giao dịch tạo mới: tài sản bắt buộc phải có một cặp khóa-dữ liệu, khóa phải là "data" còn dữ liệu có thể là bất kỳ chuỗi JSON hợp lệ nào hoặc giá trị null. Ví dụ:
+
+``` javascript
+  {
+  "data": {
+            "desc": "Gold-inlay bookmark owned by Xavier Bellomat Dickens III",
+            "xbd_collection_id": 1857
+          }
+  }
+```
+* Trong giao dịch chuyển đổi: tài sản bắt buộc phải có một cặp khóa-dữ liệu, khóa phải là "id" còn dữ liệu phải chứa ID của giao dịch. Ví dụ:
+
+``` javascript
+{
+  "id": "38100137cea87fb9bd751e2372abb2c73e7d5bcf39d940a5516a324d9c7fb88d"
+}
+```
+
 (Dịch từ docs bigchain)
 
 
