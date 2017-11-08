@@ -88,6 +88,40 @@ Các tính năng của chuỗi khối được cho vào cơ sở dữ liệu nà
 * Tính không thay đổi (Immutability): Dữ liệu văn bản được chống giả mạo(vĩnh viễn).
 * Khả năng tạo và chuyển các tài sản trong mạng lưới mà không phụ thuộc vào thực thể trung tâm.
 
+## Mô hình dữ liệu
+-BigchainDB cơ bản lưu trữ tất cả dữ liệu dưới hình thức các tài liệu JSON.</br>
+Tồn tại dưới 3 dạng chính của nó là:
+1. Các giao dịch(transactions), bao gồm tài sản(asset), các đầu vào, các đầu ra và các thuộc tính khác.
+2. Các khối(blocks)
+3. Các bình chọn(votes)
+Dưới đây chúng ta sẽ lần lượt tìm hiểu về chúng.
+
+### Mô hình của các giao dịch(transaction)
+Một mô hình điển hình có cấu trúc như sau:
+```	javascript
+	{
+		"id": "<ID of the transaction>",
+		"version": "<Transaction schema version number>",
+		"inputs": ["<List of inputs>"],
+		"outputs": ["<List of outputs>"],
+		"operation": "<String>",
+		"asset": {"<Asset model; see below>"},
+		"metadata": {"<Arbitrary transaction metadata>"}
+	}
+```
+* id: Khóa chính của cơ sở dữ liệu, là định danh đồng thời cũng là mã băm của giao dịch.
+* version: Phiên bản của giao dịch, với BigChainDB Server phiên bản 1.0.0 thì giá trị duy nhất được chấp nhận là "1.0".
+* inputs: Danh sách các đầu vào, các đầu vào biến đổi/sử dụng các đầu ra của các giao dịch trước đó bằng cách đáp ứng các yêu cầu về bảo mật,..Khi tạo mới 1 giao dịch thì phải có ít nhất 1 đầu vào.
+* outputs: Danh sách các đầu ra, mỗi đầu ra phải đáp ứng được các yêu cầu về mặt bảo mật nếu muốn sử dụng/chuyển đổi. Nó đồng thời cũng thể hiện phần tài sản(asset) gắn với đầu ra đó.</br>
+#### *Cách tính toán ID*: 
+1. Xây dựng một từ điển python bao gồm các thuộc tính: *version, inputs, outputs, operation, asset, metadata* và giá trị của chúng.
+2. Với mỗi đầu vào(input) thay thế toàn bộ chuỗi hoàn chỉnh(fulfillment) của nó với *null*.
+3. Biểu diễn từ điển trên như một chuỗi bytes(serialize).
+4. Mã hóa nó dùng thuật toán SHA3-256 ta có được ID.
+
+#### *Về phần chữ ký xác thực(signing)*
+Sau khi nhận được mô hình cho các khối(blocks) và các bình chọn(votes), ta thấy chúng có một chữ ký đi kèm từ nút tạo ra nó. Câu hỏi là tại sao ở lúc tạo giao dịch không có công đoạn ký xác thực? Câu trả lời là chúng đã được ký ẩn bên trong các chuỗi hoàn chỉnh(fulfillment) khi chúng được tạo ra.
+
 (Dịch từ docs bigchain)
 
 
