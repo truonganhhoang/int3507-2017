@@ -181,6 +181,50 @@ Một đầu ra có cấu trúc như sau:
 * Danh sách các khóa công khai luôn là "chủ sở hữu" các tài sản khi giao dịch được hoàn tất.
 * Lưu ý rằng, lượng tài sản giao dịch phải là một chuỗi (ví dụ "7"). Trong giao dịch chuyển đổi(transfer) tổng tài sản đầu ra phải bằng tổng lượng tài sản đầu vào.
 
+### Các điều kiện
+Ở một mức cao hơn, điều kiện giống như một khóa của đầu ra. Nếu bạn đáp ứng được các điều kiện, bạn có thể mở khóa tài sản và sử dụng nó. BigchainDB hỗ trợ một tập con các điều kiện của "ILP Crypto-Conditions".
+
+Một đối tượng điều kiện có thể khá phức tạp với nhiều mức lồng nhau nhưng với các trường hợp đơn giản thì thực sự là khá dễ hiểu. Dưới đây là một ví dụ về chữ ký điều kiện:
+```javascript
+{
+  "details": {
+    "type": "ed25519-sha-256",
+    "public_key": "HFp773FH21sPFrn4y8wX3Ddrkzhqy4La4cQLfePT2vz7"
+  },
+  "uri": "ni:///sha-256;at0MY6Ye8yvidsgL9FrnKmsVzX0XrNNXFmuAPF4bQeU?fpt=ed25519-sha-256&cost=131072"
+}
+```
+Nếu muốn sử dụng một đầu ra với điều kiện đã có, thì ta cần phải tạo một giao dịch chuyển đổi(transfer) với đầu vào đáp ứng điều kiện kia. Và giao dịch kia cần phải ký với khóa bí mật tương ứng vơi khóa công khai  "HFp773..
+#### Điệu kiện Crypto
+BigchainDB Server V1.0 hỗ trợ:
+1. Chữ ký ED25519-SHA-256.
+2. Ngưỡng THRESHOLD-SHA-256.
+
+Một điều kiện phức tạp hơn có thể được tạo ra với đầu vào là n chữ ký điều kiện khác nhau và m ngưỡng trong n chữ ký đó. Một cổng logic trả về kết quả. Ví dụ:
+```javascript
+{
+  "details": {
+      "type": "threshold-sha-256",
+      "threshold": 2,
+      "subconditions": [
+          {
+            "public_key": "5ycPMinRx7D7e6wYXLNLa3TCtQrMQfjkap4ih7JVJy3h",
+            "type": "ed25519-sha-256"
+          },
+          {
+            "public_key": "9RSas2uCxR5sx1rJoUgcd2PB3tBK7KXuCHbUMbnH3X1M",
+            "type": "ed25519-sha-256"
+           }
+       ]
+   },
+   "uri": "ni:///sha-256;zr5oThl2kk6613WKGFDg-JGu00Fv88nXcDcp6Cyr0Vw?fpt=threshold-sha-256&cost=264192&subtypes=ed25519-sha-256"
+}
+```
+![condition](https://docs.bigchaindb.com/projects/server/en/latest/_images/Conditions_Circuit_Diagram.png)
+</br>
+Khi tạo một điều kiện phải chú ý tính toán chi phí tài nguyên cần thiết để xác thực chúng.
+
+
 (Dịch từ docs bigchain)
 
 
