@@ -98,17 +98,17 @@ Dưới đây chúng ta sẽ lần lượt tìm hiểu về chúng.
 
 ### Mô hình của các giao dịch(transaction)
 Một mô hình điển hình có cấu trúc như sau:
-```	javascript
-	{
-		"id": "<ID of the transaction>",
-		"version": "<Transaction schema version number>",
-		"inputs": ["<List of inputs>"],
-		"outputs": ["<List of outputs>"],
-		"operation": "<String>",
-		"asset": {"<Asset model; see below>"},
-		"metadata": {"<Arbitrary transaction metadata>"}
-	}
-```
+``` javascript
+  {
+    "id": "<ID of the transaction>",
+    "version": "<Transaction schema version number>",
+    "inputs": ["<List of inputs>"],
+    "outputs": ["<List of outputs>"],
+    "operation": "<String>",
+    "asset": {"<Asset model; see below>"},
+    "metadata": {"<Arbitrary transaction metadata>"}
+  }
+ ```
 * id: Khóa chính của cơ sở dữ liệu, là định danh đồng thời cũng là mã băm của giao dịch.
 * version: Phiên bản của giao dịch, với BigChainDB Server phiên bản 1.0.0 thì giá trị duy nhất được chấp nhận là "1.0".
 * inputs: Danh sách các đầu vào, các đầu vào biến đổi/sử dụng các đầu ra của các giao dịch trước đó bằng cách đáp ứng các yêu cầu về bảo mật,..Khi tạo mới 1 giao dịch thì phải có ít nhất 1 đầu vào.
@@ -128,10 +128,10 @@ Sau khi nhận được mô hình cho các khối(blocks) và các bình chọn(
 
 ``` javascript
   {
-  "data": {
-            "desc": "Gold-inlay bookmark owned by Xavier Bellomat Dickens III",
-            "xbd_collection_id": 1857
-          }
+    "data": {
+      "desc": "Gold-inlay bookmark owned by Xavier Bellomat Dickens III",
+      "xbd_collection_id": 1857
+    }
   }
 ```
 * Trong giao dịch chuyển đổi: tài sản bắt buộc phải có một cặp khóa-dữ liệu, khóa phải là "id" còn dữ liệu phải chứa ID của giao dịch. Ví dụ:
@@ -141,6 +141,45 @@ Sau khi nhận được mô hình cho các khối(blocks) và các bình chọn(
   "id": "38100137cea87fb9bd751e2372abb2c73e7d5bcf39d940a5516a324d9c7fb88d"
 }
 ```
+### Các đầu vào(inputs) và đầu ra(outputs)
+BigchainDB được mô phỏng xung quanh các tài sản, các đầu vào, các đầu ra và chúng là cơ chế để kiểm soát tài sản hoặc cổ phần được chuyển giao. Lượng tài sản được mã hóa bên trong đầu ra của một giao dịch, mỗi đầu ra có thể được dùng một cách riêng biệt. Để sử dụng một đầu ra, các điều kiện của đầu ra phải được đáp ứng bởi một đầu vào có chuỗi hoàn chỉnh(fulfillment) tương ứng. Mỗi đầu ra có thể được sử dụng duy nhất một lần với 1 đầu vào duy nhất phù hợp. 
+##### Các đầu vào
+Một đầu vào có cấu trúc như sau:
+```javascript
+{
+  "owners_before": ["<The public_keys list in the output being spent>"],
+  "fulfillment": "<String that fulfills the condition in the output being spent>",
+  "fulfills": {
+      "output_index": "<Index of the output being spent (an integer)>",
+      "transaction_id": "<ID of the transaction containing the output being spent>"
+  }
+}
+```
+Có thể coi đối tượng *fulfills* như một con trỏ tới đầu ra của một giao dịch khác, đầu ra của đầu vào này là quá trình sử dụng/chuyển đổi. Một giao dịch tạo mới(create) bắt buộc phải có chính xác một đầu vào, đầu vào này có thể trước đây thuộc sở hữu của các đối tượng khác nhau, một chuỗi hoàn chỉnh(fulfillment) (với một chữ ký từ mỗi chủ sở hữu trước đây) và giá trị của fulfils nên là null. Giao dịch chuyển đổi (transfer) phải có ít nhất một đầu vào, và giá trị của fulfils không nên là null. Xem tài liệu tham khảo về đầu vào để biết thêm về ý nghĩa của mỗi trường.
+
+#### *Tính toán chuỗi hoàn chỉnh (fulfilment)*
+1. Xác định chuỗi theo "Crypto-Conditions spec (version 02)".
+2. Mã hóa chuỗi sử dụng "ASN.1 Distinguished Encoding Rules (DER)".
+3. Mã hóa chuỗi nhận được bên trên bằng base64url (không phải base64 thông thường) theo chuẩn "RFC 4648 (Section 5)".
+
+Để thực hiện quá trình tính toán trên bạn có thể dùng một trong các  "BigchainDB drivers" hoặc "transaction-builders".
+Ví dụ:
+```javascript
+"pGSAIDgbT-nnN57wgI4Cx17gFHv3UB_pIeAzwZCk10rAjs9bgUDxyNnXMl-5PFgSIOrN7br2Tz59MiWe2XY0zlC7LcN52PKhpmdRtcr7GR1PXuTfQ9dE3vGhv7LHn6QqDD6qYHYM"
+```
+
+#### Các đầu ra
+Một đầu ra có cấu trúc như sau:
+```javascript
+{
+  "condition": {"<Condition object>"},
+  "public_keys": ["<List of all public keys associated with the condition object>"],
+  "amount": "<Number of shares of the asset (an integer in a string)>"
+}
+```
+* Phần giới thiệu về điều kiện sẽ giải thích rõ hơn về các nội dung tương ứng với khóa "condition".
+* Danh sách các khóa công khai luôn là "chủ sở hữu" các tài sản khi giao dịch được hoàn tất.
+* Lưu ý rằng, lượng tài sản giao dịch phải là một chuỗi (ví dụ "7"). Trong giao dịch chuyển đổi(transfer) tổng tài sản đầu ra phải bằng tổng lượng tài sản đầu vào.
 
 (Dịch từ docs bigchain)
 
