@@ -250,6 +250,25 @@ Một khối có cấu trúc như sau:</br>
 #### Làm việc với các khối
 > Có một lớp `Block` hỗ trợ việc tạo và làm việc với các khối.
 
+###   Mô hình bình chọn(The Vote Model)
+Nó có cấu trúc như sau:
+```javascript
+{
+    "node_pubkey": "<The public key of the voting node>",
+    "vote": {
+        "voting_for_block": "<ID of the block the node is voting on>",
+        "previous_block": "<ID of the block previous to the block being voted on>",
+        "is_block_valid": "<true OR false>",
+        "invalid_reason": null,
+        "timestamp": "<Unix time when the vote was generated, provided by the voting node>"
+    },
+    "signature": "<Cryptographic signature of vote>"
+}
+```
+Lưu ý:
+> * Votes không có `ID`
+> * Hiện tại thì giá trị của trường "invalid_reason" luôn là null, nó có thể được dùng đến trong các phiên bản tiếp theo của BigchainDB.
+> * `Timestamp` và `signature` thì vẫn có ý nghĩa như các phần trước đó. Bạn có thể đọc lại để biết thêm chi tiết.
 
 
 (Dịch từ docs bigchain)
