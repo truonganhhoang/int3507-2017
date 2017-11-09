@@ -224,6 +224,33 @@ Một điều kiện phức tạp hơn có thể được tạo ra với đầu 
 </br>
 Khi tạo một điều kiện phải chú ý tính toán chi phí tài nguyên cần thiết để xác thực chúng.
 
+### Mô hình khối(The Block Model)
+
+Một khối có cấu trúc như sau:</br>
+```javascript
+{
+  "id": "<hash of block>",
+  "block": {
+    "timestamp": "<block-creation timestamp>",
+    "transactions": ["<list of transactions>"],
+    "node_pubkey": "<public key of the node creating the block>",
+    "voters": ["<list of public keys of all nodes in the cluster>"]
+  },
+  "signature": "<signature of block>"
+}
+```
+* `id`: Mã băm của các chuỗi bytes bên trong khối(ví dụ: timestamp, transactions,..). Nó được sử dụng như khóa chính của cơ sở dữ liệu.
+* `khối`: 
+  * `timestamp`: Thời gian khối được tạo ra.
+  * `transactions`: Danh sách các giao dịch bên trong khối.
+  * `node_pubkey`: Khóa công khai của nút tạo khối.
+  * `votes`: Danh sách tất cả các khóa chính của các nút(các nút mà có thể tham gia vào việc bầu chọn trên khối này) tại thời điểm khối được tạo.
+  * `signature`: Chữ ký Cryptographic của khối. Chữ ký này tạo bằng cách mã hóa chuỗi bytes bên trong khối bằng khóa bí mật của nút.
+
+#### Làm việc với các khối
+> Có một lớp `Block` hỗ trợ việc tạo và làm việc với các khối.
+
+
 
 (Dịch từ docs bigchain)
 
