@@ -1,74 +1,76 @@
 \documentclass[12pt]{article}
-\usepackage[utf8]{vietnam}
-\usepackage{titleps}
-\usepackage{graphicx}
-\usepackage{listings}
-\usepackage{underscore}
-\usepackage[bookmarks=true]{hyperref}
-\usepackage{amsmath}
-\usepackage{pgfmath,pgffor}
-\usepackage{indentfirst}
-\usepackage{pdflscape}
-\usepackage{wrapfig}
-\usepackage{amsmath}
-\usepackage[export]{adjustbox}
-\usepackage[utf8]{inputenc}
-\usepackage{longtable}
-\usepackage{subcaption}
-\usepackage{kbordermatrix}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{subfiles}
+	\usepackage[utf8]{vietnam}
+	\usepackage{titleps}
+	\usepackage{graphicx}
+	\usepackage{listings}
+	\usepackage{underscore}
+	\usepackage[bookmarks=true]{hyperref}
+	\usepackage{amsmath}
+	\usepackage{pgfmath,pgffor}
+	\usepackage{indentfirst}
+	\usepackage{pdflscape}
+	\usepackage{wrapfig}
+	\usepackage{amsmath}
+	\usepackage[export]{adjustbox}
+	\usepackage[utf8]{inputenc}
+	\usepackage{longtable}
+	\usepackage{subcaption}
+	\usepackage{kbordermatrix}
+	\usepackage{amsfonts}
+	\usepackage{amssymb}
+	\usepackage{subfiles}
 
-\usepackage[T1,T5]{fontenc}
-\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
-\hypersetup{
-    bookmarks=true,
-    pdftitle={Báo cáo số 1},
-    pdfauthor={Nguyễn Mạnh Cường, Phạm Minh Đức, Vũ Nam Tước, Bùi Thị Chung Thủy},                     % author
-    pdfsubject={TeX and LaTeX},
-    pdfkeywords={TeX, LaTeX, graphics, images}, % list of keywords
-    colorlinks=true,       % false: boxed links; true: colored links
-    linkcolor=blue,       % color of internal links
-    citecolor=black,       % color of links to bibliography
-    filecolor=black,        % color of file links
-    urlcolor=purple,        % color of external links
-    linktoc=page            % only page is linked
-}
-\date{}
-\def\members{{"Nguyễn Mạnh Cường", "Phạm Minh Đức", "Vũ Nam Tước", "Bùi Thị Chung Thủy"}}
-\title{
-\rule{16cm}{1pt}\vskip0.5cm
-\Huge{BÁO CÁO CÁC VẤN ĐỀ HIỆN ĐẠI}\\
-\rule{16cm}{2pt}\vskip1cm
-\vspace{0.5cm}
-ĐỀ TÀI: TÌM HIỂU VỀ ETHEREUM\\
-\vspace{2cm}
-\large Nhóm 8\\
-\vspace{2cm}
-\large Thành Viên:\\
-\foreach \i in {0,...,3} {
-	\pgfmathparse{\members[\i]}\pgfmathresult\\ }	
-}
-\setlength{\parindent}{24pt}
-\setlength{\parskip}{.5\baselineskip}
-\newpagestyle{short}
-{\sethead{Nhóm 8}{}{Tìm hiểu về Ethereum}\headrule
-  \setfoot{}{\thepage}{}}
-\newpagestyle{long}
-{\sethead{\thesection. \sectiontitle}{}{\subsectiontitle}\headrule
-  \setfoot{}{\thepage}{}}
-
-\begin{document}
-	\maketitle
-	\thispagestyle{empty}
 	
-	\newpage
-	\pagestyle{short}
-	\tableofcontents
 	
-	\newpage
-	\pagestyle{long}
+	\usepackage[T1,T5]{fontenc}
+	\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
+	\hypersetup{
+	    bookmarks=true,
+	    pdftitle={Báo cáo số 1},
+	    pdfauthor={Nguyễn Mạnh Cường, Phạm Minh Đức, Vũ Nam Tước, Bùi Thị Chung Thủy},                     % author
+	    pdfsubject={TeX and LaTeX},
+	    pdfkeywords={TeX, LaTeX, graphics, images}, % list of keywords
+	    colorlinks=true,       % false: boxed links; true: colored links
+	    linkcolor=blue,       % color of internal links
+	    citecolor=black,       % color of links to bibliography
+	    filecolor=black,        % color of file links
+	    urlcolor=purple,        % color of external links
+	    linktoc=page            % only page is linked
+	}
+	\date{}
+	\def\members{{"Nguyễn Mạnh Cường", "Phạm Minh Đức", "Vũ Nam Tước", "Bùi Thị Chung Thủy"}}
+	\title{
+	\rule{16cm}{1pt}\vskip0.5cm
+	\Huge{BÁO CÁO CÁC VẤN ĐỀ HIỆN ĐẠI}\\
+	\rule{16cm}{2pt}\vskip1cm
+	\vspace{0.5cm}
+	ĐỀ TÀI: TÌM HIỂU VỀ ETHEREUM\\
+	\vspace{2cm}
+	\large Nhóm 8\\
+	\vspace{2cm}
+	\large Thành Viên:\\
+	\foreach \i in {0,...,3} {
+		\pgfmathparse{\members[\i]}\pgfmathresult\\ }	
+	}
+	\setlength{\parindent}{24pt}
+	\setlength{\parskip}{.5\baselineskip}
+	\newpagestyle{short}
+	{\sethead{Nhóm 8}{}{Tìm hiểu về Ethereum}\headrule
+	  \setfoot{}{\thepage}{}}
+	\newpagestyle{long}
+	{\sethead{\thesection. \sectiontitle}{}{\subsectiontitle}\headrule
+	  \setfoot{}{\thepage}{}}
+	
+	\begin{document}
+		\maketitle
+		\thispagestyle{empty}
+		
+		\newpage
+		\pagestyle{short}
+		\tableofcontents
+		
+		\newpage
+		\pagestyle{long}
 	
 	\section{Lịch sử sửa đổi}
 	Bảng \ref{table:one} là bảng phân công công việc cho các thành viên trong nhóm.
@@ -87,7 +89,8 @@
 	\end{table}
 	\newpage
 	\section{Giới thiệu}
-		\subsection{Giới thiệu chung về BlockChain}
+		\subsection{Giới thiệu chung về Bl
+			ockChain}
 		BlockChain có thể coi như một quyển sổ ghi chép tài chính được phân phối ngang hàng như Torrent. Không có nhà nước hay công ty nào cai quản, BlockChain được mã hóa một cách rất cầu kỳ để ngăn chặn tuyệt đối việc giả mạo thông tin.\newline
 		\indent Ba thành phần công nghệ của BlockChain
 		\begin{itemize}
@@ -177,6 +180,6 @@
 	
 	\section{Voting app}
 	\subfile{contain/voting}
-	\section{Reference}
+	\section{Tài Liệu Tham Khảo}
 	\subfile{contain/reference}
 \end{document}

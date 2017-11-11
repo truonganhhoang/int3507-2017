@@ -1,1 +1,48 @@
 \documentclass[../cnd.tex]{subfiles}
+Sau khi giới thiệu các khái niệm cơ bản đằng sau Ethereum, chúng tôi sẽ thảo luận chi tiết hơn về ý nghĩa của giao dịch, khối và trạng thái
+
+\subsubsection{Thê Giới Trạng Thái (World State)}
+Trạng thái thế giới (state), là một ánh xạ giữa các địa chỉ (các định danh 160-bit) và các trạng thái tài khoản (một cấu trúc dữ liệu được sắp xếp theo RLP, xem Phụ lục B). Mặc dù không được lưu trữ trên blockchain, giả định rằng việc thực hiện sẽ duy trì bản đồ này trong một cây Merkle Patricia được sửa đổi (trie, xem Phụ lục D). Trie yêu cầu một backend cơ sở dữ liệu đơn giản duy trì một bản đồ của bytearrays để bytearrays; chúng ta đặt tên cơ sở dữ liệu cơ bản là cơ sở dữ liệu trạng thái. Điều này có một số lợi ích; đầu tiên nút gốc của cấu trúc này tùy thuộc mật mã vào tất cả các dữ liệu bên trong và do đó băm của nó có thể được sử dụng như một bản sắc an toàn cho toàn bộ trạng thái hệ thống. \newline
+\indent Thứ hai, là một cấu trúc dữ liệu không thay đổi, nó cho phép bất kỳ trạng thái trước đó được gọi lại bằng cách đơn giản thay đổi gốc rễ tương ứng. Vì chúng ta lưu trữ tất cả các rễ gốc như vậy trong BlockChain, chúng ta có thể trở lại trạng thái cũ. Trạng thái tài khoản bao gồm bốn lĩnh vực sau:\newline
+\indent \textbf{nonce}
+:Giá trị vô hướng bằng số lượng các giao dịch được gửi từ địa chỉ này hoặc, trong trường hợp tài khoản có mã liên quan, số lượng hợp đồng tạo ra bởi tài khoản này. Đối với địa chỉ một trong tiểu bang $\sigma$, điều này sẽ được biểu hiện chính thức $\sigma[a]_n$.\newline
+\indent \textbf{balance}:A scalar value equal to the number of Wei owned by this address. Formally denoted $\sigma[a]_n$.
+\newline
+\indent \textbf{storageRoot}:Một băm 256 bit của nút gốc của cây Merkle Patricia mã hóa nội dung lưu trữ của tài khoản (một bản đồ giữa các giá trị số nguyên 256-bit), được mã hoá thành trie như một bản đồ từ 256-bit băm Keccak của 256 -bit các phím số nguyên đến các giá trị số nguyên 256-bit mã hóa RLP. Băm được biểu thức chính thức là  $\sigma[a]_s$. \newline
+\indent \textbf{codeHash}: là mã băm của máy ảo EVM của tài khoản đó-đây là đoạn mã được thực hiện khi địa chỉ này nhận được một cuộc gọi tin nhắn; nó là
+không thay đổi và do đó, không giống như tất cả các lĩnh vực khác, không thể thay đổi sau khi xây dựng. Tất cả các đoạn mã như vậy được chứa trong cơ sở dữ liệu trạng thái dưới các giá trị tương ứng của nó để truy xuất sau đó. Băm này được biểu hiện chính thức là $\sigma[a]_c$, và do đó mã có thể được ký hiệu là b, và KEC (b) = $\sigma[a]$.
+
+\subsubsection{Địa chỉ(Homestead)}
+là một số khối quan trọng mang tính công khai đánh dấu giữa sự chuyển tiếp giữa hai trạng thái, chúng ta biểu thị nó bằng $N_h$, được định nghĩa như sau:
+\begin{align}
+	N_h \equiv 1150000
+\end{align}
+\indent Giao thức này đã được nâng cấp tại mỗi block, do đó biểu tượng này xuất hiện trong một số phương trình để giải thích cho sự thay đổi.
+
+\subsubsection{Giao Dịch(Transaction)}
+Giao dịch (giao dịch chính thức, T) là một chỉ lệnh được mã hoá bằng ký tự được xây dựng bởi một diễn viên bên ngoài phạm vi của Ethereum. Mặc dù giả định rằng các diễn viên bên ngoài cuối cùng sẽ là con người trong tự nhiên, các công cụ phần mềm sẽ được sử dụng trong xây dựng và phổ biến1. Có hai loại giao dịch: những kết quả trong các cuộc gọi thư và những kết quả tạo ra các tài khoản mới có mã liên quan (được gọi là "hợp đồng tạo ra"). Cả hai loại chỉ định một số trường phổ biến:
+\newline \indent \textbf{nonce}: là một giá trị vô hướng bằng số lượng các giao dịch của người gửi. Giá trị đó được gọi là $T_n$.
+\newline \indent \textbf{gasPrice}:một giá trị vô hướng bằng số lượng Wei được thanh toán cho mỗi đơn vị khí cho tất cả chi phí tính toán phát sinh do kết quả của việc thực hiện giao dịch này; chính thức là $T_n$.
+\newline \indent \textbf{gasLimit}: Giá trị vô hướng bằng lượng khí tối đa cần được sử dụng trong quá trình thực hiện
+giao dịch này. Điều này được thanh toán trước, trước khi bất kỳ tính toán được thực hiện và không thể được tăng lên sau đó; được biểu thị bằng $T_g$.
+\newline \indent \textbf{To}: Địa chỉ 160-bit của người nhận cuộc gọi tin nhắn hoặc, đối với giao dịch tạo hợp đồng. ký hiệu: $T_t$.
+\newline \indent \textbf{Giá Trị(Value)}: Một giá trị vô hướng bằng số lượng Wei được chuyển đến người nhận cuộc gọi của tin nhắn hoặc, trong trường hợp tạo hợp đồng, như một khoản tài trợ cho tài khoản mới được tạo; ký hiệu: $T_v$.
+\newline \indent \textbf{v,r,s}: Giá trị tương ứng với chữ ký của giao dịch và được sử dụng để xác định người gửi giao dịch; chính thức là $T_w$, $T_r$ và $T_s$.
+
+\subsubsection{Khối(block)}
+Khối trong Ethereum là bộ sưu tập các mẩu thông tin có liên quan (gọi là tiêu đề khối), H, cùng với thông tin tương ứng với các giao dịch bao gồm, T và một tập hợp các phần đầu khối U khác được biết là có một cha mẹ bằng cha mẹ của cha mẹ của khối hiện tại (các khối như vậy được gọi là ommers$^2$). Tiêu đề của khối chứa nhiều mẩu thông tin:
+\newline \indent \textbf{parentHash}: Kiểu băm 256-bit Keccak của tiêu đề của khối cha, trong toàn bộ; ký hiệu là $H_p$.
+\newline \indent \textbf{ommerHash}: : băm Keccak 256-bit của phần danh sách ommers của khối này; ký hiệu: $H_o$.
+\newline \indent \textbf{beneficiary}: Địa chỉ 160-bit mà tất cả các khoản phí thu được từ việc khai thác thành công khối này sẽ được chuyển giao; ký hiệu $H_c$.
+\newline \indent \textbf{stateRoot}: Băm 256 bit Keccak của nút gốc trong cấu trúc cây trie được điền vào trong mỗi giao dịch; ký hiệu $H_r$.
+\newline \indent \textbf{transactionsRoot}: Băm 256 bit Keccak của nút gốc của cấu trúc trie được điền với mỗi giao dịch trong phần danh sách giao dịch của khối; ký hiệu $H_t$.
+\newline \indent \textbf{receiptsRoot}: băm Keccak 256-bit của nút gốc của cấu trúc trie với các biên nhận của mỗi giao dịch trong phần danh sách giao dịch của khối; ký hiệu: $H_e$.
+\newline \indent \textbf{logsBloom}: Bộ lọc Bloom bao gồm thông tin có thể lập chỉ mục (địa chỉ logger và chủ đề đăng nhập) chứa trong mỗi mục nhập nhật ký từ mỗi lần nhận được trong danh sách giao dịch; ký hiệu $H_b$.
+\newline \indent \textbf{difficulty}: một giá trị vô hướng tương ứng với mức độ khó khăn của khối này. Điều này có thể được tính từ mức độ khó khăn của khối trước đó và dấu thời gian;ký hiệu $H_d$.
+\newline \indent \textbf{number}: Một giá trị vô hướng bằng số khối tổ tiên. Khối nguồn có một số không; ký hiệu $H_i$.
+\newline \indent \textbf{gasLimit} : một giá trị vô hướng bằng mức giới hạn hiện tại của chi phí khí trên mỗi block; chính thức Hl. gasUsed: một giá trị vô hướng bằng tổng lượng khí được sử dụng trong các giao dịch trong khối này; ký hiệu $H_g$.
+\newline \indent \textbf{gasUsed}: một giá trị vô hướng bằng tổng lượng khí được sử dụng trong các giao dịch trong khối này; ký hiệu $H_g$
+\newline \indent \textbf{timestamp}:  Một giá trị vô hướng bằng sản lượng hợp lý của thời gian Unix () tại thời điểm khởi đầu của khối này; ký hiệu $H_s$
+\newline \indent \textbf{extraData}: Một mảng byte tùy ý chứa dữ liệu liên quan đến khối này. Đây phải là 32 byte trở xuống; ký hiệu $H_x$
+\newline \indent \textbf{mixHash}: Một băm 256 bit chứng minh rằng kết hợp với nonce rằng một số lượng đầy đủ các tính toán đã được thực hiện trên khối này; ký hiệu $H_m$
+\newline \indent \textbf{nonce}: Một băm 64 bit chứng minh kết hợp với hỗn hợp-băm rằng một số lượng đầy đủ các tính toán đã được thực hiện trên khối này; ký hiệu $H_n$.
