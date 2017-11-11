@@ -27,6 +27,7 @@ Route.group('api', () => {
   // account
   Route.post('account', 'AccountController.create').middleware('auth')
   Route.delete('account/:id', 'AccountController.delete').middleware('auth')
+  Route.get('account/:id/balance', 'AccountController.getBalance').middleware('auth')
 
   // voting
   Route.post('voting/candidate', 'VotingController.getCandidateList').middleware('auth')

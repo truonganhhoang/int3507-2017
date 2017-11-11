@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <h1 class="title is-2 has-text-centered">A Simple Voting Application</h1>
+      <h1 class="title is-2 has-text-centered">Chương trình bầu cử đơn giản</h1>
 
       <table class="table is-fullwidth">
         <thead>
@@ -18,14 +18,15 @@
             <td class="has-text-centered">{{candidate.name}}</td>
             <td class="has-text-centered">{{candidate.numberOfVote}}</td>
             <td class="has-text-centered">
-              <button :id="'btn-vote-' + index"
-                  class="button is-primary" @click="voteForCandidate(index)">
+              <button class="button is-primary" @click="voteForCandidate(candidate.name)">
                   Vote
               </button>
             </td>
           </tr>
         </tbody>
       </table>
+
+      <em>Chú ý: Kết quả bầu cử phải mất một khoảng thời gian để thực hiện trên chuỗi khối</em>
     </div>
   </div>
 </template>
@@ -36,15 +37,6 @@
   export default {
     mounted() {
       this.init()
-
-      const self = this
-      const address = this.$route.params.address
-      axios.post('http://localhost:3333/api/v1/voting/vote', {
-        name: 'Java',
-        address
-      }).then(res => {
-        console.log(res.data)
-      })
     },
     data() {
       return {
@@ -75,6 +67,7 @@
       getVotes(candidates) {
         const self = this
         const address = this.$route.params.address
+        this.candidates = []
         for(var i = 0; i < candidates.length; i++) {
           let candidate = candidates[i]
           axios.post('http://localhost:3333/api/v1/voting/get-vote', {
@@ -86,6 +79,25 @@
               numberOfVote: res.data.vote
             })
           })
+        }
+      },
+      voteForCandidate(name) {
+        let passphrase = prompt("Hãy điền mật khẩu", "");
+        if (passphrase == null || passphrase == "") {
+          return
+        } else {
+          const address = this.$route.params.address
+          // this.$noty.info("Wait a minute to get the result!")
+          axios.post('http://localhost:3333/api/v1/voting/vote', {
+            name,
+            address,
+            passphrase
+          }).then(res => {
+            this.getVotes(this.candidates)
+            this.$noty.success("You voted successfully!")
+          }).catch((error) => {
+            this.$noty.error("You cannot vote again!")          
+          }); 
         }
       },
       hexToString (hex) {
