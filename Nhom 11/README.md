@@ -30,6 +30,7 @@
 
 ---
 #### 2. Tổng quan về đề tài
+
 - Thị giác máy tính (Computer Vision) là một lĩnh vực bao gồm các phương pháp thu nhận, xử lý ảnh kỹ thuật số, phân tích và nhận dạng các hình ảnh và, nói chung là dữ liệu đa chiều từ thế giới thực để cho ra các thông tin số hoặc biểu tượng, ví dụ trong các dạng quyết định.
 - Việc phát triển lĩnh vực này có bối cảnh từ việc sao chép các khả năng thị giác con người bởi sự nhận diện và hiểu biết một hình ảnh mang tính điện tử. Sự nhận diện hình ảnh có thể xem là việc giải quyết vấn đề của các biểu tượng thông tin từ dữ liệu hình ảnh qua cách dùng các mô hình được xây dựng với sự giúp đỡ của các ngành lý thuyết học, thống kê, vật lý và hình học. Thị giác máy tính cũng được mô tả là sự tổng thể của một dải rộng các quá trình tự động và tích hợp và các thể hiện cho các nhận thức thị giác.
 - Nếu như bằng cặp mắt của mình, con người có thể thu nhận hình ảnh từ môi trường xung quanh, biết được màu sắc của vật, hình dáng của vật và vô số thông tin khác để có những phản ứng, hành động trong môi trường sống thì thị giác máy tính cũng vậy, chỉ có điều cặp mắt của máy tính giờ đây được thay bằng những thiết bị điện tử khác như camera, sensor hồng ngoại chẳng hạn... Bằng hệ thống cảm biến này, máy sẽ thu thập thế giới đa chiều và lưu trữ những gì thu tập được dưới dạng ảnh số. Những ảnh này sau đó được xử lý, phân tích và trích chọn ra những thông tin cần thiết giúp máy hiểu được nó đang nhìn thấy gì, cần phải làm gì...
@@ -39,15 +40,90 @@
 
 ---
 #### 3. Giới thiệu về ứng dụng tạo mã tự động
+
+- Ứng dụng này cho phép tạo ra các mã một cách tự động và nhận diện chúng.
+- Quy mô trong môn học: ứng dụng cho phép tự động sinh ra các mã đáp án trắc nghiệm tương ứng với các đáp án A, B, C, D. Mối người sẽ có 4 mã đáp án, với mỗi câu hỏi được đưa ra, mỗi người sẽ đưa ra đáp án của mình bằng cách đưa ra hình ảnh mã của đáp án đó. Máy sẽ quét tự động, phát hiện và nhận dạng mã đó tương ứng với đáp án nào.
+- Công nghệ sử dụng
+
+##### a. WebSocket
+
+- WebSocket là công nghệ hỗ trợ giao tiếp hai chiều giữa client và server bằng cách sử dụng một TCP socket để tạo một kết nối hiệu quả và ít tốn kém. Mặc dù được thiết kế để chuyên sử dụng cho các ứng dụng web, lập trình viên vẫn có thể đưa chúng vào bất kì loại ứng dụng nào.
+- WebSockets mới xuất hiện trong HTML5, là một kỹ thuật Reverse Ajax. WebSockets cho phép các kênh giao tiếp song song hai chiều và hiện đã được hỗ trợ trong nhiều trình duyệt (Firefox, Google Chrome và Safari). Kết nối được mở thông qua một HTTP request (yêu cầu HTTP), được gọi là liên kết WebSockets với những header đặc biệt. Kết nối được duy trì để bạn có thể viết và nhận dữ liệu bằng JavaScript như khi bạn đang sử dụng một TCP socket đơn thuần.
+- Hiện tại Websocket đã được hỗ trợ trên 74% các trình duyệt. Bạn có thể xem số liệu mới nhất tại đây: 
+[Trình duyệt](https://caniuse.com/#search=websocket)
+
+**Ưu điểm**
+	- WebSockets cung cấp khả năng giao tiếp hai chiều mạnh mẽ, có độ trễ thấp và dễ xử lý lỗi.
+	- API cũng rất dễ sử dụng trực tiếp mà không cần bất kỳ các tầng bổ sung nào, so với Comet, thường đòi hỏi một thư viện tốt để xử lý kết nối lại, thời gian chờ timeout, các Ajax request (yêu cầu Ajax), các tin báo nhận và các dạng truyền tải tùy chọn khác nhau (Ajax long-polling và jsonp polling).
+	- Không cần phải có nhiều kết nối như phương pháp Comet long-polling và cũng không có những nhược điểm như Comet streaming.
+
+**Nhược điểm**
+	- Chưa hỗ trợ được tất cả các trình duyệt.
+	- Không có phạm vi yêu cầu nào. Do WebSockets là một TCP socket chứ không phải là HTTP request, nên không dễ sử dụng các dịch vụ có phạm vi yêu cầu.
+
+##### b. Node.js
+
+- Node.js là một  hệ thống phần được thiết kế để viết các ứng dụng internet có khả năng mở rộng, đặc biệt là máy chủ web. Chương trình được viết bằng JavaScript, sử dụng kỹ thật điều khiển theo sự kiện, nhập/xuất không đồng bộ để tối thiểu tổng chi phí và tối đại khả năng mở rộng. Node.js bao gồm có V8 JavaScript engine của Google,libUV, và vài thư viện khác.
+- Node.js được tạo bởi Ryan Dahl từ năm 2009, và phát triển dưới sự bảo trợ của Joyent.
+- Mục tiêu ban đầu của Dahl là làm cho trang web có khả năng push như trong một số ứng dụng web như Gmail. Sau khi thử với vài ngôn ngữ Dahl chọn Javascript vì một API Nhập/Xuất không đầy đủ. Điều này cho phép anh có thể định nghĩa một quy ước Nhập/Xuất điểu khiển theo sự kiện, non-blocking.
+- Vài môi trường tương tự được viết trong các ngôn ngữ khác bao gồm Twisted cho Python, Perl Object Environment cho Perl, libevent cho C và EventMachine cho Ruby. Khác với hầu hết các chương trình Javascript, Nodejs không chạy trên một trình duyệt mà chạy trên Server. Node.js sử dụng nhiều chi tiết kỹ thuật của CommonJs. Nó cung cấp một môi trường REPL cho kiểm thử tương tác
+- Node.js là một ngôn ngữ mới, xây dựng thuần túy bằng javascript. Đây là một điểm lợi thế của Node.js để lập trình web-socket:
+**Thứ nhất** javascript là ngôn ngữ lập trình hướng sự kiện, mà trong lập trình thời gian thực, cách tiếp cận bằng lập trình sự kiện là cách tiếp cận khôn ngoan nhất.
+**Thứ hai** Node.js chạy non-blocking việc hệ thống không phải tạm ngừng để xử lý xong một request sẽ giúp cho server trả lời client gần như ngay tức thì.
+**Thứ ba** lập trình socket yêu cầu bạn phải xây dựng được mô hình lắng nghe – trả lời từ cả 2 bên. Nói khác đi, vai trò của client và server phải tương đương nhau, mà client thì chạy bằng javascript, nên nếu server cũng chạy bằng javascript nữa, thì việc lập trình sẽ dễ dàng và thân thiện hơn.
+
+- Chính vì những đặc điểm này, socket.io ra đời. Tuy nhiên, khi bạn thực sự am hiểu về Node.js, http request header, bạn hoàn toàn có thể viết một socket cho riêng mình.
+- Giao thức bắt tay của WebSocket
+
+![img00](https://duyanhweb.com/wp-content/uploads/websocket.jpg)
+
+
+
+
+##### c. Socket.io
+
+- Socket.IO là một thư viện javascript có mục đích tạo ra các ứng dụng realtime trên trình duyệt cũng như thiết bị di động. Việc sử dụng thư viện này cũng rất đơn giản và giống nhau ở cả server lẫn client. Trong ví dụ tôi sắp trình bày, bạn sẽ thấy server và client sử dụng Socket.IO gần như giống nhau. Điều này giúp cho việc tiếp cận nó trở nên rất dễ dàng nếu bạn đã quen thuộc với javascript.
+- Download và cài đặt tại trang chủ [Nodejs](https://nodejs.org/en/#download)
+- Riêng về socket.io bạn có thể tìm hiểu tại trang [manual](https://socket.io/#how-to-use)
+- Một số điều cơ bản cần biết:
+	1.  Server: tạo một đối tượng socket bằng phương thức listen(port). Phương thức này chờ đợi một yêu cầu kết nối từ client.
+	2. Client: Kết nối đến server bằng phương thức connect(url,{port: server_port}).
+	3. Socket.IO cung cấp 3 event chính là connect, message và disconnect. Chúng được kích hoạt khi client/server:
+		- connect: tạo kết nối
+		- message: nhận được thông điệp
+		- disconnect: ngắt kết nối
+
+##### d. JNI
+
+- Cấu trúc của một Class JNI:
+[img000](http://vietgamedev.net/file/attachment/2013/08/276f80e2cb29445c46c18d07132d91da_view.png)
+
+
+
+- JNI (Java Native Interface) là một framework cho phép gọi các hàm Java trong JVM từ các ngôn ngữ cấp thấp như C, C++ hay assembly. Nói nôm na dễ hiểu là mình muốn gọi Java từ C++ thì mình sẽ gọi thông qua JNI.
+- Ta thường dùng JNI khi muốn gọi các phương thức đặc trưng của Android như: gửi tin nhắn, thực hiện cuộc gọi v.v...
+- JniHelper class là lớp singleton cocos2d-x cung cấp để hỗ trợ việc sử dụng JNI một cách dễ dàng hơn. Ta sẽ dùng lớp này để thực hiện các lệnh gọi Java từ C++.
+**Vai trò của JNI**
+	- Khi một môi trường Java được cài trên một hệ điều hành, sẽ có trường hợp người lập trình muốn sử dụng các thư viện của riêng hệ điều hành đó. Lý do là vì dùng thư viện của riêng hệ điều hành sẽ nhanh hơn, hiệu suất cao hơn.
+	- Ngoài ra đối với hệ điều hành Windows thì số lượng các thư viện do cộng đồng viết ra rất nhiều, và có một số thư viện cực kỳ đồ sộ, việc viết lại các thư viện này bằng ngôn ngữ Java sẽ mất nhiều thời gian hơn so với việc tìm cách sử dụng chúng từ Java.
+	- JNI là một tính năng cực kỳ mạnh mẽ cho phép chúng ta sử dụng code từ các ngôn ngữ khác, JNI có tính chất 2 chiều, tức là code từ các ngôn ngữ khác cũng có thể gọi lại code từ Java nữa.
+**Nhược điểm**
+	- Chúng ta đã biết rằng Java là một ngôn ngữ viêt một lần-chạy mọi nơi, tức là chỉ cần viết code Java, sau đó biên dịch rồi đem lên một hệ điều hành có cài JVM là có thể chạy bình thường. Tuy nhiên khi chúng ta sử dụng JNI để “hợp tác” với code của hệ điều hành, thì lại không thể đem chương trình đó đi chạy trên máy có hệ điều hành khác được, do đó mất đi tính viết một lần-chạy mọi nơi.
+	- Một điều nữa là Java có tính năng type-safe, tức là bạn khai báo kiểu dữ liệu gì thì chỉ được thao tác với kiểu dữ liệu đó, nhưng các ngôn ngữ hệ điều hành thì có thể không có tính năng type-safe, do đó khi viết code JNI bạn sẽ phải chú ý cẩn thận, chỉ cần khác kiểu dữ liệu cũng có thể crash chương trình.
+- Trước khi quyết định sử dụng JNI, bạn nên tìm hiểu xem kỹ càng xem có thư viện nào hỗ trợ yêu cầu của mình không, nếu không còn thì hãy dùng JNI, luôn dùng JNI làm giải pháp cuối cùng.
+- Tìm hiểu thêm tại [JNI](https://www3.ntu.edu.sg/home/ehchua/programming/java/JavaNativeInterface.html)
+
+
+
 *UPDATING..............................................*
 ---
 #### II. THUẬT TOÁN TẠO MÃ
-#### 1. Các điểm đánh dấu (mã) và từ điển
+#### 1. Mã và từ điển
 
-##### a. Các điểm đánh dấu
+##### a. Mã
 
-- Một điểm đánh dấu ArUco là một điểm đánh dấu tổng hợp hình vuông bao gồm một đường viền rộng màu đen và ma trận nhị phân bên trong màu trắng nhằm xác định số nhận dạng của nó (id). Các đường biên màu đen tạo điều kiện cho việc phát hiện một cách nhanh chóng hình ảnh của nó và mã hóa nhị phân cho phép định vị và áp dụng các kỹ thuật phát hiện và sửa lỗi.
-- Kích thước điểm đánh dấu xác định kích thước của ma trận nội bộ.Ví dụ: một điểm đánh dấu có khích thước là 4x4 được xây dựng bởi ma trận 16 bits.
+- Mã ArUco là một điểm đánh dấu tổng hợp hình vuông bao gồm một đường viền rộng màu đen và ma trận nhị phân bên trong màu trắng nhằm xác định số nhận dạng của nó (id). Các đường biên màu đen tạo điều kiện cho việc phát hiện một cách nhanh chóng hình ảnh của nó và mã hóa nhị phân cho phép định vị và áp dụng các kỹ thuật phát hiện và sửa lỗi.
+- Kích thước điểm đánh dấu xác định kích thước của ma trận nội bộ. Ví dụ: một mã có khích thước là 4x4 được xây dựng bởi ma trận 16 bits.
 - Mã này có thể quay theo nhiều chiều khác nhau trong môi trường, vì vậy, để xác định đúng dữ liệu mà nó truyền tải ta cần phải xác định được độ quay ban đầu của nó, do đó mỗi góc được xác định rõ ràng. Mã hóa nhị phân sẽ giải quyết vấn đề này.
 
 - Hình ảnh về mã:
@@ -56,7 +132,7 @@
 
 
 
-*Một điểm đánh dấu ArUco*
+*Một mã ArUco*
 
 ##### b. Từ điển
 
@@ -173,6 +249,7 @@
 
 ---
 #### 2. Ước lượng hình dáng
+
 - Để thực hiện ước lượng hình dáng mã, bạn cần phải biết các thông số hiệu chuẩn trên máy ảnh của bạn. Đó là ma trận máy ảnh và các hệ số biến dạng. OpenCV cung cấp chức năng calibrateCamera() và hướng dẫn Calibration để hiệu chuẩn máy ảnh. Bạn cũng có thể hiệu chuẩn máy ảnh của bạn bằng cách sử dụng module aruco. Lưu ý rằng điều này chỉ cần được thực hiện một lần trừ khi các ống kính máy ảnh được sửa đổi (ví dụ thay đổi tập trung của nó)
 - Cuối cùng, những gì bạn nhận được sau khi hiệu chuẩn là ma trận máy ảnh: một ma trận 3x3 với khoảng cách tiêu cự và tọa độ trung tâm của máy ảnh (còn gọi là các tham số nội tại) và hệ số biến dạng: một vector gồm 5 phần tử  hoặc nhiều hơn, đó là mô hình sự biến dạng được tạo ra bởi máy ảnh của bạn.
 - Khi ước lượng hình dáng tập các mã ArUco, bạn có thể ước tính hình dáng của mỗi mã riêng lẻ, bằng cách sử dụng các bảng aruco.
@@ -363,6 +440,7 @@ Trước khi phân tích mã nhị phân chính nó, các bit cần phải đư�
 - Giá trị mặc định: 0.13.
 
 ##### d. Nhận diện mã
+
 - Sau khi các bit đã được trích xuất, bước tiếp theo kiểm tra nếu chiết xuất mã thuộc về từ điển đánh dấu, và nếu cần thiết, sửa lỗi có thể được thực hiện.
 - double maxErroneousBitsInBorderRate
   - Các bit của đường viền mã nên là màu đen. Tham số này xác định số bit cho phép trong đường biên, nghĩa là số bit trắng tối đa trong đường biên. Nó được biểu diễn tương ứng so với tổng số bit trong mã.
@@ -374,6 +452,7 @@ Trước khi phân tích mã nhị phân chính nó, các bit cần phải đư�
   - Giá trị mặc định: 0.6.
 
 ##### e. Sàng lọc ở góc
+
 - Sau khi các mã đã được phát hiện và xác định, bước cuối cùng là thực hiện sàng lọc subpixel ở các vị trí góc. Lưu ý rằng bước này là tùy chọn và chỉ có ý nghĩa nếu vị trí của mã phải chính xác. Đây là một bước tốn thời gian và nó bị vô hiệu theo mặc định.
 - bool doCornerRefinement
   - Tham số này quyết định xem quá trình con subpixel góc được thực hiện hay không. Nó có thể bị vô hiệu nếu các góc chính xác là không cần thiết.
@@ -386,7 +465,36 @@ Trước khi phân tích mã nhị phân chính nó, các bit cần phải đư�
   - Giá trị mặc định: cornerRefinementMaxIterations: 30, cornerRefinementMinAccuracy: 0.1.
 
 ---
-#### IV. CÁCH CÀI ĐẶT VÀ SỬ DỤNG ỨNG DỤNG
+#### IV. CÀI ĐẶT VÀ SỬ DỤNG ỨNG DỤNG
+#### 1. Cài đặt
+#### 2. Sử dụng
+
+- Để cài đặt và sử dụng ứng dụng này, thiết bị đi động của bạn phải chạy hệ điều hành Android phiên bản từ ... trở lên.
+- Sau khi tải file apk về, bạn mở nó ra. Màn hình đăng nhập hiển thị, yêu cầu bạn đăng nhập tài khoản để có thể sử dụng ứng dụng.
+
+![img13](https://imgur.com/a/L3hOg)
+
+
+
+*Màn hình đăng nhập*
+
+- Sau khi đăng nhập thành công, màn hình chính sẽ hiển thị như hình ảnh dưới đây:
+
+![img14](https://imgur.com/a/kQYvc)
+
+
+*Màn hình chính*
+
+
+- Khi bạn ấn vào nút scan, camera sẽ hiển thị, bắt đầu quét các mã trong không gian và nhận dạng chúng.
+
+![img15](https://imgur.com/a/NiY3f)
+
+
+
+*Màn hình camera*
+
+
 *UPDATING..............................................*
 
 
