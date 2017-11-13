@@ -34,7 +34,7 @@ Ed25519 là một hệ thống chữ ký số khóa công khai với nhiều tí
 * Độ dài khóa nhỏ
 
 #### Mã hóa dữ liệu AES
- AES là thuật toán được phát triển dựa trên bản thiết kế Square bởi 2 nhà mật mã học người bỉ là Joan Daemen và Vincent Rijmen.AES là một thuật toán mã hóa khối đối xứng với độ dài khóa là 128 bít (một chữ số nhị phân có giá trị 0 hoặc 1), 192 bít và 256 bít tương ứng gọi là AES-128, AES-192 và AES-256. tùy vào độ dài của key khi sử dụng mà ta có số vòng lặp khác nhau AES-128 sử dụng 10 vòng (round), AES-192 sử dụng 12 vòng và AES-256 sử dụng 14 vòng.
+ AES (Advanced Encryption Standard) là thuật toán được phát triển dựa trên bản thiết kế bởi 2 nhà mật mã học người bỉ là Joan Daemen và Vincent Rijmen. AES là một thuật toán mã hóa khối đối xứng với độ dài khóa là 128 bit, 192 bit và 256 bit tương ứng gọi là AES-128, AES-192 và AES-256. tùy vào độ dài của khoá khi sử dụng mà ta có số vòng lặp khác nhau AES-128 sử dụng 10 vòng (round), AES-192 sử dụng 12 vòng và AES-256 sử dụng 14 vòng.
 Các thứ tự hàm AES sẽ thực hiện:
 
 * Trộn từng byte (SubBytes): mỗi byte được thay thế với các byte khác.
