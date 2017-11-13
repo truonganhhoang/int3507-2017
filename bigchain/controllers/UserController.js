@@ -214,9 +214,9 @@ function getPointList(publicKey,next) {
         var tasks = {};
         for (index in json){
             const id = json[index].id;
-            tasks[index] = function (callback) {
+            tasks[index] = function(index){ return function (callback) {
                 checkOwner(id,publicKey,callback)
-            };
+            }}(index);
         }
 
         async.parallel(tasks, function(err,result) {
