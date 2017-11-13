@@ -96,7 +96,9 @@
             this.getVotes(this.candidates)
             this.$noty.success("You voted successfully!")
           }).catch((error) => {
-            this.$noty.error("You cannot vote again!")          
+            let msg = error.response.data.error.message
+            // this.$noty.error(msg)
+            alert(msg)    
           }); 
         }
       },
