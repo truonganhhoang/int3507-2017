@@ -58,7 +58,9 @@ Ethereum là một nền tảng điện toán có tính chất phân tán, công
 | Phí giao dịch | Bị giới hạn, bị cạnh tranh trực tiếp với nhau để được vào khối của Bitcoin | Được tính dựa trên khối lượng tính toán, băng thông lưu trữ |
 | "Đào mỏ" tập trung | Cho phép | Không cho phép |
 
-<center> *Bảng 1: Các điểm khác biệt cơ bản của Ethereum so với Bitcoin* </center>
+<p align="center">
+<i>Bảng 1: Các điểm khác biệt cơ bản của Ethereum so với Bitcoin </i>
+</p>
 
 ## 3. Các khái niệm trong Ethereum
 
@@ -143,10 +145,10 @@ Phiên bản Ethereum của Ghost chỉ rơi vào bảy cấp độ - hoặc tr�
  - Một khối phải chỉ định cha mẹ, và nó phải chỉ định 0 hoặc nhiều Uncle
  - Đối với mỗi Uncle U trong khối B, thợ mỏ B được cộng thêm 3,125% vào phần thưởng coinbase và người thợ mỏ của U được 93,75% của phần thưởng coinbase tiêu chuẩn.
  - Một Uncle bao gồm trong khối B phải có các tính chất sau:
-	1. Nó phải là con trực tiếp của tổ tiên thế hệ k của B, trong đó 2 <= k <= 7
-	2. Nó không thể là tổ tiên của B
-	3. Một uncle phải có tiêu đề khối hợp lệ, nhưng trước đó không cần xác minh hay thậm chí là một khối hợp lệ
-	4. Một Uncle phải khác mọi Uncle khác bao gồm trong các khối trước và tất cả những Uncle khác nằm trong cùng một khối (không bao gồm hai lần)
+	- Nó phải là con trực tiếp của tổ tiên thế hệ k của B, trong đó 2 <= k <= 7
+	- Nó không thể là tổ tiên của B
+	- Một uncle phải có tiêu đề khối hợp lệ, nhưng trước đó không cần xác minh hay thậm chí là một khối hợp lệ
+	- Một Uncle phải khác mọi Uncle khác bao gồm trong các khối trước và tất cả những Uncle khác nằm trong cùng một khối (không bao gồm hai lần)
 
 ### Whisper và Swarm 
 Các ứng dụng máy chủ hiện đại làm tốt 3 việc: tính toán, chạy chương trình và ghi nhớ lưu trữ dữ liệu, tạo ra sự thuận lợi trong việc tương tác giữa người với người.
