@@ -1,7 +1,9 @@
 # Thuật toán băm (hashing algorithm)
 
-**Thuật toán băm (hashing algorithm) là một vũ khí quan trọng trong bất kỳ công cụ mã hóa nào. Thuật toán băm ở khắp mọi nơi trên internet, ngoài việc được sử dụng để bảo mật mật khẩu, chúng cũng được xem là một phần không thể tách rời của hầu hết các loại tiền tệ mã hóa như Bitcoin và Litecoin.**
-**Bản chất chính của một thuật toán băm là hàm một chiều – nói cách khác, bạn có thể tìm được đầu ra từ đầu vào nhưng bạn không thể có được đầu vào từ đầu ra; cũng giống như đường cong e-lip, bạn không thể lấy được khoá chính từ khóa phụ. Các loại tài sản khác khi cho vào cùng một đầu sẽ có cùng một đầu ra.**
+Thuật toán băm (hashing algorithm) là một vũ khí quan trọng trong bất kỳ công cụ mã hóa nào. Thuật toán băm ở khắp mọi nơi trên internet, ngoài việc được sử dụng để bảo mật mật khẩu, chúng cũng được xem là một phần không thể tách rời của hầu hết các loại tiền tệ mã hóa như Bitcoin và Litecoin.
+
+Bản chất chính của một thuật toán băm là hàm một chiều – nói cách khác, bạn có thể tìm được đầu ra từ đầu vào nhưng bạn không thể có được đầu vào từ đầu ra; cũng giống như đường cong e-lip, bạn không thể lấy được khoá chính từ khóa phụ. Các loại tài sản khác khi cho vào cùng một đầu sẽ có cùng một đầu ra.
+
 Hầu hết các thuật toán băm, bao gồm cả SHA và RIPEMD đều có nguồn gốc từ MD4. Thuật toán băm MD4 được phát triển đặc biệt bởi **Ronald Rivest**, rất dễ dàng sử dụng trên phần mềm. Các thuật toán băm MD4 và SHA sử dụng các biến 32 bit với hàm Boolean Bitwise như : hàm logic AND, OR và  XOR được khai thác để hoạt động từ đầu vào đến đầu ra.
 Vậy các thuật toán băm làm việc như thế nào – trong trường hợp này, ta sẽ lấy ví dụ hàm SHA1:
 
