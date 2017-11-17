@@ -1,0 +1,163 @@
+{"meta":[],
+"frames": [
+    [1, 1, 222, 158, 0, -18, -7],
+    [225, 1, 208, 159, 0, -21, -10],
+    [1, 161, 217, 143, 0, -19, -30],
+    [220, 162, 224, 146, 0, -14, -14],
+    [1, 306, 200, 154, 0, -26, -8],
+    [203, 310, 234, 137, 0, -9, -22],
+    [203, 449, 232, 137, 0, -10, -21],
+    [1, 462, 191, 160, 0, -23, -8],
+    [194, 588, 218, 142, 0, -17, -17],
+    [1, 624, 176, 151, 0, -61, -14],
+    [179, 732, 236, 130, 0, -14, -15],
+    [1, 777, 169, 155, 0, -38, -11],
+    [172, 864, 204, 146, 0, -21, -19],
+    [378, 864, 121, 147, 0, -64, -17],
+    [1, 934, 154, 164, 0, -45, -7],
+    [157, 1012, 201, 141, 0, -21, -18],
+    [1, 1100, 149, 163, 0, -54, -7],
+    [1, 1265, 224, 128, 0, -12, -27],
+    [152, 1155, 240, 106, 0, -6, -29],
+    [227, 1263, 204, 138, 0, -24, -21]
+],
+"sets":[
+    {
+"line":"The- remote is on the-table",
+"alt1":"She are under the-sofa",
+"alt2":"The-mouse _ in the-line",
+"alt3":"The-moon _ behind the-fridge",
+"alt4":"The-cat _ between the-queue"
+},
+
+
+{
+"line":"The-sign is in-front-of the-coffee-shop",
+"alt1":"She are on-the-left-of the-plane",
+"alt2":"The-dog _ on-the-right-of the-queue",
+"alt3":"The-tiger _ at-the-back-of the-bookcase",
+"alt4":"the-plane _ on the-stove"
+},{
+"line":"The-mouse is under the-sofa",
+"alt1":"The-cushion are in the-flag",
+"alt2":"The-sign _ on the-earth",
+"alt3":"The-microwave _ behind the-bush",
+"alt4":"the-TV _ between the-bookcase"
+},{
+"line":"She is on-the-right-of the-classroom",
+"alt1":"The-books are on-the-left-of the-flag",
+"alt2":"The-cushion _ in-front-of the-TV",
+"alt3":"The-fan _ in-the-middle-of the-queue",
+"alt4":"the-chair _ at-the-back-of the-coffee-shop"
+},
+{
+"line":"The-kite is on the-roof",
+"alt1":"The-books are under the-table",
+"alt2":"He _ in the-bag",
+"alt3":"The-dog _ behind the-fridge",
+"alt4":"The-tiger _ next-to the-building"
+},{
+"line":"She is in-the-middle-of the-line",
+"alt1":"The-keys are at-the-front-of the-sofa",
+"alt2":"The-door _ at-the-back-of the-earth",
+"alt3":"The-sign _ on-the-left-of the-fridge",
+"alt4":"The-microwave _ on-the-right-of the-bookcase"
+},
+{
+"line":"The-door is on-the-left-of the-building",
+"alt1":"She are on-the-right-of the-roof",
+"alt2":"The-dog _ in-front-of the-classroom",
+"alt3":"the-sofa _ in-the-middle-of the-bush",
+"alt4":"the-TV _ at-the-back-of the-stove"
+},
+
+{
+"line":"The-microwave is next-to the-stove",
+"alt1":"She are on the-bag",
+"alt2":"The-dog _ under the-plane",
+"alt3":"The-keys _ in the-tree",
+"alt4":"the-plane _ between the-classroom"
+},{
+"line":"The-cushion is on-the-left-of the-sofa",
+"alt1":"The-remote are in-front-of the-plane",
+"alt2":"He _ on-the-right-of the-queue",
+"alt3":"The-sign _ at-the-front-of the-coffee-shop",
+"alt4":"the-chair _ in-the-middle-of the-bookcase"
+},{
+"line":"The-fan is next-to the-bookcase",
+"alt1":"The-mouse are on the-plane",
+"alt2":"The-door _ under the-TV",
+"alt3":"The-tiger _ in the-roof",
+"alt4":"the-plane _ between the-chair"
+},{
+"line":"The-moon is between the-earth-and-the-sun",
+"alt1":"The-kite are on the-flag",
+"alt2":"The-keys _ under the-sun",
+"alt3":"The-cat _ in the-chair",
+"alt4":"The-fan _ _ the-coffee-shop"
+},
+{
+"line":"The-keys are under the-chair",
+"alt1":"The-books is on the-line",
+"alt2":"The-kite _ in the-TV",
+"alt3":"The-cat _ behind the-classroom",
+"alt4":"The-tiger _ between the-coffee-shop"
+},
+{
+"line":"The-cat is in the-fridge",
+"alt1":"The-remote are on the-sofa",
+"alt2":"The-mouse _ under the-tree",
+"alt3":"The-moon _ behind the-sun",
+"alt4":"the-sofa _ next-to the-building"
+},{
+"line":"The-dog is in-front-of the-TV",
+"alt1":"The-remote are on-the-right-of the-bag",
+"alt2":"He _ on-the-left-of the-tree",
+"alt3":"The-moon _ in-the-middle-of the-sun",
+"alt4":"The-sign _ at-the-back-of the-bush"
+},{
+"line":"She is behind the-tree",
+"alt1":"The-books are on the-table",
+"alt2":"The-cushion _ in the-line",
+"alt3":"the-sofa _ under the-sun",
+"alt4":"the-TV _ between the-building"
+},
+
+{
+"line":"The-books are in the-bag",
+"alt1":"The-remote is under the-flag",
+"alt2":"He _ on the-line",
+"alt3":"The-moon _ next-to the-tree",
+"alt4":"The-microwave _ behind the-earth"
+},{
+"line":"She is on-the-right-of the-flag",
+"alt1":"The-books are next-to the-table",
+"alt2":"The-cushion _ behind the-sofa",
+"alt3":"The-cat _ in-front-of the-fridge",
+"alt4":"the-sofa _ on-the-left-of the-bush"
+},{
+"line":"She is at-the-back-of the-queue",
+"alt1":"The-mouse are on-the-left-of the-TV",
+"alt2":"The-kite _ on-the-right-of the-roof",
+"alt3":"The-door _ in-the-middle-of the-building",
+"alt4":"the-TV _ under the-coffee-shop"
+},{
+"line":"He is at-the-front-of the-plane",
+"alt1":"The-books are on-the-right-of the-table",
+"alt2":"The-fan _ on-the-left-of the-earth",
+"alt3":"The-microwave _ in-the-middle-of the-chair",
+"alt4":"the-sofa _ at-the-back-of the-stove"
+},
+
+{
+"line":"The-tiger is behind the-bush",
+"alt1":"The-kite are in-front-of the-bag",
+"alt2":"The-keys _ on the-roof",
+"alt3":"The-door _ under the-chair",
+"alt4":"The-fan _ in the-classroom"
+}
+
+
+]}
+
+

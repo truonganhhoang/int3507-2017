@@ -1,0 +1,173 @@
+{"meta":[],
+"frames": [
+    [1, 1, 230, 161, 0, -14, -6],
+    [233, 1, 220, 154, 0, -21, -9],
+    [233, 157, 219, 152, 0, -20, -8],
+    [1, 164, 229, 159, 0, -14, -6],
+    [232, 311, 221, 158, 0, -23, -5],
+    [1, 325, 225, 156, 0, -20, -5],
+    [228, 471, 221, 155, 0, -15, -7],
+    [1, 483, 220, 151, 0, -17, -8],
+    [223, 628, 230, 152, 0, -13, -7],
+    [1, 636, 212, 154, 0, -21, -10],
+    [215, 782, 236, 156, 0, -6, -7],
+    [1, 792, 204, 154, 0, -33, -9],
+    [207, 940, 232, 157, 0, -10, -9],
+    [1, 948, 197, 151, 0, -39, -8],
+    [200, 1099, 230, 151, 0, -11, -10],
+    [1, 1101, 182, 143, 0, -40, -14],
+    [1, 1246, 160, 138, 0, -56, -17],
+    [1, 1386, 220, 148, 0, -21, -14],
+    [223, 1252, 215, 149, 0, -27, -6],
+    [223, 1403, 218, 143, 0, -19, -13]
+],
+"sets":[
+{
+"line":"Bears are strong",
+"alt1":"Elephants is blue",
+"alt2":"Snakes isn't happy",
+"alt3":"Chickens aren't slow",
+"alt4":"Frogs _ sad"
+},
+{
+"line":"Camels are brown",
+"alt1":"Dogs is black",
+"alt2":"Pigs isn't white",
+"alt3":"Snakes aren't red",
+"alt4":"Frogs _ blue"
+},
+{
+"line":"Donkeys are grey",
+"alt1":"Cats is blue",
+"alt2":"Elephants isn't red",
+"alt3":"Pigs aren't white",
+"alt4":"Cows _ pink"
+},
+{
+"line":"Monkeys aren't blue",
+"alt1":"Pigs is brown",
+"alt2":"Pandas are orange",
+"alt3":"Penguins isn't fast",
+"alt4":"Lions _ _"
+},
+{
+"line":"Pigs are fat",
+"alt1":"Birds is thin",
+"alt2":"Horses isn't red",
+"alt3":"Tigers aren't fast",
+"alt4":"Monkeys _ slow"
+},
+{
+"line":"They are happy",
+"alt1":"He is sad",
+"alt2":"She isn't yellow",
+"alt3":"_ aren't angry",
+"alt4":"_ _ fat"
+},
+{
+"line":"Whales are heavy",
+"alt1":"Cats is light",
+"alt2":"Horses isn't slow",
+"alt3":"Tigers aren't fast",
+"alt4":"Rats _ red"
+},
+{
+"line":"She is sad",
+"alt1":"He isn't long",
+"alt2":"They are blue",
+"alt3":"_ aren't nice",
+"alt4":"_ _ dangerous"
+},
+{
+"line":"Lions are dangerous",
+"alt1":"Birds is safe",
+"alt2":"Horses isn't green",
+"alt3":"Monkeys aren't crazy",
+"alt4":"Pandas _ small"
+},
+{
+"line":"Ants are small",
+"alt1":"Dogs is big",
+"alt2":"Snakes isn't tall",
+"alt3":"Monkeys aren't fat",
+"alt4":"Sharks _ black"
+},
+{
+"line":"Bees aren't heavy",
+"alt1":"Rats is yellow",
+"alt2":"Monkeys are black",
+"alt3":"Cows isn't flying",
+"alt4":"Pandas _ _"
+},
+{
+"line":"He is happy",
+"alt1":"She isn't sad",
+"alt2":"We are tall",
+"alt3":"They aren't strong",
+"alt4":"_ _ fat"
+},
+
+{
+"line":"They aren't fat",
+"alt1":"_ is thin",
+"alt2":"_ are small",
+"alt3":"_ isn't tall",
+"alt4":"_ _ dangerous"
+},
+{
+"line":"She isn't strong",
+"alt1":"He is weak",
+"alt2":"They are dangerous",
+"alt3":"_ aren't happy",
+"alt4":"_ _ small"
+},
+
+{
+"line":"She isn't dangerous",
+"alt1":"He is small",
+"alt2":"They are long",
+"alt3":"We aren't safe",
+"alt4":"_ _ big"
+},
+{
+"line":"Dogs aren't tall",
+"alt1":"Cats is fast",
+"alt2":"Birds are brown",
+"alt3":"Monkeys isn't happy",
+"alt4":"Bears _ _"
+},
+
+{
+"line":"She is tall",
+"alt1":"He isn't short",
+"alt2":"They are fat",
+"alt3":"We aren't safe",
+"alt4":"_ _ happy"
+},
+
+{
+"line":"He is fast",
+"alt1":"She isn't slow",
+"alt2":"They are hungry",
+"alt3":"_ aren't happy",
+"alt4":"_ _ sad"
+},
+{
+"line":"He is sad",
+"alt1":"They isn't cry",
+"alt2":"She are blue",
+"alt3":"_ aren't purple",
+"alt4":"_ _ like"
+},
+
+{
+"line":"Caterpillars are green",
+"alt1":"Elephants is blue",
+"alt2":"Chickens isn't white",
+"alt3":"Ducks aren't red",
+"alt4":"Sharks _ black"
+}
+
+
+
+]}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> L El</title>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+	
+	<script type="text/javascript" src='phaser.min.js'></script>
+	<script type="text/javascript" src='Boot.js'></script>
+	<script type="text/javascript" src='Preloader.js'></script>
+	<script type="text/javascript" src='Welcome.js'></script>
+	<script type="text/javascript" src='MainMenu.js'></script>
+	<script type="text/javascript" src='Play.js'></script>
+	<!-- <script type="text/javascript" src='Verbs2.js'></script> -->
+	<!-- <script type="text/javascript" src='Topic1.js'></script> -->
+</head>
+<body>
+
+	<script type="text/javascript">
+		window.onload = function(){
+			var game = new Phaser.Game(1000,500,Phaser.CANVAS,'');
+		
+
+			game.state.add('Boot',Game.Boot);
+			game.state.add('Preloader',Game.Preloader);
+			game.state.add('Welcome',Game.Welcome);
+			game.state.add('MainMenu',Game.MainMenu);
+			game.state.add('Play',Game.Play);
+			// game.state.add('Topic1',Game.Topic1);
+
+			game.state.start('Boot');
+		}
+
+	</script>
+</body>
+</html>
