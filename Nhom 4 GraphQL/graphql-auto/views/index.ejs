@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+  <!-- <script src="/javascripts/jquery-3.2.1.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/javascripts/bootstrap.js"></script>
+
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-sm-7">
+      <h1>
+        <%= title %>
+      </h1>
+      <p>Welcome to Graphql
+      </p>
+      <!-- <form> -->
+      <div>
+
+        <div class="row">
+          <div class="col-sm-8">
+            <input class="form-control" type="text" name="api" id="api" />
+          </div>
+          <div class="col-sm-2">
+            <input type="button" class="btn" value="Send" onclick="openGraphql();" target="_blank" ();>
+          </div>
+        </div>
+
+        <div>
+          <label class="radio-inline">
+            <input type="radio" name="method" value="get" checked onchange="onChosseGet();">GET
+          </label>
+          <label class="radio-inline" style="margin-left: 20px;">
+            <input type="radio" name="method" value="post" onchange="onChossePost();">POST
+          </label>
+
+        </div>
+
+        <!-- <div class="form-group" >
+    <label for="bodyPost">Body</label>
+    <div class="row">
+      <div class="col-sm-5">
+        <textarea class="form-control" rows="8"></textarea>
+      </div>
+    </div>
+
+  </div> -->
+        <div style="margin-top: 20px;" id="postValue">
+          <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#headers">Headers</a></li>
+            <li><a data-toggle="tab" href="#body">Body</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div id="headers" class="tab-pane fade in active" style="margin-top: 20px;">
+              <label for="headersPost">Headers</label>
+              <div class="row">
+                <div class="col-sm-7">
+                  <textarea class="form-control" name="header" rows="8"></textarea>
+                </div>
+              </div>
+              </p>
+            </div>
+            <div id="body" class="tab-pane fade" style="margin-top: 20px;">
+              <label for="bodyPost">Body</label>
+              <div class="row">
+                <div class="col-sm-7">
+                  <textarea class="form-control" name="body" rows="8"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-sm-5">
+      <h4>API TEST</h4>
+      <div>
+        <p>Get method:</p>
+        <ul>
+          <li><a href="https://jsonplaceholder.typicode.com/posts/1" target="_blank">https://jsonplaceholder.typicode.com/posts/1</a></li>
+          <li><a href="https://jsonplaceholder.typicode.com/posts/1/comments" target="_blank">https://jsonplaceholder.typicode.com/posts/1/comments</a></li>
+          <li><a href="https://jsonplaceholder.typicode.com/posts?userId=1" target="_blank">https://jsonplaceholder.typicode.com/posts?userId=1</a></li>
+        </ul>
+      </div>
+      <div>
+        <p>Post method:</p>
+        <ul>
+          <li>https://www.bookcar.net.vn/webservice.php<br/> Headers: <br/>{<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"content-type":
+            "application/x-www-form-urlencoded"
+            <br/> }
+            <br/> Body:
+            <br/>{<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"iUserId": "47",<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type":
+            "countryList",
+            <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tSessionId": "fdfd",<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"GeneralMemberId":
+            "47",
+            <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"GeneralUserType": "DRIVER",<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"GeneralDeviceType":
+            "IOS",
+            <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"AppVersion": "1.3",<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Platform":
+            "IOS",
+            <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"GeneralAppVersion": "1.3",<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"vDeviceType":
+            "IOS",
+            <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UserType": "DRIVER",<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"vDeviceToken":
+            "2575ffa260614e03d6c215461ab9190ffa535dd5e15a0c208f0e392d36450876"
+            <br/> }
+            <br/>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    $('#postValue').hide();
+    function openGraphql() {
+      var urlHost = window.location.protocol + "//" + window.location.hostname;
+      var urlGraphql = document.getElementById('api').value;
+      // var urlHost = "http://localhost:3000";
+      var checkMethodSend = $('[name="method"]:checked').val();
+      if (urlGraphql == "" || urlGraphql == null) {
+        alert("Bạn chưa nhập url");
+        return;
+      }
+      var url = urlHost + "/graphql?api=" + encodeURIComponent(urlGraphql) + "&method=" + checkMethodSend;
+      if (checkMethodSend == "post") {
+        var header, body;
+        if ($('[name="header"]').val() != "") {
+          header = JSON.parse($('[name="header"]').val());
+          url += "&hdgraphql" + serialize(header);
+        }
+        if ($('[name="body"]').val() != "") {
+          body = JSON.parse($('[name="body"]').val());
+          url += "&bdgraphql" + serialize(body);
+        }
+      }
+      var win = window.open(url, '_blank');
+      win.focus();
+    }
+
+    function onChosseGet() {
+      $('#postValue').hide();
+    }
+
+    function onChossePost() {
+      $('#postValue').show();
+    }
+
+    function serialize(obj, prefix) {//convert object to url
+      var str = [], p;
+      for (p in obj) {
+        if (obj.hasOwnProperty(p)) {
+          var k = prefix ? prefix + "[" + p + "]" : p, v = obj[p];
+          str.push((v !== null && typeof v === "object") ?
+            serialize(v, k) :
+            encodeURIComponent(k) + "=" + encodeURIComponent(v));
+        }
+      }
+      return str.join("&");
+    }
+  </script>
+
+</body>
+
+</html>

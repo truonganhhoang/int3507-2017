@@ -89,7 +89,7 @@ REST Contraints:
 - Chuẩn hóa các interface : Đây là một trong những đặc tính quan trọng của hệ thống REST. Bằng cách tạo ra các quy ước chuẩn để giao tiếp giữa các thành phần trong hệ thống, bạn đã đơn giản hóa việc client có thể tương tác với server. Các quy ước này áp dụng cho toàn bộ các service giúp cho người sử dụng hệ thống của bạn dễ dụng hơn. Dễ hiểu hơn trên hệ thống bạn đặt ra 1 chuẩn API để người dùng dù là mobile, web đều có thể kết nối vào được. Hệ thống REST có yếu điểm ở đây vì khi chuẩn hóa rồi ta không thế tối ưu từng kết nối.-
 - Phân lớp hệ thống : trong hệ thống REST bạn chia tách các thành phần hệ thống theo từng lớp, mỗi lớp chỉ sử dụng lớp ở dưới nó và giao tiếp với lớp ở ngay trên nó mà thôi. Điều này giúp bạn giảm độ phức tạp của hệ thống,giúp các thành phần tách biệt nhau từ đó dễ dàng mở rộng từng thành phần:
 
-[![Hình 2: Mô hình REST](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/8.3.rest.png_3fj7x7kqlj)](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/8.3.rest.png_3fj7x7kqlj)
+[![Hình 2: Mô hình REST](https://raw.githubusercontent.com/tuansaker1412/int3507-2017/nhom4/Nhom%204%20GraphQL/Tutorial/img/rest.png)](https://raw.githubusercontent.com/tuansaker1412/int3507-2017/nhom4/Nhom%204%20GraphQL/Tutorial/img/rest.png)
 
 <center>Hình 2: Mô hình REST</center>
 
