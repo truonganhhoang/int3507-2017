@@ -13,7 +13,7 @@ Thành viên nhóm 7:
 Nội dung
 <ul>
  <li>I. Giới thiệu về Dafny</li>
- <li>II. Hướng dẫn cài đặtli>
+ <li>II. Hướng dẫn cài đặt</li>
   <ul>
    <li>1.      Cài đặt trên widows</li>
    <li>2.      Cài đặt trên Linux hoặc MaxOS</li>
@@ -54,21 +54,21 @@ Nội dung
 <li>c. Mở mô-đun (Opening Modules)</li>
 <li>d. Tính trừu tượng ( Module Abstraction)</li>
 <li>e. Tổ chức và sự phụ thuộc( Module Ordering and Dependencies)</li>
-<li>f. Tên ( Name Resolution). 44](#)</li>
+<li>f. Tên ( Name Resolution)</li>
   </ul>
  </ul>
    <li>IV. Kết luận</li>
  </ul>
-                                    ****
-**I. Giới thiệu về Dafny**
-Dafny là một công cụ kiểm chứng được viết để giúp cho lập trình viên đảm bảo chính xác những gì họ muốn làm và đảm bảo không còn lỗi thời gian chạy( run time) như số ngoài phạm vi, chia cho số 0, ... trong chương trình.
-Trình kiểm tra tĩnh của Dafny có thể sử dụng để kiểm chứng các yếu tố tĩnh của chương trình như là tính bắt buộc, tính tuần tự, hỗ trợ các lớp trừu tượng, phân bổ động, kiểu dữ liệu qui nạp và xây dựng trong cấu trúc đặc tả. Xác thông số đặc tả bao gồm tiền điều kiện và hậu điều kiện, các thông số đọc và ghi, các chỉ số chấm dứt. Để hỗ trợ thêm các thông số kỹ thuật, ngôn ngữ cũng cung cấp các biến ma, các hàm đệ quy và các kiểu như bộ và chuỗi. Thông số kỹ thuật và các cấu trúc ma thuật chỉ được sử dụng khi xác minh mà trình biên dịch bỏ qua chúng từ mã thực thi.[1]
-Để làm được điều này, Dafny dựa trên các chú thích cao cấp về lí do và chứng minh tính đúng đắn của code. Chương trình Dafny được chạy như một phần của biên dịch. Hiệu quả của một đoạn mã có thể được đưa ra một cách trừu tượng, sử dụng tự nhiên, biểu hiện cấp cao của hành vi mong muốn, đó là dễ dàng hơn và ít bị lỗi để viết. Dafny sau đó tạo ra một bằng chứng cho thấy mã phù hợp với các chú thích (giả sử chúng là chính xác nhất, là hiển nhiên). Dafny nâng cao gánh nặng cho việc viết mã lỗi miễn phí bằng cách viết chú thích không có lỗi. Điều này thường dễ hơn viết code, bởi vì các chú thích ngắn hơn và trực tiếp hơn.
-Từ các chương trình đã được kiểm chứng, trình biên dịch Dafny sản xuất mã (.dll hoặc .exe) cho nền tảng .NET. Tuy nhiên, các cơ sở để giao tiếp với mã NET khác là tối thiểu.
-Dưới đây là một ví dụ về chương trình của Dafny:
-forall k: int :: 0 <= k < a.Length ==> 0 < a[k]
-Đoạn code nói rằng đối với tất cả các số nguyên k là chỉ số vào mảng, giá trị tại chỉ mục đó lớn hơn không. Bằng cách viết các chú thích này, người ta tin tưởng rằng mã là chính xác. Hơn nữa, chính việc viết các chú thích có thể giúp người ta hiểu mã này đang làm gì ở mức sâu hơn.
-Cùng tìm hiểu các phần tiếp theo để có thể cài đặt và hiểu rõ hơn về Dafny.
+                                   
+I. Giới thiệu về Dafny <br>
+<p>Dafny là một công cụ kiểm chứng được viết để giúp cho lập trình viên đảm bảo chính xác những gì họ muốn làm và đảm bảo không còn lỗi thời gian chạy( run time) như số ngoài phạm vi, chia cho số 0, ... trong chương trình.</p>
+<p>Trình kiểm tra tĩnh của Dafny có thể sử dụng để kiểm chứng các yếu tố tĩnh của chương trình như là tính bắt buộc, tính tuần tự, hỗ trợ các lớp trừu tượng, phân bổ động, kiểu dữ liệu qui nạp và xây dựng trong cấu trúc đặc tả. Xác thông số đặc tả bao gồm tiền điều kiện và hậu điều kiện, các thông số đọc và ghi, các chỉ số chấm dứt. Để hỗ trợ thêm các thông số kỹ thuật, ngôn ngữ cũng cung cấp các biến ma, các hàm đệ quy và các kiểu như bộ và chuỗi. Thông số kỹ thuật và các cấu trúc ma thuật chỉ được sử dụng khi xác minh mà trình biên dịch bỏ qua chúng từ mã thực thi.[1]</p>
+<p>Để làm được điều này, Dafny dựa trên các chú thích cao cấp về lí do và chứng minh tính đúng đắn của code. Chương trình Dafny được chạy như một phần của biên dịch. Hiệu quả của một đoạn mã có thể được đưa ra một cách trừu tượng, sử dụng tự nhiên, biểu hiện cấp cao của hành vi mong muốn, đó là dễ dàng hơn và ít bị lỗi để viết. Dafny sau đó tạo ra một bằng chứng cho thấy mã phù hợp với các chú thích (giả sử chúng là chính xác nhất, là hiển nhiên). Dafny nâng cao gánh nặng cho việc viết mã lỗi miễn phí bằng cách viết chú thích không có lỗi. Điều này thường dễ hơn viết code, bởi vì các chú thích ngắn hơn và trực tiếp hơn.</p>
+<p>Từ các chương trình đã được kiểm chứng, trình biên dịch Dafny sản xuất mã (.dll hoặc .exe) cho nền tảng .NET. Tuy nhiên, các cơ sở để giao tiếp với mã NET khác là tối thiểu.</p>
+<p>Dưới đây là một ví dụ về chương trình của Dafny:</p>
+forall k: int :: 0 <= k < a.Length ==> 0 < a[k] <br>
+<p>Đoạn code nói rằng đối với tất cả các số nguyên k là chỉ số vào mảng, giá trị tại chỉ mục đó lớn hơn không. Bằng cách viết các chú thích này, người ta tin tưởng rằng mã là chính xác. Hơn nữa, chính việc viết các chú thích có thể giúp người ta hiểu mã này đang làm gì ở mức sâu hơn.</p>
+<p>Cùng tìm hiểu các phần tiếp theo để có thể cài đặt và hiểu rõ hơn về Dafny.</p>
 II- Hướng dẫn cài đặt
 Do không có giao diện trực tuyến của Dafny nên để sử dụng nó, bạn có hai sự lựa chọn đó là vào trang chủ của Dafny và sử dụng máy ảo được cung cấp trên trang hoặc cài đặt Dafny trên máy của bạn.
 
