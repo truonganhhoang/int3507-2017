@@ -1,13 +1,17 @@
 \documentclass[../cnd.tex]{subfiles}
-chúng tôi sử dụng một số công ước đánh máy cho các ký hiệu chính thức, một số trong đó là khá cụ thể cho công việc hiện tại: \newline
-\indent Hai bộ các giá trị được cấu trúc cao, 'cấp trên cùng', trạng thái, được đánh dấu bằng chữ cái Hy Lạp in đậm. Chúng rơi vào các trạng thái của thế giới, được biểu thị bằng $\sigma$ (hoặc một biến thể ở đó) và các trạng thái của máy, $\mu$. \newline
-\indent Các hàm hoạt động dựa trên các giá trị có cấu trúc cao được biểu thị bằng chữ hoa tiếng Hy Lạp, ví dụ: $\Upsilon$, Ethereum chức năng chuyển trạng thái.
-\newline 
-\indent Đối với hầu hết các chức năng, một chữ cái viết hoa được sử dụng, ví dụ C: hàm về chi phí chung. Đây có thể được ký hiệu để biểu thị các biến thể chuyên biệt, ví dụ: CSSTORE, chức năng chi phí cho hoạt động SSTORE. Đối với các chức năng chuyên biệt và có thể được xác định bên ngoài, tôi có thể định dạng dưới dạng văn bản đánh máy, ví dụ: chức năng băm Keccak-256 (theo mục nhập chiến thắng của cuộc thi SHA-3) được biểu thị là KEC (và thường được gọi là Keccak đơn giản). Ngoài ra KEC512 là đề cập đến chức năng băm Keccak 512. \newline
-\indent Giá trị vô hướng và các chuỗi byte có kích thước cố định (hoặc, synony-mously, mảng) được biểu thị bằng một trường hợp thường thấp hơn, ví dụ: n được sử dụng trong tài liệu để biểu thị nonce giao dịch. Những người có một ý nghĩa đặc biệt đặc biệt có thể là tiếng Hy Lạp, ví dụ: $\delta$, số lượng các mục cần thiết trên ngăn xếp cho một hoạt động nhất định. \newline
-\indent Trong toàn bộ, chúng ta giả sử các đại lượng vô hướng là các số nguyên dương và do đó thuộc về tập hợp P. Tập các dãy tất cả các byte là B, được định nghĩa chính thức trong Phụ lục B. Nếu như một chuỗi các trình tự được giới hạn ở những đoạn có độ dài đặc biệt, một subscript, do đó tập của tất cả các chuỗi byte có độ dài 32 được đặt tên $B_{32}$ và tập hợp của tất cả các số nguyên dương nhỏ hơn $2^{256}$ được đặt tên $P_{256}$. Điều này được định nghĩa chính thức trong phần tiếp theo
-\newline 
-\indent 
-Dấu ngoặc vuông được sử dụng để lập chỉ mục và tham chiếu các thành phần riêng lẻ hoặc các chuỗi con của các trình tự, ví dụ: $\mu_s$[0] biểu thị mục đầu tiên trên ngăn xếp của máy. Đối với chuỗi con, các điểm elip được sử dụng để xác định phạm vi dự định, bao gồm các phần tử ở cả hai giới hạn, ví dụ: $\mu_m	$ [0 :: 31] biểu thị 32 đầu tiên của bộ nhớ máy
-\newline
-\indent Khi xem xét việc sử dụng các hàm hiện có, cho một hàm f, hàm f * biểu thị một phiên bản tương đương, phần tử của việc lập bản đồ chức năng thay vì giữa các trình tự. Nó được định nghĩa chính thức trong phần tiếp theo
+
+Chúng tôi sử dụng một số công ước đánh máy cho các ký hiệu chính thức, một số trong đó là khá cụ thể cho công việc hiện tại.
+
+Hai bộ các giá trị được cấu trúc cao, 'cấp trên cùng', trạng thái, được đánh dấu bằng chữ cái Hy Lạp in đậm. Chúng rơi vào các trạng thái của thế giới, được biểu thị bằng $\sigma$ (hoặc một biến thể ở đó) và các trạng thái của máy, $\mu$. 
+
+Các hàm hoạt động dựa trên các giá trị có cấu trúc cao được biểu thị bằng chữ hoa tiếng Hy Lạp, ví dụ: $\Upsilon$, Ethereum chức năng chuyển trạng thái.
+ 
+Đối với hầu hết các chức năng, một chữ cái viết hoa được sử dụng, ví dụ C: hàm về chi phí chung. Đây có thể được ký hiệu để biểu thị các biến thể chuyên biệt, ví dụ: CSSTORE, chức năng chi phí cho hoạt động SSTORE. Đối với các chức năng chuyên biệt và có thể được xác định bên ngoài, tôi có thể định dạng dưới dạng văn bản đánh máy, ví dụ: chức năng băm Keccak-256 (theo mục nhập chiến thắng của cuộc thi SHA-3) được biểu thị là KEC (và thường được gọi là Keccak đơn giản). Ngoài ra KEC512 là đề cập đến chức năng băm Keccak 512.
+
+Giá trị vô hướng và các chuỗi byte có kích thước cố định (hoặc, synony-mously, mảng) được biểu thị bằng một trường hợp thường thấp hơn, ví dụ: n được sử dụng trong tài liệu để biểu thị nonce giao dịch. Những người có một ý nghĩa đặc biệt đặc biệt có thể là tiếng Hy Lạp, ví dụ: $\delta$, số lượng các mục cần thiết trên ngăn xếp cho một hoạt động nhất định.
+
+Trong toàn bộ, chúng ta giả sử các đại lượng vô hướng là các số nguyên dương và do đó thuộc về tập hợp P. Tập các dãy tất cả các byte là B, được định nghĩa chính thức trong Phụ lục B. Nếu như một chuỗi các trình tự được giới hạn ở những đoạn có độ dài đặc biệt, một subscript, do đó tập của tất cả các chuỗi byte có độ dài 32 được đặt tên $B_{32}$ và tập hợp của tất cả các số nguyên dương nhỏ hơn $2^{256}$ được đặt tên $P_{256}$. Điều này được định nghĩa chính thức trong phần tiếp theo.
+ 
+Dấu ngoặc vuông được sử dụng để lập chỉ mục và tham chiếu các thành phần riêng lẻ hoặc các chuỗi con của các trình tự, ví dụ: $\mu_s$[0] biểu thị mục đầu tiên trên ngăn xếp của máy. Đối với chuỗi con, các điểm elip được sử dụng để xác định phạm vi dự định, bao gồm các phần tử ở cả hai giới hạn, ví dụ: $\mu_m	$ [0 :: 31] biểu thị 32 đầu tiên của bộ nhớ máy.
+
+Khi xem xét việc sử dụng các hàm hiện có, cho một hàm f, hàm f * biểu thị một phiên bản tương đương, phần tử của việc lập bản đồ chức năng thay vì giữa các trình tự. Nó được định nghĩa chính thức trong phần tiếp theo.

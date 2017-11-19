@@ -5,15 +5,18 @@ Ethereum được xem như một máy trạng thái dựa trên các giao dịch
 	\begin{equation}
 	\sigma_{t+1} \equiv \Upsilon(\sigma_{t} , T)
 	\end{equation}
-\indent Trong đó $\Upsilon$ là hàm chuyển đổi trạng thái trong Ethereum. Trong Ethereum,$\Upsilon$ cùng với $\sigma$ mạnh hơn đáng kể so với bất kỳ hệ thống nào đang có. $\Upsilon$ cho phép các thành phần có thể tính toán tùy ý, trong khi đó $\sigma$ cho phép các thành phần lưu các trạng thái tùy ý giữa các giao dịch. \newline
-\indent Các giao dịch được sắp xếp thành các khối; các khối được nối liền với nhau bằng cách sử dụng một băm mật mã như một ý nghĩa tham khảo. Các khối hoạt động như một nhật ký, ghi lại một loạt các giao dịch cùng với khối trước đó và một định danh cho trạng thái cuối cùng (mặc dù không lưu trữ trạng thái cuối cùng chính nó | sẽ quá lớn). Họ cũng chấm dứt chuỗi giao dịch với ưu đãi cho người đào. Sự khuyến khích này diễn ra như là một chức năng chuyển đổi trạng thái, bổ sung giá trị cho một tài khoản được chỉ định.
-\newline
-\indent Nó được giải thích như sau:
+
+Trong đó $\Upsilon$ là hàm chuyển đổi trạng thái trong Ethereum. Trong Ethereum,$\Upsilon$ cùng với $\sigma$ mạnh hơn đáng kể so với bất kỳ hệ thống nào đang có. $\Upsilon$ cho phép các thành phần có thể tính toán tùy ý, trong khi đó $\sigma$ cho phép các thành phần lưu các trạng thái tùy ý giữa các giao dịch.
+
+Các giao dịch được sắp xếp thành các khối; các khối được nối liền với nhau bằng cách sử dụng một băm mật mã như một ý nghĩa tham khảo. Các khối hoạt động như một nhật ký, ghi lại một loạt các giao dịch cùng với khối trước đó và một định danh cho trạng thái cuối cùng (mặc dù không lưu trữ trạng thái cuối cùng chính nó | sẽ quá lớn). Họ cũng chấm dứt chuỗi giao dịch với ưu đãi cho người đào. Sự khuyến khích này diễn ra như là một chức năng chuyển đổi trạng thái, bổ sung giá trị cho một tài khoản được chỉ định.
+
+Nó được giải thích như sau:
 \begin{align}
 \sigma_{t+1} \equiv \Pi(\sigma_{t} , B) \\
 B \equiv (...,(T_0,T_1,...))\\
 \Pi(\sigma , B) \equiv \Omega(B, \Upsilon(\Upsilon(\sigma,T_0),T_1)...)
 \end{align}
 
-\indent Trong đó $\Omega$ là chức năng chuyển trạng thái hoàn thiện khối(chức năng thưởng cho bên chỉ định); B là khối này, bao gồm một loạt các giao dịch giữa một số thành phần khác; và $\Pi$ là cấp của khối trong hàm chuyển trạng thái \newline
-\indent Đây là cơ sở của mô hình BlockChain, một mô hình tạo thành xương sống không chỉ của Ethereum, mà còn cho đến nay tất cả các hệ thống giao dịch dựa trên sự đồng thuận.
+Trong đó $\Omega$ là chức năng chuyển trạng thái hoàn thiện khối(chức năng thưởng cho bên chỉ định); B là khối này, bao gồm một loạt các giao dịch giữa một số thành phần khác; và $\Pi$ là cấp của khối trong hàm chuyển trạng thái.
+
+Đây là cơ sở của mô hình BlockChain, một mô hình tạo thành xương sống không chỉ của Ethereum, mà còn cho đến nay tất cả các hệ thống giao dịch dựa trên sự đồng thuận.
