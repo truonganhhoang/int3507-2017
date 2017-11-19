@@ -1,0 +1,68 @@
+<div class="row" *ngIf="!current_point">
+  <div class="col-md-12">
+    Loading...
+  </div>
+</div>
+
+<div class="row" *ngIf="current_point">
+
+  <div class="col-md-4">
+    <div class="card-box">
+      <h4 class="text-dark header-title m-t-0">My Point</h4>
+      <div class="row">
+        <div class="col-md-4">
+          <label>Name:</label>
+        </div>
+        <div class="col-md-8">
+          {{current_user.name}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label>Current Point:</label>
+        </div>
+        <div class="col-md-8">
+          {{current_point.point}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button (click)="create_point()" [disabled]="processing" type="button" class="btn btn-default waves-effect waves-light">Create Point</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="card-box">
+      <h4 class="text-dark header-title m-t-0">Transfer Point</h4>
+      <div class="table-responsive">
+        <table class="table table-actions-bar m-b-0">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Public Key</th>
+              <th class="text-center">Transfer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of list_user; let i = index ">
+              <td>{{i + 1}}</td>
+              <td>{{user.name}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.publicKey}}</td>
+              <td class="text-center">
+                <button *ngIf="user" (click)="transfer_point(i)" [disabled]="processing || current_point.point == 0" type="button" class="btn btn-default btn-custom waves-effect waves-light">
+                  <i class="fa fa-exchange" aria-hidden="true"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>

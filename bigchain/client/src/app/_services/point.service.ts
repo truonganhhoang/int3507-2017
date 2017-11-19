@@ -4,16 +4,25 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 
 @Injectable()
-export class UserService {
+export class PointService {
   constructor(private http: Http) { }
 
-  create(name: string, email: string) {
-    return this.http.post('/api/create_user', JSON.stringify({ name: name, email: email }))
+  current_point() {
+    return this.http.get('/api/current', this.jwt())
       .map((response: Response) => response.json());
   }
 
-  listUser() {
-    return this.http.get('/api/users', this.jwt())
+
+  create_point() {
+    return this.http.get('/api/create', this.jwt())
+      .map((response: Response) => response.json());
+  }
+
+  transfer_point(receiver, point) {
+    return this.http.post('/api/transfer', {
+      receiver: receiver,
+      point: point
+    }, this.jwt())
       .map((response: Response) => response.json());
   }
 

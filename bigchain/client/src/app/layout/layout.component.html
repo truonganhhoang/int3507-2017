@@ -86,7 +86,7 @@
                             </ul>
                         </li>
                         <li class="dropdown top-menu-item-xs">
-                            <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">Hi, {{currentUser.name}}</a>
+                            <a *ngIf="currentUser" href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">Hi, {{currentUser.name}}</a>
                             <ul class="dropdown-menu">
                                 <li><a href="javascript:void(0)"><i class="ti-user m-r-10 text-custom"></i> Profile</a></li>
                                 <li><a href="javascript:void(0)"><i class="ti-settings m-r-10 text-custom"></i> Settings</a></li>
@@ -112,11 +112,16 @@
             <div id="sidebar-menu">
                 <ul>
                     <li class="has_sub">
+                        <a [routerLink]="['/list_user']" routerLinkActive="active" class="waves-effect"><i class="ti-paint-bucket"></i> <span> List User </span></a>
+                    </li>
+                    <li class="has_sub">
                         <a [routerLink]="['/create_score']" routerLinkActive="active" class="waves-effect"><i class="ti-home"></i> <span> Create Score </span></a>
                     </li>
-
                     <li class="has_sub">
                         <a [routerLink]="['/course']" routerLinkActive="active" class="waves-effect"><i class="ti-paint-bucket"></i> <span> Course </span></a>
+                    </li>
+                    <li class="has_sub">
+                        <a [routerLink]="['/manage_point']" routerLinkActive="active" class="waves-effect"><i class="ti-paint-bucket"></i> <span> Manage Point </span></a>
                     </li>
                 </ul>
                 <div class="clearfix"></div>
