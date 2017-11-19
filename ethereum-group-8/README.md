@@ -11,9 +11,6 @@
 * Tìm hiểu về Ethereum
 * Xây dựng một chương trình bỏ phiếu dựa vào Ethereum 
 
-## Mục lục:
-
- 
 ------------------------
 
 # Tìm hiểu về Ethereum
