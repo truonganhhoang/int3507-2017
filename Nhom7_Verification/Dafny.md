@@ -12,52 +12,52 @@ Thành viên nhóm 7:
  
 Nội dung
 <ul>
- <li>[**I. Giới thiệu về Dafny**](#)[. 2](#)</li>
- <li>[II- Hướng dẫn cài đặt. 3](#)</li>
+ <li>I. Giới thiệu về Dafny</li>
+ <li>II. Hướng dẫn cài đặtli>
   <ul>
-   <li>[1.      Cài đặt trên widows. 3](#)</li>
-   <li>[2.      Cài đặt trên Linux hoặc MaxOS. 3](#)</li>
-   <li>[3.      Tất cả các nền tảng (Sau khi cài). 3](#)</li>
+   <li>1.      Cài đặt trên widows</li>
+   <li>2.      Cài đặt trên Linux hoặc MaxOS</li>
+   <li>3.      Tất cả các nền tảng (Sau khi cài)</li>
 </ul>
- <li>[III- Các kiến thức cơ bản về Dafny. 4](#)</li>
+ <li>III. Các kiến thức cơ bản về Dafny</li>
  <ul>
-  <li>[1. Phương thức (Methods). 4](#)</li>
-  <li>[**2. Tiền – Hậu điều kiện (**](#)[Pre- and Postconditions](#)[**)**](#)[. 5](#)</li>
-  <li>[3. Khẳng định (Assertions). 7](#)</li>
-  <li>[**4. Hàm ( Function)**](#)[. 7](#)</li>
-  <li>[**5. Bất biến trong vòng lặp (**](#)[Loop Invariants). 9](#)</li>
-  <li>[6.](#) [**Tính dừng(Termination)**](#)[. 9](#)</li>
-  <li>[**7. Mảng (Arrays)**](#)[. 13](#)</li>
-  <li>[8.](#) [**Định lượng(Quantifiers)**](#)[. 13](#)</li>
-  <li>[**9. Khung (Framing)**](#)[. 15](#)</li>
-  <li>[**10. Tìm kiếm nhị phân (Binary Search)**](#)[. 17](#)</li>
-  <li>[**11. Các bộ (Collections)**](#)[. 19](#)</li>
+  <li>1. Phương thức (Methods)</li>
+  <li>2. Tiền – Hậu điều kiện (Pre- and Postconditions)</li>
+  <li>3. Khẳng định (Assertions)</li>
+  <li>4. Hàm ( Function)</li>
+  <li>5. Bất biến trong vòng lặp (Loop Invariants)</li>
+  <li>6. Tính dừng(Termination)</li>
+  <li>7. Mảng (Arrays)</li>
+  <li>8. Định lượng(Quantifiers)</li>
+  <li>9. Khung (Framing)</li>
+  <li>10. Tìm kiếm nhị phân (Binary Search)</li>
+  <li>11. Các bộ (Collections)</li>
  <ul>
-  <li>[a.      Tập hợp (Sets). 19](#)</li>
-  <li>[b.      Chuỗi (Sequence). 20](#)</li>
-  <li>[c.       Các tập hợp(Mutisets). 23](#)</li>
-  <li>[d.      Bản đồ( Map). 23](#)</li>
+  <li>a.      Tập hợp (Sets)</li>
+  <li>b.      Chuỗi (Sequence)</li>
+  <li>c.       Các tập hợp(Mutisets)</li>
+  <li>d.      Bản đồ( Map)</li>
   </ul>
-  <li>[**12. Bổ đề( Lemmas)**](#)[. 24](#)</li>
+  <li>12. Bổ đề( Lemmas)</li>
   <ul>
-<li>[a.      Giới thiệu( Introduction). 24](#)</li>
-<li>[b.      Tìm kiếm số 0( Searching for zero). 25](#)</li>
-<li>[c.       Bổ đề( Lemmas). 26](#)</li>
-<li>[d.      Đếm(Counting). 28](#)</li>
-<li>[e.      Chứng minh phân phối thuộc tính( Proving the Distributive Property). 29](#)</li>
-<li>[f.       Cảm ứng( Induction). 31](#)</li>
+<li>a.      Giới thiệu( Introduction)</li>
+<li>b.      Tìm kiếm số 0( Searching for zero)</li>
+<li>c.       Bổ đề( Lemmas) </li>
+<li>d.      Đếm(Counting)</li>
+<li>e.      Chứng minh phân phối thuộc tính( Proving the Distributive Property)</li>
+<li>f.       Cảm ứng( Induction)</li>
   </ul>
-<li>[13. Mô- đun( Modules). 37](#)</li>
+<li>13. Mô- đun( Modules)</li>
   <ul>
-<li>[a. Giới thiệu (Introduction). 37](#)</li>
-<li>[b. Nhập và xuất modules (Importing and Exporting Modules). 38](#)</li>
-<li>[c. Mở mô-đun (Opening Modules). 42](#)</li>
-<li>[d. Tính trừu tượng ( Module Abstraction). 43](#)</li>
-<li>[e. Tổ chức và sự phụ thuộc( Module Ordering and Dependencies). 44](#)</li>
-<li>[f. Tên ( Name Resolution). 44](#)</li>
+<li>a. Giới thiệu (Introduction)</li>
+<li>b. Nhập và xuất modules (Importing and Exporting Modules)</li>
+<li>c. Mở mô-đun (Opening Modules)</li>
+<li>d. Tính trừu tượng ( Module Abstraction)</li>
+<li>e. Tổ chức và sự phụ thuộc( Module Ordering and Dependencies)</li>
+<li>f. Tên ( Name Resolution). 44](#)</li>
   </ul>
  </ul>
-   <li>[IV . Kết luận. 45](#)</li>
+   <li>IV. Kết luận</li>
  </ul>
                                     ****
 **I. Giới thiệu về Dafny**
