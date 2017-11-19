@@ -88,8 +88,7 @@
 	\end{table}
 	\newpage
 	\section{Giới thiệu}
-		\subsection{Giới thiệu chung về Bl
-			ockChain}
+		\subsection{Giới thiệu chung về BlockChain}
 		BlockChain có thể coi như một quyển sổ ghi chép tài chính được phân phối ngang hàng như Torrent. Không có nhà nước hay công ty nào cai quản, BlockChain được mã hóa một cách rất cầu kỳ để ngăn chặn tuyệt đối việc giả mạo thông tin.\newline
 		\indent Ba thành phần công nghệ của BlockChain
 		\begin{itemize}
@@ -172,53 +171,19 @@
 	\subfile{contain/GasPayment}
 	% Đức
 	\subsection{Sự đồng thuận về việc chấp nhận khối}
-	Trên một mạng ngang hàng, mọi dữ liệu ở các nút cục bộ đều có thể bị thay đổi túy ý bởi người sở hữu nút đó và khi thực hiện nhân bản thì sẽ có các xung đột và ta khó có thể xác định đâu mới là chuỗi khối đúng. Vì vậy, để đảm bảo sự tin cậy của mạng cũng như chuỗi khối, ta phải có các cơ chế để làm sao tất các nút trên mạng đều đồng thuận khối thêm vào chuỗi đó là khối hợp lệ và sẽ phát hiện ra các hành vi phá hoại mạng bằng cascch đưa và các khối giả. Nói về cơ chế đồng thuận này thì hiện nay phổ biến nhất sẽ có hai cớ chế là chứng nhận công việc  (Proof Of Work - POW) và chứng nhận cổ phần (Proof Of Stake - POS). Ngoài ra còn mô hình chứng nhận thẩm quyền (Proof Of Authority - POA) nhưng trước hết ta sẽ đi vào giải thích POW và POS.
-	\subsubsection{POW}
-	Ta đã quá quen thuộc với việc các thợ mỏ mua các cỗ máy đắt tiền (gồm nhiều card đồ họa) để về đào coin. Việc này chúng tỏ họ đang tham gia vào một mạng lưới tiền ảo sử dụng mô hình POW. POW là một trong các cách để xác định sự đồng thuận của cộng đồng. Ở mô hình hay giải thuật này, để thêm mới một khối và blockchain đồi hỏi phải thực hiện các hàm tính toán rất phức tạp để tạo nên một giá trị băm hợp lệ (khó để tạo ra nhưng rất dễ dàng để xác định nó hợp lệ). Việc giải mã này ngoài việc cần những cấu hình mạnh còn tiêu tốn rất rất nhiều điện năng và gây nguy hại đến môi trường. Cộng đồng sẽ công nhận khối anh tạo ra dựa vào lượng công việc anh đã thực hiện được. Một yếu tố đặc trưng của mô hình này đó là sự xuất hiện của các khối dư thừa (orphan block) do có nhiều người tham gia cùng tạo nên một khối nên sẽ có trường hợp hai người tạo ra hai khối đều hợp lệ nhưng ta chỉ có thể chọn khối đến trước và khối kia (tốn rất nhiều năng lượng tạo ra) bị lãng phí và bỏ đi. Những đặc trưng kể trên phần nào nói lên nhược điểm của giải thuật mà phần lớn các đồng tiền ảo đang sử dụng
-
-Khi độ khó để tạo ra một khối càng ngày càng tăng lên, việc đào ra một khối của các thợ mỏ ngày càng thấp và họ bắt đầu thua lỗ,một số sẽ quyết định từ bỏ hoặc tham gia vào các bể đào (mining pool). Việc này tạo ra các cỗ máy tập trung (trái với các tính chất phân tán mà mô hình mong muốn). Và còn một vấn đề hệ quả nữa là tấn công 51% (51% attack) sẽ được nên ở sau
-
-Nhưng nó phổ biến có nguyên nhân của nó. Giá trị sử dụng của nó là khi một đồng tiền ảo mới được phát hành, lượng tiền chưa được nhiều. Hầu hết các đồng tiền ảo sẽ chọn mô hình này để gia tăng lượng tiền mà vẫn kiểm soát được phần nào lạm phát của nó (điều mà ETH đã làm), tiền chỉ được tạo ra không hề dễ dàng.
-	\subsubsection{POS}
-	Khi mà POW bộc lộ rõ các yếu điểm thì là lúc các mô hình và các giải thuật khác được đề xuất, trong đó có POS. Thực tế thì POS đã được áp dụng ở một số đồng tiền ảo, tiên phong trong đó là PeerCoin và Ethereum sẽ là cái tên tiếp theo áp dụng mô hình này. Mô hình POS thay vì công nhận công việc của anh bằng sức lực anh bỏ ra (chi cho phần cứng và năng lượng) thì lại công nhận bằng nó bằng cổ phần hay số tiền mà anh đặt cọc vào mỗi khối người đó sinh ra. Và giờ đây, mỗi khối không phải là cuộc chạy đua xem ai giải mã được chính xác và nhanh nhất (có thể gây lãng phí với các khối thừa) mà việc tạo khối được chỉ định cho người nào góp cổ phần nhiều nhất vì hệ thống tự động hiểu rằng nếu anh góp vào nhiều tiền như vậy thì anh cũng sẽ có đủ khả năng tính toán để tạo ra khối mới.Và một điều quan trọng nữa là sẽ không còn tồn tại việc thưởng ETH theo mỗi khối đào được mà chỉ trả cho người tạo khối một khoản tiền vì đã thực hiện giao dịch (transaction fee).
-
-Việc sử dụng POS sẽ dẫn đến các lợi ích như sau. Tiết kiệm năng lượng, giúp mạng lưới phân tán hơn, giúp đảm bảo lợi ích người đào. 
+	\subfile{contain/consensus}
 	% Đức
 	\subsection{Máy ảo Ethereum (Ethereum Virtual Machine)}
 	\subfile{contain/transaction}
 	
 	% Đức
 	\subsection{Lộ trình của Ethereum}
-	Mặc dù việc phát triển phần mềm có thể rất khó dự đoán, các nhà phát triển của Ethereum đã có các dự đoán về các mốc thời gian khá rõ ràng. Cụ thể sẽ có các giai đoạn sau.
-	\subsubsection{Frontier Release (2015)}
-	Frontier đã hoàn thành một số mục tiêu đúng hạn . Trong giai đoạn này việc giao tiếp chủ yếu được thực hiện trên các dòng lệnh. Các ưu tiên trong giai đoạn này gồm có:
-	\begin{itemize}
-  		\item Đảm bảo hệ thống mining chạy được
-  		\item Hợp pháp hóa đồng ETH như là một loại tiền ảo chính thống
-  		\item Phát hành một môi trường để thử nghiệm dapp
-  		\item Tạo ra các công cụ để cung cấp ether miễn phí cho các mạng thử nghiệm
-  		\item Cho phép các nhà phát triển tải lên và thự thi các hợp đồng thông minh
-	\end{itemize}
-
-	\subsubsection{Homestead Release (2016)}
-	Giai đoạn này cung cấp thêm một công cụ hữu ích hơn cho việc giao tiếp với Ethereum bằng Mist Browser. Các đặc điểm chính của giai đoạn này bao gồm:
-	\begin{itemize}
-  		\item Việc đào Ether đã được trả công 100\% giá trị như dự định
-  		\item Không có sự ngắt quãng trên toàn mạng
-  		\item Gần như bước ra khỏi quá trình thử nghiệm
-  		\item Có thêm các tài liệu cho việc sử dụng dòng lệnh và Mist
-	\end{itemize}
+	\subfile{contain/roadmap}
 	
-	\subsubsection{Metropolis (2017)}
-	Đây là pha thứ hai trong việc phát triển giao thức Ethereum. Bản phát hành này sẽ mở ra việc phát hành chính thức cho Mist với đầy đủ các tính năng. Tiếp theo đó nó sẽ được hỗ trợ bởi các phần mềm bên thứ ba một cách mạnh mẽ. Hơn nữa, Swarm và Whisper sẽ được đưa vào vận hành.
-
-	\subsubsection{Serenity (2018)}
-	Đây sẽ là giai đoạn chuyển mô hình từ POW to POS với thuật toán có tên gọi Casper. Việc chuyển dịch này là cần thiết với các ưu diểm được nêu từ trước. Quá trình chuyển dịch này sẽ được thực hiện từ từ chứ không chuyển hẳn sang mô hình mới trong một lần. Việc chuyển dịch này sẽ rất cần sự tính toán cũng như chứng minh tính đúng đắn của nó.
-	% Đức
-	%\section{Cài đặt}
-	%\subfile{contain/setting}
+	\subsection{Các thành phần tiếp theo}
+	\subfile{contain/nextcontent}
 	
-	\section{Voting app}
+	\section{Ứng dụng bầu cử}
 	\subfile{contain/voting}
 	\section{Tài Liệu Tham Khảo}
 	\subfile{contain/reference}
