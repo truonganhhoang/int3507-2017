@@ -1,53 +1,64 @@
 # Dafny
-**Các vấn đề hiện đại của công nghệ thông tin**
+
 **Tìm hiểu công cụ Dafny**
  
-Thành viên nhóm 7:
+Thành viên nhóm 7: 
 
-1. Hoàng Thanh Hằng
-2. Lê Thị Xuân
+1. Hoàng Thanh Hằng 
+2. Lê Thị Xuân 
 3. Phạm Thị Thu Hường
 4. Phùng Thị Lương
 
  
 Nội dung
-[**I. Giới thiệu về Dafny**](#)[. 2](#)
-[II- Hướng dẫn cài đặt. 3](#)
-[1.      Cài đặt trên widows. 3](#)
-[2.      Cài đặt trên Linux hoặc MaxOS. 3](#)
-[3.      Tất cả các nền tảng (Sau khi cài). 3](#)
-[III- Các kiến thức cơ bản về Dafny. 4](#)
-[1. Phương thức (Methods). 4](#)
-[**2. Tiền – Hậu điều kiện (**](#)[Pre- and Postconditions](#)[**)**](#)[. 5](#)
-[3. Khẳng định (Assertions). 7](#)
-[**4. Hàm ( Function)**](#)[. 7](#)
-[**5. Bất biến trong vòng lặp (**](#)[Loop Invariants). 9](#)
-[6.](#) [**Tính dừng(Termination)**](#)[. 9](#)
-[**7. Mảng (Arrays)**](#)[. 13](#)
-[8.](#) [**Định lượng(Quantifiers)**](#)[. 13](#)
-[**9. Khung (Framing)**](#)[. 15](#)
-[**10. Tìm kiếm nhị phân (Binary Search)**](#)[. 17](#)
-[**11. Các bộ (Collections)**](#)[. 19](#)
-[a.      Tập hợp (Sets). 19](#)
-[b.      Chuỗi (Sequence). 20](#)
-[c.       Các tập hợp(Mutisets). 23](#)
-[d.      Bản đồ( Map). 23](#)
-[**12. Bổ đề( Lemmas)**](#)[. 24](#)
-[a.      Giới thiệu( Introduction). 24](#)
-[b.      Tìm kiếm số 0( Searching for zero). 25](#)
-[c.       Bổ đề( Lemmas). 26](#)
-[d.      Đếm(Counting). 28](#)
-[e.      Chứng minh phân phối thuộc tính( Proving the Distributive Property). 29](#)
-[f.       Cảm ứng( Induction). 31](#)
-[13. Mô- đun( Modules). 37](#)
-[a. Giới thiệu (Introduction). 37](#)
-[b. Nhập và xuất modules (Importing and Exporting Modules). 38](#)
-[c. Mở mô-đun (Opening Modules). 42](#)
-[d. Tính trừu tượng ( Module Abstraction). 43](#)
-[e. Tổ chức và sự phụ thuộc( Module Ordering and Dependencies). 44](#)
-[f. Tên ( Name Resolution). 44](#)
-[IV . Kết luận. 45](#)
- 
+<ul>
+ <li>[**I. Giới thiệu về Dafny**](#)[. 2](#)</li>
+ <li>[II- Hướng dẫn cài đặt. 3](#)</li>
+  <ul>
+   <li>[1.      Cài đặt trên widows. 3](#)</li>
+   <li>[2.      Cài đặt trên Linux hoặc MaxOS. 3](#)</li>
+   <li>[3.      Tất cả các nền tảng (Sau khi cài). 3](#)</li>
+</ul>
+ <li>[III- Các kiến thức cơ bản về Dafny. 4](#)</li>
+ <ul>
+  <li>[1. Phương thức (Methods). 4](#)</li>
+  <li>[**2. Tiền – Hậu điều kiện (**](#)[Pre- and Postconditions](#)[**)**](#)[. 5](#)</li>
+  <li>[3. Khẳng định (Assertions). 7](#)</li>
+  <li>[**4. Hàm ( Function)**](#)[. 7](#)</li>
+  <li>[**5. Bất biến trong vòng lặp (**](#)[Loop Invariants). 9](#)</li>
+  <li>[6.](#) [**Tính dừng(Termination)**](#)[. 9](#)</li>
+  <li>[**7. Mảng (Arrays)**](#)[. 13](#)</li>
+  <li>[8.](#) [**Định lượng(Quantifiers)**](#)[. 13](#)</li>
+  <li>[**9. Khung (Framing)**](#)[. 15](#)</li>
+  <li>[**10. Tìm kiếm nhị phân (Binary Search)**](#)[. 17](#)</li>
+  <li>[**11. Các bộ (Collections)**](#)[. 19](#)</li>
+ <ul>
+  <li>[a.      Tập hợp (Sets). 19](#)</li>
+  <li>[b.      Chuỗi (Sequence). 20](#)</li>
+  <li>[c.       Các tập hợp(Mutisets). 23](#)</li>
+  <li>[d.      Bản đồ( Map). 23](#)</li>
+  </ul>
+  <li>[**12. Bổ đề( Lemmas)**](#)[. 24](#)</li>
+  <ul>
+<li>[a.      Giới thiệu( Introduction). 24](#)</li>
+<li>[b.      Tìm kiếm số 0( Searching for zero). 25](#)</li>
+<li>[c.       Bổ đề( Lemmas). 26](#)</li>
+<li>[d.      Đếm(Counting). 28](#)</li>
+<li>[e.      Chứng minh phân phối thuộc tính( Proving the Distributive Property). 29](#)</li>
+<li>[f.       Cảm ứng( Induction). 31](#)</li>
+  </ul>
+<li>[13. Mô- đun( Modules). 37](#)</li>
+  <ul>
+<li>[a. Giới thiệu (Introduction). 37](#)</li>
+<li>[b. Nhập và xuất modules (Importing and Exporting Modules). 38](#)</li>
+<li>[c. Mở mô-đun (Opening Modules). 42](#)</li>
+<li>[d. Tính trừu tượng ( Module Abstraction). 43](#)</li>
+<li>[e. Tổ chức và sự phụ thuộc( Module Ordering and Dependencies). 44](#)</li>
+<li>[f. Tên ( Name Resolution). 44](#)</li>
+  </ul>
+ </ul>
+   <li>[IV . Kết luận. 45](#)</li>
+ </ul>
                                     ****
 **I. Giới thiệu về Dafny**
 Dafny là một công cụ kiểm chứng được viết để giúp cho lập trình viên đảm bảo chính xác những gì họ muốn làm và đảm bảo không còn lỗi thời gian chạy( run time) như số ngoài phạm vi, chia cho số 0, ... trong chương trình.
