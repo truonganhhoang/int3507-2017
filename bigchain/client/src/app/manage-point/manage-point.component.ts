@@ -13,6 +13,7 @@ export class ManagePointComponent implements OnInit {
   current_point: any;
   list_user = [];
   processing: boolean = false;
+  receiver: any;
 
   constructor(
     private userService: UserService,
@@ -31,9 +32,9 @@ export class ManagePointComponent implements OnInit {
     });
   }
 
-  create_point() {
+  create_point(number_point) {
     this.processing = true;
-    this.pointService.create_point().subscribe((res) => {
+    this.pointService.create_point(number_point).subscribe((res) => {
       this.pointService.current_point().subscribe((res) => {
         this.current_point = res;
         this.processing = false;
@@ -41,9 +42,14 @@ export class ManagePointComponent implements OnInit {
     });
   }
 
-  transfer_point(i) {
+  show_transfer_modal(user) {
+    this.receiver = user;
+  }
+
+  transfer_point(number_points, receiver) {
+    console.log(receiver);
     this.processing = true;
-    this.pointService.transfer_point(this.list_user[i].publicKey, this.current_point.point_list[0]).subscribe((res) => {
+    this.pointService.transfer_point(receiver.publicKey, number_points).subscribe((res) => {
       console.log(res);
       this.pointService.current_point().subscribe((res) => {
         this.current_point = res;

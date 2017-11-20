@@ -13,15 +13,15 @@ export class PointService {
   }
 
 
-  create_point() {
-    return this.http.get('/api/create', this.jwt())
+  create_point(number_points) {
+    return this.http.get('/api/create?number=' + number_points, this.jwt())
       .map((response: Response) => response.json());
   }
 
-  transfer_point(receiver, point) {
+  transfer_point(receiver, number_points) {
     return this.http.post('/api/transfer', {
       receiver: receiver,
-      point: point
+      number: number_points
     }, this.jwt())
       .map((response: Response) => response.json());
   }
