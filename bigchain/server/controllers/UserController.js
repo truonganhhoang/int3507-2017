@@ -258,11 +258,16 @@ exports.tranferPoint = function (req, res) {
                }}(i);
            }
            async.parallel(tasks, function (err,result) {
-               if (err) throw err;
+               if (err) {
+                    res.json({
+                        success: false
+                    })
+                }
                res.json({
                    success: true
                })
            })
+           console.log("final line");
        }
     });
 };
@@ -270,7 +275,7 @@ exports.tranferPoint = function (req, res) {
  function tranferOnePoint(userData,receiver,assetId,next) {
     const date = new Date();
     console.log(userData.publicKey," ",userData.privateKey);
-    bigchainAPI.getSortedTransactions(assetId, function (json) {
+    bigchainAPI.listTransaction(assetId, function (json) {
          console.log(json);
         // next(json);
         if(json.length != 0) {
