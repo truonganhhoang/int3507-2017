@@ -1,0 +1,166 @@
+{"meta":[],
+"frames": [
+    [1, 1, 243, 173, 0, -1, 0],
+    [246, 1, 245, 169, 0, -2, -3],
+    [493, 1, 244, 169, 0, -3, -4],
+    [739, 1, 231, 169, 0, -12, -2],
+    [246, 172, 244, 167, 0, -2, -4],
+    [1, 176, 243, 169, 0, -4, -1],
+    [492, 172, 242, 171, 0, -4, -1],
+    [736, 172, 235, 170, 0, -11, -2],
+    [736, 344, 235, 160, 0, -4, -8],
+    [246, 341, 242, 170, 0, -1, -2],
+    [1, 347, 241, 165, 0, -4, -4],
+    [490, 345, 240, 165, 0, 0, -4],
+    [732, 506, 239, 166, 0, -4, -8],
+    [490, 512, 240, 161, 0, -5, -5],
+    [1, 675, 238, 165, 0, -6, -5],
+    [1, 514, 240, 159, 0, -2, -8],
+    [732, 674, 236, 153, 0, -6, -15],
+    [244, 513, 240, 158, 0, -6, -12],
+    [243, 673, 238, 167, 0, -7, -4],
+    [483, 675, 231, 160, 0, -7, -8]
+],
+"sets":[
+{
+"line":"She comes-from Italy",
+"alt1":"He come-from Ireland",
+"alt2":"They _ Brazil",
+"alt3":"_ _ India",
+"alt4":"_ _ Egypt"
+},
+{
+"line":"He comes-from America",
+"alt1":"She come-from Thailand",
+"alt2":"They _ Germany",
+"alt3":"_ _ Argentina",
+"alt4":"_ _ Brazil"
+},
+{
+"line":"She comes-from Russia",
+"alt1":"He come-from America",
+"alt2":"They _ Mexico",
+"alt3":"_ _ France",
+"alt4":"_ _ Italy"
+},
+{
+"line":"He comes-from China",
+"alt1":"She come-from Thailand",
+"alt2":"They _ Germany",
+"alt3":"_ _ Spain",
+"alt4":"_ _ England"
+},
+{
+"line":"She comes-from Japan",
+"alt1":"He come-from America",
+"alt2":"They _ Spain",
+"alt3":"_ _ England",
+"alt4":"_ _ Canada"
+},
+{
+"line":"They come-from Canada",
+"alt1":"She come-from Thailand",
+"alt2":"He _ Mexico",
+"alt3":"_ _ China",
+"alt4":"_ _ South-Africa"
+},
+{
+"line":"She comes-from Australia",
+"alt1":"He come-from France",
+"alt2":"They _ China",
+"alt3":"_ _ Canada",
+"alt4":"_ _ South-Africa"
+},
+{
+"line":"They come-from England",
+"alt1":"She come-from America",
+"alt2":"He _ France",
+"alt3":"_ _ Spain",
+"alt4":"_ _ China"
+},
+{
+"line":"She comes-from Brazil",
+"alt1":"He come-from Argentina",
+"alt2":"They _ Mexico",
+"alt3":"_ _ England",
+"alt4":"_ _ South-Africa"
+},
+{
+"line":"He comes-from France",
+"alt1":"She come-from Thailand",
+"alt2":"They _ China",
+"alt3":"_ _ Canada",
+"alt4":"_ _ Australia"
+},
+{
+"line":"He comes-from Spain",
+"alt1":"She come-from Russia",
+"alt2":"They _ Canada",
+"alt3":"_ _ Australia",
+"alt4":"_ _ South-Africa"
+},
+{
+"line":"He comes-from South-Africa",
+"alt1":"She come-from America",
+"alt2":"They _ England",
+"alt3":"_ _ Turkey",
+"alt4":"_ _ Egypt"
+},
+{
+"line":"He comes-from Egypt",
+"alt1":"She come-from Argentina",
+"alt2":"They _ France",
+"alt3":"_ _ Spain",
+"alt4":"_ _ Turkey"
+},
+{
+"line":"He comes-from India",
+"alt1":"She come-from Germany",
+"alt2":"They _ Mexico",
+"alt3":"_ _ Ireland",
+"alt4":"_ _ Turkey"
+},
+{
+"line":"They come-from Germany",
+"alt1":"She come-from Russia",
+"alt2":"He _ Japan",
+"alt3":"_ _ Australia",
+"alt4":"_ _ Egypt"
+},
+{
+"line":"They come-from Mexico",
+"alt1":"She come-from Italy",
+"alt2":"He _ Turkey",
+"alt3":"_ _ Japan",
+"alt4":"_ _ Egypt"
+},
+
+{
+"line":"He comes-from Turkey",
+"alt1":"She come-from Russia",
+"alt2":"They _ Brazil",
+"alt3":"_ _ Italy",
+"alt4":"_ _ India"
+},
+{
+"line":"She comes-from Argentina",
+"alt1":"He come-from Germany",
+"alt2":"They _ India",
+"alt3":"_ _ Japan",
+"alt4":"_ _ Australia"
+},
+{
+"line":"She comes-from Ireland",
+"alt1":"He come-from Brazil",
+"alt2":"They _ Ireland",
+"alt3":"_ _ India",
+"alt4":"_ _ Japan"
+},
+{
+"line":"He comes-from Thailand",
+"alt1":"She come-from Russia",
+"alt2":"They _ Argentina",
+"alt3":"_ _ Italy",
+"alt4":"_ _ Ireland"
+}
+]}

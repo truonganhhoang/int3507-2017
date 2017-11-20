@@ -1,0 +1,211 @@
+{"meta":[],
+"frames": [
+    [1, 1, 242, 168, 0, -5, -4],
+    [245, 1, 229, 165, 0, -9, -6],
+    [245, 168, 230, 159, 0, -12, -5],
+    [1, 171, 242, 165, 0, -5, -5],
+    [245, 329, 219, 160, 0, -14, -8],
+    [1, 338, 240, 166, 0, -9, -3],
+    [243, 491, 210, 148, 0, -31, -7],
+    [1, 506, 237, 168, 0, -8, -2],
+    [240, 641, 234, 164, 0, -11, -3],
+    [1, 676, 236, 166, 0, -7, -3],
+    [239, 807, 234, 163, 0, -10, -5],
+    [1, 844, 233, 158, 0, -8, -7],
+    [236, 972, 239, 164, 0, -7, -2],
+    [1, 1004, 233, 139, 0, -9, -4],
+    [236, 1138, 238, 162, 0, -6, -6],
+    [1, 1145, 191, 154, 0, -38, -9],
+    [1, 1301, 199, 145, 0, -24, -10],
+    [1, 1448, 234, 153, 0, -10, -11],
+    [237, 1302, 234, 151, 0, -9, -17],
+    [237, 1455, 192, 146, 0, -29, -16]
+],
+"sets":[
+{
+"line":"If-you drink-coffee then-you feel-awake",
+"alt1":"Then-you take-a-shower if-you wear-a-seat-belt",
+"alt2":"_ lift-weights _ feel-awake",
+"alt3":"_ heat-water _ it-will-break",
+"alt4":"_ it's-sunny _ drink-some-water"
+},{
+"line":"If-you eat-too-much then-you get-fat",
+"alt1":"Then-you drive-a-car if-you breath-smells",
+"alt2":"_ it-rains _ feel-awake",
+"alt3":"_ drop-a-ball _ need-the-restroom",
+"alt4":"_ it's-sunny _ call-the-fire"
+},{
+"line":"If-you drive-a-car then wear-a-seat-belt",
+"alt1":"Then take-a-shower if-you smell-bad",
+"alt2":"_ drive-a-car _ feel-awake",
+"alt3":"_ lift-weights _ get-stronger",
+"alt4":"_ heat-water _ a-dog-gets-wet"
+},
+{
+"line":"If-you drink-water then-you need-the-restroom",
+"alt1":"Then-you take-a-shower if-you need-the-restroom",
+"alt2":"_ drop-a-cup _ lie-down",
+"alt3":"_ sneeze _ drink-some-water",
+"alt4":"_ mix _ drink-some-water"
+},{
+"line":"If-you sneeze then blow-your-nose",
+"alt1":"Then brush-your-teeth if-you get-a-suntan",
+"alt2":"_ drink-a-lot _ it-will-bounce",
+"alt3":"_ eat-too-much _ lie-down",
+"alt4":"_ break-your-leg _ blow-your-nose"
+},{
+"line":"If-you break-your-leg then go-to-hospital",
+"alt1":"Then sunbathe if-you get-a-suntan",
+"alt2":"_ heat-water _ need-the-restroom",
+"alt3":"_ drop-a-ball _ it-will-break",
+"alt4":"_ sneeze _ call-the-fire"
+},{
+"line":"If-you have-a-cough then drink-some-water",
+"alt1":"Then drive-a-car if-you breath-smells",
+"alt2":"_ it-rains _ feel-awake",
+"alt3":"_ it's-sunny _ it-boils",
+"alt4":"_ see-a-fire _ get-fat"
+},
+{
+"line":"If-you drive-a-car then wear-a-seat-belt",
+"alt1":"Then take-a-shower if-you smell-bad",
+"alt2":"_ drive-a-car _ feel-awake",
+"alt3":"_ lift-weights _ get-stronger",
+"alt4":"_ heat-water _ a-dog-gets-wet"
+},
+{
+"line":"If-you don't-take-a-shower then-you smell-bad",
+"alt1":"Then-you brush-your-teeth if-you breath-smells",
+"alt2":"_ drop-a-ball _ get-a-suntan",
+"alt3":"_ run _ get-fat",
+"alt4":"_ have-a-headache _ it-will-break"
+},
+{
+"line":"If-you don't-brush-your-teeth then-your breath-smells",
+"alt1":"Then-your drink-coffee if-you get-stronger",
+"alt2":"_ drop-a-ball _ the-dog-gets-wet",
+"alt3":"_ break-your-leg _ the-snow-melts",
+"alt4":"_ sneeze _ go-to-hospital"
+},
+{
+"line":"If-you drink-coffee then-you feel-awake",
+"alt1":"Then-you take-a-shower if-you wear-a-seat-belt",
+"alt2":"_ lift-weights _ feel-awake",
+"alt3":"_ heat-water _ it-will-break",
+"alt4":"_ it's-sunny _ drink-some-water"
+},
+{
+"line":"If-you sunbathe then-you get-a-suntan",
+"alt1":"Then-you brush-your-teeth if-you smell-bad",
+"alt2":"_ drive-a-car _ get-stronger",
+"alt3":"_ it-rains _ get-fat",
+"alt4":"_ eat-too-much _ go-to-hospital"
+},
+{
+"line":"If-you lift-weights then-you get-stronger",
+"alt1":"Then-you drink-coffee if-you the-dog-gets-wet",
+"alt2":"_ run _ it-will-bounce",
+"alt3":"_ have-a-headache _ go-to-hospital",
+"alt4":"_ see-a-fire _ get-green"
+},
+{
+"line":"If-you drink-water then-you need-the-restroom",
+"alt1":"Then-you take-a-shower if-you need-the-restroom",
+"alt2":"_ drop-a-cup _ lie-down",
+"alt3":"_ sneeze _ drink-some-water",
+"alt4":"_ mix _ drink-some-water"
+},
+{
+"line":"If-you heat-water then it-boils",
+"alt1":"Then sunbathe if-you wear-a-seat-belt",
+"alt2":"_ eat-too-much _ it-boils",
+"alt3":"_ have-a-cough _ the-snow-melts",
+"alt4":"_ see-a-fire _ get-green"
+},
+{
+"line":"If it-rains then the-dog-gets-wet",
+"alt1":"Then lift-weights if smell-bad",
+"alt2":"_ lift-weights _ get-stronger",
+"alt3":"_ run _ it-will-break",
+"alt4":"_ sneeze _ get-tired"
+},
+{
+"line":"If-you eat-too-much then-you get-fat",
+"alt1":"Then-you drive-a-car if-you breath-smells",
+"alt2":"_ it-rains _ feel-awake",
+"alt3":"_ drop-a-ball _ need-the-restroom",
+"alt4":"_ it's-sunny _ call-the-fire"
+},
+{
+"line":"If-you drop-a-cup then it-will-break",
+"alt1":"Then sunbathe if-you wear-a-seat-belt",
+"alt2":"_ heat-water _ a-dog-gets-wet",
+"alt3":"_ have-a-headache _ it-will-bounce",
+"alt4":"_ see-a-fire _ get-green"
+},
+{
+"line":"If-you drop-a-ball then it-will-bounce",
+"alt1":"Then take-a-shower if-you need-a-restroom",
+"alt2":"_ drink-a-lot _ snow-melts",
+"alt3":"_ break-your-leg _ drink-some-water",
+"alt4":"_ have-a-cough _ call-fire"
+},
+{
+"line":"If it's-sunny then the-snow-will-melt",
+"alt1":"Then brush-your-teeth if it-boils",
+"alt2":"_ drink-water _ get-fat",
+"alt3":"_ drop-the-cup _ go-to-hospital",
+"alt4":"_ see-fire _ blow-your-nose"
+},
+{
+"line":"If-you run then-you get-tired",
+"alt1":"Then-you drink if-you smell-bad",
+"alt2":"_ eat-too-much _ get-tired",
+"alt3":"_ see-a-fire _ lie-down",
+"alt4":"_ have-a-cough _ call-the-fire"
+},
+{
+"line":"If-you break-your-leg then go-to-hospital",
+"alt1":"Then sunbathe if-you get-a-suntan",
+"alt2":"_ heat-water _ need-the-restroom",
+"alt3":"_ drop-a-ball _ it-will-break",
+"alt4":"_ sneeze _ call-the-fire"
+},
+{
+"line":"If-you have-a-headache then lie-down",
+"alt1":"Then drink-coffee if-you wear-a-seat-belt",
+"alt2":"_ drop-a-cup _ the-snow-melts",
+"alt3":"_ break-your-leg _ get-tired",
+"alt4":"_ mix _ blow-your-nose"
+},
+{
+"line":"If-you have-a-cough then drink-some-water",
+"alt1":"Then drive-a-car if-you breath-smells",
+"alt2":"_ it-rains _ feel-awake",
+"alt3":"_ it's-sunny _ it-boils",
+"alt4":"_ see-a-fire _ get-fat"
+},
+{
+"line":"If-you sneeze then blow-your-nose",
+"alt1":"Then brush-your-teeth if-you get-a-suntan",
+"alt2":"_ drink-a-lot _ it-will-bounce",
+"alt3":"_ eat-too-much _ lie-down",
+"alt4":"_ break-your-leg _ blow-your-nose"
+},
+{
+"line":"If-you see-fire then call-the-fire-firefighters",
+"alt1":"Then drink-coffee if-you it-will-bounce",
+"alt2":"_ drink-water _ get-tired",
+"alt3":"_ it's-sunny _ lie-down",
+"alt4":"_ headache _ blow-your-nose"
+},
+{
+"line":"If-you mix-yellow-with-blue then-you get-green",
+"alt1":"Then-you sunbathe if-you breath-smells",
+"alt2":"_ it-rains _ get-a-suntan",
+"alt3":"_ drop-a-cup _ it-boils",
+"alt4":"_ have-a-cough _ get-fat"
+}
+]}
+
+

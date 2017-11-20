@@ -1,0 +1,197 @@
+{"meta":[],
+"frames": [
+    [1, 1, 233, 131, 0, -8, -24],
+    [236, 1, 237, 141, 0, -6, -12],
+    [1, 134, 204, 143, 0, -26, -17],
+    [207, 144, 209, 146, 0, -22, -17],
+    [1, 279, 171, 158, 0, -39, -9],
+    [174, 292, 242, 146, 0, -6, -17],
+    [1, 440, 228, 148, 0, -13, -14],
+    [231, 440, 219, 151, 0, -16, -13],
+    [1, 590, 228, 151, 0, -10, -16],
+    [231, 593, 238, 153, 0, -9, -3],
+    [1, 743, 213, 154, 0, -17, -9],
+    [216, 748, 234, 155, 0, -11, -8],
+    [1, 905, 232, 159, 0, -12, -4],
+    [235, 905, 237, 159, 0, -4, -7],
+    [1, 1066, 232, 160, 0, -9, -9],
+    [235, 1066, 241, 163, 0, -7, -3],
+    [1, 1228, 230, 165, 0, -15, -6],
+    [233, 1231, 244, 163, 0, -3, -2],
+    [1, 1396, 247, 169, 0, -2, -1],
+    [250, 1396, 244, 169, 0, -3, -4]
+],
+"sets":[
+    {
+"line":"She-feels frightened because she-saw a-spider",
+"alt1":"He-feel angry _ she-ate an-ant",
+"alt2":"They-feels confused _ she-wore a-black",
+"alt3":"She-feel bored _ she-wrote a-monster",
+"alt4":"They-feel proud _ she-drank a-fly"
+},
+{
+"line":"She-feels tired because she-didn't-sleep",
+"alt1":"He-feel frightened _ she-is-sleeping",
+"alt2":"He-feels disgusted _ she-slept",
+"alt3":"She-feel excited _ she-is-asleep",
+"alt4":"They-feel cold _ she-sleeps"
+},{
+"line":"She-feels jealous because she-didn't-win the-trophy",
+"alt1":"He-feel hot _ she-won the-medal",
+"alt2":"They-feels wet _ she-no-win the-coin",
+"alt3":"She-feel surprised _ she-win the-metal",
+"alt4":"They-feel excited _ she-didn't-won _"
+},{
+"line":"He-feels hurt because he-broke his-finger",
+"alt1":"He-feel embarrassed _ he-fixed his-foot",
+"alt2":"She-feels wet _ he-pointed his-toe",
+"alt3":"She-feel jealous _ he-made his-head",
+"alt4":"They-feel bored _ _ his-eye"
+},
+
+
+
+
+{
+"line":"He-feels cold because he-doesn't-have a-coat",
+"alt1":"He-feel hot _ he-don't-have yellow",
+"alt2":"She-feels bored _ he-has a-hat",
+"alt3":"She-feel tired _ he-isn't-have a-sweater",
+"alt4":"They-feel confused _ no-have hot"
+},
+{
+"line":"She-feels bored because she-doesn't-have a-TV",
+"alt1":"He-feel angry _ she-has a-box",
+"alt2":"They-feels hot _ she-have watching-TV",
+"alt3":"She-feel sick _ she-don't-have money",
+"alt4":"They-feel excited _ she-no-has long-hair"
+},
+{
+"line":"He-feels embarrassed because his-tshirt is too-small",
+"alt1":"He-feel happy _ his-hat are too-big",
+"alt2":"She-feels excited _ his-green _ too-green",
+"alt3":"She-feel proud _ his-face _ too-many",
+"alt4":"They-feels wet _ his-hand _ not-small"
+},
+{
+"line":"He-feels sick because he-ate too-much",
+"alt1":"He-feel angry _ he-watched too-little",
+"alt2":"They-feels sad _ he-drank not-much",
+"alt3":"She-feel cold _ he-fat not-enough",
+"alt4":"They-feel annoyed _ he-played nothing"
+},
+{
+"line":"He-feels wet because he-doesn't-have an-umbrella",
+"alt1":"He-feel tired _ he-has a-tshirt",
+"alt2":"She-feels annoyed _ he-don't-have pants",
+"alt3":"She-feel frightened _ he-have water",
+"alt4":"They-feel excited _ _ _"
+},
+{
+"line":"She-feels tired because she-didn't-sleep",
+"alt1":"He-feel frightened _ she-is-sleeping",
+"alt2":"He-feels disgusted _ she-slept",
+"alt3":"She-feel excited _ she-is-asleep",
+"alt4":"They-feel cold _ she-sleeps"
+},
+{
+"line":"He-feels angry because someone-stole his-wallet",
+"alt1":"He-feel sad _ someone-borrowed his-pants",
+"alt2":"She-feels sick _ he-stole his-friend",
+"alt3":"She-feel tired _ he-found his-brown",
+"alt4":"They-feel excited _ someone-found _"
+},
+{
+"line":"He-feels surprised because he-saw a-monkey",
+"alt1":"They-feels embarrassed _ he-ate nothing",
+"alt2":"She-feels excited _ he-has a-cat",
+"alt3":"She-feel annoyed _ he-didn't-see a-pet",
+"alt4":"They-feel tired _ he-can _"
+},
+{
+"line":"They-feel excited because it's-snowing",
+"alt1":"He-feel disgusted _ it's-summer",
+"alt2":"She-feels tired _ it's-cold",
+"alt3":"She-feel sick _ a-tree",
+"alt4":"They-feels sad _ the-window"
+},
+{
+"line":"He-feels proud because he-won a-medal",
+"alt1":"He-feel angry _ he-lost a-coin",
+"alt2":"She-feels sad _ he-didn't-win a-shirt",
+"alt3":"She-feel annoyed _ he-stole _",
+"alt4":"They-feel cold _ _ _"
+},
+{
+"line":"He-feels hot because it's-sunny",
+"alt1":"He-feel embarrassed _ it's-cold",
+"alt2":"She-feels cold _ it's-yellow",
+"alt3":"She-feel frightened _ a-tshirt",
+"alt4":"They-feel disgusted _ it's-windy"
+},
+{
+"line":"She-feels happy because she-has a-gift",
+"alt1":"He-feel sick _ she-doesn't-have a-blue",
+"alt2":"He-feels angry _ she-don't-have a-cat",
+"alt3":"She-feel surprised _ she-have long-hair",
+"alt4":"They-feel confused _ _ a-coat"
+},
+{
+"line":"She-feels jealous because she-didn't-win the-trophy",
+"alt1":"He-feel hot _ she-won the-medal",
+"alt2":"They-feels wet _ she-no-win the-coin",
+"alt3":"She-feel surprised _ she-win the-metal",
+"alt4":"They-feel excited _ she-didn't-won _"
+},
+{
+"line":"He-feels annoyed because the-music-is too-loud",
+"alt1":"He-feel embarrassed _ the-box-is too-quiet",
+"alt2":"She-feels wet _ the-sweater-is too-boring",
+"alt3":"She-feel confused _ the-earphones-is too-slow",
+"alt4":"They-feel frightened _ the-phone-is too-happy"
+},
+{
+"line":"She-feels nervous because she-has an-exam",
+"alt1":"He-feel proud _ she-don't-have a-school",
+"alt2":"He-feels angry _ she-have a-teacher",
+"alt3":"She-feel happy _ she-doesn't-have a-writing",
+"alt4":"They-feel hurt _ _ _"
+},
+{
+"line":"She-feels frightened because she-saw a-spider",
+"alt1":"He-feel angry _ she-ate an-ant",
+"alt2":"They-feels confused _ she-wore a-black",
+"alt3":"She-feel bored _ she-wrote a-monster",
+"alt4":"They-feel proud _ she-drank a-fly"
+},
+{
+"line":"He-feels confused because he-doesn't-understand",
+"alt1":"He-feel happy _ he-understands",
+"alt2":"She-feels jealous _ he-can-see",
+"alt3":"She-feel hurt _ he-has-hair",
+"alt4":"They-feel proud _ he-knows"
+},
+{
+"line":"He-feels disgusted because the-toilet smells-bad",
+"alt1":"He-feel hot _ the-shower smells-good",
+"alt2":"She-feels embarrassed _ the-kitchen looks-nice",
+"alt3":"She-feel surprised _ the-TV looks-bad",
+"alt4":"They-feel bored _ the-computer is-interesting"
+},
+{
+"line":"She-feels worried because her-daughter is-sick",
+"alt1":"He-feel wet _ her-clothes is-happy",
+"alt2":"They-feels happy _ her-bed is_good",
+"alt3":"She-feel jealous _ her-father is-asleep",
+"alt4":"They-feel bored _ her-grandfather _"
+},
+{
+"line":"He-feels hurt because he-broke his-finger",
+"alt1":"He-feel embarrassed _ he-fixed his-foot",
+"alt2":"She-feels wet _ he-pointed his-toe",
+"alt3":"She-feel jealous _ he-made his-head",
+"alt4":"They-feel bored _ _ his-eye"
+}
+]}
+
+
