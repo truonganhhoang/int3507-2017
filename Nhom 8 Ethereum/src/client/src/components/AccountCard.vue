@@ -2,14 +2,16 @@
   <div class="account-card">
     <div class="panel">
       <div class="panel-heading">{{account.username}}</div>
+      <div class="panel-block">Address: {{account.address}}</div>
+      <div class="panel-block">Balance: {{balance}}</div>
       <div class="panel-block">
-        Account Balance: {{ account.balance }} &nbsp;
         <div class="field is-grouped">
           <p class="control">
             <a class="button" 
               :href="getKeyStore(account.encrypt)"
+              :download="account.address + '.txt'"
             >
-            Raw KeyStore
+            Download KeyStore
             </a>
           </p>
           <p class="control">
@@ -33,19 +35,38 @@ import axios from 'axios'
 
 export default {
   props: ['account'],
+  mounted() {
+    this.getBalance(this.account.id)
+  },
+  data() {
+    return {
+      balance: 0
+    }
+  },
   methods: {
     getKeyStore(encrypt) {
-      return 'data:text/json;charset=utf-8,' + encodeURIComponent(encrypt)
+      return 'data:text/plain;charset=utf-8,' + encodeURIComponent(encrypt)
     },
     deleteAccount(id) {
       const self = this
-      axios.delete('http://localhost:3333/api/v1/account/' + id)
-      .then(function(res) {
-        self.$emit('delete', id)
-      })
-      .catch(err => {
-        alert('cannot delete this account')
-      })
+      let result = confirm("Bạn muốn xóa không?")
+      if(result) {
+        axios.delete('http://localhost:3333/api/v1/account/' + id)
+        .then(function(res) {
+          self.$emit('delete', id)
+        })
+        .catch(err => {
+          alert('cannot delete this account')
+        })
+      }
+    },
+    getBalance(id) {
+      axios.get('http://localhost:3333/api/v1/account/' + id + '/balance')
+        .then((res) => {
+          if(res.data.balance) {
+            this.balance = res.data.balance
+          }
+        })
     },
     vote(id) {
       const encrypt = this.account.encrypt

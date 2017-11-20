@@ -19,14 +19,6 @@ class UserController {
     const user = req.auth.user
     const realUser = yield User.find(user.id)
     var accountList = yield realUser.accounts().fetch()
-    
-    // for (var i = 0; i < accountList.length; i++) {
-    //   var account = accountList[i]
-    //   var encrypt = JSON.parse(account.encrypt)
-    //   const balance = yield web3.eth.getBalance(encrypt.address)
-    //   account.balance = balance
-    // }
-
     res.ok({
       accountList
     })
@@ -48,7 +40,8 @@ class UserController {
     yield user.save()
     const newToken = yield req.auth.attempt(user.username, apiKey)
     res.ok({
-      token: newToken
+      token: newToken,
+      user
     })
   }
 }

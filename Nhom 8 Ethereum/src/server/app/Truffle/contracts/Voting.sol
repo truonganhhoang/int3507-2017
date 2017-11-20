@@ -14,10 +14,10 @@ contract Voting {
     */
     bytes32[] public candidateList;
 
-    modifier onlyVoteOnce() {
-        require(accountList[msg.sender] == false);
-        _;
-    }
+    // modifier onlyVoteOnce() {
+    //     require(accountList[msg.sender] == false);
+    //     _;
+    // }
 
     function validCandidate(bytes32 candidate) returns (bool) {
         for (uint i = 0; i < candidateList.length; i++) {
@@ -45,14 +45,22 @@ contract Voting {
 
     // This function increments the vote count for the specified candidate. This
     // is equivalent to casting a vote
-    function voteForCandidate(bytes32 candidate) onlyVoteOnce {
+    function voteForCandidate(bytes32 candidate) returns (bool) {
         if (validCandidate(candidate) == false) 
             revert();
+        if (accountList[msg.sender]) {
+            return false;
+        }
         votesReceived[candidate] += 1;
         accountList[msg.sender] = true;
+        return true;
     }
 
     function getCandidates() constant returns(bytes32[]) {
         return candidateList;
+    }
+
+    function voted() constant returns(bool) {
+        return accountList[msg.sender];
     }
 }

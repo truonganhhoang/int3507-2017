@@ -1,0 +1,16 @@
+\documentclass[../cnd.tex]{subfiles}
+
+Các ứng dụng tại máy chủ hiện nay thường sẽ thưc hiện ba việc chính sau: tính toán để đưa ra câu trả lời, lưu trữ dữ liệu phản hồi lại tức thì các cử chỉ của người dùng (ứng dụng thời gian thực). Xét lại nền tảng Ethereum chúng ta thấy đã có nền tẳng tính toán là máy ảo Ethereum nhưng hai thành phần còn lại vẫn chưa hỗ trợ. Các nhà lập trình của Ethereum đã thấy điều đó và đã và đang phát triển hai thành phần đó trong các phiên bản tiếp theo của Ethereum. Từ đó ta có các thành phần như sau:
+\begin{itemize}
+\item EVM: Máy trạng thái phi tập trung
+\item Swarm: Lưu trữ phi tập trung
+\item Whisper: Gửi tin nhắn phi tập trung
+\end{itemize}
+
+\subsubsection{Whisper}
+Whisper là một hệ thống nhắn tin phi tập trung, là một phần của giao thức Ethreum và sẽ sẵn có cho các ứng dụng web sử dụng EVM như là backend. Không giống với cách thông thường là mọi thay đổi đều được lưu ở chuỗi khối (tuy không thể thay đổi nhưng đắt đỏ và tốn nhiều thời gian), dữ liệu của mỗi tin nhắn sẽ được truyền trực tiếp giữa các hợp đồng thông minh với nhau.
+
+\subsubsection{Swarm}
+Swarm là giao thức dành cho các dữ liệu được đánh địa chỉ. Nó họạt động với dữ liệu bất biến, phân mảnh nó (sharding) và lưu trữ nó trong mạng phân tán và có thể dễ dàng gọi nó nếu ứng dụng cần. Mục tiêu của Swarm là có thể tìm các phiên bản khác nhau của dữ liệu của một tệp ở cùng một địa chỉ, làm theo hệ phân cấp như các URL hiện nay, tức là có cấu trúc thư mục.
+
+Chính Swarm có thể hiện thực hóa việc đưa một ứng dụng web đơn giản triển khai hoàn toàn trên nền tảng phi tập truung với các tệp HTML, CSS, JS được lưu lại và trả về nếu có yêu cầu từ người dùng, nó sẽ thực sự khác biệt khi ứng dụng web của bạn vươn tới một thứ được gọi là trực tuyến 100\% thực sự chứ không phải là 99.99\% như hiện tại. Tất nhiên chặng đường vẫn còn xa nhưng thực sự đáng kỳ vọng cho một ứng dụng web như vậy.

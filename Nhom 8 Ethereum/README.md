@@ -11,14 +11,12 @@
 * Tìm hiểu về Ethereum
 * Xây dựng một chương trình bỏ phiếu dựa vào Ethereum 
 
-## Mục lục:
- 
 ------------------------
 
 # Tìm hiểu về Ethereum
 
 ## 1. Tổng quan về chuỗi khối *[1]*
-Chuỗi khối (block chain) là một cơ sở dữ liệu phân cấp lưu trữ thông tin trong các khối thông tin được liên kết với nhau bằng mã hóa và mở rộng theo thời gian. Mỗi khối thông tin đều chứa thông tin về thời gian khởi tạo và được liên kết tới khối trước đó, kèm một mã thời gian và dữ liệu giao dịch. Chuỗi khốiđược thiết kế để chống lại việc thay đổi của dữ liệu: Một khi dữ liệu đã được mạng lưới chấp nhận thì sẽ không có cách nào thay đổi được nó.*[2]*
+Chuỗi khối (block chain) là một cơ sở dữ liệu phân cấp lưu trữ thông tin trong các khối thông tin được liên kết với nhau bằng mã hóa và mở rộng theo thời gian. Mỗi khối thông tin đều chứa thông tin về thời gian khởi tạo và được liên kết tới khối trước đó, kèm một mã thời gian và dữ liệu giao dịch. Chuỗi khối được thiết kế để chống lại việc thay đổi của dữ liệu: một khi dữ liệu đã được mạng lưới chấp nhận thì sẽ không có cách nào thay đổi được nó.*[2]*
 
 Theo cuốn *"Introducing Ethereum and Solidity"*: *[3]*
 
@@ -30,12 +28,12 @@ Theo cuốn *"Introducing Ethereum and Solidity"*: *[3]*
 <i>Hình 1: Cách hoạt động của chuỗi khối [4]</i>
 </p>
 
-### Ba thành phần (công nghệ) của chuỗi khối:
+### Ba thành phần công nghệ của chuỗi khối:
 * Mạng ngang hàng: Một nhóm các máy tính có khả năng giao tiếp với nhau mà không phải phụ thuộc vào một người cầm quyền ở trung tâm và vì vậy không xảy ra hiện tượng điểm lỗi chí tử (single point of failure).
 
 * Mật mã bất đối xứng: Một cách cho phép những máy tính này gửi các tin nhắn được mã hóa cho những người nhận đã được xác định vì vậy bất kỳ ai cũng có thể biết định danh của người gửi, nhưng chỉ người nhận được chỉ định mới có thể đọc nội dung tin nhắn. Ở Bitcoin *[5]* và Ethereum, mật mã bất đối xứng được sử dụng để tạo một tập các giấy chứng nhận (credential) cho tài khoản của bạn, để chắc chắn rảng chỉ có duy nhất bạn mới có thể chuyển các token của bạn (tiền của bạn).
 
-* Phép băm mật mã: Một các để sinh một "dấu-vân-tay" (fingerprint) nhỏ, duy nhất cho bất kỳ dữ liệu nào, cho phép so sánh một cách nhanh chóng các tập dữ liệu lớn và là một cách an toàn để xác nhận rằng dữ liệu đã được thay đổi hay chưa; ở cả Bitcoin và Ethereum, cấu trúc dữ liệu cây Merkle được sử dụng để ghi lại thứ tự kinh điển (canonical) của các giao dịch, sau đó được băm vào một “dấu-vân-tay” làm cơ sở cho việc so sánh của các máy tính trong mạng.
+* Phép băm mật mã: Một cách để sinh một "dấu-vân-tay" (fingerprint) nhỏ, duy nhất cho bất kỳ dữ liệu nào, cho phép so sánh một cách nhanh chóng các tập dữ liệu lớn và là một cách an toàn để xác nhận rằng dữ liệu đã được thay đổi hay chưa; ở cả Bitcoin và Ethereum, cấu trúc dữ liệu cây Merkle được sử dụng để ghi lại thứ tự kinh điển (canonical) của các giao dịch, sau đó được băm vào một “dấu-vân-tay” làm cơ sở cho việc so sánh của các máy tính trong mạng.
 
 ### Cấu trúc của một khối (block):
 * Index: thứ tự của block trong chuỗi (chain)
@@ -58,9 +56,11 @@ Ethereum là một nền tảng điện toán có tính chất phân tán, công
 | Phí giao dịch | Bị giới hạn, bị cạnh tranh trực tiếp với nhau để được vào khối của Bitcoin | Được tính dựa trên khối lượng tính toán, băng thông lưu trữ |
 | "Đào mỏ" tập trung | Cho phép | Không cho phép |
 
-<center> *Bảng 1: Các điểm khác biệt cơ bản của Ethereum so với Bitcoin* </center>
+<p align="center">
+<i>Bảng 1: Các điểm khác biệt cơ bản của Ethereum so với Bitcoin </i>
+</p>
 
-## 3. Các khái niệm trong Ethereum
+## 3. Các khái niệm trong Ethereum *[7]*
 
 ### Ether
 Tiền mã hóa được giao dịch trong mạng lưới Ethereum được gọi là ether. Nó được liệt kê dưới mã ETH và giao dịch trên các sàn giao dịch tiền mã hóa. Nó cũng được sử dụng để trả phí giao dịch và dịch vụ tính toán trên mạng Ethereum.
@@ -72,7 +72,7 @@ Gas là một đơn vị công việc được sử dụng để đo lường m�
 
 Có hai lý do chính để Gas được ra đời:
 
-* Thứ nhất, Nó đảm bảo một phần thưởng được tả trước cho các thợ đào (miner)
+* Thứ nhất, nó đảm bảo một phần thưởng được tả trước cho các thợ đào (miner)
 cho việc thực thi mã nguồn và bảo mật kết mạng, ngay cả khi việc thực thi bị thất bại vì một lý do nào đó. 
 
 * Thứ hai, nó hoạt động xung quanh *bài toán rừng* và đảm bảo việc thực thi không thể dài quá thời gian đã được ước lượng trước đó.
@@ -90,45 +90,45 @@ Việc này khác so với ở Bitcoin, nơi mà chi phí được tính bằng 
 
 ### Ethereum Virtual Machine (EVM)
 
-Máy ảo Ethereum (EVM) là một môi trường chạy các hợp đồng thông minh Ethereum. Định nghĩa chính thức của EVM được quy định trong Ethereum Yellow Paper của Gavin Wood. Nó được hoàn toàn cô lập từ mạng, hệ thống tập tin và các quá trình khác của hệ thống máy chủ. Mỗi nút Ethereum trong mạng chạy một EVM và thực hiện các hướng dẫn giống nhau. Ethereum Virtual Machines đã được lập trình trong C++, Go, Haskell, Java, Python, Ruby, Rust và WebAssembly (hiện đang được phát triển)
+Máy ảo Ethereum (EVM) là một môi trường chạy các hợp đồng thông minh Ethereum. Định nghĩa chính thức của EVM được quy định trong "Ethereum Yellow Paper" *[8]* của Gavin Wood. Nó được hoàn toàn cô lập từ mạng, hệ thống tập tin và các quá trình khác của hệ thống máy chủ. Mỗi nút Ethereum trong mạng chạy một EVM và thực hiện các hướng dẫn giống nhau. Ethereum Virtual Machines đã được lập trình trong C++, Go, Haskell, Java, Python, Ruby, Rust và WebAssembly (hiện đang được phát triển)
 
 ### Hợp đồng thông minh
 
 Hợp đồng thông minh (smart contract)  là một cơ chế trao đổi xác định, được kiểm soát bởi các phương tiện kỹ thuật số mà có thể giúp cho việc thực hiện giao dịch trực tiếp giữa các thực thể mà không cần tin cậy nhau. Các hợp đồng này được định nghĩa bằng cách lập trình và được chạy chính xác như mong muốn mà không bị kiểm duyệt, lừa đảo hay sự can thiệp từ bên thứ ba trung gian.
 
-Chúng có thể được sử dụng để tạo điều kiện, xác minh và thực thi việc đàm phán hoặc thực hiện các hướng dẫn thủ tục kinh tế và có khả năng tránh được sự kiểm duyệt, thông đồng và rủi ro từ phía đối tác. Trong Ethereum, các hợp đồng thông minh được coi là các kịch bản tự trị hoặc các ứng dụng phân cấp được lưu trữ trong chuỗi khối Ethereum để thực hiện sau đó bởi EVM. Các hướng dẫn được nhúng trong các hợp đồng Ethereum được thanh toán bằng ether và có thể được thực hiện bằng nhiều ngôn ngữ Turing-complete khác nhau
+Chúng có thể được sử dụng để tạo điều kiện, xác minh và thực thi việc đàm phán hoặc thực hiện các hướng dẫn thủ tục kinh tế và có khả năng tránh được sự kiểm duyệt, thông đồng và rủi ro từ phía đối tác. Trong Ethereum, các hợp đồng thông minh được coi là các kịch bản tự trị hoặc các ứng dụng phân cấp được lưu trữ trong chuỗi khối Ethereum để thực hiện sau đó bởi EVM. Các hướng dẫn được nhúng trong các hợp đồng Ethereum được thanh toán bằng ether và có thể được thực hiện bằng nhiều ngôn ngữ Turing-complete *[9]* khác nhau.
 
 Sự khác biệt giữa hợp đồng truyền thống và hợp đồng hiện đại:
 
-* Hợp đồng truyền thống được tạo bởi các chuyên gia pháp lí để biên soạn và thực thi. Điều này rất mất thời gian và không minh bạch. Hợp đồng có sự cố sảy ra thì phải dựa vào hệ thống pháp lí giải quyết và điều này tốn các chi phí liên quan.
+* Hợp đồng truyền thống được tạo bởi các chuyên gia pháp lí để biên soạn và thực thi. Điều này rất mất thời gian và không minh bạch. Hợp đồng có sự cố xảy ra thì phải dựa vào hệ thống pháp lí giải quyết và điều này tốn các chi phí liên quan.
 
 * Hợp đồng thông minh được tạo ra bởi hệ thống máy tính bằng ngôn ngữ lập trình. Trong đó nêu rõ các điều khoản và hình phạt tương đương với các hợp đồng truyền thống đưa ra. Nhưng hợp đồng thông minh không cần sự can thiệp của con người, do đó đảm bảo việc thự thi hợp đồng được chính xác và công minh nhất. Toàn bộ đoàn mã của hợp đồng thông minh được thực hiện bởi hệ thống sổ cái phân tán chuỗi khối.
 
 ### Solidity
-Solidity là một ngôn ngữ lập trình sử dụng để viết các chương trình được gọi là hợp đồng thông minh (smart contract), thứ mà sẽ được chạy trên EVM. Ngôn ngữ mới này là một sự pha trộn các công ước từ mạng, hợp ngữ (assembly language) và phát triển web.Solidity là một ngôn ngữ cấp cao có định hướng hợp đồng, có cú pháp tương tự như của JavaScript và nó được thiết kế để nhắm mục tiêu Ethereum Virtual Machine (EVM).
+Solidity là một ngôn ngữ lập trình sử dụng để viết các chương trình được gọi là hợp đồng thông minh (smart contract), thứ mà sẽ được chạy trên EVM. Ngôn ngữ mới này là một sự pha trộn các công ước từ mạng, hợp ngữ (assembly language) và phát triển web. Solidity là một ngôn ngữ cấp cao có định hướng hợp đồng, có cú pháp tương tự như của JavaScript và nó được thiết kế để nhắm mục tiêu Ethereum Virtual Machine (EVM).
  
-Solidity là ngôn ngữ bậc cao được compile bằng bytecode và đươc đưa lên chuỗi khối Ethereum bằng cách dùng các phần mềm phía người dùng như Mist browser hoặc node. Ngôn ngữ Solidity định kiểu mạnh, hỗ trợ thừa kế, thư viện và các loại người dùng xác định  và phức tạp giữa các tính năng khác.
+Solidity là ngôn ngữ bậc cao được biên dịch bằng bytecode và được đưa lên chuỗi khối Ethereum bằng cách dùng các phần mềm phía người dùng như trình duyệt Mist hoặc nút (node). Ngôn ngữ Solidity định kiểu mạnh, hỗ trợ thừa kế, thư viện và các loại người dùng xác định  và phức tạp giữa các tính năng khác.
 
-Solidity có khả năng thể hiện tất cả các nhiệm vụ có thể thực hiện được bằng máy tính, làm cho chúng về mặt lý thuyết là Turing hoàn chỉnh. Điều đó có nghĩa là toàn bộ mạng phân phối, mỗi node, thực hiện mọi chương trình được thực hiện trên nền tảng này. Khi một người dùng tải lên một hợp đồng thông minh thông qua node Ethereum của họ, nó được bao gồm trong khối mới nhất và được truyền bá xung quanh mạng, nơi nó được lưu trữ trên mọi nút khác trong mạng
+Solidity có khả năng thể hiện tất cả các nhiệm vụ có thể thực hiện được bằng máy tính, làm cho chúng về mặt lý thuyết là Turing-complete. Điều đó có nghĩa là toàn bộ mạng phân phối, mỗi nút, thực hiện mọi chương trình được thực hiện trên nền tảng này. Khi một người dùng tải lên một hợp đồng thông minh thông qua nút Ethereum của họ, nó được bao gồm trong khối mới nhất và được truyền bá xung quanh mạng, nơi nó được lưu trữ trên mọi nút khác trong mạng.
 
-###	Decenterlized App
-Decenterlize App (DAPP) là ứng dụng mã nguồn mở hoàn chỉnh,hoạt động độc lập, không có thực thể nào kiểm soát phần lớn các tokens của ứng dụng này và dữ liệu và hồ sơ hoạt động của ứng dụng phải được lưu trữ dưới dạng mã hoá công khai, phân quyền chuỗi khối.
+###	Ứng dụng phi tập trung (Decenterlized App) 
+Decenterlized App (DAPP) là ứng dụng mã nguồn mở hoàn chỉnh, hoạt động độc lập, không có thực thể nào kiểm soát phần lớn các tokens của ứng dụng này và dữ liệu và hồ sơ hoạt động của ứng dụng phải được lưu trữ dưới dạng mã hoá công khai, phân quyền chuỗi khối.
 
-Ứng dụng này tạo các mã thông báo theo một thuật toán tiêu chuẩn hoặc bộ tiêu chuẩn và có thể phân phối một số hoặc tất cả các tokens của nó khi bắt đầu hoạt động. Các tokens này phải là cần thiết cho việc sử dụng ứng dụng và bất kỳ đóng góp nào từ người dùng sẽ được thưởng bằng các khoản thanh toán trong các tokens của ứng dụng.Ứng dụng có thể thích ứng các giao thức của nó để đáp ứng với những cải tiến đề xuất và phản hồi thị trường nhưng tất cả thay đổi phải được quyết định bởi sự đồng thuận của người sử dụng. DAPP có giá trị và có khả năng phá vỡ một số ngành công nghiệp.
+Ứng dụng này tạo các mã thông báo theo một thuật toán tiêu chuẩn hoặc bộ tiêu chuẩn và có thể phân phối một số hoặc tất cả các tokens của nó khi bắt đầu hoạt động. Các tokens này phải là cần thiết cho việc sử dụng ứng dụng và bất kỳ đóng góp nào từ người dùng sẽ được thưởng bằng các khoản thanh toán trong các tokens của ứng dụng. Ứng dụng có thể thích ứng các giao thức của nó để đáp ứng với những cải tiến đề xuất và phản hồi thị trường nhưng tất cả thay đổi phải được quyết định bởi sự đồng thuận của người sử dụng. DAPP có giá trị và có khả năng phá vỡ một số ngành công nghiệp.
 
 Phân loại DAPP:
 
  1. Các ứng dụng phân cấp có chuỗi khối riêng như bitcoin
- 2. Giống như loại 1 nhưng có thêm token và các protocol cần thiết như omni protocol
+ 2. Giống như loại 1 nhưng có thêm token và các giao thức cần thiết như giao thức omni
  3. Giống như loại 2 nhưng có các mã thông báo cần thiết
 
 Lợi ích của DAPP:
 
- - The Safe Network có sự bảo mật lớn nhất
- - Factom đang đơn giản hóa quá trình tăng cường quá trình ghi lại quá trình quản lý dữ liệu lớn
- - BURST giải quyết các vấn đề đã làm lưu trữ đám mây đắt đỏ và không đáng tin cậy
- - Augur được biết đến như là một thị trường dự đoán phân quyền để thưởng cho người sử dụng về các sự kiện dự báo
- - BlockAuth cung cấp một hệ thống đa chữ ký để chia sẻ dữ liệu cá nhân với các bên thứ ba
+ - The Safe Network: có sự bảo mật lớn nhất
+ - Factom: đơn giản hóa quá trình tăng cường quá trình ghi lại quá trình quản lý dữ liệu lớn
+ - BURST: giải quyết các vấn đề đã làm lưu trữ đám mây đắt đỏ và không đáng tin cậy
+ - Augur: được biết đến như là một thị trường dự đoán phân quyền để thưởng cho người sử dụng về các sự kiện dự báo
+ - BlockAuth: cung cấp một hệ thống đa chữ ký để chia sẻ dữ liệu cá nhân với các bên thứ ba
 
 ### Giao thức GHOST (Greedy Heaviest Observed Subtree) 
 "Grey Heaviest Observed Subtree" (GHOST) là một cải tiến được giới thiệu lần đầu tiên vào tháng 12 năm 2013. Động lực đằng sau GHOST ra đời đó là thời gian xác nhận các chuỗi khối nhanh chóng hiện đang phải chịu sự giảm an ninh do tỷ lệ lỗi cao - bởi vì các khối mất một thời gian nhất định để truyền thông qua mạng.
@@ -143,21 +143,21 @@ Phiên bản Ethereum của Ghost chỉ rơi vào bảy cấp độ - hoặc tr�
  - Một khối phải chỉ định cha mẹ, và nó phải chỉ định 0 hoặc nhiều Uncle
  - Đối với mỗi Uncle U trong khối B, thợ mỏ B được cộng thêm 3,125% vào phần thưởng coinbase và người thợ mỏ của U được 93,75% của phần thưởng coinbase tiêu chuẩn.
  - Một Uncle bao gồm trong khối B phải có các tính chất sau:
-	1. Nó phải là con trực tiếp của tổ tiên thế hệ k của B, trong đó 2 <= k <= 7
-	2. Nó không thể là tổ tiên của B
-	3. Một uncle phải có tiêu đề khối hợp lệ, nhưng trước đó không cần xác minh hay thậm chí là một khối hợp lệ
-	4. Một Uncle phải khác mọi Uncle khác bao gồm trong các khối trước và tất cả những Uncle khác nằm trong cùng một khối (không bao gồm hai lần)
+	- Nó phải là con trực tiếp của tổ tiên thế hệ k của B, trong đó 2 <= k <= 7
+	- Nó không thể là tổ tiên của B
+	- Một Uncle phải có tiêu đề khối hợp lệ, nhưng trước đó không cần xác minh hay thậm chí là một khối hợp lệ
+	- Một Uncle phải khác mọi Uncle khác bao gồm trong các khối trước và tất cả những Uncle khác nằm trong cùng một khối (không bao gồm hai lần)
 
 ### Whisper và Swarm 
 Các ứng dụng máy chủ hiện đại làm tốt 3 việc: tính toán, chạy chương trình và ghi nhớ lưu trữ dữ liệu, tạo ra sự thuận lợi trong việc tương tác giữa người với người.
 Trong Ethereum, với EVM ta có thể tính toán nhưng không thể lưu trữ nhiều dữ liệu cũng không thể phục vụ như một người trung gian trong giao tiếp người với người. Vì vậy Whisper và Swarm ra đời.
 
 #### Whisper
-Whisper là một hệ thống nhắn tin phân tán, là một phần của giao thức Ethereum và sẽ có sẵn cho các ứng dụng web sử dụng EVM phần back-end. Nói một cách ngắn gọn, Whisper là một giao thức truyền thông cho phép DApps giao tiếp được với nhau
+Whisper là một hệ thống nhắn tin phi tập trung, là một phần của giao thức Ethreum và sẽ sẵn có cho các ứng dụng web sử dụng EVM như là backend. Không giống với cách thông thường là mọi thay đổi đều được lưu ở chuỗi khối (tuy không thể thay đổi nhưng đắt đỏ và tốn nhiều thời gian), dữ liệu của mỗi tin nhắn sẽ được truyền trực tiếp giữa các hợp đồng thông minh với nhau.
 #### Swarm
-Swarm là một giao thức thanh toán được định rõ nội dung. Nó hoạt động với dữ liệu không thay đổi, phân mảnh nó và lưu trữ nó trên một mạng lưới được phân bố theo cách làm cho nó dễ dàng được gọi lại khi một ứng dụng cần. 
+Swarm là giao thức dành cho các dữ liệu được đánh địa chỉ. Nó họạt động với dữ liệu bất biến, phân mảnh nó (sharding) và lưu trữ nó trong mạng phân tán và có thể dễ dàng gọi nó nếu ứng dụng cần. Mục tiêu của Swarm là có thể tìm các phiên bản khác nhau của dữ liệu của một tệp ở cùng một địa chỉ, làm theo hệ phân cấp như các URL hiện nay, tức là có cấu trúc thư mục.
 
-Mục tiêu của Swarm là để có thể tìm các phiên bản khác nhau của một tệp tin cùng một địa chỉ bộ nhớ, giống đường dẫn tên miền trong các URL hiện tại, với cấu trúc thư mục của chúng. Giao thức này chỉ đơn thuần phục vụ mục đích của một chỉ mục của nơi mà các khối dữ liệu được lưu t. Kịch bản lưu trữ này là một ứng dụng phổ biến cho các hệ thống phân quyền và Swarrm làm nó trở nên dễ dàng hơn, nhờ vào một số sáng kiến tiên phong của BitTorrent
+Chính Swarm có thể hiện thực hóa việc đưa một ứng dụng web đơn giản triển khai hoàn toàn trên nền tảng phi tập truung với các tệp HTML, CSS, JS được lưu lại và trả về nếu có yêu cầu từ người dùng, nó sẽ thực sự khác biệt khi ứng dụng web của bạn vươn tới một thứ được gọi là trực tuyến 100% thực sự chứ không phải là 99.99% như hiện tại. Tất nhiên chặng đường vẫn còn xa nhưng thực sự đáng kỳ vọng cho một ứng dụng web như vậy.
 
 ### Lạm phát đồng ether
 #### Khái niệm liên quan
@@ -197,3 +197,6 @@ Năng lượng của tiền đặt cược (PoS) là cơ chế người giải m
 - [4] [Giải ngố toàn tập về Blockchain từ A - I: "Bitcoin - Đồng tiền ảo đầu tiên"](http://genk.vn/giai-ngo-toan-tap-ve-blockchain-tu-a-i-bitcoin-dong-tien-ao-dau-tien-20160702212844019.chn), *genk.vn* (ngày 7 tháng 7 năm 2016)
 - [5] [Trang chủ Bitcoin](https://www.bitcoin.com/)
 - [6] [Ethereum](https://vi.wikipedia.org/wiki/Ethereum), *wikipedia.org* (ngày 11 tháng 10 năm 2017)
+- [7] [Introducing Ethereum and Solidity](https://drive.google.com/file/d/0Bz_MvHBFauwkY1lFdThyQ0U1dE0/view), *Chris Dannen*
+- [8] [Ethereum Yellow Paper](http://yellowpaper.io), *Gavin Wood*
+- [9] [Turing completeness](https://en.wikipedia.org/wiki/Turing_completeness), *wikipedia.org* (ngày 14 tháng 10 2017) 

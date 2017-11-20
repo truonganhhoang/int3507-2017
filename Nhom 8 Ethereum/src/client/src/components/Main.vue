@@ -1,9 +1,5 @@
 <template>
   <div class="main">
-    <h1 class="title" v-if="user">
-      UID: {{user.username}}
-    </h1>
-
     <div v-if="login">
       <account></account>
     </div>
