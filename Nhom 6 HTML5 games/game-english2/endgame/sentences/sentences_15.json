@@ -1,0 +1,148 @@
+{"meta":[],
+"frames": [
+    [1, 1, 242, 171, 0, -8, -2],
+    [245, 1, 244, 168, 0, -4, -2],
+    [491, 1, 244, 167, 0, -5, -3],
+    [1, 174, 244, 167, 0, -5, -3],
+    [1, 343, 244, 167, 0, -4, -2],
+    [1, 512, 241, 167, 0, -7, -2],
+    [247, 171, 243, 165, 0, -5, -4],
+    [247, 338, 241, 166, 0, -7, -3],
+    [492, 170, 241, 164, 0, -5, -4],
+    [737, 1, 230, 161, 0, -17, -6],
+    [1, 681, 241, 140, 0, -5, -4],
+    [247, 506, 241, 159, 0, -7, -2],
+    [244, 667, 240, 163, 0, -7, -4],
+    [492, 336, 240, 163, 0, -6, -1],
+    [490, 501, 237, 167, 0, -9, -3],
+    [486, 670, 239, 159, 0, -6, -3],
+    [737, 164, 228, 156, 0, -13, -8],
+    [735, 322, 233, 170, 0, -11, -3],
+    [734, 494, 214, 165, 0, -31, -3],
+    [729, 661, 236, 168, 0, -9, -3]
+],
+"sets":[
+{
+"line":"In-a hair-salon you-can get-a-haircut",
+"alt1":"_ bakery _ look-at-a-monkey",
+"alt2":"_ florist _ catch-a-bus",
+"alt3":"_ kitchen _ cook-food",
+"alt4":"_ bathroom _ sleep"
+},{
+"line":"In-a bakery you-can buy-bread",
+"alt1":"_ pet-store _ buy-food",
+"alt2":"_ stadium _ get-medicine",
+"alt3":"_ post-office _ get-a-haircut",
+"alt4":"_ living-room _ cook-food"
+},{
+"line":"In-the kitchen you-can cook-food",
+"alt1":"_ convenience-store _ buy-bread",
+"alt2":"_ stadium _ buy-flowers",
+"alt3":"_ bus-stop _ watch-TV",
+"alt4":"_ kitchen _ sleep"
+},{
+"line":"At-a florist you-can buy-flowers",
+"alt1":"_ pet-store _ buy-food",
+"alt2":"_ gas-station _ get-a-haircut",
+"alt3":"_ pharmacy _ take-a-shower",
+"alt4":"_ living-room _ watch-TV"
+},{
+"line":"In-a stadium you-can watch-sports",
+"alt1":"_ library _ read-a-book",
+"alt2":"_ supermarket _ buy-bread",
+"alt3":"_ florist _ send-a-letter",
+"alt4":"_ living-room _ sleep"
+},{
+"line":"In-a pet-store you-can get-a-cat",
+"alt1":"_ supermarket _ buy-food",
+"alt2":"_ bakery _ buy-bread",
+"alt3":"_ florist _ get-gas",
+"alt4":"_ train-station _ buy-flowers"
+},{
+"line":"In-the bedroom you-can sleep",
+"alt1":"_ library _ look-at-monkeys",
+"alt2":"_ dentist _ watch-sports",
+"alt3":"_ gym _ take-trains",
+"alt4":"_ bathroom _ catch-buses"
+},{
+"line":"In-the living-room you-can watch-TV",
+"alt1":"_ library _ look-at-monkeys",
+"alt2":"_ stadium _ watch-sports",
+"alt3":"_ gym _ work-out",
+"alt4":"_ bedroom _ sleep"
+},{
+"line":"In-a supermarket you-can buy-food",
+"alt1":"_ pet-store _ get-a-cat",
+"alt2":"_ gas-station _ buy-a-newpaper",
+"alt3":"_ train-station _ get-gas",
+"alt4":"_ kitchen _ get-a-haircut"
+},{
+"line":"In-a pharmacy you-can get-medicine",
+"alt1":"_ zoo _ get-a-cat",
+"alt2":"_ post-office _ get-medicine",
+"alt3":"_ bus-stop _ get-your-teech-checked",
+"alt4":"_ bedroom _ watch-TV"
+},{
+"line":"At-a train-station you-can take-a-train",
+"alt1":"_ convenience-store _ read-a-book",
+"alt2":"_ gas-station _ watch-sports",
+"alt3":"_ dentist _ get-your-teech-checked",
+"alt4":"_ gym _ watch-TV"
+},{
+"line":"In-a zoo you-can look-at-a-monkey",
+"alt1":"_ supermarket _ read-a-book",
+"alt2":"_ pharmacy _ send-a-letter",
+"alt3":"_ hair-salon _ get-your-teech-checked",
+"alt4":"_ kitchen _ cook-food"
+},{
+"line":"At-a post-office you-can send-a-letter",
+"alt1":"_ pet-store _ buy-food",
+"alt2":"_ bakery _ get-gas",
+"alt3":"_ train-station _ take-a-train",
+"alt4":"_ bus-stop _ get-a-haircut"
+},{
+"line":"At-a gas-station you-can get-gas",
+"alt1":"_ supermarket _ read-a-book",
+"alt2":"_ dentist_ buy-a-newpaper",
+"alt3":"_ bus-stop _ get-gas",
+"alt4":"_ gym _ work-out"
+},{
+"line":"In-a gym you-can work-out",
+"alt1":"_ convenience-store _ buy-a-newpaper",
+"alt2":"_ dentist _ watch-sports",
+"alt3":"_ hair-salon _ catch-a-bus",
+"alt4":"_ bathroom _ take-a-shower"
+},{
+"line":"In-a convenience-store you-can buy-a-newpaper",
+"alt1":"_ zoo _ _get-a-cat",
+"alt2":"_ bakery _ send-a-letter",
+"alt3":"_ florist _ take-a-train",
+"alt4":"_ train-station _ work-out"
+},{
+"line":"At-a dentist you-can get-your-teech-checked",
+"alt1":"_ zoo _ get-a-cat",
+"alt2":"_ pharmacy _ get-medicine",
+"alt3":"_ post-office _ catch-a-bus",
+"alt4":"_ bathroom _ take-a-shower"
+},{
+"line":"In-a library you-can read-a-book",
+"alt1":"_ zoo _ look-at-a-monkey",
+"alt2":"_ pharmacy _ get-medicine",
+"alt3":"_ post-office _ send-a-letter",
+"alt4":"_ hair-salon _ get-your-teech-checked"
+},{
+"line":"At-a bus-stop you-can catch-a-bus",
+"alt1":"_ library _ buy-bread",
+"alt2":"_ stadium _ buy-flowers",
+"alt3":"_ bedroom _ take-a-train",
+"alt4":"_ bathroom _ cook-food"
+},{
+"line":"In-a bathroom you-can take-a-shower",
+"alt1":"_ convenience-store _ buy-a-newpaper",
+"alt2":"_ gas-station _ buy-flowers",
+"alt3":"_ hair-salon _ work-out",
+"alt4":"_ living-room _ sleep"
+},
+]}
+
+

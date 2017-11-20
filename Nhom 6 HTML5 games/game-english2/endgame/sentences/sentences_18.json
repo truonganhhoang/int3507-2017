@@ -1,0 +1,149 @@
+{"meta":[],
+"frames": [
+    [1, 1, 238, 163, 0, -10, -7],
+    [241, 1, 237, 150, 0, -8, -4],
+    [480, 1, 223, 158, 0, -16, -7],
+    [241, 153, 230, 153, 0, -13, -5],
+    [1, 166, 236, 149, 0, -7, -7],
+    [705, 1, 205, 160, 0, -31, -5],
+    [473, 161, 230, 151, 0, -13, -11],
+    [239, 308, 227, 151, 0, -16, -8],
+    [1, 317, 226, 142, 0, -14, -18],
+    [705, 163, 209, 148, 0, -31, -10],
+    [705, 313, 205, 148, 0, -35, -14],
+    [468, 314, 227, 137, 0, -13, -28],
+    [468, 453, 215, 143, 0, -17, -18],
+    [685, 463, 207, 145, 0, -31, -18],
+    [1, 598, 232, 130, 0, -12, -25],
+    [1, 461, 226, 129, 0, -19, -20],
+    [229, 461, 218, 132, 0, -16, -20],
+    [235, 595, 226, 125, 0, -12, -21],
+    [463, 598, 202, 136, 0, -37, -20],
+    [667, 610, 231, 118, 0, -11, -28]
+],
+"sets":[
+{
+"line":"Use a-piano to make-music",
+"alt1":"_ a-mirror _ _call-someone",
+"alt2":"_ a-credit-card _ cut-paper",
+"alt3":"_ headphones _ eat-soup",
+"alt4":"_ scissors _ make-music"
+},{
+"line":"Use chopsticks to eat-noodles",
+"alt1":"_ a-mirror _ call-someone",
+"alt2":"_ a-credit-card _ blow-your-nose",
+"alt3":"_ scissors _ listen-to-music",
+"alt4":"_ a-kettle _ look-at-stars"
+},{
+"line":"Use a-microwave to cook-food",
+"alt1":"_ a-calculator _ boil-water",
+"alt2":"_ headphones _ do-maths",
+"alt3":"_ a-key _ look-at-yourself",
+"alt4":"_ an-ATM _ make-music"
+},{
+"line":"Use a-pen to write",
+"alt1":"_ a-piano _ call-someone",
+"alt2":"_ a-lighter _ dry-your-hair",
+"alt3":"_ a-ruler _ buy-things",
+"alt4":"_ headphones _ light-a-candle"
+},{
+"line":"Use a-key to lock-a-door",
+"alt1":"_ chopsticks _ write",
+"alt2":"_ a-mirror _ cut-paper",
+"alt3":"_ a-hairdrier _ look-at-yourself",
+"alt4":"_ a-tissue _ eat-noodles"
+},{
+"line":"Use a-kettle to boil-water",
+"alt1":"_ a-piano _ write",
+"alt2":"_ a-telescope _ lock-a-door",
+"alt3":"_ a-microwave _ cut-paper",
+"alt4":"_ shampoo _ dry-your-hair"
+},{
+"line":"Use a-hairdrier to dry-your-hair",
+"alt1":"_ a-telescope _ write",
+"alt2":"_ a-hairdrier _ get-money",
+"alt3":"_ a-phone _ eat-soup",
+"alt4":"_ a-kettle _ do-maths"
+},{
+"line":"Use a-telescope to look-at-stars",
+"alt1":"_ a-calculator _ do-maths",
+"alt2":"_ headphones _ look-at-yourself",
+"alt3":"_ a-key _ cook-food",
+"alt4":"_ an-ATM _ listen-to-music"
+},{
+"line":"Use headphones to listen-to-music",
+"alt1":"_ chopsticks _ cut-paper",
+"alt2":"_ a-calculator _ wash-your-hair",
+"alt3":"_ _a-spoon _ look-at-yourself",
+"alt4":"_ a-pen _ light-a-candle"
+},{
+"line":"Use a-phone to call-someone",
+"alt1":"_ a-telescope _ get-money",
+"alt2":"_ a-microwave _ wash-your-hair",
+"alt3":"_ a-spoon _ light-a-candle",
+"alt4":"_ a-hairdrier _ look-at-stars"
+},{
+"line":"Use shampoo to wash-your-hair",
+"alt1":"_ a-microwave _ boil-water",
+"alt2":"_ scissors _ draw-a-line",
+"alt3":"_ a-key _ look-at-stars",
+"alt4":"_ a-pen _ make-music"
+},{
+"line":"Use scissors to cut-paper",
+"alt1":"_ a-piano _ lock-the-door",
+"alt2":"_ shampoo _ dry-your-hair",
+"alt3":"_ a-tissue _ buy-things",
+"alt4":"_ a-pen _ eat-noodles"
+},{
+"line":"Use a-tissue to blow-your-nose",
+"alt1":"_ a-lighter _ boil-water",
+"alt2":"_ a-ruler _ _get-money",
+"alt3":"_ a-phone _ do-maths",
+"alt4":"_ a-pen _ cook-food"
+},{
+"line":"Use a-mirror to look-at-yourself",
+"alt1":"_ a-calculator _ write",
+"alt2":"_ a-ruler _ blow-your-nose",
+"alt3":"_ scissors _ listen-to-music",
+"alt4":"_ a-kettle _ make-music"
+},
+{
+"line":"Use an-ATM to get-money",
+"alt1":"_ chopsticks _ lock-a-door",
+"alt2":"_ a-lighter _ buy-things",
+"alt3":"_ shampoo _ wash-your-hair",
+"alt4":"_ a-tissue _ eat-noodles"
+},{
+"line":"Use a-credit-card to buy-things",
+"alt1":"_ a-telescope _ get-money",
+"alt2":"_ a-ruler _ lock-a-door",
+"alt3":"_ a-tissue _ listen-to-music",
+"alt4":"_ a-key _ eat-noodles"
+},{
+"line":"Use a-ruler to draw-a-line",
+"alt1":"_ chopsticks _ blow-your-nose",
+"alt2":"_ a-spoon _ listen-to-music",
+"alt3":"_ a-phone _ eat-soup",
+"alt4":"_ an-ATM _ buy-things"
+},{
+"line":"Use a-calculator to do-maths",
+"alt1":"_ a-lighter _ sneeze",
+"alt2":"_ shampoo _ draw-a-line",
+"alt3":"_ a-spoon _ wash-hair",
+"alt4":"_ a-kettle _ light-a-candle"
+},{
+"line":"Use a-lighter to light-a-candle",
+"alt1":"_ a-mirror _ call-someone",
+"alt2":"_ a-credit-card _ eat-soup",
+"alt3":"_ an-ATM _ draw-a-line",
+"alt4":"_ a-kettle _ cook-food"
+},{
+"line":"Use a-spoon to eat-soup",
+"alt1":"_ a-piano _ boil-water",
+"alt2":"_ a-microwave _ dry-your-hair",
+"alt3":"_ a-hairdrier _ draw-a-line",
+"alt4":"_ a-phone _ cook-food"
+}
+]}
+
+

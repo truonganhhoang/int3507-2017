@@ -1,0 +1,45 @@
+<html>
+
+<head>
+
+  <title></title>
+
+  <script src="/javascripts/jquery-3.2.1.js"></script>
+  <script src="/javascripts/login.js"></script>
+  <!-- Bootstrap Core CSS -->
+  <link href="/stylesheets//bootstrap.css" rel="stylesheet" />
+  <link href="/stylesheets/login.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+
+</head>
+
+<body>
+
+  <div>
+    <h2 style='text-align: center;'>Login</h2>
+    <h4 style='text-align: center;color: red;'><%=message %></h4>
+    <form action="/users/login" method="post">
+      <div class="imgcontainer">
+        <img src="/images/login-avatar.png" alt="Avatar" class="avatar" />
+      </div>
+
+      <div class="container">
+        <label><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required />
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required />
+
+        <button type="submit">Login</button>
+      </div>
+
+      <div className="container">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span className="psw" style="float:right;margin-right: 16px;">Forgot <a href="#">password?</a></span>
+      </div>
+    </form>
+  </div>
+
+</body>
+
+</html>
