@@ -8,7 +8,10 @@ export class UserService {
   constructor(private http: Http) { }
 
   create(name: string, email: string) {
-    return this.http.post('/api/create_user', JSON.stringify({ name: name, email: email }))
+    console.log('name', name);
+    console.log('email', email);
+    let body = JSON.stringify({is_lec: false, name: name, email: email });
+    return this.http.post('/api/create_user', body, this.jwt())
       .map((response: Response) => response.json());
   }
 
@@ -20,9 +23,10 @@ export class UserService {
   private jwt() {
     // create authorization header with jwt token
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    let headers = new Headers({ 'Content-Type': 'application/json' });
     if (currentUser && currentUser.token) {
-        let headers = new Headers({ 'x-access-token': currentUser.token });
-        return new RequestOptions({ headers: headers });
+        headers.append('x-access-token', currentUser.token);
     }
+    return new RequestOptions({ headers: headers });
   }
 }

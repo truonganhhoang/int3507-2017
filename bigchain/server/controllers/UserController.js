@@ -120,7 +120,7 @@ exports.createUser = function (req, res, next) {
     });
 };
 
-exports.createPoint = function (req, res) {
+function createOnePoint(req, res, next) {
     const userData = req.decoded;
     console.log(userData);
     const date = new Date();
@@ -147,19 +147,38 @@ exports.createPoint = function (req, res) {
         .then(() => conn.pollStatusAndFetchTransaction(txSigned.id))
         .then(retrievedTx => {
             "use strict";
-            res.json({
+            next(null,{
                 success: true,
                 transactionID: retrievedTx
-            })
+            });
         }).catch(function (reason) {
             console.log(reason);
-            res.json({
-                success: false,
-                reason: reason.toString()
-            })
+            next(reason);
         });
     console.log("sent Transaction");
 };
+
+exports.createPoint = function (req,res) {
+    const userData = req.decoded;
+    const numOfPoint = req.query.number;
+    console.log("number of point: ",numOfPoint);
+    var tasks = {};
+    for (i = 0;i < numOfPoint; i++) {
+        tasks[i] = function(i) { return function (callback) {
+            createOnePoint(req,res,callback);
+        }}(i);
+    }
+    async.parallel(tasks, function(err,result) {
+        if (err) {
+            res.json({
+                success: false
+            })
+        }
+       res.json({
+           success: true
+       })
+    });
+}
 
 exports.currentPoint = function (req,res) {
     const userData = req.decoded;
