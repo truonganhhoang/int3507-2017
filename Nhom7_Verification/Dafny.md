@@ -60,7 +60,7 @@ Nội dung
    <li>IV. Kết luận</li>
  </ul>
                                    
-I. Giới thiệu về Dafny <br>
+I. **Giới thiệu về Dafny** 
 <p>Dafny là một công cụ kiểm chứng được viết để giúp cho lập trình viên đảm bảo chính xác những gì họ muốn làm và đảm bảo không còn lỗi thời gian chạy( run time) như số ngoài phạm vi, chia cho số 0, ... trong chương trình.</p>
 <p>Trình kiểm tra tĩnh của Dafny có thể sử dụng để kiểm chứng các yếu tố tĩnh của chương trình như là tính bắt buộc, tính tuần tự, hỗ trợ các lớp trừu tượng, phân bổ động, kiểu dữ liệu qui nạp và xây dựng trong cấu trúc đặc tả. Xác thông số đặc tả bao gồm tiền điều kiện và hậu điều kiện, các thông số đọc và ghi, các chỉ số chấm dứt. Để hỗ trợ thêm các thông số kỹ thuật, ngôn ngữ cũng cung cấp các biến ma, các hàm đệ quy và các kiểu như bộ và chuỗi. Thông số kỹ thuật và các cấu trúc ma thuật chỉ được sử dụng khi xác minh mà trình biên dịch bỏ qua chúng từ mã thực thi.[1]</p>
 <p>Để làm được điều này, Dafny dựa trên các chú thích cao cấp về lí do và chứng minh tính đúng đắn của code. Chương trình Dafny được chạy như một phần của biên dịch. Hiệu quả của một đoạn mã có thể được đưa ra một cách trừu tượng, sử dụng tự nhiên, biểu hiện cấp cao của hành vi mong muốn, đó là dễ dàng hơn và ít bị lỗi để viết. Dafny sau đó tạo ra một bằng chứng cho thấy mã phù hợp với các chú thích (giả sử chúng là chính xác nhất, là hiển nhiên). Dafny nâng cao gánh nặng cho việc viết mã lỗi miễn phí bằng cách viết chú thích không có lỗi. Điều này thường dễ hơn viết code, bởi vì các chú thích ngắn hơn và trực tiếp hơn.</p>
@@ -69,27 +69,25 @@ I. Giới thiệu về Dafny <br>
 forall k: int :: 0 <= k < a.Length ==> 0 < a[k] <br>
 <p>Đoạn code nói rằng đối với tất cả các số nguyên k là chỉ số vào mảng, giá trị tại chỉ mục đó lớn hơn không. Bằng cách viết các chú thích này, người ta tin tưởng rằng mã là chính xác. Hơn nữa, chính việc viết các chú thích có thể giúp người ta hiểu mã này đang làm gì ở mức sâu hơn.</p>
 <p>Cùng tìm hiểu các phần tiếp theo để có thể cài đặt và hiểu rõ hơn về Dafny.</p>
-II- Hướng dẫn cài đặt
+II. **Hướng dẫn cài đặt**
 Do không có giao diện trực tuyến của Dafny nên để sử dụng nó, bạn có hai sự lựa chọn đó là vào trang chủ của Dafny và sử dụng máy ảo được cung cấp trên trang hoặc cài đặt Dafny trên máy của bạn.
+<br>
+1. **Cài đặt trên widows**
 
-1. Cài đặt trên widows
-
-Win dow là nền tảng dễ sử dụng nhất với Dafny
-            1. Dowload bản mới nhât  dành cho window từ trang https://github.com/Microsoft/dafny/releases 
-            (ví dụ dowload bản dafny-2.0.0.00922-x64-win.zip)
-2. Trước khi bạn mở hoặc giải nén, nhấp chuột phải vào nó và chọn Properties ở cuối hộp thoại, nhấp vào nút Bỏ chặn và sau đó nhấp vào nút OK. Bây giờ, mở Dafny.zip và sao chép nội dung của nó vào một thư mục trên máy của bạn 
-3. Để chạy Dafny từ dòng lệnh, chỉ cần chạy Dafny.exe.
+Win dow là nền tảng dễ sử dụng nhất với Dafny.
+1.1. Dowload bản mới nhât  dành cho window từ <a href="https://github.com/Microsoft/dafny/releases">đây</a> (ví dụ dowload bản dafny-2.0.0.00922-x64-win.zip)<br>
+1.2. Trước khi bạn mở hoặc giải nén, nhấp chuột phải vào nó và chọn Properties ở cuối hộp thoại, nhấp vào nút Bỏ chặn và sau đó nhấp vào nút OK. Bây giờ, mở Dafny.zip và sao chép nội dung của nó vào một thư mục trên máy của bạn. <br>
+1.3. Để chạy Dafny từ dòng lệnh, chỉ cần chạy Dafny.exe. <br>
 
 2. **Cài đặt trên Linux hoặc MaxOS**
 
-1. Xác định xem bạn đã cài đặt Mono chưa. Để làm điều này, mở một terminal, và gõ mono -V.
-2. Nếu bạn không cài đặt Mono, hãy làm theo hướng dẫn tại http://www.mono-project.com/docs/getting-started/install/.
-3. Tải dafny về từ https://github.com/Microsoft/dafny/releases.
+2.1. Xác định xem bạn đã cài đặt Mono chưa. Để làm điều này, mở một terminal, và gõ mono -V.
+2.2. Nếu bạn không cài đặt Mono, hãy làm theo hướng dẫn tại <a href="http://www.mono-project.com/docs/getting-started/install/">đây</a> 
+2.3. Tải dafny về từ <a href="https://github.com/Microsoft/dafny/releases">đây</a> 
 Hãy chắc chắn chọn đúng tệp tin; cần đặt tên là Dafny.1.9.7.for.Mac.OSX.zip nếu bạn là sử dụng Mac hoặc tên tệp tương tự cho phân phối Linux mà bạn sử dụng.
-4. Giải nén tệp tin lưu trữ và di chuyển nội dung của tệp tin  đến vị trí thuận tiện trên hệ thống tập tin của bạn.
-5. Thêm bí danh cho lệnh: alias dafny = "mono /path/to/dafny/Dafny.exe".  Điều này
-sẽ đơn giản hóa việc chạy Dafny từ terminal
-6. Mở terminal, điều hướng đến thư mục dafny, và thực hiện đơn Dafny.exe.
+2.4. Giải nén tệp tin lưu trữ và di chuyển nội dung của tệp tin  đến vị trí thuận tiện trên hệ thống tập tin của bạn.
+2.5. Thêm bí danh cho lệnh: alias dafny = "mono /path/to/dafny/Dafny.exe".  Điều này sẽ đơn giản hóa việc chạy Dafny từ terminal.
+2.6. Mở terminal, điều hướng đến thư mục dafny, và thực hiện đơn Dafny.exe.
  
 
 3. **Tất cả các nền tảng (Sau khi cài)**
@@ -97,14 +95,15 @@ sẽ đơn giản hóa việc chạy Dafny từ terminal
 Sau khi chạy Dafny.exe, bạn sẽ thấy văn bản sau:                 
 *** Error : No input files were specified .
  
-Bây giờ tạo một tệp có tên test.dfy, và thêm mã sau:
+Bây giờ tạo một tệp có tên test.dfy, và thêm mã sau:<br>
+```
 method Abs ( x : int ) returns ( x ’: int )
  ensures x ’ >= 0
  ensures ( x < 0 && x ’ == -1* x ) || ( x ’ == x )
  {
  x ’ := x ;
 if ( x ’ < 0) { x ’ := x ’ * -1; }
- 
+ ```
 Sau đó chạy :
 Dafny . exe test . dfy
  
