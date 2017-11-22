@@ -217,6 +217,7 @@ method Max(a: int, b:int) returns (c: int)
      }
  ```
  <br>
+ 
 **3. Khẳng định (Assertions)**
 <p>Không giống tiền và hậu điều kiện, "assert" được đặt ở đâu đó trong method. Giống như tiền-hậu điều kiện, sự khẳng định(Assertion) có từ khoá "assert", tiếp theo là biểu thức boolean và dấu chấm phẩy chấm dứt câu lệnh. Một khẳng định nói rằng một biểu thức cụ thể luôn luôn giữ khi kiểm tra đạt đến phần đó của code. Ví dụ đoạn code sau: </p>
 
@@ -345,7 +346,7 @@ while i < n
 ```
 Vòng lặp này có chấm dứt hay không?<br>
 <p>Vì đây là một vòng lặp thông thường, Dafny có một quy tắc đặc biệt để đoán biến dừng. Dafny không thấy rõ biến t vì vậy nó đã đoán.
-Nó thấy rằng điều kiện vòng lặp là sự so sánh giá trị hình thức A<B nó đoán được:
+Nó thấy rằng điều kiện vòng lặp là sự so sánh giá trị hình thức A < B nó đoán được:
 Giảm bớt B-A hay trong trường hợp này là n-i.</p>
 các chú thích này vào trong vòng lặp thì Dafny có thể tiếp tục kiểm chứng, đến khi t được giới hạn về 0.<br>
 
