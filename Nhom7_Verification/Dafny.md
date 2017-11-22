@@ -673,8 +673,10 @@ assert 1 !in {2, 3, 4, 5}
 // khẳng định 1 không nằm trong tập {2, 3, 4, 5}
 ```
   <p>  Một cách hữu ích để tạo các tập hợp là sử dụng bao hàm một tập hợp khác. Nó định nghĩa một tập hơp mới bao gồm điều kiện f(x) sao cho với mọi x thuộc loại T bất kì thỏa mãn điều kiện p(x).</p>
+  
 ```Set x: T | p(x) :: f(x)```
 Ví dụ:<br>
+
 ```
 assert (set x | x in {0, 1, 2} :: x * 2) == {0, 2, 4};
 ```
@@ -1470,7 +1472,7 @@ IV . Kết luận
 Thông tin tham khảo:<br>
 [1]: https://www.microsoft.com/en-us/research/project/dafny-a-language-and-program-verifier-for-functional-correctness/<br>
 [2]: https://github.com/boogie-org/boogie-(https://github.com/boogie-org/boogie-) <br>
-[3]:[https://en.wikipedia.org/wiki/Collatz_conjecture]
+[3]:[https://en.wikipedia.org/wiki/Collatz_conjecture]<br>
 [4]: https://vi.wikipedia.org/wiki/%C4%90%E1%BB%91ng_(c%E1%BA%A5u_tr%C3%BAc_d%E1%BB%AF_li%E1%BB%87u)
 
 
