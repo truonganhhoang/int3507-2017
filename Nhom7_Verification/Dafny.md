@@ -347,7 +347,7 @@ Vòng lặp này có chấm dứt hay không?<br>
 <p>Vì đây là một vòng lặp thông thường, Dafny có một quy tắc đặc biệt để đoán biến dừng. Dafny không thấy rõ biến t vì vậy nó đã đoán.
 Nó thấy rằng điều kiện vòng lặp là sự so sánh giá trị hình thức A<B nó đoán được:
 Giảm bớt B-A hay trong trường hợp này là n-i.</p>
-Nếu thêm các chú thích này vào trong vòng lặp thì Dafny có thể tiếp tục kiểm chứng, đến khi t được giới hạn về 0.<br>
+các chú thích này vào trong vòng lặp thì Dafny có thể tiếp tục kiểm chứng, đến khi t được giới hạn về 0.<br>
 
  Chúng ta có thể viết :<br>
  
@@ -375,7 +375,7 @@ function fac(n: nat): nat
    if n == 0 then 1 else n * fac(n-1)
 }
 ```
-<p>Dafny chỉ ra rằng đối với hầu hết các chức năng mà là đệ quy thì chỉ cần gọi chính nó giá trị nhỏ hơn của các thông số vì vậy mặc định đoán được thông số giảm. Có thể bổ sung cho việc giảm chú thích:  ```decreases n``` để khai báo hàm.</p>
+<p>Dafny chỉ ra rằng đối với hầu hết các chức năng mà là đệ quy thì chỉ cần gọi chính nó giá trị nhỏ hơn của các thông số vì vậy mặc định đoán được thông số giảm. Có thể bổ sung cho việc giảm chú thích:  decreases n để khai báo hàm.</p>
 
  Đôi khi nó lại có lợi để có vòng lặp không dừng hoặc tính dừng không rõ.<br>
  VD: trong method sau:<br>
@@ -392,7 +392,7 @@ method hail(N: nat)
    }
 }
 ```
-<p>Chương trình này chấm dứt khi và chỉ khi các phỏng đoán Collatz[https://en.wikipedia.org/wiki/Collatz_conjecture] là sự thật, song nó là vấn đề mở trong toán học nên Dafny không thực sự có thể chứng minh tính dừng của chương trình.</p>
+<p>Chương trình này chấm dứt khi và chỉ khi các phỏng đoán Collatz[3] là sự thật, song nó là vấn đề mở trong toán học nên Dafny không thực sự có thể chứng minh tính dừng của chương trình.</p>
 
 <p> Có thể mã hóa một cái gì đó giống một bộ xử lí dòng mà được thiết kế để chạy mãi mãi, như vậy Dafny sẽ cung cấp một "out" để chỉ thị cho Dafny không nên cố gắng chứng minh nữa. Nó được nêu ra ở method hail ở trên.</p>
  Một method có chứa một vòng lặp được đánh dấu bằng chính nó phải được đánh dấu bằng decreases *. <br>
@@ -507,6 +507,7 @@ predicate sorted(a: array<int>)
 }
  ```
 <p>Lưu ý rằng không có kiểu trả về, bởi vì các vị từ luôn trả về một giá trị boolean. Dafny từ chối mã này như đã cho, tuyên bố rằng vị từ không thể đọc mảng a . Khắc phục vấn đề này yêu cầu chú thích khác.</p>
+
 **9. Khung (Framing)**
 <br>
 <p>Vị từ được sắp xếp không thể truy cập mảng vì mảng không được bao gồm trong khung đọc của chức năng. Khung đọc của một chức năng (hoặc vị từ) là tất cả các vị trí bộ nhớ mà chức năng được phép đọc.</p>
@@ -536,8 +537,9 @@ vậy sẽ không bị lỗi không đọc được mảng a nữa.<br>
 <p>Khung cũng ảnh hưởng đến các Methods. Chúng không bắt buộc phải liệt kê những thứ họ đọc, vì chúng ta đã viết một phương thức truy xuất một mảng không có chú thích. Các phương pháp được phép đọc bất kỳ bộ nhớ nào, nhưng chúng được yêu cầu liệt kê những phần bộ nhớ mà chúng sửa đổi, với một sửa đổi chú thích.</p>
  <p>Chúng thể hiện những gì có thể được thay đổi, chứ không phải là những gì giá trị của các chức năng phụ thuộc vào. Kết hợp với các lần đọc, các hạn chế sửa đổi cho phép Dafny chứng minh các thuộc tính của mã, mà nếu không sẽ rất khó khăn hoặc không thể.</p>
 <p>Đọc và sửa đổi là một trong những công cụ cho phép Dafny có thể làm việc theo một phương thức cùng một lúc bởi vì nó hạn chế những thay đổi tùy ý về bộ nhớ đối với một điều mà Dafny có thể giải thích.</p>
-<p>Lưu ý rằng khung chỉ áp dụng cho đống[3], hoặc bộ nhớ truy cập thông qua tài liệu tham khảo. Các biến địa phương không được lưu trữ trên đống, vì vậy chúng không thể được đề cập trong chú thích. Cũng lưu ý rằng các loại như bộ(sets), chuỗi và đa lớp là các kiểu giá trị, và được đối xử như các số nguyên hoặc biến cục bộ.</p>
+<p>Lưu ý rằng khung chỉ áp dụng cho đống[4], hoặc bộ nhớ truy cập thông qua tài liệu tham khảo. Các biến địa phương không được lưu trữ trên đống, vì vậy chúng không thể được đề cập trong chú thích. Cũng lưu ý rằng các loại như bộ(sets), chuỗi và đa lớp là các kiểu giá trị, và được đối xử như các số nguyên hoặc biến cục bộ.</p>
 <p>Mảng và các đối tượng là các loại tài liệu tham khảo, và chúng được lưu trữ trên đống (mặc dù như thường thì có một sự phân biệt tinh tế giữa chính nó và giá trị mà nó trỏ đến).</p>
+
 **10. Tìm kiếm nhị phân (Binary Search)**
 Các vị từ thường được sử dụng để làm cho các chú thích khác rõ ràng hơn:<br>
 
@@ -1467,6 +1469,7 @@ IV . Kết luận
 Thông tin tham khảo:<br>
 [1]: https://www.microsoft.com/en-us/research/project/dafny-a-language-and-program-verifier-for-functional-correctness/<br>
 [2]: https://github.com/boogie-org/boogie-(https://github.com/boogie-org/boogie-) <br>
-[3]: https://vi.wikipedia.org/wiki/%C4%90%E1%BB%91ng_(c%E1%BA%A5u_tr%C3%BAc_d%E1%BB%AF_li%E1%BB%87u)
+[3]:[https://en.wikipedia.org/wiki/Collatz_conjecture]
+[4]: https://vi.wikipedia.org/wiki/%C4%90%E1%BB%91ng_(c%E1%BA%A5u_tr%C3%BAc_d%E1%BB%AF_li%E1%BB%87u)
 
 
