@@ -72,12 +72,12 @@ forall k: int :: 0 <= k < a.Length ==> 0 < a[k] <br>
 II- Hướng dẫn cài đặt
 Do không có giao diện trực tuyến của Dafny nên để sử dụng nó, bạn có hai sự lựa chọn đó là vào trang chủ của Dafny và sử dụng máy ảo được cung cấp trên trang hoặc cài đặt Dafny trên máy của bạn.
 
-1. Cài đặt trên widows
+1. Cài đặt trên window
 
-Win dow là nền tảng dễ sử dụng nhất với Dafny
-            1. Dowload bản mới nhât  dành cho window từ trang https://github.com/Microsoft/dafny/releases 
+Window là nền tảng dễ sử dụng nhất với Dafny
+            1. Dowload bản mới nhất dành cho window từ trang https://github.com/Microsoft/dafny/releases 
             (ví dụ dowload bản dafny-2.0.0.00922-x64-win.zip)
-2. Trước khi bạn mở hoặc giải nén, nhấp chuột phải vào nó và chọn Properties ở cuối hộp thoại, nhấp vào nút Bỏ chặn và sau đó nhấp vào nút OK. Bây giờ, mở Dafny.zip và sao chép nội dung của nó vào một thư mục trên máy của bạn 
+2. Trước khi bạn mở hoặc giải nén, nhấp chuột phải vào nó và chọn Properties ở cuối hộp thoại, nhấp vào nút Bỏ chặn và sau đó nhấp vào nút OK. Bây giờ, mở Dafny.zip và sao chép nội dung của nó vào một thư mục trên máy của bạn.
 3. Để chạy Dafny từ dòng lệnh, chỉ cần chạy Dafny.exe.
 
 2. **Cài đặt trên Linux hoặc MaxOS**
@@ -87,8 +87,7 @@ Win dow là nền tảng dễ sử dụng nhất với Dafny
 3. Tải dafny về từ https://github.com/Microsoft/dafny/releases.
 Hãy chắc chắn chọn đúng tệp tin; cần đặt tên là Dafny.1.9.7.for.Mac.OSX.zip nếu bạn là sử dụng Mac hoặc tên tệp tương tự cho phân phối Linux mà bạn sử dụng.
 4. Giải nén tệp tin lưu trữ và di chuyển nội dung của tệp tin  đến vị trí thuận tiện trên hệ thống tập tin của bạn.
-5. Thêm bí danh cho lệnh: alias dafny = "mono /path/to/dafny/Dafny.exe".  Điều này
-sẽ đơn giản hóa việc chạy Dafny từ terminal
+5. Thêm bí danh cho lệnh: alias dafny = "mono /path/to/dafny/Dafny.exe".  Điều này sẽ đơn giản hóa việc chạy Dafny từ terminal
 6. Mở terminal, điều hướng đến thư mục dafny, và thực hiện đơn Dafny.exe.
  
 
@@ -117,8 +116,7 @@ Ghi chú : Nếu bạn không nhìn thấy điều này, hãy liên hệ với n
             Emacs: Để cài đặt hỗ trợ cho Emacs, hãy tham khảo [https://github.com/boogie-org/boogie-](https://github.com/boogie-org/boogie-)   friends.
             Vim: Để cài đặt hỗ trợ cho Vim, xem https://github.com/mlr-msft/vim-loves-dafny.
             Sublime Text 2: Để cài đặt hỗ trợ cho Sublime, xem https://github.com/erggo/sublime-dafny.
-            Visual Studio (chỉ dành cho Windows): Phần mở rộng Dafny cho Visual Studio hỗ trợ tô sáng          cú pháp và xác minh gia tăng. Lấy Visual Studio 2012 (lưu ý: Tôi đã không kiểm tra với các     phiên bản mới hơn) từ Dreamspark (xem ở trên cho liên kết), cài đặt nó, và khi kết thúc, chạy
-            DafnyLanguageService.vsix từ tệp phân phối nhị phân Dafny. Chế độ Dafny sẽ trở nên hoạt            động khi bạn mở tệp có phần mở rộng .dfy trong Visual Studio.
+            Visual Studio (chỉ dành cho Windows): Phần mở rộng Dafny cho Visual Studio hỗ trợ tô sáng cú pháp và xác minh gia tăng. Lấy Visual Studio 2012 (lưu ý: Tôi đã không kiểm tra với các phiên bản mới hơn) từ Dreamspark (xem ở trên cho liên kết), cài đặt nó, và khi kết thúc, chạy DafnyLanguageService.vsix từ tệp phân phối nhị phân Dafny. Chế độ Dafny sẽ hoạt động khi bạn mở tệp có phần mở rộng .dfy trong Visual Studio.
 **III- Các kiến thức cơ bản về Dafny**
 **1. Phương thức (Methods)**
 Dafny giống như một ngôn ngữ lập trình bắt buộc điển hình. Nó có các phương thức( methods), biến(variables), kiểu(types), vòng lặp(loops), các phát biểu(if statements), mảng(arrays), số nguyên, và nhiều hơn nữa. Một trong những đơn vị cơ bản của bất kỳ chương trình Dafny nào là phương thức.
