@@ -114,14 +114,13 @@ Dafny . exe test . dfy
 Dafny program verifier finished with 2 verified , 0 errors
  Compiled assembly into test . dll”
  ```
- <br>
-Ghi chú : Nếu bạn không nhìn thấy điều này, hãy liên hệ với nhân viên của khóa học càng sớm càng tốt.<br>
-           <p> Tùy chọn: Làm nổi bật cú pháp. Là một bước bổ sung để phát triển trong Dafny dễ nhìn hơn, hãy xem xét việc cài đặt tô sáng cú pháp cho trình soạn thảo ưa thích của bạn. Hiện tại có hỗ trợ cho các biên tập viên sau đây:</p>
-           <p> + Emacs: Để cài đặt hỗ trợ cho Emacs, hãy tham khảo[2]  </p>
-           <p> + Vim: Để cài đặt hỗ trợ cho Vim, <a href="https://github.com/mlr-msft/vim-loves-dafny">xem thêm</a> </p>
-           <p> + Sublime Text 2: Để cài đặt hỗ trợ cho Sublime, <a href="https://github.com/erggo/sublime-dafny.">xem thêm</a></p>
-           <p> + Visual Studio (chỉ dành cho Windows): Phần mở rộng Dafny cho Visual Studio hỗ trợ tô sáng cú pháp và xác minh gia tăng. Lấy Visual Studio 2012 (lưu ý: Tôi đã không kiểm tra với các phiên bản mới hơn) từ Dreamspark (xem ở trên cho liên kết), cài đặt nó, và khi kết thúc, chạy DafnyLanguageService.vsix từ tệp phân phối nhị phân Dafny. Chế độ Dafny sẽ trở nên hoạt động khi bạn mở tệp có phần mở rộng .dfy trong Visual Studio.</p>
-           
+Ghi chú : Nếu bạn không nhìn thấy điều này, hãy liên hệ với nhân viên của khóa học càng sớm càng tốt.
+            Tùy chọn: Làm nổi bật cú pháp. Là một bước bổ sung để phát triển trong Dafny dễ nhìn hơn, hãy xem xét việc cài đặt tô sáng cú pháp cho trình soạn thảo ưa thích của bạn. Hiện tại có hỗ trợ cho các biên tập viên sau đây:
+            Emacs: Để cài đặt hỗ trợ cho Emacs, hãy tham khảo [https://github.com/boogie-org/boogie-](https://github.com/boogie-org/boogie-)   friends.
+            Vim: Để cài đặt hỗ trợ cho Vim, xem https://github.com/mlr-msft/vim-loves-dafny.
+            Sublime Text 2: Để cài đặt hỗ trợ cho Sublime, xem https://github.com/erggo/sublime-dafny.
+            Visual Studio (chỉ dành cho Windows): Phần mở rộng Dafny cho Visual Studio hỗ trợ tô sáng cú pháp và xác minh gia tăng. Lấy Visual Studio 2012 (lưu ý: Tôi đã không kiểm tra với các phiên bản mới hơn) từ Dreamspark (xem ở trên cho liên kết), cài đặt nó, và khi kết thúc, chạy DafnyLanguageService.vsix từ tệp phân phối nhị phân Dafny. Chế độ Dafny sẽ hoạt động khi bạn mở tệp có phần mở rộng .dfy trong Visual Studio.
+
 **III- Các kiến thức cơ bản về Dafny**
 <br>
 **1. Phương thức (Methods)**
