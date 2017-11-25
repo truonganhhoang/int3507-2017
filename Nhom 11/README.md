@@ -471,7 +471,7 @@ Trước khi phân tích mã nhị phân chính nó, các bit cần phải đư�
 - Sau khi tải file apk về thiết bị di động của bạn, hãy mở nó ra.
 - Màn hình đăng nhập hiển thị, yêu cầu bạn đăng nhập tài khoản để có thể sử dụng ứng dụng.
 
-![img13](https://drive.google.com/drive/u/0/my-drive)
+![img13](https://photos.google.com/search/_tra_/photo/AF1QipOLRutV38zUoNsx294z2UKDV9ENwfNWRQ651hSt)
 
 
 
