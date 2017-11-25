@@ -127,6 +127,45 @@ Trường hợp của Chipotle đã trở thành một lời cảnh tỉnh khôn
 
 # **6. Ứng dụng trên Ethereum chuỗi khối**
 ## **6.1 Giới thiệu ứng dụng**
+Đây là ứng dụng câu hỏi trắc nghiệm đơn giản trên nền tảng Ethereum - ứng dụng phi tập trung (decenterlized app). Mỗi tài khoản sẽ có một khoản tiền. Với mỗi tài khoản người dùng có thể thêm câu hỏi trắc nghiệm vào ngân hàng câu hỏi. Để tăng giá trị tài khoản người dùng cần trả lời câu hỏi trắc nghiệm trong ngân hàng các câu hỏi. Nếu trả lời đúng tiền của tài khoản tạo ra câu hỏi đó sẽ chuyển đến tài khoản của bạn và ngược lại khi bạn trả lời sai.
+## **Code:  https://github.com/vuhoanglinh96/food**
+
+Cài đặt testrpc: [https://github.com/ethereumjs/testrpc](https://github.com/ethereumjs/testrpc)
+
+Chạy testrpc:
+
+
+     testrpc -m 'tuna move mistake token flush accident hazard dish coral try usual sell'
+
+
+
+Khi clone git project về, chạy lệnh:
+
+    npm install
+    truffle compile
+    truffle migrate
+
+Chạy server local:
+
+    ng serve
+
+
+
+Chạy server backend:
+
+    cd backend
+    npm install
+    npm run start
+
+## **Giao diện ứng dụng**
+- Thêm câu hỏi
+![Thêm câu hỏi](https://d2mxuefqeaa7sj.cloudfront.net/s_D92D9A08DD3D3A7D7C3336B6DF64C5DFE3450EC0AE94A625584E9675621CB858_1511583662538_1.jpg)
+
+- Trả lời câu hỏi
+![Trả lời câu hỏi](https://d2mxuefqeaa7sj.cloudfront.net/s_D92D9A08DD3D3A7D7C3336B6DF64C5DFE3450EC0AE94A625584E9675621CB858_1511583685584_2.jpg)
+
+
+
 ## **6.2 Các công nghệ**
 ## **Ethereum**
 
@@ -153,6 +192,7 @@ Hợp đồng thông minh (Smart contracts)[7] về cơ bản nó là một thu�
 - Giao diện điều khiển tương tác để giao tiếp hợp đồng trực tiếp.
 - Cấu hình xây dựng đường ống với sự hỗ trợ tích hợp chặt chẽ.
 - Người chạy tập lệnh bên ngoài thực hiện các tập lệnh trong môi trường Truffle.
+
 ## **Nodejs**
 
 [Node.js](https://nodejs.org) [10] là một mã nguồn mở, được xây dựng dựa trên nền tảng Javascript V8 Engine Node.js có thể chạy trên nhiều nền tảng hệ điều hành khác nhau từ Window cho tới Linux, OS X nên đó cũng là một lợi thế. Nó cung cấp các thư viện phong phú ở dạng JavaScript Module khác nhau giúp đơn giản hóa việc lập trình và giảm thời gian ở mức thấp nhất.
@@ -196,6 +236,73 @@ Cấu trúc một ứng dụng Truffle cơ bản bao gồm các thành phần sa
 - /migrations: Truffle sử dụng migration để xử lý triển khai hợp đồng thông minh. Một migration là một hợp đồng thông minh đặc biệt bổ sung để theo dõi các thay đổi.
 - /test: chứa Javascript và *Solidity* code test cho các hợp đồng thông minh.
 - truffle.js: thư mục cấu hình của Truffle
+
+## **Định nghĩa một hợp đồng thông minh**
+
+Chúng ta sẽ phát triển một ứng dụng phân tán, DApp, bằng cách định nghĩa một hợp đồng thông minh ****đóng vai trò như là một xử lý logic nghiệp vụ và lưu trữ ở phía *back-end*.
+Trước tiên chúng ta tạo một file  `Metacoin.sol` trong thư mục `/contracts` với nội như sau
+
+    pragma solidity ^0.4.4;
+
+    contract Metacoin {
+
+    }
+
+Có hai thứ quan trọng các bạn cần chú ý ở đoạn code trên
+
+1. Phiên bản tối thiểu của Solidity được định nghĩa ở trên cùng `pragma solidity ^0.4.4;`
+2. Giống như hầu hết các ngôn ngữ lập trình khác, `Solidity` sử dụng dấu `;` là ký tự phân cách các dòng lệnh.
+    Solidity là một ngôn ngữ lập trình có static-type, nên chúng ta bắt buộc phải khai báo kiểu dữ liệu cho các tham biến có kiểu như string, int hay array. Ngoài ra, Solidity có thêm một kiểu dữ liệu đặc thù là address độ dài 20 bytes dùng để lưu trữ địa chỉ trên Ethereum chuỗi khối. Các tài khoản hay hợp đồng thông minh trên Ethereum chuỗi khối đều có một địa chỉ đến có thể gửi/nhận dữ liệu đi đến những địa chỉ đó.
+
+
+## **Biên dịch và migration hợp đồng thông minh**
+
+**Biên dịch**
+
+*Solodity* là một ngôn ngữ biên dịch, nên chúng ta cần dịch mã nguồn ra bytecode để có thể chạy trên `EVM`.  Rồi deploy lên chuỗi khối để chúng ta có thể tương tác với hợp đồng thông minh đã định nghĩa.
+Trước tiên, chúng ta mở một cửa sổ Terminal mới rồi chạy lệnh testrpc  'tuna move mistake token flush accident hazard dish coral try usual sell'  để khởi động một chuỗi khối ở local. Màn hình Terminal có thể sẽ như sau:
+
+
+    EthereumJS TestRPC v6.0.3 (ganache-core: 2.0.2)
+
+    Available Accounts
+    ==================
+    (0) 0x387908fd4f030c94f7f28ad61b1386d56c12f162
+    (1) 0x4b7dafb95151f8ec334ba610bc74bb33ba7298c3
+    (2) 0xaca73543a32387bee98dab5237d00a4e78593b64
+    (3) 0x6e700ca0a5add1b1111c2893d070eb3e17435ba9
+    (4) 0xf67f44504dceed2f41acff4e9e6fd996fed17c34
+    (5) 0x199847c004ee018bee7ad21435bbdac32c961b08
+    (6) 0xf669b282e0a5d28f5f809f2bc43988c5e2f07f96
+    (7) 0x18237c75e8cc0bbf1d0f1221323b6641d1a7f098
+    (8) 0x20f6753663f3d05315939315876ff3ce181564f0
+    (9) 0xfbdb2bc8a3abf41a8cb8b9968e7023313e917f72
+
+    Private Keys
+    ==================
+    (0) 4a4163a7f753004ee6cb8c9c6d80329d6636f2471067a26a9c0b1734e285efe6
+    (1) d1595fa85be6fa4bdd249246ba8090de917351a170cdd1746b4ea5998a76c9bc
+    (2) fd64432b991782817acd82c54c29a98835aec1094e973baf376613b2072b7edd
+    (3) aa9089028901e5f77601ff4e7b8493a23a146bb1bd285d03ff68b3513d6f1486
+    (4) 5228f82697f9bea494788802a42ea75b83e41a1adabc4108ba6076533068cdb2
+    (5) 9259ad0d01b3d52828e29c23abfe76c6106245efcfd4bd4db757527b520ae092
+    (6) 4b2c3da6e654bb81c549e287323c7df8f646f2ba8105a02222850ff97c36957b
+    (7) 25f395d3ad4e33976bc0de4e2880ba02e503e7036fed96142a0a5287bdb3d1ae
+    (8) 1a3038f5fec7070a9e09a92b16433029cb1bff57e221e65f10732f4b55d6ab42
+    (9) 53216096ca64520258a219a550e9c487d8350df168be4553a83cb16ea417819b
+
+    HD Wallet
+    ==================
+    Mnemonic:      tuna move mistake token flush accident hazard dish coral try usual sell
+    Base HD Path:  m/44'/60'/0'/0/{account_index}
+
+    Listening on localhost:8545
+
+
+**Migration**
+
+Sau khi đã biên dịch thành công hợp đồng thông minh ở bước trên, bây giờ chúng ta thực hiện migration hợp đồng thông minh lên chuỗi khối. Migration là một mã code để deploy và thay đổi trạng thái của hợp đồng ứng dụng của chúng ra. Ở lần migration đầu tiên thì chỉ đơn giản là deploy code mới lên chuỗi khối. Còn các lần migration sau, ngoài việc deploy hợp đồng mới thì còn bao gồm cả việc migration các dữ liệu cũ cho phù hợp với hợp đồng thông minh mới.
+
 
 **Tài liệu tham khảo**
 
