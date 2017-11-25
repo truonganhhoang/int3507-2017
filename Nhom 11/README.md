@@ -39,8 +39,9 @@
 - Ứng dụng tạo mã tự động sử dụng một trong các module của opencv contrib là module Aruco. Module Aruco được xây dựng dựa trên thư viện Aruco, một thư viện khá phổ biến cho việc phát hiện các loại mã và các công cụ sử dụng chúng để định vị và hiệu chuẩn máy ảnh, nó được phát triển bởi Rafael Muñoz và Sergio Garrido. 
 - Ứng dụng này cho phép tạo ra các mã và nhận diện chúng một cách tự động .
 - Quy mô trong môn học: ứng dụng cho phép tự động sinh ra các mã đáp án trắc nghiệm tương ứng với các đáp án A, B, C, D. Mối người sẽ có 4 mã đáp án, với mỗi câu hỏi được đưa ra, mỗi người sẽ chọn đáp án của câu hỏi mà mình cho là đúng bằng cách đưa ra hình ảnh mã của đáp án đó. Máy sẽ quét tự động, phát hiện và nhận dạng mã đó tương ứng với đáp án nào.
+
 ---
-#### 3.Công nghệ sử dụng
+#### 3. Công nghệ sử dụng
 
 ##### a. WebSocket
 
@@ -49,16 +50,18 @@
 - Hiện tại Websocket đã được hỗ trợ trên 74% các trình duyệt. Bạn có thể xem số liệu mới nhất tại đây: 
 [Trình duyệt](https://caniuse.com/#search=websocket)
 - Giao thức bắt tay của WebSocket:
-[img00](https://poesiabinaria.net/wp-content/uploads/2016/10/WebSockets-Diagram.png)
+![img00](https://poesiabinaria.net/wp-content/uploads/2016/10/WebSockets-Diagram.png)
 
 
 
-**Ưu điểm**
+**Ưu điểm:**
+
 	- WebSockets cung cấp khả năng giao tiếp hai chiều mạnh mẽ, có độ trễ thấp và dễ xử lý lỗi.
 	- API cũng rất dễ sử dụng trực tiếp mà không cần bất kỳ các tầng bổ sung nào, so với Comet, thường đòi hỏi một thư viện tốt để xử lý kết nối lại, thời gian chờ timeout, các Ajax request (yêu cầu Ajax), các tin báo nhận và các dạng truyền tải tùy chọn khác nhau (Ajax long-polling và jsonp polling).
 	- Không cần phải có nhiều kết nối như phương pháp Comet long-polling và cũng không có những nhược điểm như Comet streaming.
 
-**Nhược điểm**
+**Nhược điểm:**
+
 	- Chưa hỗ trợ được tất cả các trình duyệt.
 	- Không có phạm vi yêu cầu nào. Do WebSockets là một TCP socket chứ không phải là HTTP request, nên không dễ sử dụng các dịch vụ có phạm vi yêu cầu.
 
@@ -90,7 +93,7 @@
 ##### d. JNI
 
 - Cấu trúc của một Class JNI:
-[img000](http://vietgamedev.net/file/attachment/2013/08/276f80e2cb29445c46c18d07132d91da_view.png)
+![img000](http://vietgamedev.net/file/attachment/2013/08/276f80e2cb29445c46c18d07132d91da_view.png)
 
 
 
@@ -103,7 +106,7 @@
 **Nhược điểm**
 	- Chúng ta đã biết rằng Java là một ngôn ngữ viêt một lần-chạy mọi nơi, tức là chỉ cần viết code Java, sau đó biên dịch rồi đem lên một hệ điều hành có cài JVM là có thể chạy bình thường. Tuy nhiên khi chúng ta sử dụng JNI để “hợp tác” với code của hệ điều hành, thì lại không thể đem chương trình đó đi chạy trên máy có hệ điều hành khác được, do đó mất đi tính viết một lần-chạy mọi nơi.
 	- Một điều nữa là Java có tính năng type-safe, tức là bạn khai báo kiểu dữ liệu gì thì chỉ được thao tác với kiểu dữ liệu đó, nhưng các ngôn ngữ hệ điều hành thì có thể không có tính năng type-safe, do đó khi viết code JNI bạn sẽ phải chú ý cẩn thận, chỉ cần khác kiểu dữ liệu cũng có thể crash chương trình.
-- Tìm hiểu thêm tại [JNI](https://www3.ntu.edu.sg/home/ehchua/programming/java/JavaNativeInterface.html)
+- Tìm hiểu thêm về [JNI](https://www3.ntu.edu.sg/home/ehchua/programming/java/JavaNativeInterface.html)
 
 ---
 #### II. THUẬT TOÁN TẠO MÃ
@@ -178,6 +181,7 @@
     Sau khi phát hiện đối tượng, cần thiết phải xác định xem chúng là mã thực sự hay không bằng cách phân tích mã hoá bên trong của chúng. Bước này bắt đầu bằng cách lấy ra các dấu hiệu của mỗi mã. Để làm điều này, trước tiên, phép biến đổi bối cảnh được áp dụng để có được mã theo hình thức tiêu chuẩn của nó. Sau đó, các hình ảnh tiêu chẩn được tạo ngưỡng bằng cách sử dụng Otsu để phân tách riêng bit trắng và đen. Hình ảnh được chia thành các ô khác nhau theo kích thước điểm đánh dấu và kích thước đường viền và số lượng điểm ảnh màu đen hoặc trắng trên mỗi ô được đếm để xác định xem nó có màu trắng hay đen. Cuối cùng, các bit được phân tích để xác định xem các điểm đánh dấu thuộc về từ điển cụ thể và kỹ thuật sửa lỗi được sử dụng khi cần thiết.
 
 - Xem xét hình ảnh sau:
+
 ![img03](https://docs.opencv.org/3.1.0/singlemarkersoriginal.png)
 
 
@@ -467,7 +471,7 @@ Trước khi phân tích mã nhị phân chính nó, các bit cần phải đư�
 - Sau khi tải file apk về thiết bị di động của bạn, hãy mở nó ra.
 - Màn hình đăng nhập hiển thị, yêu cầu bạn đăng nhập tài khoản để có thể sử dụng ứng dụng.
 
-![img13](https://drive.google.com/file/d/1XRs3zr5DJEFPMlgE4L0EFNxTkdRSfaC9/view?usp=sharing)
+![img13](https://drive.google.com/drive/u/0/my-drive)
 
 
 
