@@ -463,7 +463,7 @@ Trước khi phân tích mã nhị phân chính nó, các bit cần phải đư�
 #### 1. Cài đặt
 
 - Yêu cầu thiết bị đi động của bạn phải chạy hệ điều hành Android phiên bản 4.4 trở lên.
-- Để cài đặt ứng dụng này, bạn dowload file cài đặt tại link sau: [](https://drive.google.com/file/d/10kHWmoSjUdRt7Zg4km4Em9GM6ca8NbLt/view)
+- Để cài đặt ứng dụng này, bạn dowload file cài đặt tại link sau: [app](https://drive.google.com/file/d/10kHWmoSjUdRt7Zg4km4Em9GM6ca8NbLt/view)
 
 ---
 #### 2. Sử dụng
@@ -471,7 +471,7 @@ Trước khi phân tích mã nhị phân chính nó, các bit cần phải đư�
 - Sau khi tải file apk về thiết bị di động của bạn, hãy mở nó ra.
 - Màn hình đăng nhập hiển thị, yêu cầu bạn đăng nhập tài khoản để có thể sử dụng ứng dụng.
 
-![img13](https://photos.google.com/search/_tra_/photo/AF1QipOLRutV38zUoNsx294z2UKDV9ENwfNWRQ651hSt)
+![img13](https://photos.app.goo.gl/xMyIzbgyDZSpJ1ch1)
 
 
 
@@ -479,7 +479,7 @@ Trước khi phân tích mã nhị phân chính nó, các bit cần phải đư�
 
 - Sau khi đăng nhập thành công, màn hình chính sẽ hiển thị như hình ảnh dưới đây:
 
-![img14](https://drive.google.com/file/d/1caWwE9MEM0pyE4k9LHPj6SjiabO3Glpl/view?usp=sharing)
+![img14](https://photos.app.goo.gl/4jB3O1xjfCxsOcLW2)
 
 
 
