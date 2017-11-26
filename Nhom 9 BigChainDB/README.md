@@ -104,7 +104,7 @@ Các tính năng của chuỗi khối được cho vào cơ sở dữ liệu nà
 ## Mô hình dữ liệu
 -BigchainDB cơ bản lưu trữ tất cả dữ liệu dưới hình thức các tài liệu JSON.</br>
 Tồn tại dưới 3 dạng chính của nó là:
-1. Các giao dịch(transactions), bao gồm tài sản(asset), các đầu vào, các đầu ra và các thuộc tính khác.
+1. Các giao dịch(transactions): bao gồm tài sản(asset), các đầu vào, các đầu ra và các thuộc tính khác.
 2. Các khối(blocks)
 3. Các bình chọn(votes)
 Dưới đây chúng ta sẽ lần lượt tìm hiểu về chúng.
@@ -124,7 +124,7 @@ Một mô hình điển hình có cấu trúc như sau:
  ```
 * id: Khóa chính của cơ sở dữ liệu, là định danh đồng thời cũng là mã băm của giao dịch.
 * version: Phiên bản của giao dịch, với BigChainDB Server phiên bản 1.0.0 thì giá trị duy nhất được chấp nhận là "1.0".
-* inputs: Danh sách các đầu vào, các đầu vào biến đổi/sử dụng các đầu ra của các giao dịch trước đó bằng cách đáp ứng các yêu cầu về bảo mật,..Khi tạo mới 1 giao dịch thì phải có ít nhất 1 đầu vào.
+* inputs: Danh sách các đầu vào, các đầu vào biến đổi/sử dụng các đầu ra của các giao dịch trước đó bằng cách đáp ứng các yêu cầu về bảo mật,... Khi tạo mới 1 giao dịch thì phải có ít nhất 1 đầu vào.
 * outputs: Danh sách các đầu ra, mỗi đầu ra phải đáp ứng được các yêu cầu về mặt bảo mật nếu muốn sử dụng/chuyển đổi. Nó đồng thời cũng thể hiện phần tài sản(asset) gắn với đầu ra đó.</br>
 #### *Cách tính toán ID*:
 1. Xây dựng một từ điển python bao gồm các thuộc tính: *version, inputs, outputs, operation, asset, metadata* và giá trị của chúng.
