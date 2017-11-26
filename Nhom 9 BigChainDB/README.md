@@ -10,27 +10,27 @@
 ### Mô tả đề tài của nhóm
 Xây dựng công cụ quản lý và chia sẻ điểm an toàn dựa vào BigchainDB [1]
 
-### Tóm tắt nội dung trình bày
-  * Giới thiệu chung 
+### Tóm tắt nội dung trình bày
+  * Giới thiệu chung 
   * Giới thiệu các công nghệ và kiến thức liên quan
-  * Giới thiệu về sản phảm 
+  * Giới thiệu về sản phảm 
   * Hướng dẫn cài đặt 
   * Kết luận
 
 ## I Giới thiệu chung
-  Ngày nay đồng tiền ảo bitcoin [2] đang trở thành một đề tải nóng bỏng được bàn luận ở khắp mọi nơi. Vì vậy, sự chú ý của nhứng người am hiểu công nghệ đang đân chuyển sang nên tảng blockchain đứng đằng sau bitcoin, và nó đang làm thay đổi ngành công nghiệp của thế giới như thế nào. Đối với nhiều doanh nghiệp và tập đoàn lớn blockchain mở ra cơ hội to lớn cho họ đảm bảo việc hạn chế trung gian, phân phối sản phẩm một cách nhanh chóng và tin cậy tuyệt dối. Các ứng dụng sử dụng blockchain cho phép hệ thống hoạt động mà không cần một tổ chức đứng ra điều hành, chúng còn được gọi là dapps [3]. Trong đề tài này, nhóm tập trung vào tìm hiểu và khai thác BigchainDB, nó là một dapps cho phép nhà phát triển sử dụng block chain như một cở sở dữ liệu và có các thao tác cùng những đặc điểm khác so với cở sở dữ liệu truyển thống.
+  Ngày nay đồng tiền ảo bitcoin [2] đang trở thành một đề tải nóng bỏng được bàn luận ở khắp mọi nơi. Vì vậy, sự chú ý của nhứng người am hiểu công nghệ đang đân chuyển sang nên tảng blockchain đứng đằng sau bitcoin, và nó đang làm thay đổi ngành công nghiệp của thế giới như thế nào. Đối với nhiều doanh nghiệp và tập đoàn lớn blockchain mở ra cơ hội to lớn cho họ đảm bảo việc hạn chế trung gian, phân phối sản phẩm một cách nhanh chóng và tin cậy tuyệt dối. Các ứng dụng sử dụng blockchain cho phép hệ thống hoạt động mà không cần một tổ chức đứng ra điều hành, chúng còn được gọi là dapps [3]. Trong đề tài này, nhóm tập trung vào tìm hiểu và khai thác BigchainDB, nó là một dapps cho phép nhà phát triển sử dụng block chain như một cở sở dữ liệu và có các thao tác cùng những đặc điểm khác so với cở sở dữ liệu truyển thống.
 
   Phần tiếp theo trong báo cáo sẽ tập trung trình bày từng khái niệm để giúp hiểu rõ về BigchainDB. 
  
-## II Giới thiệu các công nghệ và kiến thức liên quan
+## II Giới thiệu các công nghệ và kiến thức liên quan
   Đầu tiên để hiểu về BigchainDB ta cần tìm hiểu về công nghệ lõi blockchain.
 ### Giới thiệu về chuối khối 
  Chuỗi khối (blockchain hoặc block chain) là một cơ sở dữ liệu phân cấp lưu trữ thông tin trong các khối thông tin được liên kết với nhau bằng mã hóa và mở rộng theo thời gian. Mỗi khối thông tin đều chứa thông tin về thời gian khởi tạo và được liên kết tới khối trước đó, kèm một mã thời gian và dữ liệu giao dịch. Blockchain được thiết kế để chống lại việc thay đổi của dữ liệu: Một khi dữ liệu đã được mạng lưới chấp nhận thì sẽ không có cách nào thay đổi được nó.
 
-Cấu trúc bockchain gồm các khối (block) liên kết với nhau như một danh sách liên kết, con trỏ trong blockchain có thể lưu thêm mảng bâm (hash) của khối trước đó. Như vậy kẻ giả mạo muốn thay đổi giá trị của khối thứ k trong dãy sẽ phải thay đổi tất cả các khổi từ k+1 trở nên, điều này là gân như bất khả thi do việc tạo nhiều giá trị hash là cực kỳ tốn kém.
+Cấu trúc bockchain gồm các khối (block) liên kết với nhau như một danh sách liên kết, con trỏ trong blockchain có thể lưu thêm mảng bâm (hash) của khối trước đó. Như vậy kẻ giả mạo muốn thay đổi giá trị của khối thứ k trong dãy sẽ phải thay đổi tất cả các khổi từ k+1 trở nên, điều này là gân như bất khả thi do việc tạo nhiều giá trị hash là cực kỳ tốn kém.
 
 ### Giới thiệu về mã hoá chữ ký số ed25519 và mã hoá dữ liệu AES
-Để đảm bảo an toàn mỗi thao tác trong BigchainDB đều phải găn liền với chỹ ký số. Hiên tại ở phiên bản 1.0 BigchainDb hỗ trợ dạng mã hoá chữ ký là ed25519.
+Để đảm bảo an toàn mỗi thao tác trong BigchainDB đều phải găn liền với chỹ ký số. Hiên tại ở phiên bản 1.0 BigchainDb hỗ trợ dạng mã hoá chữ ký là ed25519.
 
 #### Chữ ký số ed25519
 Ed25519 là một hệ thống chữ ký số khóa công khai với nhiều tính năng nổi trội:
@@ -287,17 +287,17 @@ Lưu ý:
 
 ### Cơ chế của ứng dụng
 
-Điểm (point) là đơn vị định lượng được gán với định danh của một người dùng. Một người A có thẻ tạo ra các point và chia sẻ cho người khác. Người B có thể chia sẻ point nhận từ A cho những người khác, tuy nhiên B không thể tạo ra được point có định danh giống của A. Như vậy mỗi người sẽ có thể tạo ra point của riêng mình, việc tạo và chia sẻ point có thể đại diện thay cho các giá trị khác như: tiền, điểm số v..v... Việc phân phói này là hoàn toàn đáng tin do được bảo vệ bởi cơ chế của blockchain, và không cần sự có mặt của quản trị viên.
+Điểm (point) là đơn vị định lượng được gán với định danh của một người dùng. Một người A có thẻ tạo ra các point và chia sẻ cho người khác. Người B có thể chia sẻ point nhận từ A cho những người khác, tuy nhiên B không thể tạo ra được point có định danh giống của A. Như vậy mỗi người sẽ có thể tạo ra point của riêng mình, việc tạo và chia sẻ point có thể đại diện thay cho các giá trị khác như: tiền, điểm số v..v... Việc phân phói này là hoàn toàn đáng tin do được bảo vệ bởi cơ chế của blockchain, và không cần sự có mặt của quản trị viên.
 
-### Các chức năng của mỗi người dùng
-* Thêm điểm : Người dùng có thể tạo ra loại điểm của riêng mình.
+### Các chức năng của mỗi người dùng
+* Thêm điểm : Người dùng có thể tạo ra loại điểm của riêng mình.
 * Chia điểm : Người dùng có thể chia sẻ điểm cho nhau.
 * Láy danh sách người sở hữu điểm: Người dùng có thể tra cứu danh sách những người đang sở hữu loại point.
 
 ### Kiến trúc 
 
 ##### Thiết kế:
-![Alt text](/Nhom%209%20BigchainDB/assets/architecture.jpg?raw=true "architecture")
+![Alt text](./assets/architecture.jpg?raw=true "architecture")
 
 
 Tác dụng của từng thành phần:
@@ -306,7 +306,7 @@ Tác dụng của từng thành phần:
 * Node Server: Cung cấp API thao tác với database và giao diện, xử lý logic
 * Angular Server: Cung cấp giao diện cho người dùng.
 
-## IV Hướng dẫn cài đặt
+## IV Hướng dẫn cài đặt
 
 ### Server
 ### Cài đặt bigchaindb
@@ -362,7 +362,7 @@ mặc định bigchaindb chạy ở http://127.0.0.1:9984/
     $ cd int3507-2017/bigchain/server
     $ npm install
 ```
-Nếu sử dụng database đã cài đạt ở nơi khác cần sửa cấu hình trong config/config.js
+Nếu sử dụng database đã cài đạt ở nơi khác cần sửa cấu hình trong config/config.js
 #### Chạy server
 ```
     $ node app.js
