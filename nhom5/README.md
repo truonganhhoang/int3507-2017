@@ -22,82 +22,142 @@
 
 ## Chương 1: Các khái niệm cơ bản
 
-## Chương 2: Tổng quan về kiến trúc ứng dụng
+Trước khi đi vào xây dựng ứng dụng, ta cần hiểu về cơ chế hoạt động của Facebook Chatbot và các khái niệm liên quan.
 
-## Chương 3: Ứng dụng Webhook và cách kết nối với Facebook
+### 1.1. Webhook là gì
 
-Phần này tập trung trình bày vào cách thức xây dựng một ứng dụng chatbot có thể nhận tin nhắn từ người dùng và phản hồi lại thông điệp phù hợp. Trước tiên, tôi xin trình bày tổng quan về các khái niệm cơ bản và cơ chế hoạt động của Facebook chatbot.
+Webhook, hiểu đơn giản thì đây là một công cụ để truy vấn và lưu dữ liệu của một sự kiện xác định. Khi một trong những sự kiện đã đăng ký được kích hoạt, webhook sẽ gửi một HTTP POST đến một địa chỉ URL được đăng ký từ trước.
 
-###1. Các khái niệm cơ bản và cơ chế hoạt động của Facebook chatbot
-
-####1.1. Tổng quan về webhook.
-
-Webhook, hiểu đơn giản là là thì đây là một công cụ để truy vấn và lưu dữ liệu của một Event xác định. Khi một trong những sự kiện đã đăng ký được kích hoạt, webhook sẽ gửi một HTTP POST đến một địa chỉ URL được đăng ký từ trước.
-
-####1.2. Tổng quan về Rest API.
+### 1.2. Rest API là gì
 
 REST (**RE**presentational **S**tate **T**ransfer) là một dạng dạng chuyển đổi cấu trúc dữ liệu. Rest API là một ứng dụng chuyển đổi cấu trúc dữ liệu có phương thức để kết nối và ứng dụng khác. Facebook cung cấp REST API để lập trình viên có thể gửi tin nhắn phản hồi đến người dùng, cho dù người dùng viết ứng dụng trả lời bằng bất kỳ ngôn ngữ lập trình nào.
 
-####1.3. Cơ chế hoạt động cơ bản của Facebook chatbot
+### 1.3. Cơ chế hoạt động của Facebook Chatbot
 
-Đầu tiên, ta phải cung cấp địa chỉ ứng dụng webhook cho Facebook (là địa chỉ của máy chủ chatbot). Khi có tin nhắn gửi đến bot, Facebook sẽ gửi một HTTP POST đến máy chủ chatbot thông qua Webhook để chúng ta tiếp tục xử lý.
-Sau khi xử lý xong, nếu muốn trả lời lại người dùng, chúng ta phải gửi lại tin nhắn cho Rest API của Facebook. Sau khi nhận được tin nhắn, bot sẽ phản hồi lại cho người dùng.
-Như vậy: Để viết ứng dụng Facebook Chatbot, ta cần thực hiện 2 công việc sau:
-1. Viết ứng dụng Webhook (máy chủ chatbot) và gửi đăng ký địa chỉ webhook với Facebook
-2. Nhận tin nhắn từ người dùng thông qua ứng dụng webhook, xử lý nội dung và phản hồi lại cho người dùng.
+Đầu tiên, ta phải tạo và đăng kí địa chỉ ứng dụng webhook cho trang với Facebook. Khi có tin nhắn gửi đến trang, Facebook sẽ gửi một HTTP POST thông qua Webhook này để chúng ta tiếp tục xử lý.
 
+Sau khi xử lý xong, nếu muốn trả lời lại người dùng, chúng ta phải gửi tin nhắn qua Rest API của Facebook. Nhờ đó, một tin nhắn từ trang của ta tới người dùng được Facebook gửi đi.
 
-### 2. Xây dựng ứng dụng webhook và đăng ký địa chỉ webhook với Facebook
+## Chương 2: Tổng quan về kiến trúc ứng dụng
 
-Phần này sẽ tập trung vào cách thức xây dựng ứng dụng webhook cơ bản (ứng dụng máy chủ chatbot) để kết nối với Facebook Messenger. Ứng dụng webhook lúc này ban đầu chỉ xây dựng kết nối cơ bản, chưa xử lý và tìm thông điệp phản hồi phù hợp cho người dùng (nội dung này sẽ được trình bày trong phần sau)
-Ngôn ngữ được sử dụng để xây dựng ứng dụng webhook được trình bày trong bài báo cáo này là `Nodejs`. Chúng ta có thể xây dựng ứng dụng webhook bằng bất kỳ ngôn ngữ lập trình nào khác.
+Dựa vào cơ chế hoạt động của Facebook Chatbot, để xây dựng một ứng dụng Facebook Chatbot, ta cần xây dựng một ứng dụng có thể tương tác hai chiều với Facebook với hai chức năng như sau: 
 
-#### Các chuẩn bị cần thiết để thiết lập kết nối.
+1. Cung cấp địa chỉ webhook để ta đăng kí với Facebook
 
-- Người dùng sẽ phải tạo cho mình trang (FanPage), nếu đã sở hữu một cái tương tự thì không cần thiết phải lập mới.
-- Để kết nối ứng dụng chatbbot với một trang của người dùng, Facebook yêu cầu ứng dụng chatbot của người dùng là giao thức HTTPS. Tuy nhiên để có được một máy chủ thật với giao thức HTTPS thì không phải ai cũng có sẵn, chính vì vậy chúng tôi sử dụng một một máy chủ trung gian để chuyển tiếp yêu cầu có tên là Ngrok đóng vai trò trung gian có giao thức HTTPS để kết nối giữa Facebook và ứng dụng webhook được xây dựng trên máy chủ nội bộ của chúng ta.
-- Mục tiêu của chúng ta là xây dựng được một ứng dụng webhook có tối thiểu 2 giao thức cơ bản, một là phương thức GET để Facebook xác thực ứng dụng, hai là phương thức POST để nhận tin nhắn của người dùng do Facebook gửi đến.
-Ở đây, chúng tôi đã xây dựng sẵn một ứng dụng webhook cơ bản, chúng ta có thể tạo bản sao của ứng dụng này và thiết lập các thông số cần thiết là có thể kết nối ứng dụng webhook với Facebook.
-- Tải về ứng dụng webhook mẫu tại [đây](https://github.com/nguyenducthuanuet/facebookchatbot) 
-- Sau khi tải ứng dụng mẫu về, vào thư mục chứa dự án, chạy câu lệnh `npm install` trên cửa sổ dòng lệnh (Command line của Windows hoặc Terminal của Ubuntu) để tiến hành cài đặt các gói cần thiết.
-- Sau khi hoàn tất công việc chuẩn bị để thiết lập kết nối, sau đây tôi sẽ đi vào chi tiết các bước cài đặt thiết lập để nối Facebook với ứng dụng webook.
+2. Tiếp nhận tin nhắn của người dùng và xử lý chúng, sau đó trả lại kết quả cho người dùng thông qua Rest API của Facebook
 
-####Bước 1: Tạo ứng dụng Messenger trên trang dành cho nhà phát triển của Facebook
+![Tổng quan kiến trúc ứng dụng](images/tong_quan_kien_truc_ung_dung.jpg)
 
-1. Truy cập vào [Facebook Developer](https://developers.facebook.com/) . Sau đó kích vào nút bắt đầu ở phía trên bên phải để tạo cho mình một ứng dụng.
+### 2.1. Mô tả kiến trúc
+
+Ứng dụng được chia làm 2 tầng chính với chức năng như sau:
+
+- Máy chủ chatbot (Chatbot server) 
+
+    - Kết nối 2 chiều với Facebook thông qua Webhook và Rest API
+    
+    - Tiếp nhận, xử lý và điều hướng các hành động, tin nhắn của người dùng
+    
+    - Lưu dữ liệu về người dùng và tin nhắn trên MongoDB
+    
+- Máy chủ tìm kiếm (Search server):
+
+    - Cung cấp API tìm kiếm môn học, giảng viên,...
+
+    - Thao tác với dữ liệu về môn học, giảng viên,... trên MySQL và Elastic Search
+    
+    - Quản lý quá trình đẩy dữ liệu từ MySQL sang Elastic Search (indexing)
+    
+### 2.2. Luồng xử lý 
+
+Khi người dùng Facebook gửi tin nhắn tới trang, Facebook sẽ gọi tới webhook của máy chủ Chatbot. Máy chủ chatbot sẽ lưu thông tin người dùng và các tin nhắn vào MongoDB. Đối với các yêu cầu tìm kiếm của người dùng, máy chủ Chatbot gọi tới các API tìm kiếm tương ứng trên máy chủ tìm kiếm. Máy chủ tìm kiếm sẽ tìm chúng trên Elastic Search, sau đó trả kết quả về. Sau khi nhận được kết quả tìm kiếm, máy chủ Chatbot sẽ chọn một cách hiển thị thích hợp cho kết quả, rồi gửi kết quả tới người dùng thông qua Facebook Chatbot API.
+
+Song song với đó, các trình thu thập thông tin sẽ thu thập dữ liệu từ các nguồn khác nhau như trang web của trường, của các khoa,... để bổ sung hoặc cập nhật dữ liệu trên MySQL. Máy chủ tìm kiếm sẽ đảm nhận vai trò đưa dữ liệu từ MySQL sang Elastic Search hàng ngày. 
+
+## Chương 3: Máy chủ chatbot 
+
+Máy chủ chatbot chúng ta sử dụng ở đây được xây dựng trên framework ExpressJS, cơ sở dữ liệu là MongoDB
+
+### 3.1. Kết nối hai chiều với Facebook thông qua Webhook và Rest API
+
+Phần này sẽ tập trung vào cách thức xây dựng máy chủ chatbot để tiếp nhận các yêu cầu của người dùng và xử lý hoặc điều hướng xử lý chúng. 
+
+#### 3.1.1. Chuẩn bị
+
+- Tạo một trang (fanpage) Facebook (hoặc sử dụng một trang mà bạn có quyền quản trị) để đăng ký webhook
+ 
+- Tạo một project cung cấp webhook, tham khảo project mẫu được viết trên ExpressJS tại [đây](https://github.com/nguyenducthuanuet/facebookchatbot)
+
+- Tải [Ngrok](https://ngrok.com/download) để làm Tunnel
+
+Các hướng dẫn dưới đây được viết dựa trên project mẫu.
+    
+##### Bước 1: Cài đặt ứng dụng mẫu 
+    
+- Chạy lệnh dưới đây sau khi tải project về
+    
+        $ npm install
+    
+- Nhân bản tệp `.env.sample` và đặt tên là `.env`
+
+- Truy cập [Facebook Developer](https://developers.facebook.com/), tạo một ứng dụng. Sau đó vào chọn ứng dụng Messenger
+
 ![Đăng ký ứng dụng](https://i.imgur.com/CxCpMQt.png  "Đăng ký ứng dụng")
-2. Tạo ứng dụng Messenger
+
 ![Tạo ứng dụng Messenger](https://i.imgur.com/6fHCKLf.png  "Tạo ứng dụng Messenger")
 
-####Bước 2: Kết nối ứng dụng webhook với Facebook.
+- Cài đặt MongoDB và tạo DB mới có tên giống với `DB_DATABASE=` trong tệp `.env` (ở project mẫu là `facebookchatbot`), trong DB tạo 2 collection `users` và `lecturers`
+ 
+- Chạy lệnh sau để khởi động project
 
-1. Vào thư mục của ứng dụng và khởi động máy chủ nội bộ bằng cách chạy câu lệnh `npm start` trên cửa sổ dòng lệnh. Bây giờ cần đưa ứng dụng webhook của chúng ta lên mạng Internet với giao thức HTTPS, và Ngrok sẽ giúp chúng ta làm điều này.
-Tải Ngrok tại [đây](https://ngrok.com/download). Sau khi đã tải Ngrok về, khởi chạy với câu lệnh: `./ngrok http 3000` (3000 là c mà ứng ứng dụng webhook chạy trên máy chủ nội bộ). Ví dụ ta được:
+        $ npm start
+        
+- Truy cập `localhost:3000/seed` để tạo dữ liệu về giảng viên và hướng nghiên cứu (phần dữ liệu này về sau sẽ được chuyển sang MySQL ở máy chủ tìm kiếm để sử dụng Elastic Search)  
+
+##### Bước 2: Kết nối ứng dụng webhook với Facebook.
+
+- Khởi động Ngrok và mở cổng http 3000
+
+        $ ngrok http 3000
+        
+Sau đó chú ý tới địa chỉ `Forwarding (https)` (ở hình vẽ dưới đây là https://58157de6.ngrok.io)
+        
 ![Khởi chạy ngrok](https://i.imgur.com/7G0gUHP.png  "Khởi chạy ngrok")
-2. Tạo mã xác thực cho trang.
-Trên trang phát triển, kéo xuống dưới chọn phần 'Tạo mã' và chọn trang cần tạo mã. F acebooksẽ sinh cho chúng ta một mã, sao chép đoạn mã này.
-Sau đó mở quay trở lại, dán đoạn mã này vào `PAGE_TOKEN` trong tập tin .env (nếu chưa có tập tin `.env`, vui lòng tạo vào sao chép nội dung từ tập tin `.env.sample`).
+
+- Trong ứng dụng Messenger vừa tạo ở bước 1, chọn trang mà bạn có quyền quản trị để lấy mã truy cập Trang. Dán mã truy cập trang vào dòng `PAGE_TOKEN=` trong tệp `.env`
+
 ![Thiết lập page token](https://i.imgur.com/etczblm.png "Thiết lập page token")
- Trên trang phát triển, kéo xuống dưới chọn phần 'Thiết lập webhook'
- ![Thiết lập webhook](https://i.imgur.com/xSMD3cb.png  "Thiết lập webhook") 
- Có một hộp thoại hiện lên, cứ để đấy. Yêu cầu nhập 'URL gọi lại', sao chép trường `Fowarding (https)` sai khi khởi chạy Ngrok và dán vào trường này ( ví dụ ở đây Forwading https của tôi là `https://58157de6.ngrok.io`, trường 'Mã xác minh' nhập `verify_token`, 'Trường gửi' chúng ta chọn `messages` và `messaging_postbacks`, ta được
- ![Webhook](https://i.imgur.com/cGF7ra6.png  "Webhook")
- Đến đây, việc thiết lập đã hoàn thành. Nhắn tin đến trang đăng ký để kiểm tra kết quả.
 
-### 3. Xây dựng máy chủ chatbot nhận, xử lý tin nhắn và phản hồi tin nhắn phù hợp.
+- Trên trang Facebook Developer, chọn phần `Thiết lập webhook`
 
-- Việc xây dựng máy chủ chatbot như thế nào, phản hồi thông điệp ra sao phụ thuộc rất nhiều vào mục đích của chatbot để tạo nên các hàm cũng như gọi các API để lấy dữ liệu tương ứng.
-- Tuy nhiên, do các ứng dụng chatbot đều xây dựng dựa trên các giao diện ứng dụng (API) mà Facebook cung cấp, chính vì vậy mà các sự kiện xử lý và luồng dữ liệu đều xoay quanh các API này.
-- Phần này sẽ trình bày cách tổ chức và xây dựng mã nguồn nhằm đáp ứng mụch đích của chatbot mà chúng tôi xây dựng, bao gồm hai tính năng chính là tra cứu và hỏi đáp thông tin.
+![Thiết lập webhook](https://i.imgur.com/xSMD3cb.png  "Thiết lập webhook")
+  
+Tại hộp thoại hiện lên, điền URL gọi lại giống `Fowarding (https)` của Ngrok và thêm `/webhook` vào sau (ở project mẫu là https://58157de6.ngrok.io/webhook). 
+
+Trường `Mã xác minh` nhập giống `VERIFY_TOKEN=` trong tệp `.env` (ở project mẫu là `verify_token`). `Trường gửi` chúng ta chọn `messages` và `messaging_postbacks`
+
+![Webhook](https://i.imgur.com/cGF7ra6.png  "Webhook")
+
+### 3.2. Xây dựng máy chủ chatbot nhận, xử lý tin nhắn và phản hồi tin nhắn phù hợp.
+
+Việc xây dựng máy chủ chatbot như thế nào, phản hồi thông điệp ra sao phụ thuộc rất nhiều vào mục đích của chatbot để tạo nên các hàm cũng như gọi các API để lấy dữ liệu tương ứng. Tuy nhiên, do các ứng dụng chatbot đều xây dựng dựa trên các giao diện ứng dụng (API) mà Facebook cung cấp, chính vì vậy mà các sự kiện xử lý và luồng dữ liệu đều xoay quanh các API này.
+
+Phần này sẽ trình bày cách tổ chức và xây dựng mã nguồn nhằm đáp ứng mụch đích của chatbot mà chúng tôi xây dựng, bao gồm hai tính năng chính là tra cứu và hỏi đáp thông tin.
 
 #### 3.1. Xây dựng cơ sở dữ liệu
 
-Chúng tôi sử dụng mongoDB[] làm hệ quản trị cơ sở dữ liệu lưu trữ, bao gồm hai bộ sưu tập chính (collections), đó là: `users` và `lecturers`. 
-- Bộ sưu tập `users` lưu trữ thông tin của người dùng cùng với đó là lịch sử tin nhắn của người dùng. Ngoài việc lưu trữ thông tin người dùng và lịch sử tin nhắn thông thường thì collection này có tác dụng phân tích và xử lý yêu cầu khi người dùng nhắn tin đến bot (chi tiết sẽ được trình bày ở phần sau).
-- Bộ sưu tập `lecturers` chứa các thông tin của giảng viên, các phòng khoa trong trường.
-Ngoài ra dữ liệu tra cứu còn được lấy từ API [Sguet](http://sguet.com), website này có cơ sở dữ liệu sử dụng search engine Elastic Search hỗ trợ cho việc truy vấn. (Chi tiết về API này sẽ được trình bày cụ thể ở phần sau).
+Dữ liệu trong bài toán nào có thể được chia làm hai phần: 
 
-#### 3.2. Xây dựng các controllers xử lý
+- Dữ liệu về người dùng và tin nhắn của họ: Dữ liệu này biến động thường xuyên trong quá trình sử dụng nên chúng ta chọn MongoDB để lưu trữ do việc nó có có dạng NoSQL, và việc kết nối giữa NodeJS với MongoDB rất đơn giản.
+
+- Dữ liệu phục vụ người dùng cần tìm kiếm (thông tin giảng viên, hướng nghiên cứu, môn học, tài liệu,...): Dữ liệu này ít biến động, chỉ có bổ sung thêm khi thu thập được thêm thông tin, nhưng lại cần tìm kiếm nhiều. Do đó ta tách phần dữ liệu này ra cùng với việc xử lý tìm kiếm trên dữ liệu này thành 1 tầng khác, sẽ được trình bày ở phần sau.
+
+Như vậy ở MongoDB ta cần xây dựng 1 collection `users` có cấu trúc như sau
+
+![Collection users](images/collection_user.png)
+
+#### 3.2. Xây dựng các logic xử lý
+
 Facebook khi phản hồi các tin nhắn của người dùng đến ứng dụng webhook (máy chủ chatbot) của chúng ta sẽ phản hồi theo 4 kiểu dữ liệu khác nhau tương ứng với 4 kiểu dữ liệu mà người dùng có thể gửi đến bot, đó là: message, postback, quick reply và tập tin đa phương tiện. Vì thế chúng ta sẽ xây dựng controller theo 4 kiểu dữ liệu này để phản hồi tin nhắn phù hợp.
 ![Cấu trúc mã nguồn](https://i.imgur.com/IreNobG.png  "Cấu trúc mã nguồn")
 Ở đây chúng tôi sử dụng một framework đóng gói các hàm nhận và gửi tin nhắn mà Facebook cung cấp.
@@ -111,9 +171,8 @@ Facebook khi phản hồi các tin nhắn của người dùng đến ứng dụ
 Khi ứng dụng của bạn yêu cầu nhập tên giảng viên khi tra cứu giảng viên, hay nhập câu hỏi khi muốn tra cứu hỏi đáp. Vậy làm sao để phân biệt được tin nhắn nào là để tra cứu giảng viên hay hỏi đáp khi mà các tin nhắn gửi đến chỉ được gửi hoàn toàn riêng rẽ và độc lập ? Chính vì vậy, chúng tôi đã sử dụng collection users để xử lý vấn đề này. Khi một tin nhắn văn bản gửi đến, chúng tôi sẽ dựa vào postback hay quickreply cuối cùng được gửi đến để xác định yêu cầu tra cứu. Ví dụ:
 ![Tạo luồng sự kiện](https://i.imgur.com/McVKxRv.png  "Tạo luồng sự kiện")
 Khi một tin nhắn văn bản được gửi đến, chúng tôi sẽ truy vấn action cuối cùng, sau đó mới đưa ra phương thức xử lý của action đó.
-## Chương 4: Tầng máy chủ chatbot
 
-## Chương 5: Tầng máy chủ tìm kiếm
+## Chương 4: Tầng máy chủ tìm kiếm
 
 ## Kết luận
 
