@@ -1,21 +1,28 @@
 
 ## Nhóm BigChain
 
-#### Thành viên trong nhóm:
+#### Thành viên trong nhóm
 * Đỗ Văn Quang
 * Nguyễn Ngọc Trung
 * Nguyễn Bá Tú
 * Phan Thế Thảo
 
-### Mô tả đề tài của nhóm:
-Xây dựng công cụ quản lý và chia sẻ điểm an toàn dựa vào BigchainDB
+### Mô tả đề tài của nhóm
+Xây dựng công cụ quản lý và chia sẻ điểm an toàn dựa vào BigchainDB [1]
 
-Sau đây là giới thiệu một số công nghệ sử dụng :
+### Tóm tắt nội dung trình bày
+  * Giới thiệu chung 
+  * Giới thiệu các công nghệ và kiến thức liên quan
+  * Giới thiệu về sản phảm 
+  * Hướng dẫn cài đặt 
+  * Kết luận
 
-### Giới thiệu về blockchain
-Blockchain (chuỗi khối), tên ban đầu block chain là một cơ sở dữ liệu phân cấp lưu trữ thông tin trong các khối thông tin được liên kết với nhau bằng mã hóa và mở rộng theo thời gian. Mỗi khối thông tin đều chứa thông tin về thời gian khởi tạo và được liên kết tới khối trước đó, kèm một mã thời gian và dữ liệu giao dịch. Blockchain được thiết kế để chống lại việc thay đổi của dữ liệu: Một khi dữ liệu đã được mạng lưới chấp nhận thì sẽ không có cách nào thay đổi được nó.
+## I Giới thiệu chung
 
-(Nguồn wikipedia)
+## II Giới thiệu các công nghệ và kiến thức liên quan
+
+### Giới thiệu về chuối khối [2]
+ Chuỗi khối (blockchain hoặc block chain) là một cơ sở dữ liệu phân cấp lưu trữ thông tin trong các khối thông tin được liên kết với nhau bằng mã hóa và mở rộng theo thời gian. Mỗi khối thông tin đều chứa thông tin về thời gian khởi tạo và được liên kết tới khối trước đó, kèm một mã thời gian và dữ liệu giao dịch. Blockchain được thiết kế để chống lại việc thay đổi của dữ liệu: Một khi dữ liệu đã được mạng lưới chấp nhận thì sẽ không có cách nào thay đổi được nó.
 
 ### Giới thiệu về mã hoá chữ ký số ed25519 và mã hoá dữ liệu AES
 
@@ -42,7 +49,7 @@ Các thứ tự hàm AES sẽ thực hiện:
 * Trộn từng cột (MixColumns): mỗi cột được chuyển đổi tuyến tính bằng cách nhân nó với một ma trận trong trường hữu hạn
 * Mã hóa (AddRoundKey): mỗi byte trong bảng trạng thái được thực hiện phép XOR với một khoá vòng, quá trình xử lý AES thu được 11 khoá vòng từ các key mã hoá được phân phát cho kỹ thuật mã hoá.
 
-### Giới thiệu về bigchaindb
+### Giới thiệu về bigchaindb [2]
   BigchainDB là một cơ sở dữ liệu blockchain có thể mở rộng, phân cấp, không thể thay đổi được đối tượng và sở hữu cá nhân. BigchainDB cho phép triển khai các ứng dụng quy mô lớn trong nhiều trường hợp sử dụng và các ngành công nghiệp từ sở hữu trí tuệ, định danh đến các chuỗi cung ứng, IoT và trí tuệ nhân tạo. BigchainDB cung cấp giả pháp độc nhất cho các nhà phát triển, các dự án khởi nghiệp và các doanh nghiệp để xây dựng thành công các khái niệm, nền tảng và các ứng dụng mơ ước.
 
   Chúng ta có thể xây dựng một blockchain truyền thống như một cơ sở dữ liệu (DB), theo nghĩa nó cung cấp một cơ chế lưu trữ.
@@ -274,7 +281,7 @@ Lưu ý:
 (Dịch từ docs bigchain)
 
 
-## Báo cáo tiến độ project
+## III Giới thiệu về sản phẩm
 ### Thiết kế
 
 ##### Thiết kế:
@@ -303,6 +310,8 @@ Tác dụng của từng thành phần:
 * Chia điểm  (Sinh viên)
 * Lấy điểm  (Giảng viên & sinh viên)
 
+
+## IV Hướng dẫn cài đặt
 
 ### Server
 ### Cài đặt bigchaindb
@@ -383,10 +392,18 @@ mặc định bigchaindb chạy ở http://127.0.0.1:9984/
 mặc định client chạy ở http://127.0.0.1:4200
 ### Hình ảnh demo
 
-### Đánh giá ưu nhược điểm
+## V Kết luận
+
 #### Ưu điểm
 * Sử dụng blockchain cho phép ngăn chặn các hành vi thao tác trái phép vào trong database, dễ dàng mở rộng, phân tán mà không cần một server điểu khiển.
 * Sử dụng thuật toán mã hoá AES giúp ngăn chặn đánh căp thông tin
 #### Nhược điểm
 * Việc mã hoá và giải mã làm hao tốn tài nguyên hơn các thao tác truy xuất database thông thường.
 * Việc đồng bộ dữ liệu giữa các node có độ trễ.
+
+Tài liệu tham khảo:
+[1] Blockchain, https://vi.wikipedia.org/wiki/Blockchain, 10/2017
+[1] BigchainDB, https://www.bigchaindb.com, 10/2017
+[2] BigchainDB docs, https://docs.bigchaindb.com/en/latest, 10/2017
+[3] BigchainDB whitepaper, https://www.bigchaindb.com/whitepaper, 10/2017
+
