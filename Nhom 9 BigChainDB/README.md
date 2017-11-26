@@ -59,13 +59,13 @@ Các thứ tự hàm AES sẽ thực hiện:
   BigchainDB là một cơ sở dữ liệu blockchain có thể mở rộng, phân cấp, không thể thay đổi được đối tượng và sở hữu cá nhân. BigchainDB cho phép triển khai các ứng dụng quy mô lớn trong nhiều trường hợp sử dụng và các ngành công nghiệp từ sở hữu trí tuệ, định danh đến các chuỗi cung ứng, IoT và trí tuệ nhân tạo. BigchainDB cung cấp giả pháp độc nhất cho các nhà phát triển, các dự án khởi nghiệp và các doanh nghiệp để xây dựng thành công các khái niệm, nền tảng và các ứng dụng mơ ước.
 
   Chúng ta có thể xây dựng một blockchain truyền thống như một cơ sở dữ liệu (CSDL), theo nghĩa nó cung cấp một cơ chế lưu trữ.
-  Nếu chúng ta đo Bitcoin blockchain bằng các tiêu chí DB truyền thống:
+  Nếu chúng ta đo Bitcoin blockchain bằng các tiêu chí CSDL truyền thống:
   * thông lượng: một vài giao dịch mỗi giây (tps),
   * độ trễ: trước khi một đơn xác nhận viết là 10 phút,
   * khả năng lưu trữ: một vài chục GB. 
   Hơn nữa nó về cơ bản cũng không có khả năng truy vấn như một cơ sở dữ liệu NoQL.
 
-  Ngược lại, một DB phân phối hiện đại:
+  Ngược lại, một CSDL phân phối hiện đại:
   * thông lượng: vượt quá 1 triệu tps.
   * độ trễ: của một phần nhỏ của một giây.
   * khả năng lưu trữ: đạt hàng petabyte và nhiều hơn nữa.
@@ -94,22 +94,22 @@ Các thứ tự hàm AES sẽ thực hiện:
 
 *BigchainDB hoạt động bằng cách xây dựng các tính năng của chuỗi khối trên đầu của một CSDL, thay vì sử dụng chuỗi khối như một CSDL.
 
-Ở tầng dưới, BigChainDB sử dụng hai cơ sở dữ liệu phân tán, S(bộ giao dịch) và C(chuỗi khối). Chúng được kết nối bằng thuật toán đồng thuận BigChainDB(BigchainDB Consensus Algorithm - BCA). Thuật toán BCA chạy trên mỗi nút đã được ký kết(signing node), cùng với các nút khác trở thành một mạng lưới. Những người dùng(client) không ký kết có thể kết nỗi với mạng lưới của BigChainDB và tùy quyền mà họ có thể đọc, phát hành tài sản(asset), chuyển tài sản và hơn thế nữa.
-Với mỗi một cơ sở dữ liệu phân tán, S và C là một cơ sở dữ liệu "lớn" sẵn có(off-the-shell big data). BigChainDB không can thiệp vào hoạt động nội bộ của dữ liệu, vì vậy nó sẽ tận dụng các thuộc tính khả năng mở rộng của chúng, cũng như các tính năng như kiểm soát sửa đổi và lợi ích của chúng. Mỗi CSDL chạy thuật toán đồng thuận nội bộ riêng cho tính nhất quán.
-Các tính năng của chuỗi khối được cho vào cơ sở dữ liệu này:
-* Kiểm soát phi tập trung(Decentralized control): Không đối tượng nào sở hữu hay điều khiển mạng lưới.
-* Tính bất biến (Immutability): Dữ liệu văn bản được chống giả mạo(vĩnh viễn).
+Ở tầng dưới, BigChainDB sử dụng hai cơ sở dữ liệu phân tán, S (bộ giao dịch) và C (chuỗi khối). Chúng được kết nối bằng thuật toán đồng thuận BigChainDB (BigchainDB Consensus Algorithm - BCA). Thuật toán BCA chạy trên mỗi nút đã được ký kết(signing node), cùng với các nút khác trở thành một mạng lưới. Những người dùng (client) không ký kết có thể kết nỗi với mạng lưới của BigChainDB và tùy quyền mà họ có thể đọc, phát hành tài sản(asset), chuyển tài sản và hơn thế nữa.
+Với mỗi một cơ sở dữ liệu phân tán, S và C là một cơ sở dữ liệu "lớn" sẵn có (off-the-shell big data). BigChainDB không can thiệp vào hoạt động nội bộ của dữ liệu, vì vậy nó sẽ tận dụng các thuộc tính khả năng mở rộng của chúng, cũng như các tính năng như kiểm soát sửa đổi và lợi ích của chúng. Mỗi CSDL chạy thuật toán đồng thuận nội bộ riêng cho tính nhất quán.
+Các tính năng của chuỗi khối được cho vào CSDL này:
+* Kiểm soát phi tập trung (Decentralized control): Không đối tượng nào sở hữu hay điều khiển mạng lưới.
+* Tính bất biến (Immutability): Dữ liệu sau khi được lưu trữ thì sẽ không thể sửa đổi cũng như xoá khỏi CSDL, điều này làm tăng khả năng chống giả mạo.
 * Khả năng tạo và chuyển các tài sản trong mạng lưới mà không phụ thuộc vào thực thể trung tâm.
 
 ## Mô hình dữ liệu
 -BigchainDB cơ bản lưu trữ tất cả dữ liệu dưới hình thức các tài liệu JSON.</br>
 Tồn tại dưới 3 dạng chính của nó là:
-1. Các giao dịch(transactions): bao gồm tài sản(asset), các đầu vào, các đầu ra và các thuộc tính khác.
-2. Các khối(blocks)
+1. Các giao dịch (transactions): bao gồm tài sản (asset), các đầu vào, các đầu ra và các thuộc tính khác.
+2. Các khối (blocks)
 3. Các bình chọn(votes)
 Dưới đây chúng ta sẽ lần lượt tìm hiểu về chúng.
 
-### Mô hình của các giao dịch(transaction)
+### Mô hình của các giao dịch (transaction)
 Một mô hình điển hình có cấu trúc như sau:
 ``` javascript
   {
@@ -125,18 +125,18 @@ Một mô hình điển hình có cấu trúc như sau:
 * id: Khóa chính của cơ sở dữ liệu, là định danh đồng thời cũng là mã băm của giao dịch.
 * version: Phiên bản của giao dịch, với BigChainDB Server phiên bản 1.0.0 thì giá trị duy nhất được chấp nhận là "1.0".
 * inputs: Danh sách các đầu vào, các đầu vào biến đổi/sử dụng các đầu ra của các giao dịch trước đó bằng cách đáp ứng các yêu cầu về bảo mật,... Khi tạo mới 1 giao dịch thì phải có ít nhất 1 đầu vào.
-* outputs: Danh sách các đầu ra, mỗi đầu ra phải đáp ứng được các yêu cầu về mặt bảo mật nếu muốn sử dụng/chuyển đổi. Nó đồng thời cũng thể hiện phần tài sản(asset) gắn với đầu ra đó.</br>
+* outputs: Danh sách các đầu ra, mỗi đầu ra phải đáp ứng được các yêu cầu về mặt bảo mật nếu muốn sử dụng/chuyển đổi. Nó đồng thời cũng thể hiện phần tài sản (asset) gắn với đầu ra đó.</br>
 #### *Cách tính toán ID*:
 1. Xây dựng một từ điển python bao gồm các thuộc tính: *version, inputs, outputs, operation, asset, metadata* và giá trị của chúng.
-2. Với mỗi đầu vào(input) thay thế toàn bộ chuỗi hoàn chỉnh(fulfillment) của nó với *null*.
-3. Biểu diễn từ điển trên như một chuỗi bytes(serialize).
+2. Với mỗi đầu vào(input) thay thế toàn bộ chuỗi hoàn chỉnh  (fulfillment) của nó với *null*.
+3. Biểu diễn từ điển trên như một chuỗi bytes (serialize).
 4. Mã hóa nó dùng thuật toán SHA3-256 ta có được ID.
 
 #### *Về phần chữ ký xác thực(signing)*
-Sau khi nhận được mô hình cho các khối(blocks) và các bình chọn(votes), ta thấy chúng có một chữ ký đi kèm từ nút tạo ra nó. Câu hỏi là tại sao ở lúc tạo giao dịch không có công đoạn ký xác thực? Câu trả lời là chúng đã được ký ẩn bên trong các chuỗi hoàn chỉnh(fulfillment) khi chúng được tạo ra.
+Sau khi nhận được mô hình cho các khối(blocks) và các bình chọn(votes), ta thấy chúng có một chữ ký đi kèm từ nút tạo ra nó. Câu hỏi là tại sao ở lúc tạo giao dịch không có công đoạn ký xác thực? Câu trả lời là chúng đã được ký ẩn bên trong các chuỗi hoàn chỉnh (fulfillment) khi chúng được tạo ra.
 
 ### Mô hình tài sản(the asset model)
-Để tránh việc dư thừa dữ liệu trong các giao dịch, mô hình tài sản sẽ khác nhau với các giao dịch tạo mới(create) và chuyển đổi(transfer): </br>
+Để tránh việc dư thừa dữ liệu trong các giao dịch, mô hình tài sản sẽ khác nhau với các giao dịch tạo mới (create) và chuyển đổi (transfer): </br>
 * Trong giao dịch tạo mới: tài sản bắt buộc phải có một cặp khóa-dữ liệu, khóa phải là "data" còn dữ liệu có thể là bất kỳ chuỗi JSON hợp lệ nào hoặc giá trị null. Ví dụ:
 
 ``` javascript
@@ -154,8 +154,8 @@ Sau khi nhận được mô hình cho các khối(blocks) và các bình chọn(
   "id": "38100137cea87fb9bd751e2372abb2c73e7d5bcf39d940a5516a324d9c7fb88d"
 }
 ```
-### Các đầu vào(inputs) và đầu ra(outputs)
-BigchainDB được mô phỏng xung quanh các tài sản, các đầu vào, các đầu ra và chúng là cơ chế để kiểm soát tài sản hoặc cổ phần được chuyển giao. Lượng tài sản được mã hóa bên trong đầu ra của một giao dịch, mỗi đầu ra có thể được dùng một cách riêng biệt. Để sử dụng một đầu ra, các điều kiện của đầu ra phải được đáp ứng bởi một đầu vào có chuỗi hoàn chỉnh(fulfillment) tương ứng. Mỗi đầu ra có thể được sử dụng duy nhất một lần với 1 đầu vào duy nhất phù hợp.
+### Các đầu vào (inputs) và đầu ra (outputs)
+BigchainDB được mô phỏng xung quanh các tài sản, các đầu vào, các đầu ra và chúng là cơ chế để kiểm soát tài sản hoặc cổ phần được chuyển giao. Lượng tài sản được mã hóa bên trong đầu ra của một giao dịch, mỗi đầu ra có thể được dùng một cách riêng biệt. Để sử dụng một đầu ra, các điều kiện của đầu ra phải được đáp ứng bởi một đầu vào có chuỗi hoàn chỉnh (fulfillment) tương ứng. Mỗi đầu ra có thể được sử dụng duy nhất một lần với 1 đầu vào duy nhất phù hợp.
 ##### Các đầu vào
 Một đầu vào có cấu trúc như sau:
 ```javascript
@@ -168,7 +168,7 @@ Một đầu vào có cấu trúc như sau:
   }
 }
 ```
-Có thể coi đối tượng *fulfills* như một con trỏ tới đầu ra của một giao dịch khác, đầu ra của đầu vào này là quá trình sử dụng/chuyển đổi. Một giao dịch tạo mới(create) bắt buộc phải có chính xác một đầu vào, đầu vào này có thể trước đây thuộc sở hữu của các đối tượng khác nhau, một chuỗi hoàn chỉnh(fulfillment) (với một chữ ký từ mỗi chủ sở hữu trước đây) và giá trị của fulfils nên là null. Giao dịch chuyển đổi (transfer) phải có ít nhất một đầu vào, và giá trị của fulfils không nên là null. Xem tài liệu tham khảo về đầu vào để biết thêm về ý nghĩa của mỗi trường.
+Có thể coi đối tượng *fulfills* như một con trỏ tới đầu ra của một giao dịch khác, đầu ra của đầu vào này là quá trình sử dụng/chuyển đổi. Một giao dịch tạo mới(create) bắt buộc phải có chính xác một đầu vào, đầu vào này có thể trước đây thuộc sở hữu của các đối tượng khác nhau, một chuỗi hoàn chỉnh (fulfillment) (với một chữ ký từ mỗi chủ sở hữu trước đây) và giá trị của fulfils nên là null. Giao dịch chuyển đổi (transfer) phải có ít nhất một đầu vào, và giá trị của fulfils không nên là null. Xem tài liệu tham khảo về đầu vào để biết thêm về ý nghĩa của mỗi trường.
 
 #### *Tính toán chuỗi hoàn chỉnh (fulfilment)*
 1. Xác định chuỗi theo "Crypto-Conditions spec (version 02)".
@@ -192,7 +192,7 @@ Một đầu ra có cấu trúc như sau:
 ```
 * Phần giới thiệu về điều kiện sẽ giải thích rõ hơn về các nội dung tương ứng với khóa "condition".
 * Danh sách các khóa công khai luôn là "chủ sở hữu" các tài sản khi giao dịch được hoàn tất.
-* Lưu ý rằng, lượng tài sản giao dịch phải là một chuỗi (ví dụ "7"). Trong giao dịch chuyển đổi(transfer) tổng tài sản đầu ra phải bằng tổng lượng tài sản đầu vào.
+* Lưu ý rằng, lượng tài sản giao dịch phải là một chuỗi (ví dụ "7"). Trong giao dịch chuyển đổi (transfer) tổng tài sản đầu ra phải bằng tổng lượng tài sản đầu vào.
 
 ### Các điều kiện
 Ở một mức cao hơn, điều kiện giống như một khóa của đầu ra. Nếu bạn đáp ứng được các điều kiện, bạn có thể mở khóa tài sản và sử dụng nó. BigchainDB hỗ trợ một tập con các điều kiện của "ILP Crypto-Conditions".
@@ -207,7 +207,7 @@ Một đối tượng điều kiện có thể khá phức tạp với nhiều m
   "uri": "ni:///sha-256;at0MY6Ye8yvidsgL9FrnKmsVzX0XrNNXFmuAPF4bQeU?fpt=ed25519-sha-256&cost=131072"
 }
 ```
-Nếu muốn sử dụng một đầu ra với điều kiện đã có, thì ta cần phải tạo một giao dịch chuyển đổi(transfer) với đầu vào đáp ứng điều kiện kia. Và giao dịch kia cần phải ký với khóa bí mật tương ứng vơi khóa công khai  "HFp773..
+Nếu muốn sử dụng một đầu ra với điều kiện đã có, thì ta cần phải tạo một giao dịch chuyển đổi (transfer) với đầu vào đáp ứng điều kiện kia. Và giao dịch kia cần phải ký với khóa bí mật tương ứng vơi khóa công khai  "HFp773..
 #### Điệu kiện Crypto
 BigchainDB Server V1.0 hỗ trợ:
 1. Chữ ký ED25519-SHA-256.
@@ -237,7 +237,7 @@ Một điều kiện phức tạp hơn có thể được tạo ra với đầu 
 </br>
 Khi tạo một điều kiện phải chú ý tính toán chi phí tài nguyên cần thiết để xác thực chúng.
 
-### Mô hình khối(The Block Model)
+### Mô hình khối (The Block Model)
 
 Một khối có cấu trúc như sau:</br>
 ```javascript
@@ -252,18 +252,18 @@ Một khối có cấu trúc như sau:</br>
   "signature": "<signature of block>"
 }
 ```
-* `id`: Mã băm của các chuỗi bytes bên trong khối(ví dụ: timestamp, transactions,..). Nó được sử dụng như khóa chính của cơ sở dữ liệu.
+* `id`: Mã băm của các chuỗi bytes bên trong khối (ví dụ: timestamp, transactions,..). Nó được sử dụng như khóa chính của cơ sở dữ liệu.
 * `khối`:
   * `timestamp`: Thời gian khối được tạo ra.
   * `transactions`: Danh sách các giao dịch bên trong khối.
   * `node_pubkey`: Khóa công khai của nút tạo khối.
-  * `votes`: Danh sách tất cả các khóa chính của các nút(các nút mà có thể tham gia vào việc bầu chọn trên khối này) tại thời điểm khối được tạo.
+  * `votes`: Danh sách tất cả các khóa chính của các nút (các nút mà có thể tham gia vào việc bầu chọn trên khối này) tại thời điểm khối được tạo.
   * `signature`: Chữ ký Cryptographic của khối. Chữ ký này tạo bằng cách mã hóa chuỗi bytes bên trong khối bằng khóa bí mật của nút.
 
 #### Làm việc với các khối
 > Có một lớp `Block` hỗ trợ việc tạo và làm việc với các khối.
 
-###   Mô hình bình chọn(The Vote Model)
+###   Mô hình bình chọn (The Vote Model)
 Nó có cấu trúc như sau:
 ```javascript
 {
