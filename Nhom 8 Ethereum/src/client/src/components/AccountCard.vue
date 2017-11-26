@@ -24,6 +24,13 @@
               Vote App
             </button>
           </p>
+          <p class="control">
+            <a class="button" 
+              :href="getTransaction(account.address)"
+            >
+            Transactions
+            </a>
+          </p>
         </div>
       </div>
     </div>
@@ -46,6 +53,9 @@ export default {
   methods: {
     getKeyStore(encrypt) {
       return 'data:text/plain;charset=utf-8,' + encodeURIComponent(encrypt)
+    },
+    getTransaction(address) {
+      return 'https://rinkeby.etherscan.io/address/' + address
     },
     deleteAccount(id) {
       const self = this

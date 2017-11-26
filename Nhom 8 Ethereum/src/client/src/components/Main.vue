@@ -15,30 +15,29 @@ export default {
   data () {
     return {
       login: false,
-      user: null,
     }
   },
   mounted () {
-    var self = this
     const token = localStorage.getItem('Authorization')
     if(token) {
       axios.defaults.headers.common['Authorization'] = token
     }
     axios.get('http://localhost:3333/api/v1/login')
-      .then(function(res) {
-        const data = res.data
-        self.login = true
-        if(data.user) {
-          self.user = data.user
-          return
-        }
-        localStorage.setItem('Authorization', 'Bearer ' + data.token)
-        axios.defaults.headers.common['Authorization'] = localStorage.getItem('Authorization')
-      })
-      .catch(err => {
-        localStorage.removeItem('Authorization')
-        this.$router.push({name: 'Main'})
-      })
+    .then(res => { 
+      this.login = true
+      let data = res.data
+      let token = data.token
+      if(!token) {
+        return
+      }
+      localStorage.setItem('Authorization', 'Bearer ' + data.token)
+      axios.defaults.headers.common['Authorization'] = localStorage.getItem('Authorization')
+    })
+    .catch(err => {
+      console.log(err)
+      localStorage.removeItem('Authorization')
+      this.$router.push({name: 'Main'})
+    })
   },
   components: {
     Account

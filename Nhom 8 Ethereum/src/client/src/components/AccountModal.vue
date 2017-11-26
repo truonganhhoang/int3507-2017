@@ -37,7 +37,7 @@
         </div>
       </section>
       <footer class="modal-card-foot">
-        <button class="button is-success" @click="createAccount">Create Account</button>
+        <button class="button is-success" @click="createAccount">Create</button>
         <button class="button" @click="close">Cancel</button>
       </footer>
     </div>

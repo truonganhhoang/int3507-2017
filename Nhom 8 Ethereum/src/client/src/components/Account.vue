@@ -2,11 +2,14 @@
   <div class="account">
     <div class="container">
       <button class="button is-primary" @click="showModal">Create Account</button>
+      <button class="button is-primary" @click="showImportModal">Import Account</button>
       <div v-for="(account, index) in account_list" :key="index">
         <account-card :account="account" @delete="deleteAccount"></account-card>
       </div>
       <account-modal v-if="show_modal" @close="hideModal"
         @ok="newAccount"></account-modal>
+      <account-import-modal v-if="show_import_modal" @close="hideModal"
+        @ok="newAccount"></account-import-modal>
     </div>
   </div>
 </template>
@@ -15,12 +18,14 @@
 import axios from 'axios'
 import AccountCard from '@/components/AccountCard'
 import AccountModal from '@/components/AccountModal'
+import AccountImportModal from '@/components/AccountImportModal'
 
 export default {
   data () {
     return {
       account_list: [],
-      show_modal: false
+      show_modal: false,
+      show_import_modal: false
     }
   },
   mounted() {
@@ -30,14 +35,21 @@ export default {
     showModal() {
       this.show_modal = true
     },
+    showImportModal() {
+      this.show_import_modal = true
+    },
     hideModal() {
       this.show_modal = false
+      this.show_import_modal = false
     },
     updateAccountList() {
       const self = this
       axios.get('http://localhost:3333/api/v1/account')
       .then(function(res) {
         self.account_list = res.data.accountList
+      })
+      .catch(err => {
+        console.log(err)
       })
     },
     newAccount(account) {
@@ -51,7 +63,8 @@ export default {
   },
   components: {
     AccountCard,
-    AccountModal
+    AccountModal,
+    AccountImportModal
   }
 }
 </script>
