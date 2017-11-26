@@ -479,7 +479,7 @@ Trước khi phân tích mã nhị phân chính nó, các bit cần phải đư�
 
 - Sau khi đăng nhập thành công, màn hình chính sẽ hiển thị như hình ảnh dưới đây:
 
-![img14](https://photos.app.goo.gl/4jB3O1xjfCxsOcLW2)
+![img14](http://45.32.21.62/images/scan_f9c21cf987e5bce6ee11.png)
 
 
 
