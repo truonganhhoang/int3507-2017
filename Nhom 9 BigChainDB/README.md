@@ -58,9 +58,9 @@ Các thứ tự hàm AES sẽ thực hiện:
 ### Giới thiệu về BigchainDB 
   BigchainDB là một cơ sở dữ liệu blockchain có thể mở rộng, phân cấp, không thể thay đổi được đối tượng và sở hữu cá nhân. BigchainDB cho phép triển khai các ứng dụng quy mô lớn trong nhiều trường hợp sử dụng và các ngành công nghiệp từ sở hữu trí tuệ, định danh đến các chuỗi cung ứng, IoT và trí tuệ nhân tạo. BigchainDB cung cấp giả pháp độc nhất cho các nhà phát triển, các dự án khởi nghiệp và các doanh nghiệp để xây dựng thành công các khái niệm, nền tảng và các ứng dụng mơ ước.
 
-  Chúng ta có thể xây dựng một blockchain truyền thống như một cơ sở dữ liệu (DB), theo nghĩa nó cung cấp một cơ chế lưu trữ.
+  Chúng ta có thể xây dựng một blockchain truyền thống như một cơ sở dữ liệu (CSDL), theo nghĩa nó cung cấp một cơ chế lưu trữ.
   Nếu chúng ta đo Bitcoin blockchain bằng các tiêu chí DB truyền thống:
-  * thông lượng: số lượng giao dịch thực hiện mỗi giây (tps),
+  * thông lượng: một vài giao dịch mỗi giây (tps),
   * độ trễ: trước khi một đơn xác nhận viết là 10 phút,
   * khả năng lưu trữ: một vài chục GB. 
   Hơn nữa nó về cơ bản cũng không có khả năng truy vấn như một cơ sở dữ liệu NoQL.
@@ -85,7 +85,7 @@ Các thứ tự hàm AES sẽ thực hiện:
 | Truy vấn đa dạng | - | x | x | 
 | Permission đa dạng | - | x | x | 
 | Điều khiển phân quyền | x | - | x | 
-| Immutability | x | - | x | 
+| Tính bất biến | x | - | x | 
 | Tạo và di chuyển tài sản điện tử | x | - | x |
 
 ### Kiến trúc của BigChainDB
@@ -94,11 +94,11 @@ Các thứ tự hàm AES sẽ thực hiện:
 
 *BigchainDB hoạt động bằng cách xây dựng các tính năng của chuỗi khối trên đầu của một CSDL, thay vì sử dụng chuỗi khối như một CSDL.
 
-Ở tầng dưới, BigChainDB sử dụng hai cơ sở dữ liệu phân tán, S(bộ giao dịch) và C(chuỗi khối). Chúng được kết nối bằng thuật toán đồng thuận BigChainDB(BigchainDB Consensus Algorithm-BCA). Thuật toán BCA chạy trên mỗi nút đã được ký kết(signing node), cùng với các nút khác trở thành một mạng lưới. Những người dùng(client) không ký kết có thể kết nỗi với mạng lưới của BigChainDB và tùy quyền mà họ có thể đọc, phát hành tài sản(asset), chuyển tài sản và hơn thế nữa.
-Với mỗi một cơ sở dữ liệu phân tán, S và C là một cơ sở dữ liệu "lớn" sẵn có(off-the-shell big data DB). BigChainDB không can thiệp vào hoạt động nội bộ của dữ liệu, vì vậy nó sẽ tận dụng các thuộc tính khả năng mở rộng của chúng, cũng như các tính năng như kiểm soát sửa đổi và lợi ích của chúng. Mỗi CSDL chạy thuật toán đồng thuận nội bộ riêng cho tính nhất quán.
+Ở tầng dưới, BigChainDB sử dụng hai cơ sở dữ liệu phân tán, S(bộ giao dịch) và C(chuỗi khối). Chúng được kết nối bằng thuật toán đồng thuận BigChainDB(BigchainDB Consensus Algorithm - BCA). Thuật toán BCA chạy trên mỗi nút đã được ký kết(signing node), cùng với các nút khác trở thành một mạng lưới. Những người dùng(client) không ký kết có thể kết nỗi với mạng lưới của BigChainDB và tùy quyền mà họ có thể đọc, phát hành tài sản(asset), chuyển tài sản và hơn thế nữa.
+Với mỗi một cơ sở dữ liệu phân tán, S và C là một cơ sở dữ liệu "lớn" sẵn có(off-the-shell big data). BigChainDB không can thiệp vào hoạt động nội bộ của dữ liệu, vì vậy nó sẽ tận dụng các thuộc tính khả năng mở rộng của chúng, cũng như các tính năng như kiểm soát sửa đổi và lợi ích của chúng. Mỗi CSDL chạy thuật toán đồng thuận nội bộ riêng cho tính nhất quán.
 Các tính năng của chuỗi khối được cho vào cơ sở dữ liệu này:
 * Kiểm soát phi tập trung(Decentralized control): Không đối tượng nào sở hữu hay điều khiển mạng lưới.
-* Tính không thay đổi (Immutability): Dữ liệu văn bản được chống giả mạo(vĩnh viễn).
+* Tính bất biến (Immutability): Dữ liệu văn bản được chống giả mạo(vĩnh viễn).
 * Khả năng tạo và chuyển các tài sản trong mạng lưới mà không phụ thuộc vào thực thể trung tâm.
 
 ## Mô hình dữ liệu
