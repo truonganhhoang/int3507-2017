@@ -1,0 +1,8 @@
+Server: nginx
+Date: Sun, 15 Oct 2017 10:30:27 GMT
+Content-Type: text/html; charset=uft-8
+X-Powered-By: PHP/5.5.38
+Set-Cookie: bigs_id=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0; path=/; domain=.bigschool.vn
+Set-Cookie: bigs_pwd=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0; path=/; domain=.bigschool.vn
+Access-Control-Allow-Origin: *
+Content-Encoding: gzip

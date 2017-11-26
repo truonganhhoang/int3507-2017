@@ -1,0 +1,201 @@
+{"meta":[],
+"frames": [
+    [1, 1, 224, 89, 0, -13, -45],
+    [227, 1, 243, 106, 0, -1, -28],
+    [1, 109, 227, 117, 0, -11, -32],
+    [230, 109, 236, 132, 0, -11, -26],
+    [1, 228, 219, 144, 0, -17, -18],
+    [222, 243, 231, 137, 0, -11, -14],
+    [1, 374, 204, 146, 0, -32, -9],
+    [207, 382, 226, 145, 0, -12, -17],
+    [1, 529, 228, 145, 0, -9, -17],
+    [231, 529, 224, 151, 0, -9, -12],
+    [1, 676, 184, 155, 0, -32, -16],
+    [187, 682, 235, 154, 0, -12, -4],
+    [1, 838, 234, 154, 0, -10, -9],
+    [237, 838, 217, 156, 0, -18, -12],
+    [1, 994, 200, 158, 0, -35, -7],
+    [203, 996, 242, 156, 0, -3, -8],
+    [1, 1154, 232, 159, 0, -10, -10],
+    [235, 1154, 192, 159, 0, -27, -9],
+    [1, 1315, 202, 159, 0, -24, -7],
+    [205, 1315, 239, 169, 0, -5, -2]
+],
+"sets":[
+{
+"line":"A-banana is longer than a-lemon",
+"alt1":"A-balloon are long _ an-apple",
+"alt2":"Ice _ more-long _ pears",
+"alt3":"A-suit _ more-longer _ a-lemon",
+"alt4":"A-truck _ longest _ a-hotdog"
+},
+{
+"line":"A-car is faster than a-bike",
+"alt1":"A-clock are fast _ swimming",
+"alt2":"A-feather _ more-fast _ a-watch",
+"alt3":"Chess _ more-faster _ a-newspaper",
+"alt4":"A-car _ _ _ a-bike"
+},
+{
+"line":"A-car is faster than a-bike",
+"alt1":"A-clock are fast _ swimming",
+"alt2":"A-feather _ more-fast _ a-watch",
+"alt3":"Chess _ more-faster _ a-newspaper",
+"alt4":"A-car _ _ _ a-bike"
+},
+{
+"line":"A-truck is bigger than a-car",
+"alt1":"A-tree are big _ a-TV",
+"alt2":"A-feather _ biggest _ a-boat",
+"alt3":"Coffee _ more-big _ gloves",
+"alt4":"A-banana _ more-bigger _ a-calculator"
+},
+{
+"line":"Giraffes are taller than lions",
+"alt1":"Ducks is tall _ rats",
+"alt2":"Wolves _ more-tall _ chickens",
+"alt3":"Fish _ most-tall _ goats",
+"alt4":"Cats _ tallest _ bears"
+},
+{
+"line":"A-motorbike is more-dangerous than a-bike",
+"alt1":"A-tree are more-dangerouser _ a-car",
+"alt2":"A-train _ dangerous _ a-bus",
+"alt3":"A-pineapple _ dangerouser _ an-apple",
+"alt4":"A-suit _ very-dangerous _ a-TV"
+},
+
+
+{
+"line":"A-strawberry is smaller than an-apple",
+"alt1":"A-pineapple are small _ a-car",
+"alt2":"A-ring _ smallest _ water",
+"alt3":"A-strawberry _ more-small _ a-lemon",
+"alt4":"A-motorbike _ more-smaller _ a-pencil"
+},
+{
+"line":"A-book is heavier than a-pencil",
+"alt1":"A-ring are heavy _ gloves",
+"alt2":"A-pencil _ more-heavier _ a-watch",
+"alt3":"A-strawberry _ heavyer _ boxing",
+"alt4":"A-book _ more-heavyer _ a-tshirt"
+},
+{
+"line":"Her-sweater is bigger than his",
+"alt1":"She-sweater are big _ hers",
+"alt2":"Hers-sweater _ biger _ her",
+"alt3":"His-sweater _ more-big _ he",
+"alt4":"_ _ more-biger _ she"
+},
+{
+"line":"She is older than him",
+"alt1":"He are more-old _ he",
+"alt2":"They _ more-older _ her",
+"alt3":"_ _ old _ she",
+"alt4":"_ _ _ _ them"
+},
+{
+"line":"Her-hair is longer than his",
+"alt1":"Hers-hair are long _ hers",
+"alt2":"His-hair _ more-long _ he",
+"alt3":"She-hair _ more-longer _ she",
+"alt4":"_ _ _ _ ours"
+},
+{
+"line":"Bears are stronger than kangaroos",
+"alt1":"Elephants is strong _ pigs",
+"alt2":"Chickens _ strongest _ frogs",
+"alt3":"Ants _ more-strong _ tigers",
+"alt4":"Camels _ most-strong _ whales"
+},
+{
+"line":"He is older than her",
+"alt1":"They are more-old _ she",
+"alt2":"She _ more-older _ he",
+"alt3":"_ _ old _ him",
+"alt4":"_ _ olderer _ they"
+},
+{
+"line":"A-computer is more-expensive than a-book",
+"alt1":"A-plane are expensive _ a-newspaper",
+"alt2":"Chess _ more-expensiver _ boxing",
+"alt3":"A-cherry _ expensiver _ homework",
+"alt4":"A-tent _ more-expenser _ a-watch"
+},
+{
+"line":"A-computer is more-expensive than a-book",
+"alt1":"A-plane are expensive _ a-newspaper",
+"alt2":"Chess _ more-expensiver _ boxing",
+"alt3":"A-cherry _ expensiver _ homework",
+"alt4":"A-tent _ more-expenser _ a-watch"
+},
+
+{
+"line":"Chess is safer than boxing",
+"alt1":"A-train are safe _ a-bus",
+"alt2":"A-balloon _ more-safer _ a-boat",
+"alt3":"Coffee _ more-safe _ water",
+"alt4":"A-banana _ safest _ a-calculator"
+},{
+"line":"A-tent is cheaper than a-palace",
+"alt1":"Ice are cheap _ a-bike",
+"alt2":"A-feather _ more-cheaper _ a-book",
+"alt3":"A-motorbike _ cheapest _ a-TV",
+"alt4":"A-truck _ _ _ a-car"
+},
+{
+"line":"She is younger than him",
+"alt1":"He are young _ her",
+"alt2":"They _ more-young _ he",
+"alt3":"_ _ more-younger _ they",
+"alt4":"_ _ youngest _ she"
+},
+
+
+{
+"line":"She is happier than him",
+"alt1":"He are happyer _ her",
+"alt2":"They _ happy _ he",
+"alt3":"_ _ more-happier _ she",
+"alt4":"_ _ hapi _ them"
+},
+
+{
+"line":"He is happier than her",
+"alt1":"She are happyer _ him",
+"alt2":"They _ happy _ he",
+"alt3":"_ _ more-happier _ she",
+"alt4":"_ _ most-happy _ them"
+},
+{
+"line":"Computer-games are more-exciting than homework",
+"alt1":"Watermelons is exciting _ a-hotdog",
+"alt2":"A-motorbike _ excitinger _ a-bike",
+"alt3":"A-book _ exciter _ a-tshirt",
+"alt4":"A-tent _ more-excitinger _ a-lemon"
+},
+
+{
+"line":"A-banana is longer than a-lemon",
+"alt1":"A-balloon are long _ an-apple",
+"alt2":"Ice _ more-long _ pears",
+"alt3":"A-suit _ more-longer _ a-lemon",
+"alt4":"A-truck _ longest _ a-hotdog"
+},
+
+
+
+{
+"line":"A-car is faster than a-bike",
+"alt1":"A-clock are fast _ swimming",
+"alt2":"A-feather _ more-fast _ a-watch",
+"alt3":"Chess _ more-faster _ a-newspaper",
+"alt4":"A-car _ _ _ a-bike"
+}
+
+
+
+
+]}
+
+

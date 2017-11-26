@@ -1,0 +1,150 @@
+{"meta":[],
+"frames": [
+    [1, 1, 247, 168, 0, -2, -1],
+    [250, 1, 245, 169, 0, -1, -3],
+    [1, 171, 240, 172, 0, -8, -1],
+    [243, 172, 244, 168, 0, -3, -4],
+    [243, 342, 245, 166, 0, -4, -4],
+    [1, 345, 240, 166, 0, -7, -4],
+    [243, 510, 243, 167, 0, -4, -3],
+    [1, 513, 239, 164, 0, -5, -4],
+    [1, 679, 242, 166, 0, -7, -3],
+    [245, 679, 235, 166, 0, -8, -4],
+    [1, 847, 235, 165, 0, -10, -4],
+    [238, 847, 233, 164, 0, -11, -4],
+    [238, 1013, 237, 161, 0, -10, -5],
+    [1, 1014, 233, 160, 0, -14, -4],
+    [1, 1176, 232, 153, 0, -12, -6],
+    [235, 1176, 226, 155, 0, -22, -2],
+    [1, 1331, 220, 154, 0, -21, -7],
+    [223, 1333, 206, 158, 0, -36, -6],
+    [1, 1487, 218, 145, 0, -28, -7],
+    [221, 1493, 213, 140, 0, -30, -10]
+],
+"sets":[
+{
+"line":"Spiders are-a-kind-of insect",
+"alt1":"Pandas is-a-kind-of bird",
+"alt2":"Rats _ fruit",
+"alt3":"Sharks _ mammal",
+"alt4":"Birds _ reptile"
+},{
+"line":"Buffalo are-a-kind-of mammal",
+"alt1":"Pigs do-a-kind-of bird",
+"alt2":"Dogs _ fruit",
+"alt3":"Frogs _ reptile",
+"alt4":"Horses _ insect"
+},{
+"line":"Watermelon is-a-kind-of fruit",
+"alt1":"Peaches are-a-kind-of vegetable",
+"alt2":"Pineapple _ bird",
+"alt3":"Strawberries _ mammal",
+"alt4":"Grapes _ reptile"
+},{
+"line":"Turtles are-a-kind-of reptile",
+"alt1":"Pandas is-a-kind-of vegetable",
+"alt2":"Horses _ bird",
+"alt3":"Goats _ mammal",
+"alt4":"Sheep _ insect"
+},{
+"line":"Brocolli is-a-kind-of vegetable",
+"alt1":"Tomatoes are-a-kind-of bird",
+"alt2":"Corn _ fruit",
+"alt3":"Peas _ mammal",
+"alt4":"Carrots _ insect"
+},{
+"line":"Deer are-a-kind-of mammal",
+"alt1":"Tigers make-a-kind-of vegetable",
+"alt2":"Frogs _ bird",
+"alt3":"Cats _ reptile",
+"alt4":"Monkeys _ insect"
+},{
+"line":"Lizards are-a-kind-of reptile",
+"alt1":"Tigers is-a-kind-of vegetable",
+"alt2":"Giraffes _ fruit",
+"alt3":"Dogs _ mammal",
+"alt4":"Frogs _ insect"
+},{
+"line":"Peaches are-a-kind-of fruit",
+"alt1":"Bananas is-a-kind-of bird",
+"alt2":"Apples _ mammal",
+"alt3":"Watermelon _ reptile",
+"alt4":"Oranges _ insect"
+},{
+"line":"Bears are-a-kind-of mammal",
+"alt1":"Giraffes is-a-kind-of vegetable",
+"alt2":"Fish _ fruit",
+"alt3":"Monkeys _ reptile",
+"alt4":"Cats _ insect"
+},{
+"line":"Oranges are-a-kind-of fruit",
+"alt1":"Apples is-a-kind-of vegetable",
+"alt2":"Bananas _ bird",
+"alt3":"Grapes _ mammal",
+"alt4":"Pears _ reptile"
+},{
+"line":"Eagles are-a-kind-of bird",
+"alt1":"Giraffes is-a-kind-of vegetable",
+"alt2":"Dogs _ fruit",
+"alt3":"Goats _ mammal",
+"alt4":"Fish _ reptile"
+},{
+"line":"Swans are-a-kind-of bird",
+"alt1":"Tigers is-a-kind-of vegetable",
+"alt2":"Pigs _ fruit",
+"alt3":"Fish _ mammal",
+"alt4":"Monkeys _ reptile"
+},{
+"line":"Snakes are-a-kind-of reptile",
+"alt1":"Horses is-a-kind-of vegetable",
+"alt2":"Goats _ bird",
+"alt3":"Sheep _ fruit",
+"alt4":"Sharks _ insect"
+},{
+"line":"Beetles are-a-kind-of insect",
+"alt1":"Pandas is-a-kind-of vegetable",
+"alt2":"Pigs _ bird",
+"alt3":"Rats _ fruit",
+"alt4":"Frogs _ mammal"
+},
+{
+"line":"Carrots are-a-kind-of vegetable",
+"alt1":"Tomatoes is-a-kind-of bird",
+"alt2":"Cucumbers _ fruit",
+"alt3":"Lettuce _ reptile",
+"alt4":"Broccoli _ insect"
+},{
+"line":"Flies are-a-kind-of insect",
+"alt1":"Pigs is-a-kind-of vegetable",
+"alt2":"Rats _ bird",
+"alt3":"Sharks _ fruit",
+"alt4":"Birds _ mammal"
+},{
+"line":"Penguins are-a-kind-of bird",
+"alt1":"Pandas is-a-kind-of vegetable",
+"alt2":"Tigers _ fruit",
+"alt3":"Giraffes _ mammal",
+"alt4":"Dogs _ insect"
+},{
+"line":"Corn is-a-kind-of vegetable",
+"alt1":"Onions are-a-kind-of fruit",
+"alt2":"Lettuce _ mammal",
+"alt3":"Peas _ reptile",
+"alt4":"Carrots _ insect"
+},{
+"line":"Peas are-a-kind-of vegetable",
+"alt1":"Onions is-a-kind-of bird",
+"alt2":"Cucumbers _ fruit",
+"alt3":"Corn _ reptile",
+"alt4":"Peas _ insect"
+},
+{
+"line":"Cherries are-a-kind-of fruit",
+"alt1":"Grapes is-a-kind-of vegetable",
+"alt2":"Bananas _ bird",
+"alt3":"Apples _ reptile",
+"alt4":"Watermelon _ insect"
+},
+]}
+
+

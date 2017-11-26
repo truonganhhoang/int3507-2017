@@ -1,0 +1,190 @@
+{"meta":[],
+"frames": [
+    [1, 1, 240, 127, 0, -1, -27],
+    [243, 1, 196, 158, 0, -36, -8],
+    [1, 130, 234, 163, 0, -10, -5],
+    [237, 161, 203, 144, 0, -21, -17],
+    [1, 295, 234, 55, 0, -7, -61],
+    [237, 307, 203, 131, 0, -24, -20],
+    [1, 352, 232, 107, 0, -9, -37],
+    [235, 440, 202, 154, 0, -29, -13],
+    [1, 461, 230, 120, 0, -9, -31],
+    [1, 583, 229, 100, 0, -12, -43],
+    [232, 596, 208, 136, 0, -24, -18],
+    [1, 685, 228, 157, 0, -13, -9],
+    [231, 734, 187, 142, 0, -34, -18],
+    [1, 844, 228, 131, 0, -10, -24],
+    [231, 878, 113, 158, 0, -69, -10],
+    [1, 977, 227, 120, 0, -12, -21],
+    [230, 1038, 212, 157, 0, -29, -6],
+    [1, 1099, 224, 142, 0, -13, -20],
+    [227, 1197, 213, 155, 0, -26, -11],
+    [1, 1243, 212, 154, 0, -16, -13]
+],
+"sets":[
+{
+"line":"Horses are faster than cows",
+"alt1":"Snakes is bigger _ penguins",
+"alt2":"Lions _ fast _ giraffes",
+"alt3":"Bees _ big _ snakes",
+"alt4":"Eagles _ fastest _ cats"
+},
+{
+"line":"Walking is safer than swimming",
+"alt1":"A-tree are stronger _ a-car",
+"alt2":"A-pineapple _ safer _ a-bus",
+"alt3":"A-plane _ _strong _ an-apple",
+"alt4":"A-motorbike _ long _ a-TV"
+},
+{
+"line":"Watermelons are bigger than pears",
+"alt1":"A-strawberry is colder _ a-bus",
+"alt2":"A-banana _ big _ a-TV",
+"alt3":"A-cherry _ cold _ a-boat",
+"alt4":"A-tent _ biggest _ a-bus"
+},
+{
+"line":"He is colder than her",
+"alt1":"She are shorter _ she",
+"alt2":"They _ cold _ he",
+"alt3":"_ _ short _ them",
+"alt4":"_ _ cool _ we"
+},
+{
+"line":"Snakes are longer than lizards",
+"alt1":"Whales is uglier _ monkeys",
+"alt2":"Ducks _ long _ fish",
+"alt3":"Monkeys _ ugly _ horses",
+"alt4":"Horses _ more ugly _ mice"
+},
+
+
+{
+"line":"Coffee is hotter than milk",
+"alt1":"A-pineapple are thinner _ water",
+"alt2":"A-cherry _ hot _ a-newspaper",
+"alt3":"A-banana _ thin _ a-bike",
+"alt4":"A-strawberry _ warm _ a-hotdog"
+},
+
+
+
+
+
+
+{
+"line":"A feather is lighter than a-newspaper",
+"alt1":"A-tree are taller _ a-boat",
+"alt2":"A-train _ light _ a-watch",
+"alt3":"Watermelons _ tall _ a-pencil",
+"alt4":"Coffee _ talling _ a-bike"
+},
+{
+"line":"Shorts are cheaper than pants",
+"alt1":"A-tent is fatter _ gloves",
+"alt2":"A-car _ cheap _ a-calculator",
+"alt3":"Ice _ fat _ a-bike",
+"alt4":"A-pineapple _ expensive _ a-tshirt"
+},
+{
+"line":"Sheep are shorter than goats",
+"alt1":"Swans is faster _ lions",
+"alt2":"Fish _ short _ tigers",
+"alt3":"Dogs _ fast _ elephants",
+"alt4":"Pandas _ long _ ants"
+},
+{
+"line":"Pigs are fatter than dogs",
+"alt1":"Sharks is lighter _ donkeys",
+"alt2":"Parrots _ fat _ flies",
+"alt3":"Donkeys _ light _ swans",
+"alt4":"Monsters _ faster _ monsters"
+},
+{
+"line":"Monkeys are thinner than pandas",
+"alt1":"Kittens is heavier _ camels",
+"alt2":"Turtles _ thin _ dolphins",
+"alt3":"Wolves _ heavy _ ducks",
+"alt4":"Cows _ thins _ pigs"
+},
+{
+"line":"Gorillas are stronger than monkeys",
+"alt1":"Dolphins is slower _ bulls",
+"alt2":"Cats _ strong _ turtles",
+"alt3":"Ants _ slow _ snails",
+"alt4":"Worms _ slowest _ rats"
+},
+
+{
+"line":"A-suit is more-expensive than a-tshirt",
+"alt1":"A-ring are more-exciting _ water",
+"alt2":"A-feather _ expensive _ gloves",
+"alt3":"A-tent _ expensiver _ a-newspaper",
+"alt4":"A-car _ exciting _ homework"
+},
+{
+"line":"He is uglier than her",
+"alt1":"She are safer _ she",
+"alt2":"They _ ugly _ him",
+"alt3":"_ _ safe _ hers",
+"alt4":"_ _ light _ he"
+},
+{
+"line":"He is taller than her",
+"alt1":"She are cheaper _ him",
+"alt2":"They _ tall _ she",
+"alt3":"_ _ cheap _ he",
+"alt4":"_ _ cheapest _ shes"
+},
+
+{
+"line":"Swans are more-beautiful than ducks",
+"alt1":"Elephants is more-dangerous _ frogs",
+"alt2":"Pigs _ beautiful _ whales",
+"alt3":"Bears _ dangerous _ wolves",
+"alt4":"Rats _ most beautiful _ goats"
+},
+{
+"line":"A-clock is bigger than a-watch",
+"alt1":"A-balloon are hotter _ a-car",
+"alt2":"A-train _ big _ an-apple",
+"alt3":"Coffee _ hot _ swimming",
+"alt4":"A-ring _ fat _ pears"
+},
+
+{
+"line":"Elephants are heavier than camels",
+"alt1":"Goats is longer _ bears",
+"alt2":"Frogs _ heavy _ dragons",
+"alt3":"Chickens _ long _ sheep",
+"alt4":"Tigers _ more long _ pandas"
+},
+
+{
+"line":"Walking is slower than a-bike",
+"alt1":"A-truck are smaller _ a-calculator",
+"alt2":"A-motorbike _ slow _ swimming",
+"alt3":"Chess _ small _ a-watch",
+"alt4":"A-tent _ more small _ a-book"
+},
+
+
+
+{
+"line":"Tigers are more-dangerous than cats",
+"alt1":"Birds is more-beautiful _ chickens",
+"alt2":"Giraffes _ dangerouser _ birds",
+"alt3":"Dragons _ dangerous _ cows",
+"alt4":"Penguins _ beautiful _ sharks"
+},
+
+
+
+
+
+
+
+
+]}
+
+

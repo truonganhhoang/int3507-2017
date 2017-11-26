@@ -1,0 +1,164 @@
+{"meta":[],
+"frames": [
+    [1, 1, 84, 165, 0, -86, -6],
+    [1, 168, 49, 156, 0, -102, -9],
+    [52, 168, 80, 144, 0, -88, -19],
+    [87, 1, 166, 164, 0, -41, -4],
+    [134, 167, 112, 157, 0, -70, -8],
+    [248, 167, 183, 143, 0, -32, -18],
+    [255, 1, 63, 164, 0, -98, -6],
+    [320, 1, 124, 162, 0, -61, -5],
+    [433, 165, 100, 159, 0, -81, -9],
+    [446, 1, 77, 162, 0, -85, -6],
+    [525, 1, 93, 161, 0, -79, -7],
+    [535, 164, 80, 160, 0, -87, -9],
+    [617, 164, 79, 160, 0, -91, -7],
+    [620, 1, 37, 160, 0, -108, -8],
+    [659, 1, 70, 159, 0, -96, -10],
+    [698, 162, 64, 159, 0, -92, -5],
+    [731, 1, 127, 158, 0, -62, -9],
+    [764, 161, 121, 158, 0, -66, -10],
+    [860, 1, 114, 158, 0, -67, -10],
+    [887, 161, 92, 158, 0, -85, -9]
+],
+"sets":[
+{
+"line":"He is wearing an-orange shirt",
+"alt1":"She are-wearing a-blue jacket",
+"alt2":"They _ a-yellow coat",
+"alt3":"_ _ a-green skirt",
+"alt4":"_ _ a-black scarf"
+},{
+"line":"He is wearing green shorts",
+"alt1":"She are-wearing blue jacket",
+"alt2":"They _ brown shoes",
+"alt3":"_ _ yellow skirt",
+"alt4":"_ _ black hat"
+},{
+"line":"They are wearing yellow shorts",
+"alt1":"She is-wearing brown shoes",
+"alt2":"He _ white coat",
+"alt3":"_ _ green shirt",
+"alt4":"_ _ black skirt"
+},{
+"line":"She is wearing red glasses",
+"alt1":"He are-wearing brown jacket",
+"alt2":"They _ white coat",
+"alt3":"_ _ orange shirt",
+"alt4":"_ _ purple skirt"
+},{
+"line":"He is wearing black gloves",
+"alt1":"She are-wearing brown jacket",
+"alt2":"They _ yellow shoes",
+"alt3":"_ _ orange skirt",
+"alt4":"_ _ pink hat"
+},{
+"line":"They are wearing orange hats",
+"alt1":"She is-wearing blue shorts",
+"alt2":"He _ white coat",
+"alt3":"_ _ yellow shirt",
+"alt4":"_ _ green hat"
+},{
+"line":"He is-wearing blue pants",
+"alt1":"She are-wearing brown shorts",
+"alt2":"They _ white jacket",
+"alt3":"_ _ yellow shoes",
+"alt4":"_ _ black shirt"
+},{
+"line":"He is wearing a-green scarf",
+"alt1":"She are-wearing a-brown jacket",
+"alt2":"They _ a-white coat",
+"alt3":"_ _ a-green skirt",
+"alt4":"_ _ an-orange gloves"
+},
+
+{
+"line":"She is wearing a-red jacket",
+"alt1":"He are-wearing a-blue shorts",
+"alt2":"They _ a-white shirt",
+"alt3":"_ _ a-green skirt",
+"alt4":"_ _ a-black hat"
+},{
+"line":"She is wearing a-brown coat",
+"alt1":"He are-wearing a-green shoes",
+"alt2":"They _ a-yellow shirt",
+"alt3":"_ _ a-pink skirt",
+"alt4":"_ _ a-blue scarf"
+},{
+"line":"She is wearing a-pink tshirt",
+"alt1":"He are-wearing a-blue shorts",
+"alt2":"They _ a-white shoes",
+"alt3":"_ _ a-black coat",
+"alt4":"_ _ an-orange skirt"
+},{
+"line":"He is wearing purple socks",
+"alt1":"She are-wearing blue shorts",
+"alt2":"They _ white coat",
+"alt3":"_ _ yellow shirt",
+"alt4":"_ _ orange skirt"
+},{
+"line":"She is wearing a-black dress",
+"alt1":"He are-wearing a-blue shorts",
+"alt2":"They _ a-white shoes",
+"alt3":"_ _ a-yellow shirt",
+"alt4":"_ _ an-orange hat"
+},{
+"line":"She is wearing a-yellow skirt",
+"alt1":"He are-wearing a-brown shorts",
+"alt2":"They _ a-black shoes",
+"alt3":"_ _ an-orange shirt",
+"alt4":"_ _ a-pink scarf"
+},
+{
+"line":"They are-wearing brown pants",
+"alt1":"She is-wearing blue shorts",
+"alt2":"He _ white shoes",
+"alt3":"_ _ yellow coat",
+"alt4":"_ _ orange shirt"
+},
+{
+"line":"She is wearing red shoes",
+"alt1":"He are-wearing brown jacket",
+"alt2":"They _ white coat",
+"alt3":"_ _ green shirt",
+"alt4":"_ _ black skirt"
+},
+{
+"line":"She is wearing a-blue hat",
+"alt1":"He are-wearing a-brown shorts",
+"alt2":"They _ a-yellow shoes",
+"alt3":"_ _ an-orange shirt",
+"alt4":"_ _ a-pink skirt"
+},
+
+
+
+
+
+{
+"line":"They are wearing blue coats",
+"alt1":"She is-wearing brown shorts",
+"alt2":"He _ white shirt",
+"alt3":"_ _ yellow skirt",
+"alt4":"_ _ green hat"
+},
+
+
+
+{
+"line":"He is wearing a-yellow tie",
+"alt1":"She are-wearing a-brown shoes",
+"alt2":"They _ a-white coat",
+"alt3":"_ _ a-green shirt",
+"alt4":"_ _ a-black hat"
+},
+{
+"line":"He is wearing a-brown belt",
+"alt1":"She are-wearing a-blue shorts",
+"alt2":"They _ a-yellow jacket",
+"alt3":"_ _ a-green shoes",
+"alt4":"_ _ a-purple coat"
+},
+]}
+
+

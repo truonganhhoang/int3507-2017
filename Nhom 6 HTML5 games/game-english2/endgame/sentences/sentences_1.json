@@ -1,0 +1,167 @@
+{"meta":[],
+"frames": [
+    [1, 1, 164, 163, 0, -43, -6],
+    [1, 166, 164, 163, 0, -43, -6],
+    [1, 331, 164, 163, 0, -43, -6],
+    [167, 1, 164, 163, 0, -43, -6],
+    [167, 166, 164, 163, 0, -43, -6],
+    [167, 331, 164, 163, 0, -43, -6],
+    [333, 1, 164, 163, 0, -43, -6],
+    [333, 166, 164, 163, 0, -43, -6],
+    [333, 331, 214, 116, 0, -17, -29],
+    [499, 1, 214, 116, 0, -17, -29],
+    [499, 119, 214, 116, 0, -17, -29],
+    [549, 237, 214, 116, 0, -17, -29],
+    [549, 355, 214, 116, 0, -17, -29],
+    [715, 1, 214, 116, 0, -17, -29],
+    [931, 1, 194, 94, 0, -28, -44],
+    [931, 97, 194, 94, 0, -28, -44],
+    [715, 119, 195, 94, 0, -26, -44],
+    [912, 193, 194, 94, 0, -29, -44],
+    [765, 289, 194, 94, 0, -28, -44],
+    [765, 385, 194, 94, 0, -28, -44]
+],
+"sets":[
+{
+"line":"It's three o'clock",
+"alt1":"_ six past",
+"alt2":"_ nine half",
+"alt3":"_ half hour",
+"alt4":"_ quarter time"
+},
+{
+"line":"It's nine o'clock",
+"alt1":"_ quarter hour",
+"alt2":"_ half time",
+"alt3":"_ six past",
+"alt4":"_ time half"
+},
+{
+"line":"It's half past two",
+"alt1":"_ quarter to three",
+"alt2":"_ ten from twelve",
+"alt3":"_ twenty _ six",
+"alt4":"_ five _ seven"
+},
+{
+"line":"It's half past seven",
+"alt1":"_ quarter to five",
+"alt2":"_ ten from nine",
+"alt3":"_ twenty _ half",
+"alt4":"_ five _ three"
+},
+{
+"line":"It's quarter to four",
+"alt1":"_ half past nine",
+"alt2":"_ ten _ twelve",
+"alt3":"_ twenty _ three",
+"alt4":"_ five _ six"
+},
+{
+"line":"It's quarter to eight",
+"alt1":"_ half past six",
+"alt2":"_ ten _ twelve",
+"alt3":"_ twenty _ seven",
+"alt4":"_ five _ one"
+},
+{
+"line":"It's quarter past eleven",
+"alt1":"_ half to twelve",
+"alt2":"_ twenty _ three",
+"alt3":"_ five _ nine",
+"alt4":"_ ten _ six"
+},
+{
+"line":"It's quarter past five",
+"alt1":"_ half to six",
+"alt2":"_ ten _ three",
+"alt3":"_ twenty _ twelve",
+"alt4":"_ five _ two"
+},
+{
+"line":"It's six o'clock",
+"alt1":"_ quarter hour",
+"alt2":"_ half half",
+"alt3":"_ twenty time",
+"alt4":"_ five past"
+},
+{
+"line":"It's quarter to ten",
+"alt1":"_ half past nine",
+"alt2":"_ ten _ five",
+"alt3":"_ twenty _ four",
+"alt4":"_ five _ eleven"
+},
+{
+"line":"It's half past twelve",
+"alt1":"_ quarter to thirty",
+"alt2":"_ ten _ one",
+"alt3":"_ twenty _ three",
+"alt4":"_ five _ time"
+},
+{
+"line":"it's quarter past one",
+"alt1":"_ half to two",
+"alt2":"_ ten _ twelve",
+"alt3":"_ twenty _ fifteen",
+"alt4":"_ five _ eleven"
+},
+{
+"line":"It's ten past eight",
+"alt1":"_ quarter to seven",
+"alt2":"_ twenty _ ten",
+"alt3":"_ five _ one",
+"alt4":"_ half _ nine"
+},
+{
+"line":"It's ten to five",
+"alt1":"_ half past four",
+"alt2":"_ twenty _ ten",
+"alt3":"_ five _ fifty",
+"alt4":"_ _ _ past"
+},
+{
+"line":"it's twenty past two",
+"alt1":"_ quarter to three",
+"alt2":"_ ten _ one",
+"alt3":"_ five _ twenty",
+"alt4":"_ half _ ten"
+},
+{
+"line":"It's twentry to four",
+"alt1":"_ half past three",
+"alt2":"_ ten _ five",
+"alt3":"_ five _ two",
+"alt4":"_ quarter _ thirty"
+},
+{
+"line":"it's five to twelve",
+"alt1":"_ quarter past eleven",
+"alt2":"_ ten _ five",
+"alt3":"_ twenty _ fifty-five",
+"alt4":"_ half _ one"
+},
+{
+"line":"It's five past six",
+"alt1":"_ half to five",
+"alt2":"_ ten _ seven",
+"alt3":"_ twenty _ eight",
+"alt4":"_ quarter _ fifteen"
+},
+{
+"line":"It's twenty-five past eleven",
+"alt1":"_ quarter to twenty",
+"alt2":"_ ten _ twelve",
+"alt3":"_ twenty _ five",
+"alt4":"_ five _ one"
+},
+{
+"line":"It's twenty-five to ten",
+"alt1":"_ half past nine",
+"alt2":"_ ten _ five",
+"alt3":"_ twenty _ three",
+"alt4":"_ five _ eight"
+}
+]}
+
+
