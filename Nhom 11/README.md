@@ -29,25 +29,93 @@
 - Đọc thêm về  [OpenCV](https://opencv.org/)
 
 ---
-#### 2. Tổng quan về đề tài
+#### 2. Tổng quan về đề tài và giới thiệu về ứng dụng tạo mã tự động
+
 - Thị giác máy tính (Computer Vision) là một lĩnh vực bao gồm các phương pháp thu nhận, xử lý ảnh kỹ thuật số, phân tích và nhận dạng các hình ảnh và, nói chung là dữ liệu đa chiều từ thế giới thực để cho ra các thông tin số hoặc biểu tượng, ví dụ trong các dạng quyết định.
-- Việc phát triển lĩnh vực này có bối cảnh từ việc sao chép các khả năng thị giác con người bởi sự nhận diện và hiểu biết một hình ảnh mang tính điện tử. Sự nhận diện hình ảnh có thể xem là việc giải quyết vấn đề của các biểu tượng thông tin từ dữ liệu hình ảnh qua cách dùng các mô hình được xây dựng với sự giúp đỡ của các ngành lý thuyết học, thống kê, vật lý và hình học. Thị giác máy tính cũng được mô tả là sự tổng thể của một dải rộng các quá trình tự động và tích hợp và các thể hiện cho các nhận thức thị giác.
-- Nếu như bằng cặp mắt của mình, con người có thể thu nhận hình ảnh từ môi trường xung quanh, biết được màu sắc của vật, hình dáng của vật và vô số thông tin khác để có những phản ứng, hành động trong môi trường sống thì thị giác máy tính cũng vậy, chỉ có điều cặp mắt của máy tính giờ đây được thay bằng những thiết bị điện tử khác như camera, sensor hồng ngoại chẳng hạn... Bằng hệ thống cảm biến này, máy sẽ thu thập thế giới đa chiều và lưu trữ những gì thu tập được dưới dạng ảnh số. Những ảnh này sau đó được xử lý, phân tích và trích chọn ra những thông tin cần thiết giúp máy hiểu được nó đang nhìn thấy gì, cần phải làm gì...
+- Việc phát triển lĩnh vực này có bối cảnh từ việc sao chép các khả năng thị giác con người bởi sự nhận diện và hiểu biết một hình ảnh mang tính điện tử. Sự nhận diện hình ảnh có thể xem là việc giải quyết vấn đề của các biểu tượng thông tin từ dữ liệu hình ảnh qua cách dùng các mô hình được xây dựng với sự giúp đỡ của các ngành lý thuyết học, thống kê, vật lý và hình học.
+- Thị giác máy tính cũng được mô tả là sự tổng thể của một dải rộng các quá trình tự động và tích hợp và các thể hiện cho các nhận thức thị giác. Nếu như bằng cặp mắt của mình, con người có thể thu nhận hình ảnh từ môi trường xung quanh, biết được màu sắc của vật, hình dáng của vật và vô số thông tin khác để có những phản ứng, hành động trong môi trường sống thì thị giác máy tính cũng vậy, chỉ có điều cặp mắt của máy tính giờ đây được thay bằng những thiết bị điện tử khác như camera, sensor hồng ngoại chẳng hạn... Bằng hệ thống cảm biến này, máy sẽ thu thập thế giới đa chiều và lưu trữ những gì thu tập được dưới dạng ảnh số. Những ảnh này sau đó được xử lý, phân tích và trích chọn ra những thông tin cần thiết giúp máy hiểu được nó đang nhìn thấy gì, cần phải làm gì...
 - Ngày nay, định vị giữ vai trò rất quan trọng trong các ứng dụng về thị giác máy tính như: điều hướng robot, thực tế tăng cường (AR), và nhiều ứng dụng khác nữa. Quá trình này dựa trên việc tìm kiếm sự tương ứng giữa các điểm ảnh trong môi trường thực tế và ánh xạ thành ảnh 2D trong môi trường ảo để nhận diện chúng.
-- Một trong những cách tiếp cận phổ biến nhất là việc sử dụng những điểm đánh dấu hình vuông nhị phân để ước lượng hình dáng của ảnh đối tượng. Đồng thời, việc mã hoá nhị phân bên trong làm cho chúng trở nên đặc biệt mạnh mẽ, cho phép áp dụng các kỹ thuật chỉnh sửa và phát hiện lỗi.
-- Module Aruco được xây dựng dựa trên thư viện Aruco , một thư viện khá phổ biến bao gồm việc phát hiện các loại mã và các công cụ sử dụng chúng để định vị và hiệu chuẩn máy ảnh, nó được phát triển bởi Rafael Muñoz và Sergio Garrido.
+- Một trong những cách tiếp cận phổ biến nhất là việc sử dụng những điểm đánh dấu hình vuông nhị phân để ước lượng hình dáng của ảnh đối tượng. Đồng thời, việc mã hoá nhị phân bên trong làm cho chúng trở nên đặc biệt mạnh mẽ, cho phép áp dụng các kỹ thuật chỉnh sửa và phát hiện lỗi. 
+- Ứng dụng tạo mã tự động sử dụng một trong các module của opencv contrib là module Aruco. Module Aruco được xây dựng dựa trên thư viện Aruco, một thư viện khá phổ biến cho việc phát hiện các loại mã và các công cụ sử dụng chúng để định vị và hiệu chuẩn máy ảnh, nó được phát triển bởi Rafael Muñoz và Sergio Garrido. 
+- Ứng dụng này cho phép tạo ra các mã và nhận diện chúng một cách tự động .
+- Quy mô trong môn học: ứng dụng cho phép tự động sinh ra các mã đáp án trắc nghiệm tương ứng với các đáp án A, B, C, D. Mối người sẽ có 4 mã đáp án, với mỗi câu hỏi được đưa ra, mỗi người sẽ chọn đáp án của câu hỏi mà mình cho là đúng bằng cách đưa ra hình ảnh mã của đáp án đó. Máy sẽ quét tự động, phát hiện và nhận dạng mã đó tương ứng với đáp án nào.
 
 ---
-#### 3. Giới thiệu về ứng dụng tạo mã tự động
-*UPDATING..............................................*
+#### 3. Công nghệ sử dụng
+
+##### a. WebSocket
+
+- WebSocket là công nghệ hỗ trợ giao tiếp hai chiều giữa client và server bằng cách sử dụng một TCP socket (cổng 80 và 443) để tạo một kết nối hiệu quả và ít tốn kém. Theo phân tích từ [](http://websocket.org/quantum.html), WebSockets có thể giảm kích thước của HTTP header lên đến 500 – 1000 lần, giảm độ trễ của network lên đến 3 lần. Do đó, hỗ trợ tốt hơn đối với các ứng dụng web apps real – time.
+- WebSockets mới xuất hiện trong HTML5, là một kỹ thuật [Reverse Ajax](http://directwebremoting.org/dwr/documentation/reverse-ajax/index.html). Kết nối được mở thông qua một HTTP request (yêu cầu HTTP), được gọi là liên kết WebSockets với những header đặc biệt. Kết nối được duy trì để bạn có thể viết và nhận dữ liệu bằng JavaScript như khi bạn đang sử dụng một TCP socket đơn thuần.
+- Hiện tại Websocket đã được hỗ trợ trên 74% các trình duyệt. Bạn có thể xem số liệu mới nhất tại đây: 
+[Trình duyệt](https://caniuse.com/#search=websocket)
+- Giao thức bắt tay của WebSocket:
+![img00](https://poesiabinaria.net/wp-content/uploads/2016/10/WebSockets-Diagram.png)
+
+
+
+**Ưu điểm:**
+
+	- WebSockets cung cấp khả năng giao tiếp hai chiều mạnh mẽ, có độ trễ thấp và dễ xử lý lỗi.
+	- API cũng rất dễ sử dụng trực tiếp mà không cần bất kỳ các tầng bổ sung nào, so với Comet, thường đòi hỏi một thư viện tốt để xử lý kết nối lại, thời gian chờ timeout, các Ajax request (yêu cầu Ajax), các tin báo nhận và các dạng truyền tải tùy chọn khác nhau (Ajax long-polling và jsonp polling).
+	- Không cần phải có nhiều kết nối như phương pháp Comet long-polling và cũng không có những nhược điểm như Comet streaming.
+
+**Nhược điểm:**
+
+	- Chưa hỗ trợ được tất cả các trình duyệt.
+	- Không có phạm vi yêu cầu nào. Do WebSockets là một TCP socket chứ không phải là HTTP request, nên không dễ sử dụng các dịch vụ có phạm vi yêu cầu.
+
+- Tìm hiểu thêm về [Websocket](http://www.developerfusion.com/article/143158/an-introduction-to-websockets/)
+
+##### b. Node.js
+
+- Node.js là một nền tảng dựa vào Chrome Javascript runtime để xây dựng các ứng dụng nhanh, có độ lớn. Node.js sử dụng các phần phát sinh các sự kiện (event-driven), mô hình non-blocking I/O để tạo ra các ứng dụng nhẹ và hiệu quả cho các ứng dụng về dữ liệu thời gian thực chạy trên các thiết bị phân tán.
+- NodeJs là một mã nguồn mở, đa nền tảng cho phát triển các ứng dụng phía Server và các ứng dụng liên quan đến mạng. Ứng dụng Node.js được viết bằng Javascript và có thể chạy trong môi trường Node.js trên hệ điều hành Window, Linux...
+- Node.js cũng cung cấp cho chúng ta các module Javascript đa dạng, có thể đơn giản hóa sự phát triển của các ứng dụng web sử dụng Node.js với các phần mở rộng.
+- Một số đặc điểm nổi bật của Node.js:
+	1. Không đồng bộ và Phát sinh sự kiện (Event Driven): Tất các các APIs của thư viện Node.js đều không đồng bộ, nghĩa là không blocking (khóa). Nó rất cần thiết vì Node.js không bao giờ đợi một API trả về dự liệu. Server chuyển sang một API sau khi gọi nó và có cơ chế thông báo về Sự kiện của Node.js giúp Server nhận đựa phản hồi từ các API gọi trước đó.
+	2. Chạy rất nhanh: Dựa trên V8 Javascript Engine của Google Chrome, thư viện Node.js rất nhanh trong các quá trình thực hiện code.
+	3. Các tiến trình đơn giản nhưng hiệu năng cao: Node.js sử dụng một mô hình luồng đơn (single thread) với các sự kiện lặp. Các cơ chế sự kiện giúp Server trả lại các phản hồi với một cách không khóa và tạo cho Server hiệu quả cao ngược lại với các cách truyền thống tạo ra một số lượng luồng hữu hạn để quản lý request. Nodejs sử dụng các chương trình đơn luồng và các chương trình này cung cấp các dịch vụ cho số lượng request nhiều hơn so với các Server truyền thống như Apache HTTP Server.
+	4. Không đệm: Ứng dụng Node.js không lưu trữ các dữ liệu buffer.
+ 
+##### c. Socket.io
+
+- Socket.IO là một thư viện javascript có mục đích tạo ra các ứng dụng realtime trên trình duyệt cũng như thiết bị di động. Việc sử dụng thư viện này cũng rất đơn giản và giống nhau ở cả server lẫn client. 
+- Thư viện này gồm 2 phần:
+	1. Phía client: gồm bộ thư viện viết cho web (JavaScript), IOS, Android
+	2. Phía server: viết bằng JavaScript và dùng cho các máy chủ Node.js
+- Thư viện Socket.IO trên Android cung cấp những hàm cơ bản sau:
+	1. connect(): kết nối với server socket
+	2. on(event_name, listener): đăng kí lắng nghe sự kiện từ server trả về
+	3. emit(event_name, data): gửi một sự kiện lên server
+	4. off(event_name): ngừng lắng nghe một sự kiện nào đó
+- Tìm hiểu thêm tại trang [Manual](https://socket.io/#how-to-use)
+##### d. JNI
+
+- Cấu trúc của một Class JNI:
+![img000](http://vietgamedev.net/file/attachment/2013/08/276f80e2cb29445c46c18d07132d91da_view.png)
+
+
+
+- JNI (Java Native Interface) là một framework cho phép gọi các hàm Java trong JVM từ các ngôn ngữ cấp thấp như C, C++ hay assembly. Nói nôm na dễ hiểu là mình muốn gọi Java từ C++ thì mình sẽ gọi thông qua JNI.
+- Ta thường dùng JNI khi muốn gọi các phương thức đặc trưng của Android như: gửi tin nhắn, thực hiện cuộc gọi... JniHelper class là lớp singleton cocos2d-x cung cấp để hỗ trợ việc sử dụng JNI một cách dễ dàng hơn. Ta sẽ dùng lớp này để thực hiện các lệnh gọi Java từ C++.
+**Vai trò của JNI**
+	- Khi một môi trường Java được cài trên một hệ điều hành, sẽ có trường hợp người lập trình muốn sử dụng các thư viện của riêng hệ điều hành đó. Lý do là vì dùng thư viện của riêng hệ điều hành sẽ nhanh hơn, hiệu suất cao hơn.
+	- Ngoài ra đối với hệ điều hành Windows thì số lượng các thư viện do cộng đồng viết ra rất nhiều, và có một số thư viện cực kỳ đồ sộ, việc viết lại các thư viện này bằng ngôn ngữ Java sẽ mất nhiều thời gian hơn so với việc tìm cách sử dụng chúng từ Java.
+	- JNI là một tính năng cực kỳ mạnh mẽ cho phép chúng ta sử dụng code từ các ngôn ngữ khác, JNI có tính chất 2 chiều, tức là code từ các ngôn ngữ khác cũng có thể gọi lại code từ Java nữa.
+**Nhược điểm**
+	- Chúng ta đã biết rằng Java là một ngôn ngữ viêt một lần-chạy mọi nơi, tức là chỉ cần viết code Java, sau đó biên dịch rồi đem lên một hệ điều hành có cài JVM là có thể chạy bình thường. Tuy nhiên khi chúng ta sử dụng JNI để “hợp tác” với code của hệ điều hành, thì lại không thể đem chương trình đó đi chạy trên máy có hệ điều hành khác được, do đó mất đi tính viết một lần-chạy mọi nơi.
+	- Một điều nữa là Java có tính năng type-safe, tức là bạn khai báo kiểu dữ liệu gì thì chỉ được thao tác với kiểu dữ liệu đó, nhưng các ngôn ngữ hệ điều hành thì có thể không có tính năng type-safe, do đó khi viết code JNI bạn sẽ phải chú ý cẩn thận, chỉ cần khác kiểu dữ liệu cũng có thể crash chương trình.
+- Tìm hiểu thêm về [JNI](https://www3.ntu.edu.sg/home/ehchua/programming/java/JavaNativeInterface.html)
+
 ---
 #### II. THUẬT TOÁN TẠO MÃ
-#### 1. Các điểm đánh dấu (mã) và từ điển
+#### 1. Mã và từ điển
 
-##### a. Các điểm đánh dấu
+##### a. Mã
 
-- Một điểm đánh dấu ArUco là một điểm đánh dấu tổng hợp hình vuông bao gồm một đường viền rộng màu đen và ma trận nhị phân bên trong màu trắng nhằm xác định số nhận dạng của nó (id). Các đường biên màu đen tạo điều kiện cho việc phát hiện một cách nhanh chóng hình ảnh của nó và mã hóa nhị phân cho phép định vị và áp dụng các kỹ thuật phát hiện và sửa lỗi.
-- Kích thước điểm đánh dấu xác định kích thước của ma trận nội bộ.Ví dụ: một điểm đánh dấu có khích thước là 4x4 được xây dựng bởi ma trận 16 bits.
+- Mã ArUco là một điểm đánh dấu tổng hợp hình vuông bao gồm một đường viền rộng màu đen và ma trận nhị phân bên trong màu trắng nhằm xác định số nhận dạng của nó (id). Các đường biên màu đen tạo điều kiện cho việc phát hiện một cách nhanh chóng hình ảnh của nó và mã hóa nhị phân cho phép định vị và áp dụng các kỹ thuật phát hiện và sửa lỗi.
+- Kích thước điểm đánh dấu xác định kích thước của ma trận nội bộ. Ví dụ: một mã có khích thước là 4x4 được xây dựng bởi ma trận 16 bits.
 - Mã này có thể quay theo nhiều chiều khác nhau trong môi trường, vì vậy, để xác định đúng dữ liệu mà nó truyền tải ta cần phải xác định được độ quay ban đầu của nó, do đó mỗi góc được xác định rõ ràng. Mã hóa nhị phân sẽ giải quyết vấn đề này.
 
 - Hình ảnh về mã:
@@ -56,7 +124,7 @@
 
 
 
-*Một điểm đánh dấu ArUco*
+*Một mã ArUco*
 
 ##### b. Từ điển
 
@@ -113,6 +181,7 @@
     Sau khi phát hiện đối tượng, cần thiết phải xác định xem chúng là mã thực sự hay không bằng cách phân tích mã hoá bên trong của chúng. Bước này bắt đầu bằng cách lấy ra các dấu hiệu của mỗi mã. Để làm điều này, trước tiên, phép biến đổi bối cảnh được áp dụng để có được mã theo hình thức tiêu chuẩn của nó. Sau đó, các hình ảnh tiêu chẩn được tạo ngưỡng bằng cách sử dụng Otsu để phân tách riêng bit trắng và đen. Hình ảnh được chia thành các ô khác nhau theo kích thước điểm đánh dấu và kích thước đường viền và số lượng điểm ảnh màu đen hoặc trắng trên mỗi ô được đếm để xác định xem nó có màu trắng hay đen. Cuối cùng, các bit được phân tích để xác định xem các điểm đánh dấu thuộc về từ điển cụ thể và kỹ thuật sửa lỗi được sử dụng khi cần thiết.
 
 - Xem xét hình ảnh sau:
+
 ![img03](https://docs.opencv.org/3.1.0/singlemarkersoriginal.png)
 
 
@@ -173,7 +242,8 @@
 
 ---
 #### 2. Ước lượng hình dáng
-- Để thực hiện ước lượng hình dáng mã, bạn cần phải biết các thông số hiệu chuẩn trên máy ảnh của bạn. Đó là ma trận máy ảnh và các hệ số biến dạng. OpenCV cung cấp chức năng calibrateCamera() và hướng dẫn Calibration để hiệu chuẩn máy ảnh. Bạn cũng có thể hiệu chuẩn máy ảnh của bạn bằng cách sử dụng module aruco. Lưu ý rằng điều này chỉ cần được thực hiện một lần trừ khi các ống kính máy ảnh được sửa đổi (ví dụ thay đổi tập trung của nó)
+
+- Để thực hiện ước lượng hình dáng mã, bạn cần phải biết các thông số hiệu chuẩn trên máy ảnh của bạn. Đó là ma trận máy ảnh và các hệ số biến dạng. OpenCV cung cấp chức năng calibrateCamera() và hướng dẫn Calibration để hiệu chuẩn máy ảnh. Bạn cũng có thể hiệu chuẩn máy ảnh của bạn bằng cách sử dụng module Aruco. Lưu ý rằng điều này chỉ cần được thực hiện một lần trừ khi các ống kính máy ảnh được sửa đổi.
 - Cuối cùng, những gì bạn nhận được sau khi hiệu chuẩn là ma trận máy ảnh: một ma trận 3x3 với khoảng cách tiêu cự và tọa độ trung tâm của máy ảnh (còn gọi là các tham số nội tại) và hệ số biến dạng: một vector gồm 5 phần tử  hoặc nhiều hơn, đó là mô hình sự biến dạng được tạo ra bởi máy ảnh của bạn.
 - Khi ước lượng hình dáng tập các mã ArUco, bạn có thể ước tính hình dáng của mỗi mã riêng lẻ, bằng cách sử dụng các bảng aruco.
 Máy ảnh đặt ra đối với một mã là sự chuyển đổi 3d từ hệ tọa độ của mã sang hệ toạ độ máy ảnh. Nó được chỉ định bởi phép quay và một vector dịch.
@@ -363,6 +433,7 @@ Trước khi phân tích mã nhị phân chính nó, các bit cần phải đư�
 - Giá trị mặc định: 0.13.
 
 ##### d. Nhận diện mã
+
 - Sau khi các bit đã được trích xuất, bước tiếp theo kiểm tra nếu chiết xuất mã thuộc về từ điển đánh dấu, và nếu cần thiết, sửa lỗi có thể được thực hiện.
 - double maxErroneousBitsInBorderRate
   - Các bit của đường viền mã nên là màu đen. Tham số này xác định số bit cho phép trong đường biên, nghĩa là số bit trắng tối đa trong đường biên. Nó được biểu diễn tương ứng so với tổng số bit trong mã.
@@ -374,6 +445,7 @@ Trước khi phân tích mã nhị phân chính nó, các bit cần phải đư�
   - Giá trị mặc định: 0.6.
 
 ##### e. Sàng lọc ở góc
+
 - Sau khi các mã đã được phát hiện và xác định, bước cuối cùng là thực hiện sàng lọc subpixel ở các vị trí góc. Lưu ý rằng bước này là tùy chọn và chỉ có ý nghĩa nếu vị trí của mã phải chính xác. Đây là một bước tốn thời gian và nó bị vô hiệu theo mặc định.
 - bool doCornerRefinement
   - Tham số này quyết định xem quá trình con subpixel góc được thực hiện hay không. Nó có thể bị vô hiệu nếu các góc chính xác là không cần thiết.
@@ -384,10 +456,44 @@ Trước khi phân tích mã nhị phân chính nó, các bit cần phải đư�
 - int cornerRefinementMaxIterations, double cornerRefinementMinAccuracy
   - Hai thông số này xác định tiêu chuẩn dừng của quá trình tinh chỉnh subpixel. Các cornerRefinementMaxIterations cho biết số lần lặp lại và cornerRefinementMinAccuracy tối thiểu lỗi giá trị trước khi dừng quá trình. Nếu số lần lặp lại quá cao, nó có thể ảnh hưởng đến hiệu năng. Mặt khác, nếu nó quá thấp, nó có thể tạo ra một sàng lọc subpixel không có giá trị.
   - Giá trị mặc định: cornerRefinementMaxIterations: 30, cornerRefinementMinAccuracy: 0.1.
+*subpixel: có thể hiểu là độ phân giải hình ảnh*
 
 ---
-#### IV. CÁCH CÀI ĐẶT VÀ SỬ DỤNG ỨNG DỤNG
-*UPDATING..............................................*
+#### IV. CÀI ĐẶT VÀ SỬ DỤNG ỨNG DỤNG
+#### 1. Cài đặt
+
+- Yêu cầu thiết bị đi động của bạn phải chạy hệ điều hành Android phiên bản 4.4 trở lên.
+- Để cài đặt ứng dụng này, bạn dowload file cài đặt tại link sau: [app](https://drive.google.com/file/d/10kHWmoSjUdRt7Zg4km4Em9GM6ca8NbLt/view)
+
+---
+#### 2. Sử dụng
+
+- Sau khi tải file apk về thiết bị di động của bạn, hãy mở nó ra.
+- Màn hình đăng nhập hiển thị, yêu cầu bạn đăng nhập tài khoản để có thể sử dụng ứng dụng.
+
+![img13](https://photos.app.goo.gl/xMyIzbgyDZSpJ1ch1)
+
+
+
+*Màn hình đăng nhập*
+
+- Sau khi đăng nhập thành công, màn hình chính sẽ hiển thị như hình ảnh dưới đây:
+
+![img14](https://photos.app.goo.gl/4jB3O1xjfCxsOcLW2)
+
+
+
+*Màn hình chính*
+
+- Khi bạn ấn vào nút SCAN, camera sẽ hiển thị, bắt đầu quét các mã trong không gian và nhận dạng chúng.
+
+![img15](https://drive.google.com/file/d/1foXO5nt6uymTgyA2dYOaCVg2nhO1gg8i/view?usp=sharing)
+
+
+
+*Màn hình camera*
+
+- Trên màn hình thiết bị sẽ hiển thị các đối tượng được phát hiện có viền màu xanh lá cây.
 
 
 
