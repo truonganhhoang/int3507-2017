@@ -31,6 +31,7 @@ class AccountController {
     account.username = username
     account.encrypt = JSON.stringify(web3Encrypt)
     account.address = web3Encrypt.address
+    yield account.save()
     yield realUser.accounts().save(account)
 
     let filedir = os.homedir() + '/.ethereum/rinkeby/keystore/' + account.address + '.txt'
@@ -60,6 +61,7 @@ class AccountController {
     account.username = username
     account.encrypt = JSON.stringify(keystore)
     account.address = keystore.address
+    yield account.save()
     yield realUser.accounts().save(account)
 
     let filedir = os.homedir() + '/.ethereum/rinkeby/keystore/' + account.address + '.txt'
