@@ -487,7 +487,7 @@ Trước khi phân tích mã nhị phân chính nó, các bit cần phải đư�
 
 - Khi bạn ấn vào nút SCAN, camera sẽ hiển thị, bắt đầu quét các mã trong không gian và nhận dạng chúng.
 
-![img15](https://drive.google.com/file/d/1foXO5nt6uymTgyA2dYOaCVg2nhO1gg8i/view?usp=sharing)
+![img15](http://45.32.21.62/images/detect_855bb842e293bd8cf2fd.png)
 
 
 
