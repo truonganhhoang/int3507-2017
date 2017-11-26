@@ -61,7 +61,7 @@ export default {
       const self = this
       let result = confirm("Bạn muốn xóa không?")
       if(result) {
-        axios.delete('http://localhost:3333/api/v1/account/' + id)
+        axios.delete('api/v1/account/' + id)
         .then(function(res) {
           self.$emit('delete', id)
         })
@@ -71,7 +71,7 @@ export default {
       }
     },
     getBalance(id) {
-      axios.get('http://localhost:3333/api/v1/account/' + id + '/balance')
+      axios.get('api/v1/account/' + id + '/balance')
         .then((res) => {
           if(res.data.balance) {
             this.balance = res.data.balance

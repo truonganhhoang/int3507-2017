@@ -44,7 +44,7 @@ export default {
     },
     updateAccountList() {
       const self = this
-      axios.get('http://localhost:3333/api/v1/account')
+      axios.get('api/v1/account')
       .then(function(res) {
         self.account_list = res.data.accountList
       })

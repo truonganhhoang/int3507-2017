@@ -75,7 +75,7 @@
           axios.defaults.headers.common['Authorization'] = token
         }
 
-        axios.post('http://localhost:3333/api/v1/voting/candidate')
+        axios.post('api/v1/voting/candidate')
         .then(res => {
           const data = res.data
           let candidates = data.candidates
@@ -97,7 +97,7 @@
         let index = this.candidates.findIndex(element => {
           return element.name === name
         })
-        axios.post('http://localhost:3333/api/v1/voting/get-vote', {
+        axios.post('api/v1/voting/get-vote', {
           name,
           address
         }).then(res => {
@@ -118,7 +118,7 @@
         } else {
           const address = this.$route.params.address
           // this.$noty.info("Wait a minute to get the result!")
-          axios.post('http://localhost:3333/api/v1/voting/vote', {
+          axios.post('api/v1/voting/vote', {
             name,
             address,
             passphrase

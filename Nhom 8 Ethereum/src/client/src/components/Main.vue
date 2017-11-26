@@ -22,7 +22,7 @@ export default {
     if(token) {
       axios.defaults.headers.common['Authorization'] = token
     }
-    axios.get('http://localhost:3333/api/v1/login')
+    axios.get('api/v1/login')
     .then(res => { 
       this.login = true
       let data = res.data

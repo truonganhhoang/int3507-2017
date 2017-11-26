@@ -38,3 +38,7 @@ Route.group('api', () => {
 })
   .prefix('api/v1')
   .formats(['json'])
+
+Route.get('/', function * (request, response) {
+  yield response.sendView('welcome')
+})

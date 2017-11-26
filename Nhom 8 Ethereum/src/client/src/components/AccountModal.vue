@@ -73,7 +73,7 @@
           alert('repass is not match')
           return
         }
-        axios.post('http://localhost:3333/api/v1/account',
+        axios.post('api/v1/account',
           self.account
         )
         .then(function(res) {

@@ -57,7 +57,7 @@
           console.log(e)
           return false;
         }
-        axios.post('http://localhost:3333/api/v1/account/import', {
+        axios.post('api/v1/account/import', {
           username: this.username,
           keystore: this.keystore
         })
