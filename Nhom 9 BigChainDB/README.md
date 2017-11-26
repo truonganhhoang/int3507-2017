@@ -27,7 +27,7 @@ Xây dựng công cụ quản lý và chia sẻ điểm an toàn dựa vào Bigc
 ### Giới thiệu về chuối khối 
  Chuỗi khối (blockchain hoặc block chain) là một cơ sở dữ liệu phân cấp lưu trữ thông tin trong các khối thông tin được liên kết với nhau bằng mã hóa và mở rộng theo thời gian. Mỗi khối thông tin đều chứa thông tin về thời gian khởi tạo và được liên kết tới khối trước đó, kèm một mã thời gian và dữ liệu giao dịch. Blockchain được thiết kế để chống lại việc thay đổi của dữ liệu: Một khi dữ liệu đã được mạng lưới chấp nhận thì sẽ không có cách nào thay đổi được nó.
 
-Cấu trúc bockchain gồm các khối (block) liên kết với nhau như một danh sách liên kết, con trỏ trong blockchain có thể lưu thêm mảng bâm (hash) của khối trước đó. Như vậy kẻ giả mạo muốn thay đổi giá trị của khối thứ k trong dãy sẽ phải thay đổi tất cả các khổi từ k+1 trở nên, điều này là gân như bất khả thi do việc tạo nhiều giá trị hash là cực kỳ tốn kém.
+Cấu trúc bockchain gồm các khối (block) liên kết với nhau như một danh sách liên kết, con trỏ trong blockchain có thể lưu thêm mảng bâm (hash) của khối trước đó. Như vậy kẻ giả mạo muốn thay đổi giá trị của khối thứ k trong dãy sẽ phải thay đổi tất cả các khổi từ k+1 trở nên, điều này là gân như bất khả thi do việc tạo nhiều giá trị hash là cực kỳ tốn kém.
 
 ### Giới thiệu về mã hoá chữ ký số ed25519 và mã hoá dữ liệu AES
 Để đảm bảo an toàn mỗi thao tác trong BigchainDB đều phải găn liền với chỹ ký số. Hiên tại ở phiên bản 1.0 BigchainDb hỗ trợ dạng mã hoá chữ ký là ed25519.
@@ -362,7 +362,7 @@ mặc định bigchaindb chạy ở http://127.0.0.1:9984/
     $ cd int3507-2017/bigchain/server
     $ npm install
 ```
-Nếu sử dụng database đã cài đạt ở nơi khác cần sửa cấu hình trong config/config.js
+Nếu sử dụng database đã cài đạt ở nơi khác cần sửa cấu hình trong config/config.js
 #### Chạy server
 ```
     $ node app.js
