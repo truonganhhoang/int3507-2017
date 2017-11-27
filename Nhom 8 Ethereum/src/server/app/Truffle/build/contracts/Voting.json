@@ -151,8 +151,8 @@
     "4": {
       "events": {},
       "links": {},
-      "address": "0x08274d20247a8a5ddad0bff0b15f9d9a5db392bb",
-      "updated_at": 1511688015892
+      "address": "0xb3b6986f949511da69d68532a6cad6c64590cb94",
+      "updated_at": 1511751578671
     },
     "1505030560505": {
       "events": {},
@@ -210,5 +210,5 @@
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1511688015892
+  "updated_at": 1511751578671
 }
