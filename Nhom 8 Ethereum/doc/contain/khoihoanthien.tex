@@ -2,9 +2,9 @@
 Quá trình hoàn thiện khối liên quan đến bốn giai đoạn:
 \begin{itemize}
 	\item Xác nhận (hoặc nếu khai thác, xác định) ommers;
-	\item xác nhận hợp lệ (hoặc, nếu khai thác, xác định) giao dịch;
-	\item áp dụng phần thưởng;
-	\item xác minh (hoặc, nếu khai thác, tính một hợp lệ) trạng thái và
+	\item Xác nhận hợp lệ (hoặc, nếu khai thác, xác định) giao dịch;
+	\item Áp dụng phần thưởng;
+	\item Xác minh (hoặc, nếu khai thác, tính một hợp lệ) trạng thái và
 	nonce.
 \end{itemize}
 
@@ -50,7 +50,7 @@ Như đã trình bày ở trên, $R[n]_\sigma$, $R[n]_l$ và $R[n]_u$ là các t
 	\Upsilon(R[n-1]_\sigma, B_{T}[n])
 \end{subnumcases}
 
-Trong trường hợp $B_R[n]_u$, chúng ta sử dụng cách tiếp cận tương tự để xác định mỗi mục như là khí được sử dụng để đánh giá giao dịch tương ứng được tổng kết với mục trước đó (hoặc không, nếu nó là lần đầu tiên), cho chúng ta một tổng số hoạt động:
+Trong trường hợp $B_R[n]_u$, chúng ta sử dụng cách tiếp cận tương tự để xác định mỗi mục như là gas được sử dụng để đánh giá giao dịch tương ứng được tổng kết với mục trước đó (hoặc không, nếu nó là lần đầu tiên), cho chúng ta một tổng số hoạt động:
 
 \begin{subnumcases}{B_R[n]_u}
 0&$n <0$\\

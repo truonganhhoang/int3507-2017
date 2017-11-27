@@ -23,7 +23,7 @@ Theo cuốn *"Introducing Ethereum and Solidity"*: *[3]*
 >Một chuỗi khối là một mạng lưới phần mềm (software network) có tính chất ngang hàng (peer-to-peer) và hoàn toàn phân tán, nó sử dụng mật mã (cryptography) để lưu trữ an toàn các ứng dụng, dữ liệu, và dễ dàng chuyển các chứng thực số (digital instrument) mang giá trị đại diện cho tiền thực.
 
 <p align="center">
-<img src="https://github.com/nesso99/int3507-2017/blob/master/ethereum-group-8/img/howtowork.PNG?raw=true"/>
+<img src="https://github.com/nesso99/int3507-2017/blob/master/Nhom%208%20Ethereum/img/howtowork.PNG?raw=true"/>
 <br/>
 <i>Hình 1: Cách hoạt động của chuỗi khối [4]</i>
 </p>
@@ -44,6 +44,9 @@ Theo cuốn *"Introducing Ethereum and Solidity"*: *[3]*
 * Nonce: là giá trị được tìm thấy và thêm vào để sau khi băm, ta có giá trị băm hợp lệ.
 
 ## 2. Tổng quan về Ethereum
+
+![ethereum](https://www.cryptocompare.com/media/20652/ethereum-bw.png)
+
 Khái niệm "Ethereum" có thể được sử dụng để chỉ ba thứ khác nhau: giao thức Ethereum, mạng Ethereum, và dự án Ethereum bao gồm cả hai thứ trên. Có thể thấy sức mạnh chủ yếu của nó đến từ giao thức.
 
 Ethereum là một nền tảng điện toán có tính chất phân tán, công cộng, mã nguồn mở dựa trên công nghệ Blockchain. Nó có tính năng Hợp đồng thông minh (Smart Contracts), tạo thuận lợi cho các thỏa thuận hợp đồng trực tuyến.*[6]*
@@ -60,7 +63,7 @@ Ethereum là một nền tảng điện toán có tính chất phân tán, công
 <i>Bảng 1: Các điểm khác biệt cơ bản của Ethereum so với Bitcoin </i>
 </p>
 
-## 3. Các khái niệm trong Ethereum *[7]*
+## 3. Các khái niệm cơ bản trong Ethereum *[7]*
 
 ### Ether
 Tiền mã hóa được giao dịch trong mạng lưới Ethereum được gọi là ether. Nó được liệt kê dưới mã ETH và giao dịch trên các sàn giao dịch tiền mã hóa. Nó cũng được sử dụng để trả phí giao dịch và dịch vụ tính toán trên mạng Ethereum.
@@ -83,7 +86,7 @@ Gas là một đơn vị công việc, nó không phải là một đơn vị ti
 Việc này khác so với ở Bitcoin, nơi mà chi phí được tính bằng kích thước của giao dịch tính bằng kilobytes, việc tính phí dựa trên khối lượng tính toán hợp lý hơn nhiều.
 
 <p align="center">
-<img src="https://github.com/nesso99/int3507-2017/blob/master/ethereum-group-8/img/value.png?raw=true"/>
+<img src="https://github.com/nesso99/int3507-2017/blob/master/Nhom%208%20Ethereum/img/value.png?raw=true"/>
 <br/>
 <i>Hình 2: Giá trị của một số toán tử (trên EVM) phổ biến</i>
 </p>
@@ -188,8 +191,10 @@ Khác với Bitcoin, hệ thống tiền thưởng cho các thợ đào mỏ c�
 
 Năng lượng của tiền đặt cược (PoS) là cơ chế người giải mã sẽ được chỉ định dựa trên số ETH họ đánh cược, nếu giải mã sai hoặc cố tính làm ảnh hưởng đến hệ thống thì sẽ bị mất đi số tiền đặt cược đó. Cơ chế này đòi hỏi người tham gia có trách nhiệm hơn. Quan trọng hơn, PoS không tạo ra lượng tiền mới (không có thưởng khối mà chỉ trả chi phí giao dịch).
 
+## 4. Chi tiết trong Ethereum
+Bạn có thể tham khảo trong tài liệu của nhóm.
 
-## Tài liệu tham khảo
+## 5. Tài liệu tham khảo
 
 - [1] [Trang chủ Blockchain](https://www.blockchain.com/)
 - [2] [Blockchain](https://vi.wikipedia.org/wiki/Blockchain), *wikipedia.org* (ngày 24 tháng 10 năm 2017)

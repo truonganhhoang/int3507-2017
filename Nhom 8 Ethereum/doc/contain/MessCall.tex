@@ -1,0 +1,27 @@
+\documentclass[../cnd.tex]{subfiles}
+
+Trong trường hợp thực hiện một cuộc gọi thông điệp, một số thông số yêu cầu: người gửi (s), giao khởi tạo giao dịch (o), người nhận (r), tài khoản mà mã của người đó được thực hiện (c, thường giống người nhận), gas hiện có (g), giá trị (v) và giá gas (p) cùng với một mảng byte dài tùy ý, d, đầu vào dữ liệu của cuộc gọi và cuối cùng là độ sâu hiện tại của cuộc-gọi-thông-báo/sự-tạo-thành-hợp-đồng (essage-call/contract-creation) (e).
+
+Ngoài việc đánh giá một trạng thái mới và trạng thái giao dịch con, những cuộc gọi thông điệp cũng có một thành phần phụ - lượng dữ liệu được biểu thị bằng mảng byte o. Điều này được bỏ qua khi thực hiện giao dịch, tuy nhiên cuộc gọi thông điệp có thể
+được bắt đầu do việc thực thi mã-VM và trong trường hợp này thông tin này được sử dụng.
+\begin{align}	
+(\sigma ',g',A,o) = \Theta (\sigma ,s,o,r,c,g,p,v,\tilde{v},d,e)
+\end{align}
+
+Lưu ý rằng đối với cuộc gọi đại diện (DELEGATECALL)  chúng ta cần phải phân biệt giữa giá trị mà được chuyển giao, v, với giá trị bề ngoài trong việc thực thi, ~v. Chúng ta định nghĩa $\sigma_1$, trạng thái chuyển tiếp đầu tiên như là trang thái gốc nhưng với giá trị chuyển nhượng từ người gửi đến người nhận:
+\begin{align}	
+\sigma _{1}[r] _b \equiv \sigma _{1}[r] _b + v \wedge \sigma _{1}[s] _b - v
+\end{align}
+
+Thông qua công việc hiện tại, giả định rằng nếu $\sigma _{1}[r]$ không xác định ban đầu, nó sẽ được tạo ra như là một tài khoản không có mã hoặc trạng thái và không cân bằng. Do đó phương trình trước có nghĩa là:
+\begin{align}	
+\sigma _{1} \equiv \sigma ' _{1} \\
+\sigma _{1}[s] _b \equiv \sigma ' _{1}[s] _b-v \\
+\sigma '_{1} \equiv \sigma \\
+\end{align}
+\begin{align}	
+\left\{\begin{matrix}
+\sigma ' _{1}[r] \equiv (v,0,KEC(()),TRIE (\varnothing))  & $\sigma [r] = \varnothing$\\ 
+\sigma '_{1}[r] _b \equiv \sigma [r] _b + v &otherwise
+\end{matrix}\right.
+\end{align}
