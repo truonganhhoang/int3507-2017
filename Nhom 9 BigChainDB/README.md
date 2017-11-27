@@ -47,12 +47,12 @@ Ed25519 là một hệ thống chữ ký số khóa công khai với nhiều tí
 * Độ dài khóa nhỏ
 
 #### Mã hóa dữ liệu AES
- AES (Advanced Encryption Standard) là thuật toán được phát triển dựa trên bản thiết kế bởi 2 nhà mật mã học người bỉ là Joan Daemen và Vincent Rijmen. AES là một thuật toán mã hóa khối đối xứng với độ dài khóa là 128 bit, 192 bit và 256 bit tương ứng gọi là AES-128, AES-192 và AES-256. tùy vào độ dài của khoá khi sử dụng mà ta có số vòng lặp khác nhau AES-128 sử dụng 10 vòng (round), AES-192 sử dụng 12 vòng và AES-256 sử dụng 14 vòng.
+ AES (Advanced Encryption Standard) là thuật toán được phát triển dựa trên bản thiết kế bởi 2 nhà mật mã học người Bỉ là Joan Daemen và Vincent Rijmen. AES là một thuật toán mã hóa khối đối xứng với độ dài khóa là 128 bit, 192 bit và 256 bit tương ứng gọi là AES-128, AES-192 và AES-256. Tùy vào độ dài của khoá khi sử dụng mà ta có số vòng lặp (round) khác nhau AES-128 sử dụng 10 vòng, AES-192 sử dụng 12 vòng và AES-256 sử dụng 14 vòng.
 Các thứ tự hàm AES sẽ thực hiện:
 
 * Trộn từng byte (SubBytes): mỗi byte được thay thế với các byte khác.
 * Trộn từng hàng (ShiftRows): Phép biến đổi dùng trong phép mã hóa áp dụng lên trạng thái bằng cách chuyển dịch vòng ba hàng cuối của trạng thái theo số lượng byte các offset khác nhau.
-* Trộn từng cột (MixColumns): mỗi cột được chuyển đổi tuyến tính bằng cách nhân nó với một ma trận trong trường hữu hạn
+* Trộn từng cột (MixColumns): mỗi cột được chuyển đổi tuyến tính bằng cách nhân nó với một ma trận trong trường hữu hạn.
 * Mã hóa (AddRoundKey): mỗi byte trong bảng trạng thái được thực hiện phép XOR với một khoá vòng, quá trình xử lý AES thu được 11 khoá vòng từ các key mã hoá được phân phát cho kỹ thuật mã hoá.
 
 ### Giới thiệu về BigchainDB 
@@ -60,22 +60,22 @@ Các thứ tự hàm AES sẽ thực hiện:
 
   Chúng ta có thể xây dựng một blockchain truyền thống như một cơ sở dữ liệu (CSDL), theo nghĩa nó cung cấp một cơ chế lưu trữ.
   Nếu chúng ta đo Bitcoin blockchain bằng các tiêu chí CSDL truyền thống:
-  * thông lượng: một vài giao dịch mỗi giây (tps),
-  * độ trễ: trước khi một đơn xác nhận viết là 10 phút,
-  * khả năng lưu trữ: một vài chục GB. 
+  * Thông lượng: một vài giao dịch mỗi giây (tps).
+  * Độ trễ: trước khi một đơn xác nhận viết là 10 phút.
+  * Khả năng lưu trữ: một vài chục GB. 
   Hơn nữa nó về cơ bản cũng không có khả năng truy vấn như một cơ sở dữ liệu NoQL.
 
   Ngược lại, một CSDL phân phối hiện đại:
-  * thông lượng: vượt quá 1 triệu tps.
-  * độ trễ: của một phần nhỏ của một giây.
-  * khả năng lưu trữ: đạt hàng petabyte và nhiều hơn nữa.
-  * thông lượng và khả năng lưu trữ tăng lên khi các nút được thêm vào.
+  * Thông lượng: vượt quá 1 triệu tps.
+  * Độ trễ: của một phần nhỏ của một giây.
+  * Khả năng lưu trữ: đạt hàng petabyte và nhiều hơn nữa.
+  * Thông lượng và khả năng lưu trữ tăng lên khi các nút được thêm vào.
   
   Cơ sở dữ liệu hiện đại cũng có khả thực hiện các truy vấn, và kiểm soát truy cập bằng SQL hoặc NoSQL,...
   
   Trên thực tế SQL là một tiêu chuẩn quốc tế ANSI và ISO.
 
-  Các công nghệ phân tán với khả năng kết nối các hệ thống tài chính hiện đại, các chuỗi cung ứng, các ngành công nghiệp sáng tạo và ngay cả bản thân mạng Internet đòi hỏi các yêu cầu rất cao về thông lượng, độ trễ và khả năng lưu trữ và nó vượt quá khả năng của bitcoin
+  Các công nghệ phân tán với khả năng kết nối các hệ thống tài chính hiện đại, các chuỗi cung ứng, các ngành công nghiệp sáng tạo và ngay cả bản thân mạng Internet đòi hỏi các yêu cầu rất cao về thông lượng, độ trễ và khả năng lưu trữ và nó vượt quá khả năng của bitcoin.
 
 || Blockchain truyển thống | CSDL phân tán truyền thống| BigchainDB |
 | :-------: | :--: | :---: | :---: |
@@ -301,9 +301,9 @@ Lưu ý:
 
 
 Tác dụng của từng thành phần:
-* BigchainDB Server: Lưu trữ điểm, bảo đảm dữ liệu. Do bigchainDB có khả năng cũng cấp chức năng lưu trữ an toàn, chống giả mạo và gian lận vì vậy nó được sử dùng làm cơ sở dữ liệu chính lưu các điểm (point) của người dùng.
-* MongoDB Server: Lưu trữ thông tin của người dùng, index dữ liệu hỗ trợ truy cập nhanh vào BigchainDB
-* Node Server: Cung cấp API thao tác với database và giao diện, xử lý logic
+* BigchainDB Server: Lưu trữ điểm, bảo đảm dữ liệu. Do bigchainDB có khả năng cũng cấp chức năng lưu trữ an toàn, chống giả mạo và gian lận vì vậy nó được sử dùng làm CSDL chính lưu các điểm (point) của người dùng.
+* MongoDB Server: Lưu trữ thông tin của người dùng, đánh chỉ muc (index) dữ liệu hỗ trợ truy cập nhanh vào BigchainDB.
+* Node Server: Cung cấp API thao tác với CSDL và giao diện, xử lý logic.
 * Angular Server: Cung cấp giao diện cho người dùng.
 
 ## IV Hướng dẫn cài đặt
@@ -313,7 +313,7 @@ Tác dụng của từng thành phần:
   Yêu cầu:
   * python-pip
   * mongodb >=3.4
-  Hướng dẫn sau đây là dành cho hệ điều hành ubuntu 16.04 64bit các hệ điều hành unix khác làm tương tự
+  Hướng dẫn sau đây là dành cho hệ điều hành ubuntu 16.04 64bit các hệ điều hành Unix khác làm tương tự
 
 #### Cài đặt python-pip
 ```
@@ -391,10 +391,10 @@ mặc định client chạy ở http://127.0.0.1:4200
 ## V Kết luận
 
 #### Ưu điểm
-* Sử dụng blockchain cho phép ngăn chặn các hành vi thao tác trái phép vào trong database, dễ dàng mở rộng, phân tán mà không cần một server điểu khiển.
-* Sử dụng thuật toán mã hoá AES giúp ngăn chặn đánh căp thông tin
+* Sử dụng blockchain cho phép ngăn chặn các hành vi thao tác trái phép vào trong CSDL, dễ dàng mở rộng, phân tán mà không cần một server điểu khiển.
+* Sử dụng thuật toán mã hoá AES giúp ngăn chặn đánh căp thông tin.
 #### Nhược điểm
-* Việc mã hoá và giải mã làm hao tốn tài nguyên hơn các thao tác truy xuất database thông thường.
+* Việc mã hoá và giải mã làm hao tốn tài nguyên hơn các thao tác truy xuất CSDL thông thường.
 * Việc đồng bộ dữ liệu giữa các node có độ trễ.
 
 Tài liệu tham khảo:
