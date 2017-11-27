@@ -363,250 +363,6 @@ scrapy crawl quotes -o quotes.json
 [2] https://doc.scrapy.org/en/latest/topics/shell.html
 
 [3] https://doc.scrapy.org/en/0.16/topics/feed-exports.html#topics-feed-exports
-## Các vấn đề cần giải quyết với scrapy
-
-Hệ thống crawler cơ bản gồm 4 bước chính là lựa chọn các trang lấy dữ liệu, đọc html, tách html và lưu trữ. 
-Tuy nhiên không phải mọi trang ta lấy đều đơn giản như vậy. Một số trang web ngăn chặn truy cập bằng 
-tường lửa, yêu cầu đăng nhập mới xem được nội dung, hay một số trang yêu cầu sinh dữ liệu từ phía 
-máy khách. Ta cần xử lý riêng với từng trường hợp đặc biệt. Cụ thể như sau:
-
-### Trang yêu cầu chặn tường lửa
-
-Đối với trang web không cho phép truy cập liên tục trong một thời gian, ta có 
-thể sử dụng cơ chế truy cập có độ trễ. Trong hệ thống scrapy, điều chỉnh cấu hình 
-tham số trong tệp `settings.py`: AUTOTHROTTLE_ENABLED, AUTOTHROTTLE_START_DELAY, 
-AUTOTHROTTLE_MAX_DELAY. Với một số trang không cho phép truy cập quá nhiều, 
-scrapy cho phép sử dụng tầng proxy để đổi địa chỉ IP cho mỗi lần truy cập. 
-Một số tường lửa có thể cho phép truy cập nếu ta đặt trường header phù hợp, 
-ví dụ như ta đặt header là 
-`'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'`
-
-### Trang yêu cầu đăng nhập để truy cập nội dung
-
-Đối với trang yêu cầu đăng nhập để truy cập nội dung, ta cần chèn thông tin 
-header để giữ cookie hiện tại. Phần này ở scrapy ta cấu hình trong tệp 
-`settings.py`.
-
-### Dữ liệu được sinh từ phía máy khách
-
-Với trường hợp máy khách tải dữ liệu bằng cơ chế không đồng bộ (ajax), scrapy 
-thông thường khó xử lý được. Do đó ta nên sử dụng các web driver thay thế 
-cho scrapy. Có thể dùng Selelium, phantom Js để xử lý.
-
-### Đánh dấu các trang đã lấy
-
-Scrapy hỗ trợ việc lưu trữ các trang đã truy cập vào hàng đợi cũng như lưu 
-cache các truy cập đó. Ngoài ra ta nên lưu trữ các đường dẫn vào trong cơ 
-sở dữ liệu như MongoDB để thuận tiện cho việc kiểm tra cũng như phân tích 
-sau này.
-
-## Lưu dữ liệu vào cơ sở dữ liệu
-
-### MongoDB: là kiểu noSQL
-
-Logo MongoDB
-
-![MongoDB](https://github.com/tuantmtb/int3507-2017/blob/master/group3/img/Mongodb-logo.jpeg?raw=true)
-
-Tải docker image của MongoDB [1] về và chạy lệnh:
-
-```lightning
-mongod
-```
-
-Tạo tệp docker-compose.yml có nội dung:
-
-```lightning
-version: "2"
-services:
-    MongoDB:
-        image: mongo:3.2
-        ports:
-            - "27017:27017"
-        volumes:
-            - ./MongoDB-data/:/data/db
-        hostname: MongoDB
-        domainname: coclab.lan
-        cpu_shares: 512             # 0.5 CPU
-        mem_limit: 536870912        # 512 MB RAM
-        privileged: true
-        restart: always
-        stdin_open: true
-        tty: true
-```
-
-Tham chiếu thuật ngữ tương đương giữa MongoDB và MySQL
-
-```lightning
-Database == Database
-Collection == Table
-Document == Row
-```
-
-### Lưu dữ liệu vào cơ sở dữ liệu Mongo
-#### Khung tệp Pipeline.py
-
-```python
-import pymongo
-class MongoPipeline(object):
-    collection_name = 'scrapy_items'
-
-def __init__(self, mongo_uri, mongo_db):
-    self.mongo_uri = mongo_uri
-    self.mongo_db = mongo_db
-
-@classmethod
-def from_crawler(cls, crawler):
-    return cls(
-        mongo_uri=crawler.settings.get('MONGO_URI'),
-        mongo_db=crawler.settings.get('MONGO_DATABASE', 'items')
-    )
-
-def open_spider(self, spider):
-    self.client = pymongo.MongoClient(self.mongo_uri)
-    self.db = self.client[self.mongo_db]
-
-def close_spider(self, spider):
-    self.client.close()
-def process_item(self, item, spider):
-        self.db[self.collection_name].insert(dict(item))
-        return item
-```
-#### Xuất/nhập dữ liệu vào MongoDB
-##### Xuất dữ liệu từ máy chủ
-
-```lightning
-mongodump --archive=crawler.`date +%Y-%m-%d"_"%H-%M-%S`.gz --gzip --db crawler
-```
-
-##### Nhập dữ liệu vào MongoDB
-
-Sao chép thư mục gzip từ chỗ hiện tại đến thư mục chứa nó bằng docker:
-
-```lightning
-docker cp /path/to/file container_id:/root
-```
-
-Khôi phục:
-
-```lightning
-mongorestore --gzip --archive=/root/crawler.2016-04-18_07-40-11.gz --db crawler
-```
-
-[1] : https://hub.docker.com/_/mongo/
-## Item Pipeline
-
-Một item sau khi đã được cào bởi spider sẽ được chuyển đến Item Pipeline để xử lí thông qua một số 
-thành phần được thực hiện tuần tự.
-
-Mỗi thành phần Item pipeline là một lớp Python thực hiện một phương thức đơn giản. Các lớp này nhận 
-item và thực hiện các công việc đối với item và đồng thời quyết định xem item đó có tiếp thục pipeline 
-hay bị bỏ và không còn được tiến hành nữa.
-
-Các ứng dụng tiêu biểu của Item pipeline:
-* Dọn dẹp dữ liệu HTML.
-* Xác nhận dữ liệu được cào (kiểm tra các item chứa các trường nhất định).
-* Kiểm tra (và bỏ) các bản sao.
-* Lưu trữ các item được cào trong cơ sở dữ liệu.
-
-### Viết item pipeline
-Mỗi thành phần item pipeline là một lớp Python thực hiện các phương thức:
-
-```python
-process_item(item, spider)
-```  
-Phương thức này được gọi cho mỗi thành phần item pipeline và phải trả về một đối tượng `Item` 
-(hoặc bất kỳ lớp con nào) hoặc đưa ra một ngoại lệ `DropItem`. Các item bị loại bỏ không còn được xử lý 
-bởi pipeline nữa.
-
-```python
-open_spider(spider)
-```
-Phương thức này được gọi khi spider được mở.
-
-```python
-close_spider(spider)
-```
-Phương thức này được gọi khi spider bị đóng.
-
-### Ví dụ về item pipeline
-#### Xác nhận giá cả và bỏ các mặt hàng không có giá
-
-Giả sử điều chỉnh thuộc tính `price` các mặt hàng không bao gồm thuế VAT (thuộc tính `price_excludes_vat`), 
-và bỏ các item không có giá:
-
-```python
-from scrapy.exceptions import DropItem
-
-class PricePipeline(object):
-
-    vat_factor = 1.15
-
-    def process_item(self, item, spider):
-        if item['price']:
-            if item['price_excludes_vat']:
-                item['price'] = item['price'] * self.vat_factor
-            return item
-        else:
-            raise DropItem("Missing price in %s" % item)
-```
-#### Viết item vào tệp JSON
-Pipeline sau đây lưu trữ tất cả các item đã cào (từ tất cả spider) vào một tệp `items.jl`, chứa mỗi item 
-trên mỗi dòng, được tuần thự theo định dạng JSON:
-
-```python
-import json
-
-class JsonWriterPipeline(object):
-
-    def __init__(self):
-        self.file = open('items.jl', 'wb')
-    
-    def process_item(self, item, spider):
-        line = json.dumps(dict(item)) + "\n"
-        self.file.write(line)
-        return item
-```
-
-#### Ghi các item vào MongoDB
-
-Ghi các item vào MongoDB bằng cách dùng pymongo [1]. Địa chỉ MongoDB và tên cơ sở dữ liệu được chỉ định 
-trong phần cài đặt scrapy.
-
-Điểm chính của ví dụ này là chỉ ra cách sử dụng phương thức `from_crawler()` và cách làm sạch các 
-tài nguyên đúng cách:
-
-```python
-import pymongo
-
-class MongoPipeline(object):
-
-    collection_name = 'scrapy_items'
-    
-    def __init__(self, mongo_uri, mongo_db):
-        self.mongo_uri = mongo_uri
-        self.mongo_db = mongo_db
-    
-    @classmethod
-    def from_crawler(cls, crawler):
-        return cls(
-            mongo_uri=crawler.settings.get('MONGO_URI'),
-            mongo_db=crawler.settings.get('MONGO_DATABASE', 'items')
-        )
-    
-    def open_spider(self, spider):
-        self.client = pymongo.MongoClient(self.mongo_uri)
-        self.db = self.client[self.mongo_db]
-    
-    def close_spider(self, spider):
-        self.client.close()
-    
-    def process_item(self, item, spider):
-        self.db[self.collection_name].insert_one(dict(item))
-        return item
-```
-
-[1] https://api.mongodb.com/python/current/
 ## Spider <a name="spider"></a>
 
 Spider[1] là lớp định nghĩa cách cào một hay nhiều trang, bao gồm cách thực hiện thu thập thông tin và 
@@ -820,6 +576,213 @@ Xpath này loại trừ nội dung từ tập lệnh và các thẻ kiểu (styl
 các nút văn bản chỉ có khoảng trắng [1]
 
 [1] http://stackoverflow.com/a/19350897/2572383
+## Item Pipeline
+
+Một item sau khi đã được cào bởi spider sẽ được chuyển đến Item Pipeline để xử lí thông qua một số 
+thành phần được thực hiện tuần tự.
+
+Mỗi thành phần Item pipeline là một lớp Python thực hiện một phương thức đơn giản. Các lớp này nhận 
+item và thực hiện các công việc đối với item và đồng thời quyết định xem item đó có tiếp thục pipeline 
+hay bị bỏ và không còn được tiến hành nữa.
+
+Các ứng dụng tiêu biểu của Item pipeline:
+* Dọn dẹp dữ liệu HTML.
+* Xác nhận dữ liệu được cào (kiểm tra các item chứa các trường nhất định).
+* Kiểm tra (và bỏ) các bản sao.
+* Lưu trữ các item được cào trong cơ sở dữ liệu.
+
+### Viết item pipeline
+Mỗi thành phần item pipeline là một lớp Python thực hiện các phương thức:
+
+```python
+process_item(item, spider)
+```  
+Phương thức này được gọi cho mỗi thành phần item pipeline và phải trả về một đối tượng `Item` 
+(hoặc bất kỳ lớp con nào) hoặc đưa ra một ngoại lệ `DropItem`. Các item bị loại bỏ không còn được xử lý 
+bởi pipeline nữa.
+
+```python
+open_spider(spider)
+```
+Phương thức này được gọi khi spider được mở.
+
+```python
+close_spider(spider)
+```
+Phương thức này được gọi khi spider bị đóng.
+
+### Ví dụ về item pipeline
+#### Xác nhận giá cả và bỏ các mặt hàng không có giá
+
+Giả sử điều chỉnh thuộc tính `price` các mặt hàng không bao gồm thuế VAT (thuộc tính `price_excludes_vat`), 
+và bỏ các item không có giá:
+
+```python
+from scrapy.exceptions import DropItem
+
+class PricePipeline(object):
+
+    vat_factor = 1.15
+
+    def process_item(self, item, spider):
+        if item['price']:
+            if item['price_excludes_vat']:
+                item['price'] = item['price'] * self.vat_factor
+            return item
+        else:
+            raise DropItem("Missing price in %s" % item)
+```
+#### Viết item vào tệp JSON
+Pipeline sau đây lưu trữ tất cả các item đã cào (từ tất cả spider) vào một tệp `items.jl`, chứa mỗi item 
+trên mỗi dòng, được tuần thự theo định dạng JSON:
+
+```python
+import json
+
+class JsonWriterPipeline(object):
+
+    def __init__(self):
+        self.file = open('items.jl', 'wb')
+    
+    def process_item(self, item, spider):
+        line = json.dumps(dict(item)) + "\n"
+        self.file.write(line)
+        return item
+```
+
+#### Ghi các item vào MongoDB
+
+Ghi các item vào MongoDB bằng cách dùng pymongo [1]. Địa chỉ MongoDB và tên cơ sở dữ liệu được chỉ định 
+trong phần cài đặt scrapy.
+
+Điểm chính của ví dụ này là chỉ ra cách sử dụng phương thức `from_crawler()` và cách làm sạch các 
+tài nguyên đúng cách:
+
+```python
+import pymongo
+
+class MongoPipeline(object):
+
+    collection_name = 'scrapy_items'
+    
+    def __init__(self, mongo_uri, mongo_db):
+        self.mongo_uri = mongo_uri
+        self.mongo_db = mongo_db
+    
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(
+            mongo_uri=crawler.settings.get('MONGO_URI'),
+            mongo_db=crawler.settings.get('MONGO_DATABASE', 'items')
+        )
+    
+    def open_spider(self, spider):
+        self.client = pymongo.MongoClient(self.mongo_uri)
+        self.db = self.client[self.mongo_db]
+    
+    def close_spider(self, spider):
+        self.client.close()
+    
+    def process_item(self, item, spider):
+        self.db[self.collection_name].insert_one(dict(item))
+        return item
+```
+
+[1] https://api.mongodb.com/python/current/
+## Lưu dữ liệu vào cơ sở dữ liệu
+
+### MongoDB: là kiểu noSQL
+
+Logo MongoDB
+
+![MongoDB](https://github.com/tuantmtb/int3507-2017/blob/master/group3/img/Mongodb-logo.jpeg?raw=true)
+
+Tải docker image của MongoDB [1] về và chạy lệnh:
+
+```lightning
+mongod
+```
+
+Tạo tệp docker-compose.yml có nội dung:
+
+```lightning
+version: "2"
+services:
+    MongoDB:
+        image: mongo:3.2
+        ports:
+            - "27017:27017"
+        volumes:
+            - ./MongoDB-data/:/data/db
+        hostname: MongoDB
+        domainname: coclab.lan
+        cpu_shares: 512             # 0.5 CPU
+        mem_limit: 536870912        # 512 MB RAM
+        privileged: true
+        restart: always
+        stdin_open: true
+        tty: true
+```
+
+Tham chiếu thuật ngữ tương đương giữa MongoDB và MySQL
+
+```lightning
+Database == Database
+Collection == Table
+Document == Row
+```
+
+### Lưu dữ liệu vào cơ sở dữ liệu Mongo
+#### Khung tệp Pipeline.py
+
+```python
+import pymongo
+class MongoPipeline(object):
+    collection_name = 'scrapy_items'
+
+def __init__(self, mongo_uri, mongo_db):
+    self.mongo_uri = mongo_uri
+    self.mongo_db = mongo_db
+
+@classmethod
+def from_crawler(cls, crawler):
+    return cls(
+        mongo_uri=crawler.settings.get('MONGO_URI'),
+        mongo_db=crawler.settings.get('MONGO_DATABASE', 'items')
+    )
+
+def open_spider(self, spider):
+    self.client = pymongo.MongoClient(self.mongo_uri)
+    self.db = self.client[self.mongo_db]
+
+def close_spider(self, spider):
+    self.client.close()
+def process_item(self, item, spider):
+        self.db[self.collection_name].insert(dict(item))
+        return item
+```
+#### Xuất/nhập dữ liệu vào MongoDB
+##### Xuất dữ liệu từ máy chủ
+
+```lightning
+mongodump --archive=crawler.`date +%Y-%m-%d"_"%H-%M-%S`.gz --gzip --db crawler
+```
+
+##### Nhập dữ liệu vào MongoDB
+
+Sao chép thư mục gzip từ chỗ hiện tại đến thư mục chứa nó bằng docker:
+
+```lightning
+docker cp /path/to/file container_id:/root
+```
+
+Khôi phục:
+
+```lightning
+mongorestore --gzip --archive=/root/crawler.2016-04-18_07-40-11.gz --db crawler
+```
+
+[1] : https://hub.docker.com/_/mongo/
 ## Cấu hình nâng cao Scrapy
 ### Cấu hình trong thư mục Setting
 #### ITEM_PIPELINES
@@ -914,6 +877,43 @@ Tên cài đặt thường được đặt trước với thành phần mà chú
 giả tưởng robots.txt sẽ là ROBOTSTXT_ENABLED, ROBOTSTXT_OBEY, ROBOTSTXT_CACHEDIR, vv.
 
 [1] https://doc.scrapy.org/en/latest/topics/item-pipeline.html
+## Các vấn đề cần giải quyết với scrapy
+
+Hệ thống crawler cơ bản gồm 4 bước chính là lựa chọn các trang lấy dữ liệu, đọc html, tách html và lưu trữ. 
+Tuy nhiên không phải mọi trang ta lấy đều đơn giản như vậy. Một số trang web ngăn chặn truy cập bằng 
+tường lửa, yêu cầu đăng nhập mới xem được nội dung, hay một số trang yêu cầu sinh dữ liệu từ phía 
+máy khách. Ta cần xử lý riêng với từng trường hợp đặc biệt. Cụ thể như sau:
+
+### Trang yêu cầu chặn tường lửa
+
+Đối với trang web không cho phép truy cập liên tục trong một thời gian, ta có 
+thể sử dụng cơ chế truy cập có độ trễ. Trong hệ thống scrapy, điều chỉnh cấu hình 
+tham số trong tệp `settings.py`: AUTOTHROTTLE_ENABLED, AUTOTHROTTLE_START_DELAY, 
+AUTOTHROTTLE_MAX_DELAY. Với một số trang không cho phép truy cập quá nhiều, 
+scrapy cho phép sử dụng tầng proxy để đổi địa chỉ IP cho mỗi lần truy cập. 
+Một số tường lửa có thể cho phép truy cập nếu ta đặt trường header phù hợp, 
+ví dụ như ta đặt header là 
+`'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'`
+
+### Trang yêu cầu đăng nhập để truy cập nội dung
+
+Đối với trang yêu cầu đăng nhập để truy cập nội dung, ta cần chèn thông tin 
+header để giữ cookie hiện tại. Phần này ở scrapy ta cấu hình trong tệp 
+`settings.py`.
+
+### Dữ liệu được sinh từ phía máy khách
+
+Với trường hợp máy khách tải dữ liệu bằng cơ chế không đồng bộ (ajax), scrapy 
+thông thường khó xử lý được. Do đó ta nên sử dụng các web driver thay thế 
+cho scrapy. Có thể dùng Selelium, phantom Js để xử lý.
+
+### Đánh dấu các trang đã lấy
+
+Scrapy hỗ trợ việc lưu trữ các trang đã truy cập vào hàng đợi cũng như lưu 
+cache các truy cập đó. Ngoài ra ta nên lưu trữ các đường dẫn vào trong cơ 
+sở dữ liệu như MongoDB để thuận tiện cho việc kiểm tra cũng như phân tích 
+sau này.
+
 ## Kết luận
 
 ### Ưu điểm
