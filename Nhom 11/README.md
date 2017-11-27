@@ -14,7 +14,7 @@
 #### I. GIỚI THIỆU CHUNG
 #### 1. Tổng quan về OpenCV
 
-- OpenCV (OpenSource Computer Vision) là một thư viện mã nguồn mở. OpenCV được phát hành theo giấy phép BSD (Berkeley Software Distribution License)[1], do đó nó hoàn toàn miễn phí cho cả học thuật và thương mại.
+- OpenCV (OpenSource Computer Vision) là một thư viện mã nguồn mở. OpenCV được phát hành theo giấy phép BSD (Berkeley Software Distribution License), do đó nó hoàn toàn miễn phí cho cả học thuật và thương mại.
 - Thư viện OpenCV cung cấp cho người dùng các cấu trúc dữ liệu, đối tượng và hàm bằng cách khai báo nguyên mẫu (prototype) của chúng trong các tập tin thư viện C/C++ và định nghĩa chi tiết trong các tập tin mã nguồn. Với mức độ sử dụng OpenCV, ta chỉ cần giải nén các tập tin đã được biên dịch sẵn rồi thực hiện các thao tác cài đặt đường dẫn cho thích hợp để hệ điều hành tìm đến đúng vị trí của các tập tin thư viện. Ở mức độ cao hơn, nếu muốn hiệu chỉnh sửa đổi thuật toán hay sử dụng phần mở rộng của OpenCV ta cần phải biên dịch mã nguồn trực tiếp trên máy trước khi cài đặt.
 - Được viết bằng tối ưu hóa C/C++, thư viện có thể tận dụng lợi thế của xử lý đa lõi. Được sử dụng trên khắp thế giới, OpenCV có cộng đồng hơn 47 nghìn người dùng và số lượng download vượt quá 6 triệu lần. Phạm vi sử dụng từ nghệ thuật tương tác, cho đến lĩnh vực khai thác mỏ, bản đồ trên web hoặc công nghệ robot.
 - Gói chương trình OpenCV kèm theo giao diện đa nền tảng. Ngoài Windows, OpenCV còn hỗ trợ một số ngôn ngữ lập trình khác nhau như C++, C, Python và Java, nếu bạn đang thực hiện các dự án Java thì đây chính là bộ công cụ hỗ trợ vô cùng cần thiết. Trọng tâm chính của phần mềm này là ứng dụng thời gian thực, được phát triển nhờ vào tính năng xử lý nhiều lõi của hệ thống.
