@@ -93,7 +93,7 @@ Các thứ tự hàm AES sẽ thực hiện:
 
 *BigchainDB hoạt động bằng cách xây dựng các tính năng của chuỗi khối trên đầu của một CSDL, thay vì sử dụng chuỗi khối như một CSDL.*
 
-Ở tầng dưới, BigChainDB sử dụng hai cơ sở dữ liệu phân tán, S (bộ giao dịch) và C (chuỗi khối). Chúng được kết nối bằng thuật toán đồng thuận BigChainDB (BigchainDB Consensus Algorithm - BCA). Thuật toán BCA chạy trên mỗi nút đã được ký kết(signing node), cùng với các nút khác trở thành một mạng lưới. Những người dùng (client) không ký kết có thể kết nỗi với mạng lưới của BigChainDB và tùy quyền mà họ có thể đọc, phát hành tài sản(asset), chuyển tài sản và hơn thế nữa.
+Ở tầng dưới, BigChainDB sử dụng hai cơ sở dữ liệu phân tán, S (bộ giao dịch) và C (chuỗi khối). Chúng được kết nối bằng thuật toán đồng thuận BigChainDB (BigchainDB Consensus Algorithm - BCA). Thuật toán BCA chạy trên mỗi nút đã được ký kết(signing node), cùng với các nút khác trở thành một mạng lưới. Những người dùng (client) không ký kết có thể kết nỗi với mạng lưới của BigChainDB và tùy quyền mà họ có thể đọc, phát hành tài sản (asset), chuyển tài sản và hơn thế nữa.
 Với mỗi một cơ sở dữ liệu phân tán, S và C là một cơ sở dữ liệu "lớn" sẵn có (off-the-shell big data). BigChainDB không can thiệp vào hoạt động nội bộ của dữ liệu, vì vậy nó sẽ tận dụng các thuộc tính khả năng mở rộng của chúng, cũng như các tính năng như kiểm soát sửa đổi và lợi ích của chúng. Mỗi CSDL chạy thuật toán đồng thuận nội bộ riêng cho tính nhất quán.
 Các tính năng của chuỗi khối được cho vào CSDL này:
 * Kiểm soát phi tập trung (Decentralized control): Không đối tượng nào sở hữu hay điều khiển mạng lưới.
