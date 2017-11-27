@@ -1,0 +1,130 @@
+<div class="row" *ngIf="!current_point">
+  <div class="col-md-12">
+    Loading...
+  </div>
+</div>
+
+<div class="row" *ngIf="current_point">
+
+  <div class="col-md-12">
+    <div class="card-box">
+      <h4 class="text-dark header-title m-t-0">My Point</h4>
+      <div class="row">
+        <div class="col-md-3 col-xs-6">
+          <label>Name:</label>
+        </div>
+        <div class="col-md-9 col-xs-6">
+          {{current_user.name}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-xs-6">
+          <label>Current Point:</label>
+        </div>
+        <div class="col-md-9 col-xs-6">
+          {{current_point.point}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button [disabled]="processing" type="button" class="btn btn-default waves-effect waves-light" data-toggle="modal" data-target="#create-point-modal">Create Point</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="card-box">
+      <h4 class="text-dark header-title m-t-0">Transfer Point</h4>
+      <div class="table-responsive">
+        <table class="table table-actions-bar table-striped table-bordered m-b-0">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Public Key</th>
+              <th class="text-center">Transfer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of list_user; let i = index ">
+              <td>{{i + 1}}</td>
+              <td>{{user.name}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.publicKey}}</td>
+              <td class="text-center">
+                <button *ngIf="user" (click)="show_transfer_modal(user)" [disabled]="processing || current_point.point == 0" type="button" class="btn btn-default btn-custom waves-effect waves-light" data-toggle="modal" data-target="#transfer-point-modal">
+                  <i class="fa fa-exchange" aria-hidden="true"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Create Point Modal -->
+<div class="modal fade" id="create-point-modal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create Point</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <div class="col-xs-4 text-center">
+              <label>Number point: </label>
+            </div>
+            <div class="col-xs-8">
+              <input [(ngModel)]="number_point" class="form-control" type="number" name="point" />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="create_point(number_point)" data-dismiss="modal">Create</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Transfer Point Modal -->
+<div class="modal fade" id="transfer-point-modal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Transfer point to {{ receiver }}</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <div class="col-xs-4 text-center">
+              <label>Number point: </label>
+            </div>
+            <div class="col-xs-8">
+              <input [(ngModel)]="number_point" class="form-control" type="number" name="point" />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="transfer_point(number_point, receiver)" data-dismiss="modal">Transfer</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

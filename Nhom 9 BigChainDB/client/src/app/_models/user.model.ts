@@ -1,7 +1,9 @@
 export class User {
-    id: number;
-    username: string;
-    password: string;
-    firstName: string;
-    lastName: string;
+  _id: string;
+  publicKey: string;
+  hashPwd: string;
+  admin: boolean;
+  is_lec: boolean;
+  email: string;
+  name: string;
 }

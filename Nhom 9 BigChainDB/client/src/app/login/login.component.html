@@ -7,6 +7,11 @@
     </div>
     <div class="panel-body">
       <form class="form-horizontal m-t-20" name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <label>{{message}}</label>
+          </div>
+        </div>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !private_key.valid }">
           <div class="col-xs-12">
             <input type="text" class="form-control" name="private_key" [(ngModel)]="model.private_key" #private_key="ngModel" placeholder="Private key" required />
