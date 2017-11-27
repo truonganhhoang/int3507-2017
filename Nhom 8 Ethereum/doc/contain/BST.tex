@@ -1,8 +1,8 @@
 \documentclass[../cnd.tex]{subfiles}
 Sau khi giới thiệu các khái niệm cơ bản đằng sau Ethereum, chúng tôi sẽ thảo luận chi tiết hơn về ý nghĩa của giao dịch, khối và trạng thái
 
-\subsubsection{Trạng Thái Thế Giới (World State)}
-Trạng thái thế giới, là một ánh xạ giữa các địa chỉ (các định danh 160-bit) và các trạng thái tài khoản (một cấu trúc dữ liệu được sắp xếp theo RLP, xem Phụ lục B). Mặc dù không được lưu trữ trên chuỗi khối, giả định rằng việc thực hiện sẽ duy trì bản đồ này trong một cây Merkle Patricia được sửa đổi (trie, xem Phụ lục D). Trie yêu cầu một backend cơ sở dữ liệu đơn giản duy trì một bản đồ của bytearrays để bytearrays; chúng ta đặt tên cơ sở dữ liệu cơ bản là cơ sở dữ liệu trạng thái. Điều này có một số lợi ích; đầu tiên nút gốc của cấu trúc này tùy thuộc mật mã vào tất cả các dữ liệu bên trong và do đó băm của nó có thể được sử dụng như một bản sắc an toàn cho toàn bộ trạng thái hệ thống.
+\subsubsection{Thế Giới Trạng Thái (World State)}
+Trạng thái, là một ánh xạ giữa các địa chỉ (các định danh 160-bit) và các trạng thái tài khoản (một cấu trúc dữ liệu được sắp xếp theo RLP, xem Phụ lục B). Mặc dù không được lưu trữ trên chuỗi khối, giả định rằng việc thực hiện sẽ duy trì bản đồ này trong một cây Merkle Patricia được sửa đổi (trie, xem Phụ lục D). Trie yêu cầu một backend cơ sở dữ liệu đơn giản duy trì một bản đồ của bytearrays để bytearrays; chúng ta đặt tên cơ sở dữ liệu cơ bản là cơ sở dữ liệu trạng thái. Điều này có một số lợi ích; đầu tiên nút gốc của cấu trúc này tùy thuộc mật mã vào tất cả các dữ liệu bên trong và do đó băm của nó có thể được sử dụng như một bản sắc an toàn cho toàn bộ trạng thái hệ thống.
 
 Thứ hai, là một cấu trúc dữ liệu không thay đổi, nó cho phép bất kỳ trạng thái trước đó được gọi lại bằng cách đơn giản thay đổi gốc rễ tương ứng. Vì chúng ta lưu trữ tất cả các rễ gốc như vậy trong BlockChain, chúng ta có thể trở lại trạng thái cũ. Trạng thái tài khoản bao gồm bốn lĩnh vực sau:
 

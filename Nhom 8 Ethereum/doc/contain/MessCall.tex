@@ -8,7 +8,7 @@ Ngoài việc đánh giá một trạng thái mới và trạng thái giao dịc
 (\sigma ',g',A,o) = \Theta (\sigma ,s,o,r,c,g,p,v,\tilde{v},d,e)
 \end{align}
 
-Lưu ý rằng đối với cuộc gọi đại diện (DELEGATECALL)  chúng ta cần phải phân biệt giữa giá trị mà được chuyển giao, v, với giá trị bề ngoài trong việc thực thi, ~v. Chúng ta định nghĩa σ1, trạng thái chuyển tiếp đầu tiên như là trang thái gốc nhưng với giá trị chuyển nhượng từ người gửi đến người nhận:
+Lưu ý rằng đối với cuộc gọi đại diện (DELEGATECALL)  chúng ta cần phải phân biệt giữa giá trị mà được chuyển giao, v, với giá trị bề ngoài trong việc thực thi, ~v. Chúng ta định nghĩa $\sigma_1$, trạng thái chuyển tiếp đầu tiên như là trang thái gốc nhưng với giá trị chuyển nhượng từ người gửi đến người nhận:
 \begin{align}	
 \sigma _{1}[r] _b \equiv \sigma _{1}[r] _b + v \wedge \sigma _{1}[s] _b - v
 \end{align}
@@ -16,12 +16,12 @@ Lưu ý rằng đối với cuộc gọi đại diện (DELEGATECALL)  chúng ta
 Thông qua công việc hiện tại, giả định rằng nếu $\sigma _{1}[r]$ không xác định ban đầu, nó sẽ được tạo ra như là một tài khoản không có mã hoặc trạng thái và không cân bằng. Do đó phương trình trước có nghĩa là:
 \begin{align}	
 \sigma _{1} \equiv \sigma ' _{1} \\
-\sigma _{1}[s] _b \equiv \sigma ' _{1}[s] _b –  v \\
+\sigma _{1}[s] _b \equiv \sigma ' _{1}[s] _b-v \\
 \sigma '_{1} \equiv \sigma \\
 \end{align}
 \begin{align}	
 \left\{\begin{matrix}
-\sigma ' _{1}[r] \equiv (v,0,KEC(()),TRIE (\varnothing))  if \sigma [r] = \varnothing\\ 
-\sigma '_{1}[r] _b \equiv \sigma [r] _b + v otherwise
+\sigma ' _{1}[r] \equiv (v,0,KEC(()),TRIE (\varnothing))  & $\sigma [r] = \varnothing$\\ 
+\sigma '_{1}[r] _b \equiv \sigma [r] _b + v &otherwise
 \end{matrix}\right.
 \end{align}
