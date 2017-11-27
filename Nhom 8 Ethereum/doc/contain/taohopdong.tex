@@ -1,0 +1,61 @@
+\documentclass[../cnd.tex]{subfiles}
+
+Có một số các tham số nội tại được sử dụng khi tạo một tài khoản: người gửi (s), giao dịch ban đầu (o), gas có sẵn (g), giá gas (p), sự đóng góp (v) cùng với mảng byte chiều dài tùy ý, i, mã EVM khởi tạo và cuối cùng là chiều sâu hiện tại của ngăn xếp messagecall / hợp đồng tạo (e).
+\newline
+Chúng ta xác định chức năng tạo chính thức như là hàm $\Lambda$, được đánh giá từ các giá trị này, cùng với trạng thái $\sigma$ đến bộ chứa chứa trạng thái mới, còn lại của khí và tích lũy giao dịch tích luỹ $(\sigma_0; g_0; A)$, như sau:
+$$(\sigma',g',A)\equiv \Lambda(\sigma, s, o, g, p, v, i, e)$$
+Địa chỉ của tài khoản mới được định nghĩa là 160 bit bên phải nhất của băm Keccak của mã RLP của cấu trúc chứa chỉ người gửi và nonce. Như vậy chúng ta xác định địa chỉ kết quả cho tài khoản mới a
+$$a \equiv \beta_{96...255}(KEC(RLP(s, \sigma[s]_n-1)))$$
+
+Trong đó KEC là hàm băm Keccak 256-bit, RLP là hàm mã hóa RLP, $B_{a :: b} (X)$ đánh giá giá trị nhị phân chứa các bit các chỉ số trong dải [a, b] của dữ liệu nhị phân X và $\sigma [x]$ là trạng thái địa chỉ của x hoặc $\varnothing$ nếu không có. Lưu ý chúng ta sử dụng một ít hơn giá trị nonce của người gửi; chúng tôi khẳng định rằng chúng tôi đã tăng khoản nonce của tài khoản người gửi trước cuộc gọi này và do đó, giá trị được sử dụng là nonce của người gửi vào lúc bắt đầu giao dịch có trách nhiệm hoặc hoạt động của VM.
+\newline\indent
+Nonce của tài khoản ban đầu được định nghĩa là số không, số dư như giá trị được thông qua, lưu trữ như trống rỗng và mã băm như Keccak 256-bit băm của chuỗi rỗng; số dư của người gửi cũng bị giảm đi bởi giá trị được thông qua. Như vậy trạng thái biến đổi trở thành $\sigma^*$:
+
+$$\sigma^* \equiv \sigma$$
+$$\sigma^*[a] \equiv (0, v+v',TRIE(\varnothing), KEC()$$
+$$\sigma^*[s]_b \equiv sigma[s]_b-v$$
+
+Cuối cùng, tài khoản được khởi tạo thông qua việc thực hiện mã EVM khởi tạo i theo mô hình thực hiện. Việc thực hiện mã có thể ảnh hưởng đến một số sự kiện không thuộc về trạng thái thực hiện: bộ nhớ của tài khoản có thể bị thay đổi, có thể tạo thêm tài khoản và có thể thực hiện các cuộc gọi tin nhắn khác. Như vậy, chức năng thực thi mã $\Theta$ đánh giá cho một bộ của trạng thái kết quả $\sigma^{**}$, còn tồn tại khí g**, tích lũy trạng thái con A và thân mã của tài khoản o.
+
+$$(\sigma^{**},g**,A.o)\equiv \Theta(\sigma^{**}, g, I)$$
+Trong đó I được định nghĩa:
+$$I_a =a$$
+$$I_o =o$$
+$$I_p =p$$
+$$I_d =()$$
+$$I_s =s$$
+$$I_v =v$$
+$$I_b =i$$
+$$I_e =e$$
+
+$I_d$ đánh giá cho bộ trống vì không có dữ liệu đầu vào cho cuộc gọi này. $I_H$ không được điều trị đặc biệt và được xác định từ BlockChain. \newline
+\indent Việc thực hiện mã làm cạn kiệt gas và gas không thể xuống dưới mức 0, do đó việc thực hiện có thể thoát ra trước khi mã đã dừng trạng thái tự nhiên. Trong trường hợp ngoại lệ này (và một vài trường hợp ngoại lệ khác), chúng tôi nói rằng trường hợp ngoại lệ ngoài gas đã xảy ra: Trạng thái được đánh giá được định nghĩa là tập rỗng,$\varnothing$, và toàn bộ hoạt động tạo nên không ảnh hưởng đến trạng thái, như nó đã được ngay lập tức trước khi cố gắng tạo ra.
+\newline\indent
+Nếu mã khởi tạo hoàn thành thành công, chi phí tạo hợp đồng cuối cùng sẽ được thanh toán, chi phí gửi mã c, c, tỷ lệ thuận với kích thước của mã hợp đồng được tạo ra:
+$$c \equiv G_{codedeposit}*|o|$$
+
+Nếu không còn đủ gas để trả chi phí này, tức là $g ** < c$, thì chúng tôi cũng tuyên bố một ngoại lệ ngoài gas.
+\newline \indent 
+Khối lượng còn lại sẽ là số không trong bất kỳ điều kiện đặc biệt nào như vậy, tức là nếu việc tạo ra được thực hiện như một giao dịch, thì điều này không ảnh hưởng đến việc thanh toán chi phí nội tại của hợp đồng; nó được trả bất kể. Tuy nhiên, giá trị của giao dịch không được chuyển đến địa chỉ của hợp đồng bị hủy bỏ khi chúng tôi là ngoài gas.
+\newline \indent 
+Nếu ngoại lệ như vậy không xảy ra, thì gas còn lại được hoàn trả lại cho người khởi tạo và trạng thái đã thay đổi hiện tại được phép tồn tại. Như vậy, chính thức chúng ta có thể chỉ định trạng thái, gas và chất nền kết quả như sau: $(\sigma_0; g_0; A)$ trong đó:
+
+\begin{subnumcases}{g'\equiv}
+0&$\sigma^{**}=\varnothing$ \\
+g^{**}&$g**<c \cap H_i< N_h$\\
+g^{**}-c
+\end{subnumcases}
+
+\begin{subnumcases}{\sigma'\equiv}
+\sigma&$\sigma^{**}=\varnothing$ \\
+\sigma^{**}&$g**<c \cap H_i< N_h$\\
+\sigma'[a]_c = KEC(o)
+\end{subnumcases}
+
+Trường hợp ngoại lệ trong việc xác định $\sigma'$ cho thấy o, chuỗi byte kết quả từ việc thực hiện mã khởi tạo, xác định mã cơ thể cuối cùng cho
+tài khoản mới tạo ra.
+\newline \indent 
+Lưu ý rằng ý định từ khối $N_H$ trở đi (Homestead) là kết quả là hoặc là một hợp đồng mới được tạo ra thành công với sự đóng góp của nó, hoặc không có hợp đồng mới mà không chuyển giá trị. Trước khi Homestead, nếu không có đủ gas để trả c, một tài khoản tại địa chỉ mới của hợp đồng sẽ được tạo ra, cùng với tất cả các tác dụng phụ khởi tạo, và giá trị được chuyển, nhưng không có mã hợp đồng được triển khai.
+
+\subsubsection{Sự tinh tế}
+Lưu ý rằng mặc dù mã khởi tạo được thực hiện, địa chỉ mới tạo được tồn tại nhưng không có mã nội bộ cơ thể. Vì vậy, bất kỳ cuộc gọi tin nhắn nhận được bởi nó trong thời gian này gây ra không có mã được thực hiện. Nếu việc thực hiện khởi tạo kết thúc bằng một chỉ dẫn SUICIDE, vấn đề sẽ được giải quyết vì tài khoản sẽ bị xóa trước khi giao dịch hoàn tất. Đối với một mã STOP bình thường, hoặc nếu mã trả về là trống rỗng, thì trạng thái còn lại với một tài khoản zombie, và số dư còn lại sẽ bị khóa vào tài khoản mãi mãi.

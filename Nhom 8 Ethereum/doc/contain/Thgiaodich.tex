@@ -1,0 +1,92 @@
+\documentclass[../cnd.tex]{subfiles}
+
+Việc thực hiện giao dịch là một phần phức tạp nhất của giao thức Ethereum: nó định nghĩa chức năng chuyển đổi trạng thái $\Upsilon$. Giả định rằng bất kỳ giao dịch nào thực hiện trước tiên sẽ vượt qua các kiểm tra ban đầu về tính hợp lệ nội tại. Bao gồm :
+\begin{itemize}
+	\item Giao dịch này là một RLP được hình thành tốt, không có thêm các byte tiếp theo;
+	\item chữ ký giao dịch hợp lệ;
+	\item nonce giao dịch hợp lệ (tương đương với nonce hiện tại của tài khoản người gửi);
+	\item giới hạn gas không nhỏ hơn gas tự nhiên, g0, được sử dụng bởi giao dịch;
+	\item số dư tài khoản người gửi có ít nhất chi phí, v0, bắt buộc phải trả trước.
+\end{itemize}
+
+Chính thức, chúng ta xem xét hàm $ \Upsilon$, với T là một giao tác và $\sigma$ trạng thái:
+$$\sigma'=\Upsilon(\sigma,T)$$
+Như vậy $\sigma_0$ là trạng thái hậu giao dịch. Chúng tôi cũng định nghĩa $\upsilon^g$ để đánh giá lượng gas được sử dụng trong việc thực hiện một giao dịch và $\upsilon^1$ để đánh giá các hạng mục ghi tích được tích lũy của giao dịch, cả hai đều được định nghĩa chính thức sau đó.
+
+\subsubsection{Trạng thái con}
+Trong suốt quá trình thực hiện giao dịch, chúng tôi tích luỹ một số thông tin được thực hiện ngay sau khi giao dịch. Chúng ta gọi trạng thái con giao dịch này và đại diện nó như là A, là một tuple:
+$$A \equiv (A_s, A_1, A_r)$$
+
+Các nội dung tuple bao gồm $A_s$, bộ tự tử: một bộ tài khoản sẽ được loại bỏ sau khi hoàn thành giao dịch. $A_1$ là chuỗi đăng nhập: đây là một loạt các điểm kiểm tra được lưu trữ và có thể lập chỉ mục trong việc thực hiện mã VM cho phép các cuộc gọi theo hợp đồng dễ dàng theo dõi bởi những người xem bên ngoài thế giới Ethereum (chẳng hạn như các ứng dụng phân quyền trước). Cuối cùng là $A_r$, số dư hoàn lại, tăng lên thông qua việc sử dụng lệnh SSTORE để thiết lập lại dung lượng lưu trữ hợp đồng bằng 0 từ một số giá trị khác không. Mặc dù không được hoàn trả ngay lập tức nhưng nó được phép bù đắp một phần chi phí thực hiện.
+
+Tóm lại, chúng ta xác định các substate trống $A_0$ để không có tự sát, không có bản ghi và một sự cân bằng không hoàn lại:
+
+$$A^0 \equiv (\varnothing, (), 0)$$
+
+\subsubsection{Thực hiện}
+Chúng tôi xác định số gas có sẵn $g_0$, lượng gas giao dịch này đòi hỏi phải được thanh toán trước khi thực hiện, như sau:
+
+\begin{subnumcases}{g_0=\sum_{i \in T_i, T_d}}
+	G_{txdatazero}&$i=0$ \\
+	G_{txdatannonzero}&$i \ne 0$
+\end{subnumcases}
+
+
+\begin{subnumcases}{+}
+G_{txcreate}&$T_t = \varnothing $ \\
+0 &$$
+\end{subnumcases}
+
+$$+G_{transaction}$$
+trong đó $T_i$; $T_d$ là chuỗi các byte của dữ liệu liên quan đến giao dịch và mã EVM khởi tạo, tùy thuộc vào việc giao dịch là để tạo hợp đồng hoặc gửi tin nhắn. $G_txcreate$ được thêm vào nếu giao dịch là hợp đồng tạo ra, nhưng không phải nếu một kết quả của EVM-mã hoặc trước khi chuyển đổi Homestead. G được định nghĩa đầy đủ trong Phụ lục G
+
+Chi phí trả trước $v_0$ được tính như sau:
+$$v_0 \equiv T_gT_p+T_v$$
+Hiệu lực được xác định như sau:
+$$S(T) \ne \varnothing \space\Lambda$$
+$$\sigma[S(T)] \ne \varnothing \space\Lambda$$
+$$T_n = \sigma[S(T)]_n \Lambda$$
+$$g_0 \le T_g \Lambda$$
+$$v_0 \le \sigma[S(T)]_b \Lambda$$
+$$T_g \le B_{Hl}-l(B_R)_u$$
+
+Lưu ý điều kiện cuối cùng; tổng của giới hạn gas của giao dịch, $T_g$, và gas sử dụng trong khối này trước, được đưa ra bởi '$(B_R)_u$, không được lớn hơn gasLimit của khối,$B_{Hl}$.
+\newline
+Việc thực hiện một giao dịch hợp lệ bắt đầu với một sự thay đổi không thể huỷ ngang được thực hiện đối với trạng thái: sự nonce của tài khoản của người gửi, S (T), được gia tăng bởi một và số dư được giảm bởi một phần chi phí lên trước, $T_gT_p$. Gas có sẵn để tính toán tiến trình, g, được định nghĩa là $T_g - g_0$. Việc tính toán, dù là tạo hợp đồng hay một cuộc gọi thư, kết quả là một trạng thái cuối cùng (hợp pháp có thể tương đương với trạng thái hiện tại), sự thay đổi được xác định và không bao giờ hợp lệ: có thể không có giao dịch không hợp lệ từ thời điểm này.
+\newline
+Chúng ta xác định trạng thái trạm kiểm soát $\sigma_0$:
+$$\sigma_0 = \sigma$$
+$$\sigma_0[S(T)]_b=\sigma_0[S(T)]_b-T_gT_p$$
+$$\sigma_0[S(T)]_n =\sigma_0[S(T)]_n+1$$
+
+Đánh giá $\sigma_p$ từ $\sigma_0$ phụ thuộc vào loại giao dịch; tạo hợp đồng hoặc gửi tin nhắn; chúng ta xác định tuple trạng thái tạm thời sau khi thực hiện $\sigma_p$, còn lại gas $g_0$ và trạng thái con A:
+\begin{subnumcases}{(\sigma_P, g',A \equiv)}
+	\Lambda(\sigma_0, S(T),T_o,g, T_p,T_v, T_i,0)&$T_t  = \varnothing$\\
+	\Theta_3(\sigma_0, S(T),T_o,T_t,T_t,g, T_p,T_v,T_v, T_d,0)
+\end{subnumcases}
+
+g là lượng gas còn lại sau khi trừ đi số tiền cơ bản cần thiết để trả cho sự tồn tại của giao dịch:
+$$g \equiv T_g-g_0$$
+
+và $T_o $ là giao dịch ban đầu, có thể khác với người gửi trong trường hợp một cuộc gọi thư hoặc hợp đồng tạo không trực tiếp gây ra bởi một giao dịch mà đến từ việc thực hiện mã EVM. \newline
+Lưu ý chúng ta sử dụng $\Theta_3$ để biểu thị thực tế là chỉ có ba thành phần đầu tiên của giá trị chức năng được lấy; cuối cùng đại diện cho giá trị đầu ra của một cuộc gọi (một mảng byte) và không được sử dụng trong bối cảnh đánh giá giao dịch.
+\newline
+Sau khi cuộc gọi thông báo hoặc hợp đồng được tạo xong, trạng thái sẽ được hoàn thành bằng cách xác định số tiền được hoàn lại, g* từ gas gas còn lại, $g_0$, cộng thêm khoản trợ cấp từ bộ phận hoàn trả cho người gửi ở mức ban đầu.
+$$g*= g'+ \min{\left\lfloor\dfrac{T_g-g'}{2} \right\rfloor , A_r}$$
+
+Tổng số tiền hoàn lại là gas còn lại $g_0$ hợp pháp, được thêm vào $A_r$, với thành phần thứ hai được giới hạn tối đa một nửa (làm tròn) của tổng số tiền được sử dụng $T_g - g_0$.
+\newline
+\indent Các Ether cho gas được trao cho người khai thác mỏ, mà địa chỉ được xác định như là người thụ hưởng của khối hiện tại B. Vì vậy, chúng tôi xác định trước khi trạng thái $\sigma$* về trạng thái tạm thời $\sigma_P$:
+$$\sigma^* \equiv \sigma_P$$
+$$ \sigma^*[S(T)]_b \equiv \sigma_P[S(T)]_b +g*T_p	$$
+$$\sigma^*[m]_b \equiv\sigma_P[m]_b +(T_g-g*)T_p $$
+$$m \equiv B_{H_c}$$
+
+Trạng thái cuối cùng, $\sigma_0$, đạt được sau khi xóa tất cả các tài khoản xuất hiện trong danh sách xóa:
+
+$$\sigma' \equiv \sigma^*$$
+$$\sigma' \equiv \varnothing $$
+
+Và cuối cùng, chúng ta chỉ định $\Upsilon^g$, tổng lượng gas được sử dụng trong giao dịch này và $\Upsilon^1$, các bản ghi được tạo ra bởi giao dịch này:
+$$\Upsilon^g(\sigma,T)\equiv T_g-g'$$
+$$\Upsilon^1(\sigma,T)\equiv A_1 $$
