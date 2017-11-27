@@ -3,7 +3,9 @@
 Đây là một ứng dụng rất đơn giản để giới thiệu về một trong các ứng dụng quan trọng của nền tảng Ethereum - ứng dụng phi tập trung (decenterlized app). Ứng dụng mô tả một cuộc bầu cử đơn giản, các thông tin về việc bầu cử đều được ẩn danh, mỗi lần bầu cử ứng với một giao dịch trên Ethereum, được lưu vào chuỗi khối và không thể bị thay đổi.
 
 \subsection{Mô tả về yêu cầu ứng dụng}
-Ứng dụng cho phép người dùng thông thường đăng ký một tài khoản Ethereum trên mạng thử nghiệm (ứng dụng này sử dụng mạng thử nghiệm của Ethereum có tên là Rinkeby). Để có thể bầu chọn trong ứng dụng, người sử dụng sẽ cần có ether trong tài khoản bằng cách xin cấp miễn phí tại \url{https://faucet.rinkeby.io}. Khi đã có tài khoản của mình, người dùng có thể sử dụng chức năng bầu cử và chỉ được bầu cử một lần duy nhất với mỗi tài khoản Ethereum.
+Ứng dụng cho phép người dùng thông thường đăng ký một tài khoản Ethereum trên mạng thử nghiệm (ứng dụng này sử dụng mạng thử nghiệm của Ethereum có tên là Rinkeby$^{[7]}$).
+
+Để có thể bầu chọn trong ứng dụng, người sử dụng sẽ cần có ether trong tài khoản bằng cách xin cấp miễn phí tại \url{https://faucet.rinkeby.io}. Khi đã có tài khoản của mình, người dùng có thể sử dụng chức năng bầu cử và chỉ được bầu cử một lần duy nhất với mỗi tài khoản Ethereum.
 
 \subsection{Tạo lập môi trường giao tiếp với mạng Ethereum}
 
@@ -21,7 +23,9 @@ Sau khi cài đặt xong để chạy Geth ta sẽ dùng câu lệnh:
 geth --rinkeby --rpc --rpcapi db,eth,net,web3,personal
 \end{lstlisting}
 
-Ta sẽ thấy một số tham số, --rinkeby để chỉ định mạng thử nghiệm mà chúng ta sử dụng, --rpcapi chỉ định các giao diện lập trình ứng dụng mà ta có thể sử dụng để giao tiếp với chương trình Geth này. Sau khi thực hiện câu lệnh, bạn sẽ phải đợi một khoảng thời gian đáng kể để chương trình tải về chuỗi khối, bạn phải lưu ý rằng chương trình phải có chuỗi khối mới nhất thì mới có thể thực hiện giao dịch nhưng vẫn có thể nhận ether một cách bình thường. Vậy là ta đã có một nút trên mạng Ethereum và có thể sử dụng web3 - một thư viện cung cấp các giao diện lập trình trên mạng Ethereum để thực hiện các yêu cầu theo mong muốn của ứng dụng bầu cử.
+Ta sẽ thấy một số tham số, --rinkeby để chỉ định mạng thử nghiệm mà chúng ta sử dụng, --rpcapi chỉ định các giao diện lập trình ứng dụng mà ta có thể sử dụng để giao tiếp với chương trình Geth này. Sau khi thực hiện câu lệnh, bạn sẽ phải đợi một khoảng thời gian đáng kể để chương trình tải về chuỗi khối, bạn phải lưu ý rằng chương trình phải có chuỗi khối mới nhất thì mới có thể thực hiện giao dịch nhưng vẫn có thể nhận ether một cách bình thường. 
+
+Vậy là ta đã có một nút trên mạng Ethereum và có thể sử dụng web3$^{[8]}$ - một thư viện cung cấp các giao diện lập trình trên mạng Ethereum để thực hiện các yêu cầu theo mong muốn của ứng dụng bầu cử.
 
 \subsection{Xây dựng ứng dụng}
 
@@ -62,7 +66,7 @@ npm run server:dev
 \end{lstlisting}
 
 \subsubsection{Frontend}
-Phía frontend được viết bằng khung làm việc VueJS, được sử dụng để xây dựng ứng dụng một trang (Single Page Application) một cách nhanh chóng.
+Phía frontend được viết bằng khung làm việc VueJS$^{[9]}$, được sử dụng để xây dựng ứng dụng một trang (Single Page Application) một cách nhanh chóng.
 Để chạy chương trình phía frontend bạn cần chạy câu lệnh
 \begin{lstlisting}[language=bash]
 npm run dev
