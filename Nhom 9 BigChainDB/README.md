@@ -90,9 +90,8 @@ Các thứ tự hàm AES sẽ thực hiện:
 
 ### Kiến trúc của BigChainDB
 ![alt tag](https://zdnet2.cbsistatic.com/hub/i/r/2017/03/02/ab5ecffb-030c-4d4e-92c6-13db85a97d2e/resize/770xauto/d5e9a5a777c4f0e55ad4c62bb92bcccf/bigchainarchitecture.png)
-Ảnh: BigchainDB hoạt động bằng cách xây dựng các tính năng của chuỗi khối trên tầng trên của một CSDL, thay vì sử dụng chuỗi khối như một CSDL.
 
-*BigchainDB hoạt động bằng cách xây dựng các tính năng của chuỗi khối trên đầu của một CSDL, thay vì sử dụng chuỗi khối như một CSDL.
+*BigchainDB hoạt động bằng cách xây dựng các tính năng của chuỗi khối trên đầu của một CSDL, thay vì sử dụng chuỗi khối như một CSDL.*
 
 Ở tầng dưới, BigChainDB sử dụng hai cơ sở dữ liệu phân tán, S (bộ giao dịch) và C (chuỗi khối). Chúng được kết nối bằng thuật toán đồng thuận BigChainDB (BigchainDB Consensus Algorithm - BCA). Thuật toán BCA chạy trên mỗi nút đã được ký kết(signing node), cùng với các nút khác trở thành một mạng lưới. Những người dùng (client) không ký kết có thể kết nỗi với mạng lưới của BigChainDB và tùy quyền mà họ có thể đọc, phát hành tài sản(asset), chuyển tài sản và hơn thế nữa.
 Với mỗi một cơ sở dữ liệu phân tán, S và C là một cơ sở dữ liệu "lớn" sẵn có (off-the-shell big data). BigChainDB không can thiệp vào hoạt động nội bộ của dữ liệu, vì vậy nó sẽ tận dụng các thuộc tính khả năng mở rộng của chúng, cũng như các tính năng như kiểm soát sửa đổi và lợi ích của chúng. Mỗi CSDL chạy thuật toán đồng thuận nội bộ riêng cho tính nhất quán.
