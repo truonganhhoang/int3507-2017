@@ -20,3 +20,4 @@ with open('../README.md', 'w') as outfile:
             for line in infile:
                 outfile.write(line)
         outfile.write('\n')
+print("done")

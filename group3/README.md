@@ -6,7 +6,7 @@
 
 - Trần Minh Tuấn
 - Trần Thị Thanh Huyền
-- Nguyễn Hoàng Hải
+- Hoàng Văn Hải
 - Nguyễn Thị Hồng Hải
 
 # Đặt vấn đề
