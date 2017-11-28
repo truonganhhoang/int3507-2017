@@ -14,14 +14,4 @@ Lưu ý rằng đối với cuộc gọi đại diện (DELEGATECALL)  chúng ta
 \end{align}
 
 Thông qua công việc hiện tại, giả định rằng nếu $\sigma _{1}[r]$ không xác định ban đầu, nó sẽ được tạo ra như là một tài khoản không có mã hoặc trạng thái và không cân bằng. Do đó phương trình trước có nghĩa là:
-\begin{align}	
-\sigma _{1} \equiv \sigma ' _{1} \\
-\sigma _{1}[s] _b \equiv \sigma ' _{1}[s] _b-v \\
-\sigma '_{1} \equiv \sigma \\
-\end{align}
-\begin{align}	
-\left\{\begin{matrix}
-\sigma ' _{1}[r] \equiv (v,0,KEC(()),TRIE (\varnothing))  & $\sigma [r] = \varnothing$\\ 
-\sigma '_{1}[r] _b \equiv \sigma [r] _b + v &otherwise
-\end{matrix}\right.
-\end{align}
+
