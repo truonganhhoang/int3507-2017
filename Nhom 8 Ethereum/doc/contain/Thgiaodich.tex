@@ -1,6 +1,6 @@
 \documentclass[../cnd.tex]{subfiles}
 
-Việc thực hiện giao dịch là một phần phức tạp nhất của giao thức Ethereum: nó định nghĩa chức năng chuyển đổi trạng thái $\Upsilon$. Giả định rằng bất kỳ giao dịch nào thực hiện trước tiên sẽ vượt qua các kiểm tra ban đầu về tính hợp lệ nội tại. Bao gồm :
+Việc thực hiện giao dịch là một phần phức tạp nhất của giao thức Ethereum: nó định nghĩa một hàm chuyển đổi trạng thái $\Upsilon$. Giả định rằng bất kỳ giao dịch nào thực hiện trước tiên sẽ vượt qua các kiểm tra ban đầu về tính hợp lệ bên trong của Ethereum. Bao gồm :
 \begin{itemize}
 	\item Giao dịch này là một RLP được hình thành tốt, không có thêm các byte tiếp theo;
 	\item chữ ký giao dịch hợp lệ;
@@ -9,17 +9,17 @@ Việc thực hiện giao dịch là một phần phức tạp nhất của giao
 	\item số dư tài khoản người gửi có ít nhất chi phí, v0, bắt buộc phải trả trước.
 \end{itemize}
 
-Chính thức, chúng ta xem xét hàm $ \Upsilon$, với T là một giao tác và $\sigma$ trạng thái:
+Chúng ta xem xét hàm $ \Upsilon$, với T là một giao tác và $\sigma$ trạng thái:
 $$\sigma'=\Upsilon(\sigma,T)$$
-Như vậy $\sigma_0$ là trạng thái hậu giao dịch. Chúng tôi cũng định nghĩa $\upsilon^g$ để đánh giá lượng gas được sử dụng trong việc thực hiện một giao dịch và $\upsilon^1$ để đánh giá các hạng mục ghi tích được tích lũy của giao dịch, cả hai đều được định nghĩa chính thức sau đó.
+Như vậy $\sigma'$ là trạng thái hậu giao dịch. Chúng tôi cũng định nghĩa $\Upsilon^g$ để đánh giá lượng gas được sử dụng trong việc thực hiện một giao dịch và $\Upsilon^1$ để đánh giá các hạng mục giao dịch được ghi lại, cả hai đều được định nghĩa chính thức sau đó.
 
 \subsubsection{Trạng thái con}
-Trong suốt quá trình thực hiện giao dịch, chúng tôi tích luỹ một số thông tin được thực hiện ngay sau khi giao dịch. Chúng ta gọi trạng thái con giao dịch này và đại diện nó như là A, là một tuple:
+Trong suốt quá trình thực hiện giao dịch, chúng tôi tích luỹ một số thông tin được thực hiện ngay sau khi giao dịch. Chúng ta gọi trạng thái con giao dịch này và ký hiệu nó là A, là một tuple:
 $$A \equiv (A_s, A_1, A_r)$$
 
-Các nội dung tuple bao gồm $A_s$, bộ tự tử: một bộ tài khoản sẽ được loại bỏ sau khi hoàn thành giao dịch. $A_1$ là chuỗi đăng nhập: đây là một loạt các điểm kiểm tra được lưu trữ và có thể lập chỉ mục trong việc thực hiện mã VM cho phép các cuộc gọi theo hợp đồng dễ dàng theo dõi bởi những người xem bên ngoài thế giới Ethereum (chẳng hạn như các ứng dụng phân quyền trước). Cuối cùng là $A_r$, số dư hoàn lại, tăng lên thông qua việc sử dụng lệnh SSTORE để thiết lập lại dung lượng lưu trữ hợp đồng bằng 0 từ một số giá trị khác không. Mặc dù không được hoàn trả ngay lập tức nhưng nó được phép bù đắp một phần chi phí thực hiện.
+Các nội dung tuple bao gồm $A_s$, bộ tự hủy: một bộ tài khoản sẽ được loại bỏ sau khi hoàn thành giao dịch. $A_1$ là chuỗi đăng nhập: đây là một loạt các điểm kiểm tra được lưu trữ và có thể lập chỉ mục trong việc thực hiện mã VM cho phép các cuộc gọi theo hợp đồng dễ dàng theo dõi bởi những người xem bên Ethereum (chẳng hạn như các ứng dụng phân quyền trước). Cuối cùng là $A_r$, số dư hoàn lại, tăng lên thông qua việc sử dụng lệnh SSTORE để thiết lập lại dung lượng lưu trữ hợp đồng bằng 0 từ một số giá trị khác không. Mặc dù không được hoàn trả ngay lập tức nhưng nó được phép bù đắp một phần chi phí thực hiện.
 
-Tóm lại, chúng ta xác định các substate trống $A_0$ để không có tự sát, không có bản ghi và một sự cân bằng không hoàn lại:
+Tóm lại, chúng ta xác định các trạng thái con trống $A_0$ để không có tự hủy, không có bản ghi và hoàn lại cho Balance một giá trị bằng không:
 
 $$A^0 \equiv (\varnothing, (), 0)$$
 
@@ -38,7 +38,7 @@ G_{txcreate}&$T_t = \varnothing $ \\
 \end{subnumcases}
 
 $$+G_{transaction}$$
-trong đó $T_i$; $T_d$ là chuỗi các byte của dữ liệu liên quan đến giao dịch và mã EVM khởi tạo, tùy thuộc vào việc giao dịch là để tạo hợp đồng hoặc gửi tin nhắn. $G_txcreate$ được thêm vào nếu giao dịch là hợp đồng tạo ra, nhưng không phải nếu một kết quả của EVM-mã hoặc trước khi chuyển đổi Homestead. G được định nghĩa đầy đủ trong Phụ lục G
+trong đó $T_i$; $T_d$ là chuỗi các byte của dữ liệu liên quan đến giao dịch và mã EVM khởi tạo, tùy thuộc vào việc giao dịch là để tạo hợp đồng hoặc gửi tin nhắn. $G_txcreate$ được thêm vào nếu giao dịch là hợp đồng tạo ra, nhưng không phải nếu một kết quả của EVM-mã hoặc trước khi chuyển đổi Homestead.
 
 Chi phí trả trước $v_0$ được tính như sau:
 $$v_0 \equiv T_gT_p+T_v$$
@@ -69,7 +69,7 @@ g là lượng gas còn lại sau khi trừ đi số tiền cơ bản cần thi�
 $$g \equiv T_g-g_0$$
 
 và $T_o $ là giao dịch ban đầu, có thể khác với người gửi trong trường hợp một cuộc gọi thư hoặc hợp đồng tạo không trực tiếp gây ra bởi một giao dịch mà đến từ việc thực hiện mã EVM. \newline
-Lưu ý chúng ta sử dụng $\Theta_3$ để biểu thị thực tế là chỉ có ba thành phần đầu tiên của giá trị chức năng được lấy; cuối cùng đại diện cho giá trị đầu ra của một cuộc gọi (một mảng byte) và không được sử dụng trong bối cảnh đánh giá giao dịch.
+Lưu ý chúng ta sử dụng $\Theta_3$ để biểu thị thực tế là chỉ có ba thành phần đầu tiên của giá trị chức năng được lấy; cuối cùng đại diện cho giá trị đầu ra của một cuộc gọi (một mảng byte).
 \newline
 Sau khi cuộc gọi thông báo hoặc hợp đồng được tạo xong, trạng thái sẽ được hoàn thành bằng cách xác định số tiền được hoàn lại, g* từ gas gas còn lại, $g_0$, cộng thêm khoản trợ cấp từ bộ phận hoàn trả cho người gửi ở mức ban đầu.
 $$g*= g'+ \min{\left\lfloor\dfrac{T_g-g'}{2} \right\rfloor , A_r}$$
