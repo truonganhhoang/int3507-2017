@@ -113,6 +113,7 @@
       },
       voteForCandidate(passphrase) {
         let name = this.name
+        this.hideModal()
         if (passphrase == null || passphrase == "") {
           return
         } else {
@@ -124,7 +125,6 @@
             passphrase
           }).then(res => {
             this.getVote(name)
-            this.hideModal()
             new Noty({
               text: 'You voted successfully!',
               type: 'success',

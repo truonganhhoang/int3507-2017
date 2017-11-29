@@ -8,15 +8,14 @@ Quá trình hoàn thiện khối liên quan đến bốn giai đoạn:
 	nonce.
 \end{itemize}
 
-\subsubsection{Xác nhận ommers}
-Việc xác nhận các tiêu đề ommer có nghĩa là không có gì hơn là xác minh rằng mỗi tiêu đề ommer là cả hai tiêu đề hợp lệ và đáp ứng các mối quan hệ của thế hệ thứ N ommer đến khối hiện tại nơi N $\le$ 6. Tối đa của tiêu đề ommer là hai.
-
+\subsubsection{Xác nhận \textbf{ommers}}
+Việc xác nhận các tiêu đề ommer không có gì hơn bằng cách bằng xác minh rằng mỗi tiêu đề ommer gồm xác định tiêu đề hợp lệ và sự đáp ứng các mối quan hệ của ommer đến khối hiện tại.
 \subsubsection{Xác nhận giao dịch}
 Loại gas đã sử dụng phải tương ứng trung thực với các giao dịch được liệt kê: $B_{H_g}$, tổng lượng gas sử dụng trong khối, phải bằng gas tích lũy được sử dụng theo giao dịch cuối cùng:
 
 \subsubsection{Ứng dụng thưởng}
 
-Việc áp dụng các phần thưởng vào một khối liên quan đến việc nâng cao sự cân bằng của các tài khoản của địa chỉ thụ hưởng của khối và mỗi ommer của một số tiền nhất định. Chúng tôi tăng tài khoản thụ hưởng của khối bằng $R_b$; cho mỗi ommer, chúng ta nâng số người thụ hưởng của block thêm $\dfrac{1}{32}$ phần thưởng block và người thụ hưởng ommer sẽ nhận được phần thưởng tùy thuộc vào số block. Chính thức chúng ta định nghĩa hàm $\Omega$:
+Việc áp dụng các phần thưởng vào một khối liên quan đến việc nâng cao sự cân bằng của các tài khoản của địa chỉ thụ hưởng của khối. Hệ thống tăng tài khoản thụ hưởng của khối bằng $R_b$; cho mỗi ommer, chúng ta nâng số người thụ hưởng của khối thêm $\dfrac{1}{32}$ phần thưởng của khối và người thụ hưởng ommer sẽ nhận được phần thưởng tùy thuộc vào số khối. Ta định nghĩa hàm $\Omega$:
 $$\Omega(B, \sigma)\equiv \sigma' : \sigma = \sigma$$
 $$\sigma[B_{H_c}]_b= \sigma[B_{H_c}]_b+ (1+\dfrac{||B_U||}{32})R_b$$
 $$\forall U \in B_U: \sigma'[U_c]_b=  \sigma[U_c]_b+(1+\dfrac{1}{8}(U_i- B_{H_i}))R_b$$
