@@ -42,6 +42,7 @@ Khối trong Ethereum là bộ sưu tập các mẩu thông tin có liên quan (
 	\item \textbf{transactionsRoot}: Băm 256 bit Keccak của nút gốc của cấu trúc trie được điền với mỗi giao dịch trong phần danh sách giao dịch của khối; ký hiệu $H_t$.
 	\item \textbf{receiptsRoot}: băm Keccak 256-bit của nút gốc của cấu trúc trie với các biên nhận của mỗi giao dịch trong phần danh sách giao dịch của khối; ký hiệu: $H_e$.
 	\item \textbf{logsBloom}: Bộ lọc Bloom bao gồm thông tin có thể lập chỉ mục (địa chỉ logger và chủ đề đăng nhập) chứa trong mỗi mục nhập nhật ký từ mỗi lần nhận được trong danh sách giao dịch; ký hiệu $H_b$.
+	\item \textbf{Độ khó}: là một giá trị vô hướng chỉ mức độ khó trong tính toán của khối này. Nó được tính từ các độ khó của khối trước đó. Ký hiệu $H_d$
 	\item \textbf{number}: Một giá trị vô hướng bằng số khối tổ tiên. Khối nguồn có một số không; ký hiệu $H_i$.
 	\item \textbf{gasLimit} : một giá trị vô hướng bằng mức giới hạn hiện tại của chi phí gas trên mỗi block; ký hiệu: $H_l$. gasUsed: một giá trị vô hướng bằng tổng lượng gas được sử dụng trong các giao dịch trong khối này; ký hiệu $H_g$.
 	\item \textbf{gasUsed}: một giá trị vô hướng bằng tổng lượng gas được sử dụng trong các giao dịch trong khối này; ký hiệu $H_g$
