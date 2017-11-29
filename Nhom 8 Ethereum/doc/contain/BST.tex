@@ -7,8 +7,8 @@ Trạng thái, là một ánh xạ giữa các địa chỉ (các định danh 1
 Thứ hai, là một cấu trúc dữ liệu không thay đổi, nó cho phép bất kỳ trạng thái trước đó được gọi lại bằng cách đơn giản thay đổi gốc rễ tương ứng. Vì chúng ta lưu trữ tất cả các rễ gốc như vậy trong BlockChain, chúng ta có thể trở lại trạng thái cũ. Trạng thái tài khoản bao gồm bốn lĩnh vực sau:
 
 \begin{itemize}
-	\item \textbf{nonce}: Giá trị vô hướng bằng số lượng các giao dịch được gửi từ địa chỉ này hoặc, trong trường hợp tài khoản có mã liên quan, số lượng hợp đồng tạo ra bởi tài khoản này. Đối với địa chỉ một trong tiểu bang $\sigma$, điều này sẽ được biểu hiện chính thức $\sigma[a]_n$.
-	\item \textbf{balance}:A scalar value equal to the number of Wei owned by this address. Formally denoted $\sigma[a]_n$.
+	\item \textbf{nonce}: Giá trị vô hướng bằng số lượng các giao dịch được gửi từ địa chỉ này hoặc, trong trường hợp tài khoản có mã liên quan, số lượng hợp đồng tạo ra bởi tài khoản này. Đối với địa chỉ một trong trạng thái $\sigma$, điều này sẽ được biểu hiện chính thức $\sigma[a]_n$.
+	\item \textbf{balance}: Một giá trị vô hướng bằng số Wei sở hữu bởi chính địa chỉ đó. Định nghĩa là $\sigma[a]_n$.
 	\item \textbf{storageRoot}:Một băm 256 bit của nút gốc của cây Merkle Patricia mã hóa nội dung lưu trữ của tài khoản (một bản đồ giữa các giá trị số nguyên 256-bit), được mã hoá thành trie như một bản đồ từ 256-bit băm Keccak của 256 -bit các phím số nguyên đến các giá trị số nguyên 256-bit mã hóa RLP. Băm được biểu thức chính thức là  $\sigma[a]_s$. 
 	\item \textbf{codeHash}: là mã băm của máy ảo EVM của tài khoản đó-đây là đoạn mã được thực hiện khi địa chỉ này nhận được một cuộc gọi tin nhắn; nó là không thay đổi và do đó, không giống như tất cả các lĩnh vực khác, không thể thay đổi sau khi xây dựng. Tất cả các đoạn mã như vậy được chứa trong cơ sở dữ liệu trạng thái dưới các giá trị tương ứng của nó để truy xuất sau đó. Băm này được biểu hiện chính thức là $\sigma[a]_c$, và do đó mã có thể được ký hiệu là b, và KEC (b) = $\sigma[a]$.
 \end{itemize}
