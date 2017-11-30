@@ -124,8 +124,8 @@ Ghi chú : Nếu bạn không nhìn thấy điều này, hãy liên hệ với n
 <br>
 **1. Phương thức (Methods)**
 <br>
-<p>Dafny giống như một ngôn ngữ lập trình bắt buộc điển hình. Nó có các phương thức( methods), biến(variables), kiểu(types), vòng lặp(loops), các phát biểu(if statements), mảng(arrays), số nguyên, và nhiều hơn nữa. Một trong những đơn vị cơ bản của bất kỳ chương trình Dafny nào là phương thức.</p>
-<p>Phương thức( method) là một đoạn mã bắt buộc để thực thi. Trong các ngôn ngữ khác, chúng có thể được gọi là thủ tục, hoặc các chức năng, nhưng trong Dafny, thuật ngữ "chức năng( function)" được dành riêng cho một khái niệm khác mà chúng ta sẽ trình bày sau. Phương pháp được khai báo theo cách sau:</p>
+<p>Dafny giống như một ngôn ngữ lập trình bắt buộc điển hình. Nó có các phương thức ( methods), biến (variables), kiểu (types), vòng lặp (loops), các phát biểu (if statements), mảng (arrays), số nguyên, và nhiều hơn nữa. Một trong những đơn vị cơ bản của bất kỳ chương trình Dafny nào là phương thức.</p>
+<p>Phương thức (method) là một đoạn mã bắt buộc để thực thi. Trong các ngôn ngữ khác, chúng có thể được gọi là thủ tục, hoặc các chức năng, nhưng trong Dafny, thuật ngữ "chức năng (function)" được dành riêng cho một khái niệm khác mà chúng ta sẽ trình bày sau. Phương thức được khai báo theo cách sau:</p>
 
 ```
 method Abs(x: int) returns (y: int)
@@ -133,7 +133,7 @@ method Abs(x: int) returns (y: int)
   y:= 5
 }
 ```
-<p>Phương thức Abs lấy một tham số số nguyên: x, và trả về một số nguyên: y. Lưu ý rằng phải nói rõ loại của tham số và giá trị trả về. Ngoài ra, các giá trị trả về được đặt tên và có thể có nhiều giá trị trả về, như trong dưới đây:</p>
+<p>Phương thức Abs lấy một tham số số nguyên: x, và trả về một số nguyên: y. Lưu ý rằng phải nói rõ loại của tham số và giá trị trả về. Ngoài ra, các giá trị trả về được đặt tên và có thể có nhiều giá trị trả về, như trong ví dụ dưới đây:</p>
 
 ```
 method MultipleReturns(x: int, y: int) returns (more: int, less: int)
@@ -150,7 +150,7 @@ method MultipleReturns(x: int, y: int) returns (more: int, less: int)
  ";": kết thúc câu lệnh.<br>
  // và / * * /: comment, không ảnh hưởng đến code khi chạy chương trình.<br>
    <p> Để trả lại một giá trị từ một phương thức, giá trị được gán cho một trong những giá trị trả về có tên trước khi một câu lệnh trả về. Trong thực tế, các giá trị trả về hoạt động rất giống với các biến cục bộ, và có thể được gán cho nhiều hơn một lần. Tuy nhiên, các tham số đầu vào chỉ có thể đọc.</p>
- <p> Câu lệnh “return” được sử dụng khi người ta muốn quay trở lại trước khi kết thúc phần thân của phương thức. Câu lệnh “return” có thể chỉ là từ khóa trả về (trong đó giá trị hiện tại của các tham số ra được sử dụng), hoặc chúng có thể lấy một danh sách các giá trị để trả về. Ngoài ra, còn có các câu lệnh phức hợp, chẳng hạn như câu lệnh “if”. Nếu câu lệnh yêu cầu dấu ngoặc quanh điều kiện boolean và hành động như mong muốn:</p>
+ <p> Câu lệnh “return” được sử dụng khi người ta muốn quay trở lại trước khi kết thúc phần thân của phương thức. Câu lệnh “return” có thể chỉ là từ khóa trả về (trong đó giá trị hiện tại của các tham số ra được sử dụng), hoặc chúng có thể lấy một danh sách các giá trị để trả về. Ngoài ra, còn có các câu lệnh phức hợp, chẳng hạn như câu lệnh “if”. Câu lệnh "if "yêu cầu dấu ngoặc quanh điều kiện boolean và hành động như mong muốn:</p>
  
 ```
 method Abs(x: int) returns (y: int)
@@ -161,11 +161,11 @@ method Abs(x: int) returns (y: int)
       { return x; }
 }
 ```
-<p>Dafny luôn cần căc dấu "{}" cho các khối lệnh ở các nhánh, ngay cả khi nhánh chỉ chứa một lệnh duy nhất. Ở đây câu lệnh "if" kiểm tra xem x có nhỏ hơn "0", sử dụng cú pháp của toán tử so khớp quen thuộc và trả về giá trị tuyệt đối nếu thích hợp. (Các toán tử so sánh khác là <=,>, <=,! = và ==, có ý nghĩa như trong các ngôn ngữ lập trình).</p>
+<p>Dafny luôn cần căc dấu "{}" cho các khối lệnh ở các nhánh, ngay cả khi nhánh chỉ chứa một lệnh duy nhất. Ở đây câu lệnh "if" kiểm tra xem x có nhỏ hơn "0", sử dụng cú pháp của toán tử so khớp quen thuộc và trả về giá trị tuyệt đối nếu thích hợp. (Các toán tử so sánh khác là <=, >, <=, != và ==, có ý nghĩa như trong các ngôn ngữ lập trình).</p>
  
 **2. Tiền – Hậu điều kiện (Pre- and Postconditions)**
 <br>
-<p>Sức mạnh thực sự của Dafny bắt nguồn từ khả năng chú thích các phương thích (method) để xác định hành vi của chúng. Ví dụ, một thuộc tính mà chúng ta quan sát với phương thức lấy giá trị tuyệt đối là kết quả trả về luôn luôn lớn hơn hoặc bằng 0, mà không phụ thuộc vào đầu vào. Chúng ta có thể đưa quan sát này vào nhận xét, nhưng sau đó chúng ta sẽ không có cách nào để biết liệu phương thức có thực sự có thuộc tính này hay không. Hơn nữa, nếu có ai đó đến và thay đổi phương thức, chúng ta sẽ không thể bảo đảm rằng nhận xét này còn phù hợp. Với nhận xét, Dafny chứng minh rằng điều mà ta tuyên bố về phương thức là đúng. Có một số cách để đưa ra nhận xét, nhưng phổ biến và cơ bản nhất là các phương thức tiền và hậu điều kiện.</p>
+<p>Sức mạnh thực sự của Dafny bắt nguồn từ khả năng chú thích các phương thức (method) để xác định hành vi của chúng. Ví dụ, một thuộc tính mà chúng ta quan sát với phương thức lấy giá trị tuyệt đối là kết quả trả về luôn luôn lớn hơn hoặc bằng 0, mà không phụ thuộc vào đầu vào. Chúng ta có thể đưa quan sát này vào nhận xét, nhưng sau đó chúng ta sẽ không có cách nào để biết liệu phương thức có thực sự có thuộc tính này hay không. Hơn nữa, nếu có ai đó đến và thay đổi phương thức, chúng ta sẽ không thể bảo đảm rằng nhận xét này còn phù hợp. Với nhận xét, Dafny chứng minh rằng điều mà ta tuyên bố về phương thức là đúng. Có một số cách để đưa ra nhận xét, nhưng phổ biến và cơ bản nhất là các phương thức tiền và hậu điều kiện.</p>
 <p>Phương thức lấy giá trị tuyệt đối mà kết quả trả về luôn luôn không âm, là một ví dụ của một hậu điều kiện. Các hậu điều kiện, khai báo với từ khóa **ensure**, được đưa ra như là một phần của khai báo phương thức, sau các giá trị trả về (nếu có) và trước thân phương thức. Từ khóa được theo sau bởi biểu thức boolean. Giống như điều kiện và trong hầu hết các đặc tả, hậu điều kiện luôn luôn là một biểu thức boolean. Trong trường hợp của phương thức Abs, một hậu điều kiện hợp lý là như sau:</p>
 
 ```
@@ -175,10 +175,10 @@ method Abs(x: int) returns (y: int)
    ...
 }
 ```
-<p>Bạn có thể thấy tại sao giá trị trả về được đặt tên. Nó làm cho chúng dễ dàng tham khảo trong hậu điều kiện của một phương thức. Khi biểu thức là đúng, chúng ta nói rằng các hậu điều kiện có hiệu lực. Hậu điều kiện phải được giữ cho mỗi lần gọi hàm, và cho mỗi điểm trả về có thể xảy ra . Trong trường hợp này, thuộc tính duy nhất mà chúng ta đang diễn đạt là giá trị trả về luôn ít nhất bằng không.</p>
+<p>Bạn có thể thấy tại sao giá trị trả về được đặt tên. Nó làm cho chúng dễ dàng tham khảo trong hậu điều kiện của một phương thức. Khi biểu thức là đúng, chúng ta nói rằng các hậu điều kiện có hiệu lực. Hậu điều kiện phải được giữ cho mỗi lần gọi hàm, và cho mỗi điểm trả về có thể xảy ra. Trong trường hợp này, thuộc tính duy nhất mà chúng ta đang diễn đạt là giá trị trả về luôn ít nhất bằng không.</p>
 
  +Pre: Điều kiện trước<br>
- + Post: Điều kiện sau<br>
+ +Post: Điều kiện sau<br>
 
 Chúng ta có thể kết hợp hai điều kiện cùng với toán tử boolean và &&, hoặc chúng ta có thể viết nhiều đặc tả **ensures**<br>
 
@@ -225,13 +225,13 @@ method Testing()
    assert 2 < 3;
 }
 ```
-=> method Testing thực hiện kiểm tra biểu thức "2< 3".<br>
+=> method Testing thực hiện kiểm tra biểu thức "2 < 3".<br>
 VD :<br>
 
 ```asset 2< 3 => đúng.
    assert 2=3 => báo bị lỗi.
    ```
-**4. Hàm ( Function)**
+**4. Hàm (Function)**
 <br>
 <p>Một chức năng trong Dafny tuân thủ khá chặt chẽ theo các khái niệm về một chức năng toán học. Không giống các phương thức khác, một chức năng Dafny không thể ghi vào bộ nhớ, và nó chỉ bao gồm một biểu hiện. Chúng được yêu cầu phải có một giá trị trả về duy nhất, không được đặt tên. Dưới đây là cấu trúc của một hàm đơn giản :</p>
 
@@ -252,12 +252,12 @@ if x < 0 then -x else x
 <p>Rõ ràng, điều kiện phải là một biểu thức boolean, và hai nhánh phải có cùng một loại. Bạn có thể tự hỏi tại sao mọi người sẽ bận tâm với các method, nếu chúng bị hạn chế so với các phương pháp số kỹ thuật. Điểm mạnh của hàm là nó có thể gọi trực tiếp. Ví dụ như:</p>
 
 ```assert abs (3) == 3;```
-<p>Trên thực tế chúng ta không những có thể không không cần gọi thông qua biến địa phương, mà chúng ta còn không cần phải viết các hậu điều kiện giống như Method( mặc dù bản thân chức năng đã có tiền và hậu điều kiện nói chung). Hạn chế của hàm làm không xác định được chính xác những gì cần làm như method. Không giống method, Dafny không quên phần thân của một chức năng khi xem xét các chức năng khác. Vì vậy, nó có thể mở rộng định nghĩa của abs trong khẳng định trên và xác định rằng kết quả là thực sự 3.</p>
+<p>Trên thực tế chúng ta không những có thể không cần gọi thông qua biến địa phương, mà chúng ta còn không cần phải viết các hậu điều kiện giống như Method (mặc dù bản thân hàm đã có tiền và hậu điều kiện nói chung). Hạn chế của hàm là không xác định được chính xác những gì cần làm như method. Không giống method, Dafny không quên phần thân của một hàm khi xem xét các hàm khác. Vì vậy, nó có thể mở rộng định nghĩa của abs trong khẳng định trên và xác định rằng kết quả thực sự là 3.</p>
 Một tính năng đặc biệt là chúng chỉ xuất hiện ở các chú thích, ta không thể viết: <br>
 
  ``` var v := abs(3);```
-<p>vì đây không phải là một chú thích. Các hàm không bao giờ là một phần của chương trình biên dịch cuối cùng, chúng chỉ là công cụ để giúp xác minh mã. Đôi khi thuận tiện để sử dụng một hàm trong mã thực, vì vậy ta có thể định nghĩa một phương thức hàm, có thể được gọi từ mã thực. Lưu ý rằng có những hạn chế về những chức năng có thể được định nghĩa bởi một a function method.</p>
-<p>Không giống các phương pháp, chức năng có thể xuất hiện trong các biểu thức. Như vậy chúng ta có thể làm một cái gì đó như thực hiện chức năng Fibonacci toán học:</p>
+<p>Vì đây không phải là một chú thích. Các hàm không bao giờ là một phần của chương trình biên dịch cuối cùng, chúng chỉ là công cụ để giúp xác minh mã. Đôi khi thuận tiện để sử dụng một hàm trong mã thực, vì vậy ta có thể định nghĩa một phương thức hàm, có thể được gọi từ mã thực. Lưu ý rằng có những hạn chế về những chức năng có thể được định nghĩa bởi một **function method**.</p>
+<p>Không giống các phương pháp, hàm có thể xuất hiện trong các biểu thức. Như vậy chúng ta có thể làm một cái gì đó như thực hiện hàm Fibonacci toán học:</p>
 
 ```
 function fib(n: nat): nat
@@ -267,7 +267,7 @@ function fib(n: nat): nat
                   fib(n- 1) + fib(n - 2)
 }
 ```
-<p>Ở đây chúng tôi sử dụng nats, loại số tự nhiên (số không âm), nó thường thuận tiện hơn là chú thích tất cả mọi thứ để được không tiêu cực. Nó chỉ ra rằng chúng ta có thể làm cho chức năng này một function method nếu chúng ta muốn. Nhưng điều này sẽ rất chậm, vì phiên bản này tính toán các số Fibonacci có độ phức tạp hàm mũ. Có nhiều cách tốt hơn để tính hàm Fibonacci. Nhưng chức năng này vẫn còn hữu ích, vì Dafny có thể chứng minh rằng một phiên bản nhanh thực sự phù hợp với định nghĩa toán học. Chúng ta có thể đạt được điều tốt nhất của cả hai thế giới: đảm bảo sự chính xác và hiệu suất mà chúng ta muốn.</p>
+<p>Ở đây chúng tôi sử dụng nats, loại số tự nhiên (số không âm), nó thường thuận tiện hơn là chú thích tất cả mọi thứ để được không tiêu cực. Nó chỉ ra rằng chúng ta có thể làm cho hàm này một **function method** nếu chúng ta muốn. Nhưng điều này sẽ rất chậm, vì phiên bản này tính toán các số Fibonacci có độ phức tạp hàm mũ. Có nhiều cách tốt hơn để tính hàm Fibonacci. Nhưng hàm này vẫn còn hữu ích, vì Dafny có thể chứng minh rằng một phiên bản nhanh thực sự phù hợp với định nghĩa toán học. Chúng ta có thể đạt được điều tốt nhất của cả hai thế giới: đảm bảo sự chính xác và hiệu suất mà chúng ta muốn.</p>
 Chúng ta có thể bắt đầu bằng cách xác định một method như sau:<br>
 
 ```
@@ -289,7 +289,7 @@ var i := 0;
 
 **5.Bất biến trong vòng lặp (Loop Invariants)**
 <br>
-<p>Khi chạy một vòng lặp, Dafny sẽ không biết rõ số lần vòng lặp chạy, mà Dafny cần phải xem xét tất cả các con đường thông qua một chường trình. Do đó, khi làm việc với  một vòng lặp, ta cần cung cấp một điều kiện bất biến (không thay đổi trong toàn bộ quá trình lặp).</p>
+<p>Khi chạy một vòng lặp, Dafny sẽ không biết rõ số lần vòng lặp chạy, mà Dafny cần phải xem xét tất cả các con đường thông qua một chương trình. Do đó, khi làm việc với  một vòng lặp, ta cần cung cấp một điều kiện bất biến (không thay đổi trong toàn bộ quá trình lặp).</p>
 Từ khóa khai báo: invariant<br>
 
 Ta có ví dụ sau :<br>
@@ -307,7 +307,7 @@ var i := 0;
 
 **6. Tính dừng(Termination)**
 <br>
-<p>Dafny chứng minh tính dừng của code, tức là vòng lặp sẽ không thực hiện mãi mãi, thông qua việc giảm giá trị của biến t (biến chú thích ).</p>
+<p>Dafny chứng minh tính dừng của code, tức là vòng lặp sẽ không thực hiện mãi mãi, thông qua việc giảm giá trị của biến t (biến chú thích).</p>
 Đối với biến chú thích t sẽ giảm sau mỗi vòng lặp hoặc đệ quy, để đảm bảo chương trình kết thúc.<br>
 Đối với việc xác định các biểu thức giảm thì cần xác minh:<br>
 
@@ -329,7 +329,7 @@ Tính dừng được chứng mình trong 2 trường hợp:<br>
 + Vòng lặp<br>
 + Đệ quy<br>
 
-<p>Kĩ thuật áp dụng: Giảm biến t (biến chú thích cho tính dừng của chương trình). Biến t là biến được quy định một giá trị và sẽ có giá trị nhỏ mỗi lần vòng lặp đi qua hoặc mỗi lần đệ quy. Đồng thời  biến t có giá trị giới hạn để nó không giảm mãi. Vì tính dừng của biến t mà ta chứng minh được chương trình có tính dừng. Dẫn đến để chứng minh tính dừng của chương trình, Dafny chứng minh biến t giảm sau mỗi lần lặp.</p>
+<p>Kĩ thuật áp dụng: Giảm biến t (biến chú thích cho tính dừng của chương trình). Biến t là biến được quy định một giá trị và sẽ có giá trị nhỏ mỗi lần vòng lặp đi qua hoặc mỗi lần đệ quy. Đồng thời biến t có giá trị giới hạn để nó không giảm mãi. Vì tính dừng của biến t mà ta chứng minh được chương trình có tính dừng. Dẫn đến để chứng minh tính dừng của chương trình, Dafny chứng minh biến t giảm sau mỗi lần lặp.</p>
 <p>Biến t: có nhiều loại giá trị thường sử dụng là các số nguyên, ràng buộc mặc định của số nguyên là 0, và việc chứng minh tính giảm của số nguyên khá dễ dàng.</p>
 
  VD. Vòng lặp:<br>
@@ -410,8 +410,8 @@ function Ack(m: nat, n: nat): nat
    else Ack(m - 1, Ack(m, n - 1))
 }
 ```
-<p>Các mệnh đề giảm dần được viết ra rõ ràng, Dafny có thể dự đoán được nó. Một tuple(bộ dữ liệu) sử dụng so sánh kích thước của các giá trị thành phần để xác định xem các biện pháp đã bị thu hẹp.</p>
-<p>Nếu phần tử đầu tiên, trong trường hợp này m, nhỏ hơn, không có vấn đề gì xảy ra với các giá trị khác. Chúng có thể tăng, giảm, hoặc ở lại như nhau. Phần tử thứ hai chỉ được xem xét nếu phần tử đầu tiên không thay đổi. Sau đó, giá trị thứ hai cần giảm. Nếu không, thì phần tử thứ ba phải giảm, vv Cuối cùng, một trong các yếu tố phải giảm. Quá thời điểm đó, và các yếu tố khác lại được tự do để tăng hoặc làm bất cứ điều gì.</p>
+<p>Các mệnh đề giảm dần được viết ra rõ ràng, Dafny có thể dự đoán được nó. Một tuple (bộ dữ liệu) sử dụng so sánh kích thước của các giá trị thành phần để xác định xem các biện pháp đã bị thu hẹp.</p>
+<p>Nếu phần tử đầu tiên, trong trường hợp này m nhỏ hơn, không có vấn đề gì xảy ra với các giá trị khác. Chúng có thể tăng, giảm, hoặc ở lại như nhau. Phần tử thứ hai chỉ được xem xét nếu phần tử đầu tiên không thay đổi. Sau đó, giá trị thứ hai cần giảm. Nếu không, thì phần tử thứ ba phải giảm, vv Cuối cùng, một trong các yếu tố phải giảm. Quá thời điểm đó, và các yếu tố khác lại được tự do để tăng hoặc làm bất cứ điều gì.</p>
 Trong chức năng Ack, có ba cuộc gọi đệ quy.<br>
 <p> Trong lần đầu tiên, m trở thành một nhỏ hơn, nhưng n tăng lên. Điều này là tốt vì n đến sau khi m trong tập này.</p>
 <p> Trong cuộc gọi thứ hai, m giảm, do đó, đối số thứ hai được cho phép là bất kỳ giá trị nào (điều đó là tốt, bởi vì Dafny không thực sự chứng minh bất cứ điều gì về kết quả của cuộc gọi đệ quy thứ ba). Dafny cần phải chứng minh rằng cuộc gọi thứ ba tuân thủ các biện pháp chấm dứt.</p>
@@ -437,7 +437,7 @@ Dafny chứng minh rằng họ chấm dứt bằng cách xem xét tất cả cá
  
 **7. Mảng (Arrays)**
 <br>
-<p>Tất cả những gì chúng ta đã xem xét là tốt cho các chức năng đơn giản và các bài tập ít tính toán, nhưng nó thực sự không hữu ích cho các chương trình thực sự. Cho đến nay chúng ta chỉ xem xét một số ít các giá trị tại một thời điểm trong các biến địa phương. Bây giờ chúng ta chuyển sang mảng dữ liệu. Mảng được xây dựng trong một phần của ngôn ngữ, với loại riêng của chúng, mảng <T>, với T là những loại khác nhau. Bây giờ chúng ta chỉ xem xét mảng các số nguyên, mảng <int>. Mảng có thể là null và chiều dài của mảng, a.Length. Truy cập phần tử sử dụng cú pháp chuẩn và được lập chỉ mục từ số 0, do đó, a[3] đứng trước bởi 3 phần tử a [0], a [1], và a [2] theo thứ tự đó. Tất cả các truy cập mảng phải được chứng minh là nằm trong giới hạn, là một phần của đảm bảo an toàn, không có lỗi của Dafny. Bởi vì kiểm tra giới hạn được chứng minh tại thời điểm xác minh, không cần phải kiểm tra thời gian chạy. Để tạo một mảng mới, nó phải được phân bổ bằng từ khoá mới, nhưng bây giờ chúng ta sẽ chỉ làm việc với các phương thức lấy một mảng được phân bổ trước đó làm đối số.</p>
+<p>Tất cả những gì chúng ta đã xem xét là tốt cho các chức năng đơn giản và các bài tập ít tính toán, nhưng nó thực sự không hữu ích cho các chương trình thực sự. Cho đến nay chúng ta chỉ xem xét một số ít các giá trị tại một thời điểm trong các biến địa phương. Bây giờ chúng ta chuyển sang mảng dữ liệu. Mảng được xây dựng trong một phần của ngôn ngữ, với loại riêng của chúng, mảng <T>, với T là những loại khác nhau. Bây giờ chúng ta chỉ xem xét mảng các số nguyên, mảng <int>. Mảng có thể là null và chiều dài của mảng, a.Length. Truy cập phần tử sử dụng cú pháp chuẩn và được lập chỉ mục từ số 0, do đó, a[3] đứng trước bởi 3 phần tử a[0], a[1], và a[2] theo thứ tự đó. Tất cả các truy cập mảng phải được chứng minh là nằm trong giới hạn, là một phần của đảm bảo an toàn, không có lỗi của Dafny. Bởi vì kiểm tra giới hạn được chứng minh tại thời điểm xác minh, không cần phải kiểm tra thời gian chạy. Để tạo một mảng mới, nó phải được phân bổ bằng từ khoá mới, nhưng bây giờ chúng ta sẽ chỉ làm việc với các phương thức lấy một mảng được phân bổ trước đó làm đối số.</p>
 <p>Một trong những điều đơn giản nhất mà chúng ta có thể muốn làm với một mảng là tìm kiếm thông qua một khóa cụ thể và trả về chỉ mục mà chúng ta có thể tìm thấy khóa đó nếu nó tồn tại.</p>
 
  Ví dụ về tìm kiếm key trong mảng cho trước :<br>
@@ -453,7 +453,7 @@ method Find(a: array<int>, key: int) returns (index: int)
       invariant 0 <= index <= a.Length
       invariant forall k :: 0 <= k < index ==> a[k] != key
    {
-      if a[index] == key { return; }
+      if a[index] == key { return; 
       index := index + 1;
    }
    index := -1;
