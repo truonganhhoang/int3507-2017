@@ -42,39 +42,21 @@ Sau khi xử lý xong, nếu muốn trả lời lại người dùng, chúng ta 
 
 Dựa vào cơ chế hoạt động của Facebook Chatbot, để xây dựng một ứng dụng Facebook Chatbot, ta cần xây dựng một ứng dụng tương tác hai chiều với Facebook và cần thực hiện được hai việc như sau: 
 
-1. Cung cấp địa chỉ webhook để ta đăng kí với Facebook.
+1. Viết ứng dụng Webhook (máy chủ Chatbot) và gửi đăng ký địa chỉ Webhook với Facebook.
 
-2. Tiếp nhận tin nhắn của người dùng và xử lý chúng, sau đó trả lại kết quả cho người dùng thông qua Rest API của Facebook.  
+2. Nhận tin nhắn từ người dùng thông qua ứng dụng webhook, xử lý nội dung và phản hồi lại cho người dùng.
 
 ![Tổng quan kiến trúc ứng dụng](images/tong_quan_kien_truc_ung_dung.jpg)
 
-Hình 1.1: Sơ đồ hoạt động của ứng dụng Facebook Chatbot.
+<center><i>Hình 1.1: Sơ đồ hoạt động của ứng dụng Facebook Chatbot</i></center>
 
-Hình 1.1 mô tả ứng dụng Facebook Chatbot mà chúng tôi đã triển khai. Hai mũi tên ngược chiều nhau giữa `Facebook` và `Chatbot server` thể hiện tương tác hai chiều thông qua Webhook và Rest API. 
+Hình 1.1 mô tả ứng dụng Facebook Chatbot mà chúng tôi đã triển khai. Hai mũi tên ngược chiều nhau giữa `Facebook` và `Chatbot server` thể hiện tương tác hai chiều thông qua Webhook và Rest API. Ứng dụng được chia làm 2 tầng chính với các chức năng như sau:
 
-### 2.1. Mô tả kiến trúc
-
-Theo hình 1.1, ứng dụng được chia làm 2 tầng chính với các chức năng như sau:
-
-- Máy chủ chatbot (Chatbot server): 
-
-    - Kết nối 2 chiều với Facebook thông qua Webhook và Rest API.
+- Máy chủ Chatbot (Chatbot server) có nhiệm vụ kết nối hai chiều với Facebook thông qua Webhook và Rest API, tiếp nhận, xử lý và điều hướng các hành động và tin nhắn của nguời dùng. Đồng thời dữ liệu về người dùng cũng như các tin nhắn của họ cũng được máy chủ lưu lại.
     
-    - Tiếp nhận, xử lý và điều hướng các hành động, tin nhắn của người dùng.
-    
-    - Lưu dữ liệu về người dùng và tin nhắn trên MongoDB.
-    
-- Máy chủ tìm kiếm (Search server):
+- Máy chủ tìm kiếm (Search server) đóng vai trò cung cấp các API tìm kiếm các môn học, giảng viên,... Máy chủ tìm kiếm sẽ thực hiện các thao tác với dữ liệu về môn học, giảng viên,... trên MySQL và Elastic Search, quản lý quá trình đẩy dữ liệu từ MySQL sang Elastic Search (indexing) nhằm mục đích thực hiện truy vấn một cách nhanh chóng để lấy dữ liệu cần tìm kiếm.
 
-    - Cung cấp API tìm kiếm môn học, giảng viên,...
-
-    - Thao tác với dữ liệu về môn học, giảng viên,... trên MySQL và Elastic Search.
-    
-    - Quản lý quá trình đẩy dữ liệu từ MySQL sang Elastic Search (indexing).
-    
-### 2.2. Mô tả luồng xử lý 
-
-Như mô tả trong hình 1.1, khi người dùng Facebook gửi tin nhắn tới trang, Facebook sẽ gọi tới webhook của máy chủ Chatbot. Máy chủ chatbot sẽ lưu thông tin người dùng và các tin nhắn vào MongoDB. Đối với các yêu cầu tìm kiếm của người dùng, máy chủ Chatbot gọi tới các API tìm kiếm tương ứng trên máy chủ tìm kiếm. Máy chủ tìm kiếm sẽ tìm chúng trên Elastic Search, sau đó trả kết quả về. Sau khi nhận được kết quả tìm kiếm, máy chủ Chatbot sẽ chọn một cách hiển thị thích hợp cho kết quả, rồi gửi kết quả tới người dùng thông qua Facebook Chatbot API.
+Khi người dùng Facebook gửi tin nhắn tới trang (trên Facebook), Facebook sẽ gọi tới Webhook của máy chủ Chatbot. Máy chủ Chatbot sẽ lưu thông tin người dùng và các tin nhắn vào MongoDB. Đối với các yêu cầu tìm kiếm của người dùng, máy chủ Chatbot gọi tới các API tìm kiếm tương ứng trên máy chủ tìm kiếm. Máy chủ tìm kiếm sẽ tìm chúng trên Elastic Search, sau đó trả kết quả về. Sau khi nhận được kết quả tìm kiếm, máy chủ Chatbot sẽ chọn một cách hiển thị thích hợp cho kết quả, rồi gửi kết quả tới người dùng thông qua Facebook Chatbot API.
 
 Song song với đó, các trình thu thập thông tin sẽ thu thập dữ liệu từ các nguồn khác nhau như trang web của trường, của các khoa,... để bổ sung hoặc cập nhật dữ liệu trên MySQL. Máy chủ tìm kiếm sẽ đảm nhận vai trò đưa dữ liệu từ MySQL sang Elastic Search hàng ngày. 
 
