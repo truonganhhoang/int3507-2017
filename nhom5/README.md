@@ -16,7 +16,7 @@
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Webhook             | Webhook hiểu đơn giản thì đây là một công cụ để truy vấn và lưu dữ liệu của một sự kiện xác định. Khi một trong những sự kiện đã đăng ký được kích hoạt, webhook sẽ gửi một HTTP POST đến một địa chỉ URL được đăng ký từ trước.                                                                                                                                        |
 | REST                | REST (**RE**presentational **S**tate **T**ransfer) là một dạng dạng chuyển đổi cấu trúc dữ liệu. Rest API là một ứng dụng chuyển đổi cấu trúc dữ liệu có phương thức để kết nối và ứng dụng khác. Facebook cung cấp REST API để lập trình viên có thể gửi tin nhắn phản hồi đến người dùng, cho dù người dùng viết ứng dụng trả lời bằng bất kỳ ngôn ngữ lập trình nào. |
-| Facebook Chatbot    | Facebook Chatbot là một phần mở rộng cho chức năng nhắn tin trên trang Facebook của bạn. Mỗi Chatbot phải được liên kết với một trang Facebook đang tồn tại. Vì vậy, nếu bất cứ ai đang chat với bot của bạn thì họ đang chat với trang Facebook của bạn, nhưng thay vì là cuộc trò chuyện giữa người với người thì bot của bạn nói chuyện với người.                   |
+| Facebook Chatbot    | Facebook Chatbot là một phần mở rộng cho chức năng nhắn tin trên trang [Facebook](https://facebook.com) của bạn. Mỗi Chatbot phải được liên kết với một trang Facebook đang tồn tại. Vì vậy, nếu bất cứ ai đang chat với bot của bạn thì họ đang chat với trang Facebook của bạn, nhưng thay vì là cuộc trò chuyện giữa người với người thì bot của bạn nói chuyện với người.                   |
 | Elasticsearch       | Elasticsearch là một công cụ tìm kiếm dựa trên phần mềm Lucene. Nó cung cấp một bộ máy tìm kiếm dạng phân tán, có đầy đủ công cụ với một giao diện web HTTP có hỗ trợ dữ liệu JSON.                                                                                                                                                                                     |
 | Crawler             | Crawler là 1 từ để ám chỉ các công cụ (phần mềm, modules, plugins… hay đơn giản chỉ là một hàm nhỏ) có chức năng chính là tự động phân tích dữ liệu từ nguồn nội dung sau đó bóc tách những thông tin cần thiết theo tiêu chí mà nó được lập trình viên hệ thống thiết lập.                                                                                             |
 
@@ -38,7 +38,7 @@
 
 ## Lời mở đầu
 
-Theo thống kê từ Google Analytic của [SGUET](http://sguet.com), hàng tháng có trên 250 lượt truy cập, trên 200 lượt tìm kiếm liên quan đến các câu hỏi thường gặp và thông tin các giảng viên. Tuy nhiên, Mỗi mùa tuyển sinh, hàng chục câu hỏi vẫn được gửi vào một nhóm Facebook do SGUET tạo ra cho thấy tìm kiếm thông qua website vẫn chưa phải là cách thức hiệu quả và tiện lợi nhất đối với sinh viên. Việc này vẫn tồn tại nhược điểm, giả sử có thành viên trong nhóm biết câu trả lời, tuy nhiên vì lý do nào đấy mà câu hỏi có thể bị trôi hoặc quá nhiều thông báo mà bỏ lỡ câu hỏi, câu hỏi sẽ rơi vào tình trạng trả lời chậm hoặc không có người trả lời.  
+Theo thống kê từ [Google Analytic](https://analytics.google.com) của [SGUET](http://sguet.com), hàng tháng có trên 250 lượt truy cập, trên 200 lượt tìm kiếm liên quan đến các câu hỏi thường gặp và thông tin các giảng viên. Tuy nhiên, Mỗi mùa tuyển sinh, hàng chục câu hỏi vẫn được gửi vào một nhóm Facebook do SGUET tạo ra cho thấy tìm kiếm thông qua website vẫn chưa phải là cách thức hiệu quả và tiện lợi nhất đối với sinh viên. Việc này vẫn tồn tại nhược điểm, giả sử có thành viên trong nhóm biết câu trả lời, tuy nhiên vì lý do nào đấy mà câu hỏi có thể bị trôi hoặc quá nhiều thông báo mà bỏ lỡ câu hỏi, câu hỏi sẽ rơi vào tình trạng trả lời chậm hoặc không có người trả lời.  
 
 Do đó, chúng tôi đề xuất một phương án tốt hơn và tiện lợi hơn cho sinh viên trường, cả người hỏi và người trả lời. Chúng tôi đã xây dựng UET Chatbot - một ứng dụng Facebook Chatbot dựa trên [Nền tảng Messenger](https://developers.facebook.com/docs/messenger-platform/introduction). Ứng dụng của chúng tôi có các chức năng chính sau:
 
@@ -50,46 +50,34 @@ Do đó, chúng tôi đề xuất một phương án tốt hơn và tiện lợi
 
 - Tra cứu các văn bản, biểu mẫu thường dùng.
 
-## Chương 1: Tổng quan về kiến trúc ứng dụng
-
-Dựa vào cơ chế hoạt động của Facebook Chatbot, để xây dựng một ứng dụng Facebook Chatbot, ta cần xây dựng một ứng dụng tương tác hai chiều với Facebook và cần thực hiện được hai việc như sau: 
-
-1. Cung cấp địa chỉ webhook để ta đăng kí với Facebook.
-
-2. Tiếp nhận tin nhắn của người dùng và xử lý chúng, sau đó trả lại kết quả cho người dùng thông qua Rest API của Facebook.  
+## Chương 1: Tổng quan về kiến trúc của UET Chatbot
 
 ![Tổng quan kiến trúc ứng dụng](images/tong_quan_kien_truc_ung_dung.jpg)
 
-Hình 1.1: Sơ đồ hoạt động của ứng dụng Facebook Chatbot.
+Hình 1.1: Sơ đồ hoạt động của UET Chatbot.
 
-Sơ đồ trên mô tả hoạt động của ứng dụng Facebook Chatbot mà chúng tôi đã triển khai. Hai mũi tên ngược chiều nhau giữa `Facebook` và `Chatbot server` thể hiện tương tác hai chiều thông qua Webhook và Rest API. 
-
-### 1.1. Mô tả kiến trúc
+Sơ đồ trên mô tả hoạt động của UET Chatbot. Khi người dùng Facebook gửi tin nhắn tới trang, Facebook sẽ thông báo cho máy chủ Chatbot thông qua Webhook. Máy chủ chatbot sẽ lưu thông tin người dùng và các tin nhắn vào [MongoDB](https://www.mongodb.com/). Đối với các yêu cầu tìm kiếm của người dùng, máy chủ Chatbot gọi tới các API tìm kiếm tương ứng trên máy chủ tìm kiếm. Máy chủ tìm kiếm sẽ tìm chúng trên Elastic Search, sau đó trả kết quả về. Sau khi nhận được kết quả tìm kiếm, máy chủ Chatbot sẽ chọn một cách hiển thị thích hợp cho kết quả, rồi gửi kết quả tới người dùng thông qua [Facebook Chatbot API](https://developers.facebook.com/docs/messenger-platform/).
+                                            
+Song song với đó, các trình thu thập thông tin sẽ thu thập dữ liệu từ các nguồn khác nhau như trang web của trường, của các khoa,... để bổ sung hoặc cập nhật dữ liệu trên [MySQL](https://www.mysql.com/). Máy chủ tìm kiếm sẽ đảm nhận vai trò đưa dữ liệu từ MySQL sang [Elasticsearch](https://www.elastic.co/) khi có cập nhật. 
 
 Theo hình 1.1, ứng dụng được chia làm 2 tầng chính với các chức năng như sau:
 
-- Máy chủ chatbot (Chatbot server): 
+- Máy chủ Chatbot (`Chatbot Server`): 
 
-    - Kết nối 2 chiều với Facebook thông qua Webhook và Rest API.
+    - Kết nối với Facebook thông qua Webhook và Rest API.
     
     - Tiếp nhận, xử lý và điều hướng các hành động, tin nhắn của người dùng.
     
     - Lưu dữ liệu về người dùng và tin nhắn trên MongoDB.
     
-- Máy chủ tìm kiếm (Search server):
+- Máy chủ tìm kiếm (`Search Server`):
 
     - Cung cấp API tìm kiếm môn học, giảng viên,...
 
-    - Thao tác với dữ liệu về môn học, giảng viên,... trên MySQL và Elastic Search.
+    - Thao tác với dữ liệu về môn học, giảng viên,... trên MySQL và Elasticsearch.
     
-    - Quản lý quá trình đẩy dữ liệu từ MySQL sang Elastic Search (indexing).
+    - Quản lý quá trình đẩy dữ liệu từ MySQL sang Elasticsearch.
     
-### 1.2. Mô tả luồng xử lý 
-
-Như mô tả trong hình 1.1, khi người dùng Facebook gửi tin nhắn tới trang, Facebook sẽ gọi tới webhook của máy chủ Chatbot. Máy chủ chatbot sẽ lưu thông tin người dùng và các tin nhắn vào MongoDB. Đối với các yêu cầu tìm kiếm của người dùng, máy chủ Chatbot gọi tới các API tìm kiếm tương ứng trên máy chủ tìm kiếm. Máy chủ tìm kiếm sẽ tìm chúng trên Elastic Search, sau đó trả kết quả về. Sau khi nhận được kết quả tìm kiếm, máy chủ Chatbot sẽ chọn một cách hiển thị thích hợp cho kết quả, rồi gửi kết quả tới người dùng thông qua Facebook Chatbot API.
-
-Song song với đó, các trình thu thập thông tin sẽ thu thập dữ liệu từ các nguồn khác nhau như trang web của trường, của các khoa,... để bổ sung hoặc cập nhật dữ liệu trên MySQL. Máy chủ tìm kiếm sẽ đảm nhận vai trò đưa dữ liệu từ MySQL sang Elastic Search hàng ngày. 
-
 ## Chương 2: Máy chủ chatbot
 
 ### 2.1. Cơ chế hoạt động của Facebook Chatbot
@@ -303,7 +291,3 @@ Máy chủ tìm kiếm đang được chạy trên IP `52.15.160.33`. API đư�
 ### Định hướng tương lai
 
 Với hệ thống máy thu thập thông tin, ứng dụng sẽ tiếp tục bổ sung và làm mịn thêm thông tin về các giảng viên và đơn vị trong trường. Đồng thời với đó, các câu hỏi thường gặp sẽ được bổ sung thêm để có thể giải đáp được mọi thắc mắc của sinh viên.
-
-### Tài liệu tham khảo
-
-### Phụ lục
