@@ -10,15 +10,19 @@
 - Nguyễn Thị Lan
 - Nguyễn Văn Nhật
 
+**Github**: [nguyenducthuanuet/facebookchatbot](https://github.com/nguyenducthuanuet/facebookchatbot)
+
 ## Danh sách khái niệm, thuật ngữ
 
-| Khái niệm/Thuật ngữ | Giải thích                                                                                                                                                                                                                                                                                                                                                              |
-|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Webhook             | Webhook hiểu đơn giản thì đây là một công cụ để truy vấn và lưu dữ liệu của một sự kiện xác định. Khi một trong những sự kiện đã đăng ký được kích hoạt, Webhook sẽ gửi một HTTP POST đến một địa chỉ URL được đăng ký từ trước.                                                                                                                                        |
-| REST                | REST (**RE**presentational **S**tate **T**ransfer) là một dạng dạng chuyển đổi cấu trúc dữ liệu. Rest API là một ứng dụng chuyển đổi cấu trúc dữ liệu có phương thức để kết nối và ứng dụng khác. Facebook cung cấp REST API để lập trình viên có thể gửi tin nhắn phản hồi đến người dùng, cho dù người dùng viết ứng dụng trả lời bằng bất kỳ ngôn ngữ lập trình nào. |
-| Facebook Chatbot    | Facebook Chatbot là một phần mở rộng cho chức năng nhắn tin trên trang Facebook của bạn. Mỗi Chatbot phải được liên kết với một trang Facebook đang tồn tại. Vì vậy, nếu bất cứ ai đang chat với bot của bạn thì họ đang chat với trang Facebook của bạn, nhưng thay vì là cuộc trò chuyện giữa người với người thì bot của bạn nói chuyện với người.                   |
-| Elasticsearch       | Elasticsearch là một công cụ tìm kiếm dựa trên phần mềm Lucene. Nó cung cấp một bộ máy tìm kiếm dạng phân tán, có đầy đủ công cụ với một giao diện web HTTP có hỗ trợ dữ liệu JSON.                                                                                                                                                                                     |
-| Crawler             | Crawler là 1 từ để ám chỉ các công cụ (phần mềm, modules, plugins… hay đơn giản chỉ là một hàm nhỏ) có chức năng chính là tự động phân tích dữ liệu từ nguồn nội dung sau đó bóc tách những thông tin cần thiết theo tiêu chí mà nó được lập trình viên hệ thống thiết lập.                                                                                             |
+
+| Khái niệm/Thuật ngữ                      	| Giải thích                                                                                                                                                                                                                                                                                                                                                                         	|
+|------------------------------------------	|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| Webhook                                  	| Webhook hiểu đơn giản thì đây là một công cụ để truy vấn và lưu dữ liệu của một sự kiện xác định. Khi một trong những sự kiện đã đăng ký được kích hoạt, webhook sẽ gửi một HTTP POST đến một địa chỉ URL được đăng ký từ trước.                                                                                                                                                   	|
+| REST                                     	| REST (**RE**presentational **S**tate **T**ransfer) là một dạng dạng chuyển đổi cấu trúc dữ liệu. Rest API là một ứng dụng chuyển đổi cấu trúc dữ liệu có phương thức để kết nối và ứng dụng khác. Facebook cung cấp REST API để lập trình viên có thể gửi tin nhắn phản hồi đến người dùng, cho dù người dùng viết ứng dụng trả lời bằng bất kỳ ngôn ngữ lập trình nào.            	|
+| [Ngrok](https://ngrok.com/)              	| Ngrok là công cụ tạo đường hầm (tunnel) giữa localhost của bạn và internet.Giúp người khác mạng có thể truy cập được localhost của bạn thông qua custom domain của ngrok                                                                                                                                                                                                           	|
+| Facebook Chatbot                         	| Facebook Chatbot là một phần mở rộng cho chức năng nhắn tin trên trang [Facebook](https://www.facebook.com/) của bạn. Mỗi Chatbot phải được liên kết với một trang Facebook đang tồn tại. Vì vậy, nếu bất cứ ai đang chat với bot của bạn thì họ đang chat với trang Facebook của bạn, nhưng thay vì là cuộc trò chuyện giữa người với người thì bot của bạn nói chuyện với người. 	|
+| [Elasticsearch](https://www.elastic.co/) 	| Elasticsearch là một công cụ tìm kiếm dựa trên phần mềm Lucene. Nó cung cấp một bộ máy tìm kiếm dạng phân tán, có đầy đủ công cụ với một giao diện web HTTP có hỗ trợ dữ liệu JSON.                                                                                                                                                                                                	|
+| Crawler                                  	| Crawler là 1 từ để ám chỉ các công cụ (phần mềm, modules, plugins… hay đơn giản chỉ là một hàm nhỏ) có chức năng chính là tự động phân tích dữ liệu từ nguồn nội dung sau đó bóc tách những thông tin cần thiết theo tiêu chí mà nó được lập trình viên hệ thống thiết lập.                                                                                                        	|
 
 ## Danh sách hình vẽ
 
@@ -36,9 +40,39 @@
 | Hình 2.9 	| Tạo luồng sự kiện                             	|
 | Hình 3.1 	| Các API được triển khai trên máy chủ tìm kiếm 	|
 
+## Mục lục
+
+- [Lời mở đầu](#lời-mở-đầu)
+
+- [Chương 1: Tổng quan về kiến trúc của UET Chatbot](#chương-1-tổng-quan-về-kiến-trúc-của-uet-chatbot)
+
+- [Chương 2: Máy chủ Chatbot](#chương-2-máy-chủ-chatbot)
+
+    - [2.1. Cơ chế hoạt động của Facebook Chatbot](#21-cơ-chế-hoạt-động-của-facebook-chatbot)
+    
+    - [2.2. Kết nối hai chiều với Facebook thông qua Webhook và Rest API](#22-kết-nối-hai-chiều-với-facebook-thông-qua-webhook-và-rest-api)
+    
+    - [2.3. Xây dựng máy chủ chatbot nhận, xử lý tin nhắn và phản hồi tin nhắn phù hợp](#23-xây-dựng-máy-chủ-chatbot-nhận-xử-lý-tin-nhắn-và-phản-hồi-tin-nhắn-phù-hợp)
+    
+- [Chương 3: Tầng máy chủ tìm kiếm](#chương-3-tầng-máy-chủ-tìm-kiếm)
+
+	- [3.1. Công nghệ](#31-công-nghệ)
+	
+	- [3.2. Chuyển dữ liệu MySQL lên Elasticsearch](#32-chuyển-dữ-liệu-mysql-lên-elasticsearch)
+	
+	- [3.3. Tìm kiếm trên Elasticsearch](#33-tìm-kiếm-trên-elasticsearch)
+	
+	- [3.4. Các API](#34-các-api)
+	
+- [Kết luận](#kết-luận)
+
+	- [Kết quả đạt được](#kết-quả-đạt-được)
+	
+	- [Định hướng tương lai](#Định-hướng-tương-lai)
+
 ## Lời mở đầu
 
-Theo thống kê từ Google Analytic của [SGUET](http://sguet.com), hàng tháng có trên 250 lượt truy cập, trên 200 lượt tìm kiếm liên quan đến các câu hỏi thường gặp và thông tin các giảng viên. Tuy nhiên, Mỗi mùa tuyển sinh, hàng chục câu hỏi vẫn được gửi vào một nhóm Facebook do SGUET tạo ra cho thấy tìm kiếm thông qua website vẫn chưa phải là cách thức hiệu quả và tiện lợi nhất đối với sinh viên. Việc này vẫn tồn tại nhược điểm, giả sử có thành viên trong nhóm biết câu trả lời, tuy nhiên vì lý do nào đấy mà câu hỏi có thể bị trôi hoặc quá nhiều thông báo mà bỏ lỡ câu hỏi, câu hỏi sẽ rơi vào tình trạng trả lời chậm hoặc không có người trả lời.  
+Theo thống kê từ [Google Analytic](https://analytics.google.com) của [SGUET](http://sguet.com), hàng tháng có trên 250 lượt truy cập, trên 200 lượt tìm kiếm liên quan đến các câu hỏi thường gặp và thông tin các giảng viên. Tuy nhiên, Mỗi mùa tuyển sinh, hàng chục câu hỏi vẫn được gửi vào một nhóm Facebook do SGUET tạo ra cho thấy tìm kiếm thông qua website vẫn chưa phải là cách thức hiệu quả và tiện lợi nhất đối với sinh viên. Việc này vẫn tồn tại nhược điểm, giả sử có thành viên trong nhóm biết câu trả lời, tuy nhiên vì lý do nào đấy mà câu hỏi có thể bị trôi hoặc quá nhiều thông báo mà bỏ lỡ câu hỏi, câu hỏi sẽ rơi vào tình trạng trả lời chậm hoặc không có người trả lời.  
 
 Do đó, chúng tôi đề xuất một phương án tốt hơn và tiện lợi hơn cho sinh viên trường, cả người hỏi và người trả lời. Chúng tôi đã xây dựng UET Chatbot - một ứng dụng Facebook Chatbot dựa trên [Nền tảng Messenger](https://developers.facebook.com/docs/messenger-platform/introduction). Ứng dụng của chúng tôi có các chức năng chính sau:
 
@@ -283,7 +317,3 @@ Máy chủ tìm kiếm đang được chạy trên IP `52.15.160.33`. API đư�
 ### Định hướng tương lai
 
 Với hệ thống máy thu thập thông tin, ứng dụng sẽ tiếp tục bổ sung và làm mịn thêm thông tin về các giảng viên và đơn vị trong trường. Đồng thời với đó, các câu hỏi thường gặp sẽ được bổ sung thêm để có thể giải đáp được mọi thắc mắc của sinh viên.
-
-### Tài liệu tham khảo
-
-### Phụ lục
