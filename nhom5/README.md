@@ -10,6 +10,8 @@
 - Nguyễn Thị Lan
 - Nguyễn Văn Nhật
 
+**Github**: [nguyenducthuanuet/facebookchatbot](https://github.com/nguyenducthuanuet/facebookchatbot)
+
 ## Danh sách khái niệm, thuật ngữ
 
 | Khái niệm/Thuật ngữ                      	| Giải thích                                                                                                                                                                                                                                                                                                                                                                         	|
