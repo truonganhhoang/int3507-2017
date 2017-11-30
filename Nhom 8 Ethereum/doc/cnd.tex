@@ -22,6 +22,7 @@
 	\usepackage{xcolor}
 	\usepackage{hyperref}
 	\usepackage{cases}
+	\usepackage{array}
 	\usepackage[T1,T5]{fontenc}
 	\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
 	\hypersetup{
@@ -76,24 +77,31 @@
 		\newpage
 		\pagestyle{long}
 	\newpage
-	\section{Giới thiệu}
-		\subsection{Giới thiệu chung về chuỗi khối}
-		\begin{figure*}[h]
-			\centering
-			\includegraphics[width=1\linewidth]{../img/logo}
-			\caption{}
-			\label{fig:logo}
-		\end{figure*}
-		\subfile{contain/IntroBlockChain}
-		
-		\subsection{Tổng quan về Ethereum}
-		\subfile{contain/GeneralBlockChain}		
+	\section{Đặt vấn đề}
+	\subfile{contain/datVanDe}
+	
+	\newpage
+	\section{Tổng quan về chuỗi khối}
+		\subsection{Khái niệm chuỗi khối}
+			\subfile{contain/IntroBlockChain}
+		\subsection{Các thành phần công nghệ của chuỗi khối}
+			\subfile{contain/BlockchainComponents}	
+		\subsection{Cách hoạt động của chuỗi khối}
+			\subfile{contain/HowToWork}			
 
-		\subsection{Một vài ứng dụng của Ethereum}
+	\newpage	
+	\section{Tổng quan về Ethereum}	
+		\subsection{Giới thiệu chung}
+		\subfile{contain/IntroEthereum}		
+		\subsection{Các thành phần cơ bản}
+		\subfile{contain/EthereumComponents}	
+		\subsection{Sự khác biệt giữa Ethereum và Bitcoin}
+		\subfile{contain/EthereumVsBitcoin}	
+		\subsection{Ứng dụng của Ethereum}
 		\subfile{contain/EthereumApp}
 	\newpage
 	
-	\section{Chi tiết trong Ethereum $^{[6]}$}
+	\section{Các chi tiết trong Ethereum $^{[6]}$}
 	\subsection{Tổng quan}
 	\subfile{contain/DrivingFactor}
 
