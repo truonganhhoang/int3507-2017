@@ -39,6 +39,36 @@
 | Hình 2.9 	| Tạo luồng sự kiện                             	|
 | Hình 3.1 	| Các API được triển khai trên máy chủ tìm kiếm 	|
 
+## Mục lục
+
+- [Lời mở đầu](#lời-mở-đầu)
+
+- [Chương 1: Tổng quan về kiến trúc của UET Chatbot](#chương-1-tổng-quan-về-kiến-trúc-của-uet-chatbot)
+
+- [Chương 2: Máy chủ Chatbot](#chương-2-máy-chủ-chatbot)
+
+    - [2.1. Cơ chế hoạt động của Facebook Chatbot](#21-cơ-chế-hoạt-động-của-facebook-chatbot)
+    
+    - [2.2. Kết nối hai chiều với Facebook thông qua Webhook và Rest API](#22-kết-nối-hai-chiều-với-facebook-thông-qua-webhook-và-rest-api)
+    
+    - [2.3. Xây dựng máy chủ chatbot nhận, xử lý tin nhắn và phản hồi tin nhắn phù hợp](#23-xây-dựng-máy-chủ-chatbot-nhận-xử-lý-tin-nhắn-và-phản-hồi-tin-nhắn-phù-hợp)
+    
+- [Chương 3: Tầng máy chủ tìm kiếm](#chương-3-tầng-máy-chủ-tìm-kiếm)
+
+	- [3.1. Công nghệ](#31-công-nghệ)
+	
+	- [3.2. Chuyển dữ liệu MySQL lên Elasticsearch](#32-chuyển-dữ-liệu-mysql-lên-elasticsearch)
+	
+	- [3.3. Tìm kiếm trên Elasticsearch](#33-tìm-kiếm-trên-elasticsearch)
+	
+	- [3.4. Các API](#34-các-api)
+	
+- [Kết luận](#kết-luận)
+
+	- [Kết quả đạt được](#kết-quả-đạt-được)
+	
+	- [Định hướng tương lai](#Định-hướng-tương-lai)
+
 ## Lời mở đầu
 
 Theo thống kê từ [Google Analytic](https://analytics.google.com) của [SGUET](http://sguet.com), hàng tháng có trên 250 lượt truy cập, trên 200 lượt tìm kiếm liên quan đến các câu hỏi thường gặp và thông tin các giảng viên. Tuy nhiên, Mỗi mùa tuyển sinh, hàng chục câu hỏi vẫn được gửi vào một nhóm Facebook do SGUET tạo ra cho thấy tìm kiếm thông qua website vẫn chưa phải là cách thức hiệu quả và tiện lợi nhất đối với sinh viên. Việc này vẫn tồn tại nhược điểm, giả sử có thành viên trong nhóm biết câu trả lời, tuy nhiên vì lý do nào đấy mà câu hỏi có thể bị trôi hoặc quá nhiều thông báo mà bỏ lỡ câu hỏi, câu hỏi sẽ rơi vào tình trạng trả lời chậm hoặc không có người trả lời.  
@@ -81,7 +111,7 @@ Theo hình 1.1, ứng dụng được chia làm 2 tầng chính với các chứ
     
     - Quản lý quá trình đẩy dữ liệu từ MySQL sang Elasticsearch.
     
-## Chương 2: Máy chủ chatbot
+## Chương 2: Máy chủ Chatbot
 
 ### 2.1. Cơ chế hoạt động của Facebook Chatbot
 
