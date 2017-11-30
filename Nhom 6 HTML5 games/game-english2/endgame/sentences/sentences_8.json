@@ -1,0 +1,198 @@
+{"meta":[],
+"frames": [
+    [1, 1, 243, 155, 0, -3, -2],
+    [1, 158, 241, 151, 0, -3, -9],
+    [1, 311, 221, 166, 0, -16, -6],
+    [246, 1, 230, 152, 0, -12, -7],
+    [1, 479, 214, 165, 0, -22, -6],
+    [1, 646, 198, 164, 0, -26, -6],
+    [1, 812, 200, 162, 0, -25, -8],
+    [1, 976, 192, 154, 0, -33, -13],
+    [1, 1132, 222, 145, 0, -19, -9],
+    [246, 155, 237, 116, 0, -7, -26],
+    [244, 273, 240, 106, 0, -4, -43],
+    [224, 381, 229, 128, 0, -10, -29],
+    [217, 511, 218, 143, 0, -14, -20],
+    [201, 656, 205, 140, 0, -24, -21],
+    [408, 656, 86, 167, 0, -89, -6],
+    [203, 798, 150, 164, 0, -57, -6],
+    [355, 825, 135, 170, 0, -57, -1],
+    [195, 997, 227, 117, 0, -13, -26],
+    [225, 1116, 104, 170, 0, -71, -4],
+    [331, 1116, 102, 170, 0, -77, -3]
+],
+"sets":[
+    {
+"line":"They-are going-to play tennis",
+"alt1":"She-is _ watch football",
+"alt2":"He-is _ buy basketball",
+"alt3":"_ _ get hockey",
+"alt4":"_ _ read running"
+},{
+"line":"They-are going-to have-a-picnic",
+"alt1":"She-is _ do-a-picnic",
+"alt2":"He-is _ go-to-sleep",
+"alt3":"_ _ make-a-camp",
+"alt4":"_ _ have-a-camp"
+},{
+"line":"He-is going-to buy a-computer",
+"alt1":"She-is _ read a-TV",
+"alt2":"They-are _ do a-microwave",
+"alt3":"_ _ prepare a-table",
+"alt4":"_ _ bring a-mouse"
+},{
+"line":"They-are going-to play football",
+"alt1":"She-is _ wear basketball",
+"alt2":"He-is _ listen tennis",
+"alt3":"_ _ ride running",
+"alt4":"_ _ make volleyball"
+},{
+"line":"He-is going-to cut-down the-tree",
+"alt1":"She-is _ cut-up the-axe",
+"alt2":"They-are _ pick-up the-plant",
+"alt3":"_ _ put-down the-hole",
+"alt4":"_ _ climb himself"
+},
+{
+"line":"He-is going-to clean the-windows",
+"alt1":"She-is _ open the-bucket",
+"alt2":"They-are _ play the-TV",
+"alt3":"_ _ read the-phone",
+"alt4":"_ _ close the-sign"
+},
+{
+"line":"They-are going-to play football",
+"alt1":"She-is _ wear basketball",
+"alt2":"He-is _ listen tennis",
+"alt3":"_ _ ride running",
+"alt4":"_ _ make volleyball"
+},
+{
+"line":"He-is going-to buy a-computer",
+"alt1":"She-is _ read a-TV",
+"alt2":"They-are _ do a-microwave",
+"alt3":"_ _ prepare a-table",
+"alt4":"_ _ bring a-mouse"
+},
+{
+"line":"She-is going-to eat a-banana",
+"alt1":"He-is _ drink an-apple",
+"alt2":"They-are _ sell a-tea",
+"alt3":"_ _ be a-yellow",
+"alt4":"_ _ close open"
+},
+{
+"line":"She-is going-to take a-photo",
+"alt1":"He-is _ do a-camera",
+"alt2":"They-are _ make a-drawing",
+"alt3":"_ _ open a-page",
+"alt4":"_ _ press an-image"
+},
+{
+"line":"He-is going-to walk the-dog",
+"alt1":"She-is _ eat the-door",
+"alt2":"They-are _ ride the-cat",
+"alt3":"_ _ feed the-wall",
+"alt4":"_ _ close the-walk"
+},
+{
+"line":"She-is going-to watch a-movie",
+"alt1":"He-is _ listen popcorn",
+"alt2":"They-are _ read a-ticket",
+"alt3":"_ _ play a-song",
+"alt4":"_ _ sleep home"
+},
+{
+"line":"They-are going-to play tennis",
+"alt1":"She-is _ watch football",
+"alt2":"He-is _ buy basketball",
+"alt3":"_ _ get hockey",
+"alt4":"_ _ read running"
+},
+{
+"line":"They-are going-to drink coffee",
+"alt1":"She-is _ watch milk",
+"alt2":"He-is _ wear apples",
+"alt3":"_ _ sing books",
+"alt4":"_ _ dance friends"
+},
+{
+"line":"She-is going-to swim",
+"alt1":"He-is _ run",
+"alt2":"They-are _ dance",
+"alt3":"_ _ study",
+"alt4":"_ _ read"
+},
+{
+"line":"The-plane is going-to land",
+"alt1":"She-is _ fly",
+"alt2":"They-are _ sail",
+"alt3":"A-train _ _ air",
+"alt4":"A-car _ _ _"
+},
+{
+"line":"She-is going-to do-laundry",
+"alt1":"He-is _ watch-TV",
+"alt2":"They-are _ have-dinner",
+"alt3":"_ _ do-homework",
+"alt4":"_ _ play"
+},
+{
+"line":"He-is going-to shave-his-beard",
+"alt1":"She-is _ wash-his-hair",
+"alt2":"They-are _ clean-his-teeth",
+"alt3":"_ _ change-his-clothes",
+"alt4":"_ _ pick-his-nose"
+},
+{
+"line":"He-is going-to cut-down the-tree",
+"alt1":"She-is _ cut-up the-axe",
+"alt2":"They-are _ pick-up the-plant",
+"alt3":"_ _ put-down the-hole",
+"alt4":"_ _ climb himself"
+},
+{
+"line":"He-is going-to jump-into the-water",
+"alt1":"She-is _ jump-out the-milk",
+"alt2":"They-are _ fly-into the-boat",
+"alt3":"_ _ sleep the-beach",
+"alt4":"_ _ jump-up _"
+},
+{
+"line":"They-are going-to have-a-picnic",
+"alt1":"She-is _ do-a-picnic",
+"alt2":"He-is _ go-to-sleep",
+"alt3":"_ _ make-a-camp",
+"alt4":"_ _ have-a-camp"
+},
+{
+"line":"He-is going-to fly a-kite",
+"alt1":"She-is _ do a-park",
+"alt2":"They-are _ visit a-plane",
+"alt3":"_ _ make a-mountain",
+"alt4":"_ _ jump a-tree"
+},
+{
+"line":"She-is going-to take-a-bath",
+"alt1":"He-is _ make-a-bath",
+"alt2":"They-are _ swim",
+"alt3":"_ _ wash-a-bath",
+"alt4":"_ _ make-a-shower"
+},
+{
+"line":"She-is going-to write-a-letter",
+"alt1":"He-is _ write-a-pen",
+"alt2":"They-are _ read-a-letter",
+"alt3":"_ _ buy-a-pen",
+"alt4":"_ _ watch-TV"
+},
+{
+"line":"He-is going-to deliver-a-package",
+"alt1":"She-is _ buy-a-book",
+"alt2":"They-are _ sell-a-computer",
+"alt3":"_ _ make-a-plane",
+"alt4":"_ _ write-a-story"
+}
+]}
+
+

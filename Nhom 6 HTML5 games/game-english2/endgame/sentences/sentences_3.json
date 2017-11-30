@@ -1,0 +1,177 @@
+{"meta":[],
+"frames": [
+    [1, 1, 239, 118, 0, -6, -22],
+    [242, 1, 200, 157, 0, -28, -10],
+    [1, 121, 238, 124, 0, -6, -22],
+    [241, 160, 177, 160, 0, -37, -7],
+    [1, 247, 237, 59, 0, -10, -67],
+    [1, 308, 237, 53, 0, -7, -64],
+    [240, 322, 122, 154, 0, -69, -14],
+    [1, 363, 230, 137, 0, -9, -21],
+    [233, 478, 212, 153, 0, -18, -10],
+    [1, 502, 230, 121, 0, -9, -32],
+    [1, 625, 227, 147, 0, -11, -15],
+    [230, 633, 213, 150, 0, -28, -14],
+    [1, 774, 226, 140, 0, -12, -7],
+    [229, 785, 216, 150, 0, -25, -8],
+    [1, 916, 225, 134, 0, -14, -23],
+    [228, 937, 208, 162, 0, -25, -6],
+    [1, 1052, 224, 117, 0, -11, -31],
+    [227, 1101, 218, 100, 0, -13, -41],
+    [1, 1171, 222, 129, 0, -4, -26],
+    [225, 1203, 220, 135, 0, -14, -23]
+],
+"sets":[
+{
+"line":"A-plane is faster than a-boat",
+"alt1":"A-cherry are smaller _ an-apple",
+"alt2":"A-car _ shorter _ gloves",
+"alt3":"Computer-games _ _ _ a-lemon",
+"alt4":"A-tent _ cheaper _ a-pencil"
+},
+{
+"line":"She is thinner than him",
+"alt1":"He are safer _ them",
+"alt2":"They _ bigger _ they",
+"alt3":"_ _ lighter _ he",
+"alt4":"_ _ colder _ her"
+},
+{
+"line":"She is more-beautiful than him",
+"alt1":"He are uglier _ he",
+"alt2":"They _ hotter _ she",
+"alt3":"_ _ cheaper _ her",
+"alt4":"_ _ older _ them"
+},
+{
+"line":"A-pineapple is heavier than an-apple",
+"alt1":"A-clock are more-dangerous _ a-bus",
+"alt2":"A-suit _ taller _ a-car",
+"alt3":"A-motorbike _ thinner _ water",
+"alt4":"Chess _ more-beautiful _ a-bike"
+},
+
+{
+"line":"Turles are slower than rabbits",
+"alt1":"Dogs is stronger _ birds",
+"alt2":"Goats _ cheaper _ dogs",
+"alt3":"Rats _ younger _ horses",
+"alt4":"Monkeys _ older _ frogs"
+},
+
+{
+"line":"A-train is longer than a-bus",
+"alt1":"Ice are more-dangerous _ a-car",
+"alt2":"A-ring _ fatter _ a-TV",
+"alt3":"A-pencil _ hotter _ a-boat",
+"alt4":"Watermelons _ younger _ swimming"
+},
+{
+"line":"She is shorter than him",
+"alt1":"He are more-dangerous _ her",
+"alt2":"They _ uglier _ he",
+"alt3":"_ _ more-expensive _ she",
+"alt4":"_ _ slower _ them"
+},
+{
+"line":"Whales are bigger than fish",
+"alt1":"Cats is more-beautiful _ camels",
+"alt2":"Pandas _ colder _ eagles",
+"alt3":"Turtles _ slower _ penguins",
+"alt4":"Gorillas _ younger _ chickens"
+},
+
+{
+"line":"Rats are uglier than rabbits",
+"alt1":"Horses is safer _ hippos",
+"alt2":"Swans _ stronger _ kangaroos",
+"alt3":"Goldfish _ shorter _ bulls",
+"alt4":"Donkeys _ thinner _ wolves"
+},
+{
+"line":"A-pencil is cheaper than a-calculator",
+"alt1":"A-car are taller _ a-TV",
+"alt2":"A-tent _ smaller _ a-newspaper",
+"alt3":"Watermelons _ shorter _ a-bike",
+"alt4":"A-suit _ hotter _ a-tshirt"
+},
+{
+"line":"He is fatter than her",
+"alt1":"She are stronger _ she",
+"alt2":"They _ taller _ he",
+"alt3":"_ _ heavier _ him",
+"alt4":"_ _ cheaper _ them"
+},
+{
+"line":"A-ring is more-expensive than gloves",
+"alt1":"A-feather are thinner _ water",
+"alt2":"A-motorbike _ more-beautiful _ pants",
+"alt3":"A-strawberry _ hotter _ a-bike",
+"alt4":"A-book _ more-expensive _ boxing"
+},
+{
+"line":"Sharks are more-dangerous than dolphins",
+"alt1":"Birds is stronger _ elephants",
+"alt2":"Pigs _ bigger _ sheep",
+"alt3":"Bears _ fatter _ rats",
+"alt4":"Penguins _ more-beautiful _ ducks"
+},
+{
+"line":"Mice are smaller than birds",
+"alt1":"Fish is safer _ pigs",
+"alt2":"Parrots _ bigger _ cats",
+"alt3":"Monsters _ fatter _ donkeys",
+"alt4":"Worms _ slower _ parrots"
+},
+{
+"line":"A-tree is taller than a-car",
+"alt1":"A-train are more-dangerous _ a-bus",
+"alt2":"A-pineapple _ fatter _ a-boat",
+"alt3":"A-balloon _ uglier _ swimming",
+"alt4":"A-plane _ heavier _ _"
+},
+
+{
+"line":"Dogs are safer than wolves",
+"alt1":"Elephants is uglier _ monkeys",
+"alt2":"Sharks _ heavier _ goats",
+"alt3":"Ants _ lighter _ pandas",
+"alt4":"Camels _ colder _ turtles"
+},
+
+{
+"line":"He is stronger than her",
+"alt1":"She are safer _ him",
+"alt2":"They _ lighter _ she",
+"alt3":"_ _ colder _ he",
+"alt4":"_ _ slower _ they"
+},
+{
+"line":"Ice is colder than water",
+"alt1":"A-tree are smaller _ an-apple",
+"alt2":"A-balloon _ shorter _ a-calculator",
+"alt3":"A-ring _ faster _ a-watch",
+"alt4":"Watermelons _ cheaper _ an-apple"
+},
+{
+"line":"He is hotter than her",
+"alt1":"She are taller _ she",
+"alt2":"They _ smaller _ him",
+"alt3":"_ _ thinner _ them",
+"alt4":"_ _ faster _ he"
+},
+
+
+{
+"line":"A-balloon is lighter than a-TV",
+"alt1":"A-truck are bigger _ gloves",
+"alt2":"A-strawberry _ lighter _ a-calculator",
+"alt3":"A-banana _ faster _ pears",
+"alt4":"A-book _ more-expensive _ a-hotdog"
+},
+
+
+
+]}
+
+

@@ -1,0 +1,167 @@
+{"meta":[],
+"frames": [
+    [1, 1, 231, 160, 0, -6, -3],
+    [234, 1, 216, 160, 0, -20, -3],
+    [452, 1, 211, 160, 0, -25, -3],
+    [665, 1, 206, 160, 0, -28, -3],
+    [1, 163, 230, 142, 0, -10, -24],
+    [233, 163, 199, 159, 0, -36, -4],
+    [1, 307, 225, 158, 0, -12, -5],
+    [228, 324, 228, 156, 0, -19, -7],
+    [1, 467, 211, 158, 0, -26, -5],
+    [434, 163, 226, 157, 0, -11, -6],
+    [458, 322, 202, 158, 0, -33, -5],
+    [214, 482, 224, 148, 0, -10, -17],
+    [1, 627, 210, 145, 0, -28, -18],
+    [440, 482, 220, 152, 0, -20, -11],
+    [213, 632, 219, 141, 0, -26, -22],
+    [434, 636, 204, 139, 0, -35, -24],
+    [662, 163, 214, 157, 0, -21, -6],
+    [662, 322, 212, 153, 0, -29, -10],
+    [662, 477, 205, 142, 0, -31, -21],
+    [662, 621, 211, 141, 0, -24, -22]
+],
+"sets":[
+{
+"line":"She can climb a-tree",
+"alt1":"He can't fly a-mountain",
+"alt2":"They _ speak a-horse",
+"alt3":"_ _ write a-table",
+"alt4":"_ _ drive a-banana"
+},
+{
+"line":"He can't climb a-tree",
+"alt1":"They can dance a-monkey",
+"alt2":"She _ eat a-table",
+"alt3":"_ _ ride a-phone",
+"alt4":"_ _ watch a-computer"
+},
+{
+"line":"Parrots can fly",
+"alt1":"Chickens can't speak",
+"alt2":"Ducks _ eat",
+"alt3":"Lions _ drive",
+"alt4":"Monsters _ ride"
+},
+{
+"line":"Frogs can't fly",
+"alt1":"Goats can dance",
+"alt2":"Eagles _ eat",
+"alt3":"Turtles _ ride",
+"alt4":"Zebras _ watch"
+},
+{
+"line":"Worms can't jump",
+"alt1":"Pigs can eat",
+"alt2":"Tigers _ drive",
+"alt3":"Pandas _ ride",
+"alt4":"Monkeys _ watch"
+},
+{
+"line":"Kangaroos can jump",
+"alt1":"Wolves can't speak",
+"alt2":"Dolphins _ dance",
+"alt3":"Bulls _ drive",
+"alt4":"Bees _ watch"
+},
+{
+"line":"He can swim",
+"alt1":"She can't fly",
+"alt2":"They _ climb",
+"alt3":"_ _ eat",
+"alt4":"_ _ ride"
+},
+{
+"line":"They can play the-guitar",
+"alt1":"He can't fly bananas",
+"alt2":"She _ write the-TV",
+"alt3":"_ _ climb the-violin",
+"alt4":"_ _ ride the-piano"
+},
+{
+"line":"Monkeys can't ride a-bike",
+"alt1":"Deer can speak a-horse",
+"alt2":"Camels _ dance a-sofa",
+"alt3":"Fish _ climb a-chair",
+"alt4":"Lizards _ watch a-plane"
+},
+{
+"line":"Ducks can swim",
+"alt1":"Caterpillars can't dance",
+"alt2":"Beetles _ write",
+"alt3":"Mice _ eat",
+"alt4":"Snakes _ ride"
+},
+{
+"line":"Pandas can't use a-computer",
+"alt1":"Chickens can jump a-TV",
+"alt2":"Ants _ climb a-car",
+"alt3":"Frogs _ eat a-wall",
+"alt4":"Puppies _ watch a-clock"
+},
+{
+"line":"She can play the-piano",
+"alt1":"He can't fly the-guitar",
+"alt2":"They _ write the-violin",
+"alt3":"_ _ eat the-table",
+"alt4":"_ _ ride the-sofa"
+},
+{
+"line":"He can speak English",
+"alt1":"She can't fly monkey",
+"alt2":"They _ speak talk",
+"alt3":"_ _ climb listen",
+"alt4":"_ _ ride Japanese"
+},
+{
+"line":"Gorillas can't speak English",
+"alt1":"Tigers can climb Japanese",
+"alt2":"Horses _ eat Chinese",
+"alt3":"Cows _ drive a-tree",
+"alt4":"Donkeys _ ride yellow"
+},
+{
+"line":"Turtles can't drive a-car",
+"alt1":"Sheep can write a-TV",
+"alt2":"Badgers _ climb a-watch",
+"alt3":"Pandas _ drive hair",
+"alt4":"Monkeys _ ride a-tshirt"
+},
+{
+"line":"She can play the-violin",
+"alt1":"He can't speak the-guitar",
+"alt2":"They _ jump the-piano",
+"alt3":"_ _ drive the-bag",
+"alt4":"_ _ watch the-computer"
+},
+{
+"line":"Rabbits can't write a-letter",
+"alt1":"Mice can jump a-newspaper",
+"alt2":"Swans _ dance white",
+"alt3":"Sharks _ eat a-pen",
+"alt4":"Camels _ watch a-hand"
+},
+{
+"line":"Squirrels can't play basketball",
+"alt1":"Birds can fly soccer",
+"alt2":"Elephants _ write tennis",
+"alt3":"Gorillas _ drive running",
+"alt4":"Lizards _ ride exercise"
+},
+{
+"line":"Fish can't walk",
+"alt1":"Ants can fly",
+"alt2":"Pigs _ eat",
+"alt3":"Giraffes _ drive",
+"alt4":"Mice _ ride"
+},
+{
+"line":"He can play the-drums",
+"alt1":"They can't dance study",
+"alt2":"She _ write boxes",
+"alt3":"_ _ climb sit-down",
+"alt4":"_ _ eat the-piano"
+}
+]}
+
+

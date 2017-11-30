@@ -1,0 +1,167 @@
+{"meta":[],
+"frames": [
+    [1, 1, 95, 167, 0, -73, -5],
+    [1, 170, 74, 158, 0, -82, -10],
+    [1, 330, 139, 154, 0, -54, -10],
+    [77, 170, 210, 152, 0, -21, -13],
+    [98, 1, 181, 152, 0, -30, -12],
+    [281, 1, 132, 152, 0, -58, -14],
+    [142, 324, 107, 150, 0, -66, -13],
+    [251, 324, 136, 149, 0, -59, -11],
+    [289, 155, 99, 147, 0, -78, -14],
+    [389, 304, 152, 146, 0, -50, -15],
+    [390, 155, 193, 144, 0, -34, -19],
+    [415, 1, 179, 137, 0, -32, -24],
+    [543, 301, 120, 136, 0, -63, -20],
+    [585, 140, 191, 135, 0, -29, -21],
+    [596, 1, 201, 131, 0, -23, -25],
+    [799, 1, 214, 90, 0, -19, -42],
+    [799, 93, 211, 106, 0, -17, -35],
+    [778, 201, 205, 121, 0, -25, -32],
+    [665, 324, 137, 127, 0, -66, -24],
+    [804, 324, 203, 120, 0, -27, -31]
+],
+"sets":[
+{
+"line":"He is riding a-bike",
+"alt1":"They are climbing a-guitar",
+"alt2":"She _ dancing TV",
+"alt3":"_ _ _ _",
+"alt4":"_ _ _ _"
+},
+{
+"line":"He is flying a-kite",
+"alt1":"They are driving a-bike",
+"alt2":"She _ going a-guitar",
+"alt3":"_ _ _ _",
+"alt4":"_ _ _ _"
+},
+{
+"line":"She is reading a-book",
+"alt1":"He are listening cards",
+"alt2":"They _ making at-a-clock",
+"alt3":"_ _ _ _",
+"alt4":"_ _ _ _"
+},
+{
+"line":"He is playing the-guitar",
+"alt1":"They are speaking the-horse",
+"alt2":"She _ reading the-newspaper",
+"alt3":"_ _ _ _",
+"alt4":"_ _ _ _"
+},
+{
+"line":"They are eating cake",
+"alt1":"He are jumping cards",
+"alt2":"She _ walking a-kite",
+"alt3":"_ _ _ _",
+"alt4":"_ _ _ _"
+},
+{
+"line":"He-is washing his-face",
+"alt1":"They-are speaking chess",
+"alt2":"She-is using at-the-clock",
+"alt3":"_ sleeping _",
+"alt4":"_ reading _"
+},
+{
+"line":"He is eating a-banana",
+"alt1":"They are speaking a-computer",
+"alt2":"She _ cooking tennis",
+"alt3":"_ _ _ _",
+"alt4":"_ _ _ _"
+},
+{
+"line":"She-is combing her-hair",
+"alt1":"He-is listening a-computer",
+"alt2":"They-are making TV",
+"alt3":"_ running a-banana",
+"alt4":"_ riding a-kite"
+},
+{
+"line":"She is drinking coffee",
+"alt1":"He are talking to-school",
+"alt2":"They _ making at-a-clock",
+"alt3":"_ _ _ _",
+"alt4":"_ _ _ _"
+},
+{
+"line":"They-are watching a-movie",
+"alt1":"He-is talking oranges",
+"alt2":"She-is singing hands",
+"alt3":"_ flying _",
+"alt4":"_ walking _"
+},
+{
+"line":"She is cooking",
+"alt1":"He are talking",
+"alt2":"They _ riding",
+"alt3":"_ _ _",
+"alt4":"_ _ _"
+},
+{
+"line":"He-is writing",
+"alt1":"They-are jumping",
+"alt2":"She-is playing",
+"alt3":"_ climbing",
+"alt4":"_ taking"
+},
+{
+"line":"He-is brushing his-teeth",
+"alt1":"They-are drinking cards",
+"alt2":"He-is eating at-a-clock",
+"alt3":"_ sitting _",
+"alt4":"_ getting _"
+},
+{
+"line":"He is reading a-newspaper",
+"alt1":"They are watching coffee",
+"alt2":"She _ playing cake",
+"alt3":"_ _ _ _",
+"alt4":"_ _ _ _"
+},
+{
+"line":"They are playing tennis",
+"alt1":"He are taking a-mountain",
+"alt2":"She _ dancing a-photo",
+"alt3":"_ _ _ _",
+"alt4":"_ _ _ _"
+},
+{
+"line":"They-are drinking water",
+"alt1":"He-is sleeping homework",
+"alt2":"She-is reading the-window",
+"alt3":"_ running _",
+"alt4":"_ riding _"
+},
+{
+"line":"She is sleeping",
+"alt1":"He are driving",
+"alt2":"They _ reading",
+"alt3":"_ _ _",
+"alt4":"_ _ _"
+},
+{
+"line":"She is driving a-car",
+"alt1":"He are jumping English",
+"alt2":"They _ riding coffee",
+"alt3":"_ _ _ _",
+"alt4":"_ _ _ _"
+},
+{
+"line":"She is talking on-the-phone",
+"alt1":"He are eating tennis",
+"alt2":"They _ jumping to-music",
+"alt3":"_ _ _ _",
+"alt4":"_ _ _ _"
+},
+{
+"line":"They are watching TV",
+"alt1":"He are walking a-horse",
+"alt2":"She _ flying a-kite",
+"alt3":"_ _ _ _",
+"alt4":"_ _ _ _"
+}
+]}
+
+
