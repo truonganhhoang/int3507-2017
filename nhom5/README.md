@@ -22,6 +22,20 @@
 
 ## Danh sách hình vẽ
 
+| Hình vẽ  	| Mô tả                                         	|
+|----------	|-----------------------------------------------	|
+| Hình 1.1 	| Sơ đồ hoạt động của ứng dụng Facebook Chatbot 	|
+| Hình 2.1 	| Đăng ký ứng dụng mới                          	|
+| Hình 2.2 	| Tạo ứng dụng Messenger                        	|
+| Hình 2.3 	| Khởi chạy Ngrok                               	|
+| Hình 2.4 	| Thiết lập `page token`                        	|
+| Hình 2.5 	| Thiết lập Webhook                             	|
+| Hình 2.6 	| Đăng ký Webhook                               	|
+| Hình 2.7 	| Cấu trúc bộ sưu tập `users`                   	|
+| Hình 2.8 	| Cấu trúc mã nguồn                             	|
+| Hình 2.9 	| Tạo luồng sự kiện                             	|
+| Hình 3.1 	| Các API được triển khai trên máy chủ tìm kiếm 	|
+
 ## Lời mở đầu
 
 Theo thống kê từ Google Analytic của [SGUET](http://sguet.com), hàng tháng có trên 250 lượt truy cập, trên 200 lượt tìm kiếm liên quan đến các câu hỏi thường gặp và thông tin các giảng viên. Tuy nhiên, Mỗi mùa tuyển sinh, hàng chục câu hỏi vẫn được gửi vào một nhóm Facebook do SGUET tạo ra cho thấy tìm kiếm thông qua website vẫn chưa phải là cách thức hiệu quả và tiện lợi nhất đối với sinh viên. Việc này vẫn tồn tại nhược điểm, giả sử có thành viên trong nhóm biết câu trả lời, tuy nhiên vì lý do nào đấy mà câu hỏi có thể bị trôi hoặc quá nhiều thông báo mà bỏ lỡ câu hỏi, câu hỏi sẽ rơi vào tình trạng trả lời chậm hoặc không có người trả lời.  
@@ -48,7 +62,7 @@ Dựa vào cơ chế hoạt động của Facebook Chatbot, để xây dựng m�
 
 Hình 1.1: Sơ đồ hoạt động của ứng dụng Facebook Chatbot.
 
-Hình 1.1 mô tả ứng dụng Facebook Chatbot mà chúng tôi đã triển khai. Hai mũi tên ngược chiều nhau giữa `Facebook` và `Chatbot server` thể hiện tương tác hai chiều thông qua Webhook và Rest API. 
+Sơ đồ trên mô tả hoạt động của ứng dụng Facebook Chatbot mà chúng tôi đã triển khai. Hai mũi tên ngược chiều nhau giữa `Facebook` và `Chatbot server` thể hiện tương tác hai chiều thông qua Webhook và Rest API. 
 
 ### 1.1. Mô tả kiến trúc
 
@@ -118,7 +132,11 @@ Các hướng dẫn dưới đây được viết dựa trên project mẫu.
 
 ![Đăng ký ứng dụng](images/dang_ky_ung_dung.png)
 
+Hình 2.1: Đăng ký ứng dụng mới.
+
 ![Tạo ứng dụng Messenger](images/tao_ung_dung_messenger.png)
+
+Hình 2.2: Tạo ứng dụng Messenger.
 
 - Tạo cơ sở dữ liệu mới trên MongoDB có tên giống với `DB_DATABASE=` trong tệp `.env` (ở project mẫu là `facebookchatbot`), trong DB tạo 2 collection `users` và `lecturers`.
  
@@ -138,19 +156,27 @@ Sau đó chú ý tới địa chỉ `Forwarding (https)` (ở hình vẽ dưới
         
 ![Khởi chạy ngrok](images/ngrok.png)
 
+Hình 2.3: Khởi chạy Ngrok.
+
 - Trong ứng dụng Messenger vừa tạo ở bước 1, chọn trang mà bạn có quyền quản trị để lấy mã truy cập Trang. Dán mã truy cập trang vào dòng `PAGE_TOKEN=` trong tệp `.env`.
 
 ![Thiết lập page token](images/thiet_lap_page_token.png)
 
+Hình 2.4: Thiết lập `page token`.
+
 - Trên trang Facebook Developer, chọn phần `Thiết lập webhook`.
 
 ![Thiết lập webhook](images/thiet_lap_webhook.png)
+
+Hình 2.5: Thiết lập Webhook.
   
 Tại hộp thoại hiện lên, điền URL gọi lại giống `Fowarding (https)` của Ngrok và thêm `/webhook` vào sau (ở project mẫu là https://58157de6.ngrok.io/webhook). 
 
 Trường `Mã xác minh` nhập giống `VERIFY_TOKEN=` trong tệp `.env` (ở project mẫu là `verify_token`). `Trường gửi` chúng ta chọn `messages` và `messaging_postbacks`.
 
 ![Đăng ký Webhook](images/dang_ky_webhook.png)
+
+Hình 2.6: Đăng ký Webhook.
 
 ### 2.3. Xây dựng máy chủ chatbot nhận, xử lý tin nhắn và phản hồi tin nhắn phù hợp
 
@@ -166,9 +192,11 @@ Dữ liệu trong bài toán nào có thể được chia làm hai phần:
 
 - Dữ liệu phục vụ người dùng cần tìm kiếm (thông tin giảng viên, hướng nghiên cứu, môn học, tài liệu,...): Dữ liệu này ít biến động, chỉ có bổ sung thêm khi thu thập được thêm thông tin, nhưng lại cần tìm kiếm nhiều. Do đó ta tách phần dữ liệu này ra cùng với việc xử lý tìm kiếm trên dữ liệu này thành 1 tầng khác, sẽ được trình bày ở phần sau.
 
-Như vậy ở MongoDB ta cần xây dựng 1 collection `users` có cấu trúc như sau.
+Như vậy ở MongoDB ta cần xây dựng một bộ sưu tập (collection) `users` có cấu trúc như sau.
 
 ![Collection users](images/collection_user.png)
+
+Hình 2.7: Cấu trúc bộ sưu tập `users`.
 
 #### 2.3.2. Xây dựng các luồng xử lý
 
@@ -186,11 +214,15 @@ Khi người dùng thực hiện một hành động (gửi tin, chọn menu, b�
 
 ![Cấu trúc mã nguồn](images/cau_truc_ma_nguon.png  "Cấu trúc mã nguồn")
 
+Hình 2.8: Cấu trúc mã nguồn.
+
 ### 2.3.3. Làm sao để xây dựng được luồng xử lý phù hợp với các tin nhắn của người dùng.
 
 Khi ứng dụng của bạn yêu cầu nhập tên giảng viên khi tra cứu giảng viên, hay nhập câu hỏi khi muốn tra cứu hỏi đáp. Vậy làm sao để phân biệt được tin nhắn nào là để tra cứu giảng viên hay hỏi đáp khi mà các tin nhắn gửi đến chỉ được gửi hoàn toàn riêng rẽ và độc lập ? Chính vì vậy, chúng tôi đã sử dụng collection users để xử lý vấn đề này. Khi một tin nhắn văn bản gửi đến, chúng tôi sẽ dựa vào postback hay quickreply cuối cùng được gửi đến để xác định yêu cầu tra cứu. Ví dụ:
 
 ![Tạo luồng sự kiện](images/tao_luong_su_kien.png  "Tạo luồng sự kiện")
+
+Hình 2.9: Tạo luồng sự kiện.
 
 Khi một tin nhắn văn bản được gửi đến, chúng tôi sẽ truy vấn action cuối cùng, sau đó mới đưa ra phương thức xử lý của action đó.
 
