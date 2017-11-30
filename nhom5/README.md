@@ -1,5 +1,11 @@
 # UET Chatbot - Ứng dụng Facebook Chatbot hỗ trợ sinh viên UET
 
+[![GitHub](https://img.shields.io/badge/github-developing-blue.svg)](github.com/nguyenducthuanuet/facebookchatbot)
+[![Node](https://img.shields.io/badge/node-8.5.0-blue.svg)](https://nodejs.org/en/)
+[![MongoDB](https://img.shields.io/badge/mongodb-3.6-blue.svg)](https://www.mongodb.com/)
+[![Ngrok](https://img.shields.io/badge/ngrok-download-lightgrey.svg)](https://ngrok.com/download)
+
+
 **Môn học**: Các vấn đề hiện đại trong Công nghệ thông tin
 
 **Giảng viên**: Trương Anh Hoàng
@@ -9,8 +15,6 @@
 - Phan Thị Hà Trang
 - Nguyễn Thị Lan
 - Nguyễn Văn Nhật
-
-**Github**: [nguyenducthuanuet/facebookchatbot](https://github.com/nguyenducthuanuet/facebookchatbot)
 
 ## Danh sách khái niệm, thuật ngữ
 
