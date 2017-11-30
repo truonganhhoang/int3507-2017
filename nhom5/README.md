@@ -1,4 +1,4 @@
-# Ứng dụng chatbot hỗ trợ sinh viên UET
+# UET Chatbot - Ứng dụng Facebook Chatbot hỗ trợ sinh viên UET
 
 **Môn học**: Các vấn đề hiện đại trong Công nghệ thông tin
 
@@ -10,35 +10,33 @@
 - Nguyễn Thị Lan
 - Nguyễn Văn Nhật
 
-## Tóm tắt
+## Danh sách khái niệm, thuật ngữ
 
-## Danh sách thuật ngữ và viết tắt
-
-## Danh sách bảng
+| Khái niệm/Thuật ngữ | Giải thích                                                                                                                                                                                                                                                                                                                                                              |
+|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Webhook             | Webhook hiểu đơn giản thì đây là một công cụ để truy vấn và lưu dữ liệu của một sự kiện xác định. Khi một trong những sự kiện đã đăng ký được kích hoạt, webhook sẽ gửi một HTTP POST đến một địa chỉ URL được đăng ký từ trước.                                                                                                                                        |
+| REST                | REST (**RE**presentational **S**tate **T**ransfer) là một dạng dạng chuyển đổi cấu trúc dữ liệu. Rest API là một ứng dụng chuyển đổi cấu trúc dữ liệu có phương thức để kết nối và ứng dụng khác. Facebook cung cấp REST API để lập trình viên có thể gửi tin nhắn phản hồi đến người dùng, cho dù người dùng viết ứng dụng trả lời bằng bất kỳ ngôn ngữ lập trình nào. |
+| Facebook Chatbot    | Facebook Chatbot là một phần mở rộng cho chức năng nhắn tin trên trang Facebook của bạn. Mỗi Chatbot phải được liên kết với một trang Facebook đang tồn tại. Vì vậy, nếu bất cứ ai đang chat với bot của bạn thì họ đang chat với trang Facebook của bạn, nhưng thay vì là cuộc trò chuyện giữa người với người thì bot của bạn nói chuyện với người.                   |
+| Elasticsearch       | Elasticsearch là một công cụ tìm kiếm dựa trên phần mềm Lucene. Nó cung cấp một bộ máy tìm kiếm dạng phân tán, có đầy đủ công cụ với một giao diện web HTTP có hỗ trợ dữ liệu JSON.                                                                                                                                                                                     |
+| Crawler             | Crawler là 1 từ để ám chỉ các công cụ (phần mềm, modules, plugins… hay đơn giản chỉ là một hàm nhỏ) có chức năng chính là tự động phân tích dữ liệu từ nguồn nội dung sau đó bóc tách những thông tin cần thiết theo tiêu chí mà nó được lập trình viên hệ thống thiết lập.                                                                                             |
 
 ## Danh sách hình vẽ
 
 ## Lời mở đầu
 
-## Chương 1: Các khái niệm cơ bản
+Theo thống kê từ Google Analytic của [SGUET](http://sguet.com), hàng tháng có trên 250 lượt truy cập, trên 200 lượt tìm kiếm liên quan đến các câu hỏi thường gặp và thông tin các giảng viên. Tuy nhiên, Mỗi mùa tuyển sinh, hàng chục câu hỏi vẫn được gửi vào một nhóm Facebook do SGUET tạo ra cho thấy tìm kiếm thông qua website vẫn chưa phải là cách thức hiệu quả và tiện lợi nhất đối với sinh viên. Việc này vẫn tồn tại nhược điểm, giả sử có thành viên trong nhóm biết câu trả lời, tuy nhiên vì lý do nào đấy mà câu hỏi có thể bị trôi hoặc quá nhiều thông báo mà bỏ lỡ câu hỏi, câu hỏi sẽ rơi vào tình trạng trả lời chậm hoặc không có người trả lời.  
 
-Trước khi đi vào xây dựng ứng dụng, ta cần hiểu về cơ chế hoạt động của Facebook Chatbot và các khái niệm liên quan.
+Do đó, chúng tôi đề xuất một phương án tốt hơn và tiện lợi hơn cho sinh viên trường, cả người hỏi và người trả lời. Chúng tôi đã xây dựng UET Chatbot - một ứng dụng Facebook Chatbot dựa trên [Nền tảng Messenger](https://developers.facebook.com/docs/messenger-platform/introduction). Ứng dụng của chúng tôi có các chức năng chính sau:
 
-### 1.1. Webhook là gì
+- Tra cứu các câu hỏi thường gặp của sinh viên.
 
-Webhook hiểu đơn giản thì đây là một công cụ để truy vấn và lưu dữ liệu của một sự kiện xác định. Khi một trong những sự kiện đã đăng ký được kích hoạt, webhook sẽ gửi một HTTP POST đến một địa chỉ URL được đăng ký từ trước.
+- Tra cứu thông tin các giảng viên (điện thoại liên hệ, phòng làm việc, đơn vị làm việc, email, website, hướng nghiên cứu,...).
 
-### 1.2. Rest API là gì
+- Tra cứu thông tin môn học (số tín chỉ, môn học tiên quyết,...).
 
-REST (**RE**presentational **S**tate **T**ransfer) là một dạng dạng chuyển đổi cấu trúc dữ liệu. Rest API là một ứng dụng chuyển đổi cấu trúc dữ liệu có phương thức để kết nối và ứng dụng khác. Facebook cung cấp REST API để lập trình viên có thể gửi tin nhắn phản hồi đến người dùng, cho dù người dùng viết ứng dụng trả lời bằng bất kỳ ngôn ngữ lập trình nào.
+- Tra cứu các văn bản, biểu mẫu thường dùng.
 
-### 1.3. Cơ chế hoạt động của Facebook Chatbot
-
-Đầu tiên, ta phải tạo và đăng kí địa chỉ ứng dụng webhook cho trang với Facebook. Khi có tin nhắn gửi đến trang, Facebook sẽ gửi một HTTP POST thông qua Webhook này để chúng ta tiếp tục xử lý.
-
-Sau khi xử lý xong, nếu muốn trả lời lại người dùng, chúng ta phải gửi tin nhắn qua Rest API của Facebook. Nhờ đó, một tin nhắn từ trang của ta tới người dùng được Facebook gửi đi.
-
-## Chương 2: Tổng quan về kiến trúc ứng dụng
+## Chương 1: Tổng quan về kiến trúc ứng dụng
 
 Dựa vào cơ chế hoạt động của Facebook Chatbot, để xây dựng một ứng dụng Facebook Chatbot, ta cần xây dựng một ứng dụng tương tác hai chiều với Facebook và cần thực hiện được hai việc như sau: 
 
@@ -52,7 +50,7 @@ Hình 1.1: Sơ đồ hoạt động của ứng dụng Facebook Chatbot.
 
 Hình 1.1 mô tả ứng dụng Facebook Chatbot mà chúng tôi đã triển khai. Hai mũi tên ngược chiều nhau giữa `Facebook` và `Chatbot server` thể hiện tương tác hai chiều thông qua Webhook và Rest API. 
 
-### 2.1. Mô tả kiến trúc
+### 1.1. Mô tả kiến trúc
 
 Theo hình 1.1, ứng dụng được chia làm 2 tầng chính với các chức năng như sau:
 
@@ -72,21 +70,27 @@ Theo hình 1.1, ứng dụng được chia làm 2 tầng chính với các chứ
     
     - Quản lý quá trình đẩy dữ liệu từ MySQL sang Elastic Search (indexing).
     
-### 2.2. Mô tả luồng xử lý 
+### 1.2. Mô tả luồng xử lý 
 
 Như mô tả trong hình 1.1, khi người dùng Facebook gửi tin nhắn tới trang, Facebook sẽ gọi tới webhook của máy chủ Chatbot. Máy chủ chatbot sẽ lưu thông tin người dùng và các tin nhắn vào MongoDB. Đối với các yêu cầu tìm kiếm của người dùng, máy chủ Chatbot gọi tới các API tìm kiếm tương ứng trên máy chủ tìm kiếm. Máy chủ tìm kiếm sẽ tìm chúng trên Elastic Search, sau đó trả kết quả về. Sau khi nhận được kết quả tìm kiếm, máy chủ Chatbot sẽ chọn một cách hiển thị thích hợp cho kết quả, rồi gửi kết quả tới người dùng thông qua Facebook Chatbot API.
 
 Song song với đó, các trình thu thập thông tin sẽ thu thập dữ liệu từ các nguồn khác nhau như trang web của trường, của các khoa,... để bổ sung hoặc cập nhật dữ liệu trên MySQL. Máy chủ tìm kiếm sẽ đảm nhận vai trò đưa dữ liệu từ MySQL sang Elastic Search hàng ngày. 
 
-## Chương 3: Máy chủ chatbot 
+## Chương 2: Máy chủ chatbot
+
+### 2.1. Cơ chế hoạt động của Facebook Chatbot
+
+Đầu tiên, ta phải tạo và đăng kí địa chỉ ứng dụng webhook cho trang với Facebook. Khi có tin nhắn gửi đến trang, Facebook sẽ gửi một HTTP POST thông qua Webhook này để chúng ta tiếp tục xử lý.
+
+Sau khi xử lý xong, nếu muốn trả lời lại người dùng, chúng ta phải gửi tin nhắn qua Rest API của Facebook. Nhờ đó, một tin nhắn từ trang của ta tới người dùng được Facebook gửi đi. 
 
 Máy chủ chatbot chúng ta sử dụng ở đây được xây dựng trên framework ExpressJS, cơ sở dữ liệu là MongoDB.
 
-### 3.1. Kết nối hai chiều với Facebook thông qua Webhook và Rest API
+### 2.2. Kết nối hai chiều với Facebook thông qua Webhook và Rest API
 
 Phần này sẽ tập trung vào cách thức xây dựng máy chủ chatbot để tiếp nhận các yêu cầu của người dùng và xử lý hoặc điều hướng xử lý chúng. 
 
-#### 3.1.1. Chuẩn bị
+#### 2.2.1. Chuẩn bị
 
 Chúng ta cần chuẩn bị và cài đặt các công cụ, công nghệ như sau:
 
@@ -112,9 +116,9 @@ Các hướng dẫn dưới đây được viết dựa trên project mẫu.
 
 - Truy cập [Facebook Developer](https://developers.facebook.com/), tạo một ứng dụng. Sau đó vào chọn ứng dụng Messenger.
 
-![Đăng ký ứng dụng](https://i.imgur.com/CxCpMQt.png  "Đăng ký ứng dụng")
+![Đăng ký ứng dụng](images/dang_ky_ung_dung.png)
 
-![Tạo ứng dụng Messenger](https://i.imgur.com/6fHCKLf.png  "Tạo ứng dụng Messenger")
+![Tạo ứng dụng Messenger](images/tao_ung_dung_messenger.png)
 
 - Tạo cơ sở dữ liệu mới trên MongoDB có tên giống với `DB_DATABASE=` trong tệp `.env` (ở project mẫu là `facebookchatbot`), trong DB tạo 2 collection `users` và `lecturers`.
  
@@ -132,29 +136,29 @@ Các hướng dẫn dưới đây được viết dựa trên project mẫu.
         
 Sau đó chú ý tới địa chỉ `Forwarding (https)` (ở hình vẽ dưới đây là https://58157de6.ngrok.io).
         
-![Khởi chạy ngrok](https://i.imgur.com/7G0gUHP.png  "Khởi chạy ngrok")
+![Khởi chạy ngrok](images/ngrok.png)
 
 - Trong ứng dụng Messenger vừa tạo ở bước 1, chọn trang mà bạn có quyền quản trị để lấy mã truy cập Trang. Dán mã truy cập trang vào dòng `PAGE_TOKEN=` trong tệp `.env`.
 
-![Thiết lập page token](https://i.imgur.com/etczblm.png "Thiết lập page token")
+![Thiết lập page token](images/thiet_lap_page_token.png)
 
 - Trên trang Facebook Developer, chọn phần `Thiết lập webhook`.
 
-![Thiết lập webhook](https://i.imgur.com/xSMD3cb.png  "Thiết lập webhook")
+![Thiết lập webhook](images/thiet_lap_webhook.png)
   
 Tại hộp thoại hiện lên, điền URL gọi lại giống `Fowarding (https)` của Ngrok và thêm `/webhook` vào sau (ở project mẫu là https://58157de6.ngrok.io/webhook). 
 
 Trường `Mã xác minh` nhập giống `VERIFY_TOKEN=` trong tệp `.env` (ở project mẫu là `verify_token`). `Trường gửi` chúng ta chọn `messages` và `messaging_postbacks`.
 
-![Webhook](https://i.imgur.com/cGF7ra6.png  "Webhook")
+![Đăng ký Webhook](images/dang_ky_webhook.png)
 
-### 3.2. Xây dựng máy chủ chatbot nhận, xử lý tin nhắn và phản hồi tin nhắn phù hợp
+### 2.3. Xây dựng máy chủ chatbot nhận, xử lý tin nhắn và phản hồi tin nhắn phù hợp
 
 Việc xây dựng máy chủ chatbot như thế nào, phản hồi thông điệp ra sao phụ thuộc rất nhiều vào mục đích của chatbot để tạo nên các hàm cũng như gọi các API để lấy dữ liệu tương ứng. Tuy nhiên, do các ứng dụng chatbot đều xây dựng dựa trên các giao diện ứng dụng (API) mà Facebook cung cấp, chính vì vậy mà các sự kiện xử lý và luồng dữ liệu đều xoay quanh các API này.
 
 Phần này sẽ trình bày cách tổ chức và xây dựng mã nguồn nhằm đáp ứng mụch đích của chatbot mà chúng tôi xây dựng, bao gồm hai tính năng chính là tra cứu và hỏi đáp thông tin.
 
-#### 3.2.1. Xây dựng cơ sở dữ liệu
+#### 2.3.1. Xây dựng cơ sở dữ liệu
 
 Dữ liệu trong bài toán nào có thể được chia làm hai phần: 
 
@@ -166,7 +170,7 @@ Như vậy ở MongoDB ta cần xây dựng 1 collection `users` có cấu trúc
 
 ![Collection users](images/collection_user.png)
 
-#### 3.2.2. Xây dựng các luồng xử lý
+#### 2.3.2. Xây dựng các luồng xử lý
 
 Khi người dùng thực hiện một hành động (gửi tin, chọn menu, bấm một nút, chọn danh sách, gửi tệp,...) khi nhắn tin với trang, Facebook sẽ gửi một sự kiện qua webhook của trang, kèm theo đó là dữ liệu mà người dùng gửi (tin nhắn, tệp, nút...). Tất cả các hành động được chia vào 4 loại sự kiện:
 
@@ -180,75 +184,75 @@ Khi người dùng thực hiện một hành động (gửi tin, chọn menu, b�
 
 Ở bài toán của project mẫu, ta không cần dùng tới sự kiện attachment nên chỉ 3 sự kiện message, postback, quickreply được đề cập.
 
-![Cấu trúc mã nguồn](https://i.imgur.com/IreNobG.png  "Cấu trúc mã nguồn")
+![Cấu trúc mã nguồn](images/cau_truc_ma_nguon.png  "Cấu trúc mã nguồn")
 
-### 3.2.3. Làm sao để xây dựng được luồng xử lý phù hợp với các tin nhắn của người dùng.
+### 2.3.3. Làm sao để xây dựng được luồng xử lý phù hợp với các tin nhắn của người dùng.
 
 Khi ứng dụng của bạn yêu cầu nhập tên giảng viên khi tra cứu giảng viên, hay nhập câu hỏi khi muốn tra cứu hỏi đáp. Vậy làm sao để phân biệt được tin nhắn nào là để tra cứu giảng viên hay hỏi đáp khi mà các tin nhắn gửi đến chỉ được gửi hoàn toàn riêng rẽ và độc lập ? Chính vì vậy, chúng tôi đã sử dụng collection users để xử lý vấn đề này. Khi một tin nhắn văn bản gửi đến, chúng tôi sẽ dựa vào postback hay quickreply cuối cùng được gửi đến để xác định yêu cầu tra cứu. Ví dụ:
 
-![Tạo luồng sự kiện](https://i.imgur.com/McVKxRv.png  "Tạo luồng sự kiện")
+![Tạo luồng sự kiện](images/tao_luong_su_kien.png  "Tạo luồng sự kiện")
 
 Khi một tin nhắn văn bản được gửi đến, chúng tôi sẽ truy vấn action cuối cùng, sau đó mới đưa ra phương thức xử lý của action đó.
 
-## Chương 4: Tầng máy chủ tìm kiếm
+## Chương 3: Tầng máy chủ tìm kiếm
 
-Máy chủ tìm kiếm chúng tôi xây dựng dựa trên project có sẵn [sguet.com](http://sguet.com) nên chúng tôi không công bố mã nguồn mà chỉ hướng dẫn cách thiết lập một máy chủ tìm kiếm tương tự.
+Máy chủ tìm kiếm chúng tôi xây dựng dựa trên dự án có sẵn là [website sguet.com](http://sguet.com) nên chúng tôi không công bố mã nguồn mà chỉ hướng dẫn cách xây dựng một máy chủ tìm kiếm tương tự.
 
-### 4.1. Chuẩn bị
+### 3.1. Công nghệ
 
 Máy chủ tìm kiếm được xây dựng trên những công nghệ sau:
 
-- Framework: [Laravel 5.*]().
+- Framework: [Laravel 5.3](https://laravel.com/docs/5.3) trên [PHP 5.6.4](http://php.net/).
 
-- Hệ quản trị Cơ sở dữ liệu: [MySQL]().
+- Hệ quản trị Cơ sở dữ liệu: [MySQL](https://www.mysql.com/).
 
-- Máy tìm kiếm: [Elastic Search]().
+- Công cụ tìm kiếm: [Elasticsearch](https://www.elastic.co/).
 
-- Cơ sở dữ liệu: Tạo một cơ sở dữ liệu mới, chạy tệp `.sql` trong project mẫu để nhập các dữ liệu tìm kiếm, cụ thể:
+- Thư viện Truy vấn Elasticsearch trên PHP: [elasticsearch/elasticsearch](https://github.com/elastic/elasticsearch) kết hợp với [guzzle/guzzle](https://github.com/guzzle/guzzle).   
 
-    - Bảng `faqs`, `taggable`, `tags`: Dữ liệu về các câu hỏi thường gặp của sinh viên cùng các nhãn hỗ trợ tìm kiếm.
-    
-    - Bảng `documents`: Dữ liệu về các văn bản, biểu mẫu của trường.
-    
-    - Bảng `subjects`: Dữ liệu về các môn học.
+### 3.2. Chuyển dữ liệu MySQL lên Elasticsearch
 
-### 4.2. Chuyển đổi dữ liệu từ MySQL lên Elastic Search
+Hệ thống crawler của chúng tôi được thiết kế đẩy dữ liệu trực tiếp vào MySQL. Dữ liệu trên Elasticsearch có cấu trúc NoSQL, rất khác so với MySQL. Do đó, đối với mỗi thực thể (model), chúng tôi chỉ lấy các thuộc tính và các quan hệ (hoặc thuộc tính của quan hệ) cần dùng cho tìm kiếm, sau đó chuyển thành một đối tượng JSON rồi đẩy lên Elasticsearch.  
 
-Sử dụng thư viện [elasticsearch/elasticsearch]() và cơ chế `bulk index` để đẩy dữ liệu từ MySQL sang Elastic Search. Hình 4.1 dưới đây là đoạn mã nguồn sử dụng `bulk index` để đẩy dữ liệu lên Elastic Search.  
+Quá trình đẩy dữ liệu từ MySQL lên Elasticsearch được thực thi bởi máy chủ tìm kiếm. Khi mới cài đặt Elasticsearch, để chuyển một nguồn dữ liệu có sẵn từ MySQL lên Elasticsearch, chúng tôi sử dụng cơ chế [Bulk API](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html). Cơ chế này giúp đẩy một lượng lớn dữ liệu cùng lúc thay vì tuần tự từng tài liệu một. Các dữ liệu mới được thêm, sửa, xoá trong thời gian sử dụng chúng tôi cũng sử dụng cùng cơ chế trên để đẩy lên Elasticsearch ngay lập tức.  
 
-![Elastic bulk index](images/elastic_bulk_index.png) 
+### 3.3. Tìm kiếm trên Elasticsearch
 
-Hình 4.1: Đoạn mã nguồn đẩy dữ liệu từ MySQL sang Elastic Search (indexing) được viết bằng PHP.
+Chúng tôi sử dụng cơ chế [Multi Match Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html) giúp tìm kiếm đồng thời trên nhiều trường của tài liệu. Cụ thể:
 
-### 4.3. Tìm kiếm trên Elastic Search
+- Tra cứu câu hỏi thường gặp: Tìm theo tiêu đề, câu hỏi tương tự (paraphrases), nhãn (tags).
 
-![Elastic search](images/elastic_search_func.png)
+- Tra cứu thông tin giảng viên: Tìm theo tên, tên rút gọn (slug), chức vụ và đơn vị làm việc.
 
-Hình 4.2: Đoạn mã nguồn tìm kiếm trên Elastic Search được viết bằng PHP.
+- Tra cứu thông tin môn học: Tìm theo mã môn học, tên tiếng Việt, tên tiếng Anh.
 
-Trong hình 4.2, để tìm kiếm hiệu quả trên Elastic Search, chúng ta sử dụng `multi_match` với `fields` là các trường cần tìm kiếm (ví dụ, tìm môn học thì sẽ tìm trên mã môn học, tên môn học, tên môn học bằng tiếng Anh).
+- Tra cứu văn bản, biểu mẫu: Tìm theo tên văn bản, biểu mẫu.
 
-`_source`  ta để `""` có nghĩa là chỉ lấy `id` của dữ liệu trả về, bởi ta cần lọc lại một lần trên MySQL phòng trường hợp dữ liệu mới cập nhật chưa được đẩy lên Elastic Search.
+Đồng thời, chúng tôi sử dụng [Source Filtering](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-source-filtering.html) để chỉ lấy ra trường `id` của tài liệu. Điều này giúp tăng hiệu năng tìm kiếm trên Elasticsearch và tối giản kết quả trả về. 
 
-### 4.4. Cung cấp API để tìm kiếm
+Từ danh sách `id` trả về từ Elasticsearch, chúng tôi tìm kiếm các bản ghi trên MySQL, sử dụng [ORDER BY FIELD()](https://dba.stackexchange.com/questions/109120/how-does-order-by-field-in-mysql-work-internally) để kết quả trả về có cùng thứ tự với danh sách `id`. Cách làm này giúp phòng tránh trường hợp dữ liệu không đồng bộ giữa MySQL và Elasticsearch (có thể gây ra do quá trình đẩy dữ liệu bị lỗi).
+
+### 3.4. Các API
 
 ![Search API](images/search_api.png)
 
-Hình 4.3: Các API được triển khai trên máy chủ tìm kiếm.
+Hình 3.1: Các API được triển khai trên máy chủ tìm kiếm.
 
-Hình 4.3 là danh sách các API mà máy chủ tìm kiếm cung cấp, theo thứ tự là:
+Hình trên là danh sách các API mà máy chủ tìm kiếm cung cấp, theo thứ tự là:
 
-- API tìm kiếm câu hỏi thường gặp của sinh viên với đầu vào là tiêu đề, từ khoá hoặc câu hỏi tương tự (`parapharses`).
+- API tìm kiếm câu hỏi thường gặp của sinh viên với đầu vào `query` là tiêu đề, từ khoá hoặc câu hỏi tương tự (`parapharses`).
 
 - API tra cứu nội dung chi tiết của một câu hỏi với đầu vào là `id` của câu hỏi.
 
-- API tìm kiếm môn học với đầu vào là tên môn học (tiếng Anh hoặc tiếng Việt) hoặc mã môn học.
+- API tìm kiếm môn học với đầu vào `query` là tên môn học (tiếng Anh hoặc tiếng Việt) hoặc mã môn học.
 
 - API tra cứu nội dung chi tiết của một môn học với đầu vào là `id` của môn học.
 
-- API tìm kiếm văn bản, biểu mẫu với đầu vào là tên văn bản, biểu mẫu.
+- API tìm kiếm văn bản, biểu mẫu với đầu vào `query` là tên văn bản, biểu mẫu.
 
 - API tra cứu nội dung chi tiết của một văn bản, biểu mẫu với đầu vào là `id` của văn bản, biểu mẫu.
+
+Máy chủ tìm kiếm đang được chạy trên IP `52.15.160.33`. API được cung cấp có dạng `http://52.15.160.33/api/URI` với `URI` được liệt kê trong hình 3.1. Ví dụ: [http://52.15.160.33/api/subjects/query=Kiểm thử](http://52.15.160.33/api/subjects/query=Kiểm thử) 
 
 ## Kết luận
 
