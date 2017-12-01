@@ -20,49 +20,49 @@ Giảng viên: Trương Anh Hoàng
  <li>III. Các kiến thức cơ bản về Dafny</li>
  <ul>
   <li>1. Phương thức (Methods)</li>
-  <li>2. Tiền – Hậu điều kiện (Pre- and Postconditions)</li>
+  <li>2. Tiền – Hậu điều kiện (Pre and Post conditions)</li>
   <li>3. Khẳng định (Assertions)</li>
-  <li>4. Hàm ( Function)</li>
+  <li>4. Hàm (Function)</li>
   <li>5. Bất biến trong vòng lặp (Loop Invariants)</li>
-  <li>6. Tính dừng(Termination)</li>
+  <li>6. Tính dừng (Termination)</li>
   <li>7. Mảng (Arrays)</li>
-  <li>8. Định lượng(Quantifiers)</li>
+  <li>8. Định lượng (Quantifiers)</li>
   <li>9. Khung (Framing)</li>
   <li>10. Tìm kiếm nhị phân (Binary Search)</li>
   <li>11. Các bộ (Collections)</li>
  <ul>
-  <li>a.      Tập hợp (Sets)</li>
-  <li>b.      Chuỗi (Sequence)</li>
-  <li>c.       Các tập hợp(Mutisets)</li>
-  <li>d.      Bản đồ( Map)</li>
+  <li>11.1.     Tập hợp (Sets)</li>
+  <li>11.2.     Chuỗi (Sequence)</li>
+  <li>11.3.      Các tập hợp (Mutisets)</li>
+  <li>11.4.     Bản đồ (Map)</li>
   </ul>
-  <li>12. Bổ đề( Lemmas)</li>
+  <li>12. Bổ đề (Lemmas)</li>
   <ul>
-<li>a.      Giới thiệu( Introduction)</li>
-<li>b.      Tìm kiếm số 0( Searching for zero)</li>
-<li>c.       Bổ đề( Lemmas) </li>
-<li>d.      Đếm(Counting)</li>
-<li>e.      Chứng minh phân phối thuộc tính( Proving the Distributive Property)</li>
-<li>f.       Cảm ứng( Induction)</li>
+<li>12.1.      Giới thiệu( Introduction)</li>
+<li>12.2.      Tìm kiếm số 0 (Searching for zero)</li>
+<li>12.3.       Bổ đề (Lemmas) </li>
+<li>12.4.      Đếm (Counting)</li>
+<li>12.5.      Chứng minh phân phối thuộc tính (Proving the Distributive Property)</li>
+<li>12.6.       Cảm ứng (Induction)</li>
   </ul>
-<li>13. Mô- đun( Modules)</li>
+<li>13. Mô- đun (Modules)</li>
   <ul>
-<li>a. Giới thiệu (Introduction)</li>
-<li>b. Nhập và xuất modules (Importing and Exporting Modules)</li>
-<li>c. Mở mô-đun (Opening Modules)</li>
-<li>d. Tính trừu tượng ( Module Abstraction)</li>
-<li>e. Tổ chức và sự phụ thuộc( Module Ordering and Dependencies)</li>
-<li>f. Tên ( Name Resolution)</li>
+<li>13.1. Giới thiệu (Introduction)</li>
+<li>13.2. Nhập và xuất modules (Importing and Exporting Modules)</li>
+<li>13.3. Mở mô-đun (Opening Modules)</li>
+<li>13.4. Tính trừu tượng (Module Abstraction)</li>
+<li>13.5. Tổ chức và sự phụ thuộc (Module Ordering and Dependencies)</li>
+<li>13.6. Tên (Name Resolution)</li>
   </ul>
  </ul>
    <li>IV. Kết luận</li>
  </ul>
                                    
 
-<center><h2>I. Giới thiệu về công cụ Dafny </h1></center>
-<p> Dafny là một công cụ kiểm chứng được viết để giúp cho lập trình viên đảm bảo chính xác những gì họ muốn làm và đảm bảo không còn lỗi thời gian chạy( run time) như số ngoài phạm vi, chia cho số 0, ... trong chương trình.</p>
-<p> Trình kiểm tra tĩnh của Dafny có thể sử dụng để kiểm chứng các yếu tố tĩnh của chương trình như là tính bắt buộc, tính tuần tự, hỗ trợ các lớp trừu tượng, phân bổ động, kiểu dữ liệu qui nạp và xây dựng trong cấu trúc đặc tả. Xác thông số đặc tả bao gồm tiền điều kiện và hậu điều kiện, các thông số đọc và ghi, các chỉ số chấm dứt. Để hỗ trợ thêm các thông số kỹ thuật, ngôn ngữ cũng cung cấp các biến ma, các hàm đệ quy và các kiểu như bộ và chuỗi. Thông số kỹ thuật và các cấu trúc ma thuật chỉ được sử dụng khi xác minh mà trình biên dịch bỏ qua chúng từ mã thực thi.[1]</p>
-<p> Để làm được điều này, Dafny dựa trên các chú thích cao cấp về lí do và chứng minh tính đúng đắn của code. Chương trình Dafny được chạy như một phần của biên dịch. Hiệu quả của một đoạn mã có thể được đưa ra một cách trừu tượng, sử dụng tự nhiên, biểu hiện cấp cao của hành vi mong muốn, đó là dễ dàng hơn và ít bị lỗi để viết. Dafny sau đó tạo ra một bằng chứng cho thấy mã phù hợp với các chú thích (giả sử chúng là chính xác nhất, là hiển nhiên). Dafny nâng cao gánh nặng cho việc viết mã lỗi miễn phí bằng cách viết chú thích không có lỗi. Điều này thường dễ hơn viết code, bởi vì các chú thích ngắn hơn và trực tiếp hơn.</p>
+<h2>I. Giới thiệu về công cụ Dafny</h2>
+<p> Dafny là một công cụ kiểm chứng được viết để giúp cho lập trình viên đảm bảo chính xác những gì họ muốn làm và đảm bảo không còn lỗi thời gian chạy (runtime) như trong trường hợp tràn số, vấn đề gặp phải khi chia cho số 0, ... trong chương trình.</p>
+<p> Trình kiểm tra tĩnh của Dafny có thể sử dụng để kiểm chứng các yếu tố tĩnh của chương trình như là tính bắt buộc, tính tuần tự, đồng thời Dafny cũng hỗ trợ các lớp trừu tượng, phân bổ động, kiểu dữ liệu qui nạp và xây dựng trong cấu trúc đặc tả. Nó xác thông số đặc tả bao gồm tiền điều kiện và hậu điều kiện, các thông số đọc và ghi, các chỉ số chấm dứt. Ngoài ra để hỗ trợ thêm các thông số kỹ thuật, Dafny cũng cung cấp các biến ma, các hàm đệ quy và các kiểu như bộ và chuỗi, các thông số kỹ thuật và các cấu trúc ma thuật chỉ được sử dụng khi xác minh mà trình biên dịch bỏ qua chúng từ mã thực thi.[1]</p>
+<p>Dafny dựa trên các chú thích cấp cao về việc xác định lí do và chứng minh tính đúng đắn(bộ phận hoặc toàn thể) của chương trình. Chương trình Dafny được chạy như một phần của trình biên dịch. Hiệu quả của một đoạn mã có thể được đưa ra một cách trừu tượng, sử dụng một cách tự nhiên hơn và biểu hiện cấp cao của hành vi mong muốn diễn tả, việc làm đó giúp công việc trở lên dễ dàng hơn và ít bị lỗi trong khi viết viết. Sau đó, Dafny tạo ra một bằng chứng cho thấy những code phù hợp với các chú thích (giả sử chúng là chính xác nhất, là hiển nhiên). Dafny nâng cao gánh nặng cho việc viết mã lỗi miễn phí, bằng cách viết chú thích không có lỗi. Điều này thường dễ hơn viết code, bởi vì các chú thích ngắn hơn và trực tiếp hơn.</p>
 <p> Từ các chương trình đã được kiểm chứng, trình biên dịch Dafny sản xuất mã (.dll hoặc .exe) cho nền tảng .NET. Tuy nhiên, các cơ sở để giao tiếp với mã NET khác là tối thiểu.</p>
 <p> Dưới đây là một ví dụ về chương trình của Dafny:</p>
 
@@ -72,7 +72,7 @@ forall k: int :: 0 <= k < a.Length ==> 0 < a[k] <br>
 <p> Đoạn code nói rằng đối với tất cả các số nguyên k là chỉ số vào mảng, giá trị tại chỉ mục đó lớn hơn không. Bằng cách viết các chú thích này, người ta tin tưởng rằng mã là chính xác. Hơn nữa, chính việc viết các chú thích có thể giúp người ta hiểu mã này đang làm gì ở mức sâu hơn.</p>
 <p> Cùng tìm hiểu các phần tiếp theo để có thể cài đặt và hiểu rõ hơn về Dafny.</p>
 
-<center><h2> II. Hướng dẫn cài đặt </h1></center>
+<h2>II. Hướng dẫn cài đặt</h2>
 <p>Do Dafny không có giao diện trực tuyến nên để sử dụng nó, bạn có hai sự lựa chọn đó là vào trang chủ của Dafny và sử dụng máy ảo được cung cấp trên trang hoặc cài đặt Dafny trên máy của bạn.</p></br>
 
 **1. Cài đặt trên Windows**
@@ -103,8 +103,7 @@ method Abs ( x : int ) returns ( x ’: int )
  x ’ := x ;
 if ( x ’ < 0) { x ’ := x ’ * -1; }
  ```
-Sau đó chạy :
-***Dafny.exe test.dfy
+Sau đó chạy : Dafny.exe test.dfy<br>
  
 <p>Lưu ý rằng nếu bạn ở trên Mac hoặc Linux, bạn sẽ cần phải thêm tiền tố lệnh mono. Hãy chắc chắn rằng test.dll xuất hiện trong thư mục làm việc của bạn, và bạn thấy đầu ra sau đây:</p>
 
@@ -113,18 +112,18 @@ Sau đó chạy :
 Dafny program verifier finished with 2 verified , 0 errors
  Compiled assembly into test . dll”
  ```
-Ghi chú : Nếu bạn không nhìn thấy điều này, hãy liên hệ với nhân viên của khóa học càng sớm càng tốt.
-            Tùy chọn: Làm nổi bật cú pháp. Là một bước bổ sung để phát triển trong Dafny dễ nhìn hơn, hãy xem xét việc cài đặt tô sáng cú pháp cho trình soạn thảo ưa thích của bạn. Hiện tại có hỗ trợ cho các biên tập viên sau đây:
-            Emacs: Để cài đặt hỗ trợ cho Emacs, hãy tham khảo [https://github.com/boogie-org/boogie-](https://github.com/boogie-org/boogie-)   friends.
-            Vim: Để cài đặt hỗ trợ cho Vim, xem https://github.com/mlr-msft/vim-loves-dafny.
-            Sublime Text 2: Để cài đặt hỗ trợ cho Sublime, xem https://github.com/erggo/sublime-dafny.
-            Visual Studio (chỉ dành cho Windows): Phần mở rộng Dafny cho Visual Studio hỗ trợ tô sáng cú pháp và xác minh gia tăng. Lấy Visual Studio 2012 (lưu ý: Tôi đã không kiểm tra với các phiên bản mới hơn) từ Dreamspark (xem ở trên cho liên kết), cài đặt nó, và khi kết thúc, chạy DafnyLanguageService.vsix từ tệp phân phối nhị phân Dafny. Chế độ Dafny sẽ hoạt động khi bạn mở tệp có phần mở rộng .dfy trong Visual Studio.
+Ghi chú : Nếu bạn không nhìn thấy điều này, hãy liên hệ với nhân viên của khóa học càng sớm càng tốt.<br
+            Tùy chọn: Làm nổi bật cú pháp. Là một bước bổ sung để phát triển trong Dafny dễ nhìn hơn, hãy xem xét việc cài đặt tô sáng cú pháp cho trình soạn thảo ưa thích của bạn. Hiện tại có hỗ trợ cho các biên tập viên sau đây:<br>
+            + Emacs: Để cài đặt hỗ trợ cho Emacs, hãy tham khảo <a href="https://github.com/boogie-org/boogie">tại đây</a>.<br>
+            + Vim: Để cài đặt hỗ trợ cho Vim, <a href="https://github.com/mlr-msft/vim-loves-dafny">xem thêm</a>.<br>
+            + Sublime Text 2: Để cài đặt hỗ trợ cho Sublime, <a href="https://github.com/erggo/sublime-dafny">xem thêm</a>.<br>
+            + Visual Studio (chỉ dành cho Windows): Phần mở rộng Dafny cho Visual Studio hỗ trợ tô sáng cú pháp và xác minh gia tăng. Lấy Visual Studio 2012 (lưu ý: Tôi đã không kiểm tra với các phiên bản mới hơn) từ Dreamspark (xem ở trên cho liên kết), cài đặt nó, và khi kết thúc, chạy DafnyLanguageService.vsix từ tệp phân phối nhị phân Dafny. Chế độ Dafny sẽ hoạt động khi bạn mở tệp có phần mở rộng .dfy trong Visual Studio.<br>
 
-**III- Các kiến thức cơ bản về Dafny**
+<h2>III. Các kiến thức cơ bản về Dafny</h2>
 <br>
 **1. Phương thức (Methods)**
 <br>
-<p>Dafny giống như một ngôn ngữ lập trình bắt buộc điển hình. Nó có các phương thức ( methods), biến (variables), kiểu (types), vòng lặp (loops), các phát biểu (if statements), mảng (arrays), số nguyên, và nhiều hơn nữa. Một trong những đơn vị cơ bản của bất kỳ chương trình Dafny nào là phương thức.</p>
+<p>Dafny giống như một ngôn ngữ lập trình bắt buộc điển hình. Nó có các phương thức (methods), biến (variables), kiểu (types), vòng lặp (loops), các phát biểu (if statements), mảng (arrays), số nguyên, và nhiều hơn nữa. Một trong những đơn vị cơ bản của bất kỳ chương trình Dafny nào là phương thức.</p>
 <p>Phương thức (method) là một đoạn mã bắt buộc để thực thi. Trong các ngôn ngữ khác, chúng có thể được gọi là thủ tục, hoặc các chức năng, nhưng trong Dafny, thuật ngữ "chức năng (function)" được dành riêng cho một khái niệm khác mà chúng ta sẽ trình bày sau. Phương thức được khai báo theo cách sau:</p>
 
 ```
@@ -163,10 +162,10 @@ method Abs(x: int) returns (y: int)
 ```
 <p>Dafny luôn cần căc dấu "{}" cho các khối lệnh ở các nhánh, ngay cả khi nhánh chỉ chứa một lệnh duy nhất. Ở đây câu lệnh "if" kiểm tra xem x có nhỏ hơn "0", sử dụng cú pháp của toán tử so khớp quen thuộc và trả về giá trị tuyệt đối nếu thích hợp. (Các toán tử so sánh khác là <=, >, <=, != và ==, có ý nghĩa như trong các ngôn ngữ lập trình).</p>
  
-**2. Tiền – Hậu điều kiện (Pre- and Postconditions)**
+**2. Tiền – Hậu điều kiện (Pre and Postconditions)**
 <br>
 <p>Sức mạnh thực sự của Dafny bắt nguồn từ khả năng chú thích các phương thức (method) để xác định hành vi của chúng. Ví dụ, một thuộc tính mà chúng ta quan sát với phương thức lấy giá trị tuyệt đối là kết quả trả về luôn luôn lớn hơn hoặc bằng 0, mà không phụ thuộc vào đầu vào. Chúng ta có thể đưa quan sát này vào nhận xét, nhưng sau đó chúng ta sẽ không có cách nào để biết liệu phương thức có thực sự có thuộc tính này hay không. Hơn nữa, nếu có ai đó đến và thay đổi phương thức, chúng ta sẽ không thể bảo đảm rằng nhận xét này còn phù hợp. Với nhận xét, Dafny chứng minh rằng điều mà ta tuyên bố về phương thức là đúng. Có một số cách để đưa ra nhận xét, nhưng phổ biến và cơ bản nhất là các phương thức tiền và hậu điều kiện.</p>
-<p>Phương thức lấy giá trị tuyệt đối mà kết quả trả về luôn luôn không âm, là một ví dụ của một hậu điều kiện. Các hậu điều kiện, khai báo với từ khóa **ensure**, được đưa ra như là một phần của khai báo phương thức, sau các giá trị trả về (nếu có) và trước thân phương thức. Từ khóa được theo sau bởi biểu thức boolean. Giống như điều kiện và trong hầu hết các đặc tả, hậu điều kiện luôn luôn là một biểu thức boolean. Trong trường hợp của phương thức Abs, một hậu điều kiện hợp lý là như sau:</p>
+<p>Phương thức lấy giá trị tuyệt đối mà kết quả trả về luôn luôn không âm, là một ví dụ của một hậu điều kiện. Các hậu điều kiện, khai báo với từ khóa "ensure" , được đưa ra như là một phần của khai báo phương thức, sau các giá trị trả về (nếu có) và trước thân phương thức. Từ khóa được theo sau bởi biểu thức boolean. Giống như điều kiện và trong hầu hết các đặc tả, hậu điều kiện luôn luôn là một biểu thức boolean. Trong trường hợp của phương thức Abs, một hậu điều kiện hợp lý là như sau:</p>
 
 ```
 method Abs(x: int) returns (y: int)
@@ -177,8 +176,8 @@ method Abs(x: int) returns (y: int)
 ```
 <p>Bạn có thể thấy tại sao giá trị trả về được đặt tên. Nó làm cho chúng dễ dàng tham khảo trong hậu điều kiện của một phương thức. Khi biểu thức là đúng, chúng ta nói rằng các hậu điều kiện có hiệu lực. Hậu điều kiện phải được giữ cho mỗi lần gọi hàm, và cho mỗi điểm trả về có thể xảy ra. Trong trường hợp này, thuộc tính duy nhất mà chúng ta đang diễn đạt là giá trị trả về luôn ít nhất bằng không.</p>
 
- +Pre: Điều kiện trước<br>
- +Post: Điều kiện sau<br>
+ + Pre: Điều kiện trước<br>
+ + Post: Điều kiện sau<br>
 
 Chúng ta có thể kết hợp hai điều kiện cùng với toán tử boolean và &&, hoặc chúng ta có thể viết nhiều đặc tả **ensures**<br>
 
@@ -202,7 +201,7 @@ method MultipleReturns(x: int, y: int) returns (more: int, less: int)
  Cái này bị sai vì có thể sau biến less không nhỏ hơn x cũng như biến more không lớn hơn x (VD y=0).<br>
 Để đúng, thêm preconditions:  requires y > 0 trước ensures less < x là được.<br>
 
-<p>Giống như hậu điều kiện, nhiều tiền điều kiện có thể được viết bằng toán tử boolean và (&&), hoặc bằng nhiều từ khóa **requires**. Với việc bổ sung các điều kiện này, Dafny bây giờ xác minh mã là chính xác, bởi vì giả định này là tất cả những gì cần thiết để đảm bảo mã trong thân phương thức là chính xác.</p>
+<p>Giống như hậu điều kiện, nhiều tiền điều kiện có thể được viết bằng toán tử boolean và (&&), hoặc bằng nhiều từ khóa "requires". Với việc bổ sung các điều kiện này, Dafny bây giờ xác minh mã là chính xác, bởi vì giả định này là tất cả những gì cần thiết để đảm bảo mã trong thân phương thức là chính xác.</p>
 <p>Không phải mã nguồn nào cũng cần tiền điều kiện, nhưng nó cần có một chú thích, khẳng định để xác minh, như trong ví dụ sau:</p>
 
 ```
@@ -227,10 +226,9 @@ method Testing()
 ```
 => method Testing thực hiện kiểm tra biểu thức "2 < 3".<br>
 VD :<br>
-
-```asset 2< 3 => đúng.
-   assert 2=3 => báo bị lỗi.
-   ```
+asset 2< 3 => đúng. <br>
+assert 2=3 => báo bị lỗi.<br>
+ 
 **4. Hàm (Function)**
 <br>
 <p>Một chức năng trong Dafny tuân thủ khá chặt chẽ theo các khái niệm về một chức năng toán học. Không giống các phương thức khác, một chức năng Dafny không thể ghi vào bộ nhớ, và nó chỉ bao gồm một biểu hiện. Chúng được yêu cầu phải có một giá trị trả về duy nhất, không được đặt tên. Dưới đây là cấu trúc của một hàm đơn giản :</p>
@@ -256,7 +254,7 @@ if x < 0 then -x else x
 Một tính năng đặc biệt là chúng chỉ xuất hiện ở các chú thích, ta không thể viết: <br>
 
  ``` var v := abs(3);```
-<p>Vì đây không phải là một chú thích. Các hàm không bao giờ là một phần của chương trình biên dịch cuối cùng, chúng chỉ là công cụ để giúp xác minh mã. Đôi khi thuận tiện để sử dụng một hàm trong mã thực, vì vậy ta có thể định nghĩa một phương thức hàm, có thể được gọi từ mã thực. Lưu ý rằng có những hạn chế về những chức năng có thể được định nghĩa bởi một **function method**.</p>
+<p>Vì đây không phải là một chú thích. Các hàm không bao giờ là một phần của chương trình biên dịch cuối cùng, chúng chỉ là công cụ để giúp xác minh mã. Đôi khi thuận tiện để sử dụng một hàm trong mã thực, vì vậy ta có thể định nghĩa một phương thức hàm, có thể được gọi từ mã thực. Lưu ý rằng có những hạn chế về những chức năng có thể được định nghĩa bởi một "function method".</p>
 <p>Không giống các phương pháp, hàm có thể xuất hiện trong các biểu thức. Như vậy chúng ta có thể làm một cái gì đó như thực hiện hàm Fibonacci toán học:</p>
 
 ```
@@ -267,7 +265,7 @@ function fib(n: nat): nat
                   fib(n- 1) + fib(n - 2)
 }
 ```
-<p>Ở đây chúng tôi sử dụng nats, loại số tự nhiên (số không âm), nó thường thuận tiện hơn là chú thích tất cả mọi thứ để được không tiêu cực. Nó chỉ ra rằng chúng ta có thể làm cho hàm này một **function method** nếu chúng ta muốn. Nhưng điều này sẽ rất chậm, vì phiên bản này tính toán các số Fibonacci có độ phức tạp hàm mũ. Có nhiều cách tốt hơn để tính hàm Fibonacci. Nhưng hàm này vẫn còn hữu ích, vì Dafny có thể chứng minh rằng một phiên bản nhanh thực sự phù hợp với định nghĩa toán học. Chúng ta có thể đạt được điều tốt nhất của cả hai thế giới: đảm bảo sự chính xác và hiệu suất mà chúng ta muốn.</p>
+<p>Ở đây chúng tôi sử dụng nats, loại số tự nhiên (số không âm), nó thường thuận tiện hơn là chú thích tất cả mọi thứ để được không tiêu cực. Nó chỉ ra rằng chúng ta có thể làm cho hàm này một "function method" nếu chúng ta muốn. Nhưng điều này sẽ rất chậm, vì phiên bản này tính toán các số Fibonacci có độ phức tạp hàm mũ. Có nhiều cách tốt hơn để tính hàm Fibonacci. Nhưng hàm này vẫn còn hữu ích, vì Dafny có thể chứng minh rằng một phiên bản nhanh thực sự phù hợp với định nghĩa toán học. Chúng ta có thể đạt được điều tốt nhất của cả hai thế giới: đảm bảo sự chính xác và hiệu suất mà chúng ta muốn.</p>
 Chúng ta có thể bắt đầu bằng cách xác định một method như sau:<br>
 
 ```
@@ -276,7 +274,7 @@ method ComputeFib(n: nat) returns (b: nat)
 {
 }
 ```
-<p>Chúng ta chưa viết nội dung, vì vậy Dafny sẽ cảnh báo về việc chưa viết hậu điều kiện. Chúng ta cần một thuật toán để tính số Fibonacci thứ n. Ý tưởng cơ bản là để giữ một bộ đếm, và liên tục tính toán các cặp số Fibonacc i cho đến khi đạt được số mong muốn. Để làm điều này, chúng ta cần một vòng lặp. Trong Dafny, điều này được thực hiện thông qua một vòng lặp while. Vòng lặp while giống như sau:</p>
+<p>Chúng ta chưa viết nội dung, vì vậy Dafny sẽ cảnh báo về việc chưa viết hậu điều kiện. Chúng ta cần một thuật toán để tính số Fibonacci thứ n. Ý tưởng cơ bản là để giữ một bộ đếm, và liên tục tính toán các cặp số Fibonacci cho đến khi đạt được số mong muốn. Để làm điều này, chúng ta cần một vòng lặp. Trong Dafny, điều này được thực hiện thông qua một vòng lặp while. Vòng lặp while giống như sau:</p>
 
 ```
 var i := 0;
@@ -287,7 +285,7 @@ var i := 0;
    ```
 <p>Trong Dafny đây là một vòng lặp nhỏ mà chỉ cần tham số i cho đến khi nó đạt đến n. Điều này sẽ hình thành cốt lõi của vòng lặp của chúng ta để tính toán số Fibonacci.</p>
 
-**5.Bất biến trong vòng lặp (Loop Invariants)**
+**5. Bất biến trong vòng lặp (Loop Invariants)**
 <br>
 <p>Khi chạy một vòng lặp, Dafny sẽ không biết rõ số lần vòng lặp chạy, mà Dafny cần phải xem xét tất cả các con đường thông qua một chương trình. Do đó, khi làm việc với  một vòng lặp, ta cần cung cấp một điều kiện bất biến (không thay đổi trong toàn bộ quá trình lặp).</p>
 Từ khóa khai báo: invariant<br>
@@ -305,7 +303,7 @@ var i := 0;
 <p>Khi bạn chỉ định một bất biến, Dafny chứng minh hai điều: bất biến không đổi khi nhập vòng lặp, và nó được bảo vệ bởi vòng lặp. Điều đó có nghĩa rằng biến bất biến giữ ở đầu vòng lặp, chúng ta phải chứng minh rằng việc thực hiện thân vòng lặp không làm cho bất biến thay đổi. Dafny chỉ có thể phân tích thân vòng lặp khi có bất biến bên trong và có điều kiện thoát bên ngoài.</p>
 <p>Một trong những vấn đề khi sử dụng các bất biến là nó dễ dàng quên rằng vòng lặp đang thực hiện. Ví dụ, chúng ta có thể đã bỏ qua toàn bộ thân của vòng lặp trong chương trình trước đó. Các bất biến sẽ đúng, bởi vì chúng vẫn còn đúng khi nhập vòng lặp, và vì vòng lặp không thay đổi bất cứ điều gì, chúng sẽ được bảo vệ bởi vòng lặp. Nhưng bước quan trọng từ vòng lặp đến hậu điều kiện sẽ không được giữ lại. Chúng ta biết rằng nếu thoát khỏi vòng lặp, thì chúng ta có thể giả định sự phủ định và các bất biến, nhưng điều này không nói về điều gì sẽ xảy ra nếu chúng ta không bao giờ thoát khỏi vòng lặp. Vì vậy, cần đảm bảo rằng vòng lặp kết thúc ở một thời điểm nào đó, điều này cho phép đảm bảo đúng đắn hơn nhiều.</p>
 
-**6. Tính dừng(Termination)**
+**6. Tính dừng (Termination)**
 <br>
 <p>Dafny chứng minh tính dừng của code, tức là vòng lặp sẽ không thực hiện mãi mãi, thông qua việc giảm giá trị của biến t (biến chú thích).</p>
 Đối với biến chú thích t sẽ giảm sau mỗi vòng lặp hoặc đệ quy, để đảm bảo chương trình kết thúc.<br>
@@ -459,7 +457,7 @@ method Find(a: array<int>, key: int) returns (index: int)
    index := -1;
 }
 ```
-**8. Định lượng(Quantifiers)**
+**8. Định lượng (Quantifiers)**
  <br>
 Một định lượng trong Dafny thường có dạng của một biểu thức forall, còn được gọi là định lượng phổ.<br>
 <p>Biểu thức này là đúng nếu một số thuộc tính đúng cho tất cả các phần tử của một số tập. Bây giờ, chúng ta sẽ xem xét tập các số nguyên.</p>
@@ -484,7 +482,7 @@ Với một định lượng sau, việc chứng minh một phần tử 0 ở tr
 <p>Nhưng để chúng ta có thể chứng minh việc thực hiện chính xác của chúng ta và cần một số cách để yêu cầu rằng mảng đầu vào thực sự được sắp xếp.</p>
 <p>Chúng ta có thể làm điều này trực tiếp với một bộ định lượng bên trong một mệnh đề đòi hỏi của phương pháp của chúng ta, nhưng một cách Module hơn để diễn tả điều này là thông qua một vị từ.</p>
 
-**1. Vị từ (Predicates)**
+**Vị từ (Predicates)**
 
 <p>Một vị từ là một hàm trả về một boolean( true_false). Đó là một ý tưởng đơn giản nhưng khá mạnh xảy ra trong các chương trình của Dafny.</p>
 <p>Ví dụ, chúng ta định nghĩa vị từ được sắp xếp trên các mảng số nguyên như một hàm lấy mảng làm đối số, và trả về true nếu và chỉ nếu mảng đó được sắp xếp theo thứ tự ngày càng tăng.</p>
@@ -513,7 +511,7 @@ predicate sorted(a: array<int>)
 <p>Lý do chúng ta có thể hạn chế một chức năng có thể đọc hay không là khi chúng ta ghi vào bộ nhớ, chúng ta có thể chắc chắn rằng các hàm không đọc phần bộ nhớ đó có cùng giá trị mà chúng đã làm trước đó.</p>
 <p> Ví dụ, chúng ta có thể có hai mảng, một trong số chúng, ta biết được nó đã được sắp xếp. Nếu chúng ta không đặt chú thích cho thuộc tính được sắp xếp, thì khi chúng ta sửa đổi mảng chưa được phân loại, chúng ta không thể xác định liệu mảng khác đã ngừng sắp xếp hay không.</p>
 <p>Mặc dù chúng ta có thể cung cấp các biến đổi bất biến để bảo toàn nó trong trường hợp này, nó thậm chí còn phức tạp hơn khi thao tác các cấu trúc dữ liệu. Trong trường hợp này, khung là rất cần thiết để làm cho quá trình xác minh khả thi.</p>
-Lệnh cho phép đọc : ``` reads```<br>
+Lệnh cho phép đọc : "reads" <br>
 
 - Chữa ví dụ 1 ở mục 10 :
    
@@ -536,10 +534,11 @@ vậy sẽ không bị lỗi không đọc được mảng a nữa.<br>
 <p>Khung cũng ảnh hưởng đến các Methods. Chúng không bắt buộc phải liệt kê những thứ họ đọc, vì chúng ta đã viết một phương thức truy xuất một mảng không có chú thích. Các phương pháp được phép đọc bất kỳ bộ nhớ nào, nhưng chúng được yêu cầu liệt kê những phần bộ nhớ mà chúng sửa đổi, với một sửa đổi chú thích.</p>
  <p>Chúng thể hiện những gì có thể được thay đổi, chứ không phải là những gì giá trị của các chức năng phụ thuộc vào. Kết hợp với các lần đọc, các hạn chế sửa đổi cho phép Dafny chứng minh các thuộc tính của mã, mà nếu không sẽ rất khó khăn hoặc không thể.</p>
 <p>Đọc và sửa đổi là một trong những công cụ cho phép Dafny có thể làm việc theo một phương thức cùng một lúc bởi vì nó hạn chế những thay đổi tùy ý về bộ nhớ đối với một điều mà Dafny có thể giải thích.</p>
-<p>Lưu ý rằng khung chỉ áp dụng cho đống[4], hoặc bộ nhớ truy cập thông qua tài liệu tham khảo. Các biến địa phương không được lưu trữ trên đống, vì vậy chúng không thể được đề cập trong chú thích. Cũng lưu ý rằng các loại như bộ(sets), chuỗi và đa lớp là các kiểu giá trị, và được đối xử như các số nguyên hoặc biến cục bộ.</p>
+<p>Lưu ý rằng khung chỉ áp dụng cho đống[4], hoặc bộ nhớ truy cập thông qua tài liệu tham khảo. Các biến địa phương không được lưu trữ trên đống, vì vậy chúng không thể được đề cập trong chú thích. Cũng lưu ý rằng các loại như bộ (sets), chuỗi và đa lớp là các kiểu giá trị, và được đối xử như các số nguyên hoặc biến cục bộ.</p>
 <p>Mảng và các đối tượng là các loại tài liệu tham khảo, và chúng được lưu trữ trên đống (mặc dù như thường thì có một sự phân biệt tinh tế giữa chính nó và giá trị mà nó trỏ đến).</p>
 
-**10. Tìm kiếm nhị phân (Binary Search)**
+**10. Tìm kiếm nhị phân (Binary Search)**<br>
+
 Các vị từ thường được sử dụng để làm cho các chú thích khác rõ ràng hơn:<br>
 
 ```
@@ -550,7 +549,7 @@ method BinarySearch(a: array<int>, key: int) returns (index: int)
    ...
 }
  ```
-<p>Ta có hậu điều kiện tương tự như khi tìm kiếm tuyến tính. Nhưng khác ở chỗ mảng ban đầu đã được sắp xếp. Bởi vì Dafny có thể giải phóng các hàm, bên trong thân phương thức.Ta có thể sử dụng nó để chứng minh tính chính xác của việc tìm kiếm. Phần thân của phương thức như sau:</p>
+<p>Ta có hậu điều kiện tương tự như khi tìm kiếm tuyến tính. Nhưng khác ở chỗ mảng ban đầu đã được sắp xếp. Bởi vì Dafny có thể giải phóng các hàm, bên trong thân phương thức. Ta có thể sử dụng nó để chứng minh tính chính xác của việc tìm kiếm. Phần thân của phương thức như sau:</p>
  
 ```
 var low, high := 0, a.Length;
@@ -624,7 +623,7 @@ method BinarySearch(a: array<int>, value: int) returns (index: int)
 <p>Loại giá trị là những loại đai diện cho một số thông tin mà không phụ thuộc vào trạng thái của heap. Những giá trị này có thể nhận diện toán học. Không thể sửa đổi được loại giá trị khi chúng được tạo ra. Ví dụ như tuần tự (sequences) và tập hợp (sets). Bạn không thể thay đổi một tập hợp theo cách mà bạn sửa đổi chỉ mục trong một mảng. Thay vào đó để thêm một phần tử vào tập hợp, bạn sẽ xây dựng dựa trên việc kết hợp tập hợp gốc và tập hợp bao gồm phần tử mới. Dĩ nhiên là những phần tử cũ vẫn tồn tại. Việc không phụ thuộc vào heap làm cho các loại giá trị đặc biệt hữu ích trong đặc tả.</p>
 <p>Điều đó không có nghĩa là bạn không thể cập nhật những thứ tương ứng với các loại giá trị. Biến cái mà bao gồm loại giá trị có thể được cập nhật để có giá trị mới của loại đó. Tất cả các loại giá trị có thể được lưu trữ trong các trường trên heap và được sử dụng trong mã thực cùng với các đặc tả. Các loại giá trị được xây dựng trong Dafny là sets, sequences, multisets, maps.</p>
 
-**1. Tập hợp (Sets)**
+**11.1. Tập hợp (Sets)**
 
 <p>Tập hợp của các loại khác nhau tạo thành một trong những công cụ để kiểm thử cho Dafny. Tập hợp đại diện cho một bộ sưu tập không có thứ tự của các phần tử, mà không lặp lại.</p>
 Tập hợp có thể có bất kì loại nào, bao gồm cả đối tượng (object).<br>
@@ -679,10 +678,10 @@ Ví dụ:<br>
 assert (set x | x in {0, 1, 2} :: x * 2) == {0, 2, 4};
 ```
 <br>
-1. **Chuỗi (Sequence)**
+**11.2 Chuỗi (Sequence)**
 
 <p>Chuỗi là một kiểu được xây dựng trong Dafny, đại diện cho một danh sách có thứ tự. Chúng có thể được sử dụng để đại diện cho nhiều bộ sưu tập có thứ tự bao gồm danh sách, hàng đợi, ngăn xếp, v.v. Chúng tương tự các chuỗi (string) trong các ngôn ngữ Java và Python, ngoài ra chúng có thể là các chuỗi của các kiểu tùy ý chứ không chỉ là các chuỗi của các ký tự. Các loại chuỗi được viết: seq<int> cho một chuỗi số nguyên (Lưu ý một lỗi đã phát hiện trong Dafny ngăn cản bạn tạo các chuỗi của naturals, nat. ).</p>
-Ví dụ, hàm này lấy một dãy như một tham số:<br>
+Ví dụ: hàm này lấy một dãy như một tham số:<br>
  
 ```
  predicate sorted(s: seq<int>)
@@ -773,10 +772,9 @@ Tương tự như:<br>
  ```
  
 
-**1. Các tập hợp(Mutisets)**
+**11.3 Các tập hợp (Mutisets)**
 
-<p>Giống như các bộ trong hầu hết mọi cách, ngoại trừ các bộ giữ dấu vết có bao nhiêu bản sao của mỗi phần tử chúng có. Điều này làm cho chúng đặc biệt hữu ích để lưu trữ tập hợp các phần tử trong mảng, ví dụ, khi số lượng các bản sao của mỗi thành phần là như nhau. Thể loại multiset hầu như giống với các bộ:</p>
-```multiset<int>```
+<p>Giống như các bộ trong hầu hết mọi cách, ngoại trừ các bộ giữ dấu vết có bao nhiêu bản sao của mỗi phần tử chúng có. Điều này làm cho chúng đặc biệt hữu ích để lưu trữ tập hợp các phần tử trong mảng, ví dụ, khi số lượng các bản sao của mỗi thành phần là như nhau. Thể loại multiset hầu như giống với các bộ:</p>"multiset<int>"<br>
 Tương tự như vậy, để cung cấp một tập multiset, bạn viết dấu ngoặc nhọn, đằng trước bởi từ khóa multiset :<br>
  
 ```
@@ -800,7 +798,7 @@ assert multiset({1,1}) == multiset{1};
 ```
 <p>Cả hai khẳng định đều chính xác vì multiset của một chuỗi xem xét từng phần tử riêng biệt, trong khi bộ chỉ có tối đa một trong mỗi phần tử. Dafny cho phép bạn viết {1,1} nó giống với {1} bởi vì những số trùng bị bỏ qua. Vì vậy khi thực hiện một multiset từ bộ, một phần tử trong multiset sẽ có hai lần chính xác một. Làm multiset từ các dãy đặc biệt hữu ích, như khi kết hợp với slice của một mảng, cho phép bạn nói về các tập hợp các phần tử trong một mảng (như trong multiset(a[..]), rất hữu ích trong việc xác minh phân loại các thuật toán và một số cấu trúc dữ liệu.</p>
 
-**1. Bản đồ( Map)**
+**11.4. Bản đồ (Map)**
 
 <p>Bản đồ (maps) trong Dafny đại diện cho mảng liên kết. Không giống như những loại trước, chúng có hai loại: khóa (key) và giá trị (value). Các giá trị có thể được lấy ra, tìm kiếm dựa trên key. Một bản đồ có cấu trúc:</p>
 <p>map<U,V>  với U là khóa, V là giá trị.</p>
@@ -822,15 +820,16 @@ assert m[4] == 5;
 <i>Là một bản đồ có số 0-9 đến đôi của họ. Đây cũng là cách bạn có thể xóa khóa khỏi bản đồ. Ví dụ, biểu thức này loại bỏ khóa 3 từ một số nguyên đến một số nguyên khác của bản đồ m:</i>
 
 ```map i | i in m && i != 3 :: m[i]```
-**12. Bổ đề( Lemmas)**
+<br>
+**12. Bổ đề (Lemmas)**
 
-**1. Giới thiệu( Introduction)**
+**12.1. Giới thiệu (Introduction)**
 
 <p>Đôi khi có những bước logic yêu cầu chứng minh một chương trình là đúng, nhưng chúng quá phức tạp đối với Dafny để khám phá và sử dụng. Khi điều này xảy ra, chúng ta có thể hỗ trợ cho Dafny bằng cách cung cấp một bổ đề (lemma).</p>
 <p>Bổ đề là một định lí được sử dụng để chứng minh một kết quả khác chứ không phải mục tiêu của nó. Chúng cho phép Dafny tách bằng chứng thành 2 phần: chứng minh bổ đề, sau đó sử dụng nó để chứng minh kết quả cuối cùng, kết quả cuối cùng là sự chính xác của chương trình. Dafny và máy tính nói chung, rất phù hợp cho sự phân chia những tài liệu chi tiết và bao phủ tất cả các ca kiểm thử. Nhưng nó lại thiếu thông minh để xem các bước trung gian, cái làm cho việc chứng minh trở nên dễ dàng hơn.</p>
 <p>Bằng việc viết và sử dụng bổ đề, bạn có thể chỉ ra những bước thực hiện là gì và khi nào sử dụng chúng trong chương trình. Đặc biệt quan trọng là đối số quy nạp, nó là vấn đề khó nhất đối với những người chứng minh định lí.</p>
 
-**1. Tìm kiếm số 0( Searching for zero)**
+**12.2. Tìm kiếm số 0 (Searching for zero)**
 
 Khi nhìn bổ đề đầu tiên của chúng ta, chúng ta sẽ xem xét một ví dụ : tìm kiếm số không trong một mảng.<br>
 <p> Điều làm cho vấn đề này trở nên thú vị là mảng mà chúng ta đang tìm kiếm có hai thuộc tính đặc biệt: tất cả các phần tử là không âm, và mỗi phần tử liên tiếp giảm ít nhất một đơn vị từ phần tử trước đó. Trong mã:</p>
@@ -855,7 +854,7 @@ index := 0;
    ```
 <p>Mã này sẽ tính toán đúng kết quả, nhưng Dafny phàn nàn về sự bất biến của vòng lặp thứ hai. Dafny không tin rằng bỏ qua những thành phần này là hợp lí. Lí do vì điều kiện tiên quyết nói rằng mỗi phần tử sau giảm ít nhất một, nhưng nó không nói gì về mối quan hệ của các phần tử đứng xa nhau. Để thuyết phục Dafny về thực tế này, ta cần sử dụng một bổ đề (lemma).</p>
 
-**1. Bổ đề( Lemmas)**
+**12.3. Bổ đề (Lemmas)**
 
 <p>Một bổ đề thực sự chỉ là một phương thức ma. Thuộc tính mong muốn nêu bởi bổ đề (chính xác hơn, là kết luận của bổ đề) được tuyên bố như là điều kiện, cũng giống như cách bạn làm cho một phương thức thông thường. Không giống như một phương thức, một bổ đề không bao giờ được phép thay đổi trạng thái. Vì một bổ đề là ảo, nó không cần phải được gọi tại thời gian chạy, do đó, trình biên dịch xóa nó trước khi xuất mã thực thi. Vì vậy, bổ đề là đại diện duy nhất cho hiệu quả của nó trên kiểm tra chương trình. Bạn có thể nghĩ rằng bổ đề như khẳng định chắc chắn, trong đó họ đang chỉ cần thiết để giúp chứng minh của chương trình sau cùng. Bổ đề điển hình có thể như:</p>
 
@@ -918,7 +917,7 @@ i := i + 1;
 <p>Thật vậy! Vòng lặp chỉ ra số truy cập. Như chúng ta đã thấy trước khi Dafny là có thể tìm ra mỗi bước của riêng mình, vì vậy chúng tôi không cần phải làm bất cứ điều gì hơn nữa. Chúng tôi chỉ cần thiết để cung cấp cho nó cấu trúc của các bằng chứng mà nó cần thiết để thực hiện. Đôi khi các bước cá nhân là phức tạp, đủ rằng chúng cần một chút riêng của chúng subproofs, sử dụng hoặc là một loạt các câu khẳng định hoặc một bổ đề khác.</p>
 <p>Khi làm việc với mảng, lặp đi lặp lại là một giải pháp tự nhiên cho nhiều vấn đề. Không có một số lần, Tuy nhiên, khi đệ quy được sử dụng để xác định các chức năng hoặc thuộc tính. Trong những trường hợp này, các bổ đề thường có cùng cấu trúc đệ quy. Để xem một ví dụ này, chúng tôi sẽ xem xét các vấn đề của đếm.</p>
 
-**1. Đếm(Counting)**
+**12.4. Đếm (Counting)**
 <br>
 <p>Chúng ta sẽ đếm số trues trong một chuỗi bools, bằng cách sử dụng các chức năng count (đếm), được đưa ra dưới đây:</p>
 
@@ -955,7 +954,7 @@ ensures count(a+b) == count(a) + count(b)
 {
 }
 ```
-**1. Chứng minh phân phối thuộc tính( Proving the Distributive Property)**
+**12.5. Chứng minh phân phối thuộc tính (Proving the Distributive Property)**
 <br>
 <p>Để viết bổ đề, chúng ta phải tìm ra một chiến lược để chứng minh nó. Như bạn có thể xác minh ở trên (không có ý định chơi chữ), bổ đề không hoạt động được nêu ra, thì bổ đề sẽ là không cần thiết. Để làm điều này, chúng tôi lưu ý rằng lý do Dafny không phải có thể chứng minh điều này ở nơi đầu tiên mà các chức năng đếm được xác định từ khi bắt đầu của chuỗi, trong khi các thuộc tính phân phối hoạt động vào giữa của một chuỗi. Do đó nếu chúng ta có thể tìm thấy một cách để làm việc từ phía trước trong tiến trình, sau đó Dafny có thể theo dõi bằng cách sử dụng định nghĩa của các chức năng trực tiếp.</p>
 Các yếu tố đầu tiên của dãy là gì?<br>
@@ -988,7 +987,7 @@ assert count(a+b) == count([a[0]]) + count(a[1..]) + count(b)
 ```
 <p>Bây giờ điều này trông rất giống với những biểu hiện mà chúng tôi đã nhận sau khi mở rộng count(a + b). Khác biệt duy nhất là count(a[1..] + b) đã trở thành count(a[1..]) + count(b). Nhưng điều này là chính xác nơi chúng tôi đang cố gắng để chứng minh!</p>
 
-**1. Cảm ứng( Induction)**
+**12.6. Cảm ứng (Induction)**
 <br>
 <p>Các đối số, chúng tôi đang cố gắng để làm cho là quy nạp. Chúng ta có thể chứng minh mục đích của chúng tôi cho rằng một phiên bản nhỏ hơn của vấn đề là sự thật. Điều này là chính xác các khái niệm của cảm ứng: sử dụng một phiên bản nhỏ hơn của một vấn đề để chứng minh một một lớn hơn. Để làm điều này, chúng ta gọi là sở hữu đệ quy từ trong mã của chúng tôi. Nó là một phương pháp, do đó, nó có thể được kích hoạt bất cứ khi nào chúng ta cần nó.</p>
 <p>Dafny sẽ giả định rằng các cuộc gọi đệ quy đáp ứng đặc điểm kỹ thuật. Đây là giả thiết quy nạp, tất cả các cuộc gọi đệ quy của bổ đề có giá trị. Điều này phụ thuộc chủ yếu vào một thực tế rằng Dafny cũng chứng minh việc chấm dứt. Điều này có nghĩa rằng cuối cùng, bổ đề sẽ không làm cho một đệ quy gọi. Trong trường hợp này, đây là chi nhánh đầu tiên của nếu tuyên bố. Nếu không có không có cuộc gọi đệ quy, sau đó bổ đề phải được chứng minh trực tiếp cho các trường hợp đó. Sau đó mỗi cuộc gọi trong ngăn xếp là hợp lý trong giả định bổ đề hoạt động cho các trường hợp nhỏ hơn. Nếu Dafny không chứng minh dãy chấm dứt, sau đó chuỗi có thể tiếp tục mãi mãi, và giả định cho mỗi cuộc gọi sẽ không được chứng minh.</p>
@@ -1009,7 +1008,9 @@ assert a+b == [a[0]] + (a[1..] +b);
 ```
 <p>Bây giờ bổ đề xác nhận. Nhưng những gì nếu chúng tôi muốn nhận mỗi cặp trình tự có liên quan theo cách này? Chúng tôi phải xem xét sử dụng một bổ đề trong Dafny để có thể làm điều này, chúng tôi sẽ khám phá với một ví dụ khác.</p>
 <br>
-**1. Đường dẫn trong một biểu đồ định hướng**
+
+**Đường dẫn trong một biểu đồ định hướng**
+
 <br>
 <p>Phần cuối cùng, nâng cao hơn, ví dụ hơn, chúng ta sẽ chứng minh thuộc tính về các đường dẫn trong một đồ thị. Về điều này, chúng ta sẽ có dịp để gọi một bổ đề phổ biến trên tất cả các chuỗi của các nút. Một đồ thị chuẩn bao gồm một số Nút (Nodes) với một số liên kết tới các nút khác. Những liên kết này có hướng duy nhất, và những hạn chế duy nhất của chúng là một nút không thể liên kết với chính nó. Các nút được định nghĩa là:</p>
 
@@ -1133,8 +1134,10 @@ DisproofLemma(p[1..], subgraph, p[1], goal, graph)
 <p>Các lệnh forall là hữu ích khi một bổ đề cần phải được khởi tạo một số lần không giới hạn. Ví dụ cho thấy một phiên bản đơn giản của các lệnh forall. Đối với phiên bản tiên tiến hơn, xem ví dụ, về các chức năng được xây dựng tốt và vị từ trong Dafny: Một hướng dẫn bởi Leino, IWIL-2015, hoặc ví dụ trong Dafny kiểm tra mật.</p>
 <p>Luôn luôn nhớ để kiểm tra xem bổ đề của bạn có đủ để chứng minh những gì bạn cần. Không có gì là khó chịu hơn so với bỏ ra một thời gian để thực hiện một xác minh bổ sung, chỉ để tìm ra bạn cần một cái gì đó mạnh mẽ hơn. Điều này cũng cho phép bạn tránh việc tạo ra một bổ đề với một điều kiện tiên quyết là hạn chế như vậy mà bạn không thể gọi nó là nơi mà bạn cần.</p>
 
-**13.Mô- đun( Modules)**
-a. Giới thiệu (Introduction)<br>
+**13. Mô- đun (Modules)**
+<br>
+**13.1. Giới thiệu (Introduction)**
+<br>
 <p>Cơ cấu một chương trình bằng cách chia nó ra thành nhiều phần là một phần quan trọng của việc tạo ra các chương trình lớn. Trong Dafny, điều này được thực hiện thông qua *các module* .</p>
 <p>Nó cung cấp một cách để nhóm lại các thành phần liên quan đến nhau như các class, method, function và các module khác nhau, cũng như kiểm soát phạm vi của tuyên bố.</p>
 <p>Module có thể import lẫn nhau để tái sử dụng mã, và nó có thể trừu tượng trên module để tách riêng một thực hiện từ một giao diện Module mới (Declaring New Modules).</p>
@@ -1203,7 +1206,8 @@ Theo mặc định, định nghĩa các hàm (và các vị từ) được hiể
  ```assert x == 6;```
  <br>
  đến cuối m () sẽ xác minh.<br>
-b. Nhập và xuất modules (Importing and Exporting Modules)<br>
+ **13.2. Nhập và xuất modules (Importing and Exporting Modules)**
+ <br>
  - Import<br>
 <p> Tạo modules con mới rất hữu ích, nhưng đôi khi bạn muốn tham khảo những thứ từ một Module hiện có, chẳng hạn như thư viện. Trong trường hợp này, bạn có thể nhập một Module khác. Điều này được thực hiện thông qua từ khóa import, và có một vài hình thức khác nhau, mỗi hình thức có một ý nghĩa khác nhau.</p>
 <p> Loại đơn giản nhất là nhập cụ thể và có dạng import A = B. Tuyên bố này tạo ra một tham chiếu đến Module B (phải tồn tại), và liên kết nó với tên mới A:</p>
@@ -1363,8 +1367,9 @@ module Mod {
  }
 ```
 
-c. Mở mô-đun (Opening Modules)<br>
-<p>Đôi khi tiền tố các thành phần của module mà bạn nhập với tên thật tẻ nhạt và xấu, ngay cả khi bạn chọn một cái tên ngắn khi nhập nó. Trong trường hợp này, bạn có thể Import Module nhập"opened", khiến tất cả các thành viên của nó khả dụng mà không cần thêm tên module</p>
+**13.3. Mở mô-đun (Opening Modules)**
+<br>
+<p>Đôi khi tiền tố các thành phần của module mà bạn nhập với tên thật tẻ nhạt và xấu, ngay cả khi bạn chọn một cái tên ngắn khi nhập nó. Trong trường hợp này, bạn có thể Import Module nhập"opened", khiến tất cả các thành viên của nó khả dụng mà không cần thêm tên module.</p>
 
 ```
 module Mod {
@@ -1391,7 +1396,8 @@ module Mod {
 }
 ```
 <p>Nếu hai module cùng được mở và các thành phần có cùng tên thì phải có tiền tố modul thì mới có thể gọi được. Từ khóa opend có thể được sử dụng với bất kì loại khai báo import nào kể cả module trừu tượng.</p>
-d. Tính trừu tượng ( Module Abstraction)<br>
+**13.4. Tính trừu tượng (Module Abstraction)**
+<br>
 <p>Sử dụng 1 Import abstract module khi sử dụng cách thực hiện cụ thể không hiệu quả, cần 1 module thực hiện 1 số interface.</p>
 <p>Trong Dafny viết import A:B có nghĩa là ràng buộc tên A nhưng thay vì nhận được chính xác module B thì nhận được bất kì module là sàng lọc của B. Thông thường module B có thể có các định nghĩa trừu tượng, các class vớiphương thức bodyless, hoặc không thích hợp để sử dụng trực tiếp. Bất kì sàng lọc nào của B có thể được sử dụng an toàn.</p>
 Mở đầu với:<br>
@@ -1428,7 +1434,7 @@ module Mod2 refines Mod {
 }
 ```
 <p>Khi tinh chỉnh abstract import thành 1 khối cụ thể, module cụ thể phải là 1 sàng lọc rõ ràng về 1 trừu tượng.( đã được khai báo với refines)</p>
-e. Tổ chức và sự phụ thuộc( Module Ordering and Dependencies)<br>
+**13.5. Tổ chức và sự phụ thuộc (Module Ordering and Dependencies)**<br>
 <p> Dafny không phải quá chú trọng về thứ tự các Module xuất hiện, nhưng họ phải tuân theo một số quy tắc để được hình thành tốt. Theo nguyên tắc chung, cần phải có cách để đặt các Module trong một chương trình sao cho mỗi cái chỉ đề cập đến những điều được định nghĩa trước khi nó xuất hiện trong văn bản nguồn. Điều đó không có nghĩa là các Module phải được đưa ra theo thứ tự đó. Dafny sẽ tìm ra lệnh đó cho bạn, giả sử bạn không thực hiện bất kỳ tài liệu tham khảo thông tư nào. Ví dụ, điều này là khá rõ ràng vô nghĩa:</p>
 
 ```
@@ -1456,7 +1462,7 @@ module M {
 }
 ```
 <p>Bởi vì Module M phải được khai báo đầu tiên trước bất kỳ khai báo nào, chẳng hạn như các phương pháp. Để xác định các hàm toàn cầu như thế này, bạn có thể đặt chúng trong một Module (gọi là Globals) và mở nó vào bất kỳ Module nào cần chức năng của nó. Cuối cùng, nếu bạn import thông qua một đường dẫn, chẳng hạn như nhập khẩu A = B.C, thì điều này tạo ra sự phụ thuộc của A trên B, vì chúng ta cần phải biết B là gì (nó là trừu tượng hay gì).</p>
-f. Tên ( Name Resolution)<br>
+**13.6. Tên (Name Resolution)**<br>
 <p>Khi Dafny nhìn thấy một cái gì đó giống như A.B.C, làm thế nào nó biết những gì từng phần đề cập đến? Quy trình Dafny sử dụng để xác định trình tự nhận dạng cũng như các qui ước đặt tên. Mặc dù các quy tắc có vẻ phức tạp, thường thì họ làm những gì bạn mong đợi. Dafny đầu tiên tìm kiếm nhận dạng ban đầu. Tùy thuộc vào những gì nhận diện đầu tiên được đề cập đến, phần còn lại của định danh được tra cứu trong ngữ cảnh thích hợp. Các quy tắc đầy đủ như sau:</p>
 <p>Các biến địa phương, các tham số và các biến ràng buộc. Đây là những thứ như x, y, và i trong var x ;, ... returns (y: int), và forall i :: ....</p>
 <p>Các lớp, kiểu dữ liệu, và tên Module( không là chỉ một phần của định danh). Lớp cho phép các thành viên tĩnh của chúng được truy cập theo cách này, và các loại dữ liệu cho phép các thành phần khởi tạo của nó được truy cập. Các Module cho phép bất kỳ thành viên nào của họ được gọi như thế này.</p>
@@ -1464,7 +1470,7 @@ f. Tên ( Name Resolution)<br>
 <p>Các trường, các chức năng và các phương thức của lớp hiện tại (nếu trong một ngữ cảnh tĩnh, thì chỉ cho phép các phương thức và hàm tĩnh). Bạn có thể tham khảo các trường của lớp hiện tại hoặc như this.f hoặc f, giả định rằng tất nhiên là f đã không được ẩn bởi một trong những ở trên. Bạn có thể luôn luôn tiền tố này nếu cần, mà không thể được ẩn. (Lưu ý, một trường có tên là một chuỗi số phải luôn có một số tiền tố.)</p>
 <p>Các hàm và phương thức tĩnh trong Module bao bọc. Lưu ý, điều này chỉ đề cập đến các hàm và phương thức khai báo ở cấp Module, chứ không phải các thành viên tĩnh của một lớp được đặt tên.</p>
 <p>Module đã mở được xử lý ở mỗi cấp độ, sau khi các tờ khai trong Module hiện tại. Module đã mở chỉ ảnh hưởng đến các bước 2, 3 và 5. Nếu một tên mơ hồ được tìm thấy, một lỗi được tạo ra, thay vì tiếp tục xuống danh sách. Sau khi nhận dạng đầu tiên, các quy tắc về cơ bản là giống nhau, ngoại trừ trong bối cảnh mới. Ví dụ: nếu định danh đầu tiên là một Module, thì định danh tiếp theo sẽ xem xét Module đó. Module mở chỉ được áp dụng trong Module được mở ra. Khi tìm kiếm trong Module khác, chỉ những điều được tuyên bố rõ ràng trong Module đó được xem xét.</p>
-IV . Kết luận
+<h2>IV. Kết luận</h2>
 <p>Vậy là chúng ta đã xem qua một lượt những gì mà Dafny có thể làm. Bây giờ bạn đã quen thuộc với những điều cơ bản của Dafny, bạn có thể đọc các hướng dẫn về mỗi chủ đề này khi bạn cần. Mỗi hướng dẫn được thiết kế để có một hướng dẫn tương đối gọn về chủ đề của nó, mặc dù một số có lợi từ việc đọc những người khác trước. Các ví dụ cũng là một nơi tốt để tìm kiếm các chương trình mẫu Dafny.</p>
 <p>Ngay cả khi bạn không sử dụng Dafny thường xuyên, ý tưởng viết ra chính xác mã nó là gì, và sử dụng mã này để chứng minh đúng mã là một kỹ năng hữu ích. Các biến thể bất biến, điều kiện trước và sau, và chú thích rất hữu ích trong gỡ lỗi mã, và cũng như là tài liệu cho các nhà phát triển trong tương lai. Khi sửa đổi hoặc thêm vào một codebase, họ xác nhận rằng sự đảm bảo của mã hiện tại không bị hỏng. Họ cũng đảm bảo rằng API được sử dụng đúng cách, bằng cách chính thức hóa hành vi và các yêu cầu và thực thi việc sử dụng đúng. Lý do từ bất biến, xem xét trước và sau hậu điều kiện, và bằng văn bản khẳng định để kiểm tra các giả định là tất cả các kỹ năng khoa học máy tính nói chung sẽ mang lại lợi ích cho bạn cho dù bạn làm việc ở ngôn ngữ nào.</p>
 Thông tin tham khảo:<br>
