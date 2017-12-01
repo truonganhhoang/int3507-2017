@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3de883c-25b6-4afb-9a8c-a704133e5cf3" name="Default" comment="edit report">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/group3/report/2. Đặt vấn đề.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/group3/report/3.1. Kiến trúc scrapy.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/group3/report/3.2. Cài đặt scrapy.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/group3/report/3.4. Extractor.md" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/group3/report/2.4. Trích xuất dữ liệu.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/group3/report/2.6. Lưu dữ liệu.md" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/group3/report/3.6. Lưu dữ liệu.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/group3/report/3.7. Cấu hình nâng cao Scrapy.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/group3/report/3.8. Các vấn đề cần giải quyết với Scrapy.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/group3/report/4. Kết luận.md" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/group3/report/merge.py" afterPath="$PROJECT_DIR$/group3/report/merge.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/group3/report/1. Thông tin nhóm.md" afterPath="$PROJECT_DIR$/group3/report/0. Thông tin nhóm.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/group3/report/3.3. Spider.md" afterPath="$PROJECT_DIR$/group3/report/2.3. Spider.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/group3/report/3.5. Pipeline.md" afterPath="$PROJECT_DIR$/group3/report/2.5. Item Pipeline.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/group3/report/2. Đặt vấn đề.md" afterPath="$PROJECT_DIR$/group3/report/1. Đặt vấn đề.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/group3/report/3.1. Kiến trúc scrapy.md" afterPath="$PROJECT_DIR$/group3/report/2.1. Kiến trúc scrapy.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/group3/report/3.2. Cài đặt scrapy.md" afterPath="$PROJECT_DIR$/group3/report/2.2. Cài đặt scrapy.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/group3/report/3.7. Cấu hình nâng cao Scrapy.md" afterPath="$PROJECT_DIR$/group3/report/2.7. Cấu hình nâng cao Scrapy.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/group3/report/3.8. Các vấn đề cần giải quyết với Scrapy.md" afterPath="$PROJECT_DIR$/group3/report/2.8. Các vấn đề cần giải quyết với Scrapy.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/group3/report/4. Kết luận.md" afterPath="$PROJECT_DIR$/group3/report/3. Kết luận.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -219,7 +216,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="52" />
     <option name="y" value="1" />
     <option name="width" value="1317" />
@@ -395,7 +392,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511609524430</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="edit report">
+      <created>1512107443428</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1512107443428</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -408,18 +412,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="52" y="1" width="1317" height="728" extended-state="0" />
-    <editor active="true" />
+    <frame x="52" y="1" width="1317" height="728" extended-state="1" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2283214" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2283214" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29188254" sideWeight="0.50278443" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298791" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35751295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3226891" sideWeight="0.4972156" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3226891" sideWeight="0.4972156" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298639" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
