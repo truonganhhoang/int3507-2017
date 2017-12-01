@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <h1 class="title is-2 has-text-centered">Chương trình bầu cử đơn giản</h1>
+      <h1 class="title is-2 has-text-centered">A Simple Voting App</h1>
 
       <table class="table is-fullwidth">
         <thead>
@@ -26,7 +26,7 @@
         </tbody>
       </table>
 
-      <em>Chú ý: Kết quả bầu cử phải mất một khoảng thời gian để thực hiện trên chuỗi khối</em>
+      <em>Note: It takes a significant time to get the result</em>
       <password-modal v-if="show_modal" @close="hideModal"
         @ok="voteForCandidate"
       >
