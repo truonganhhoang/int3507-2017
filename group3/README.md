@@ -511,7 +511,7 @@ Spider này hỗ trợ sơ đồ trang web lồng nhau và tìm kiếm sơ đồ
 [2] https://www.sitemaps.org/index.html
 
 [3] http://www.robotstxt.org/
-## 2.4. Trích xuất dữ liệu (Extractor) <a name="extractor"></a>
+## 2.4. Trích xuất dữ liệu <a name="extractor"></a>
 ### Duyệt tất cả các trang
 
 Cần xác định rõ cấp độ của trang:
