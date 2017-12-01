@@ -39,6 +39,7 @@
 
 <script>
 import axios from 'axios'
+import {getUrl} from '../common'
 
 export default {
   props: ['account'],
@@ -61,7 +62,7 @@ export default {
       const self = this
       let result = confirm("Bạn muốn xóa không?")
       if(result) {
-        axios.delete('api/v1/account/' + id)
+        axios.delete(getUrl('api/v1/account/' + id))
         .then(function(res) {
           self.$emit('delete', id)
         })
@@ -71,7 +72,7 @@ export default {
       }
     },
     getBalance(id) {
-      axios.get('api/v1/account/' + id + '/balance')
+      axios.get(getUrl('api/v1/account/' + id + '/balance'))
         .then((res) => {
           if(res.data.balance) {
             this.balance = res.data.balance

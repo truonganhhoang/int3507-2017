@@ -2,11 +2,18 @@
 
 Đây là một ứng dụng rất đơn giản để giới thiệu về một trong các ứng dụng quan trọng của nền tảng Ethereum - ứng dụng phi tập trung (decenterlized app). Mọi dữ liệu đều bị ẩn danh và không thể sửa đổi nhưng có một khuyết điểm là để sử dụng nó người dùng cần cài đặt một chương trình để có thể tham gia vào mạng Ethereum, điều này khá khó và phức tạp cho một người dùng cuối. Vì vậy mà đã có rất nhiều ứng dụng hướng việc sử dụng các ứng dụng phi tập trung như một ứng dụng web thông thường, ví dụ như kyber.network. Ứng dụng đơn giản này được viết ra để mô phỏng lại việc đó cũng như hướng dẫn bạn có thể làm được một ứng dụng như thế. Ứng dụng mô tả một cuộc bầu cử đơn giản, những đặc tính của ứng dụng phi tập trung khá phù hợp cho công việc này - ẩn danh và không thể thay đổi.
 
-\subsection{Mô tả về yêu cầu ứng dụng}
+\subsection{Mô tả ứng dụng}
 Ứng dụng cho phép người dùng thông thường đăng ký một tài khoản Ethereum mới hoặc nhập lại tài khoản đã có sẵn trên mạng thử nghiệm (ứng dụng này sử dụng mạng thử nghiệm của Ethereum có tên là Rinkeby$^{[7]}$) mà không cần cài đặt thêm chương trình ngoài, có thể dùng nó như một ứng dụng web.
 
 Trước tiên nên nói về lí do chọn mạng thử nghiệm Rinkeby mà không phải mạng khác (Ethereum còn hai mạng thử nghiệm khác là Ropsten và Kovan tính đến thời điểm viết bài viết này). Lí do đầu tiên chắc chắn là từ sự đơn giản trong việc cài đặt với chỉ một vài dòng lệnh trên Linux, thứ hai là đây là mạng trẻ nhất nên số khối cũng ít nhất nên chúng ta sẽ không phải đồng bộ quá nhiều khối bên cạnh việc chúng ta có thể xin ether miễn phí khá đơn giản và thuận tiện. Những lí do được nêu ra ở trên khá là chủ quan và thiên về việc phát triển ứng dụng, lí do khách quan để mạng thử ngiệm thứ ba được ra đời bắt nguồn từ các yếu điểm của hai mạng thử nghiệm trước đó. Mạng Ropsten hoạt động rất tốt trong thời gian đầu nhưng vì hàm băm dùng cho quá trình đào ở mạng này khá yếu (để các máy tính cá nhân có thể đào được) nên dễ dàng bị những kẻ phá hoại tấn công spam, từ đó mạng Kovan ra đời khắc phục hoàn toàn điểm yếu đó - không còn việc đào ether nữa và các giao dịch được các bên tin cậy xác nhận. Mạng Kovan này hoạt động rất hiệu quả nhưng lại nảy sinh vấn đề với Parity (chương trình cần cài đặt để tham gia mạng này), chỉ những người dùng Parity mới có thể tham gia vào mạng này mà không thể dùng chương tình tùy chọn khác và lí do đó đã thúc đẩy Rikeby ra đời hỗ trợ người dùng có thể dùng các chương trình khác nhau để kết nối với mạng. Vì những ưu thế đó, chúng ta sẽ sử dụng mạng thử nghiệm Rinkeby.
 Để có thể bầu chọn trong ứng dụng, người sử dụng sẽ cần có ether trong tài khoản bằng cách xin cấp miễn phí tại \url{https://faucet.rinkeby.io}. Khi đã ether trong tài khoản của mình, người dùng có thể sử dụng chức năng bầu cử và chỉ được bầu cử một lần duy nhất với mỗi tài khoản Ethereum. Do sử dụng mạng thử nghiệm nên tốc độ phản hồi khá là chậm nên có thể gây phiền toái đôi chút nhưng đủ với một ứng dụng thử nghiệm.
+
+\subsection{Yêu cầu chính của ứng dụng}
+\begin{itemize}
+\item phiên bản nodejs >= 6.0.0
+\item phiên bản npm >= 3.0.0
+\item phiên bản geth >= 1.7.0
+\end{itemize}
 
 \subsection{Tạo lập môi trường giao tiếp với mạng Ethereum}
 

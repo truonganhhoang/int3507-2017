@@ -19,6 +19,7 @@ import axios from 'axios'
 import AccountCard from '@/components/AccountCard'
 import AccountModal from '@/components/AccountModal'
 import AccountImportModal from '@/components/AccountImportModal'
+import {getUrl} from '../common'
 
 export default {
   data () {
@@ -44,7 +45,7 @@ export default {
     },
     updateAccountList() {
       const self = this
-      axios.get('api/v1/account')
+      axios.get(getUrl('api/v1/account'))
       .then(function(res) {
         self.account_list = res.data.accountList
       })

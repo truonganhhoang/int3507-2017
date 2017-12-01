@@ -46,6 +46,7 @@
 
 <script>
   import axios from 'axios'
+  import {getUrl} from '../common'
 
   export default {
     data () {
@@ -73,7 +74,7 @@
           alert('repass is not match')
           return
         }
-        axios.post('api/v1/account',
+        axios.post(getUrl('api/v1/account'),
           self.account
         )
         .then(function(res) {

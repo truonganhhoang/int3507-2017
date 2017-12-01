@@ -9,6 +9,7 @@
 <script>
 import axios from 'axios'
 import Account from '@/components/Account'
+import {getUrl} from '../common'
 
 export default {
   name: 'Main',
@@ -22,7 +23,7 @@ export default {
     if(token) {
       axios.defaults.headers.common['Authorization'] = token
     }
-    axios.get('api/v1/login')
+    axios.get(getUrl('api/v1/login'))
     .then(res => { 
       this.login = true
       let data = res.data

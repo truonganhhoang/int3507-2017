@@ -43,6 +43,7 @@
 
 <script>
   import axios from 'axios'
+  import {getUrl} from '../common'
 
   export default {
     data () {
@@ -69,7 +70,7 @@
           console.log(e)
           return false;
         }
-        axios.post('api/v1/account/import', {
+        axios.post(getUrl('api/v1/account/import'), {
           username: this.username,
           keystore: this.keystore
         })
