@@ -24,6 +24,13 @@
               Vote App
             </button>
           </p>
+          <p class="control">
+            <a class="button" 
+              :href="getTransaction(account.address)"
+            >
+            Transactions
+            </a>
+          </p>
         </div>
       </div>
     </div>
@@ -32,6 +39,7 @@
 
 <script>
 import axios from 'axios'
+import {getUrl} from '../common'
 
 export default {
   props: ['account'],
@@ -47,11 +55,14 @@ export default {
     getKeyStore(encrypt) {
       return 'data:text/plain;charset=utf-8,' + encodeURIComponent(encrypt)
     },
+    getTransaction(address) {
+      return 'https://rinkeby.etherscan.io/address/' + address
+    },
     deleteAccount(id) {
       const self = this
       let result = confirm("Bạn muốn xóa không?")
       if(result) {
-        axios.delete('http://localhost:3333/api/v1/account/' + id)
+        axios.delete(getUrl('api/v1/account/' + id))
         .then(function(res) {
           self.$emit('delete', id)
         })
@@ -61,7 +72,7 @@ export default {
       }
     },
     getBalance(id) {
-      axios.get('http://localhost:3333/api/v1/account/' + id + '/balance')
+      axios.get(getUrl('api/v1/account/' + id + '/balance'))
         .then((res) => {
           if(res.data.balance) {
             this.balance = res.data.balance

@@ -10,6 +10,15 @@ const voting_artifacts = require('../../Truffle/build/contracts/Voting.json')
 const Voting = contract(voting_artifacts)
 Voting.setProvider(web3.currentProvider)
 
+// dirty fix of truffle contract for web3 1.0
+if (typeof Voting.currentProvider.sendAsync !== "function") {
+  Voting.currentProvider.sendAsync = function() {
+    return Voting.currentProvider.send.apply(
+      Voting.currentProvider, arguments
+    );
+  };
+}
+
 class VotingController {
   * getCandidateList (req, res) {
     const candidates = yield Voting.deployed().then(instance => {
@@ -58,16 +67,22 @@ class VotingController {
     const passphrase = req.input('passphrase')
 
     const account = yield Account.findBy('address', address)
-    console.log(passphrase)
-    yield web3.eth.personal.unlockAccount(account.address, passphrase, 1000)
+
+    try {
+      yield web3.eth.personal.unlockAccount(account.address, passphrase, 1000)
+    } catch(error) {
+      return res.badRequest({
+        msg: 'wrong passphrase'
+      })
+    }
 
     let voted = yield Voting.deployed().then(instance => {
       return instance.voted({from: account.address})
     })
 
-    if(voted) {
+    if(voted != 0) {
       return res.badRequest({
-        error: 'you voted'
+        msg: 'you voted'
       })
       return
     }
@@ -77,6 +92,36 @@ class VotingController {
     })
     res.send({
       voted: true
+    })
+  }
+
+  * voted () {
+    const validation = yield Validator.validate(req.all(), {
+      address: 'required',
+    })
+    if (validation.fails()) { 
+      res.json(validation.messages()) 
+      return
+    }
+
+    const address = req.input('address')
+
+    const account = yield Account.findBy('address', address)
+
+    try {
+      yield web3.eth.personal.unlockAccount(account.address, passphrase, 1000)
+    } catch(error) {
+      return res.badRequest({
+        msg: 'wrong passphrase'
+      })
+    }
+
+    let voted = yield Voting.deployed().then(instance => {
+      return instance.voted({from: account.address})
+    })
+
+    res.send({
+      voted
     })
   }
 }

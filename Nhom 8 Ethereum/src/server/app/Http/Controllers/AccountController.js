@@ -31,6 +31,37 @@ class AccountController {
     account.username = username
     account.encrypt = JSON.stringify(web3Encrypt)
     account.address = web3Encrypt.address
+    yield account.save()
+    yield realUser.accounts().save(account)
+
+    let filedir = os.homedir() + '/.ethereum/rinkeby/keystore/' + account.address + '.txt'
+    fs.writeFileSync(filedir, account.encrypt)
+
+    res.send({
+      account
+    })
+  }
+
+  * import (req, res) {
+    const validation = yield Validator.validate(req.all(), {
+      username: 'required',
+      keystore: 'required',
+    })
+    if (validation.fails()) { 
+      res.json(validation.messages()) 
+      return
+    }
+
+    let username = req.input('username')
+    let keystore = JSON.parse(req.input('keystore'))
+    let user = req.auth.user
+    let realUser = yield User.find(user.id)
+    
+    let account = new Account()
+    account.username = username
+    account.encrypt = JSON.stringify(keystore)
+    account.address = keystore.address
+    yield account.save()
     yield realUser.accounts().save(account)
 
     let filedir = os.homedir() + '/.ethereum/rinkeby/keystore/' + account.address + '.txt'
@@ -90,33 +121,33 @@ class AccountController {
     res.json({balance});
   }
 
-  * unlock (req, res) {
-    const validation = yield Validator.validate(req.all(), {
-      address: 'required',
-      passphrase: 'required',
-    })
-    if (validation.fails()) { 
-      res.json(validation.messages()) 
-      return
-    }
+  // * unlock (req, res) {
+  //   const validation = yield Validator.validate(req.all(), {
+  //     address: 'required',
+  //     passphrase: 'required',
+  //   })
+  //   if (validation.fails()) { 
+  //     res.json(validation.messages()) 
+  //     return
+  //   }
 
-    const address = req.input('address')
-    const passphrase = req.input('passphrase')
+  //   const address = req.input('address')
+  //   const passphrase = req.input('passphrase')
     
-    const user = req.auth.user
+  //   const user = req.auth.user
 
-    var web3Account = web3.eth.accounts.create(passphrase)
-    var web3Encrypt = web3.eth.accounts.encrypt(web3Account.privateKey, passphrase)
+  //   var web3Account = web3.eth.accounts.create(passphrase)
+  //   var web3Encrypt = web3.eth.accounts.encrypt(web3Account.privateKey, passphrase)
     
-    const account = new Account()
-    account.username = username
-    account.encrypt = JSON.stringify(web3Encrypt)
-    yield realUser.accounts().save(account)
+  //   const account = new Account()
+  //   account.username = username
+  //   account.encrypt = JSON.stringify(web3Encrypt)
+  //   yield realUser.accounts().save(account)
 
-    res.send({
-      account
-    })
-  }
+  //   res.send({
+  //     account
+  //   })
+  // }
 }
 
 module.exports = AccountController

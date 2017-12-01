@@ -1,0 +1,18 @@
+\documentclass[../cnd.tex]{subfiles}
+
+Ba thành phần công nghệ của chuỗi khối:
+\begin{itemize}
+	\item Mạng ngang hàng: Một nhóm các máy tính có khả năng giao tiếp với nhau mà không phải phụ thuộc vào một người cầm quyền ở trung tâm.
+	\item Mật mã bất đối xứng: Cho phép những máy tính này gửi các tin nhắn được mã hóa đến những người nhận đã được xác định vì vậy bất kỳ ai cũng có thể biết định danh của người gửi, nhưng chỉ người nhận được chỉ định mới có thể đọc nội dung tin nhắn. Ở Bitcoin và Ethereum, mật mã bất đối xứng được sử dụng để tạo một tập các giấy chứng nhận (credential) cho tài khoản của bạn, để chắc chắn rằng chỉ có duy nhất bạn mới có thể chuyển các token của bạn (tiền của bạn).
+	\item Phép băm mật mã: Một cách để sinh một "dấu-vân-tay" (fingerprint) nhỏ, duy nhất cho bất kỳ dữ liệu nào, cho phép so sánh một cách nhanh chóng các tập dữ liệu lớn và là một cách an toàn để xác nhận rằng dữ liệu đã được thay đổi hay chưa; ở cả Bitcoin và Ethereum, cấu trúc dữ liệu cây được sử dụng để ghi lại thứ tự đúng tiêu chuẩn của các giao dịch, sau đó được băm vào một “dấu-vân-tay” làm cơ sở cho việc so sánh của các máy tính trong mạng.
+\end{itemize}
+
+Cấu trúc của một khối:
+\begin{itemize}
+	\item Index: Thứ tự của khối trong chuỗi
+	\item Hash: Giá trị đại diện cho khối đó. Có đầu vào là Index, Previos Hash, Data, Timestamp và Nonce
+	\item Previos Hash: Giá trị của khối hợp lệ ngay trước
+	\item Timestamp: Thời gian khối được khai thác
+	\item Data: Dữ liệu được lưu trong khối đó
+	\item Nonce: Là giá trị được tìm thấy và thêm vào để sau khi băm, ta có giá trị băm hợp lệ.
+\end{itemize}

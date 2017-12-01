@@ -1,0 +1,13 @@
+\documentclass[../cnd.tex]{subfiles}
+Trạng thái của cơ sở dữ liệu sẽ không bị buộc duy trì tất cả các trạng thái cũ trong tương lai. Nó duy trì mỗi nút và cuối cùng loại bỏ nút hoặc không nút chưa đủ gần hoặc không phải nút được đánh dấu; điểm đánh dấu, hoặc tập hợp các nút trong cơ sở dữ liệu cho phép trạng thái của một khối riêng biệt có thể được sử dụng để thay thế một mức giới hạn tối đa về số lượng tính toán để lấy bất kỳ trạng thái nào trong chuỗi khối.
+
+Chuỗi khối có thể được sử dụng để giảm khối lượng của khối mà một khách hàng sẽ cần phải tải về để hoạt động như một nút đào mỏ đầy đủ. Một tài liệu nén của cấu trúc cây tiền tố vào một thời điểm nhất định (có thể cứ mỗi 10.000 khối) có thể được duy trì bởi các mạng ngang hàng, việc tái tạo lại khối bắt đầu sẽ hiệu quả. Điều này sẽ làm giảm số lượng được tải xuống một kho lưu trữ cộng với giới hạn tối đa cứng của khối.
+
+Cuối cùng, chuỗi khối nén có thể có thể được tiến hành: các nút trong trong trạng thái cây tiền tố không gửi/nhận một giao dịch trong một số lượng khối không đổi có thể được ném ra, làm giảm cả sự rò rỉ ether và sự tăng thêm của trạng thái cơ sở dữ liệu.
+
+\subsubsection{Khả năng mở rộng}
+Khả năng mở rộng vẫn luôn là một mối quan tâm. Với hàm chuyển đổi trạng thái tổng quát rất khó để giao dịch phân vùng, song song có thể áp dụng các chiến lược chia để trị. Không được đính kèm, phạm vi giá trị động của hệ thống vẫn còn cơ bản cố định và khi giá trị giao dịch trung bình tăng, thì ít có giá trị trong chúng bị bỏ qua, về mặt kinh tế nó vô nghĩa để bao gồm trong sổ cái chính. Tuy nhiên, một số các chiến lược tồn tại có khả năng được khai thác để cung cấp một giao thức có thể mở rộng hơn đáng kể.
+
+Một số dạng cấu trúc phân cấp, có thể mở rộng được bằng cách hợp nhất các chuỗi nhỏ hơn nhẹ hơn vào khối chính hoặc xây dựng khối chính thông qua gia tăng sự kết hợp và bám dính (thông qua bằng chứng công việc) của các bộ giao dịch nhỏ hơn có thể cho phép sự kết hợp giao dịch song song và xây dựng khối.
+
+Cuối cùng, việc kiểm chứng tính toán, nếu được làm sẵn và đủ hiệu quả, có thể cung cấp một lộ trình cho phép bằng chứng công việc có được xác minh của trạng thái cuối cùng.
