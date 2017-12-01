@@ -98,9 +98,9 @@ Dựa vào cơ chế hoạt động của Facebook Chatbot, để xây dựng m�
 
 ![Tổng quan kiến trúc ứng dụng](images/tong_quan_kien_truc_ung_dung.jpg)
 
-<center><i>Hình 1.1: Sơ đồ hoạt động của ứng dụng Facebook Chatbot</i></center>
+###### Hình 1.1: Sơ đồ hoạt động của ứng dụng Facebook Chatbot
 
-Hình 1.1 mô tả ứng dụng Facebook Chatbot mà chúng tôi đã triển khai. Hai mũi tên ngược chiều nhau giữa `Facebook` và `Chatbot server` thể hiện tương tác hai chiều thông qua Webhook và Rest API. Ứng dụng được chia làm 2 tầng chính với các chức năng như sau:
+Hình trên mô tả ứng dụng Facebook Chatbot mà chúng tôi đã triển khai. Hai mũi tên ngược chiều nhau giữa `Facebook` và `Chatbot server` thể hiện tương tác hai chiều thông qua Webhook và Rest API. Ứng dụng được chia làm 2 tầng chính với các chức năng như sau:
 
 - Máy chủ Chatbot (Chatbot server) có nhiệm vụ kết nối hai chiều với Facebook thông qua Webhook và Rest API, tiếp nhận, xử lý và điều hướng các hành động và tin nhắn của nguời dùng. Đồng thời dữ liệu về người dùng cũng như các tin nhắn của họ cũng được máy chủ lưu lại.
     
@@ -149,11 +149,11 @@ Các hướng dẫn dưới đây được viết dựa trên ứng dụng mẫu
 
 ![Đăng ký ứng dụng](images/dang_ky_ung_dung.png)
 
-<center><i>Hình 2.1: Đăng ký một ứng dụng mới trên Facebook Developer.</i></center>
+###### Hình 2.1: Đăng ký một ứng dụng mới trên Facebook Developer.
 
 ![Tạo ứng dụng Messenger](images/tao_ung_dung_messenger.png)
 
-<center><i>Hình 2.2: Tạo ứng dụng Messenger.</i></center>
+###### Hình 2.2: Tạo ứng dụng Messenger.
 
 - Tạo cơ sở dữ liệu mới trên MongoDB có tên giống với `DB_DATABASE=` trong tệp `.env` (ở ứng dụng mẫu là `facebookChatbot`), trong cơ sở dữ liệu tạo 2 bộ dữ liệu (collection) `users` và `lecturers`.
  
@@ -173,19 +173,19 @@ Sau sao chép trường địa chỉ `Forwarding (https)` (Như hình vẽ dư�
         
 ![Khởi chạy ngrok](images/ngrok.png)
 
-<center><i>Hình 2.3: Khởi chạy Ngrok tại cổng 3000.</i></center>
+###### Hình 2.3: Khởi chạy Ngrok tại cổng 3000.
 
 - Trong ứng dụng Messenger vừa tạo ở Bước 1, chọn trang mà bạn có quyền quản trị để lấy mã truy cập trang. Sao chép và dán mã truy cập trang vào dòng `PAGE_TOKEN=` trong tệp `.env`.
 
 ![Thiết lập page token](images/thiet_lap_page_token.png)
 
-<center><i>Hình 2.4: Thiết lập trường `PAGE_TOKEN` cho ứng dụng.</i></center>
+###### Hình 2.4: Thiết lập trường `PAGE_TOKEN` cho ứng dụng.
 
 - Trên trang Facebook Developer, chọn phần `Thiết lập Webhook`.
 
 ![Thiết lập Webhook](images/thiet_lap_webhook.png)
 
-<center><i>Hình 2.5: Thiết lập Webhook.</i></center>
+###### Hình 2.5: Thiết lập Webhook.
   
 Tại hộp thoại hiện lên, điền URL gọi lại giống `Fowarding (https)` của Ngrok và thêm `/Webhook` vào sau (như với ứng dụng mẫu sẽ là https://58157de6.ngrok.io/webhook). 
 
@@ -193,7 +193,7 @@ Trường `Mã xác minh` nhập giống `VERIFY_TOKEN=` trong tệp `.env` (ở
 
 ![Đăng ký Webhook](images/dang_ky_webhook.png)
 
-<center><i>Hình 2.6: Đăng ký Webhook.</i></center>
+###### Hình 2.6: Đăng ký Webhook.
 
 ### 2.3. Xây dựng máy chủ Chatbot nhận, xử lý tin nhắn và phản hồi tin nhắn phù hợp
 
@@ -290,7 +290,7 @@ Hình 3.1: Các API được triển khai trên máy chủ tìm kiếm.
 
 Hình trên là danh sách các API mà máy chủ tìm kiếm cung cấp, theo thứ tự là:
 
-- API tìm kiếm câu hỏi thường gặp của sinh viên với đầu vào `query` là tiêu đề, từ khoá hoặc câu hỏi tương tự (`parapharses`).
+- API tìm kiếm câu hỏi thường gặp của sinh viên với đầu vào `query` là tiêu đề, từ khoá hoặc câu hỏi tương tự (parapharses).
 
 - API tra cứu nội dung chi tiết của một câu hỏi với đầu vào là `id` của câu hỏi.
 
