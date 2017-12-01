@@ -96,7 +96,7 @@ Dựa vào cơ chế hoạt động của Facebook Chatbot, để xây dựng m�
 
 2. Nhận tin nhắn từ người dùng thông qua ứng dụng Webhook, xử lý nội dung và phản hồi lại cho người dùng.
 
-![Tổng quan kiến trúc ứng dụng](images/tong_quan_kien_truc_ung_dung.jpg)
+![Sơ đồ hoạt động của ứng dụng Facebook Chatbot](images/hình-11-sơ-đồ-hoạt-động-của-ứng-dụng-facebook-chatbot.jpg)
 
 ###### Hình 1.1: Sơ đồ hoạt động của ứng dụng Facebook Chatbot
 
@@ -146,11 +146,11 @@ Các hướng dẫn dưới đây được viết dựa trên ứng dụng của
 
 - Truy cập [Facebook Developer](https://developers.facebook.com/), tạo một ứng dụng. Sau đó vào chọn ứng dụng Messenger.
 
-![Đăng ký ứng dụng](images/dang_ky_ung_dung.png)
+![Đăng ký một ứng dụng mới trên Facebook Developer](images/hình-21-Đăng-ký-một-ứng-dụng-mới-trên-facebook-developer.png)
 
 ###### Hình 2.1: Đăng ký một ứng dụng mới trên Facebook Developer.
 
-![Tạo ứng dụng Messenger](images/tao_ung_dung_messenger.png)
+![Tạo ứng dụng Messenger](images/hình-22-tạo-ứng-dụng-messenger.png)
 
 ###### Hình 2.2: Tạo ứng dụng Messenger.
 
@@ -170,19 +170,19 @@ Các hướng dẫn dưới đây được viết dựa trên ứng dụng của
         
 Sau sao chép trường địa chỉ `Forwarding (https)` (Như hình vẽ dưới đây là https://58157de6.ngrok.io).
         
-![Khởi chạy ngrok](images/ngrok.png)
+![Khởi chạy Ngrok tại cổng 3000](images/hình-23-khởi-chạy-ngrok-tại-cổng-3000.png)
 
 ###### Hình 2.3: Khởi chạy Ngrok tại cổng 3000.
 
 - Trong ứng dụng Messenger vừa tạo ở Bước 1, chọn trang mà bạn có quyền quản trị để lấy mã truy cập trang. Sao chép và dán mã truy cập trang vào dòng `PAGE_TOKEN=` trong tệp `.env`.
 
-![Thiết lập page token](images/thiet_lap_page_token.png)
+![Thiết lập trường `PAGE_TOKEN` cho ứng dụng](images/hình-24-thiết-lập-trường-page_token-cho-ứng-dụng.png)
 
 ###### Hình 2.4: Thiết lập trường `PAGE_TOKEN` cho ứng dụng.
 
 - Trên trang Facebook Developer, chọn phần `Thiết lập Webhook`.
 
-![Thiết lập Webhook](images/thiet_lap_webhook.png)
+![Thiết lập Webhook](images/hình-25-thiết-lập-webhook.png)
 
 ###### Hình 2.5: Thiết lập Webhook.
   
@@ -190,7 +190,7 @@ Tại hộp thoại hiện lên, điền URL gọi lại giống `Fowarding (htt
 
 Trường `Mã xác minh` nhập giống `VERIFY_TOKEN=` trong tệp `.env` trên ứng dụng của chúng tôi là `verify_token`). `Trường gửi` chúng ta chọn `messages` và `messaging_postbacks`.
 
-![Đăng ký Webhook](images/dang_ky_webhook.png)
+![Đăng ký Webhook](images/hình-26-Đăng-ký-webhook.png)
 
 ###### Hình 2.6: Đăng ký Webhook.
 
@@ -211,7 +211,7 @@ Các dữ liệu trong bài toán này có thể được chia làm hai phần:
 
 Như vậy ở MongoDB ta cần xây dựng một bộ sưu tập (collection) `users` có cấu trúc như sau.
 
-![Collection users](images/collection_user.png)
+![Cấu trúc bộ dữ liệu `users`](images/hình-27-cấu-trúc-bộ-dữ-liệu-users.png)
 
 ###### Hình 2.7: Cấu trúc bộ dữ liệu `users`.
 
@@ -229,13 +229,13 @@ Khi người dùng thực hiện một hành động (gửi tin, chọn thanh đ
 
 Trong bài toán của chúng tôi không cần dùng tới sự kiện `attachment` nên chỉ 3 sự kiện `message`, `postback`, `quickreply` được đề cập.
 
-![Cấu trúc mã nguồn](images/cau_truc_ma_nguon.png  "Cấu trúc mã nguồn")
+![Cấu trúc mã nguồn](images/hình-28-cấu-trúc-mã-nguồn.png  "Cấu trúc mã nguồn")
 
 ###### Hình 2.8: Cấu trúc mã nguồn.
 
 ### 2.3.3. Xây dựng được luồng xử lý phù hợp với các tin nhắn của người dùng.
 
-![Luồng xử lý sự kiện](images/luong_xu_ly_su_kien.jpg  "Luồng xử lý sự kiện")
+![Luồng xử lý sự kiện](images/hình-29-luồng-xử-lý-sự-kiện.jpg  "Luồng xử lý sự kiện")
 
 ###### Hình 2.9: Luồng xử lý sự kiện.
 
@@ -281,7 +281,7 @@ Từ danh sách `id` trả về từ Elasticsearch, chúng tôi tìm kiếm các
 
 ### 3.4. Các API
 
-![Search API](images/search_api.png)
+![Các API được triển khai trên máy chủ tìm kiếm](images/hình-31-các-api-được-triển-khai-trên-máy-chủ-tìm-kiếm.png)
 
 ###### Hình 3.1: Các API được triển khai trên máy chủ tìm kiếm.
 
