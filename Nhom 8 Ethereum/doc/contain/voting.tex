@@ -1,6 +1,6 @@
 \documentclass[../cnd.tex]{subfiles}
 
-Đây là một ứng dụng rất đơn giản để giới thiệu về một trong các ứng dụng quan trọng của nền tảng Ethereum - ứng dụng phi tập trung (decenterlized app). Mọi dữ liệu đều bị ẩn danh và không thể sửa đổi nhưng có một khuyết điểm là để sử dụng nó, người dùng cần cài đặt một chương trình để có thể tham gia vào mạng Ethereum, điều này khá khó và phức tạp cho một người dùng cuối. Vì vậy mà đã có rất nhiều ứng dụng hướng việc sử dụng các ứng dụng phi tập trung như một ứng dụng web thông thường, ví dụ như \url{kyber.network}. 
+Đây là một ứng dụng rất đơn giản để giới thiệu về một trong các ứng dụng quan trọng của nền tảng Ethereum - ứng dụng phi tập trung (decentralized app). Mọi dữ liệu đều bị ẩn danh và không thể sửa đổi nhưng có một khuyết điểm là để sử dụng nó, người dùng cần cài đặt một chương trình để có thể tham gia vào mạng Ethereum, điều này khá khó và phức tạp cho một người dùng cuối. Vì vậy mà đã có rất nhiều ứng dụng hướng việc sử dụng các ứng dụng phi tập trung như một ứng dụng web thông thường, ví dụ như \url{kyber.network}. 
 
 Ứng dụng đơn giản này được viết ra để mô phỏng lại việc đó cũng như hướng dẫn bạn có thể làm được một ứng dụng như thế. Ứng dụng mô tả một cuộc bầu cử đơn giản, những đặc tính của ứng dụng phi tập trung khá phù hợp cho công việc này - ẩn danh và không thể thay đổi.
 
@@ -83,7 +83,7 @@ module.exports = {
 
 Như chúng ta thấy file này sẽ chứa:
 \begin{itemize}
-	\item host: địa chỉ ip của nút Ethereum
+	\item host: địa chỉ IP của nút Ethereum
 	\item port: cổng của nút Ethereum
 	\item from: địa chỉ sẽ chi ether để triển khai	
 	\item network_id: chỉ định mạng sẽ được triển khai (id của mạng Rinkeby là 4)	
@@ -113,7 +113,7 @@ npm run server:dev
 \end{lstlisting}
 
 \subsubsection{Frontend}
-Phía frontend được viết bằng khung làm việc VueJS$^{[15]}$, được sử dụng để xây dựng ứng dụng một trang (Single Page Application) một cách nhanh chóng.
+Phía frontend được viết bằng khung làm việc VueJS, được sử dụng để xây dựng ứng dụng một trang (Single Page Application) một cách nhanh chóng.
 
 Để chạy chương trình phía frontend bạn cần chạy câu lệnh:
 \begin{lstlisting}[language=bash]
@@ -126,7 +126,7 @@ npm run build
 \end{lstlisting}
 Các tệp html, css, js sẽ được sinh tự động để bạn có thể đưa vào ứng dụng phía backend. Cách trên khá bất tiện nên trong phiên bản tiếp theo sẽ có chỉnh sửa để quá trình được tự động hơn. 
 
-\subsubsection{Hình ảnh từ ứng dụng}
+\subsection{Hình ảnh từ ứng dụng}
 
 \begin{figure}[H]
 \centering
@@ -158,7 +158,7 @@ Các tệp html, css, js sẽ được sinh tự động để bạn có thể �
 \caption{Trang cung cấp tra cứu giao dịch}
 \end{figure}
 
-\subsubsection{Một số lưu ý rút ra từ ứng dụng}
+\subsection{Một số lưu ý rút ra từ ứng dụng}
 Phần này được viết thêm và sẽ hữu ích với bạn nếu bạn định sử dụng Ethereum trong mạng thật và chi tiêu cũng như đầu tư vào Ethreum. Nếu bạn đọc mã nguồn của chương trình cũng như có thể suy đoán ra, chương trình trên hoàn toàn có thể có được khóa bí mật của bạn và đó là một rủi ro nếu bạn sử dụng đồng ether thật. 
 
 Cụ thể với trang \url{https://www.blockchain.com}, bạn cũng có thể tạo tài khoản một cách trực tuyến mà không phải cài đặt gì, nhận tiền và chuyển tiền và bạn cũng có thể bị mất nó bất kì lúc nào. Bạn dùng nó và chỉ mong nhà cung cấp dịch vụ không làm gì với thông tin cá nhân của mình, cũng như các dịch vụ tập trung khác mà bạn đang sử dụng. Vì vậy nếu muốn an tâm hoàn toàn, bạn nên cài đặt các ví được cung cấp một cách chính thống như \url{https://github.com/ethereum/mist/releases}. Bạn vẫn có nguy cơ bị tấn công nhưng ít nhất bạn biết bạn đang giữ tài sản của mình.

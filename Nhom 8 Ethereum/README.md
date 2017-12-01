@@ -19,7 +19,7 @@ Trên thế giới hiện nay, nổi lên các hoạt động mua bán, trao đ�
 
 Với Ethereum, dù sinh sau đẻ muộn nhưng nó cho thấy được những ưu điểm vượt trội hơn Bitcoin về nhiều mặt, người ta hay ví von rằng Ethereum là phiên bản Bitcoin 2.0. Chúng ta sẽ cùng tìm hiểu kỹ hơn về chuối khối, về Ethereum và tiềm năng của chúng.
 
-## 2. Tổng quan về chuỗi khối [3]
+## 2. Tổng quan về chuỗi khối
 ### 2.1 Khái niệm chuỗi khối
 Chuỗi khối (blockchain) [3] là một cơ sở dữ liệu phân cấp lưu trữ thông tin trong các khối thông tin được liên kết với nhau bằng mã hóa và mở rộng theo thời gian. Mỗi khối thông tin đều chứa thông tin về thời gian khởi tạo và được liên kết tới khối trước đó, kèm một mã thời gian và dữ liệu giao dịch. Chuỗi khối được thiết kế để chống lại việc thay đổi của dữ liệu: Một khi dữ liệu đã được mạng lưới chấp nhận thì sẽ không có cách nào thay đổi được nó. [4]
 
@@ -175,7 +175,7 @@ Một loại cây đặc biệt được gọi là "cây Patricia" được sử
 
 #### Solidity
 <p align="center">
-<img src="https://github.com/nesso99/int3507-2017/blob/master/Nhom%208%20Ethereum/img/logoSolidity.PNG?raw=true" style="width: 70px;" />
+<img src="https://github.com/nesso99/int3507-2017/blob/master/Nhom%208%20Ethereum/img/logoSolidity.PNG?raw=true" height="100" />
 </p>
 Solidity là một ngôn ngữ lập trình sử dụng để viết các chương trình hợp đồng thông minh, thứ mà sẽ được chạy trên EVM. Ngôn ngữ mới này là một sự pha trộn các quy ước từ mạng, hợp ngữ và phát triển web. 
 
