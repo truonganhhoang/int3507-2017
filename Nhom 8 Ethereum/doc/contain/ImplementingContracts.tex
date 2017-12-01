@@ -1,5 +1,6 @@
 \documentclass[../cnd.tex]{subfiles}
-Có một số mô hình hợp đồng kĩ thuật cho phép thực hiện các việc cụ thể. Trong đó, có hai loại: nguồn cấp dữ liệu và số ngẫu nhiên
+Có một số mô hình hợp đồng kĩ thuật cho phép thực hiện các việc cụ thể. Trong đó, có hai loại: nguồn cấp dữ liệu và số ngẫu nhiên.
+
 \subsubsection{Nguồn cấp dữ  liệu} 
 Hợp đồng cung cấp dữ liệu là hợp đồng cung  cấp một dịch vụ: nó cho phép truy cập thông tin từ thế giới bên ngoài trong Ethereum. Sự chính xác và kịp thời của thông tin này không được đảm bảo và đây là nhiệm vụ của một hợp đồng phụ. Hợp đồng phụ này sẽ sử  dụng nguồn cấp dữ  liệu để xác định mức độ tin tưởng có thể được đặt trong bất kỳ một nguồn cấp dữ liệu nào. Mô hình tổng quát bao gồm một hợp đồng duy nhất trong Ethereum mà khi nhận được cuộc gọi tin nhắn, trả lời với một số thông tin kịp thời liên quan đến một hiện tượng bên ngoài. Ví dụ như nhiệt độ của thành phố New York. Điều này sẽ thực hiện như một hợp đồng mà trả lại giá trị của một số điểm nhận ra trong lưu trữ. Dĩ nhiên điểm này trong lưu trữ phải được duy trì với nhiệt độ chính xác như vậy, và  do đó phần thứ hai của mô hình sẽ cho máy chủ chạy một nút Ethereum, và ngay lập tức phát hiện ra một block mới, gửi đến hợp đồng, cập nhật giá trị trong lưu trữ.  Mã của hợp đồng sẽ chấp nhận các cập nhật như vậy từ nhận dạng trên máy chủ.
 \subsubsection{Số ngẫu nhiên}
