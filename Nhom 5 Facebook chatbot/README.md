@@ -30,19 +30,19 @@
 
 ## Danh sách hình vẽ
 
-| Hình vẽ  	| Mô tả                                         	|
-|----------	|-----------------------------------------------	|
-| Hình 1.1 	| Sơ đồ hoạt động của ứng dụng Facebook Chatbot 	|
-| Hình 2.1 	| Đăng ký ứng dụng mới                          	|
-| Hình 2.2 	| Tạo ứng dụng Messenger                        	|
-| Hình 2.3 	| Khởi chạy Ngrok                               	|
-| Hình 2.4 	| Thiết lập `page token`                        	|
-| Hình 2.5 	| Thiết lập Webhook                             	|
-| Hình 2.6 	| Đăng ký Webhook                               	|
-| Hình 2.7 	| Cấu trúc bộ sưu tập `users`                   	|
-| Hình 2.8 	| Cấu trúc mã nguồn                             	|
-| Hình 2.9 	| Tạo luồng sự kiện                             	|
-| Hình 3.1 	| Các API được triển khai trên máy chủ tìm kiếm 	|
+| Hình vẽ                                                               	| Mô tả                                            	|
+|-----------------------------------------------------------------------	|--------------------------------------------------	|
+| [Hình 1.1](#hình-11-sơ-đồ-hoạt-động-của-ứng-dụng-facebook-chatbot)    	| Sơ đồ hoạt động của ứng dụng Facebook Chatbot    	|
+| [Hình 2.1](#hình-21-Đăng-ký-một-ứng-dụng-mới-trên-facebook-developer) 	| Đăng ký một ứng dụng mới trên Facebook Developer 	|
+| [Hình 2.2](#hình-22-tạo-ứng-dụng-messenger)                           	| Tạo ứng dụng Messenger                           	|
+| [Hình 2.3](#hình-23-khởi-chạy-ngrok-tại-cổng-3000)                    	| Khởi chạy Ngrok tại cổng 3000                    	|
+| [Hình 2.4](#hình-24-thiết-lập-trường-page_token-cho-ứng-dụng)         	| Thiết lập trường `PAGE_TOKEN` cho ứng dụng       	|
+| [Hình 2.5](#hình-25-thiết-lập-webhook)                                	| Thiết lập Webhook                                	|
+| [Hình 2.6](#hình-26-Đăng-ký-webhook)                                  	| Đăng ký Webhook                                  	|
+| [Hình 2.7](#hình-27-cấu-trúc-bộ-sưu-tập-users)                        	| Cấu trúc bộ sưu tập `users`                      	|
+| [Hình 2.8](#hình-28-cấu-trúc-mã-nguồn)                                	| Cấu trúc mã nguồn                                	|
+| [Hình 2.9](#hình-29-tạo-luồng-sự-kiện)                                	| Tạo luồng sự kiện                                	|
+| [Hình 3.1](#hình-31-các-api-được-triển-khai-trên-máy-chủ-tìm-kiếm)    	| Các API được triển khai trên máy chủ tìm kiếm    	|
 
 ## Mục lục
 
