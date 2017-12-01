@@ -48,17 +48,17 @@
 
 - [Lời mở đầu](#lời-mở-đầu)
 
-- [Chương 1: Tổng quan về kiến trúc của UET Chatbot](#chương-1-tổng-quan-về-kiến-trúc-của-uet-chatbot)
+- [Chương 1: Tổng quan về kiến trúc của UET Chatbot](#chương-1-tổng-quan-về-kiến-trúc-ứng-dụng)
 
 - [Chương 2: Máy chủ Chatbot](#chương-2-máy-chủ-chatbot)
 
     - [2.1. Cơ chế hoạt động của Facebook Chatbot](#21-cơ-chế-hoạt-động-của-facebook-chatbot)
     
-    - [2.2. Kết nối hai chiều với Facebook thông qua Webhook và Rest API](#22-kết-nối-hai-chiều-với-facebook-thông-qua-webhook-và-rest-api)
+    - [2.2. Kết nối hai chiều với Facebook thông qua Webhook và Rest API](#22-kết-nối-với-facebook-thông-qua-webhook-và-rest-api)
     
     - [2.3. Xây dựng máy chủ chatbot nhận, xử lý tin nhắn và phản hồi tin nhắn phù hợp](#23-xây-dựng-máy-chủ-chatbot-nhận-xử-lý-tin-nhắn-và-phản-hồi-tin-nhắn-phù-hợp)
     
-- [Chương 3: Tầng máy chủ tìm kiếm](#chương-3-tầng-máy-chủ-tìm-kiếm)
+- [Chương 3: Tầng máy chủ tìm kiếm](#chương-3-máy-chủ-tìm-kiếm)
 
 	- [3.1. Công nghệ](#31-công-nghệ)
 	
@@ -118,8 +118,7 @@ Song song với đó, các trình thu thập thông tin sẽ thu thập dữ li�
 
 Sau khi xử lý xong, nếu muốn trả lời lại người dùng, chúng ta phải gửi tin nhắn qua Rest API của Facebook. Nhờ đó, một tin nhắn từ trang tới người dùng được Facebook gửi đi.
 
-
-### 2.2. Kết nối hai chiều với Facebook thông qua Webhook và Rest API
+### 2.2. Kết nối với Facebook thông qua Webhook và Rest API
 
 Phần này sẽ tập trung vào cách thức xây dựng máy chủ Chatbot để tiếp nhận các yêu cầu của người dùng và xử lý hoặc điều hướng xử lý chúng. Máy chủ Chatbot có thể được viết bằng bất kỳ ngôn ngữ lập trình nào, bài báo cáo này sẽ trình bày một ứng dụng mẫu do chúng tôi xây dựng dựa trên Framework ExpressJS của Nodejs và cơ sở dữ liệu được sử dụng là MongoDB
 
@@ -214,7 +213,7 @@ Như vậy ở MongoDB ta cần xây dựng một bộ sưu tập (collection) `
 
 ![Collection users](images/collection_user.png)
 
-Hình 2.7: Cấu trúc bộ sưu tập `users`.
+###### Hình 2.7: Cấu trúc bộ sưu tập `users`.
 
 #### 2.3.2. Xây dựng các luồng xử lý
 
@@ -232,7 +231,7 @@ Khi người dùng thực hiện một hành động (gửi tin, chọn menu, b�
 
 ![Cấu trúc mã nguồn](images/cau_truc_ma_nguon.png  "Cấu trúc mã nguồn")
 
-Hình 2.8: Cấu trúc mã nguồn.
+###### Hình 2.8: Cấu trúc mã nguồn.
 
 ### 2.3.3. Làm sao để xây dựng được luồng xử lý phù hợp với các tin nhắn của người dùng.
 
@@ -240,11 +239,11 @@ Khi ứng dụng của bạn yêu cầu nhập tên giảng viên khi tra cứu 
 
 ![Tạo luồng sự kiện](images/tao_luong_su_kien.png  "Tạo luồng sự kiện")
 
-Hình 2.9: Tạo luồng sự kiện.
+###### Hình 2.9: Tạo luồng sự kiện.
 
 Khi một tin nhắn văn bản được gửi đến, chúng tôi sẽ truy vấn action cuối cùng, sau đó mới đưa ra phương thức xử lý của action đó.
 
-## Chương 3: Tầng máy chủ tìm kiếm
+## Chương 3: Máy chủ tìm kiếm
 
 Máy chủ tìm kiếm chúng tôi xây dựng dựa trên dự án có sẵn là [website sguet.com](http://sguet.com) nên chúng tôi không công bố mã nguồn mà chỉ hướng dẫn cách xây dựng một máy chủ tìm kiếm tương tự.
 
@@ -286,7 +285,7 @@ Từ danh sách `id` trả về từ Elasticsearch, chúng tôi tìm kiếm các
 
 ![Search API](images/search_api.png)
 
-Hình 3.1: Các API được triển khai trên máy chủ tìm kiếm.
+###### Hình 3.1: Các API được triển khai trên máy chủ tìm kiếm.
 
 Hình trên là danh sách các API mà máy chủ tìm kiếm cung cấp, theo thứ tự là:
 
