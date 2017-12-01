@@ -9,13 +9,13 @@
 ## Mô tả đề tài
 
 * Tìm hiểu về Ethereum
-* Xây dựng một chương trình bỏ phiếu dựa vào Ethereum 
+* Xây dựng một ứng dụng bầu cử dựa vào Ethereum 
 
 ------------------------
 
 # Tìm hiểu về Ethereum
 ## 1. Đặt vấn đề
-Trên thế giới hiện nay, nổi lên các hoạt động mua bán, trao đổi tiền ảo rất sôi nổi, trong đó Bitcoin [1] và Ethereum [2] là 2 đồng tiền được nhắc đến nhiều nhất, xoay quanh những chủ đề này nhiều người còn quan tâm tới chuỗi khối - một công nghệ đằng sau những tiền ảo này. Công nghệ này đang giúp mọi người dù xa lạ hay thân quen đều có thể xây dựng một cuốn sổ giao dịch đáng tin cậy cho riêng mình. Đây là yếu tố có ý nghĩa vượt xa cả mọi giao thức mã hóa tiền tệ thông thường.
+Trên thế giới hiện nay, nổi lên các hoạt động mua bán, trao đổi tiền ảo rất sôi nổi, trong đó Bitcoin [1] và Ethereum [2] là hai đồng tiền được nhắc đến nhiều nhất, xoay quanh những chủ đề này nhiều người còn quan tâm tới chuỗi khối - một công nghệ đằng sau những tiền ảo này. Công nghệ này đang giúp mọi người dù xa lạ hay thân quen đều có thể xây dựng một cuốn sổ giao dịch đáng tin cậy cho riêng mình. Đây là yếu tố có ý nghĩa vượt xa cả mọi giao thức mã hóa tiền tệ thông thường.
 
 Với Ethereum, dù sinh sau đẻ muộn nhưng nó cho thấy được những ưu điểm vượt trội hơn Bitcoin về nhiều mặt, người ta hay ví von rằng Ethereum là phiên bản Bitcoin 2.0. Chúng ta sẽ cùng tìm hiểu kỹ hơn về chuối khối, về Ethereum và tiềm năng của chúng.
 
@@ -164,10 +164,10 @@ Chuỗi khối của Ethereum có nhiều điểm tương tự như của Bitcoi
 * Kiểm tra dấu thời gian (timestamp) của khối lớn hơn dấu thời gian của khối được tham chiếu trước đó và nhỏ hơn 15 phút trong tương lai không.
 * Kiểm tra số khối, độ khó, gốc giao dịch, gốc cha chú (uncle) và giới hạn gas là hợp lệ không.
 * Kiểm tra xem chứng minh công việc (proof of work) trên khối là hợp lệ không.
-* Đặt S[0] là trạng thái cuối ở khối trước đó.
-* Đặt TX là danh sách giao dịch của khối, với n giao dịch. Đối với tất cả i từ 0...n-1, đặt S[i+1] = APPLY(S[i],TX[i]). Nếu bất kỳ ứng dụng nào trả về lỗi hoặc nếu tổng lượng gas tiêu thụ trong khối cho đến thời điểm này vượt quá GASLIMIT thì trả lại lỗi. (APPLY là một hàm thay đổi trạng thái S khi có giao dịch).
-* Đặt S_FINAL là S[n], nhưng thêm phần thưởng cho thợ mỏ.
-* Kiểm tra gốc cây Merkle của trạng thái S_FINAL có bằng với gốc trạng thái cuối cùng được cung cấp trong tiêu đề khối không. Nếu có, khối này là hợp lệ; Nếu không, nó không hợp lệ.
+* Đặt `S[0]` là trạng thái cuối ở khối trước đó.
+* Đặt `TX` là danh sách giao dịch của khối, với n giao dịch. Đối với tất cả `i` từ `0...n-1`, đặt `S[i+1] = APPLY(S[i],TX[i])`. Nếu bất kỳ ứng dụng nào trả về lỗi hoặc nếu tổng lượng gas tiêu thụ trong khối cho đến thời điểm này vượt quá `GASLIMIT` thì trả lại lỗi. (`APPLY` là một hàm thay đổi trạng thái S khi có giao dịch).
+* Đặt `S_FINAL` là `S[n]`, nhưng thêm phần thưởng cho thợ mỏ.
+* Kiểm tra gốc cây Merkle của trạng thái `S_FINAL` có bằng với gốc trạng thái cuối cùng được cung cấp trong tiêu đề khối không. Nếu có, khối này là hợp lệ; Nếu không, nó không hợp lệ.
 
 Cách tiếp cận có thể có vẻ không hiệu quả ở cái nhìn đầu tiên, bởi vì nó cần phải lưu trữ toàn bộ trạng thái với mỗi khối, nhưng hiệu quả thực tế là ngang với Bitcoin. Lý do là trạng thái được lưu trữ trong cấu trúc cây, và sau mỗi khối thì chỉ cần một phần nhỏ của cây phải thay đổi. Do đó, nói chung, giữa hai khối liền kề, phần lớn cây giống nhau, và vì vậy dữ liệu có thể được lưu trữ một lần và được tham chiếu hai lần bằng cách sử dụng các con trỏ (ví dụ: băm (hash) các cây con).
 
@@ -211,7 +211,7 @@ Ta đã quá quen thuộc với việc các thợ mỏ mua các cỗ máy đắt
 
 POW là một trong các cách để xác định sự đồng thuận của cộng đồng. Ở mô hình hay giải thuật này, để thêm mới một khối và blockchain đồi hỏi phải thực hiện các hàm tính toán rất phức tạp để tạo nên một giá trị băm hợp lệ (khó để tạo ra nhưng rất dễ dàng để xác định nó hợp lệ). Việc giải mã này ngoài việc cần những cấu hình mạnh còn tiêu tốn rất rất nhiều điện năng và gây nguy hại đến môi trường. Cộng đồng sẽ công nhận khối anh tạo ra dựa vào lượng công việc anh đã thực hiện được. 
 
-Một yếu tố đặc trưng của mô hình này đó là sự xuất hiện của các khối dư thừa (orphan block) do có nhiều người tham gia cùng tạo nên một khối nên sẽ có trường hợp hai người tạo ra hai khối đều hợp lệ nhưng ta chỉ có thể chọn khối đến trước và khối kia (tốn rất nhiều năng lượng tạo ra) bị lãng phí và bỏ đi. Những đặc trưng kể trên phần nào nói lên nhược điểm của giải thuật mà phần lớn các đồng tiền ảo đang sử dụng
+Một yếu tố đặc trưng của mô hình này đó là sự xuất hiện của các khối dư thừa (orphan block) do có nhiều người tham gia cùng tạo nên một khối nên sẽ có trường hợp hai người tạo ra hai khối đều hợp lệ nhưng ta chỉ có thể chọn khối đến trước và khối kia (tốn rất nhiều năng lượng tạo ra) bị lãng phí và bỏ đi. Những đặc trưng kể trên phần nào nói lên nhược điểm của giải thuật mà phần lớn các đồng tiền ảo đang sử dụng.
 
 Khi độ khó để tạo ra một khối càng ngày càng tăng lên, việc đào ra một khối của các thợ mỏ ngày càng thấp và họ bắt đầu thua lỗ,một số sẽ quyết định từ bỏ hoặc tham gia vào các bể đào (mining pool). Việc này tạo ra các cỗ máy tập trung (trái với các tính chất phân tán mà mô hình mong muốn). Và còn một vấn đề hệ quả nữa là tấn công 51\% (51\% attack) sẽ được nên ở sau.
 

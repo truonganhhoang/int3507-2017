@@ -22,7 +22,7 @@ Có hai lý do chính để gas ra đời:
 
 Việc này khác so với Bitcoin, nơi mà chi phí được tính bằng kích thước của giao dịch (tính bằng kilobytes), ta có thể thấy việc tính chi phí dựa trên khối lượng tính toán hợp lý hơn nhiều.
 
-Hệ thống gas cũng không khác lắm so với việc đo lượng điện dân dụng. Điểm khác biệt với thị trường năng lượng thực chính là người tạo giao dịch sẽ quyết định giá gas (thợ mỏ có thể chấp nhận giá này hoặc không)
+Hệ thống gas cũng không khác lắm so với việc đo lượng điện dân dụng. Điểm khác biệt với thị trường năng lượng thực chính là người tạo giao dịch sẽ quyết định giá gas (thợ mỏ có thể chấp nhận giá này hoặc không).
 
 Giá gas cho mỗi giao dịch hay hợp đồng được thiết lập để xử lý bản chất Turing Complete của Ethereum và EVM của nó (tức là mã Ethereum Virtual Machine)- đây là một trong những ý tưởng được đưa ra để hạn chế vòng lặp vô hạn. Ví dụ như 10 szabo, tương đương với 0.00001 ether hay 1 gas có thể thực hiện một dòng mã hay vài câu lệnh. Nếu không có đủ ether trong tài khoản để hiển thị một cuộc giao dịch hay một tin nhắn thì nó được coi là không hợp lệ. Ý tưởng này sẽ phần nào ngăn chặn được những cuộc tấn công từ vòng lặp vô hạn, khuyến khích tính hiệu quả trong chuỗi mã - và bắt những kẻ tấn công phải trả cho tài nguyên mà mình sử dụng. Câu lệnh càng phức tạp thì bạn càng phải trả nhiều gas hơn.
 \begin{figure}[ht]
@@ -50,7 +50,7 @@ EVM tạo ra môi trường để chạy các chương trình bất kì (đượ
 
 Các chương trình viết bằng Solidity có khả năng thực hiện tất cả các nhiệm vụ có thể thực hiện được bằng máy tính. Khi một hợp đồng được triển khai bằng việc tải lên từ một nút của mạng, các bản sao của hợp đồng sẽ được phát tán ra các nút khác. Khi có yêu cầu chạy hợp đồng, các nút trong mạng sẽ chạy một các độc lớp với cùng một mã của hợp đồng. Tuy nó cho thấy sự song song hóa rất cao, nhưng nó cũng mang lại sự dư thừa không hề nhỏ.
 
-EVM đã được lập trình trong C++, Go, Haskell, Java, Python, Ruby, Rust và WebAssembly (hiện đang được phát triển)
+EVM đã được lập trình trong C++, Go, Haskell, Java, Python, Ruby, Rust và WebAssembly (hiện đang được phát triển).
 
 \subsubsection{Hợp đồng thông minh}
 Bình thường, khi ký một hợp đồng để trao đổi giá trị kinh tế, chúng ta cần một bên thứ 3 có trách nhiệm hòa giải (ví dụ: Nhà môi giới, Tòa án, Sở đất đai,...). Hợp đồng thông minh (smart contract) là một cơ chế trao đổi xác định, được kiểm soát bởi các phương tiện kỹ thuật số mà có thể giúp cho việc thực hiện giao dịch trực tiếp giữa các thực thể mà không cần tin cậy nhau. Các hợp đồng này được định nghĩa bằng cách lập trình và được chạy chính xác như mong muốn mà không bị kiểm duyệt, lừa đảo hay sự can thiệp từ bên thứ ba trung gian.
@@ -67,7 +67,7 @@ Sự khác biệt giữa hợp đồng truyền thống và hợp đồng thông
 
 Mỗi tài khoản Ethereum được đại diện bởi 20 ký tự. Các thông số sau được lưu trong dữ liệu trạng thái (state) của Ethereum cho mỗi tài khoản:
 \begin{itemize}
-	\item Số nonce: để đảm bảo mỗi giao dịch chỉ được xử lý một lần.
+	\item Số nonce: để đảm bảo mỗi giao dịch chỉ được xử lý một lần
 	\item Số dư tài khoản
 	\item Mã nguồn hợp đồng (nếu có)
 	\item Phần lưu trữ của tài khoản (mặc định là trống)
@@ -173,7 +173,7 @@ Ta đã quá quen thuộc với việc các thợ mỏ mua các cỗ máy đắt
 
 POW là một trong các cách để xác định sự đồng thuận của cộng đồng. Ở mô hình hay giải thuật này, để thêm mới một khối và blockchain đồi hỏi phải thực hiện các hàm tính toán rất phức tạp để tạo nên một giá trị băm hợp lệ (khó để tạo ra nhưng rất dễ dàng để xác định nó hợp lệ). Việc giải mã này ngoài việc cần những cấu hình mạnh còn tiêu tốn rất rất nhiều điện năng và gây nguy hại đến môi trường. Cộng đồng sẽ công nhận khối anh tạo ra dựa vào lượng công việc anh đã thực hiện được. 
 
-Một yếu tố đặc trưng của mô hình này đó là sự xuất hiện của các khối dư thừa (orphan block) do có nhiều người tham gia cùng tạo nên một khối nên sẽ có trường hợp hai người tạo ra hai khối đều hợp lệ nhưng ta chỉ có thể chọn khối đến trước và khối kia (tốn rất nhiều năng lượng tạo ra) bị lãng phí và bỏ đi. Những đặc trưng kể trên phần nào nói lên nhược điểm của giải thuật mà phần lớn các đồng tiền ảo đang sử dụng
+Một yếu tố đặc trưng của mô hình này đó là sự xuất hiện của các khối dư thừa (orphan block) do có nhiều người tham gia cùng tạo nên một khối nên sẽ có trường hợp hai người tạo ra hai khối đều hợp lệ nhưng ta chỉ có thể chọn khối đến trước và khối kia (tốn rất nhiều năng lượng tạo ra) bị lãng phí và bỏ đi. Những đặc trưng kể trên phần nào nói lên nhược điểm của giải thuật mà phần lớn các đồng tiền ảo đang sử dụng.
 
 Khi độ khó để tạo ra một khối càng ngày càng tăng lên, việc đào ra một khối của các thợ mỏ ngày càng thấp và họ bắt đầu thua lỗ,một số sẽ quyết định từ bỏ hoặc tham gia vào các bể đào (mining pool). Việc này tạo ra các cỗ máy tập trung (trái với các tính chất phân tán mà mô hình mong muốn). Và còn một vấn đề hệ quả nữa là tấn công 51\% (51\% attack) sẽ được nên ở sau.
 
