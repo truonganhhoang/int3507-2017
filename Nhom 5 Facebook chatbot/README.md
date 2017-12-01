@@ -39,9 +39,9 @@
 | [Hình 2.4](#hình-24-thiết-lập-trường-page_token-cho-ứng-dụng)         	| Thiết lập trường `PAGE_TOKEN` cho ứng dụng       	|
 | [Hình 2.5](#hình-25-thiết-lập-webhook)                                	| Thiết lập Webhook                                	|
 | [Hình 2.6](#hình-26-Đăng-ký-webhook)                                  	| Đăng ký Webhook                                  	|
-| [Hình 2.7](#hình-27-cấu-trúc-bộ-sưu-tập-users)                        	| Cấu trúc bộ sưu tập `users`                      	|
+| [Hình 2.7](#hình-27-cấu-trúc-bộ-dữ-liệu-users)                        	| Cấu trúc bộ dữ liệu `users`                      	|
 | [Hình 2.8](#hình-28-cấu-trúc-mã-nguồn)                                	| Cấu trúc mã nguồn                                	|
-| [Hình 2.9](#hình-29-luồng-xử-lý-sự-kiện)                                	| Luồng xử lý sự kiện                                	|
+| [Hình 2.9](#hình-29-luồng-xử-lý-sự-kiện)                              	| Luồng xử lý sự kiện                              	|
 | [Hình 3.1](#hình-31-các-api-được-triển-khai-trên-máy-chủ-tìm-kiếm)    	| Các API được triển khai trên máy chủ tìm kiếm    	|
 
 ## Mục lục
