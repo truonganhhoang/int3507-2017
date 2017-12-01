@@ -61,8 +61,8 @@ Giảng viên: Trương Anh Hoàng
 
 <h2>I. Giới thiệu về công cụ Dafny</h2>
 <p> Dafny là một công cụ kiểm chứng được viết để giúp cho lập trình viên đảm bảo chính xác những gì họ muốn làm và đảm bảo không còn lỗi thời gian chạy (runtime) như trong trường hợp tràn số, vấn đề gặp phải khi chia cho số 0, ... trong chương trình.</p>
-<p> Trình kiểm tra tĩnh của Dafny có thể sử dụng để kiểm chứng các yếu tố tĩnh của chương trình như là tính bắt buộc, tính tuần tự, đồng thời Dafny cũng hỗ trợ các lớp trừu tượng, phân bổ động, kiểu dữ liệu qui nạp và xây dựng trong cấu trúc đặc tả. Nó xác thông số đặc tả bao gồm tiền điều kiện và hậu điều kiện, các thông số đọc và ghi, các chỉ số chấm dứt. Ngoài ra để hỗ trợ thêm các thông số kỹ thuật, Dafny cũng cung cấp các biến ma, các hàm đệ quy và các kiểu như bộ và chuỗi, các thông số kỹ thuật và các cấu trúc ma thuật chỉ được sử dụng khi xác minh mà trình biên dịch bỏ qua chúng từ mã thực thi.[1]</p>
-<p>Dafny dựa trên các chú thích cấp cao về việc xác định lí do và chứng minh tính đúng đắn(bộ phận hoặc toàn thể) của chương trình. Chương trình Dafny được chạy như một phần của trình biên dịch. Hiệu quả của một đoạn mã có thể được đưa ra một cách trừu tượng, sử dụng một cách tự nhiên hơn và biểu hiện cấp cao của hành vi mong muốn diễn tả, việc làm đó giúp công việc trở lên dễ dàng hơn và ít bị lỗi trong khi viết viết. Sau đó, Dafny tạo ra một bằng chứng cho thấy những code phù hợp với các chú thích (giả sử chúng là chính xác nhất, là hiển nhiên). Dafny nâng cao gánh nặng cho việc viết mã lỗi miễn phí, bằng cách viết chú thích không có lỗi. Điều này thường dễ hơn viết code, bởi vì các chú thích ngắn hơn và trực tiếp hơn.</p>
+<p> Trình kiểm tra tĩnh của Dafny có thể sử dụng để kiểm chứng các yếu tố tĩnh của chương trình như là tính bắt buộc, tính tuần tự, đồng thời Dafny cũng hỗ trợ các lớp trừu tượng, phân bổ động, kiểu dữ liệu qui nạp và xây dựng trong cấu trúc đặc tả. Nó xác định thông số đặc tả bao gồm tiền điều kiện và hậu điều kiện, các thông số đọc và ghi, các chỉ số chấm dứt. Ngoài ra để hỗ trợ thêm các đặc tả, Dafny cũng cung cấp các biến ma, các hàm đệ quy và các kiểu như bộ và chuỗi, các đặc tả và các cấu trúc ma thuật chỉ được sử dụng khi xác minh mà trình biên dịch bỏ qua chúng từ mã thực thi.[1]</p>
+<p>Dafny dựa trên các chú thích cấp cao để xác định lí do và chứng minh tính đúng đắn (bộ phận hoặc toàn thể) của chương trình. Dafny được chạy như một phần của trình biên dịch. Hiệu quả của một đoạn mã có thể được đưa ra một cách trừu tượng, sử dụng một cách tự nhiên hơn và biểu hiện cấp cao của hành vi mong muốn diễn tả, điều đó giúp công việc trở nên dễ dàng hơn và ít bị lỗi trong khi viết. Sau đó, Dafny tạo ra một bằng chứng cho thấy những code phù hợp với các chú thích (giả sử chúng là chính xác nhất, là hiển nhiên). Dafny nâng cao gánh nặng cho việc viết mã lỗi miễn phí, bằng cách viết chú thích không có lỗi. Điều này thường dễ hơn viết code, bởi vì các chú thích ngắn hơn và trực tiếp hơn.</p>
 <p> Từ các chương trình đã được kiểm chứng, trình biên dịch Dafny sản xuất mã (.dll hoặc .exe) cho nền tảng .NET. Tuy nhiên, các cơ sở để giao tiếp với mã NET khác là tối thiểu.</p>
 <p> Dưới đây là một ví dụ về chương trình của Dafny:</p>
 
@@ -85,8 +85,8 @@ forall k: int :: 0 <= k < a.Length ==> 0 < a[k] <br>
 - Nếu bạn không cài đặt Mono, hãy làm theo hướng dẫn tại <a href="http://www.mono-project.com/docs/getting-started/install/">đây</a><br> 
 - Tải dafny về từ <a href="https://github.com/Microsoft/dafny/releases">đây</a>.
 Hãy chắc chắn chọn đúng tệp tin; cần đặt tên là Dafny.1.9.7.for.Mac.OSX.zip nếu bạn là sử dụng Mac hoặc tên tệp tương tự cho phân phối Linux mà bạn sử dụng.<br>
-- Giải nén tệp tin lưu trữ và di chuyển nội dung của tệp tin  đến vị trí thuận tiện trên hệ thống tập tin của bạn.<br>
-- Thêm bí danh cho lệnh: alias dafny = "mono /path/to/dafny/Dafny.exe".  Điều này sẽ đơn giản hóa việc chạy Dafny từ terminal.<br>
+- Giải nén tệp tin lưu trữ và di chuyển nội dung của tệp tin đến vị trí thuận tiện trên hệ thống tập tin của bạn.<br>
+- Thêm bí danh cho lệnh: alias dafny = "mono /path/to/dafny/Dafny.exe". Điều này sẽ đơn giản hóa việc chạy Dafny từ terminal.<br>
 - Mở terminal, điều hướng đến thư mục dafny, và thực hiện đơn Dafny.exe. <br>
 
 **3. Tất cả các nền tảng (Sau khi cài)**
@@ -113,18 +113,18 @@ Dafny program verifier finished with 2 verified , 0 errors
  Compiled assembly into test . dll”
  ```
 Ghi chú : Nếu bạn không nhìn thấy điều này, hãy liên hệ với nhân viên của khóa học càng sớm càng tốt.<br
-            Tùy chọn: Làm nổi bật cú pháp. Là một bước bổ sung để phát triển trong Dafny dễ nhìn hơn, hãy xem xét việc cài đặt tô sáng cú pháp cho trình soạn thảo ưa thích của bạn. Hiện tại có hỗ trợ cho các biên tập viên sau đây:<br>
+            Tùy chọn: Làm nổi bật cú pháp - là một bước bổ sung để phát triển Dafny dễ nhìn hơn, hãy xem xét việc cài đặt làm sáng cú pháp cho trình soạn thảo ưa thích của bạn. Hiện tại có hỗ trợ cho các biên tập viên sau đây:<br>
             + Emacs: Để cài đặt hỗ trợ cho Emacs, hãy tham khảo <a href="https://github.com/boogie-org/boogie">tại đây</a>.<br>
             + Vim: Để cài đặt hỗ trợ cho Vim, <a href="https://github.com/mlr-msft/vim-loves-dafny">xem thêm</a>.<br>
             + Sublime Text 2: Để cài đặt hỗ trợ cho Sublime, <a href="https://github.com/erggo/sublime-dafny">xem thêm</a>.<br>
-            + Visual Studio (chỉ dành cho Windows): Phần mở rộng Dafny cho Visual Studio hỗ trợ tô sáng cú pháp và xác minh gia tăng. Lấy Visual Studio 2012 (lưu ý: Tôi đã không kiểm tra với các phiên bản mới hơn) từ Dreamspark (xem ở trên cho liên kết), cài đặt nó, và khi kết thúc, chạy DafnyLanguageService.vsix từ tệp phân phối nhị phân Dafny. Chế độ Dafny sẽ hoạt động khi bạn mở tệp có phần mở rộng .dfy trong Visual Studio.<br>
+            + Visual Studio (chỉ dành cho Windows): Phần mở rộng Dafny cho Visual Studio hỗ trợ làm sáng cú pháp và xác minh gia tăng. Lấy Visual Studio 2012 (lưu ý: Tôi đã không kiểm tra với các phiên bản mới hơn) từ Dreamspark (xem ở trên cho liên kết), cài đặt nó, và khi kết thúc, chạy DafnyLanguageService.vsix từ tệp phân phối nhị phân Dafny. Chế độ Dafny sẽ hoạt động khi bạn mở tệp có phần mở rộng .dfy trong Visual Studio.<br>
 
 <h2>III. Các kiến thức cơ bản về Dafny</h2>
 <br>
 **1. Phương thức (Methods)**
 <br>
 <p>Dafny giống như một ngôn ngữ lập trình bắt buộc điển hình. Nó có các phương thức (methods), biến (variables), kiểu (types), vòng lặp (loops), các phát biểu (if statements), mảng (arrays), số nguyên, và nhiều hơn nữa. Một trong những đơn vị cơ bản của bất kỳ chương trình Dafny nào là phương thức.</p>
-<p>Phương thức (method) là một đoạn mã bắt buộc để thực thi. Trong các ngôn ngữ khác, chúng có thể được gọi là thủ tục, hoặc các chức năng, nhưng trong Dafny, thuật ngữ "chức năng (function)" được dành riêng cho một khái niệm khác mà chúng ta sẽ trình bày sau. Phương thức được khai báo theo cách sau:</p>
+<p>Phương thức (method) là một đoạn mã bắt buộc để thực thi. Trong các ngôn ngữ khác, chúng có thể được gọi là thủ tục, hoặc các chức năng, nhưng trong Dafny, thuật ngữ "hàm (function)" được dành riêng cho một khái niệm khác mà chúng ta sẽ trình bày sau. Phương thức được khai báo theo cách sau:</p>
 
 ```
 method Abs(x: int) returns (y: int)
@@ -148,7 +148,7 @@ method MultipleReturns(x: int, y: int) returns (more: int, less: int)
  “=” không được sử dụng trong Dafny.<br>
  ";": kết thúc câu lệnh.<br>
  // và / * * /: comment, không ảnh hưởng đến code khi chạy chương trình.<br>
-   <p> Để trả lại một giá trị từ một phương thức, giá trị được gán cho một trong những giá trị trả về có tên trước khi một câu lệnh trả về. Trong thực tế, các giá trị trả về hoạt động rất giống với các biến cục bộ, và có thể được gán cho nhiều hơn một lần. Tuy nhiên, các tham số đầu vào chỉ có thể đọc.</p>
+   <p> Để trả lại một giá trị từ một phương thức, giá trị đó sẽ được gán cho một trong những giá trị trả về có tên trước khi một câu lệnh trả về. Trong thực tế, các giá trị trả về hoạt động rất giống với các biến cục bộ, và có thể được gán nhiều hơn một lần. Tuy nhiên, các tham số đầu vào chỉ có thể đọc.</p>
  <p> Câu lệnh “return” được sử dụng khi người ta muốn quay trở lại trước khi kết thúc phần thân của phương thức. Câu lệnh “return” có thể chỉ là từ khóa trả về (trong đó giá trị hiện tại của các tham số ra được sử dụng), hoặc chúng có thể lấy một danh sách các giá trị để trả về. Ngoài ra, còn có các câu lệnh phức hợp, chẳng hạn như câu lệnh “if”. Câu lệnh "if "yêu cầu dấu ngoặc quanh điều kiện boolean và hành động như mong muốn:</p>
  
 ```
@@ -160,7 +160,7 @@ method Abs(x: int) returns (y: int)
       { return x; }
 }
 ```
-<p>Dafny luôn cần căc dấu "{}" cho các khối lệnh ở các nhánh, ngay cả khi nhánh chỉ chứa một lệnh duy nhất. Ở đây câu lệnh "if" kiểm tra xem x có nhỏ hơn "0", sử dụng cú pháp của toán tử so khớp quen thuộc và trả về giá trị tuyệt đối nếu thích hợp. (Các toán tử so sánh khác là <=, >, <=, != và ==, có ý nghĩa như trong các ngôn ngữ lập trình).</p>
+<p>Dafny luôn cần có dấu "{}" cho các khối lệnh ở các nhánh, ngay cả khi nhánh chỉ chứa một lệnh duy nhất. Ở đây câu lệnh "if" kiểm tra xem x có nhỏ hơn "0", sử dụng cú pháp của toán tử so khớp quen thuộc và trả về giá trị tuyệt đối nếu thích hợp. (Các toán tử so sánh khác là <=, >, <=, != và ==, có ý nghĩa như trong các ngôn ngữ lập trình).</p>
  
 **2. Tiền – Hậu điều kiện (Pre and Postconditions)**
 <br>
@@ -174,7 +174,7 @@ method Abs(x: int) returns (y: int)
    ...
 }
 ```
-<p>Bạn có thể thấy tại sao giá trị trả về được đặt tên. Nó làm cho chúng dễ dàng tham khảo trong hậu điều kiện của một phương thức. Khi biểu thức là đúng, chúng ta nói rằng các hậu điều kiện có hiệu lực. Hậu điều kiện phải được giữ cho mỗi lần gọi hàm, và cho mỗi điểm trả về có thể xảy ra. Trong trường hợp này, thuộc tính duy nhất mà chúng ta đang diễn đạt là giá trị trả về luôn ít nhất bằng không.</p>
+<p>Bạn có thể thấy tại sao giá trị trả về được đặt tên, điều đó làm cho chúng dễ dàng tham khảo trong hậu điều kiện của một phương thức. Khi biểu thức là đúng, chúng ta nói rằng các hậu điều kiện có hiệu lực. Hậu điều kiện phải được giữ cho mỗi lần gọi hàm, và cho mỗi điểm trả về có thể xảy ra. Trong trường hợp này, thuộc tính duy nhất mà chúng ta đang diễn đạt là giá trị trả về luôn ít nhất bằng "0".</p>
 
  + Pre: Điều kiện trước<br>
  + Post: Điều kiện sau<br>
@@ -198,10 +198,10 @@ method MultipleReturns(x: int, y: int) returns (more: int, less: int)
  }
  ```
  <br>
- Cái này bị sai vì có thể sau biến less không nhỏ hơn x cũng như biến more không lớn hơn x (VD y=0).<br>
-Để đúng, thêm preconditions:  requires y > 0 trước ensures less < x là được.<br>
+ Đoạn mã trên bị sai vì có thể sau biến less không nhỏ hơn x cũng như biến more không lớn hơn x (VD y=0).<br>
+Để đúng, thêm preconditions: requires y > 0 trước ensures less < x là được.<br>
 
-<p>Giống như hậu điều kiện, nhiều tiền điều kiện có thể được viết bằng toán tử boolean và (&&), hoặc bằng nhiều từ khóa "requires". Với việc bổ sung các điều kiện này, Dafny bây giờ xác minh mã là chính xác, bởi vì giả định này là tất cả những gì cần thiết để đảm bảo mã trong thân phương thức là chính xác.</p>
+<p>Giống như hậu điều kiện, nhiều tiền điều kiện có thể được viết bằng toán tử boolean và (&&), hoặc bằng nhiều từ khóa "requires". Với việc bổ sung các tiền điều kiện này, Dafny bây giờ xác minh mã là chính xác, bởi vì giả định này là tất cả những gì cần thiết để đảm bảo mã trong thân phương thức là chính xác.</p>
 <p>Không phải mã nguồn nào cũng cần tiền điều kiện, nhưng nó cần có một chú thích, khẳng định để xác minh, như trong ví dụ sau:</p>
 
 ```
@@ -231,7 +231,7 @@ assert 2=3 => báo bị lỗi.<br>
  
 **4. Hàm (Function)**
 <br>
-<p>Một chức năng trong Dafny tuân thủ khá chặt chẽ theo các khái niệm về một chức năng toán học. Không giống các phương thức khác, một chức năng Dafny không thể ghi vào bộ nhớ, và nó chỉ bao gồm một biểu hiện. Chúng được yêu cầu phải có một giá trị trả về duy nhất, không được đặt tên. Dưới đây là cấu trúc của một hàm đơn giản :</p>
+<p>Một hàm trong Dafny tuân thủ khá chặt chẽ theo các khái niệm về một chức năng toán học. Không giống các phương thức khác, một hàm Dafny không thể ghi vào bộ nhớ, và nó chỉ bao gồm một biểu hiện. Chúng được yêu cầu phải có một giá trị trả về duy nhất, không được đặt tên. Dưới đây là cấu trúc của một hàm đơn giản :</p>
 
 ```
 function abs(x: int):
@@ -239,7 +239,7 @@ int {
 . . .
  }
  ```
-<p>Chương trình trên khai báo một hàm có tên abs, lấy vào một số nguyên và trả về một số nguyên khác. Không giống như Method, thân hàm có thể chứa tất cả các tuyên bố, một thân hàm phải chứa chính xác một biểu thức với kiểu đúng. Để thực hiện được hàm abs, chúng ta cần đến một biểu thức if, một biểu thức if được thực hiện giống như một toán tử thứ ba trong các ngôn ngữ khác.</p>
+<p>Chương trình trên khai báo một hàm có tên abs, lấy vào một số nguyên và trả về một số nguyên khác. Không giống như method, thân  phương thức có thể chứa tất cả các tuyên bố, một thân hàm phải chứa chính xác một biểu thức với kiểu đúng. Để thực hiện được hàm abs, chúng ta cần đến một biểu thức if, một biểu thức if được thực hiện giống như một toán tử thứ ba trong các ngôn ngữ khác.</p>
 
 ```
 function abs(x: int): int
@@ -250,12 +250,12 @@ if x < 0 then -x else x
 <p>Rõ ràng, điều kiện phải là một biểu thức boolean, và hai nhánh phải có cùng một loại. Bạn có thể tự hỏi tại sao mọi người sẽ bận tâm với các method, nếu chúng bị hạn chế so với các phương pháp số kỹ thuật. Điểm mạnh của hàm là nó có thể gọi trực tiếp. Ví dụ như:</p>
 
 ```assert abs (3) == 3;```
-<p>Trên thực tế chúng ta không những có thể không cần gọi thông qua biến địa phương, mà chúng ta còn không cần phải viết các hậu điều kiện giống như Method (mặc dù bản thân hàm đã có tiền và hậu điều kiện nói chung). Hạn chế của hàm là không xác định được chính xác những gì cần làm như method. Không giống method, Dafny không quên phần thân của một hàm khi xem xét các hàm khác. Vì vậy, nó có thể mở rộng định nghĩa của abs trong khẳng định trên và xác định rằng kết quả thực sự là 3.</p>
+<p>Trên thực tế chúng ta không những có thể không cần gọi thông qua biến địa phương, mà chúng ta còn không cần phải viết các hậu điều kiện giống như method (mặc dù bản thân hàm đã có tiền và hậu điều kiện nói chung). Hạn chế của hàm là không xác định được chính xác những gì cần làm như method. Không giống method, Dafny không quên phần thân của một hàm khi xem xét các hàm khác. Vì vậy, nó có thể mở rộng định nghĩa của abs trong khẳng định trên và xác định rằng kết quả thực sự là 3.</p>
 Một tính năng đặc biệt là chúng chỉ xuất hiện ở các chú thích, ta không thể viết: <br>
 
  ``` var v := abs(3);```
-<p>Vì đây không phải là một chú thích. Các hàm không bao giờ là một phần của chương trình biên dịch cuối cùng, chúng chỉ là công cụ để giúp xác minh mã. Đôi khi thuận tiện để sử dụng một hàm trong mã thực, vì vậy ta có thể định nghĩa một phương thức hàm, có thể được gọi từ mã thực. Lưu ý rằng có những hạn chế về những chức năng có thể được định nghĩa bởi một "function method".</p>
-<p>Không giống các phương pháp, hàm có thể xuất hiện trong các biểu thức. Như vậy chúng ta có thể làm một cái gì đó như thực hiện hàm Fibonacci toán học:</p>
+<p>Vì đây không phải là một chú thích. Các hàm không bao giờ là một phần của chương trình biên dịch cuối cùng, chúng chỉ là công cụ để giúp xác minh mã. Đôi khi thuận tiện để sử dụng một hàm trong mã thực, vì vậy ta có thể định nghĩa một phương thức hàm (function method), có thể được gọi từ mã thực. Lưu ý rằng có những hạn chế về những chức năng có thể được định nghĩa bởi một "function method".</p>
+<p>Không giống các phương thức, hàm có thể xuất hiện trong các biểu thức. Như vậy chúng ta có thể làm một cái gì đó như thực hiện hàm Fibonacci toán học:</p>
 
 ```
 function fib(n: nat): nat
@@ -265,7 +265,7 @@ function fib(n: nat): nat
                   fib(n- 1) + fib(n - 2)
 }
 ```
-<p>Ở đây chúng tôi sử dụng nats, loại số tự nhiên (số không âm), nó thường thuận tiện hơn là chú thích tất cả mọi thứ để được không tiêu cực. Nó chỉ ra rằng chúng ta có thể làm cho hàm này một "function method" nếu chúng ta muốn. Nhưng điều này sẽ rất chậm, vì phiên bản này tính toán các số Fibonacci có độ phức tạp hàm mũ. Có nhiều cách tốt hơn để tính hàm Fibonacci. Nhưng hàm này vẫn còn hữu ích, vì Dafny có thể chứng minh rằng một phiên bản nhanh thực sự phù hợp với định nghĩa toán học. Chúng ta có thể đạt được điều tốt nhất của cả hai thế giới: đảm bảo sự chính xác và hiệu suất mà chúng ta muốn.</p>
+<p>Ở đây chúng tôi sử dụng nats, loại số tự nhiên (số không âm), nó thường thuận tiện hơn là chú thích tất cả mọi thứ. Nó chỉ ra rằng chúng ta có thể làm cho hàm này một "function method" nếu chúng ta muốn. Nhưng điều này sẽ rất chậm, vì phiên bản này tính toán các số Fibonacci có độ phức tạp hàm mũ. Có nhiều cách tốt hơn để tính hàm Fibonacci. Nhưng hàm này vẫn còn hữu ích, vì Dafny có thể chứng minh rằng một phiên bản nhanh thực sự phù hợp với định nghĩa toán học. Chúng ta có thể đạt được điều tốt nhất của cả hai thế giới: đảm bảo sự chính xác và hiệu suất mà chúng ta muốn.</p>
 Chúng ta có thể bắt đầu bằng cách xác định một method như sau:<br>
 
 ```
@@ -283,7 +283,7 @@ var i := 0;
       i := i + 1;
    }
    ```
-<p>Trong Dafny đây là một vòng lặp nhỏ mà chỉ cần tham số i cho đến khi nó đạt đến n. Điều này sẽ hình thành cốt lõi của vòng lặp của chúng ta để tính toán số Fibonacci.</p>
+<p>Trong Dafny, đây là một vòng lặp nhỏ, duyệt i từ 0 cho đến n. Điều này sẽ hình thành cốt lõi của vòng lặp của chúng ta để tính toán số Fibonacci.</p>
 
 **5. Bất biến trong vòng lặp (Loop Invariants)**
 <br>
@@ -301,7 +301,7 @@ var i := 0;
    }
    ```
 <p>Khi bạn chỉ định một bất biến, Dafny chứng minh hai điều: bất biến không đổi khi nhập vòng lặp, và nó được bảo vệ bởi vòng lặp. Điều đó có nghĩa rằng biến bất biến giữ ở đầu vòng lặp, chúng ta phải chứng minh rằng việc thực hiện thân vòng lặp không làm cho bất biến thay đổi. Dafny chỉ có thể phân tích thân vòng lặp khi có bất biến bên trong và có điều kiện thoát bên ngoài.</p>
-<p>Một trong những vấn đề khi sử dụng các bất biến là nó dễ dàng quên rằng vòng lặp đang thực hiện. Ví dụ, chúng ta có thể đã bỏ qua toàn bộ thân của vòng lặp trong chương trình trước đó. Các bất biến sẽ đúng, bởi vì chúng vẫn còn đúng khi nhập vòng lặp, và vì vòng lặp không thay đổi bất cứ điều gì, chúng sẽ được bảo vệ bởi vòng lặp. Nhưng bước quan trọng từ vòng lặp đến hậu điều kiện sẽ không được giữ lại. Chúng ta biết rằng nếu thoát khỏi vòng lặp, thì chúng ta có thể giả định sự phủ định và các bất biến, nhưng điều này không nói về điều gì sẽ xảy ra nếu chúng ta không bao giờ thoát khỏi vòng lặp. Vì vậy, cần đảm bảo rằng vòng lặp kết thúc ở một thời điểm nào đó, điều này cho phép đảm bảo đúng đắn hơn nhiều.</p>
+<p>Một trong những vấn đề khi sử dụng các bất biến là nó dễ dàng quên rằng vòng lặp đang thực hiện. Ví dụ, chúng ta có thể đã bỏ qua toàn bộ thân của vòng lặp trong chương trình trước đó. Các bất biến sẽ đúng, bởi vì chúng vẫn còn đúng khi nhập vòng lặp, và vì vòng lặp không thay đổi bất cứ điều gì, chúng sẽ được bảo vệ bởi vòng lặp. Nhưng bước quan trọng từ vòng lặp đến hậu điều kiện sẽ không được giữ lại. Chúng ta biết rằng nếu thoát khỏi vòng lặp, thì chúng ta có thể giả định sự phủ định và các bất biến, nhưng điều này không nói lên điều gì sẽ xảy ra nếu chúng ta không bao giờ thoát khỏi vòng lặp. Vì vậy, cần đảm bảo rằng vòng lặp kết thúc ở một thời điểm nào đó, điều này cho phép đảm bảo đúng đắn hơn nhiều.</p>
 
 **6. Tính dừng (Termination)**
 <br>
