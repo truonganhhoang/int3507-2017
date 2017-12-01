@@ -1,0 +1,170 @@
+{"meta":[],
+"frames": [
+    [1, 1, 193, 133, 0, -21, -17],
+    [196, 1, 201, 137, 0, -37, -24],
+    [1, 140, 233, 138, 0, -4, -19],
+    [236, 140, 184, 143, 0, -49, -13],
+    [1, 280, 208, 138, 0, -19, -17],
+    [211, 285, 214, 138, 0, -30, -20],
+    [1, 420, 191, 144, 0, -25, -12],
+    [194, 425, 203, 145, 0, -41, -15],
+    [1, 566, 190, 147, 0, -21, -11],
+    [193, 572, 241, 146, 0, -3, -15],
+    [1, 720, 201, 147, 0, -35, -14],
+    [204, 720, 212, 148, 0, -30, -19],
+    [1, 870, 220, 148, 0, -24, -11],
+    [223, 870, 207, 152, 0, -32, -11],
+    [1, 1020, 211, 156, 0, -27, -8],
+    [214, 1024, 197, 158, 0, -43, -8],
+    [1, 1178, 204, 160, 0, -26, -6],
+    [207, 1184, 226, 159, 0, -18, -9],
+    [1, 1345, 221, 159, 0, -19, -7],
+    [224, 1345, 209, 161, 0, -34, -7]
+],
+"sets":[
+{
+"line":"Snails have a-shell",
+"alt1":"Fish do-has a-claw",
+"alt2":"Horses has a-slug",
+"alt3":"Pandas don't-has a-carry",
+"alt4":"Giraffes doesn't-have a-box"
+},
+{
+"line":"She has two-eyes",
+"alt1":"She have five-eyes",
+"alt2":"They had two-ears",
+"alt3":"It don't-have ten-fingers",
+"alt4":"_ doesn't-has blue"
+},
+{
+"line":"Sharks have a-fin",
+"alt1":"Snakes don't-have teeth",
+"alt2":"Pandas has arms",
+"alt3":"Cows don't-has legs",
+"alt4":"Bears doesn't-have a-mouth"
+},
+{
+"line":"He has two-arms",
+"alt1":"She have two-legs",
+"alt2":"They ham two-eyes",
+"alt3":"It don't-have a-shirt",
+"alt4":"_ doesn't-has ten-arms"
+},
+{
+"line":"Spiders have eight-legs",
+"alt1":"Birds are eight-arms",
+"alt2":"Horses has four-arms",
+"alt3":"Lions don't-has six-arms",
+"alt4":"Monkeys doesn't-have two-eyes"
+},
+
+{
+"line":"He doesn't have a-tail",
+"alt1":"She have a-line",
+"alt2":"They has a-hand",
+"alt3":"It don't-have two-arms",
+"alt4":"_ doesn't-has a-nose"
+},
+
+{
+"line":"He has two-ears",
+"alt1":"She have an-ear",
+"alt2":"They is two-arms",
+"alt3":"It don't-have four-ears",
+"alt4":"_ doesn't-has four-eyes"
+},
+{
+"line":"He doesn't-have a-beard",
+"alt1":"She have a-chin",
+"alt2":"They has a-head",
+"alt3":"It don't-have a-face",
+"alt4":"_ doesn't-has a-mouth"
+},
+
+{
+"line":"Cats have four-legs",
+"alt1":"Rats are four-tails",
+"alt2":"Frogs has four-cats",
+"alt3":"Sharks don't-have four-ears",
+"alt4":"Tigers doesn't-has four-lives"
+},
+{
+"line":"Monkeys have a-tail",
+"alt1":"Pigs are a-shell",
+"alt2":"Elephants has two-books",
+"alt3":"Chickens don't-has a-tree",
+"alt4":"Dolphins doesn't-have bananas"
+},
+{
+"line":"Snakes don't-have legs",
+"alt1":"Birds doesn't-has arms",
+"alt2":"Ducks no-have walking",
+"alt3":"Goats don't-has skin",
+"alt4":"Bees doesn't-have long"
+},
+{
+"line":"Chickens don't-have arms",
+"alt1":"Dogs have wings",
+"alt2":"Lions has legs",
+"alt3":"Cats don't-has eggs",
+"alt4":"Goats doesn't-have swim"
+},
+{
+"line":"Dolphins don't-have hair",
+"alt1":"Rats doesn't-have black",
+"alt2":"Frogs has arms",
+"alt3":"Tigers don't-has a-tail",
+"alt4":"Pigs doesn't-has swim"
+},
+{
+"line":"Wolves don't-have a-shell",
+"alt1":"Elephants have a-box",
+"alt2":"Snakes has a-tail",
+"alt3":"Dolphins don't-has grey",
+"alt4":"Camels doesn't-have ears"
+},
+{
+"line":"She doesn't-have a-moustache",
+"alt1":"She have a-beard",
+"alt2":"They has a-line",
+"alt3":"It don't-have fur",
+"alt4":"_ doesn't-has feathers"
+},
+{
+"line":"He doesn't-have wings",
+"alt1":"She don't-have arms",
+"alt2":"They has hair",
+"alt3":"It don't-has fly",
+"alt4":"_ doesn't-has yellow"
+},
+{
+"line":"They have long-hair",
+"alt1":"She had short-hair",
+"alt2":"They has clothes",
+"alt3":"It don't-have arms",
+"alt4":"_ doesn't-has hands"
+},
+{
+"line":"Lizards don't have feathers",
+"alt1":"Dogs have birds",
+"alt2":"Fish has arrows",
+"alt3":"Chickens don't-has flies",
+"alt4":"Bears doesn't-have jumping"
+},
+{
+"line":"Rabbits have long-ears",
+"alt1":"Monkeys can short-ears",
+"alt2":"Cats has long-hair",
+"alt3":"Giraffes don't-has short-hair",
+"alt4":"Cows doesn't-have fur"
+},
+{
+"line":"He doesn't-have long-hair",
+"alt1":"She have short-hair",
+"alt2":"They has hair",
+"alt3":"It don't-have woman",
+"alt4":"_ doesn't-has _"
+}
+
+
+]}

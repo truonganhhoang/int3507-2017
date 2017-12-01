@@ -1,0 +1,137 @@
+\documentclass[12pt]{article}
+	\usepackage[utf8]{vietnam}
+	\usepackage{titleps}
+	\usepackage{graphicx}
+	\usepackage{listings}
+	\usepackage{underscore}
+	\usepackage[bookmarks=true]{hyperref}
+	\usepackage{amsmath}
+	\usepackage{pgfmath,pgffor}
+	\usepackage{indentfirst}
+	\usepackage{pdflscape}
+	\usepackage{wrapfig}
+	\usepackage{amsmath}
+	\usepackage[export]{adjustbox}
+	\usepackage[utf8]{inputenc}
+	\usepackage{longtable}
+	\usepackage{subcaption}
+	\usepackage{kbordermatrix}
+	\usepackage{amsfonts}
+	\usepackage{amssymb}
+	\usepackage{subfiles}
+	\usepackage{xcolor}
+	\usepackage{hyperref}
+	\usepackage[T1,T5]{fontenc}
+	\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
+	\hypersetup{
+	    bookmarks=true,
+	    pdftitle={Báo cáo số 1},
+	    pdfauthor={Nguyễn Mạnh Cường, Phạm Minh Đức, Bùi Thị Trung Thủy, Vũ Nam Tước},                     % author
+	    pdfsubject={TeX and LaTeX},
+	    pdfkeywords={TeX, LaTeX, graphics, images}, % list of keywords
+	    colorlinks=true,       % false: boxed links; true: colored links
+	    linkcolor=blue,       % color of internal links
+	    citecolor=black,       % color of links to bibliography
+	    filecolor=black,        % color of file links
+	    urlcolor=purple,        % color of external links
+	    linktoc=page            % only page is linked
+	}
+	\date{}
+	\def\members{{"Nguyễn Mạnh Cường", "Phạm Minh Đức", "Bùi Thị Trung Thủy", "Vũ Nam Tước"}}
+	\title{
+	\rule{16cm}{1pt}\vskip0.5cm
+	\Huge{BÁO CÁO CÁC VẤN ĐỀ HIỆN ĐẠI}\\
+	\Huge{TRONG CÔNG NGHỆ THÔNG TIN}\\
+	\rule{16cm}{2pt}\vskip1cm
+	\vspace{0.5cm}
+	ĐỀ TÀI: TÌM HIỂU VỀ ETHEREUM\\
+	\vspace{2cm}
+	\large \textbf{Giảng viên}: PGS.TS Trương Anh Hoàng\\
+	\vspace{1cm}
+	\large \textbf {Nhóm 8}\\
+	\vspace{0.7cm}
+	\large \textbf {Thành viên:}\\
+	\foreach \i in {0,...,3} {
+		\vspace{0.25cm}
+		\pgfmathparse{\members[\i]}\pgfmathresult\\ }	
+	}
+	\setlength{\parindent}{24pt}
+	\setlength{\parskip}{.5\baselineskip}
+	\newpagestyle{short}
+	{\sethead{Nhóm 8}{}{Tìm hiểu về Ethereum}\headrule
+	  \setfoot{}{\thepage}{}}
+	\newpagestyle{long}
+	{\sethead{\thesection. \sectiontitle}{}{\subsectiontitle}\headrule
+	  \setfoot{}{\thepage}{}}
+	
+	\begin{document}
+		\maketitle
+		\thispagestyle{empty}
+		
+		\newpage
+		\pagestyle{short}
+		\tableofcontents
+		
+		\newpage
+		\pagestyle{long}
+	
+	\section{Lịch sử sửa đổi}
+	Bảng \ref{table:one} là bảng phân công công việc cho các thành viên trong nhóm.
+	\newline
+	\begin{table}[ht]
+		\centering
+		
+		\begin{tabular}{| p{6cm} | p{5cm} | p{5cm} |}
+			\hline
+			\textbf{Ngày}  & \textbf{Thành viên} & \textbf{Nội dung công việc}\\
+			\hline
+			
+		\end{tabular}
+		\label{table:one}
+		\caption{Bảng lịch sử sửa đổi}
+	\end{table}
+	\newpage
+	\section{Giới thiệu}
+		\subsection{Giới thiệu chung về chuỗi khối}
+		\subfile{contain/IntroBlockChain}
+		
+		\subsection{Tổng quan Ethereum}
+		\subfile{contain/GeneralBlockChain}		
+
+		\subsection{Một vài ứng dụng của Ethereum}
+		\subfile{contain/EthereumApp}
+	\newpage
+	
+	\section{Chi tiết trong Ethereum}
+	\subsection{Tổng quan}
+	\subfile{contain/DrivingFactor}
+
+	\subsection{Mô hình chuỗi khối}
+	\subfile{contain/BlockChainParadigm}
+
+	\subsection{Những quy tắc}
+	\subfile{contain/Conventions}
+
+	\subsection{Khối, trạng thái và các giao dịch}
+	\subfile{contain/BST}
+
+	\subsection{Gas và sự thanh toán}
+	\subfile{contain/GasPayment}
+
+	\subsection{Sự đồng thuận về việc chấp nhận khối}
+	\subfile{contain/consensus}
+
+	\subsection{Máy ảo Ethereum (Ethereum Virtual Machine)}
+	\subfile{contain/transaction}
+	
+	\subsection{Lộ trình của Ethereum}
+	\subfile{contain/roadmap}
+	
+	\subsection{Các thành phần tiếp theo}
+	\subfile{contain/nextcontent}
+	
+	\section{Ứng dụng bầu cử}
+	\subfile{contain/voting}
+	\section{Tài Liệu Tham Khảo}
+	\subfile{contain/reference}
+\end{document}

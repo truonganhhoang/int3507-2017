@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<title>File Manager Integration</title>
+	<script src="https://cdn.ckeditor.com/4.7.3/standard-all/ckeditor.js"></script>
+</head>
+
+<body>
+
+	<textarea cols="10" id="editor1" name="editor1" rows="10" >&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href="http://ckeditor.com/"&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;
+	</textarea>
+
+	<script>
+		CKEDITOR.replace( 'editor1', {
+			height: 300,
+
+			// Configure your file manager integration. This example uses CKFinder 3 for PHP.
+			filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+			filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',
+			filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+			filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'
+		} );
+	</script>
+</body>
+
+</html>

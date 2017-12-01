@@ -1,0 +1,148 @@
+{"meta":[],
+"frames": [
+    [1, 1, 247, 165, 0, -2, -2],
+    [250, 1, 242, 166, 0, -6, -4],
+    [1, 168, 240, 161, 0, -6, -5],
+    [494, 1, 233, 164, 0, -5, -3],
+    [729, 1, 220, 166, 0, -27, -2],
+    [494, 167, 231, 163, 0, -12, -4],
+    [727, 169, 220, 162, 0, -24, -3],
+    [243, 169, 237, 161, 0, -9, -5],
+    [1, 331, 237, 161, 0, -8, -5],
+    [240, 332, 236, 159, 0, -8, -6],
+    [478, 332, 243, 154, 0, -4, -8],
+    [723, 333, 224, 156, 0, -20, -13],
+    [478, 488, 230, 161, 0, -14, -7],
+    [240, 493, 232, 158, 0, -9, -3],
+    [1, 494, 231, 158, 0, -14, -5],
+    [474, 651, 233, 156, 0, -9, -9],
+    [234, 653, 235, 143, 0, -4, -16],
+    [1, 654, 227, 146, 0, -18, -17],
+    [710, 491, 229, 157, 0, -16, -2],
+    [710, 650, 217, 157, 0, -26, -8]
+],
+"sets":[
+{
+"line":"A-beach is a-place where you-can-sunbathe",
+"alt1":"A-bird _ an-animal that drives-a-limo",
+"alt2":"A-mall _ someone who delivers-packages",
+"alt3":"A-coffee-shop _ _ _ serves-food",
+"alt4":"A-desert _ _ _ bites"
+},{
+"line":"A-desert is a-place where camels-live",
+"alt1":"A-mall _ an-animal that goes-into-space",
+"alt2":"A-canteen _ someone who flies-a-plane",
+"alt3":"A-beach _ _ _ you-can-grow-food",
+"alt4":"A-coffee-shop _ _ _ stings"
+},{
+"line":"A-mall is a-place where you-can-go-shopping",
+"alt1":"A-bird _ an-animal that builds-a-nest",
+"alt2":"A-canteen _ someone who you-can-drink-coffee",
+"alt3":"A-beach _ _ _ flies-a-plane",
+"alt4":"A-coffee-shop _ _ _ drives-a-limo"
+},{
+"line":"A-canteen is a-place where you-can-eat-lunch",
+"alt1":"A-bird _ an-animal that you-can-go-shopping",
+"alt2":"A-mall _ someone who camels-live",
+"alt3":"A-coffee-shop _ _ _ drives-a-limo",
+"alt4":"A-desert _ _ _ delivers-packages"
+},{
+"line":"An-astronaut is someone who goes-into-space",
+"alt1":"A-chauffeur _ an-animal that you-can-go-shopping",
+"alt2":"A-deliveryman _ a-place where you-can-drink-coffee",
+"alt3":"A-waitress _ _ _ does-operations",
+"alt4":"A-clown _ _ _ makes-a-web"
+},{
+"line":"A-coffee-shop is a-place where you-can-drink-coffee",
+"alt1":"A-bird _ an-animal that builds-a-nest",
+"alt2":"A-canteen _ someone who delivers-packages",
+"alt3":"A-beach _ _ _ serves-food",
+"alt4":"A-desert _ _ _ bites"
+},{
+"line":"A-surgeon is someone who does-operations",
+"alt1":"An-astronaut _ an-animal that builds-a-nest",
+"alt2":"A-chauffeur _ a-place where you-can-eat-lunch",
+"alt3":"A-deliveryman _ _ _ goes-into-space",
+"alt4":"A-waitress _ _ _ flies-a-plane"
+},{
+"line":"A-caterpillar is an-animal that turns-into-a-butterfly",
+"alt1":"A-snake _ someone who stings",
+"alt2":"A-bee _ a-place where makes-a-web",
+"alt3":"A-spider _ _ _ makes-milk",
+"alt4":"A-cow _ _ _ lays-eggs"
+},{
+"line":"A-pilot is someone who flies-a-plane",
+"alt1":"An-astronaut _ an-animal that you-can-go-shopping",
+"alt2":"A-surgeon _ a-place where camels-live",
+"alt3":"A-chauffeur _ _ _ you-can-grow-food",
+"alt4":"A-deliveryman _ _ _ bites"
+},{
+"line":"A-snake is an-animal that bites",
+"alt1":"A-bee _ someone who builds-a-nest",
+"alt2":"A-cow _ a-place where _you-can-sunbathe",
+"alt3":"A-chicken _ _ _ entertains-children",
+"alt4":"A-spider _ _ _ lays-eggs"
+},{
+"line":"A-chauffeur is someone who drives-a-limo",
+"alt1":"An-astronaut _ an-animal that you-can-sunbathe",
+"alt2":"A-surgeon _ a-place where entertains-children",
+"alt3":"A-clown _ _ _ turns-into-a-butterfly",
+"alt4":"A-farm _ _ _ lays-eggs"
+},{
+"line":"A-waitress is someone who serves-food",
+"alt1":"A-pilot _ an-animal that you-can-go-shopping",
+"alt2":"A-clown _ a-place where goes-into-space",
+"alt3":"A-farm _ _ _ delivers-packages",
+"alt4":"A-chauffeur _ _ _ turns-into-a-butterfly"
+},{
+"line":"A-bird is an-animal that builds-a-nest",
+"alt1":"A-mall _ someone who you-can-eat-lunch",
+"alt2":"A-canteen _ a-place where camels-live",
+"alt3":"A-beach _ _ _ does-operations",
+"alt4":"A-desert _ _ _ flies-a-plane"
+},{
+"line":"A-deliveryman is someone who delivers-packages",
+"alt1":"A-pilot _ an-animal that you-can-eat-lunch",
+"alt2":"A-clown _ a-place where entertains-children",
+"alt3":"A-farm _ _ _ drives-a-limo",
+"alt4":"A-waitress _ _ _ makes-milk"
+},{
+"line":"A-spider is an-animal that makes-a-web",
+"alt1":"A-snake _ someone who entertains-children",
+"alt2":"A-caterpillar _ a-place where you-can-grow-food",
+"alt3":"A-bee _ _ _ serves-food",
+"alt4":"A-cow _ _ _ stings"
+},{
+"line":"A-cow is an-animal that makes-milk",
+"alt1":"A-snake _ someone who you-can-sunbathe",
+"alt2":"A-caterpillar _ a-place where does-operations",
+"alt3":"A-spider _ _ _ serves-food",
+"alt4":"A-chicken _ _ _ makes-a-web"
+},{
+"line":"A-farm is a-place where you-can-grow-food",
+"alt1":"A-surgeon _ an-animal that builds-a-nest",
+"alt2":"A-pilot _ a-place where camels-live",
+"alt3":"A-clown _ _ _ goes-into-space",
+"alt4":"A-chauffeur _ _ _ makes-milk"
+},{
+"line":"A-clown is someone who entertains-children",
+"alt1":"An-astronaut _ an-animal that you-can-eat-lunch",
+"alt2":"A-surgeon _ a-place where bites",
+"alt3":"A-pilot _ _ _ turns-into-a-butterfly",
+"alt4":"A-farm _ _ _ makes-milk"
+},{
+"line":"A-bee is an-animal that stings",
+"alt1":"A-snake _ someone who you-can-sunbathe",
+"alt2":"A-caterpillar _ a-place where you-can-drink-coffee",
+"alt3":"A-spider _ _ _ turns-into-a-butterfly",
+"alt4":"A-chicken _ _ _ makes-a-web"
+},{
+"line":"A-chicken is an-animal that lays-eggs",
+"alt1":"A-caterpillar _ someone who you-can-drink-coffee",
+"alt2":"A-bee _ a-place where does-operations",
+"alt3":"A-spider _ _ _ you-can-grow-food",
+"alt4":"A-cow _ _ _ stings"
+}
+]}
+
+

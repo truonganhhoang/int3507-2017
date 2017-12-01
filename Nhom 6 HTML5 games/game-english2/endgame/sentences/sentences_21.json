@@ -1,0 +1,179 @@
+{"meta":[],
+"frames": [
+    [1, 1, 208, 154, 0, -31, -11],
+    [1, 157, 195, 159, 0, -39, -11],
+    [1, 318, 192, 161, 0, -31, -5],
+    [211, 1, 225, 126, 0, -13, -29],
+    [1, 481, 196, 155, 0, -32, -11],
+    [1, 638, 165, 154, 0, -53, -12],
+    [1, 794, 160, 154, 0, -35, -14],
+    [1, 950, 177, 134, 0, -36, -21],
+    [211, 129, 170, 148, 0, -41, -15],
+    [383, 129, 109, 152, 0, -63, -11],
+    [198, 279, 165, 141, 0, -31, -18],
+    [365, 283, 131, 162, 0, -54, -6],
+    [199, 422, 155, 157, 0, -51, -11],
+    [356, 447, 136, 157, 0, -47, -11],
+    [199, 581, 151, 149, 0, -54, -14],
+    [352, 606, 144, 158, 0, -57, -9],
+    [168, 732, 159, 151, 0, -45, -13],
+    [329, 766, 151, 144, 0, -58, -14],
+    [180, 885, 133, 162, 0, -62, -5],
+    [315, 912, 150, 133, 0, -47, -26]
+],
+"sets":[
+    {
+"line":"She is speaking English",
+"alt1":"He are using a-computer",
+"alt2":"They _ sleeping TV",
+"alt3":"_ _ _ _",
+"alt4":"_ _ _ _"
+},
+{
+"line":"He-is repairing a-chair",
+"alt1":"She-is shooting his-nose",
+"alt2":"They-are kicking a-floor",
+"alt3":"_ turning a-sandwich",
+"alt4":"_ pushing on-a-TV"
+},
+{
+"line":"She-is picking flowers",
+"alt1":"He-is yawning a-photo",
+"alt2":"They-are pouring a-newspaper",
+"alt3":"_ ironing the-guitar",
+"alt4":"_ emptying to-music"
+},
+{
+"line":"He-is getting-up",
+"alt1":"They-are crying",
+"alt2":"She-is waving",
+"alt3":"_ sweeping",
+"alt4":"_ cutting"
+},
+{
+"line":"She is using a-computer",
+"alt1":"He are eating a-bike",
+"alt2":"They _ cooking a-mountain",
+"alt3":"_ _ _ _",
+"alt4":"_ _ _ _"
+},
+{
+"line":"He-is digging",
+"alt1":"She-is walking",
+"alt2":"They-are carrying",
+"alt3":"_ jumping",
+"alt4":"_ pushing"
+},
+{
+"line":"She-is waving",
+"alt1":"They-are drinking",
+"alt2":"She-is cooking",
+"alt3":"_ pointing",
+"alt4":"_ crying"
+},
+{
+"line":"He-is painting a-picture",
+"alt1":"They-are taking coffee",
+"alt2":"She-is washing a-car",
+"alt3":"_ dreaming _",
+"alt4":"_ hugging _"
+},
+{
+"line":"He-is throwing a-ball",
+"alt1":"She-is riding a-car",
+"alt2":"They-are reading coffee",
+"alt3":"_ going cake",
+"alt4":"_ driving a-bus"
+},
+{
+"line":"They-are getting married",
+"alt1":"She-is waving to-school",
+"alt2":"He-is crying a-car",
+"alt3":"_ sitting cake",
+"alt4":"_ selling at-a-clock"
+},
+{
+"line":"She-is carrying a-box",
+"alt1":"He-is crying English",
+"alt2":"They-are waving cards",
+"alt3":"_ pointing beer",
+"alt4":"_ playing a-window"
+},
+{
+"line":"He is taking a-bus",
+"alt1":"They are making a-banana",
+"alt2":"She _ using a-newspaper",
+"alt3":"_ _ _ _",
+"alt4":"_ _ _ _"
+},
+{
+"line":"She-is cutting paper",
+"alt1":"He-is opening a-ball",
+"alt2":"They-are drinking the-table",
+"alt3":"_ selling for-a-bus",
+"alt4":"_ washing a-chair"
+},
+{
+"line":"He is looking at-a-clock",
+"alt1":"They are talking cake",
+"alt2":"_ flying a-bus",
+"alt3":"_ _ _ _",
+"alt4":"_ _ _ _"
+},
+{
+"line":"She is taking a-photo",
+"alt1":"He are running a-mountain",
+"alt2":"They _ making coffee",
+"alt3":"_ _ _ _",
+"alt4":"_ _ _ _"
+},
+{
+"line":"He-is kicking a-ball",
+"alt1":"She-is fishing at-a-clock",
+"alt2":"They-are selling chess",
+"alt3":"_ thinking hair",
+"alt4":"_ closing a-haircut"
+},
+{
+"line":"He-is catching a-ball",
+"alt1":"She-is skating pool",
+"alt2":"They-are dreaming a-flower",
+"alt3":"_ fishing a-shower",
+"alt4":"_ thinking hands"
+},
+{
+"line":"He-is shaving",
+"alt1":"She-is fixing",
+"alt2":"They-are digging",
+"alt3":"_ reading",
+"alt4":"_ talking"
+},
+{
+"line":"He-is dreaming",
+"alt1":"They-are pointing",
+"alt2":"She-is buying",
+"alt3":"_ catching",
+"alt4":"_ pulling"
+},
+{
+"line":"She-is skating",
+"alt1":"They-are fighting",
+"alt2":"_ waving",
+"alt3":"_ selling",
+"alt4":"_ sitting"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+]}
+
+

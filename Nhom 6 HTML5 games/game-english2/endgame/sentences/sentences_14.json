@@ -1,0 +1,181 @@
+{"meta":[],
+"frames": [
+    [1, 1, 180, 125, 0, -33, -22],
+    [183, 1, 185, 131, 0, -33, -24],
+    [370, 1, 214, 142, 0, -19, -18],
+    [586, 1, 193, 150, 0, -30, -11],
+    [781, 1, 144, 151, 0, -55, -14],
+    [927, 1, 217, 152, 0, -20, -11],
+    [1146, 1, 224, 153, 0, -15, -10],
+    [1, 128, 166, 153, 0, -41, -8],
+    [169, 134, 152, 155, 0, -55, -8],
+    [323, 145, 222, 155, 0, -26, -4],
+    [547, 153, 119, 155, 0, -68, -9],
+    [668, 154, 228, 158, 0, -18, -3],
+    [898, 155, 237, 161, 0, -6, -5],
+    [1137, 156, 230, 163, 0, -16, 0],
+    [1, 283, 153, 167, 0, -48, -4],
+    [156, 302, 229, 165, 0, -19, -4],
+    [387, 310, 231, 166, 0, -13, -5],
+    [620, 314, 246, 167, 0, -2, -3],
+    [868, 318, 241, 167, 0, -5, -4],
+    [1111, 321, 242, 168, 0, -7, -1]
+],
+"sets":[
+{
+"line":"He doesn't-like drinking-coffee",
+"alt1":"They like pizza",
+"alt2":"She likes playing-the-trumpet",
+"alt3":"_ don't-like doing-exercise",
+"alt4":"_ doesn't-likes surfing"
+},
+{
+"line":"She doesn't-like hamburgers",
+"alt1":"He like pizza",
+"alt2":"They likes giving-gifts",
+"alt3":"_ don't-like paying-money",
+"alt4":"_ doesn't-likes playing-the-trumpet"
+},
+{
+"line":"They like listening-to-music",
+"alt1":"He don't-like table-tennis",
+"alt2":"She likes milk",
+"alt3":"_ doesn't-like paying-money",
+"alt4":"_ doesn't-likes playing-the-drums"
+},
+{
+"line":"She doesn't-like wine",
+"alt1":"He like drinking-coffee",
+"alt2":"They likes reading-books",
+"alt3":"_ don't-like playing-the-trumpet",
+"alt4":"_ doesn't-likes surfing"
+},
+{
+"line":"They like reading-books",
+"alt1":"He don't-like drinking-coffee",
+"alt2":"She likes pizza",
+"alt3":"_ doesn't-like playing-cards",
+"alt4":"_ doesn't-likes maths"
+},
+{
+"line":"He doesn't-like paying-money",
+"alt1":"They like milk",
+"alt2":"She likes reading-books",
+"alt3":"_ don't-like playing-cards",
+"alt4":"_ doesn't-likes doing-exercise"
+},
+{
+"line":"They like answering-questions",
+"alt1":"He don't-like table-tennis",
+"alt2":"She likes pizza",
+"alt3":"_ doesn't-like playing-the-drums",
+"alt4":"_ doesn't-likes taking-exams"
+},
+{
+"line":"She likes giving-gifts",
+"alt1":"He like chocolate",
+"alt2":"They don't-like wine",
+"alt3":"_ doesn't-like listening-to-music",
+"alt4":"_ doesn't-likes paying-money"
+}, 
+{
+"line":"He likes pizza",
+"alt1":"They don't-like table-tennis",
+"alt2":"She likes chocolate",
+"alt3":"_ doesn't-like doing-exercise",
+"alt4":"_ doesn't-likes surfing"
+},
+{
+"line":"He likes playing-the-drums",
+"alt1":"They like drinking-coffee",
+"alt2":"She don't-like wine",
+"alt3":"_ doesn't-like listening-to-music",
+"alt4":"_ doesn't-likes answering-questions"
+},
+{
+"line":"He likes milk",
+"alt1":"They like table-tennis",
+"alt2":"She don't-like chocolate",
+"alt3":"_ doesn't-like giving-gifts",
+"alt4":"_ doesn't-likes maths"
+},
+{
+"line":"She doesn't-like doing-yoga",
+"alt1":"He like listening-to-music",
+"alt2":"They likes answering-questions",
+"alt3":"_ don't-like taking-exams",
+"alt4":"_ doesn't-likes surfing"
+},
+
+{
+"line":"She doesn't-like playing-the-trumpet",
+"alt1":"He like milk",
+"alt2":"They likes hamburgers",
+"alt3":"_ don't-like answering-questions",
+"alt4":"_ doesn't-likes doing-yoga"
+},
+{
+"line":"He doesn't-like taking-exams",
+"alt1":"They like hamburgers",
+"alt2":"She likes playing-the-drums",
+"alt3":"_ don't-like maths",
+"alt4":"_ doesn't-likes doing-yoga"
+},
+
+{
+"line":"She likes chocolate",
+"alt1":"He like giving-gifts",
+"alt2":"They don't-like paying-money",
+"alt3":"_ doesn't-like doing-exercise",
+"alt4":"_ doesn't-likes taking-exams"
+},
+
+
+{
+"line":"She likes surfing",
+"alt1":"He like wine",
+"alt2":"They don't-like hamburgers",
+"alt3":"_ doesn't-like playing-the-drums",
+"alt4":"_ doesn't-likes maths"
+},
+{
+"line":"She likes doing-exercise",
+"alt1":"He like wine",
+"alt2":"They don't-like hamburgers",
+"alt3":"_ doesn't-like listening-to-music",
+"alt4":"_ doesn't-likes playing-cards"
+},
+
+
+{
+"line":"They don't-like playing-cards",
+"alt1":"He like drinking-coffee",
+"alt2":"She likes reading-books",
+"alt3":"_ doesn't-like doing-yoga",
+"alt4":"_ doesn't-likes taking-exams"
+},
+
+
+{
+"line":"They don't-like maths",
+"alt1":"He like milk",
+"alt2":"She don't-likes answering-questions",
+"alt3":"_ doesn't-like playing-cards",
+"alt4":"_ doesn't-likes doing-yoga"
+},
+{
+"line":"They don't-like table-tennis",
+"alt1":"He like chocolate",
+"alt2":"She likes reading-books",
+"alt3":"_ doesn't-like giving-gifts",
+"alt4":"_ doesn't-likes playing-the-trumpet"
+}
+
+
+
+
+
+
+]}
+
+

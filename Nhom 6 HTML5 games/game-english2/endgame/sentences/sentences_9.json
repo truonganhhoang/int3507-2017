@@ -1,0 +1,204 @@
+{"meta":[],
+"frames": [
+    [1, 1, 138, 170, 0, -40, -1],
+    [1, 173, 97, 170, 0, -81, -3],
+    [1, 345, 158, 168, 0, -48, -7],
+    [100, 173, 185, 167, 0, -37, -4],
+    [141, 1, 168, 167, 0, -40, -4],
+    [1, 515, 246, 71, 0, -3, -65],
+    [161, 342, 112, 167, 0, -67, -3],
+    [275, 342, 155, 166, 0, -51, -4],
+    [287, 170, 71, 166, 0, -86, -7],
+    [311, 1, 166, 164, 0, -44, -6],
+    [360, 167, 133, 163, 0, -61, -6],
+    [479, 1, 112, 163, 0, -90, -4],
+    [432, 332, 105, 162, 0, -64, -4],
+    [432, 496, 243, 101, 0, -3, -43],
+    [495, 166, 218, 159, 0, -12, -13],
+    [715, 1, 239, 143, 0, -7, -8],
+    [539, 327, 139, 158, 0, -63, -8],
+    [677, 487, 224, 106, 0, -9, -44],
+    [680, 327, 226, 155, 0, -11, -14],
+    [715, 146, 224, 148, 0, -11, -16]
+],
+"sets":[
+{
+"line":"He has-just broken a-cup",
+"alt1":"She have-just fixed a-glass",
+"alt2":"They _ picked-up a-fork",
+"alt3":"_ _ made a-chair",
+"alt4":"_ _ opened _"
+},{
+"line":"He has-just eaten an-apple",
+"alt1":"She have-just eat a-banana",
+"alt2":"They _ eating a-peach",
+"alt3":"_ _ eats an-egg",
+"alt4":"_ _ ate _"
+},{
+"line":"She has-just run a-marathon",
+"alt1":"They have-just slept a-park",
+"alt2":"_ _ sleeping a-vacation",
+"alt3":"_ _ go a-microphone",
+"alt4":"_ _ ride a-snickers"
+},{
+"line":"They have-just bought a-TV",
+"alt1":"She has-just sold a-box",
+"alt2":"He _ made a-book",
+"alt3":"_ _ worked a-table",
+"alt4":"_ _ sent a-card"
+},{
+"line":"He has-just crashed the-car",
+"alt1":"She have-just closed the-plane",
+"alt2":"They _ made the-road",
+"alt3":"_ _ jumped travel",
+"alt4":"_ _ forced an-accident"
+},
+
+
+
+
+
+    
+{
+"line":"She has-just had a-baby",
+"alt1":"He _ made a-nurse",
+"alt2":"_ _ born a-hospital",
+"alt3":"_ _ make a-sleep",
+"alt4":"_ _ have _"
+},
+{
+"line":"He has-just eaten an-apple",
+"alt1":"She have-just eat a-banana",
+"alt2":"They _ eating a-peach",
+"alt3":"_ _ eats an-egg",
+"alt4":"_ _ ate _"
+},
+{
+"line":"She has-just run a-marathon",
+"alt1":"They have-just slept a-park",
+"alt2":"_ _ sleeping a-vacation",
+"alt3":"_ _ go a-microphone",
+"alt4":"_ _ ride a-snickers"
+},
+{
+"line":"He has-just drunk a-soda",
+"alt1":"She have-just eaten a-milk",
+"alt2":"They _ closed coffee",
+"alt3":"_ _ poured orange-juice",
+"alt4":"_ _ filled tea"
+},
+{
+"line":"She has-just taken a-shower",
+"alt1":"They have-just takes a-towel",
+"alt2":"_ _ take a-bathroom",
+"alt3":"_ _ taking a-water",
+"alt4":"_ _ took a-wash"
+},
+{
+"line":"She has-just cleaned her-teeth",
+"alt1":"He have-just washed his-teeth",
+"alt2":"They _ wiped toothbrush",
+"alt3":"_ _ sweeped her-tooth",
+"alt4":"_ _ picked his-tooth"
+},
+{
+"line":"He has-just washed the-car",
+"alt1":"She have-just painted the-bike",
+"alt2":"They _ driven the-window",
+"alt3":"_ _ opened the-bus",
+"alt4":"_ _ bought the-plane"
+},
+{
+"line":"He has-just scored a-goal",
+"alt1":"She have-just score a-score",
+"alt2":"They _ scoring a-basket",
+"alt3":"_ _ scores a-hole",
+"alt4":"_ _ saved a-line"
+},
+{
+"line":"He has-just lost the-game",
+"alt1":"She have-just won the-computer",
+"alt2":"They _ lose the-screen",
+"alt3":"_ _ win over",
+"alt4":"_ _ taken _"
+},
+{
+"line":"She has-just won the-contest",
+"alt1":"He have-just win the-work",
+"alt2":"They _ wons the-book",
+"alt3":"_ _ wins the-carnival",
+"alt4":"_ _ woned the-task"
+},
+{
+"line":"The-train has-just left the-station",
+"alt1":"She have-just leaves the-airport",
+"alt2":"He _ leaved the-bus-stop",
+"alt3":"The-plane _ lefted the-box",
+"alt4":"The-car _ leafen the-track"
+},
+{
+"line":"They have-just bought a-TV",
+"alt1":"She has-just sold a-box",
+"alt2":"He _ made a-book",
+"alt3":"_ _ worked a-table",
+"alt4":"_ _ sent a-card"
+},
+{
+"line":"He has-just crashed the-car",
+"alt1":"She have-just closed the-plane",
+"alt2":"They _ made the-road",
+"alt3":"_ _ jumped travel",
+"alt4":"_ _ forced an-accident"
+},
+{
+"line":"He has-just split some-water",
+"alt1":"She have-just spill some-milk",
+"alt2":"They _ spilling some-juice",
+"alt3":"_ _ spills some-blue",
+"alt4":"_ _ spillen some-soda"
+},
+{
+"line":"He has-just broken a-cup",
+"alt1":"She have-just fixed a-glass",
+"alt2":"They _ picked-up a-fork",
+"alt3":"_ _ made a-chair",
+"alt4":"_ _ opened _"
+},
+{
+"line":"He has-just dropped his-wallet",
+"alt1":"She have-just dropt his-brown",
+"alt2":"They _ dropping his-shoes",
+"alt3":"_ _ drops his-glasses",
+"alt4":"_ _ dropen his-pen"
+},
+{
+"line":"They have-just made a-snowman",
+"alt1":"She has-just done a-snowdog",
+"alt2":"He _ been a-snow",
+"alt3":"_ _ covered a-white",
+"alt4":"_ _ returned a-soldier"
+},
+{
+"line":"He has-just caught a-fish",
+"alt1":"She have-just catched a-bird",
+"alt2":"They _ made a-boat",
+"alt3":"_ _ catching a-net",
+"alt4":"_ _ catches a-phone"
+},
+{
+"line":"The-train has-just arrived at-the-station",
+"alt1":"She have-just arrive in-the-airport",
+"alt2":"The-plane _ arrives at-the-airport",
+"alt3":"The-car _ arriven to-the-home",
+"alt4":"_ _ arriving _"
+},
+{
+"line":"The-plane has-just taken-off",
+"alt1":"She have-just landed",
+"alt2":"He _ taken-up",
+"alt3":"The-train _ jumped",
+"alt4":"The-snake _ aired"
+}
+]}
+
+
