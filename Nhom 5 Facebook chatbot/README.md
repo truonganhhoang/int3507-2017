@@ -30,35 +30,35 @@
 
 ## Danh sách hình vẽ
 
-| Hình vẽ  	| Mô tả                                         	|
-|----------	|-----------------------------------------------	|
-| Hình 1.1 	| Sơ đồ hoạt động của ứng dụng Facebook Chatbot 	|
-| Hình 2.1 	| Đăng ký ứng dụng mới                          	|
-| Hình 2.2 	| Tạo ứng dụng Messenger                        	|
-| Hình 2.3 	| Khởi chạy Ngrok                               	|
-| Hình 2.4 	| Thiết lập `page token`                        	|
-| Hình 2.5 	| Thiết lập Webhook                             	|
-| Hình 2.6 	| Đăng ký Webhook                               	|
-| Hình 2.7 	| Cấu trúc bộ sưu tập `users`                   	|
-| Hình 2.8 	| Cấu trúc mã nguồn                             	|
-| Hình 2.9 	| Tạo luồng sự kiện                             	|
-| Hình 3.1 	| Các API được triển khai trên máy chủ tìm kiếm 	|
+| Hình vẽ                                                               	| Mô tả                                            	|
+|-----------------------------------------------------------------------	|--------------------------------------------------	|
+| [Hình 1.1](#hình-11-sơ-đồ-hoạt-động-của-ứng-dụng-facebook-chatbot)    	| Sơ đồ hoạt động của ứng dụng Facebook Chatbot    	|
+| [Hình 2.1](#hình-21-Đăng-ký-một-ứng-dụng-mới-trên-facebook-developer) 	| Đăng ký một ứng dụng mới trên Facebook Developer 	|
+| [Hình 2.2](#hình-22-tạo-ứng-dụng-messenger)                           	| Tạo ứng dụng Messenger                           	|
+| [Hình 2.3](#hình-23-khởi-chạy-ngrok-tại-cổng-3000)                    	| Khởi chạy Ngrok tại cổng 3000                    	|
+| [Hình 2.4](#hình-24-thiết-lập-trường-page_token-cho-ứng-dụng)         	| Thiết lập trường `PAGE_TOKEN` cho ứng dụng       	|
+| [Hình 2.5](#hình-25-thiết-lập-webhook)                                	| Thiết lập Webhook                                	|
+| [Hình 2.6](#hình-26-Đăng-ký-webhook)                                  	| Đăng ký Webhook                                  	|
+| [Hình 2.7](#hình-27-cấu-trúc-bộ-dữ-liệu-users)                        	| Cấu trúc bộ dữ liệu `users`                      	|
+| [Hình 2.8](#hình-28-cấu-trúc-mã-nguồn)                                	| Cấu trúc mã nguồn                                	|
+| [Hình 2.9](#hình-29-luồng-xử-lý-sự-kiện)                              	| Luồng xử lý sự kiện                              	|
+| [Hình 3.1](#hình-31-các-api-được-triển-khai-trên-máy-chủ-tìm-kiếm)    	| Các API được triển khai trên máy chủ tìm kiếm    	|
 
 ## Mục lục
 
 - [Lời mở đầu](#lời-mở-đầu)
 
-- [Chương 1: Tổng quan về kiến trúc của UET Chatbot](#chương-1-tổng-quan-về-kiến-trúc-của-uet-chatbot)
+- [Chương 1: Tổng quan về kiến trúc của UET Chatbot](#chương-1-tổng-quan-về-kiến-trúc-ứng-dụng)
 
 - [Chương 2: Máy chủ Chatbot](#chương-2-máy-chủ-chatbot)
 
     - [2.1. Cơ chế hoạt động của Facebook Chatbot](#21-cơ-chế-hoạt-động-của-facebook-chatbot)
     
-    - [2.2. Kết nối hai chiều với Facebook thông qua Webhook và Rest API](#22-kết-nối-hai-chiều-với-facebook-thông-qua-webhook-và-rest-api)
+    - [2.2. Kết nối hai chiều với Facebook thông qua Webhook và Rest API](#22-kết-nối-với-facebook-thông-qua-webhook-và-rest-api)
     
     - [2.3. Xây dựng máy chủ chatbot nhận, xử lý tin nhắn và phản hồi tin nhắn phù hợp](#23-xây-dựng-máy-chủ-chatbot-nhận-xử-lý-tin-nhắn-và-phản-hồi-tin-nhắn-phù-hợp)
     
-- [Chương 3: Tầng máy chủ tìm kiếm](#chương-3-tầng-máy-chủ-tìm-kiếm)
+- [Chương 3: Tầng máy chủ tìm kiếm](#chương-3-máy-chủ-tìm-kiếm)
 
 	- [3.1. Công nghệ](#31-công-nghệ)
 	
@@ -96,19 +96,19 @@ Dựa vào cơ chế hoạt động của Facebook Chatbot, để xây dựng m�
 
 2. Nhận tin nhắn từ người dùng thông qua ứng dụng Webhook, xử lý nội dung và phản hồi lại cho người dùng.
 
-![Tổng quan kiến trúc ứng dụng](images/tong_quan_kien_truc_ung_dung.jpg)
+![Sơ đồ hoạt động của ứng dụng Facebook Chatbot](images/hình-11-sơ-đồ-hoạt-động-của-ứng-dụng-facebook-chatbot.jpg)
 
-<center><i>Hình 1.1: Sơ đồ hoạt động của ứng dụng Facebook Chatbot</i></center>
+###### Hình 1.1: Sơ đồ hoạt động của ứng dụng Facebook Chatbot
 
-Hình 1.1 mô tả ứng dụng Facebook Chatbot mà chúng tôi đã triển khai. Hai mũi tên ngược chiều nhau giữa `Facebook` và `Chatbot server` thể hiện tương tác hai chiều thông qua Webhook và Rest API. Ứng dụng được chia làm 2 tầng chính với các chức năng như sau:
+Hình trên mô tả ứng dụng Facebook Chatbot mà chúng tôi đã triển khai. Hai mũi tên ngược chiều nhau giữa `Facebook` và `Chatbot server` thể hiện tương tác hai chiều thông qua Webhook và Rest API. Ứng dụng được chia làm 2 tầng chính với các chức năng như sau:
 
 - Máy chủ Chatbot (Chatbot server) có nhiệm vụ kết nối hai chiều với Facebook thông qua Webhook và Rest API, tiếp nhận, xử lý và điều hướng các hành động và tin nhắn của nguời dùng. Đồng thời dữ liệu về người dùng cũng như các tin nhắn của họ cũng được máy chủ lưu lại.
     
-- Máy chủ tìm kiếm (Search server) đóng vai trò cung cấp các API tìm kiếm các môn học, giảng viên,... Máy chủ tìm kiếm sẽ thực hiện các thao tác với dữ liệu về môn học, giảng viên,... trên MySQL và Elastic Search, quản lý quá trình đẩy dữ liệu từ MySQL sang Elastic Search (indexing) nhằm mục đích thực hiện truy vấn một cách nhanh chóng để lấy dữ liệu cần tìm kiếm.
+- Máy chủ tìm kiếm (Search server) đóng vai trò cung cấp các API tìm kiếm các môn học, giảng viên,... Máy chủ tìm kiếm sẽ thực hiện các thao tác với dữ liệu về môn học, giảng viên,... trên MySQL và Elasticsearch, quản lý quá trình đẩy dữ liệu từ MySQL sang Elasticsearch (indexing) nhằm mục đích thực hiện truy vấn một cách nhanh chóng để lấy dữ liệu cần tìm kiếm.
 
-Khi người dùng Facebook gửi tin nhắn tới trang (trên Facebook), Facebook sẽ gọi tới Webhook của máy chủ Chatbot. Máy chủ Chatbot sẽ lưu thông tin người dùng và các tin nhắn vào MongoDB. Đối với các yêu cầu tìm kiếm của người dùng, máy chủ Chatbot gọi tới các API tìm kiếm tương ứng trên máy chủ tìm kiếm. Máy chủ tìm kiếm sẽ tìm chúng trên Elastic Search, sau đó trả kết quả về. Sau khi nhận được kết quả tìm kiếm, máy chủ Chatbot sẽ chọn một cách hiển thị thích hợp cho kết quả, rồi gửi kết quả tới người dùng thông qua Facebook Chatbot API.
+Khi người dùng Facebook gửi tin nhắn tới trang (trên Facebook), Facebook sẽ gọi tới Webhook của máy chủ Chatbot. Máy chủ Chatbot sẽ lưu thông tin người dùng và các tin nhắn vào MongoDB. Đối với các yêu cầu tìm kiếm của người dùng, máy chủ Chatbot gọi tới các API tìm kiếm tương ứng trên máy chủ tìm kiếm. Máy chủ tìm kiếm sẽ tìm chúng trên Elasticsearch, sau đó trả kết quả về. Sau khi nhận được kết quả tìm kiếm, máy chủ Chatbot sẽ chọn một cách hiển thị thích hợp cho kết quả, rồi gửi kết quả tới người dùng thông qua Facebook Chatbot API.
 
-Song song với đó, các trình thu thập thông tin sẽ thu thập dữ liệu từ các nguồn khác nhau như trang web của trường, của các khoa,... để bổ sung hoặc cập nhật dữ liệu trên MySQL. Máy chủ tìm kiếm sẽ đảm nhận vai trò đưa dữ liệu từ MySQL sang Elastic Search hàng ngày. 
+Song song với đó, các trình thu thập thông tin sẽ thu thập dữ liệu từ các nguồn khác nhau như trang web của trường, của các khoa,... để bổ sung hoặc cập nhật dữ liệu trên MySQL. Máy chủ tìm kiếm sẽ đảm nhận vai trò đưa dữ liệu từ MySQL sang Elasticsearch hàng ngày. 
 
 ## Chương 2: Máy chủ Chatbot
 
@@ -118,8 +118,7 @@ Song song với đó, các trình thu thập thông tin sẽ thu thập dữ li�
 
 Sau khi xử lý xong, nếu muốn trả lời lại người dùng, chúng ta phải gửi tin nhắn qua Rest API của Facebook. Nhờ đó, một tin nhắn từ trang tới người dùng được Facebook gửi đi.
 
-
-### 2.2. Kết nối hai chiều với Facebook thông qua Webhook và Rest API
+### 2.2. Kết nối với Facebook thông qua Webhook và Rest API
 
 Phần này sẽ tập trung vào cách thức xây dựng máy chủ Chatbot để tiếp nhận các yêu cầu của người dùng và xử lý hoặc điều hướng xử lý chúng. Máy chủ Chatbot có thể được viết bằng bất kỳ ngôn ngữ lập trình nào, bài báo cáo này sẽ trình bày một ứng dụng mẫu do chúng tôi xây dựng dựa trên Framework ExpressJS của Nodejs và cơ sở dữ liệu được sử dụng là MongoDB
 
@@ -133,11 +132,11 @@ Chúng ta cần chuẩn bị và cài đặt các công cụ, công nghệ như 
 
 - Tạo một trang (Fanpage) Facebook (hoặc sử dụng một trang mà bạn có quyền quản trị) để đăng ký Webhook.
  
-- Máy chủ Chatbot mẫu (ứng dụng mẫu) của chúng tôi được xây dựng trên Framework ExpressJS tại [đây](https://github.com/nguyenducthuanuet/facebookChatbot).
+- Ứng dụng Chatbot "Hỗ trợ sinh viên UET" của chúng tôi được xây dựng trên Framework ExpressJS tại [đây](https://github.com/nguyenducthuanuet/facebookChatbot).
 
-Các hướng dẫn dưới đây được viết dựa trên ứng dụng mẫu này.
+Các hướng dẫn dưới đây được viết dựa trên ứng dụng của chúng tôi.
     
-##### Bước 1: Cài đặt ứng dụng mẫu 
+##### Bước 1: Cài đặt ứng dụng
     
 - Chạy lệnh dưới đây (trong thư mục gốc của ứng dụng) sau khi tải về thành công mã nguồn của ứng dụng:
     
@@ -147,13 +146,13 @@ Các hướng dẫn dưới đây được viết dựa trên ứng dụng mẫu
 
 - Truy cập [Facebook Developer](https://developers.facebook.com/), tạo một ứng dụng. Sau đó vào chọn ứng dụng Messenger.
 
-![Đăng ký ứng dụng](images/dang_ky_ung_dung.png)
+![Đăng ký một ứng dụng mới trên Facebook Developer](images/hình-21-Đăng-ký-một-ứng-dụng-mới-trên-facebook-developer.png)
 
-<center><i>Hình 2.1: Đăng ký một ứng dụng mới trên Facebook Developer.</i></center>
+###### Hình 2.1: Đăng ký một ứng dụng mới trên Facebook Developer.
 
-![Tạo ứng dụng Messenger](images/tao_ung_dung_messenger.png)
+![Tạo ứng dụng Messenger](images/hình-22-tạo-ứng-dụng-messenger.png)
 
-<center><i>Hình 2.2: Tạo ứng dụng Messenger.</i></center>
+###### Hình 2.2: Tạo ứng dụng Messenger.
 
 - Tạo cơ sở dữ liệu mới trên MongoDB có tên giống với `DB_DATABASE=` trong tệp `.env` (ở ứng dụng mẫu là `facebookChatbot`), trong cơ sở dữ liệu tạo 2 bộ dữ liệu (collection) `users` và `lecturers`.
  
@@ -161,7 +160,7 @@ Các hướng dẫn dưới đây được viết dựa trên ứng dụng mẫu
 
         $ npm start
         
-- Truy cập `http://localhost:3000/seed` để tạo dữ liệu về giảng viên và hướng nghiên cứu (phần dữ liệu này về sau sẽ được chuyển sang MySQL ở máy chủ tìm kiếm để sử dụng Elastic Search).  
+- Truy cập `http://localhost:3000/seed` để tạo dữ liệu về giảng viên và hướng nghiên cứu (phần dữ liệu này về sau sẽ được chuyển sang MySQL ở máy chủ tìm kiếm để sử dụng Elasticsearch).  
 
 ##### Bước 2: Kết nối ứng dụng Chatbot với Webhook của Facebook
 
@@ -171,29 +170,29 @@ Các hướng dẫn dưới đây được viết dựa trên ứng dụng mẫu
         
 Sau sao chép trường địa chỉ `Forwarding (https)` (Như hình vẽ dưới đây là https://58157de6.ngrok.io).
         
-![Khởi chạy ngrok](images/ngrok.png)
+![Khởi chạy Ngrok tại cổng 3000](images/hình-23-khởi-chạy-ngrok-tại-cổng-3000.png)
 
-<center><i>Hình 2.3: Khởi chạy Ngrok tại cổng 3000.</i></center>
+###### Hình 2.3: Khởi chạy Ngrok tại cổng 3000.
 
 - Trong ứng dụng Messenger vừa tạo ở Bước 1, chọn trang mà bạn có quyền quản trị để lấy mã truy cập trang. Sao chép và dán mã truy cập trang vào dòng `PAGE_TOKEN=` trong tệp `.env`.
 
-![Thiết lập page token](images/thiet_lap_page_token.png)
+![Thiết lập trường `PAGE_TOKEN` cho ứng dụng](images/hình-24-thiết-lập-trường-page_token-cho-ứng-dụng.png)
 
-<center><i>Hình 2.4: Thiết lập trường `PAGE_TOKEN` cho ứng dụng.</i></center>
+###### Hình 2.4: Thiết lập trường `PAGE_TOKEN` cho ứng dụng.
 
 - Trên trang Facebook Developer, chọn phần `Thiết lập Webhook`.
 
-![Thiết lập Webhook](images/thiet_lap_webhook.png)
+![Thiết lập Webhook](images/hình-25-thiết-lập-webhook.png)
 
-<center><i>Hình 2.5: Thiết lập Webhook.</i></center>
+###### Hình 2.5: Thiết lập Webhook.
   
-Tại hộp thoại hiện lên, điền URL gọi lại giống `Fowarding (https)` của Ngrok và thêm `/Webhook` vào sau (như với ứng dụng mẫu sẽ là https://58157de6.ngrok.io/webhook). 
+Tại hộp thoại hiện lên, điền URL gọi lại giống `Fowarding (https)` của Ngrok và thêm `/Webhook` vào sau (như ví dụ trên là https://58157de6.ngrok.io/webhook). 
 
-Trường `Mã xác minh` nhập giống `VERIFY_TOKEN=` trong tệp `.env` (ở project mẫu là `verify_token`). `Trường gửi` chúng ta chọn `messages` và `messaging_postbacks`.
+Trường `Mã xác minh` nhập giống `VERIFY_TOKEN=` trong tệp `.env` trên ứng dụng của chúng tôi là `verify_token`). `Trường gửi` chúng ta chọn `messages` và `messaging_postbacks`.
 
-![Đăng ký Webhook](images/dang_ky_webhook.png)
+![Đăng ký Webhook](images/hình-26-Đăng-ký-webhook.png)
 
-<center><i>Hình 2.6: Đăng ký Webhook.</i></center>
+###### Hình 2.6: Đăng ký Webhook.
 
 ### 2.3. Xây dựng máy chủ Chatbot nhận, xử lý tin nhắn và phản hồi tin nhắn phù hợp
 
@@ -212,39 +211,37 @@ Các dữ liệu trong bài toán này có thể được chia làm hai phần:
 
 Như vậy ở MongoDB ta cần xây dựng một bộ sưu tập (collection) `users` có cấu trúc như sau.
 
-![Collection users](images/collection_user.png)
+![Cấu trúc bộ dữ liệu `users`](images/hình-27-cấu-trúc-bộ-dữ-liệu-users.png)
 
-Hình 2.7: Cấu trúc bộ sưu tập `users`.
+###### Hình 2.7: Cấu trúc bộ dữ liệu `users`.
 
 #### 2.3.2. Xây dựng các luồng xử lý
 
-Khi người dùng thực hiện một hành động (gửi tin, chọn menu, bấm một nút, chọn danh sách, gửi tệp,...) khi nhắn tin với trang, Facebook sẽ gửi một sự kiện qua Webhook của trang, kèm theo đó là dữ liệu mà người dùng gửi (tin nhắn, tệp, nút...). Tất cả các hành động được chia vào 4 loại sự kiện:
+Khi người dùng thực hiện một hành động (gửi tin, chọn thanh điều hướng, bấm một nút, chọn danh sách, gửi tệp,...) khi nhắn tin với trang, Facebook sẽ gửi một sự kiện qua Webhook của trang, kèm theo đó là dữ liệu mà người dùng gửi (tin nhắn, tệp, nút...). Tất cả các hành động được chia vào 4 loại sự kiện:
 
-- message: Sự kiện khi người dùng gửi tin nhắn. Dữ liệu kèm theo sự kiện là tin nhắn mà người dùng gửi.
+- `message`: Sự kiện khi người dùng gửi tin nhắn. Dữ liệu kèm theo sự kiện là tin nhắn mà người dùng gửi.
  
-- postback: Sự kiện khi người dùng bấm một nút hoặc chọn một mục từ một danh sách. Dữ liệu kèm theo là mã postback của nút, do ứng dụng của ta quy định.
+- `postback`: Sự kiện khi người dùng bấm một nút hoặc chọn một mục từ một danh sách. Dữ liệu kèm theo là mã `postback` của nút, do ứng dụng của ta quy định.
 
-- quickreply: Sự kiện khi người dùng chọn một câu trả lời trong danh sách các câu trả lời gợi ý của ứng dụng. Dữ liệu là mã quickreply của câu trả lời nhanh, do ứng dụng của ta quy định.
+- `quickreply`: Sự kiện khi người dùng chọn một câu trả lời trong danh sách các câu trả lời gợi ý của ứng dụng. Dữ liệu là mã `quickreply` của câu trả lời nhanh, do ứng dụng của ta quy định.
 
-- attachment: Sự kiện khi người dùng gửi một tệp. Dữ liệu kèm theo là nội dung tệp.
+- `attachment`: Sự kiện khi người dùng gửi một tệp. Dữ liệu kèm theo là nội dung tệp.
 
-Ở bài toán của project mẫu, ta không cần dùng tới sự kiện attachment nên chỉ 3 sự kiện message, postback, quickreply được đề cập.
+Trong bài toán của chúng tôi không cần dùng tới sự kiện `attachment` nên chỉ 3 sự kiện `message`, `postback`, `quickreply` được đề cập.
 
-![Cấu trúc mã nguồn](images/cau_truc_ma_nguon.png  "Cấu trúc mã nguồn")
+![Cấu trúc mã nguồn](images/hình-28-cấu-trúc-mã-nguồn.png  "Cấu trúc mã nguồn")
 
-Hình 2.8: Cấu trúc mã nguồn.
+###### Hình 2.8: Cấu trúc mã nguồn.
 
-### 2.3.3. Làm sao để xây dựng được luồng xử lý phù hợp với các tin nhắn của người dùng.
+### 2.3.3. Xây dựng được luồng xử lý phù hợp với các tin nhắn của người dùng.
 
-Khi ứng dụng của bạn yêu cầu nhập tên giảng viên khi tra cứu giảng viên, hay nhập câu hỏi khi muốn tra cứu hỏi đáp. Vậy làm sao để phân biệt được tin nhắn nào là để tra cứu giảng viên hay hỏi đáp khi mà các tin nhắn gửi đến chỉ được gửi hoàn toàn riêng rẽ và độc lập ? Chính vì vậy, chúng tôi đã sử dụng collection users để xử lý vấn đề này. Khi một tin nhắn văn bản gửi đến, chúng tôi sẽ dựa vào postback hay quickreply cuối cùng được gửi đến để xác định yêu cầu tra cứu. Ví dụ:
+![Luồng xử lý sự kiện](images/hình-29-luồng-xử-lý-sự-kiện.jpg  "Luồng xử lý sự kiện")
 
-![Tạo luồng sự kiện](images/tao_luong_su_kien.png  "Tạo luồng sự kiện")
+###### Hình 2.9: Luồng xử lý sự kiện.
 
-Hình 2.9: Tạo luồng sự kiện.
+Để xác định được tin nhắn tra cứu của người dùng là tra cứu về giảng viên hay tra cứu môn học hay hỏi đáp, chúng tôi sử dụng bộ dữ liệu `users` được tạo ra trên MongoDB. Khi một tin nhắn văn bản gửi đến, chúng tôi sẽ dựa vào hành động cuối cùng được gửi đến để xác định yêu cầu tra cứu. Nếu hành động cuối cùng của người dùng không phải là hành động tra cứu hay hỏi đáp, thì nội dung tin nhắn sau đó sẽ không có ý nghĩa, người dùng phải chọn hành động cần tra cứu hay hỏi đáp trước khi nhập nôi dung cần tra cứu hay hỏi đáp.
 
-Khi một tin nhắn văn bản được gửi đến, chúng tôi sẽ truy vấn action cuối cùng, sau đó mới đưa ra phương thức xử lý của action đó.
-
-## Chương 3: Tầng máy chủ tìm kiếm
+## Chương 3: Máy chủ tìm kiếm
 
 Máy chủ tìm kiếm chúng tôi xây dựng dựa trên dự án có sẵn là [website sguet.com](http://sguet.com) nên chúng tôi không công bố mã nguồn mà chỉ hướng dẫn cách xây dựng một máy chủ tìm kiếm tương tự.
 
@@ -284,13 +281,13 @@ Từ danh sách `id` trả về từ Elasticsearch, chúng tôi tìm kiếm các
 
 ### 3.4. Các API
 
-![Search API](images/search_api.png)
+![Các API được triển khai trên máy chủ tìm kiếm](images/hình-31-các-api-được-triển-khai-trên-máy-chủ-tìm-kiếm.png)
 
-Hình 3.1: Các API được triển khai trên máy chủ tìm kiếm.
+###### Hình 3.1: Các API được triển khai trên máy chủ tìm kiếm.
 
 Hình trên là danh sách các API mà máy chủ tìm kiếm cung cấp, theo thứ tự là:
 
-- API tìm kiếm câu hỏi thường gặp của sinh viên với đầu vào `query` là tiêu đề, từ khoá hoặc câu hỏi tương tự (`parapharses`).
+- API tìm kiếm câu hỏi thường gặp của sinh viên với đầu vào `query` là tiêu đề, từ khoá hoặc câu hỏi tương tự (parapharses).
 
 - API tra cứu nội dung chi tiết của một câu hỏi với đầu vào là `id` của câu hỏi.
 
