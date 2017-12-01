@@ -41,7 +41,7 @@
 | [Hình 2.6](#hình-26-Đăng-ký-webhook)                                  	| Đăng ký Webhook                                  	|
 | [Hình 2.7](#hình-27-cấu-trúc-bộ-sưu-tập-users)                        	| Cấu trúc bộ sưu tập `users`                      	|
 | [Hình 2.8](#hình-28-cấu-trúc-mã-nguồn)                                	| Cấu trúc mã nguồn                                	|
-| [Hình 2.9](#hình-29-tạo-luồng-sự-kiện)                                	| Tạo luồng sự kiện                                	|
+| [Hình 2.9](#hình-29-luồng-xử-lý-sự-kiện)                                	| Luồng xử lý sự kiện                                	|
 | [Hình 3.1](#hình-31-các-api-được-triển-khai-trên-máy-chủ-tìm-kiếm)    	| Các API được triển khai trên máy chủ tìm kiếm    	|
 
 ## Mục lục
@@ -132,11 +132,11 @@ Chúng ta cần chuẩn bị và cài đặt các công cụ, công nghệ như 
 
 - Tạo một trang (Fanpage) Facebook (hoặc sử dụng một trang mà bạn có quyền quản trị) để đăng ký Webhook.
  
-- Máy chủ Chatbot mẫu (ứng dụng mẫu) của chúng tôi được xây dựng trên Framework ExpressJS tại [đây](https://github.com/nguyenducthuanuet/facebookChatbot).
+- Ứng dụng Chatbot "Hỗ trợ sinh viên UET" của chúng tôi được xây dựng trên Framework ExpressJS tại [đây](https://github.com/nguyenducthuanuet/facebookChatbot).
 
-Các hướng dẫn dưới đây được viết dựa trên ứng dụng mẫu này.
+Các hướng dẫn dưới đây được viết dựa trên ứng dụng của chúng tôi.
     
-##### Bước 1: Cài đặt ứng dụng mẫu 
+##### Bước 1: Cài đặt ứng dụng
     
 - Chạy lệnh dưới đây (trong thư mục gốc của ứng dụng) sau khi tải về thành công mã nguồn của ứng dụng:
     
@@ -186,9 +186,9 @@ Sau sao chép trường địa chỉ `Forwarding (https)` (Như hình vẽ dư�
 
 ###### Hình 2.5: Thiết lập Webhook.
   
-Tại hộp thoại hiện lên, điền URL gọi lại giống `Fowarding (https)` của Ngrok và thêm `/Webhook` vào sau (như với ứng dụng mẫu sẽ là https://58157de6.ngrok.io/webhook). 
+Tại hộp thoại hiện lên, điền URL gọi lại giống `Fowarding (https)` của Ngrok và thêm `/Webhook` vào sau (như ví dụ trên là https://58157de6.ngrok.io/webhook). 
 
-Trường `Mã xác minh` nhập giống `VERIFY_TOKEN=` trong tệp `.env` (ở project mẫu là `verify_token`). `Trường gửi` chúng ta chọn `messages` và `messaging_postbacks`.
+Trường `Mã xác minh` nhập giống `VERIFY_TOKEN=` trong tệp `.env` trên ứng dụng của chúng tôi là `verify_token`). `Trường gửi` chúng ta chọn `messages` và `messaging_postbacks`.
 
 ![Đăng ký Webhook](images/dang_ky_webhook.png)
 
@@ -213,35 +213,33 @@ Như vậy ở MongoDB ta cần xây dựng một bộ sưu tập (collection) `
 
 ![Collection users](images/collection_user.png)
 
-###### Hình 2.7: Cấu trúc bộ sưu tập `users`.
+###### Hình 2.7: Cấu trúc bộ dữ liệu `users`.
 
 #### 2.3.2. Xây dựng các luồng xử lý
 
-Khi người dùng thực hiện một hành động (gửi tin, chọn menu, bấm một nút, chọn danh sách, gửi tệp,...) khi nhắn tin với trang, Facebook sẽ gửi một sự kiện qua Webhook của trang, kèm theo đó là dữ liệu mà người dùng gửi (tin nhắn, tệp, nút...). Tất cả các hành động được chia vào 4 loại sự kiện:
+Khi người dùng thực hiện một hành động (gửi tin, chọn thanh điều hướng, bấm một nút, chọn danh sách, gửi tệp,...) khi nhắn tin với trang, Facebook sẽ gửi một sự kiện qua Webhook của trang, kèm theo đó là dữ liệu mà người dùng gửi (tin nhắn, tệp, nút...). Tất cả các hành động được chia vào 4 loại sự kiện:
 
-- message: Sự kiện khi người dùng gửi tin nhắn. Dữ liệu kèm theo sự kiện là tin nhắn mà người dùng gửi.
+- `message`: Sự kiện khi người dùng gửi tin nhắn. Dữ liệu kèm theo sự kiện là tin nhắn mà người dùng gửi.
  
-- postback: Sự kiện khi người dùng bấm một nút hoặc chọn một mục từ một danh sách. Dữ liệu kèm theo là mã postback của nút, do ứng dụng của ta quy định.
+- `postback`: Sự kiện khi người dùng bấm một nút hoặc chọn một mục từ một danh sách. Dữ liệu kèm theo là mã `postback` của nút, do ứng dụng của ta quy định.
 
-- quickreply: Sự kiện khi người dùng chọn một câu trả lời trong danh sách các câu trả lời gợi ý của ứng dụng. Dữ liệu là mã quickreply của câu trả lời nhanh, do ứng dụng của ta quy định.
+- `quickreply`: Sự kiện khi người dùng chọn một câu trả lời trong danh sách các câu trả lời gợi ý của ứng dụng. Dữ liệu là mã `quickreply` của câu trả lời nhanh, do ứng dụng của ta quy định.
 
-- attachment: Sự kiện khi người dùng gửi một tệp. Dữ liệu kèm theo là nội dung tệp.
+- `attachment`: Sự kiện khi người dùng gửi một tệp. Dữ liệu kèm theo là nội dung tệp.
 
-Ở bài toán của project mẫu, ta không cần dùng tới sự kiện attachment nên chỉ 3 sự kiện message, postback, quickreply được đề cập.
+Trong bài toán của chúng tôi không cần dùng tới sự kiện `attachment` nên chỉ 3 sự kiện `message`, `postback`, `quickreply` được đề cập.
 
 ![Cấu trúc mã nguồn](images/cau_truc_ma_nguon.png  "Cấu trúc mã nguồn")
 
 ###### Hình 2.8: Cấu trúc mã nguồn.
 
-### 2.3.3. Làm sao để xây dựng được luồng xử lý phù hợp với các tin nhắn của người dùng.
+### 2.3.3. Xây dựng được luồng xử lý phù hợp với các tin nhắn của người dùng.
 
-Khi ứng dụng của bạn yêu cầu nhập tên giảng viên khi tra cứu giảng viên, hay nhập câu hỏi khi muốn tra cứu hỏi đáp. Vậy làm sao để phân biệt được tin nhắn nào là để tra cứu giảng viên hay hỏi đáp khi mà các tin nhắn gửi đến chỉ được gửi hoàn toàn riêng rẽ và độc lập ? Chính vì vậy, chúng tôi đã sử dụng collection users để xử lý vấn đề này. Khi một tin nhắn văn bản gửi đến, chúng tôi sẽ dựa vào postback hay quickreply cuối cùng được gửi đến để xác định yêu cầu tra cứu. Ví dụ:
+![Luồng xử lý sự kiện](images/luong_xu_ly_su_kien.jpg  "Luồng xử lý sự kiện")
 
-![Tạo luồng sự kiện](images/tao_luong_su_kien.png  "Tạo luồng sự kiện")
+###### Hình 2.9: Luồng xử lý sự kiện.
 
-###### Hình 2.9: Tạo luồng sự kiện.
-
-Khi một tin nhắn văn bản được gửi đến, chúng tôi sẽ truy vấn action cuối cùng, sau đó mới đưa ra phương thức xử lý của action đó.
+Để xác định được tin nhắn tra cứu của người dùng là tra cứu về giảng viên hay tra cứu môn học hay hỏi đáp, chúng tôi sử dụng bộ dữ liệu `users` được tạo ra trên MongoDB. Khi một tin nhắn văn bản gửi đến, chúng tôi sẽ dựa vào hành động cuối cùng được gửi đến để xác định yêu cầu tra cứu. Nếu hành động cuối cùng của người dùng không phải là hành động tra cứu hay hỏi đáp, thì nội dung tin nhắn sau đó sẽ không có ý nghĩa, người dùng phải chọn hành động cần tra cứu hay hỏi đáp trước khi nhập nôi dung cần tra cứu hay hỏi đáp.
 
 ## Chương 3: Máy chủ tìm kiếm
 
