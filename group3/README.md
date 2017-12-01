@@ -9,19 +9,41 @@
 - Hoàng Văn Hải
 - Nguyễn Thị Hồng Hải
 
-# Đặt vấn đề
+ ## Mục lục
+ 
+ ### 1. [Đặt vấn đề](#issue)
+ ### 2. [Chi tiết về Scrapy](#scrapy-detail)
+ #### 2.1. [Kiến trúc scrapy](#scrapy-archi)
+ #### 2.2. [Cài đặt scrapy](#scrapy-setup)
+ #### 2.3. [Spider](#spider)
+ #### 2.4. [Trích xuất dữ liệu (Extractor)](#extractor)
+ #### 2.5. [Item Pipeline](#item-pipeline)
+ #### 2.6. [Lưu dữ liệu](#save-data)
+ #### 2.7. [Cấu hình nâng cao Scrapy](#avanced-config)
+ #### 2.8. [Các vấn đề cần giải quyết với Scrapy](#todos)
+ ### 3. [Kết luận](#summary)
+ 
+ Trong báo cáo này sẽ trình bày về các hệ thống mã nguồn mở thu thập dữ liệu.
+ Phần 1 sẽ giới thiệu về các khái niệm trong việc thu thập dữ liệu, các thư viện
+ mã nguồn mở phổ biến phục vụ cho công việc này. Trong phần 2, báo cáo sẽ mô tả
+ chi tiết kiến trúc, cách cài đặt của thư viện Scrapy. Phần kết luận là những 
+ đánh giá của nhóm về những ưu nhược điểm của thư viện sau quá trình nhóm  đã 
+ tìm hiểu và thực nghiệm.
+ 
 
-## Web crawler
+# 1. Đặt vấn đề <a name="issue"></a>
+
+## 1.1. Web crawler
 
 Web crawler[1] là một chương trình hoạt động như là một tập lệnh tự động duyệt qua các trang web trên internet một cách 
-có hệ thống. Web crawler xác định từ khóa chính trên một trang, loại nội dung của trang đó và các đường dẫn(link )có 
+có hệ thống. Web crawler xác định từ khóa chính trên một trang, loại nội dung của trang đó và các đường dẫn (link) có 
 trong trang, trước khi trả kết quả về cho máy tìm kiếm. Tiến trình này được gọi là thu thập thông tin web.
 Trang cần lấy dữ liệu được đánh chỉ mục bởi một phần mềm (web crawler). Một web crawler gom các trang của một trang web 
 và đánh chỉ mục nó theo cách tối ưu và tự động, nhằm phục vụ cho yêu cầu của máy tìm kiếm. Crawler cũng giúp ích trong 
 việc thẩm định mã HTML và kiểm tra các đường link có hoạt động hay không.
 
 
-## Tầm quan trọng của Web Crawler
+## 1.2. Tầm quan trọng của Web Crawler
 
 Dữ liệu có vai trò rất quan trọng, là trái tim của bất kỳ doanh nghiệp nào. Ngày nay, với tất cả các chuẩn mở(open 
 standard) như RSS feeds hoặc APIs chia sẻ dữ liệu qua các hệ thống đã trở nên khá dễ dàng.
@@ -37,11 +59,12 @@ Công nghệ Web Crawling trở nên nổi tiếng bởi được ứng dụng v
 trọng của việc thu thập và đánh chỉ mục lượng dữ liệu vô cùng lớn trên internet. Nhờ đó mà công cụ tìm kiếm của Google 
 được biết đến là một trong những công cụ hoạt động tốt nhất hiện nay.
 
-## Các mã nguồn mở phổ biến:
+## 1.3. Các mã nguồn mở phổ biến:
 
 ### Scrapy
 
 ![Scrapy](https://github.com/tuantmtb/int3507-2017/blob/master/group3/img/Scrapy-Logo.png?raw=true)
+
 Scrapy[2] là một framework được viết bằng Python, nó cấp sẵn 1 cấu trúc tương đối hoàn chỉnh để thực hiện việc thu thập 
 thông tin và trích xuất dữ liệu từ trang web một cách nhanh chóng và dễ dàng.
 
@@ -53,26 +76,21 @@ phát triển đang phải đối mặt hàng ngày như là:
 -	Cung cấp cơ chế auto-throttling tự động điều chỉnh tốc độ thu thập dữ liệu dựa trên cả máy chủ web và 
 máy tính người dùng.
 -	Tự động giữ lại các phiên làm việc. Nó xử lý cookies, đi qua nó một cách dễ dàng thông qua các yêu cầu
-(request). Xác thực cũng không phải là trở ngại ngay cả khi mẫu đăng nhập có CSRF token [3].
+(request). Xác thực cũng không phải là trở ngại ngay cả khi mẫu đăng nhập có CSRF token[3].
 -	Nó có thể tránh các bẫy đổi hướng .
 -	Lọc các yêu cầu trùng lặp và cho phép tùy chỉnh hành vi lọc.
 
 Hơn nữa, kiến trúc của Scrapy được tách ra, đủ để cho phép người dùng tùy chỉnh gần như mọi thứ. Đây là một công cụ rất 
-mạnh và linh hoạt.
+mạnh và linh hoạt. Trong báo cáo này sẽ mô tả chi tiết công nghệ Scrapy.
 
 ### Selenium
 
 ![Selenium](https://github.com/tuantmtb/int3507-2017/blob/master/group3/img/Selenium-logo.jpg?raw=true)
 
-Do các framework thu thập dữ liệu dưới dạng HTML nên với các xử lý về JavaScript bên trong, chúng ta thường 
-phải làm trình tự các bước giống như trong hàm JS. Nếu ta gặp phải hàm JS khởi tạo đến hàng nghìn dòng lệnh 
-thì dùng các framework thu thập dữ liệu thông thường là không thể. Selenium webdriver là một công cụ rất 
-hay có thể xử lý được rắc rối này.
-
-Selenium Webdriver[4] là một công cụ tự động hóa các thao tác của một người dùng bình thường trên trình 
-duyệt như: truy cập vào máy chủ, nhấp vào link, điền thông tin, gửi biểu mẫu,.. Selenium giống như một 
-người dùng, nó yêu cầu trang web tải toàn bộ HTML, JS, hình ảnh,.. Do đó, sử dụng selenium có thể khiến 
-tốc độ xử lý chậm hơn và tốn bộ nhớ hơn.
+Selenium Webdriver[4] được biết đến là một công cụ hỗ trợ kiểm thử giao diện.
+Tuy nhiên đối với những trang web có sử dụng JavaScript, Selenium đóng vai trò giống như một 
+người dùng, yêu cầu trang web tải toàn bộ HTML, JS, hình ảnh,.. hỗ trợ cho các framework thu thập dữ liệu dưới dạng HTML.
+Sử dụng Selenium có thể khiến tốc độ xử lý chậm hơn và tốn bộ nhớ hơn.
 
 ### Nutch
 
@@ -82,7 +100,7 @@ Apache Nutch[5] là một framework mã nguồn mở được viết bằng Java
 Apache Lucene. Mục tiêu chính của framework này là cào các dữ liệu phi cấu trúc từ các tài nguyên 
 khác nhau như RSS, HTML, CSV, PDF, và kết cấu nó cho quá trình tìm kiếm. Apache Nutch có thể quản lý 
 thu thập dữ liệu hiệu quả. Apache Lucene đóng một vai trò rất quan trọng trong việc giúp Nutch lập 
-chỉ mục và tìm kiếm. 
+chỉ mục và tìm kiếm.
 
 Chức năng của Apache Nutch cũng tương tự như các công cụ thu thập dữ liệu khác. Các khác biệt chính 
 của Apache Nutch bao gồm:
@@ -95,7 +113,9 @@ bắt buộc từ cấu hình.
 cho robots.txt. Nutch sẽ không thu thập nội dung từ các trang web bị hạn chế.
 
 ### Crawler4j
-Crawler4j[6] cung cấp một giao diện đơn giản để thu thập thông tin Web.
+Crawler4j[6] là thư viện crawler được phát triển từ năm 2008 và được viết bằng ngôn ngữ Java
+Crawler4j cung cấp một giao diện đơn giản để thu thập thông tin Web.Thư viện có một số ưu điểm 
+và nhược điểm nhất định như sau:
 
 #### Ưu điểm:
 -	Giao diện đơn giản, dễ dùng.
@@ -108,7 +128,7 @@ giải nén và lưu trữ cấu trúc liên kết và text của các bài vi�
 -	Không giới hạn số lượng yêu cầu gửi đến máy chủ (Ví dụ: Chính sách của Wikipedia không cho phép 
 các chương trình gửi yêu cầu nhanh hơn 1 yêu cầu/giây. Crawler4j có lịch sử gửi 200 yêu cầu/giây).
 -	Chỉ thu thập nội dung văn bản (không hình ảnh hay bất cứ nội dung khác).
--	Chỉ dùng được  với các trang có định dạng UTF-8
+-	Chỉ dùng được  với các trang có định dạng UTF-8.
 
 
 \[1] https://medium.com/@cabot_solutions/web-crawlers-everything-you-need-to-know-6dce26ee8ad8
@@ -122,9 +142,11 @@ các chương trình gửi yêu cầu nhanh hơn 1 yêu cầu/giây. Crawler4j c
 \[5] https://wiki.apache.org/nutch/FrontPage#What_is_Apache_Nutch.3F
 
 \[6] https://madurangasblogs.blogspot.com/2014/06/simple-web-crawler-with-crawler4j.html
-# Chi tiết về Scrapy
-## Kiến trúc Scrapy
-Kiến trúc Scrapy [1] được mô tả như trong hình vẽ sau:
+
+# 2. Chi tiết về Scrapy <a name="scrapy-detail"></a>
+## 2.1. Kiến trúc Scrapy <a name="scrapy-archi"></a>
+
+Scrapy được thiết kế kiến trúc mềm dẻo, gồm 5 thành phần chính như trong hình vẽ sau: [1]
 
 ![Kiến trúc Scrapy](https://doc.scrapy.org/en/latest/_images/scrapy_architecture_02.png)
 
@@ -137,6 +159,9 @@ Kiến trúc Scrapy [1] được mô tả như trong hình vẽ sau:
 - **Scrapy Engine**: quản lý các thành phần trên.
 
 ### Luồng dữ liệu
+
+Cơ chế hoạt động của scrapy được hoạt động gồm 9 bước chính:
+
 - Bước 1: Cung cấp URL xuất phát (start_url), được tạo thành một yêu cầu (request) lưu trong **Scheduler**.
 - Bước 2 - 3: **Scheduler** lần lượt lấy các yêu cầu gửi đến **Downloader**.
 - Bước 4 - 5: **Downloader** tải dữ liệu từ internet, được kết quả trả về (response) rồi gửi đến **Spiders**.
@@ -150,12 +175,12 @@ vào cơ sở dữ liệu.
     - Sai: Kết thúc.
 
 [1] https://doc.scrapy.org/en/latest/topics/architecture.html
-## Cài đặt scrapy
+## 2.2. Cài đặt scrapy <a name="scrapy-setup"></a>
 
-Scrapy chạy trên Python 2.7 và Python 3.3 trở lên.
-Đầu tiên tải và cài đặt Python.
+Thư viện Scrapy được viết bằng Python, hỗ trợ cả 2 phiên bản Python 2.7 và Python 3.3 trở lên.
+Scrapy hỗ trợ 2 cách cài đặt là sử dụng pip và Anaconda.
 
-Cài đặt Scarpy[1]:
+Cài đặt Scrapy:[1]
 
 - Cách 1: sử dụng `pip` là một trình quản lý gói và thư viện cho Python.
 Với `pip` việc cài đặt đơn giản bằng 1 dòng lệnh như sau
@@ -171,18 +196,18 @@ thư viện Python:
 conda install -c conda-forge scrapy
 ```
 
-## Ví dụ về thiết lập Scrapy:
+### Ví dụ về thiết lập Scrapy
 
-### Tạo một Scrapy project mới:
+#### Tạo một Scrapy project mới
 
-Chạy câu lệnh
+Để tạo một Scrapy project mới, ta thực hiện:
+
 ```lightning
 scrapy startproject tutorial
 ```
 
 #### Danh sách mã nguồn:
-Sau khi thực hiện câu lệnh trên thì sẽ tạo ra các tệp có cấu trúc 
-như sau:
+Sau khi chạy lệnh khởi tạo project. Cấu trúc chương trình được trình bày như sau:
 
 ```lightning
 ├── __init__.py
@@ -197,10 +222,10 @@ như sau:
 
 #### Viết một spider
 
-[Spider](#spider) là lớp được người dùng định nghĩa. Scrapy sử dụng spider này để cào 
+[Spider](#spider) là lớp được người dùng định nghĩa. Scrapy sử dụng spider này để thu thập 
 thông tin từ một miền (hoặc một nhóm  miền).
 
-Trong spider định nghĩa một danh sách các URLs khởi tạo cần cào dữ liệu, cách lấy 
+Trong spider định nghĩa một danh sách các URLs khởi tạo cần thu thập dữ liệu, cách lấy 
 các link kéo theo, và cách phân tích cú pháp (parse) nội dung của các trang để 
 trích xuất các mục dữ liệu.
 
@@ -233,7 +258,7 @@ class QuotesSpider(scrapy.Spider):  #extend class scrapy.Spider
 Một số thuộc tính được định nghĩa trong spider:
 
 - `name`: định danh spider và nó là duy nhất.
-- `start_urls`: một danh sách urls cho spider bắt đầu thực hiện cào dữ liệu. 
+- `start_urls`: một danh sách urls cho spider bắt đầu thực hiện thu thập dữ liệu. 
 Các trang được tải đầu tiên sẽ bắt đầu từ đây, còn lại sẽ được tạo từ dữ liệu 
 đã được lấy về.
 - `parse`: một phương thức sẽ được gọi để giải quyết kết quả phản hồi trả về từ 
@@ -244,13 +269,13 @@ liệu đã được thu thập, tìm kiếm các url mới và tạo các yêu 
 
 #### Chạy spider
 
-Tới thư mục gốc của dự án và chạy lệnh:
+Để thực hiện chạy spider, tới thư mục gốc của dự án và sử dụng lệnh:
 
 ```lightning
 scrapy crawl quotes
 ```
 
-Dòng lệnh sẽ gửi một số yêu cầu tới quotes.toscrape.com.
+Dòng lệnh sẽ gửi một số yêu cầu tới quotes.toscrape.com
 
 Quá trình thực hiện:
 
@@ -261,14 +286,14 @@ sau đó được đưa trở lại spider thông qua phương thức `parse`.
 
 #### Trích xuất dữ liệu
 
-Sử dụng `Scrapy shell` [2] để nghiên cứu dữ liệu được kết xuất mà không cần phải
+Sử dụng `Scrapy shell`[2] để nghiên cứu dữ liệu được kết xuất mà không cần phải
 chạy spider, chạy lệnh như sau:
 
 ```lighting
 scrapy shell 'http://quotes.toscrape.com/page/1/'
 ```
 
-Trên Windows, url được đặt trong dấu nháy kép thay vì dấu nháy đơn như ở trên
+Trên Windows, url được đặt trong dấu nháy kép thay vì dấu nháy đơn như ở trên:
 
 ```lighting
 scrapy shell "http://quotes.toscrape.com/page/1/"
@@ -295,11 +320,11 @@ Sau khi chạy lệnh `scrapy shell` sẽ xuất hiện thông tin như sau:
 ```
 
 Sử dụng `shell` có thể chọn các phần tử bằng cách sử dụng Css, Xpath với đối tượng
-trả về. Sử dụng cơ chế kết xuất dữ liệu dựa trên Xpath hoặc biểu thức CSS gọi là 
-bộ chọn Scrapy (Scrapy Selector). Bộ chọn bằng XPath mạnh mẽ hơn CSS.
+trả về. Sử dụng cơ chế kết xuất dữ liệu dựa trên Xpath hoặc biểu thức Css gọi là 
+bộ chọn Scrapy (Scrapy Selector). Bộ chọn bằng XPath mạnh mẽ hơn Css.
 
 - Scrapy cung cấp lớp Selector và một số quy ước, cú pháp để làm việc với biểu thức 
-xpath và css.
+XPath và Css.
 - Đối tượng selector đại diện các nút (nodes) ở trong một văn bản có cấu trúc. Vì thế đầu tiên khởi 
 tạo một selector gắn với nút gốc hoặc toàn bộ tài liệu.
 - Selector có 4 phương thức cơ bản:
@@ -334,7 +359,7 @@ response.xpath()
 response.css()
 ```
 
-##### Sử dụng item (dữ liệu trả về của một trang):
+##### Sử dụng item (dữ liệu trả về của một trang)
 
 - Có thể truy cập vào các trường của item bằng cách:
 
@@ -350,7 +375,7 @@ url = response.urljoin(href.extract())
 yield scrapy.Request(url, callback=self.parse_dir_contents)
 ```
 
-##### Lưu trữ dữ liệu đã thu thập được.
+##### Lưu trữ dữ liệu đã thu thập được
 
 Cách đơn giản để lưu trữ dữ liệu thu thập được là sử dụng Feed exports[3], dùng câu lệnh:
 
@@ -363,13 +388,14 @@ scrapy crawl quotes -o quotes.json
 [2] https://doc.scrapy.org/en/latest/topics/shell.html
 
 [3] https://doc.scrapy.org/en/0.16/topics/feed-exports.html#topics-feed-exports
-## Spider <a name="spider"></a>
 
-Spider[1] là lớp định nghĩa cách cào một hay nhiều trang, bao gồm cách thực hiện thu thập thông tin và 
+## 2.3. Spider <a name="spider"></a>
+
+Spider[1] là lớp định nghĩa cách thu thập một hay nhiều trang, bao gồm cách thực hiện thu thập thông tin và 
 trích xuất dữ liệu có cấu trúc. Nói cách khác, Spider là nơi xác định hành vi tùy chỉnh để thu thập 
 dữ liệu và phân tích cú pháp các trang cho một trang web cụ thể.
 
-Chu kỳ cào dữ liệu đối với spider như sau:
+Chu kỳ thu thập dữ liệu đối với spider như sau:
 1. Bắt đầu bằng cách tạo ra yêu cầu (request) ban đầu để thu thập thông tin các URL đầu tiên và 
 chỉ định hàm `callback` được gọi với tham số là các phản hồi trả về từ các `Request`. 
 Các yêu cầu đầu tiên được thực hiện bằng cách gọi phương thức `start_request()`, 
@@ -437,7 +463,7 @@ class MySpider(scrapy.Spider):
 ### Các spider phổ biến
 
 Scrapy đi kèm với một số spdier phổ biến hữu ích, có thể dùng để phân lớp spider. Mục tiêu của chúng là 
-cung cấp chức năng tiện lợi cho một số trường hợp cào thông thường như lần theo tất cả các liên kết trên 
+cung cấp chức năng tiện lợi cho một số trường hợp thu thập thông thường như lần theo tất cả các liên kết trên 
 một trang web dựa trên các quy tắc nhất định, thu thập thông tin từ Sitemaps [2] hoặc phân tích 
 nguồn cấp dữ liệu XML/CSV.
 
@@ -485,7 +511,7 @@ Spider này hỗ trợ sơ đồ trang web lồng nhau và tìm kiếm sơ đồ
 [2] https://www.sitemaps.org/index.html
 
 [3] http://www.robotstxt.org/
-## Kết xuất (Extractor)
+## 2.4. Trích xuất dữ liệu (Extractor) <a name="extractor"></a>
 ### Duyệt tất cả các trang
 
 Cần xác định rõ cấp độ của trang:
@@ -576,27 +602,29 @@ Xpath này loại trừ nội dung từ tập lệnh và các thẻ kiểu (styl
 các nút văn bản chỉ có khoảng trắng [1]
 
 [1] http://stackoverflow.com/a/19350897/2572383
-## Item Pipeline
+## 2.5. Item pipeline <a name="item-pipeline"></a>
 
-Một item sau khi đã được cào bởi spider sẽ được chuyển đến Item Pipeline để xử lí thông qua một số 
+Một item sau khi đã được thu thập bởi spider sẽ được chuyển đến item pipeline để xử lí thông qua một số 
 thành phần được thực hiện tuần tự.
 
-Mỗi thành phần Item pipeline là một lớp Python thực hiện một phương thức đơn giản. Các lớp này nhận 
-item và thực hiện các công việc đối với item và đồng thời quyết định xem item đó có tiếp thục pipeline 
+Mỗi thành phần item pipeline là một lớp Python thực hiện một phương thức đơn giản. Các lớp này nhận 
+item và thực hiện các công việc đối với item và đồng thời quyết định xem item đó có tiếp tục pipeline 
 hay bị bỏ và không còn được tiến hành nữa.
 
-Các ứng dụng tiêu biểu của Item pipeline:
+Các ứng dụng tiêu biểu của item pipeline:
 * Dọn dẹp dữ liệu HTML.
-* Xác nhận dữ liệu được cào (kiểm tra các item chứa các trường nhất định).
+* Xác nhận dữ liệu được thu thập (kiểm tra các item chứa các trường nhất định).
 * Kiểm tra (và bỏ) các bản sao.
-* Lưu trữ các item được cào trong cơ sở dữ liệu.
+* Lưu trữ các item được thu thập trong cơ sở dữ liệu.
 
 ### Viết item pipeline
+
 Mỗi thành phần item pipeline là một lớp Python thực hiện các phương thức:
 
 ```python
 process_item(item, spider)
-```  
+```
+
 Phương thức này được gọi cho mỗi thành phần item pipeline và phải trả về một đối tượng `Item` 
 (hoặc bất kỳ lớp con nào) hoặc đưa ra một ngoại lệ `DropItem`. Các item bị loại bỏ không còn được xử lý 
 bởi pipeline nữa.
@@ -633,7 +661,7 @@ class PricePipeline(object):
             raise DropItem("Missing price in %s" % item)
 ```
 #### Viết item vào tệp JSON
-Pipeline sau đây lưu trữ tất cả các item đã cào (từ tất cả spider) vào một tệp `items.jl`, chứa mỗi item 
+Pipeline sau đây lưu trữ tất cả các item đã thu thập (từ tất cả spider) vào một tệp `items.jl`, chứa mỗi item 
 trên mỗi dòng, được tuần thự theo định dạng JSON:
 
 ```python
@@ -652,8 +680,8 @@ class JsonWriterPipeline(object):
 
 #### Ghi các item vào MongoDB
 
-Ghi các item vào MongoDB bằng cách dùng pymongo [1]. Địa chỉ MongoDB và tên cơ sở dữ liệu được chỉ định 
-trong phần cài đặt scrapy.
+Ghi các item vào MongoDB bằng cách dùng thư viện pymongo[1]. Địa chỉ MongoDB và tên cơ sở dữ liệu được chỉ định 
+trong phần cài đặt Scrapy.
 
 Điểm chính của ví dụ này là chỉ ra cách sử dụng phương thức `from_crawler()` và cách làm sạch các 
 tài nguyên đúng cách:
@@ -689,80 +717,51 @@ class MongoPipeline(object):
 ```
 
 [1] https://api.mongodb.com/python/current/
-## Lưu dữ liệu vào cơ sở dữ liệu
 
-### MongoDB: là kiểu noSQL
+## 2.6. Lưu dữ liệu vào cơ sở dữ liệu <a name="save-data"></a>
 
-Logo MongoDB
+Sau khi dữ liệu được lấy về từ trang web sẽ được lưu trữ vào cơ sở dữ liệu.
+Sau đây là mô tả về thành phần pipeline phục vụ cho việc lưu dữ liệu vào
+cơ sở dữ liệu MongoDB.
+  
+#### Cấu trúc Pipeline.py
 
-![MongoDB](https://github.com/tuantmtb/int3507-2017/blob/master/group3/img/Mongodb-logo.jpeg?raw=true)
-
-Tải docker image của MongoDB [1] về và chạy lệnh:
-
-```lightning
-mongod
-```
-
-Tạo tệp docker-compose.yml có nội dung:
-
-```lightning
-version: "2"
-services:
-    MongoDB:
-        image: mongo:3.2
-        ports:
-            - "27017:27017"
-        volumes:
-            - ./MongoDB-data/:/data/db
-        hostname: MongoDB
-        domainname: coclab.lan
-        cpu_shares: 512             # 0.5 CPU
-        mem_limit: 536870912        # 512 MB RAM
-        privileged: true
-        restart: always
-        stdin_open: true
-        tty: true
-```
-
-Tham chiếu thuật ngữ tương đương giữa MongoDB và MySQL
-
-```lightning
-Database == Database
-Collection == Table
-Document == Row
-```
-
-### Lưu dữ liệu vào cơ sở dữ liệu Mongo
-#### Khung tệp Pipeline.py
+Dữ liệu thu thập được sẽ được đưa đến item pipeline để bóc tách và ghi vào MongoDB. 
+Việc này được thực hiện bởi một class định nghĩa trong tệp pipeline.py như trong ví
+dụ sau:
 
 ```python
 import pymongo
 class MongoPipeline(object):
     collection_name = 'scrapy_items'
-
-def __init__(self, mongo_uri, mongo_db):
-    self.mongo_uri = mongo_uri
-    self.mongo_db = mongo_db
-
-@classmethod
-def from_crawler(cls, crawler):
-    return cls(
-        mongo_uri=crawler.settings.get('MONGO_URI'),
-        mongo_db=crawler.settings.get('MONGO_DATABASE', 'items')
-    )
-
-def open_spider(self, spider):
-    self.client = pymongo.MongoClient(self.mongo_uri)
-    self.db = self.client[self.mongo_db]
-
-def close_spider(self, spider):
-    self.client.close()
-def process_item(self, item, spider):
-        self.db[self.collection_name].insert(dict(item))
-        return item
+    
+    def __init__(self, mongo_uri, mongo_db):
+        self.mongo_uri = mongo_uri
+        self.mongo_db = mongo_db
+    
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(
+            mongo_uri=crawler.settings.get('MONGO_URI'),
+            mongo_db=crawler.settings.get('MONGO_DATABASE', 'items')
+        )
+    
+    def open_spider(self, spider):
+        self.client = pymongo.MongoClient(self.mongo_uri)
+        self.db = self.client[self.mongo_db]
+    
+    def close_spider(self, spider):
+        self.client.close()
+    def process_item(self, item, spider):
+            self.db[self.collection_name].insert(dict(item))
+            return item
 ```
+
 #### Xuất/nhập dữ liệu vào MongoDB
 ##### Xuất dữ liệu từ máy chủ
+
+Sau khi đã hoàn thành bước tách cấu trúc trang, dữ liệu được đẩy vào MongoDB qua pipeline. 
+Để xuất dữ liệu từ MongoDB ta thực hiện:
 
 ```lightning
 mongodump --archive=crawler.`date +%Y-%m-%d"_"%H-%M-%S`.gz --gzip --db crawler
@@ -782,14 +781,13 @@ Khôi phục:
 mongorestore --gzip --archive=/root/crawler.2016-04-18_07-40-11.gz --db crawler
 ```
 
-[1] : https://hub.docker.com/_/mongo/
-## Cấu hình nâng cao Scrapy
+## 2.7. Cấu hình nâng cao Scrapy <a name="advance-config"></a>
 ### Cấu hình trong thư mục Setting
 #### ITEM_PIPELINES
 
 Mặc định: {}
 
-ITEM_PIPELINES [1] là một từ điển (dict) ban đầu mặc định là rỗng. Điều cần làm là xác định một trật tự 
+ITEM_PIPELINES[1] là một từ điển (dict) ban đầu mặc định là rỗng. Điều cần làm là xác định một trật tự 
 trong đó pipeline được áp dụng. Số pipeline có thể định nghĩa trong khoảng 0-1000. Đây là lý do tại sao 
 cần chỉ định một số từ 0 đến 1000 cho mỗi pipeline được định nghĩa.
 
@@ -877,7 +875,8 @@ Tên cài đặt thường được đặt trước với thành phần mà chú
 giả tưởng robots.txt sẽ là ROBOTSTXT_ENABLED, ROBOTSTXT_OBEY, ROBOTSTXT_CACHEDIR, vv.
 
 [1] https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-## Các vấn đề cần giải quyết với scrapy
+
+## 2.8. Các vấn đề cần giải quyết với scrapy <a name="todos"></a>
 
 Hệ thống crawler cơ bản gồm 4 bước chính là lựa chọn các trang lấy dữ liệu, đọc html, tách html và lưu trữ. 
 Tuy nhiên không phải mọi trang ta lấy đều đơn giản như vậy. Một số trang web ngăn chặn truy cập bằng 
@@ -914,7 +913,7 @@ cache các truy cập đó. Ngoài ra ta nên lưu trữ các đường dẫn v�
 sở dữ liệu như MongoDB để thuận tiện cho việc kiểm tra cũng như phân tích 
 sau này.
 
-## Kết luận
+## 3. Kết luận <a name="summary"></a>
 
 ### Ưu điểm
 
@@ -928,7 +927,9 @@ không phải là trở ngại ngay cả khi mẫu đăng nhập có CSRF token.
 
 ### Hạn chế
 
-- Với trường hợp máy khách tải dữ liệu bằng cơ chế không đồng bộ (ajax), scrapy thông thường khó xử lý được. Do đó ta nên sử dụng các web driver thay thế cho scrapy. Có thể dùng Selenium, PhantomJS để xử lý
+- Với trường hợp máy khách tải dữ liệu bằng cơ chế không đồng bộ (ajax), 
+scrapy thông thường khó xử lý được. Do đó ta nên sử dụng các web driver 
+thay thế cho scrapy. Có thể dùng Selenium, PhantomJS để xử lý
 - Kiến trúc scrapy thiết kế chạy đơn luồng
 - Khó xử lý được lượng dữ liệu lớn
 
