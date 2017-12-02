@@ -5,6 +5,10 @@
 - Nguyễn Minh Đức 
 - Bùi Thị Trung Thuỷ
 - Vũ Nam Tước
+
+## Lưu ý: Đây chỉ là bản sơ lược để tiện theo dõi, báo cáo đầy đủ được đưa vào tệp Nhom8_Ethereum_BaoCaoCVDHD.pdf
+
+## Ứng dụng demo: Ứng dụng được triển khai tại tên miền vote.ducpham.xyz
  
 ## Mô tả đề tài
 

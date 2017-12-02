@@ -37,6 +37,16 @@ class AccountController {
     let filedir = os.homedir() + '/.ethereum/rinkeby/keystore/' + account.address + '.txt'
     fs.writeFileSync(filedir, account.encrypt)
 
+    // give ether for test 
+    let adminAddr = '4b3e6c4f32afa38c39546ba501d89339ed4f52ae'
+    let password = '111111'
+    yield web3.eth.personal.unlockAccount(adminAddr, password, 2000)
+    web3.eth.sendTransaction({
+      from: adminAddr,
+      to: account.address,
+      value: '200000000000000000'
+    })
+
     res.send({
       account
     })
