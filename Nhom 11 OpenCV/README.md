@@ -67,21 +67,21 @@ Giao thức bắt tay của WebSocket:
 
 Client request:
 
-  GET /mychat HTTP/1.1
-  Host: server.example.com
-  Upgrade: websocket
-  Connection: Upgrade
-  Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
-  Sec-WebSocket-Protocol: chat
-  Sec-WebSocket-Version: 13
-  Origin: http://example.com
+	GET /mychat HTTP/1.1
+	Host: server.example.com
+	Upgrade: websocket
+	Connection: Upgrade
+	Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
+	Sec-WebSocket-Protocol: chat
+	Sec-WebSocket-Version: 13
+	Origin: http://example.com
 
 Server response:(Server Architecture)
 
-  HTTP/1.1 101 Switching Protocols
-  Upgrade: websocket
-  Connection: Upgrade
-  Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=
+	HTTP/1.1 101 Switching Protocols
+	Upgrade: websocket
+	Connection: Upgrade
+	Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=
 Để xác nhận việc kết nối, client sẽ gửi một giá trị Sec-WebSocket-Key được mã hóa bằng Based64 đến server. Sau đó bên server sẽ thực hiện:
 - Nối thêm chuỗi cố định là “258EAFA5-E914-47DA-95CA-C5AB0DC85B11″ vào Sec-WebSocket-Key để được chuỗi mới là “x3JJHMbDL1EzLkh9GBhXDw==258EAFA5-E914-47DA-95CA-C5AB0DC85B11″.
 - Thực hiện mã hóa SHA-1 chuỗi trên để được “1d29ab734b0c9585240069a6e4e3e91b61da1969″.
