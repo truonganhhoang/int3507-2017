@@ -15,7 +15,7 @@
 #### 1. Tổng quan về OpenCV
 
 <p align="center">
-  <img src="https://jayrambhia.files.wordpress.com/2012/06/opencv_hor_900_1.jpg" width="200" height="400" style="text-align: center;">
+  <img src="https://jayrambhia.files.wordpress.com/2012/06/opencv_hor_900_1.jpg" width="400" height="200" style="text-align: center;">
 </p>
 
 <p align="center">
@@ -62,8 +62,10 @@ WebSocket là công nghệ hỗ trợ giao tiếp hai chiều giữa client và 
 Hiện tại Websocket đã được hỗ trợ trên 74% các trình duyệt. Bạn có thể xem số liệu mới nhất tại [đây](https://caniuse.com/#search=websocket)
 
 Giao thức bắt tay của WebSocket:
-![img00](https://poesiabinaria.net/wp-content/uploads/2016/10/WebSockets-Diagram.png)
 
+<p align="center">
+  <img src="https://poesiabinaria.net/wp-content/uploads/2016/10/WebSockets-Diagram.png" width="400" height="200" style="text-align: center;">
+</p>
 
 
 Để thực hiện kết nối, client phải gửi một WebSocket handshake request đến server. Server sẽ gửi trả lại WebSocket handshake response như ví dụ bên dưới:
@@ -146,11 +148,13 @@ Tìm hiểu thêm tại trang [manual](https://socket.io/#how-to-use)
 
 Ví dụ về cấu trúc của một Class JNI:
 
-![img000](http://vietgamedev.net/file/attachment/2013/08/276f80e2cb29445c46c18d07132d91da_view.png)
+<p align="center">
+  <img src="http://vietgamedev.net/file/attachment/2013/08/276f80e2cb29445c46c18d07132d91da_view.png">
+</p>
 
-
-
-Hình 2. Cấu trúc Class JNI
+<p align="center">
+  Hình 2. Cấu trúc Class JNI
+</p>
 
 JNI (Java Native Interface) là một framework cho phép gọi các hàm Java trong JVM từ các ngôn ngữ cấp thấp như C, C++ hay assembly. Nói nôm na dễ hiểu là mình muốn gọi Java từ C++ thì mình sẽ gọi thông qua JNI. Ta thường dùng JNI khi muốn gọi các phương thức đặc trưng của Android như: gửi tin nhắn, thực hiện cuộc gọi... JniHelper class là lớp singleton cocos2d-x cung cấp để hỗ trợ việc sử dụng JNI một cách dễ dàng hơn. Ta sẽ dùng lớp này để thực hiện các lệnh gọi Java từ C++.
 
@@ -181,11 +185,13 @@ Mã này có thể xoay theo nhiều chiều khác nhau trong môi trường, v�
 
 Hình ảnh ví dụ về mã ArUco:
 
-![img01](https://docs.opencv.org/3.1.0/markers.jpg)
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/markers.jpg">
+</p>
 
-
-
-Hình 3. Mã ArUco
+<p align="center">
+  Hình 3. Mã ArUco
+</p>
 
 ##### b. Từ điển
 
@@ -218,10 +224,14 @@ Trước khi nhận dạng mã, các mã cần được in ra và được đặ
 
 Hình ảnh mã được tạo:
 
-![img02](https://docs.opencv.org/3.1.0/marker23.jpg)
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/marker23.jpg">
+</p>
 
+<p align="center">
+  Hình 4. Mã được tạo
+</p>
 
-Hình 4. Mã được tạo
 
 ---
 #### III. THUẬT TOÁN NHẬN DẠNG MÃ
@@ -240,23 +250,36 @@ Quá trình nhận dạng mã bao gồm 2 bước chính:
 
 Xem xét hình ảnh sau:
 
-![img03](https://docs.opencv.org/3.1.0/singlemarkersoriginal.png)
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/singlemarkersoriginal.png">
+</p>
 
+<p align="center">
+  Hình 5. Ảnh gốc chứa các mã
+</p>
 
-
-Hình 5. Ảnh gốc chứa các mã
 
  Đây là mã được phát hiện (màu xanh lá cây):
-![img04](https://docs.opencv.org/3.1.0/singlemarkersdetection.png)
 
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/singlemarkersdetection.png">
+</p>
 
-Hình 6. Ảnh chứa mã đã phát hiện
+<p align="center">
+  Hình 6. Ảnh chứa mã đã phát hiện
+</p>
+
 
 Và đây là những đối tượng đã bị loại bỏ trong bước nhận dạng (màu hồng):
-![img05](https://docs.opencv.org/3.1.0/singlemarkersrejected.png)
 
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/singlemarkersrejected.png">
+</p>
 
-Hình 7.  Ảnh chứa các đối tượng bị loại bỏ
+<p align="center">
+  Hình 7.  Ảnh chứa các đối tượng bị loại bỏ
+</p>
+
 
 Trong module ArUco, việc phát hiện mã được thực hiện bởi hàm detectMarkers(). Đây là chức năng quan trọng nhất trong module, vì tất cả các phần còn lại của các chức năng được dựa trên các dấu hiệu phát hiện trước đó được trả về bởi detectMarkers().
 Một ví dụ về phát hiện mã:
@@ -292,10 +315,14 @@ Xem ví vụ sau:
   1. image là hình ảnh đầu vào / đầu ra, nơi mã sẽ được lấy ra (nó thường sẽ là hình ảnh tương tự, nơi các mã đã được phát hiện)
   2. markerCorners và markerIds là cấu trúc của các mã được phát hiện trong cùng một định dạng được cung cấp bởi hàm detectMarkers()
 
-![img06](https://docs.opencv.org/3.1.0/singlemarkersrejected.png)
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/singlemarkersrejected.png">
+</p>
 
+<p align="center">
+  Hình 8. Ảnh có mã được phát hiện
+</p>
 
-Hình 8. Ảnh có mã được phát hiện
 
 Chú ý rằng chức năng này chỉ được cung cấp cho việc hình dung mã và việc sử dụng nó có thể được bỏ qua hoàn toàn. Với hai chức năng này, chúng ta có thể tạo ra một vòng lặp dò tìm cơ bản để phát hiện các mã từ máy ảnh.
 
