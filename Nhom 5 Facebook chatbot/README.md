@@ -5,7 +5,6 @@
 [![MongoDB](https://img.shields.io/badge/mongodb-3.6-blue.svg)](https://www.mongodb.com/)
 [![Ngrok](https://img.shields.io/badge/ngrok-download-lightgrey.svg)](https://ngrok.com/download)
 
-
 **Môn học**: Các vấn đề hiện đại trong Công nghệ thông tin
 
 **Giảng viên**: Trương Anh Hoàng
@@ -20,7 +19,6 @@
 | Nguyễn Văn Nhật                    	| - Thiết kế cơ sở dữ liệu, cài đặt và triển khai máy chủ tìm kiếm <br/> - Thiết kế các Crawler thu thập/cập nhật thông tin của hơn 100 giảng viên <br/> - Viết tài liệu                                                                                                                                            	| 9.5/10   	|
 
 ## Danh sách khái niệm, thuật ngữ
-
 
 | Khái niệm/Thuật ngữ                      	| Giải thích                                                                                                                                                                                                                                                                                                                                                                         	|
 |------------------------------------------	|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
@@ -57,7 +55,7 @@
 
     - [2.1. Cơ chế hoạt động của Facebook Chatbot](#21-cơ-chế-hoạt-động-của-facebook-chatbot)
     
-    - [2.2. Kết nối hai chiều với Facebook thông qua Webhook và Rest API](#22-kết-nối-với-facebook-thông-qua-webhook-và-rest-api)
+    - [2.2. Kết nối hai chiều với Facebook thông qua Webhook và REST API](#22-kết-nối-với-facebook-thông-qua-webhook-và-rest-api)
     
     - [2.3. Xây dựng máy chủ chatbot nhận, xử lý tin nhắn và phản hồi tin nhắn phù hợp](#23-xây-dựng-máy-chủ-chatbot-nhận-xử-lý-tin-nhắn-và-phản-hồi-tin-nhắn-phù-hợp)
     
@@ -76,6 +74,8 @@
 	- [Kết quả đạt được](#kết-quả-đạt-được)
 	
 	- [Định hướng tương lai](#Định-hướng-tương-lai)
+	
+- [Tài liệu tham khảo](#tài-liệu-tham-khảo)
 
 ## Lời mở đầu
 
@@ -103,9 +103,9 @@ Dựa vào cơ chế hoạt động của Facebook Chatbot, để xây dựng m�
 
 ###### Hình 1.1: Sơ đồ hoạt động của ứng dụng Facebook Chatbot
 
-Hình trên mô tả ứng dụng Facebook Chatbot mà chúng tôi đã triển khai. Hai mũi tên ngược chiều nhau giữa `Facebook` và `Chatbot server` thể hiện tương tác hai chiều thông qua Webhook và Rest API. Ứng dụng được chia làm 2 tầng chính với các chức năng như sau:
+Hình trên mô tả ứng dụng Facebook Chatbot mà chúng tôi đã triển khai. Hai mũi tên ngược chiều nhau giữa `Facebook` và `Chatbot server` thể hiện tương tác hai chiều thông qua Webhook và REST API. Ứng dụng được chia làm 2 tầng chính với các chức năng như sau:
 
-- Máy chủ Chatbot (Chatbot server) có nhiệm vụ kết nối hai chiều với Facebook thông qua Webhook và Rest API, tiếp nhận, xử lý và điều hướng các hành động và tin nhắn của nguời dùng. Đồng thời dữ liệu về người dùng cũng như các tin nhắn của họ cũng được máy chủ lưu lại.
+- Máy chủ Chatbot (Chatbot server) có nhiệm vụ kết nối hai chiều với Facebook thông qua Webhook và REST API, tiếp nhận, xử lý và điều hướng các hành động và tin nhắn của nguời dùng. Đồng thời dữ liệu về người dùng cũng như các tin nhắn của họ cũng được máy chủ lưu lại.
     
 - Máy chủ tìm kiếm (Search server) đóng vai trò cung cấp các API tìm kiếm các môn học, giảng viên,... Máy chủ tìm kiếm sẽ thực hiện các thao tác với dữ liệu về môn học, giảng viên,... trên MySQL và Elasticsearch, quản lý quá trình đẩy dữ liệu từ MySQL sang Elasticsearch (indexing) nhằm mục đích thực hiện truy vấn một cách nhanh chóng để lấy dữ liệu cần tìm kiếm.
 
@@ -119,9 +119,9 @@ Song song với đó, các trình thu thập thông tin sẽ thu thập dữ li�
 
 Đầu tiên, ta phải tạo và đăng kí địa chỉ của máy chủ Chatbot nhận tin nhắn trên trang cho Webhook của Facebook với Facebook. Khi có tin nhắn gửi đến trang, Facebook sẽ gửi một HTTP POST thông qua Webhook này để chúng ta tiếp tục xử lý.
 
-Sau khi xử lý xong, nếu muốn trả lời lại người dùng, chúng ta phải gửi tin nhắn qua Rest API của Facebook. Nhờ đó, một tin nhắn từ trang tới người dùng được Facebook gửi đi.
+Sau khi xử lý xong, nếu muốn trả lời lại người dùng, chúng ta phải gửi tin nhắn qua REST API của Facebook. Nhờ đó, một tin nhắn từ trang tới người dùng được Facebook gửi đi.
 
-### 2.2. Kết nối với Facebook thông qua Webhook và Rest API
+### 2.2. Kết nối với Facebook thông qua Webhook và REST API
 
 Phần này sẽ tập trung vào cách thức xây dựng máy chủ Chatbot để tiếp nhận các yêu cầu của người dùng và xử lý hoặc điều hướng xử lý chúng. Máy chủ Chatbot có thể được viết bằng bất kỳ ngôn ngữ lập trình nào, bài báo cáo này sẽ trình bày một ứng dụng mẫu do chúng tôi xây dựng dựa trên Framework ExpressJS của Nodejs và cơ sở dữ liệu được sử dụng là MongoDB
 
@@ -324,7 +324,7 @@ Máy chủ tìm kiếm đang được chạy trên IP `52.15.160.33`. API đư�
 - Nhận thấy nhu cầu hỏi đáp của sinh viên đối với phòng Công tác sinh viên và phòng Đào tạo Đại học là rất nhiều. Bên cạnh đó, khối lượng công việc giải đáp của các chuyên viên 2 phòng này cũng rất lớn và câu hỏi của sinh viên thường xuyên bị lặp lại. Chính vì vậy, nhóm nghiên cứu đã đang và sẽ thu thập thêm các câu hỏi và giải đáp thắc mắc của sinh viên với phòng Công tác sinh viên và phòng Đào tạo Đại học nhằm mục đích ứng dụng để giảm tải khối lượng công việc của 2 phòng này.
 - Triển khai rộng rãi lên trang SGUET sau quãng thời gian thử nghiệm và đánh giá từ người dùng.
 
-### Tài liệu tham khảo
+## Tài liệu tham khảo
 1. Constine, J. Facebook’s Secret Chat SDK Lets
 Developers Build Messenger Bots. Note on
 Techcrunch. (2016) Retrieved from
