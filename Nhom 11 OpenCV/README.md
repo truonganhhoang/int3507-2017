@@ -618,7 +618,7 @@ Sau khi các mã đã được phát hiện và xác định, bước cuối cù
 - Sau khi chọn câu hỏi, ứng dụng sẽ hiển thị câu hỏi.
 
 <p align="center">
-  <img src="./image/question.png" width="480" height="270" style="text-align: center;">
+  <img src="./image/question.png" width="200" height="400" style="text-align: center;">
 
 </p>
 <p align="center">Hình 18. Màn hình câu hỏi</p>
@@ -627,7 +627,7 @@ Sau khi các mã đã được phát hiện và xác định, bước cuối cù
 - Khi bạn ấn vào nút SCAN, camera sẽ hiển thị, bắt đầu quét các mã trong không gian và nhận dạng chúng.
 
 <p align="center">
-  <img src="./image/detect.png" style="text-align: center;">
+  <img src="./image/detect.png" width="480" height="270" style="text-align: center;">
 
 </p>
 <p align="center">Hình 19. Màn hình camera hiển thị kết quả.
