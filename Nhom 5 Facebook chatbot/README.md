@@ -11,10 +11,13 @@
 **Giảng viên**: Trương Anh Hoàng
 
 **Nhóm 5**: Facebook Chatbot
-- Nguyễn Đức Thuần
-- Phan Thị Hà Trang
-- Nguyễn Thị Lan
-- Nguyễn Văn Nhật
+
+| Thành viên                         	| Nhiệm vụ                                                                                                                                                                                 	| Đánh giá 	|
+|------------------------------------	|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|----------	|
+| **Nguyễn Đức Thuần** (nhóm trưởng) 	| - Dev và deploy máy chủ Chatbot <br/> - Phân công công việc cho các thành viên                                                                                                           	|          	|
+| Phan Thị Hà Trang                  	| - Khảo sát các vấn đề mà sinh viên quan tâm <br/> - Thu thập dữ liệu về hướng nghiên cứu của giảng viên <br/> - Thu thập dữ liệu về các môn học, văn bản, biểu mẫu                       	|          	|
+| Nguyễn Thị Lan                     	| - Thu thập dữ liệu về gần 100 câu hỏi thường gặp của sinh viên và câu trả lời tương ứng <br/> - Thu thập dữ liệu về thông tin của trên 300 giảng viên (số điện thoại, email, đơn vị,...) 	|          	|
+| Nguyễn Văn Nhật                    	| - Dev và deploy máy chủ tìm kiếm <br/> - Thiết kế crawler thu thập/cập nhật thông tin của hơn 100 giảng viên                                                                             	|          	|
 
 ## Danh sách khái niệm, thuật ngữ
 
