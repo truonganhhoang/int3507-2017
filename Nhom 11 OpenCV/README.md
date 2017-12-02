@@ -538,27 +538,39 @@ Sau khi các mã đã được phát hiện và xác định, bước cuối cù
 - Sau khi tải file apk về thiết bị di động của bạn, hãy mở nó ra.
 - Màn hình đăng nhập hiển thị, yêu cầu bạn đăng nhập tài khoản để có thể sử dụng ứng dụng.
 
-![img13](https://photos.app.goo.gl/xMyIzbgyDZSpJ1ch1)
+![img13](./image/login.png =100x20)
 
 
 
 Hình 15. Màn hình đăng nhập
 
-- Sau khi đăng nhập thành công, màn hình chính sẽ hiển thị như hình ảnh dưới đây:
+- Sau khi đăng nhập thành công, màn hình chính sẽ hiển thị danh sách bài kiểm tra như hình ảnh dưới đây:
 
 ![img14](https://photos.app.goo.gl/4jB3O1xjfCxsOcLW2)
 
 
 
-Hình 16. Màn hình chính
+Hình 16. Màn hình danh sách bài kiểm tra
+
+- Sau khi chọn bài kiểm tra, ứng dụng sẽ hiển thị danh sách câu hỏi.
+
+![img17](https://drive.google.com/file/d/1foXO5nt6uymTgyA2dYOaCVg2nhO1gg8i/view?usp=sharing)
+
+Hình 17. Màn hình danh sách câu hỏi
+
+- Sau khi chọn câu hỏi, ứng dụng sẽ hiển thị câu hỏi.
+
+![img18](https://drive.google.com/file/d/1foXO5nt6uymTgyA2dYOaCVg2nhO1gg8i/view?usp=sharing)
+
+Hình 18. Màn hình câu hỏi
 
 - Khi bạn ấn vào nút SCAN, camera sẽ hiển thị, bắt đầu quét các mã trong không gian và nhận dạng chúng.
 
-![img15](https://drive.google.com/file/d/1foXO5nt6uymTgyA2dYOaCVg2nhO1gg8i/view?usp=sharing)
+![img19](https://drive.google.com/file/d/1foXO5nt6uymTgyA2dYOaCVg2nhO1gg8i/view?usp=sharing)
 
 
 
-Hình 17. Màn hình camera hiển thị kết quả.
+Hình 19. Màn hình camera hiển thị kết quả.
 
 - Trên màn hình thiết bị sẽ hiển thị các kết quả như hình trên.
 
