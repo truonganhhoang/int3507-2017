@@ -9,13 +9,13 @@ Thành viên:
 
 # **1. Chuỗi khối là gì?**
 
-[Chuỗi khối](https://vi.wikipedia.org/wiki/Blockchain#cite_note-fortune20160515-2 ) (blockchain) [1] là một cơ sở dữ liệu phân cấp lưu trữ thông tin trong các khối thông tin được liên kết với nhau và mở rộng theo thời gian. Mỗi khối thông tin đều chứa thông tin về thời gian khởi tạo và được liên kết tới khối trước đó, vì vậy cơ sở dữ liệu này được gọi là chuỗi khối. chuỗi khối được thiết kế để chống lại việc thay đổi của dữ liệu: Một khi dữ liệu đã được ghi thì sẽ không có cách nào thay đổi được nó.
+[Chuỗi khối](https://vi.wikipedia.org/wiki/Blockchain#cite_note-fortune20160515-2 ) (blockchain) [1] là một cơ sở dữ liệu phân cấp lưu trữ thông tin trong các khối thông tin được liên kết với nhau và mở rộng theo thời gian. Mỗi khối thông tin đều chứa thông tin về thời gian khởi tạo và được liên kết tới khối trước đó, vì vậy cơ sở dữ liệu này được gọi là chuỗi khối. Chuỗi khối được thiết kế để chống lại việc thay đổi của dữ liệu: Một khi dữ liệu đã được ghi thì sẽ không có cách nào thay đổi được nó.
 
 # **2. Bitcoin và chuỗi khối khác nhau như thế nào?**
 
 [Bitcoin](https://vi.wikipedia.org/wiki/Bitcoin) [2] là một dạng tiền tệ ảo được tạo ra lần đầu bởi Satoshi Nakamoto vào năm 2008. Cũng được biết đến với cái tên "tiền tệ mã hoá", nó được tạo ra với mục đích bỏ quá sự kiểm soát tiền tệ của chính phủ và để đơn giản hoá giao dịch trên mạng bằng cách bỏ qua các bước của giao dịch trung gian với bên thứ ba. Tất nhiên, để đạt được điều này cần nhiều thứ hơn là chỉ có tiền. Phải có một cách bảo mật để tạo ra giao dịch với tiền tệ ảo.
 
-Giao dịch bitcoin được lữu trữ và chuyển giao sử dụng một "sổ cái" phân tán trên một mạng lưới peer-to-peer mở, public và ẩn danh. Chuỗi khối chính là công nghệ được sử dụng để tạo ra cuốn sổ cái của giao dịch Bitcoin.
+Giao dịch bitcoin được lữu trữ và chuyển giao sử dụng một "sổ cái" phân tán trên một mạng lưới peer-to-peer mở, công khai và ẩn danh. Chuỗi khối chính là công nghệ được sử dụng để tạo ra cuốn sổ cái của giao dịch Bitcoin.
 
 # **3. Bitcoin chuỗi khối hoạt động như thế nào?**
 
@@ -29,36 +29,40 @@ Sau khi ai đó sử dụng Bitcoins, cái thợ đào mỏ tham gia vào một 
 
 # **4. Các ứng dụng của công nghệ chuỗi khối đang thay đổi xã hội**
 
-**Chuỗi khối Business, dịch vụ tài chính**
-Các hệ thống truyền thống thường hay công kềnh, gặp nhiều lỗi và rất chậm chạm. Các bên trung gian luôn cần thiết để có thể dàn xếp các quy trình và giải quyết xung đột. Một cách tự nhiên, điều này gây ra căng thẳng, tốn thời gian và tiền của. Ngược lại, những người dùng thấy rằng chuỗi khối rẻ hơn, minh bạch hơn và hiệu quả hơn. Một số các dịch vụ tài chính đang sử dụng hệ thống này để mang đến sự đổi mới, ví dụ như [smart bonds](http://smartbonds.co/) và [smart contracts](https://blockgeeks.com/guides/smart-contracts/). Smart bonds tự động thanh toán phiếu giảm giá cho người dùng khi các điều kiện cho trước được hoàn thành. Smart contracts là các hợp đồng số được tự thực hiện, tự bảo trì khi các điều kiện cho trước được hoàn thành.
-Ví dụ về các dịch vụ tài chính chuỗi khối
+### **4.1 Chuỗi khối kinh doanh, dịch vụ tài chính**
 
-**Quản lý tài sản: Quy trình buôn bán và thanh toán**
+Các hệ thống truyền thống thường hay công kềnh, gặp nhiều lỗi và rất chậm chạm. Các bên trung gian luôn cần thiết để có thể dàn xếp các quy trình và giải quyết xung đột. Một cách tự nhiên, điều này gây ra căng thẳng, tốn thời gian và tiền của. Ngược lại, những người dùng thấy rằng chuỗi khối rẻ hơn, minh bạch hơn và hiệu quả hơn. Một số các dịch vụ tài chính đang sử dụng hệ thống này để mang đến sự đổi mới, ví dụ như [smart bonds](http://smartbonds.co/) và [smart contracts](https://blockgeeks.com/guides/smart-contracts/). Smart bonds tự động thanh toán phiếu giảm giá cho người dùng khi các điều kiện cho trước được hoàn thành. Smart contracts là các hợp đồng số được tự thực hiện, tự bảo trì khi các điều kiện cho trước được hoàn thành.
+
+Ví dụ về các dịch vụ tài chính chuỗi khối:
+
+***Quản lý tài sản: Quy trình buôn bán và thanh toán***
 
 Quy trình buôn bán truyền thống với việc quản lý tài sản (khi các bên trao đổi và quản lý tài sản) có thể rất tốn kém và nhiều rủi ro, nhất là khi đó là các giao dịch xuyên biên giới. Mỗi bên trong quá trình này, ví dụ như người môi giới, người trông coi tài sản, người quản lý thanh toán, giữ các bản ghi của riêng họ, điều này tạo ra sự thiếu hiệu quả rõ rệt và chứa đầy những lỗi. Cuốn sổ cái của chuỗi khối giúp giảm lỗi bằng cách mã hoá các bản ghi, đồng thời đơn giản hoá quy trình, và bỏ qua sự cần thiết của các bên trung gian.
 
-**Bảo hiểm: Quy trình yêu cầu**
+***Bảo hiểm: Quy trình yêu cầu***
 
-Quy trình yêu cầu là một quy trình gây ra nhiều sự bực dọc và bạc bẽo. Những nhân viên bảo hiểm cần phải lội qua những yêu cầu lừa đảo, các nguồn dữ liệu phân mảnh, hoặc các quy tắc đã bị bỏ đi đối với người dùng tạo đưa ra một số ít các form và xử lý chúng một cách thủ công. Điều này chứa đầy những lỗi. chuỗi khối cung cấp một hệ thống hoàn hảo cho việc quản lý minh bạch và không mạo hiểm. Những tài liệu đã được mã hoá cho phép nhân viên bảo hiểm nắm được quyền làm chủ của các tài sản sẽ được bảo hiểm.
+Quy trình yêu cầu là một quy trình gây ra nhiều sự bực dọc và bạc bẽo. Những nhân viên bảo hiểm cần phải lội qua những yêu cầu lừa đảo, các nguồn dữ liệu phân mảnh, hoặc các quy tắc đã bị bỏ đi đối với người dùng tạo đưa ra một số ít các form và xử lý chúng một cách thủ công. Điều này chứa đầy những lỗi. Chuỗi khối cung cấp một hệ thống hoàn hảo cho việc quản lý minh bạch và không mạo hiểm. Những tài liệu đã được mã hoá cho phép nhân viên bảo hiểm nắm được quyền làm chủ của các tài sản sẽ được bảo hiểm.
 
-**Thanh toán: Thanh toán xuyên biên giới**
+***Thanh toán: Thanh toán xuyên biên giới***
 
 Việc thay toán quốc tế chứa nhiều lỗi, tốn kém và dễ gây ra rửa tiền. Nó tốn ít nhất vài ngày cho việc chuyển tiền quốc tế. Chuỗi khối đã và đang cung cấp các giải pháp cho các công ty chuyển tiền như Abra, Align Commerce và Bitspark bằng việc đưa ra các dịch vụ chuyển tiền dựa trên chuỗi khối đầu cuối. Vào năm 2016, Santander trở thành một trong những ngân hàng đầu tiên sử dụng chuỗi khối trong một ứng dụng thanh toán, cho phép các khách hàng thực hiện chuyển tiền quốc tế 24/24 và hoàn thành vào ngày hôm sau.
 
-**Tài sản thông minh**
+### **4.2 Tài sản thông minh**
 
 Một tài sản vô hình hay hữu hình, như những chiếc ô tô, toà nhà, nồi cơm điện hay là các bằng sáng chế, tên tài sản hay cổ phần công ty, đều có thể được nhúng bởi các công nghệ thông minh. Những sự đăng ký như vậy, có thể được lưu trữ trong sổ cái cùng với các thông tin hợp đồng của những người cho phép quyền sở hữu của tài sản. Khoá thông minh (smart keys) có thể được sử dụng để cung cấp quyền truy cập cho các bên được cho phép. Và cuốn sổ cái sẽ là nơi lưu giữ và cho phép sự trao đổi của các khoá thông mình này một khi hợp đồng đã được xác nhận.
 Cuốn sổ cái phân tán cũng trở thành một hệ thống để lưu lại và quản lý các quyền cho tài sản cũng như là cho phép sao chép các hợp đồng thông mình trong trường hợp khoá thông minh bị mất.
 Sử dụng "tài sản thông minh" giúp bạn hạn chế được rủi ro của việc bị lừa đảo, giảm phí trung gian và các tình huống khó khăn trong giao dịch. Cùng với đó, tăng cường sự hiệu quả và sự tín nhiệm.
-Ví dụ về tài sản thông minh
 
-**Cho vay phi thường / cho vay thế châp**
+Ví dụ về tài sản thông minh:
 
-**Xe hơi / điện thoại thông minh**
+***Cho vay phi thường / cho vay thế châp***
 
-**Chuỗi khối Internet-of-Things (IoT)**
+***Xe hơi / điện thoại thông minh***
 
-**Chuỗi khối sẽ đi về đâu**
+***Chuỗi khối Internet-of-Things (IoT)***
+
+### **4.3 Chuỗi khối sẽ đi về đâu**
+
 Trong tất cả các trường hợp, cuốn sổ cái chuỗi khối cung cấp sự bảo mật cho Internet of things. Với hàng tỉ nhữ thiết bị liên kết với nhau, các nhà an ninh mạng có lý do để lo lắng về vấn đề bảo mật đối với hệ thống dữ liệu phân tán.
 Các công ty có thể làm gì để bảo vệ hệ thống của họ khỏi bị tấn công?
 
@@ -66,22 +70,24 @@ Các công ty có thể làm gì để bảo vệ hệ thống của họ khỏi
 - Các chính phủ sẽ bảo vệ các thông tin mật khỏi gián điểm và chủ nghĩa khủng bố ra sao?
 
 Trên đây là các vấn đề làm thế nào để sắp xếp và phân tích lượng dữ liệu khổng lồ đến tự các thiết bị liên quan. Việc truy cập vào hệ thống sổ cái chuỗi khối chỉ được chấp nhận đối với các bên được tín nhiệm. Cuốn sổ cái cung cấp cho các bên một nền tảng quản lý để có thể phân tích một lượng dữ liệu khổng lồ.
-Các ví dụ về chuỗi khối Internet-of-Things (IoT)
 
-**Thiết bị thông minh**
+Các ví dụ về chuỗi khối Internet-of-Things (IoT):
 
-**Cung cấp các chuỗi cảm biến**
+***Thiết bị thông minh***
 
-**Hợp đồng thông minh**
+***Cung cấp các chuỗi cảm biến***
 
-Hợp đồng thông mình là các kỹ thuật số được nhúng bởi một đoạn code if-this-then-that (IFTTT), cho phép chúng tự thực thi. Trong thực tế, một bên trung gian bảo đảm rằng tất cả các bên liên quan đều tuân thủ các điều khoản. chuỗi khối không cần bên thứ ba, nhưng nó cũng bảo đảm rằng tất cả các bên tham gia đều biết được chi tiết hợp đồng và các điều khoản sẽ được tự động thực hiện một khi các điều kiện được bảo đảm.
+### **4.4 Hợp đồng thông minh**
+
+Hợp đồng thông mình là các kỹ thuật số được nhúng bởi một đoạn code if-this-then-that (IFTTT), cho phép chúng tự thực thi. Trong thực tế, một bên trung gian bảo đảm rằng tất cả các bên liên quan đều tuân thủ các điều khoản. Chuỗi khối không cần bên thứ ba, nhưng nó cũng bảo đảm rằng tất cả các bên tham gia đều biết được chi tiết hợp đồng và các điều khoản sẽ được tự động thực hiện một khi các điều kiện được bảo đảm.
+
 Bạn có thể sử dụng hợp đồng thông minh cho tất cả các tình huống, như các dẫn xuất tài chính, phí bảo hiểm, luật tài sản và các sự đồng thuận đóng góp quỹ giữa các cá nhân, tổ chức.
 
-**Dịch vụ chăm sóc sức khoẻ chuỗi khối**
+***Dịch vụ chăm sóc sức khoẻ chuỗi khối***
 
-**Âm nhạc chuỗi khối**
+***Âm nhạc chuỗi khối***
 
-**Chính phủ chuỗi khối**
+***Chính phủ chuỗi khối***
 
 Ví dụ về Chính phủ chuỗi khối
 
@@ -89,21 +95,21 @@ Ví dụ về Chính phủ chuỗi khối
 - Trách nhiệm được giao phó
 - Định danh chuỗi khối
 
-**Chuỗi khối bảo vệ danh tính của bạn bằng cách mã hoá và bảo vệ nó khỏi những spammer và các nhân viên marketing**
+### **4.5 Chuỗi khối bảo vệ danh tính của bạn bằng cách mã hoá và bảo vệ nó khỏi những spammer và các nhân viên marketing**
 
 Ví dụ về định danh chuỗi khối
 
-**Hộ chiếu**
+***Hộ chiếu***
 
-**Chứng nhận sinh, tử, kết hôn**
+***Chứng nhận sinh, tử, kết hôn***
 
-**Định danh cá nhân**
+***Định danh cá nhân***
 
-# 5. **Chuỗi khối có thể giúp gì cho chuỗi cung ứng?**
+# **5. Chuỗi khối có thể giúp gì cho chuỗi cung ứng?**
 [Chuỗi cung ứng](https://en.wikipedia.org/wiki/Supply_chain) (Supply Chain) [3] là một hệ thống các tổ chức, con người, hoạt động, thông tin và các nguồn lực liên quan tới việc chuyển sản phẩm hay dịch vụ từ nhà cung cấp (chuỗi cung ứng) đến khách hàng. Hoạt động chuỗi cung ứng liên quan đến chuyển đổi các tài nguyên thiên nhiên, nguyên liệu và các thành phần thành một sản phẩm hoàn chỉnh để giao cho khách hàng cuối cùng.
 ##  **5.1 Hệ thống theo dõi dữ liệu không lỗi, giúp quản lý chuỗi cung ứng tốt hơn**
 
-Công nghệ chuỗi khối không cần máy quét hoặc bất cứ thiết bị nào tương tự để xác thực thông tin, nó có thể tự động lưu lại dữ liệu mọi thể loại về sản phẩm. Không còn phải lo lưu trữ tài liệu giấy, không còn cần những báo cáo thủ công. chuỗi khối lưu lại mọi sự tương tác dù là nhỏ nhất trong suốt chiều đi của sản phẩm. Dữ liệu không hề bị ảnh hưởng, dù có vấn đề gì xảy ra với hệ thống.
+Công nghệ chuỗi khối không cần máy quét hoặc bất cứ thiết bị nào tương tự để xác thực thông tin, nó có thể tự động lưu lại dữ liệu mọi thể loại về sản phẩm. Không còn phải lo lưu trữ tài liệu giấy, không còn cần những báo cáo thủ công. Chuỗi khối lưu lại mọi sự tương tác dù là nhỏ nhất trong suốt chiều đi của sản phẩm. Dữ liệu không hề bị ảnh hưởng, dù có vấn đề gì xảy ra với hệ thống.
 
 ![](https://viblo.asia/uploads/443ef8fa-bbe3-4a58-a53b-466bc037778d.png)
 
@@ -119,7 +125,7 @@ Với chuỗi khối, dữ liệu một khi đã được xác thực và lưu l
 
 Với quyền truy cập rộng mở cho cả mạng lưới, các thành viên giờ đây có quyền bình đẳng chia sẻ dữ liệu. Điều này giúp tăng sự tin tưởng giữa các nhà cung cấp trong chuỗi cung ứng và từ đó, tạo nên sự hợp tác chặt chẽ hơn trong cả hệ thống. Không chỉ thế, doanh nghiệp có thể lấy được sự tin tưởng nhiều hơn từ khách hàng bằng cách show ra tiến trình sản xuất sản phẩm, từ đó tăng lợi thế cạnh tranh.
 
-## **5.3. Tăng năng suất làm việc, đơn giản hóa việc tìm lỗi trong chuỗi cung ứng**
+## **5.3 Tăng năng suất làm việc, đơn giản hóa việc tìm lỗi trong chuỗi cung ứng**
 
 Khi lòng tin và sự minh bạch đã được hình thành, tất cả những tương tác liên quan đến sản phẩm đều trở nên nhanh chóng và thông suốt hơn, từ đó tăng năng suất và sản lượng giao dịch.
 Lợi ích của chuỗi khối không chỉ dừng lại ở đó. Khi các giao dịch được lưu trữ trong cơ sở dữ liệu có phân cấp và theo thứ tự thời gian, việc theo dõi lỗi trở nên thật đơn giản. Nó cũng giúp các nhà quản lý chuỗi cung ứng phản ứng kịp thời với các sự cố xảy ra trong chuỗi. Quay lại trường hợp của Chipotle, nếu họ sử dụng chuỗi khối để theo dõi nguồn cũng như chất lượng của nguyên liệu thô, họ đã có thể phát hiện ra vi khuẩn E. coli sớm hơn, loại bỏ các thành phần bị nhiễm bệnh trước khi bán chúng cho khách hàng.
@@ -127,6 +133,50 @@ Trường hợp của Chipotle đã trở thành một lời cảnh tỉnh khôn
 
 # **6. Ứng dụng trên Ethereum chuỗi khối**
 ## **6.1 Giới thiệu ứng dụng**
+Đây là ứng dụng câu hỏi trắc nghiệm đơn giản trên nền tảng Ethereum - ứng dụng phi tập trung (decenterlized app). Mỗi tài khoản sẽ có một khoản tiền. Với mỗi tài khoản người dùng có thể thêm câu hỏi trắc nghiệm vào ngân hàng câu hỏi. Để tăng giá trị tài khoản người dùng cần trả lời câu hỏi trắc nghiệm trong ngân hàng các câu hỏi. Nếu trả lời đúng tiền của tài khoản tạo ra câu hỏi đó sẽ chuyển đến tài khoản của bạn và ngược lại khi bạn trả lời sai.
+### Code:  https://github.com/vuhoanglinh96/food
+
+Cài đặt testrpc: [https://github.com/ethereumjs/testrpc](https://github.com/ethereumjs/testrpc)
+
+Chạy testrpc:
+
+
+     testrpc -m 'tuna move mistake token flush accident hazard dish coral try usual sell'
+
+
+
+Khi clone git project về, chạy lệnh:
+
+    npm install
+    truffle compile
+    truffle migrate
+
+Chạy server local:
+
+    ng serve
+
+
+
+Chạy server backend:
+
+    cd backend
+    npm install
+    npm run start
+
+## **Giao diện ứng dụng**
+- Thêm câu hỏi
+![Thêm câu hỏi](https://d2mxuefqeaa7sj.cloudfront.net/s_D92D9A08DD3D3A7D7C3336B6DF64C5DFE3450EC0AE94A625584E9675621CB858_1511583662538_1.jpg)
+
+- Trả lời câu hỏi
+![Trả lời câu hỏi](https://d2mxuefqeaa7sj.cloudfront.net/s_D92D9A08DD3D3A7D7C3336B6DF64C5DFE3450EC0AE94A625584E9675621CB858_1511583685584_2.jpg)
+
+- Khi hết câu hỏi
+![Màn hình hết câu hỏi](https://d2mxuefqeaa7sj.cloudfront.net/s_395487EF645AFB7E75DF51F504223E63C12B2A41CEA40E9654E4382AEA3086D3_1511947870437_Screenshot+2017-11-29+15.57.06.png)
+
+- Khi hết tiền
+![Màn hình hết tiền](https://d2mxuefqeaa7sj.cloudfront.net/s_395487EF645AFB7E75DF51F504223E63C12B2A41CEA40E9654E4382AEA3086D3_1511947961956_Screenshot+2017-11-29+15.57.35.png)
+
+
 ## **6.2 Các công nghệ**
 ## **Ethereum**
 
@@ -153,6 +203,7 @@ Hợp đồng thông minh (Smart contracts)[7] về cơ bản nó là một thu�
 - Giao diện điều khiển tương tác để giao tiếp hợp đồng trực tiếp.
 - Cấu hình xây dựng đường ống với sự hỗ trợ tích hợp chặt chẽ.
 - Người chạy tập lệnh bên ngoài thực hiện các tập lệnh trong môi trường Truffle.
+
 ## **Nodejs**
 
 [Node.js](https://nodejs.org) [10] là một mã nguồn mở, được xây dựng dựa trên nền tảng Javascript V8 Engine Node.js có thể chạy trên nhiều nền tảng hệ điều hành khác nhau từ Window cho tới Linux, OS X nên đó cũng là một lợi thế. Nó cung cấp các thư viện phong phú ở dạng JavaScript Module khác nhau giúp đơn giản hóa việc lập trình và giảm thời gian ở mức thấp nhất.
@@ -197,6 +248,142 @@ Cấu trúc một ứng dụng Truffle cơ bản bao gồm các thành phần sa
 - /test: chứa Javascript và *Solidity* code test cho các hợp đồng thông minh.
 - truffle.js: thư mục cấu hình của Truffle
 
+## **Định nghĩa một hợp đồng thông minh**
+
+Chúng ta sẽ phát triển một ứng dụng phân tán, DApp, bằng cách định nghĩa một hợp đồng thông minh ****đóng vai trò như là một xử lý logic nghiệp vụ và lưu trữ ở phía *back-end*.
+Trước tiên chúng ta tạo một file  `Metacoin.sol` trong thư mục `/contracts` với nội như sau
+
+    pragma solidity ^0.4.4;
+
+    contract Metacoin {
+      mapping (address => uint) balances;
+
+    	event Transfer(address indexed _from, address indexed _to, uint256 _value);
+
+    	function MetaCoin() {
+    		balances[tx.origin] = 10000000000;
+    	}
+
+    	function sendCoin(address receiver, uint amount) returns(bool sufficient) {
+    		if (balances[msg.sender] < amount) return false;
+    		balances[msg.sender] -= amount;
+    		balances[receiver] += amount;
+    		Transfer(msg.sender, receiver, amount);
+    		return true;
+    	}
+
+    	function getBalanceInEth(address addr) returns(uint){
+    		return ConvertLib.convert(getBalance(addr),2);
+    	}
+
+    	function getBalance(address addr) returns(uint) {
+    		return balances[addr];
+    	}
+
+    }
+
+Có hai thứ quan trọng các bạn cần chú ý ở đoạn code trên
+
+1. Phiên bản tối thiểu của Solidity được định nghĩa ở trên cùng `pragma solidity ^0.4.4;`
+2. Giống như hầu hết các ngôn ngữ lập trình khác, `Solidity` sử dụng dấu `;` là ký tự phân cách các dòng lệnh.
+    Solidity là một ngôn ngữ lập trình có static-type, nên chúng ta bắt buộc phải khai báo kiểu dữ liệu cho các tham biến có kiểu như string, int hay array. Ngoài ra, Solidity có thêm một kiểu dữ liệu đặc thù là address độ dài 20 bytes dùng để lưu trữ địa chỉ trên Ethereum chuỗi khối. Các tài khoản hay hợp đồng thông minh trên Ethereum chuỗi khối đều có một địa chỉ đến có thể gửi/nhận dữ liệu đi đến những địa chỉ đó.
+
+
+## **Biên dịch và migration hợp đồng thông minh**
+
+**Biên dịch**
+
+*Solodity* là một ngôn ngữ biên dịch, nên chúng ta cần dịch mã nguồn ra bytecode để có thể chạy trên `EVM`.  Rồi deploy lên chuỗi khối để chúng ta có thể tương tác với hợp đồng thông minh đã định nghĩa.
+Trước tiên, chúng ta mở một cửa sổ Terminal mới rồi chạy lệnh testrpc  'tuna move mistake token flush accident hazard dish coral try usual sell'  để khởi động một chuỗi khối ở local. Màn hình Terminal có thể sẽ như sau:
+
+
+    EthereumJS TestRPC v6.0.3 (ganache-core: 2.0.2)
+
+    Available Accounts
+    ==================
+    (0) 0x387908fd4f030c94f7f28ad61b1386d56c12f162
+    (1) 0x4b7dafb95151f8ec334ba610bc74bb33ba7298c3
+    (2) 0xaca73543a32387bee98dab5237d00a4e78593b64
+    (3) 0x6e700ca0a5add1b1111c2893d070eb3e17435ba9
+    (4) 0xf67f44504dceed2f41acff4e9e6fd996fed17c34
+    (5) 0x199847c004ee018bee7ad21435bbdac32c961b08
+    (6) 0xf669b282e0a5d28f5f809f2bc43988c5e2f07f96
+    (7) 0x18237c75e8cc0bbf1d0f1221323b6641d1a7f098
+    (8) 0x20f6753663f3d05315939315876ff3ce181564f0
+    (9) 0xfbdb2bc8a3abf41a8cb8b9968e7023313e917f72
+
+    Private Keys
+    ==================
+    (0) 4a4163a7f753004ee6cb8c9c6d80329d6636f2471067a26a9c0b1734e285efe6
+    (1) d1595fa85be6fa4bdd249246ba8090de917351a170cdd1746b4ea5998a76c9bc
+    (2) fd64432b991782817acd82c54c29a98835aec1094e973baf376613b2072b7edd
+    (3) aa9089028901e5f77601ff4e7b8493a23a146bb1bd285d03ff68b3513d6f1486
+    (4) 5228f82697f9bea494788802a42ea75b83e41a1adabc4108ba6076533068cdb2
+    (5) 9259ad0d01b3d52828e29c23abfe76c6106245efcfd4bd4db757527b520ae092
+    (6) 4b2c3da6e654bb81c549e287323c7df8f646f2ba8105a02222850ff97c36957b
+    (7) 25f395d3ad4e33976bc0de4e2880ba02e503e7036fed96142a0a5287bdb3d1ae
+    (8) 1a3038f5fec7070a9e09a92b16433029cb1bff57e221e65f10732f4b55d6ab42
+    (9) 53216096ca64520258a219a550e9c487d8350df168be4553a83cb16ea417819b
+
+    HD Wallet
+    ==================
+    Mnemonic:      tuna move mistake token flush accident hazard dish coral try usual sell
+    Base HD Path:  m/44'/60'/0'/0/{account_index}
+
+    Listening on localhost:8545
+
+
+**Migration**
+
+Sau khi đã biên dịch thành công hợp đồng thông minh ở bước trên, bây giờ chúng ta thực hiện migration hợp đồng thông minh lên chuỗi khối. Migration là một mã code để deploy và thay đổi trạng thái của hợp đồng ứng dụng của chúng ra. Ở lần migration đầu tiên thì chỉ đơn giản là deploy code mới lên chuỗi khối. Còn các lần migration sau, ngoài việc deploy hợp đồng mới thì còn bao gồm cả việc migration các dữ liệu cũ cho phù hợp với hợp đồng thông minh mới.
+
+Migrate dữ liệu lên mạng chuỗi khối
+
+
+    var ConvertLib = artifacts.require("./ConvertLib.sol");
+    var MetaCoin = artifacts.require("./MetaCoin.sol");
+
+    module.exports = function(deployer) {
+    deployer.deploy(ConvertLib);
+    deployer.link(ConvertLib, MetaCoin);
+    deployer.deploy(MetaCoin);
+    };
+
+## **Kết nối tới mạng chuỗi khối sử dụng web3**
+
+
+    constructor(private windowRef : WindowRefService) {
+    this.MetaCoin = contract(metacoin_artifacts);
+    this.checkAndRefreshWeb3();
+    }
+    private checkAndRefreshWeb3() {
+      if (this.ready) {
+        this.refreshAccounts();
+        return;
+      }
+
+    this.web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+    var jwt = localStorage.getItem('id_token');
+    var address = localStorage.getItem('address');
+    if (!address) return;
+    var decodedJwt = this.jwtHelper.decodeToken(jwt);
+    console.log(address);
+    this.MetaCoin.setProvider(this.web3.currentProvider);
+    this.refreshAccounts();
+    };
+
+
+## **Hàm chuyển tiền**
+
+
+
+    public sendEth(sender, receiver) {
+      this.web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+      var amount = this.web3.toWei(3, "ether");
+      this.web3.eth.sendTransaction({from:sender, to:receiver, value: amount})
+    }
+
+
 **Tài liệu tham khảo**
 
 [1] https://vi.wikipedia.org/wiki/Blockchain#cite_note-fortune20160515-2
@@ -220,5 +407,3 @@ Cấu trúc một ứng dụng Truffle cơ bản bao gồm các thành phần sa
 [10] https://nodejs.org
 
 [11] https://angularjs.org/
-
-https://www.ibm.com/blogs/blockchain/2017/05/the-difference-between-bitcoin-and-blockchain-for-business/

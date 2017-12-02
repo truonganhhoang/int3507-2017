@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   model: any = {};
   loading = false;
   returnUrl: string;
+  message = "";
 
   constructor(
     private route: ActivatedRoute,
@@ -29,8 +30,11 @@ export class LoginComponent implements OnInit {
     //this.loading = true;
     this.authenticationService.login(this.model.private_key, this.model.public_key)
       .subscribe(data => {
-          console.log(data);
-          this.router.navigate([this.returnUrl]);
+          if (data.success == true) {
+            this.router.navigate([this.returnUrl]);
+          } else {
+            this.message = data.message;
+          }
         },
         error => {
           this.loading = false;

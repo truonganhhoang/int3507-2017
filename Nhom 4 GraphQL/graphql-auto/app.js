@@ -128,14 +128,18 @@ function isEmpty(obj) {
 //   });
 
 // GraphQL API
-app.use('/graphql', graphqlHTTP((request, response, graphQLParams) => {
+app.use('/graphql', graphqlHTTP(async (request, response, graphQLParams) => {
   // console.log(request.query);
-  var apiLink = request.query.api;
+  var apiGetLink = request.query.api;
+
+  var listApiLink = apiGetLink.split(";");
+  var apiLink = listApiLink[0];
+
   var options;
   if (request.query.method == 'get') {
     options = {
       method: 'GET',
-      uri: request.query.api
+      uri: apiLink
     };
   }
   if (request.query.method == 'post') {
@@ -144,54 +148,171 @@ app.use('/graphql', graphqlHTTP((request, response, graphQLParams) => {
     var urlBody = JSON.parse('{"' + decodeURI(urlFull.substring(urlFull.indexOf("&bdgraphql") + 10, urlFull.length)).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
     options = {
       method: 'POST',
-      uri: request.query.api,
+      uri: apiLink,
       body: queryString.stringify(urlBody),
       headers: urlHeaders
     };
   }
-  return rp(options)
-    .then(function (parsedBody) {
-      // console.log(parsedBody);
-      var dataResponse = JSON.parse(parsedBody);
-      var checkValue = dataResponse instanceof Array;
-      if (checkValue) {
-        dataResponse = dataResponse[0];
-      }
-      var dataResponseType = getGraphqlType(dataResponse, 'dataResponse');
-      var typeResponse = (!checkValue) ? dataResponseType : new GraphQLList(dataResponseType);
-      var queriesResponse = {
-        type: typeResponse,
-        resolve(root, params) {
-          return rp(options)
-            .then(function (parsedBody1) {
-              return JSON.parse(parsedBody1);
-            })
-            .catch(function (err) {
-              console.log(err)
-            });
+
+  var dataResponse = JSON.parse(await getDataApi(options));
+  var checkValue = dataResponse instanceof Array;
+  if (checkValue) {
+    dataResponse = dataResponse[0];
+  }
+  if (listApiLink.length > 1 && request.query.method == 'get') {
+    var params = getAllValueParamsUrl(listApiLink[1]);
+    var valueParams1 = dataResponse[params[0]];
+    var url1 = listApiLink[1].replace('{' + params[0] + '}', valueParams1);
+    var options1 = {
+      method: 'GET',
+      uri: url1
+    }
+    var dataResponse1 = JSON.parse(await getDataApi(options1));
+    dataResponse[url1.substring(url1.lastIndexOf('/') + 1, url1.length)] = dataResponse1;
+
+  }
+
+
+  var dataResponseType = getGraphqlType(dataResponse, 'dataResponse');
+  var typeResponse = (!checkValue) ? dataResponseType : new GraphQLList(dataResponseType);
+  var queriesResponse = {
+    type: typeResponse,
+    async resolve(root, params) {
+      var dataResponse = JSON.parse(await getDataApi(options));
+      if (listApiLink.length > 1 && request.query.method == 'get') {
+        var checkValue = dataResponse instanceof Array;
+        var params = getAllValueParamsUrl(listApiLink[1]);
+        if (checkValue) {
+          for (let i = 0; i < dataResponse.length; i++) {
+            var valueParams1 = dataResponse[i][params[0]];
+            var url1 = listApiLink[1].replace('{' + params[0] + '}', valueParams1);
+            var options1 = {
+              method: 'GET',
+              uri: url1
+            }
+            var dataResponse1 = JSON.parse(await getDataApi(options1));
+            dataResponse[i][url1.substring(url1.lastIndexOf('/') + 1, url1.length)] = dataResponse1;
+          }
+        } else {
+
+          var valueParams1 = dataResponse[params[0]];
+          var url1 = listApiLink[1].replace('{' + params[0] + '}', valueParams1);
+          var options1 = {
+            method: 'GET',
+            uri: url1
+          }
+          var dataResponse1 = JSON.parse(await getDataApi(options1));
+          dataResponse[url1.substring(url1.lastIndexOf('/') + 1, url1.length)] = dataResponse1;
         }
-
       }
-      const objectResponse = {
-        queriesResponse: queriesResponse
-      }
-      const queries = new GraphQLObjectType({
-        name: "queries",
-        fields: objectResponse
-      })
+      return dataResponse;
+    }
 
-      let schema = new GraphQLSchema({
-        query: queries
-      });
-      return { //Tích hợp vào Express
-        schema,
-        graphiql: true,//If true, presents GraphiQL when the GraphQL endpoint is loaded in a browser
-        pretty: true// If true, any JSON response will be pretty-printed.
-      }
+  }
+  const objectResponse = {
+    queriesResponse: queriesResponse
+  }
+  const queries = new GraphQLObjectType({
+    name: "queries",
+    fields: objectResponse
+  })
 
-    })
+  let schema = new GraphQLSchema({
+    query: queries
+  });
+  return { //Tích hợp vào Express
+    schema,
+    graphiql: true,//If true, presents GraphiQL when the GraphQL endpoint is loaded in a browser
+    pretty: true// If true, any JSON response will be pretty-printed.
+  }
+
+  // })
+
+  // return rp(options)
+  //   .then(function (parsedBody) {
+  //     // console.log(parsedBody);
+  //     var dataResponse = JSON.parse(parsedBody);
+  //     var checkValue = dataResponse instanceof Array;
+  //     if (checkValue) {
+  //       dataResponse = dataResponse[0];
+  //     }
+  //     //
+  //     if (listApiLink.length > 1) {
+
+  //       var apiLink1 = listApiLink[1];
+  //       var valueParams1 = getAllValueParamsUrl(apiLink1, 0);
+
+  //     }
+  //
+  //       var dataResponseType = getGraphqlType(dataResponse, 'dataResponse');
+  // var typeResponse = (!checkValue) ? dataResponseType : new GraphQLList(dataResponseType);
+  // var queriesResponse = {
+  //   type: typeResponse,
+  //   resolve(root, params) {
+  //     return rp(options)
+  //       .then(function (parsedBody1) {
+  //         return JSON.parse(parsedBody1);
+  //       })
+  //       .catch(function (err) {
+  //         console.log(err)
+  //       });
+  //   }
+
+  // }
+  // const objectResponse = {
+  //   queriesResponse: queriesResponse
+  // }
+  // const queries = new GraphQLObjectType({
+  //   name: "queries",
+  //   fields: objectResponse
+  // })
+
+  // let schema = new GraphQLSchema({
+  //   query: queries
+  // });
+  // return { //Tích hợp vào Express
+  //   schema,
+  //   graphiql: true,//If true, presents GraphiQL when the GraphQL endpoint is loaded in a browser
+  //   pretty: true// If true, any JSON response will be pretty-printed.
+  // }
+
+  // })
 }))
 
 app.listen(process.env.PORT || 3000, () => {
   console.log('GraphQL server running at port 3000...')
 })
+
+//get all params into '{}'
+function getAllValueParamsUrl(url, index) {
+  var params = [];
+  var indexOpen = url.indexOf('{', index);
+  var indexClose = url.indexOf('}', indexOpen);
+  params.push(url.substring(indexOpen + 1, indexClose));
+  var indexNext = url.indexOf('{', indexClose);
+  if (indexNext == -1) {
+    return params;
+  } else {
+    getAllValueParamsUrl(url, indexOpen);
+  }
+}
+
+
+
+async function getDataApi(options) {
+
+  let tmp = rp(options);
+
+  let data = await tmp;
+
+  return data;
+
+
+  /*return rp(options)
+    .then(function (parsedBody1) {
+      return JSON.parse(parsedBody1);
+    })
+    .catch(function (err) {
+      console.log(err)
+    });*/
+}

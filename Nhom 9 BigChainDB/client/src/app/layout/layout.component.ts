@@ -10,11 +10,11 @@ export class LayoutComponent implements OnInit {
   currentUser: any;
 
   constructor() {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   ngOnInit() {
     // $.getScript('./js/jquery.app.js');
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     $(document).ready(function(){
       $("button.button-menu-mobile.open-left").click(function(){
         if ($("#wrapper").hasClass("enlarged")) {
@@ -23,7 +23,7 @@ export class LayoutComponent implements OnInit {
           $("#wrapper").addClass("enlarged");
         }
       });
-});
+    });
   }
 
 }

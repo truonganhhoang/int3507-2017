@@ -13,7 +13,11 @@ import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { AuthenticationService } from './_services/authentication.service';
 import { UserService } from './_services/user.service';
+import { PointService } from './_services/point.service';
+
 import { LayoutComponent } from './layout/layout.component';
+import { ListUserComponent } from './list-user/list-user.component';
+import { ManagePointComponent } from './manage-point/manage-point.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,9 @@ import { LayoutComponent } from './layout/layout.component';
     CourseComponent,
     LoginComponent,
     RegisterComponent,
-    LayoutComponent
+    LayoutComponent,
+    ListUserComponent,
+    ManagePointComponent
   ],
   imports: [
     BrowserModule,
@@ -32,8 +38,12 @@ import { LayoutComponent } from './layout/layout.component';
       {
         path: '',
         component: LayoutComponent,
-        //canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
         children: [
+          {
+            path: 'list_user',
+            component: ListUserComponent
+          },
           {
             path: 'create_score',
             component: ScoreFormComponent
@@ -41,7 +51,11 @@ import { LayoutComponent } from './layout/layout.component';
           {
             path: 'course',
             component: CourseComponent
-          }
+          },
+          {
+            path: 'manage_point',
+            component: ManagePointComponent
+          },
         ]
       },
       {
@@ -58,7 +72,8 @@ import { LayoutComponent } from './layout/layout.component';
   providers: [
     AuthGuard,
     AuthenticationService,
-    UserService
+    UserService,
+    PointService
   ],
   bootstrap: [AppComponent]
 })
