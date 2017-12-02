@@ -258,7 +258,7 @@ Máy chủ tìm kiếm được xây dựng trên những công nghệ sau:
 
 - Công cụ tìm kiếm: [Elasticsearch](https://www.elastic.co/).
 
-- Thư viện Truy vấn Elasticsearch trên PHP: [elasticsearch/elasticsearch](https://github.com/elastic/elasticsearch) kết hợp với [guzzle/guzzle](https://github.com/guzzle/guzzle).   
+- Thư viện truy vấn Elasticsearch trên PHP: [elasticsearch/elasticsearch](https://github.com/elastic/elasticsearch) kết hợp với [guzzle/guzzle](https://github.com/guzzle/guzzle).   
 
 ### 3.2. Chuyển dữ liệu MySQL lên Elasticsearch
 
