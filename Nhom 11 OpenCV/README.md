@@ -539,7 +539,7 @@ Sau khi các mã đã được phát hiện và xác định, bước cuối cù
 - Màn hình đăng nhập hiển thị, yêu cầu bạn đăng nhập tài khoản để có thể sử dụng ứng dụng.
 
 ![img13](./image/login.png =100x20)
-
+<img src="./image/login.png" width="100" height="20">
 
 
 Hình 15. Màn hình đăng nhập
