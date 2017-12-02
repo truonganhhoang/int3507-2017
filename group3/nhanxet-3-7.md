@@ -23,3 +23,5 @@ cũng như có thể test công cụ online.
 - Bổ sung tổng quát về ưu-nhược điểm của Dafny, so sánh với một số công cụ verification khác
 - Những từ tiếng anh cần hạn chế lạm dụng mà nên dịch sang tiếng việt phù hợp.
 - Cần giải thích cụ thể hơn về các chức năng Dafny được sử dụng trong các ví dụ cụ thể.
+
+Chấm điểm: 8/10
