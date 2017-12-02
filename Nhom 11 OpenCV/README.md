@@ -14,10 +14,13 @@
 #### I. GIỚI THIỆU CHUNG
 #### 1. Tổng quan về OpenCV
 
-![OpenCV Logo](https://jayrambhia.files.wordpress.com/2012/06/opencv_hor_900_1.jpg)
+<p align="center">
+  <img src="https://jayrambhia.files.wordpress.com/2012/06/opencv_hor_900_1.jpg" width="200" height="400" style="text-align: center;">
+</p>
 
-
-Hình 1. Logo OpenCV
+<p align="center">
+  Hình 1. Logo OpenCV
+</p>
 
 
 OpenCV (OpenSource Computer Vision) là một thư viện mã nguồn mở, được phát hành theo giấy phép BSD (Berkeley Software Distribution), do đó nó hoàn toàn miễn phí cho cả học thuật và thương mại.
