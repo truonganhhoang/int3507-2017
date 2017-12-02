@@ -14,10 +14,10 @@
 
 | Thành viên                         	| Nhiệm vụ                                                                                                                                                                                 	| Đánh giá 	|
 |------------------------------------	|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|----------	|
-| **Nguyễn Đức Thuần** (nhóm trưởng) 	| - Dev và deploy máy chủ Chatbot <br/> - Phân công công việc cho các thành viên                                                                                                           	|          	|
-| Phan Thị Hà Trang                  	| - Khảo sát các vấn đề mà sinh viên quan tâm <br/> - Thu thập dữ liệu về hướng nghiên cứu của giảng viên <br/> - Thu thập dữ liệu về các môn học, văn bản, biểu mẫu                       	|          	|
-| Nguyễn Thị Lan                     	| - Thu thập dữ liệu về gần 100 câu hỏi thường gặp của sinh viên và câu trả lời tương ứng <br/> - Thu thập dữ liệu về thông tin của trên 300 giảng viên (số điện thoại, email, đơn vị,...) 	|          	|
-| Nguyễn Văn Nhật                    	| - Dev và deploy máy chủ tìm kiếm <br/> - Thiết kế crawler thu thập/cập nhật thông tin của hơn 100 giảng viên                                                                             	|          	|
+| **Nguyễn Đức Thuần** (nhóm trưởng) 	| - Tìm hiểu cách làm ứng dụng Chatbot, phân công công việc cho các thành viên </br> - Cài đặt và triển khai các tính năng của máy chủ Chatbot, kết nối Facebook Webhook với máy chủ Chatbot  <br/> - Viết tài liệu                                                                                                     	|     9.5/10     	|
+| Phan Thị Hà Trang                  	| - Tìm hiểu công cụ Chatbot </br> - Khảo sát các vấn đề mà sinh viên quan tâm, nhu cầu tìm kiếm của sinh viên <br/>  - Thu thập dữ liệu về hướng nghiên cứu của hơn 100 giảng viên, hơn 150 môn học của tất cả các ngành học, gần 30 các loại văn bản, biểu mẫu thường được sinh viên sử dụng </br> - Viết tài liệu                      	|    9.5/10      	|
+| Nguyễn Thị Lan                     	| - Tìm hiểu công cụ Chatbot </br> - Thu thập dữ liệu về gần 100 câu hỏi thường gặp của sinh viên và câu trả lời tương ứng <br/> - Thu thập dữ liệu về thông tin của trên 300 giảng viên (số điện thoại, email, đơn vị,...) </br> - Viết tài liệu	|     9.5/10     	|
+| Nguyễn Văn Nhật                    	| - Thiết kế cơ sở dữ liệu, cài đặt và triển khai máy chủ tìm kiếm <br/> - Thiết kế các Crawler thu thập/cập nhật thông tin của hơn 100 giảng viên </br> - Viết tài liệu                                                                             	|    9.5/10      	|
 
 ## Danh sách khái niệm, thuật ngữ
 
@@ -27,7 +27,7 @@
 | Webhook                                  	| Webhook hiểu đơn giản thì đây là một công cụ để truy vấn và lưu dữ liệu của một sự kiện xác định. Khi một trong những sự kiện đã đăng ký được kích hoạt, webhook sẽ gửi một HTTP POST đến một địa chỉ URL được đăng ký từ trước.                                                                                                                                                   	|
 | REST                                     	| REST (**RE**presentational **S**tate **T**ransfer) là một dạng dạng chuyển đổi cấu trúc dữ liệu. Rest API là một ứng dụng chuyển đổi cấu trúc dữ liệu có phương thức để kết nối và ứng dụng khác. Facebook cung cấp REST API để lập trình viên có thể gửi tin nhắn phản hồi đến người dùng, cho dù người dùng viết ứng dụng trả lời bằng bất kỳ ngôn ngữ lập trình nào.            	|
 | [Ngrok](https://ngrok.com/)              	| Ngrok là công cụ tạo đường hầm (tunnel) giữa localhost của bạn và internet.Giúp người khác mạng có thể truy cập được localhost của bạn thông qua custom domain của ngrok                                                                                                                                                                                                           	|
-| Facebook Chatbot                         	| Facebook Chatbot là một phần mở rộng cho chức năng nhắn tin trên trang [Facebook](https://www.facebook.com/) của bạn. Mỗi Chatbot phải được liên kết với một trang Facebook đang tồn tại. Vì vậy, nếu bất cứ ai đang chat với bot của bạn thì họ đang chat với trang Facebook của bạn, nhưng thay vì là cuộc trò chuyện giữa người với người thì bot của bạn nói chuyện với người. 	|
+| Chatbot                         	        | Chatbot được coi là một chương trình "thông minh" được thiết kế để tương tác và phản hồi với người dùng một cách tự động như cách trả lời của con người|
 | [Elasticsearch](https://www.elastic.co/) 	| Elasticsearch là một công cụ tìm kiếm dựa trên phần mềm Lucene. Nó cung cấp một bộ máy tìm kiếm dạng phân tán, có đầy đủ công cụ với một giao diện web HTTP có hỗ trợ dữ liệu JSON.                                                                                                                                                                                                	|
 | Crawler                                  	| Crawler là 1 từ để ám chỉ các công cụ (phần mềm, modules, plugins… hay đơn giản chỉ là một hàm nhỏ) có chức năng chính là tự động phân tích dữ liệu từ nguồn nội dung sau đó bóc tách những thông tin cần thiết theo tiêu chí mà nó được lập trình viên hệ thống thiết lập.                                                                                                        	|
 
@@ -320,4 +320,20 @@ Máy chủ tìm kiếm đang được chạy trên IP `52.15.160.33`. API đư�
 
 ### Định hướng tương lai
 
-Với hệ thống máy thu thập thông tin, ứng dụng sẽ tiếp tục bổ sung và làm mịn thêm thông tin về các giảng viên và đơn vị trong trường. Đồng thời với đó, các câu hỏi thường gặp sẽ được bổ sung thêm để có thể giải đáp được mọi thắc mắc của sinh viên.
+- Với hệ thống máy thu thập thông tin, ứng dụng sẽ tiếp tục bổ sung và làm mịn thêm thông tin về các giảng viên và đơn vị trong trường. Đồng thời với đó, các câu hỏi thường gặp sẽ được bổ sung thêm để có thể giải đáp được mọi thắc mắc của sinh viên.
+- Nhận thấy nhu cầu hỏi đáp của sinh viên đối với phòng Công tác sinh viên và phòng Đào tạo Đại học là rất nhiều. Bên cạnh đó, khối lượng công việc giải đáp của các chuyên viên 2 phòng này cũng rất lớn và câu hỏi của sinh viên thường xuyên bị lặp lại. Chính vì vậy, nhóm nghiên cứu đã đang và sẽ thu thập thêm các câu hỏi và giải đáp thắc mắc của sinh viên với phòng Công tác sinh viên và phòng Đào tạo Đại học nhằm mục đích ứng dụng để giảm tải khối lượng công việc của 2 phòng này.
+- Triển khai rộng rãi lên trang SGUET sau quãng thời gian thử nghiệm và đánh giá từ người dùng.
+
+### Tài liệu tham khảo
+1. Constine, J. Facebook’s Secret Chat SDK Lets
+Developers Build Messenger Bots. Note on
+Techcrunch. (2016) Retrieved from
+http://techcrunch.com/2016/01/05/facebookmessenger-bots.
+
+4. Crawford, E. Bots are awesome! Humans? Not so
+much. Chatbots Magazine. (2016). Retrieved from
+https://chatbotsmagazine.com/bots-are-awesomehumans-not-so-much-7b2d62630668.
+
+5. Facebook. (2016a). Messenger Platform at F8.
+Facebook Newsroom. Retrieved from
+http://newsroom.fb.com/news/2016/04/messengerplatform-at-f8.
