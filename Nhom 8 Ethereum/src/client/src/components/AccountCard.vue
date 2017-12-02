@@ -40,15 +40,19 @@
 <script>
 import axios from 'axios'
 import {getUrl} from '../common'
+import Noty from 'noty'
 
 export default {
   props: ['account'],
   mounted() {
     this.getBalance(this.account.id)
+    setInterval(() => {
+      this.getBalance(this.account.id)
+    }, (30 + Math.random() * 10) * 1000);
   },
   data() {
     return {
-      balance: 0
+      balance: null
     }
   },
   methods: {
@@ -75,7 +79,17 @@ export default {
       axios.get(getUrl('api/v1/account/' + id + '/balance'))
         .then((res) => {
           if(res.data.balance) {
-            this.balance = res.data.balance
+            if(res.data.balance != this.balance) {
+              let text = this.account.address + "'s balance changed"
+              if(this.balance) {
+                new Noty({
+                  text,
+                  type: 'success',
+                  timeout: 1000
+                }).show();
+              }
+              this.balance = res.data.balance
+            }
           }
         })
     },

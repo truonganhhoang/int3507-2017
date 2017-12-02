@@ -20,6 +20,7 @@ import AccountCard from '@/components/AccountCard'
 import AccountModal from '@/components/AccountModal'
 import AccountImportModal from '@/components/AccountImportModal'
 import {getUrl} from '../common'
+import Noty from 'noty'
 
 export default {
   data () {
@@ -55,6 +56,11 @@ export default {
     },
     newAccount(account) {
       this.account_list.push(account)
+      new Noty({
+        text: 'wait for a minute to get test ether!',
+        type: 'success',
+        timeout: 1000
+      }).show();
     },
     deleteAccount(id) {
       this.account_list = this.account_list.filter(acc => {
