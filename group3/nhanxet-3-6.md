@@ -2,12 +2,12 @@
 # Nhận xét bởi: nhóm 3
 
 ## Ưu điểm
--	Có 2 game demo
+-	Có game demo
 
 ## Nhược điểm
--	Tài liệu sơ sài, bị lạm dụng nhiều từ tiếng Anh
+-	Tài liệu còn sơ sài, bị lạm dụng nhiều từ tiếng Anh
 -	Chèn các dòng code bằng cách cắt ảnh code
--	Game còn khá đơn giản, không có file readme hướng dẫn tải, cài đặt và sử dụng
+-	Không có hướng dẫn chơi cho game demo
 -	Không có chú thích cho các thuật ngữ, không trích dẫn các tài liệu tham khảo
 
 ## Góp ý
