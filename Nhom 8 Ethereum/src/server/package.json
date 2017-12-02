@@ -29,6 +29,7 @@
     "jquery": "^3.2.1",
     "jsonwebtoken": "^8.1.0",
     "lodash": "^4.17.4",
+    "mysql": "^2.15.0",
     "path": "^0.12.7",
     "popper.js": "^1.12.5",
     "sqlite3": "^3.1.13",
