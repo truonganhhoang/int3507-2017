@@ -915,9 +915,9 @@ sở dữ liệu như MongoDB để thuận tiện cho việc kiểm tra cũng n
 sau này.
 
 ## 3. Giới thiệu một số dự án thu thập dữ liệu cụ thể <a name="project-example"></a>
-Để dễ dàng thực hành và tiếp cận với các hệ thống thu thập dữ liệu mã nguồn mở. Nhóm có xây dựng 3 dự án ví dụ. Mã nguồn của dự án ví dụ này trong thư mục `source`.
+Để dễ dàng thực hành và tiếp cận với các hệ thống thu thập dữ liệu mã nguồn mở. Nhóm có xây dựng các dự án ví dụ. Mã nguồn của dự án ví dụ này trong thư mục `source`.
 Để thu thập dữ liệu nhóm chia thành 2 cách tiếp cận. Cách tiếp cận thứ nhất là sử dụng thư viện scrapy. Ngoài ra cách tiếp cận thứ hai là sử dụng các API đã có sẵn tại các trang web.
-### 3.1. Ví dụ về thu thập dữ liệu trang tungtung.vn
+### 3.1. Ví dụ về thu thập đề thi tại trang tungtung.vn
  Trang web tungtung.vn là website trắc nghiệm kiến thức từ lớp 1 đến lớp 12. Website sử dụng công nghệ react để làm phần giao diện. Với công nghệ này, sẽ khó khăn để thu thập dữ liệu bằng cách sử dụng scrapy. Nhóm đã khai thác và sử dụng API có sẵn từ phía server của tungtung.vn.
  Mã nguồn của ví dụ này tại thư mục `source/fetchApi/tungtung`
  
@@ -927,7 +927,7 @@ sau này.
  
  Dữ liệu thu thập có trong thư mục `source/fetchApi/tungtung/data`
 
-### 3.2. BigSchool.vn
+### 3.2. Ví dụ về thu thập hỏi đáp tại trang BigSchool.vn
 Trang web BigSchool.vn là trang web hệ thống kiến thức cho học sinh từ lớp 1 đến lớp 12. BigSchool có nhiều chức năng học, thi, chơi, hỏi, đọc. Trong ví dụ này, nhóm thu thập dữ liệu hỏi đáp của BigSchool.vn (https://ask.bigschool.vn)
 Dữ liệu trang trả về được gửi từ server vì vậy sử dụng scrapy là cách hiệu quả để thu thập dữ liệu. Mã nguồn của ví dụ này tại `source/scrapy/bigschool` 
 
@@ -969,8 +969,9 @@ def save(self, item):
     bigschool.update(item, True)
     return item
 ```
-Tiến hành thực hiện crawler trang bigschool, trong 30 phút nhóm đã thu thập được toàn bộ dữ liệu trang hỏi đáp (với 25931 câu hỏi đáp)
 
+#### Kết quả đạt được
+Tiến hành thực hiện crawler trang bigschool, trong 30 phút nhóm đã thu thập được toàn bộ dữ liệu trang hỏi đáp (với 25931 câu hỏi đáp)
 ## 4. Kết luận <a name="summary"></a>
 
 ### Ưu điểm
