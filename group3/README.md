@@ -972,6 +972,7 @@ def save(self, item):
 
 #### Kết quả đạt được
 Tiến hành thực hiện crawler trang bigschool, trong 30 phút nhóm đã thu thập được toàn bộ dữ liệu trang hỏi đáp (với 25931 câu hỏi đáp)
+Dữ liệu thu thập có trong thư mục `source/scrapy/bigschool/out.json`
 ## 4. Kết luận <a name="summary"></a>
 
 ### Ưu điểm
