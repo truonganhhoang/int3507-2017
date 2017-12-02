@@ -9,8 +9,7 @@
 ngữ pháp Tiếng Anh.
 
 ### 2. Nhược điểm
--	Tài liệu lạm dụng nhiều từ tiếng Anh, còn một số lỗi chính tả
--	Chèn các dòng code bằng cách cắt ảnh code.
+-	Tài liệu lạm dụng nhiều từ tiếng Anh, còn một số lỗi chính tả.
 -	Không có chú thích cho các thuật ngữ.
 - Hệ thống đánh chỉ mục cho tài liệu chưa nhất quán.
 
