@@ -13,7 +13,8 @@ filenames = ['0. Thông tin nhóm.md',
              '2.6. Lưu dữ liệu.md',
              '2.7. Cấu hình nâng cao Scrapy.md',
              '2.8. Các vấn đề cần giải quyết với Scrapy.md',
-             '3. Kết luận.md']
+             '3. Giới thiệu một số dự án thu thập dữ liệu cụ thể.md',
+             '4. Kết luận.md']
 with open('../README.md', 'w') as outfile:
     for fname in filenames:
         with open(fname) as infile:
