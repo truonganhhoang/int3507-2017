@@ -64,7 +64,7 @@ Hiện tại Websocket đã được hỗ trợ trên 74% các trình duyệt. B
 Giao thức bắt tay của WebSocket:
 
 <p align="center">
-  <img src="https://poesiabinaria.net/wp-content/uploads/2016/10/WebSockets-Diagram.png" width="400" height="200" style="text-align: center;">
+  <img src="https://poesiabinaria.net/wp-content/uploads/2016/10/WebSockets-Diagram.png" width="400" height="250" style="text-align: center;">
 </p>
 
 
@@ -349,11 +349,14 @@ Module ArUco cung cấp một chức năng để ước lượng các vị trí 
 
 Hệ tọa độ mã được giả định bởi chức năng này được đặt ở chính giữa của mã, được môt tả như trong hình dưới đây. Màu sắc tương ứng với trục X: đỏ, Y: xanh, Z: xanh lam.
 
-![img07](https://docs.opencv.org/3.1.0/singlemarkersaxis.png)
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/singlemarkersaxis.png">
+</p>
 
+<p align="center">
+  Hình 9. Ảnh các mã được gắn với trục tọa độ
+</p>
 
-
-Hình 9. Ảnh các mã được gắn với trục tọa độ
 
 Module ArUco cung cấp một chức năng để vẽ trục như trong hình trên, vì vậy có thể kiểm tra việc đánh giá.
 Xét ví dụ:
@@ -429,10 +432,15 @@ Một trong những bước đầu tiên của quá trình nhận dạng mã là
 
 Ví dụ về phân đoạn cho hình ảnh mẫu được sử dụng ở trên là:
 
-![img08](https://docs.opencv.org/3.1.0/singlemarkersthresh.png)
 
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/singlemarkersthresh.png">
+</p>
 
-Hình 10.  Ảnh đã phân đoạn
+<p align="center">
+  Hình 10.  Ảnh đã phân đoạn
+</p>
+
 
 Phân đoạn ảnh này có thể được tùy chỉnh bằng các tham số sau: int adaptiveThreshWinSizeMin, int adaptiveThreshWinSizeMax, int adaptiveThreshWinSizeStep
 
@@ -445,10 +453,14 @@ Ví dụ, đối với các giá trị adaptiveThreshWinSizeMin = 5 và adaptive
 
 Giá trị kích thước cửa sổ thấp có thể 'phá vỡ' đường viền mã, nếu kích thước mã quá lớn và sẽ không được nhận dạng, như trong hình ảnh sau:
 
-![img09](https://docs.opencv.org/3.1.0/singlemarkersbrokenthresh.png)
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/singlemarkersbrokenthresh.png">
+</p>
 
+<p align="center">
+  Hình 11. Ảnh mã bị hỏng
+</p>
 
-Hình 11. Ảnh mã bị hỏng
 
 Mặt khác, giá trị quá cao có thể tạo ra hiệu quả tương tự nếu các mã quá nhỏ và nó cũng có thể làm giảm hiệu suất. Hơn nữa quá trình này có xu hướng giảm phân đoạn toàn cầu, mất đi các lợi ích thích ứng.
 Trường hợp đơn giản nhất sử dụng cùng một giá trị cho adaptiveThreshWinSizeMin và adaptiveThreshWinSizeMax, tạo ra một giá trị phân đoạn duy nhất. Tuy nhiên, cách tốt hơn đó là sử dụng một loạt các giá trị cho kích thước cửa sổ, mặc dù nhiều giá trị phân đoạn cũng có thể làm giảm hiệu suất đáng kể.
@@ -491,17 +503,25 @@ Sau khi nhận dạng đối tượng, các bit của mỗi đối tượng sẽ
 
 Đây là một ví dụ về hình ảnh thu được sau khi loại bỏ sự méo mó:
 
-![img10](https://docs.opencv.org/3.1.0/removeperspective.png)
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/removeperspective.png">
+</p>
 
+<p align="center">
+  Hình 12. Thay đổi phối cảnh
+</p>
 
-Hình 12. Thay đổi phối cảnh
 
 Sau đó, hình ảnh được chia thành lưới có cùng số ô so với số bit trong mã. Trên mỗi ô, số lượng điểm ảnh màu đen và trắng được tính để quyết định bit được gán cho ô nào (từ giá trị lớn) :
 
-![img11](https://docs.opencv.org/3.1.0/bitsextraction1.png)
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/bitsextraction1.png">
+</p>
 
+<p align="center">
+  Hình 13. Các ô được đánh dấu
+</p>
 
-Hình 13. Các ô được đánh dấu
 
 Một vài tham số có thể tùy chỉnh quá trình này:
   - int markerBorderBits
@@ -520,10 +540,14 @@ Một vài tham số có thể tùy chỉnh quá trình này:
     - Khi giải nén bit của mỗi phần, số lượng điểm ảnh màu đen và trắng được tính. Nói chung, không nên xem xét tất cả các điểm ảnh di động. Thay vào đó, tốt hơn là bỏ qua một số điểm ảnh ở mép của các phần. Vì sau khi loại bỏ sự méo mó, màu của các phần nói chung không tách rời hoàn toàn và các phần trắng có thể lấn chiếm một số pixel của các phần đen (và ngược lại). Vì vậy, tốt hơn là bỏ qua một số điểm ảnh để tránh tính các điểm ảnh sai.
     - Ví dụ, trong hình dưới đây:
 
-![img12](https://docs.opencv.org/3.1.0/bitsextraction2.png)
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/bitsextraction2.png">
+</p>
 
+<p align="center">
+  Hình 14. Viền các ô được đánh dấu
+</p>
 
-Hình 14. Viền các ô được đánh dấu
 
 Chỉ các pixel bên trong các ô vuông màu xanh lá cây được xem xét.
 
