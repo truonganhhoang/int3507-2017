@@ -1,4 +1,9 @@
 # Ứng dụng bầu cử
+
+## Lưu ý: Đây chỉ là bản tóm tắt, bản đầy đủ được thêm vào tệp báo cáo Nhom8_Ethereum_BaoCaoCVDHD.pdf ở thư mục gốc của dự án
+
+## Ứng dụng ví dụ này được triển khai tại vote.ducpham.xyz
+
 Đây là một ứng dụng rất đơn giản để giới thiệu về một trong các ứng dụng quan trọng của nền tảng Ethereum - ứng dụng phi tập trung (decentralized app). Mọi dữ liệu đều bị ẩn danh và không thể sửa đổi nhưng có một khuyết điểm là để sử dụng nó, người dùng cần cài đặt một chương trình để có thể tham gia vào mạng Ethereum, điều này khá khó và phức tạp cho một người dùng cuối. Vì vậy mà đã có rất nhiều ứng dụng hướng việc sử dụng các ứng dụng phi tập trung như một ứng dụng web thông thường, ví dụ như `kyber.network`. 
 
 Ứng dụng đơn giản này được viết ra để mô phỏng lại việc đó cũng như hướng dẫn bạn có thể làm được một ứng dụng như thế. Ứng dụng mô tả một cuộc bầu cử đơn giản, những đặc tính của ứng dụng phi tập trung khá phù hợp cho công việc này - ẩn danh và không thể thay đổi.
