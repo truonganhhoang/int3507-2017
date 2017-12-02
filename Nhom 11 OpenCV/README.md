@@ -636,9 +636,12 @@ Sau khi các mã đã được phát hiện và xác định, bước cuối cù
 
 - Trên màn hình thiết bị sẽ hiển thị các kết quả như hình trên.
 
+**Demo**
 
+<p align="center">
+  <img src="./image/demo.gif" style="text-align: center;">
 
-
+</p>
 
 
 
