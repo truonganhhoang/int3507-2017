@@ -537,12 +537,12 @@ Sau khi các mã đã được phát hiện và xác định, bước cuối cù
 
 - Sau khi tải file apk về thiết bị di động của bạn, hãy mở nó ra.
 - Màn hình đăng nhập hiển thị, yêu cầu bạn đăng nhập tài khoản để có thể sử dụng ứng dụng.
+<div style="text-align:center">
+  <img src="./image/login.png" width="200" height="400" style="text-align: center;">
 
-<img src="./image/login.png" width="400" height="200" style="text-align: center;">
 
-
-Hình 15. Màn hình đăng nhập
-
+  <p>Hình 15. Màn hình đăng nhập</p>
+</div>
 - Sau khi đăng nhập thành công, màn hình chính sẽ hiển thị danh sách bài kiểm tra như hình ảnh dưới đây:
 
 ![img14](https://photos.app.goo.gl/4jB3O1xjfCxsOcLW2)
