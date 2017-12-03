@@ -3,6 +3,7 @@
 	\usepackage{titleps}
 	\usepackage{graphicx}
 	\usepackage{listings}
+	\usepackage{float}
 	\usepackage{underscore}
 	\usepackage[bookmarks=true]{hyperref}
 	\usepackage{amsmath}
@@ -21,6 +22,8 @@
 	\usepackage{subfiles}
 	\usepackage{xcolor}
 	\usepackage{hyperref}
+	\usepackage{cases}
+	\usepackage{array}
 	\usepackage[T1,T5]{fontenc}
 	\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
 	\hypersetup{
@@ -74,64 +77,75 @@
 		
 		\newpage
 		\pagestyle{long}
+	\newpage
+	\section{Đặt vấn đề}
+	\subfile{contain/datVanDe}
 	
-	\section{Lịch sử sửa đổi}
-	Bảng \ref{table:one} là bảng phân công công việc cho các thành viên trong nhóm.
-	\newline
-	\begin{table}[ht]
-		\centering
-		
-		\begin{tabular}{| p{6cm} | p{5cm} | p{5cm} |}
-			\hline
-			\textbf{Ngày}  & \textbf{Thành viên} & \textbf{Nội dung công việc}\\
-			\hline
+	\newpage
+	\section{Tổng quan về chuỗi khối}
+		\subsection{Khái niệm chuỗi khối}
+			\subfile{contain/IntroBlockChain}
 			
-		\end{tabular}
-		\label{table:one}
-		\caption{Bảng lịch sử sửa đổi}
-	\end{table}
-	\newpage
-	\section{Giới thiệu}
-		\subsection{Giới thiệu chung về chuỗi khối}
-		\subfile{contain/IntroBlockChain}
+		\subsection{Các thành phần công nghệ của chuỗi khối}
+			\subfile{contain/BlockchainComponents}
+				
+		\subsection{Cách hoạt động của chuỗi khối}
+			\subfile{contain/HowToWork}			
+
+	\newpage	
+	\section{Tổng quan về Ethereum}	
+		\subsection{Giới thiệu chung}
+		\subfile{contain/IntroEthereum}	
+			
+		\subsection{Các khái niệm cơ bản $^{[7]}$$^{[8]}$}
+		\subfile{contain/EthereumComponents}
+			
+		\subsection{Sự khác biệt cơ bản giữa Ethereum và Bitcoin}
+		\subfile{contain/EthereumVsBitcoin}	
+		\newpage
+		\subsection{Lộ trình của Ethereum}
+		\subfile{contain/roadmap}
 		
-		\subsection{Tổng quan Ethereum}
-		\subfile{contain/GeneralBlockChain}		
-
-		\subsection{Một vài ứng dụng của Ethereum}
+		\subsection{Ứng dụng của Ethereum $^{[10]}$}
 		\subfile{contain/EthereumApp}
+	
 	\newpage
+	\section{Các chi tiết trong Ethereum $^{[11]}$}
+		\subsection{Tổng quan}
+		\subfile{contain/DrivingFactor}
 	
-	\section{Chi tiết trong Ethereum}
-	\subsection{Tổng quan}
-	\subfile{contain/DrivingFactor}
-
-	\subsection{Mô hình chuỗi khối}
-	\subfile{contain/BlockChainParadigm}
-
-	\subsection{Những quy tắc}
-	\subfile{contain/Conventions}
-
-	\subsection{Khối, trạng thái và các giao dịch}
-	\subfile{contain/BST}
-
-	\subsection{Gas và sự thanh toán}
-	\subfile{contain/GasPayment}
-
-	\subsection{Sự đồng thuận về việc chấp nhận khối}
-	\subfile{contain/consensus}
-
-	\subsection{Máy ảo Ethereum (Ethereum Virtual Machine)}
-	\subfile{contain/transaction}
+		\subsection{Mô hình chuỗi khối}
+		\subfile{contain/BlockChainParadigm}
 	
-	\subsection{Lộ trình của Ethereum}
-	\subfile{contain/roadmap}
+		\subsection{Những quy tắc}
+		\subfile{contain/Conventions}
 	
-	\subsection{Các thành phần tiếp theo}
-	\subfile{contain/nextcontent}
+		\subsection{Khối, trạng thái và các giao dịch}
+		\subfile{contain/BST}
+		
+		\subsection{Thực hiện giao dịch}
+		\subfile{contain/Thgiaodich}
+		
+		\subsection{Tạo hợp đồng}
+		\subfile{contain/taohopdong}			
+		
+		\subsection{Từ cây khối tới chuỗi khối}
+		\subfile{contain/BTB}
+		
+		\subsection{Khối hoàn thiện}
+		\subfile{contain/khoihoanthien}
+		
+		\subsection{Thực hiện hợp đồng}
+		\subfile{contain/ImplementingContracts}
+		
+		\subsection{Hướng đi tương lai}
+		\subfile{contain/FutureDirections}	
 	
+	\newpage
 	\section{Ứng dụng bầu cử}
 	\subfile{contain/voting}
-	\section{Tài Liệu Tham Khảo}
+	
+	\newpage
+	\section{Tài liệu tham khảo}
 	\subfile{contain/reference}
 \end{document}

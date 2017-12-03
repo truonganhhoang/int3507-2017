@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <h1 class="title is-2 has-text-centered">Chương trình bầu cử đơn giản</h1>
+      <h1 class="title is-2 has-text-centered">A Simple Voting App</h1>
 
       <table class="table is-fullwidth">
         <thead>
@@ -18,7 +18,7 @@
             <td class="has-text-centered">{{candidate.name}}</td>
             <td class="has-text-centered">{{candidate.numberOfVote}}</td>
             <td class="has-text-centered">
-              <button class="button is-primary" @click="voteForCandidate(candidate.name)">
+              <button class="button is-primary" @click="showModal(candidate.name)">
                   Vote
               </button>
             </td>
@@ -26,79 +26,119 @@
         </tbody>
       </table>
 
-      <em>Chú ý: Kết quả bầu cử phải mất một khoảng thời gian để thực hiện trên chuỗi khối</em>
+      <em>Note: It takes a significant time to get the result</em>
+      <password-modal v-if="show_modal" @close="hideModal"
+        @ok="voteForCandidate"
+      >
+      </password-modal>
     </div>
   </div>
 </template>
 
 <script>
   import axios from 'axios'
+  import Noty from 'noty'
+  import PasswordModal from '@/components/PasswordModal'
+  import {getUrl} from '../common'
 
   export default {
+    showModal (name) {
+      this.name = name
+      this.show_modal = true
+    },
+    hideModal () {
+      this.name = ''
+      this.show_modal = false
+    },
     mounted() {
       this.init()
     },
     data() {
       return {
+        candidateName: [],
         candidates: [],
+        name: '',
+        show_modal: false
       }
     },
     methods: {
+      showModal(name) {
+        this.name = name
+        this.show_modal = true
+      },
+      hideModal() {
+        this.name = ''
+        this.show_modal = false
+      },
       init() {
-        const self = this
         const token = localStorage.getItem('Authorization')
         if(token) {
           axios.defaults.headers.common['Authorization'] = token
         }
 
-        axios.post('http://localhost:3333/api/v1/voting/candidate')
-        .then(function(res) {
-          const data = res.data;
-          var candidates = data.candidates
-          for(var i = 0; i < candidates.length; i++) {
-            candidates[i] = {
-              name: self.hexToString(candidates[i])
-            }
-          }
-          
-          self.getVotes(candidates)
+        axios.post(getUrl('api/v1/voting/candidate'))
+        .then(res => {
+          const data = res.data
+          let candidates = data.candidates
+          candidates = candidates.map(candidate => {
+            return this.hexToString(candidate)
+          })
+          this.candidateName = candidates
+          this.getVotes()
         })
       },
-      getVotes(candidates) {
-        const self = this
+      getVotes() {
+        let candidateName = this.candidateName
+        for(let i = 0; i < candidateName.length; i++) {
+          this.getVote(candidateName[i])
+        }          
+      },
+      getVote(name) {
         const address = this.$route.params.address
-        this.candidates = []
-        for(var i = 0; i < candidates.length; i++) {
-          let candidate = candidates[i]
-          axios.post('http://localhost:3333/api/v1/voting/get-vote', {
-            name: candidate.name,
-            address
-          }).then(res => {
-            self.candidates.push({
-              name: candidate.name,
+        let index = this.candidates.findIndex(element => {
+          return element.name === name
+        })
+        axios.post(getUrl('api/v1/voting/get-vote'), {
+          name,
+          address
+        }).then(res => {
+          if(index >= 0) {
+            this.$set(this.candidates[index], 'numberOfVote', res.data.vote)
+          } else {
+            this.candidates.push({
+              name,
               numberOfVote: res.data.vote
             })
-          })
-        }
+          }
+        })
       },
-      voteForCandidate(name) {
-        let passphrase = prompt("Hãy điền mật khẩu", "");
+      voteForCandidate(passphrase) {
+        let name = this.name
+        this.hideModal()
         if (passphrase == null || passphrase == "") {
           return
         } else {
           const address = this.$route.params.address
           // this.$noty.info("Wait a minute to get the result!")
-          axios.post('http://localhost:3333/api/v1/voting/vote', {
+          axios.post(getUrl('api/v1/voting/vote'), {
             name,
             address,
             passphrase
           }).then(res => {
-            this.getVotes(this.candidates)
-            this.$noty.success("You voted successfully!")
+            this.getVote(name)
+            new Noty({
+              text: 'You voted successfully!',
+              type: 'success',
+              timeout: 1000
+            }).show();
           }).catch((error) => {
-            let msg = error.response.data.error.message
-            // this.$noty.error(msg)
-            alert(msg)    
+            let msg = error.response.data.msg
+            this.hideModal()
+            new Noty({
+              text: msg,
+              type: 'error',
+              timeout: 1000
+            }).show();
           }); 
         }
       },
@@ -114,5 +154,8 @@
         return string;
       }
     },
+    components: {
+      PasswordModal
+    }
   }
 </script>

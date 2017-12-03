@@ -1,0 +1,63 @@
+\documentclass[../cnd.tex]{subfiles}
+Quá trình hoàn thiện khối liên quan đến bốn giai đoạn:
+\begin{itemize}
+	\item Xác nhận (hoặc nếu khai thác, xác định) ommers;
+	\item Xác nhận hợp lệ (hoặc, nếu khai thác, xác định) giao dịch;
+	\item Áp dụng phần thưởng;
+	\item Xác minh (hoặc, nếu khai thác, tính một hợp lệ) trạng thái và
+	nonce.
+\end{itemize}
+
+\subsubsection{Xác nhận \textbf{ommers}}
+Việc xác nhận các tiêu đề ommer không có gì hơn bằng cách bằng xác minh rằng mỗi tiêu đề ommer gồm xác định tiêu đề hợp lệ và sự đáp ứng các mối quan hệ của ommer đến khối hiện tại.
+\subsubsection{Xác nhận giao dịch}
+Loại gas đã sử dụng phải tương ứng trung thực với các giao dịch được liệt kê: $B_{H_g}$, tổng lượng gas sử dụng trong khối, phải bằng gas tích lũy được sử dụng theo giao dịch cuối cùng:
+
+\subsubsection{Ứng dụng thưởng}
+
+Việc áp dụng các phần thưởng vào một khối liên quan đến việc nâng cao sự cân bằng của các tài khoản của địa chỉ thụ hưởng của khối. Hệ thống tăng tài khoản thụ hưởng của khối bằng $R_b$; cho mỗi ommer, chúng ta nâng số người thụ hưởng của khối thêm $\dfrac{1}{32}$ phần thưởng của khối và người thụ hưởng ommer sẽ nhận được phần thưởng tùy thuộc vào số khối. Ta định nghĩa hàm $\Omega$:
+$$\Omega(B, \sigma)\equiv \sigma' : \sigma = \sigma$$
+$$\sigma[B_{H_c}]_b= \sigma[B_{H_c}]_b+ (1+\dfrac{||B_U||}{32})R_b$$
+$$\forall U \in B_U: \sigma'[U_c]_b=  \sigma[U_c]_b+(1+\dfrac{1}{8}(U_i- B_{H_i}))R_b$$
+
+Nếu có va chạm giữa các địa chỉ thụ hưởng giữa các ommers và khối (tức là hai ommers với cùng một địa chỉ thụ hưởng hoặc một ommer có cùng địa chỉ thụ hưởng như khối hiện tại), bổ sung được áp dụng tích lũy.
+\newline \indent
+Chúng ta định nghĩa khối thưởng như 5 Ether:
+$$R_b = 5*10^{18}$$
+\subsubsection{Xác nhận trạng thái và nonce}
+
+Bây giờ chúng ta có thể định nghĩa hàm,$\Gamma$, mà ánh xạ một khối B đến trạng thái khởi đầu của nó:
+\begin{subnumcases}{\Gamma(B)\equiv}
+	\sigma&$P(B_H)= \varnothing$ \\
+	\sigma_i : TRIE(L_S(\sigma_i)) = P(B_H)_{H_r}
+\end{subnumcases}
+
+Ở đây, $ TRIE (L_S (\sigma_i))$ có nghĩa là băm của nút gốc của một trie của trạng thái $\sigma_i$; giả định rằng việc triển khai sẽ lưu trữ nó trong cơ sở dữ liệu trạng thái, không đáng kể và hiệu quả vì trie tự nhiên là một cấu trúc dữ liệu không thay đổi.
+\newline\indent
+Và cuối cùng xác định $\Phi$, chức năng chuyển khối, trong đó bản đồ một khối B không hoàn chỉnh cho một khối hoàn chỉnh $B_0$:
+$$\Phi(B) \equiv B' : B'= B^*$$
+$$B'_n = n : x \le \dfrac{2^{256}}{H_d}$$
+$$B'_m = m : (x,m) = PoW(B^*,n,d)$$
+$$B^* \equiv B: B^*_r = r(\Pi(\Gamma(B),B))$$
+Với d là một mảng dữ liệu
+\newline \indent 
+Như được xác định ở phần đầu của công việc hiện tại,$\Pi$ là chức năng chuyển giao trạng thái, được định nghĩa theo thuật ngữ $\Omega$ , hàm quyết toán khối và $\Upsilon$, chức năng thẩm định giao dịch, bây giờ được xác định rõ ràng.
+\newline \indent 
+Như đã trình bày ở trên, $R[n]_\sigma$, $R[n]_l$ và $R[n]_u$ là các trạng thái tương ứng thứ n, nhật ký và gas tích luỹ được sử dụng sau mỗi lần giao dịch ($R[n]_b$, thành phần thứ tư của bộ này, đã được xác định theo các nhật ký). Nguyên đơn được xác định đơn giản như là trạng thái kết quả từ việc áp dụng giao dịch tương ứng đến trạng thái phát sinh từ giao dịch trước đó (hoặc trạng thái ban đầu của khối trong trường hợp giao dịch đầu tiên đó):
+\begin{subnumcases}{R[n]_\sigma}
+	\Gamma(B)&$n <0$\\
+	\Upsilon(R[n-1]_\sigma, B_{T}[n])
+\end{subnumcases}
+
+Trong trường hợp $B_R[n]_u$, chúng ta sử dụng cách tiếp cận tương tự để xác định mỗi mục như là gas được sử dụng để đánh giá giao dịch tương ứng được tổng kết với mục trước đó (hoặc không, nếu nó là lần đầu tiên), cho chúng ta một tổng số hoạt động:
+
+\begin{subnumcases}{B_R[n]_u}
+0&$n <0$\\
+\Upsilon^g(R[n-1]_\sigma, B_{T}[n]) +R[n-1]_u
+\end{subnumcases}
+
+Đối với $R [n]_l$, chúng ta sử dụng hàm $\Upsilon^l$ mà chúng ta dễ dàng xác định trong chức năng thực hiện giao dịch.
+$$R[n]_l = \Upsilon^l(R[n-1]_\sigma, B_T[n])$$
+
+Cuối cùng, chúng ta định nghĩa $\Pi$ là trạng thái mới với hàm khuyếch đại khối $\Omega$ được áp dụng cho trạng thái kết quả của giao dịch cuối cùng, $l(B_R)_\sigma$:
+$$\Pi (\sigma, B) \equiv \Omega(B,l(R)_\sigma)$$

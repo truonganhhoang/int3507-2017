@@ -9,36 +9,36 @@
 <script>
 import axios from 'axios'
 import Account from '@/components/Account'
+import {getUrl} from '../common'
 
 export default {
   name: 'Main',
   data () {
     return {
       login: false,
-      user: null,
     }
   },
   mounted () {
-    var self = this
     const token = localStorage.getItem('Authorization')
     if(token) {
       axios.defaults.headers.common['Authorization'] = token
     }
-    axios.get('http://localhost:3333/api/v1/login')
-      .then(function(res) {
-        const data = res.data
-        self.login = true
-        if(data.user) {
-          self.user = data.user
-          return
-        }
-        localStorage.setItem('Authorization', 'Bearer ' + data.token)
-        axios.defaults.headers.common['Authorization'] = localStorage.getItem('Authorization')
-      })
-      .catch(err => {
-        localStorage.removeItem('Authorization')
-        this.$router.push({name: 'Main'})
-      })
+    axios.get(getUrl('api/v1/login'))
+    .then(res => { 
+      this.login = true
+      let data = res.data
+      let token = data.token
+      if(!token) {
+        return
+      }
+      localStorage.setItem('Authorization', 'Bearer ' + data.token)
+      axios.defaults.headers.common['Authorization'] = localStorage.getItem('Authorization')
+    })
+    .catch(err => {
+      console.log(err)
+      localStorage.removeItem('Authorization')
+      this.$router.push({name: 'Main'})
+    })
   },
   components: {
     Account

@@ -7,7 +7,7 @@ contract Voting {
     an unsigned integer to store the vote count
     */
     mapping (bytes32 => uint8) public votesReceived;
-    mapping (address => bool) public accountList;
+    mapping (address => bytes32) public accountList;
   
     /* Solidity doesn't let you pass in an array of strings in the constructor (yet).
     We will use an array of bytes32 instead to store the list of candidates
@@ -48,11 +48,11 @@ contract Voting {
     function voteForCandidate(bytes32 candidate) returns (bool) {
         if (validCandidate(candidate) == false) 
             revert();
-        if (accountList[msg.sender]) {
+        if (accountList[msg.sender] != 0) {
             return false;
         }
         votesReceived[candidate] += 1;
-        accountList[msg.sender] = true;
+        accountList[msg.sender] = candidate;
         return true;
     }
 
@@ -60,7 +60,7 @@ contract Voting {
         return candidateList;
     }
 
-    function voted() constant returns(bool) {
+    function voted() constant returns(bytes32) {
         return accountList[msg.sender];
     }
 }

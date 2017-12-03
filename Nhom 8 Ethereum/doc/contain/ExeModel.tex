@@ -1,0 +1,28 @@
+\documentclass[../cnd.tex]{subfiles}
+
+Mô hình thực thi quy định cụ thể cách trạng thái hệ thống được thay đổi một loạt quy trình mã byte đã cho và bộ dữ liệu môi trường nhỏ. Điều này được xác định thông qua một mô hình chính thức của một máy trạng thái ảo, được gọi là Ethereum Virtual Machine (EVM). Nó là một máy Turing gần như hoàn chỉnh; tiêu chuẩn "gần như" xuất phát từ thực tế rằng việc tính toán về bản chất thông qua tham số gas, điều này làm hạn chế tổng số phép tính cần thực hiện.
+
+\subsubsection{Khái niệm cơ bản}
+EVM là một kiến trúc dựa trên ngăn xếp đơn giản. Kích thước chữ của máy (và do đó kích thước của ngăn xếp) là 256-bit. Điều này đã được lựa chọn để tạo thuận lợi cho hàm băm Keccak- 256 và tính toán đường cong elip. Các mô hình bộ nhớ là một mảng  byte địa chỉ từ đơn giản. Các ngăn xếp có kích thước tối đa là 1024. Máy cũng có một mô hình lưu trữ độc lập; điều này cũng tương tự như khái niệm đối với bộ nhớ nhưng thay vì một mảng byte, nó là một mảng chữ có thể được đánh địa chỉ (wordaddressable). Không giống như bộ nhớ không ổn định, lưu trữ là không dễ thay đổi và được duy trì như một phần của trạng thái hệ thống. Tất cả các vị trí trong cả lưu trữ và bộ nhớ đều được xác định ban đầu là 0. Máy không tuân theo tiêu chuẩn kiến trúc von Neumann. Thay vì lưu trữ mã chương trình trong bộ nhớ thường có thể truy cập hoặc lưu trữ, nó được lưu trữ riêng biệt trong một ROM ảo chỉ thông qua một hướng dẫn chuyên biệt. 
+
+Máy có thể được thực thi ngoại lệ trong vài lý do, trong đó có ngăn xếp luồng dưới và hướng dẫn không hợp lệ. Giống như ngoại lệ hết gas (OOG), chúng không để lại sự thay đổi trạng thái nguyên vẹn. Thay vào đó, máy ngừng ngay lập tức và báo cáo vấn đề này với tác nhân thực thi (hoặc bộ vi xử lý giao dịch hoặc môi trường thực thi) cái mà sẽ giải quyết nó một cách riêng biệt.
+
+\subsubsection{Tổng quan về phí}
+Phí (được gọi là gas) được trả dưới ba hoàn cảnh khác nhau, cả ba như điều kiện tiên quyết để thực thi việc giao dịch. Điều đầu tiên và phổ biến nhất là phí bản chất cho việc tính toán giao dịch. Thứ hai, gas có thể được khấu trừ để tạo thành các khoản thanh toán cho cuộc gọi thông điệp phụ thuộc hoặc tạo hợp đồng; mẫu thanh toán này tách việc thanh toán thành CREATE, CALL và CALLCODE. Cuối cùng, gas có thể được trả do sự gia tăng trong việc sử dụng bộ nhớ.
+
+Việc thực thi của một tài khoản, tổng lệ phí sử dụng bộ nhớ phải trả tỷ lệ với nhỏ nhất của 32 byte được yêu cầu mà tất cả các chỉ số bộ nhớ (cho dù là để đọc hoặc viết) được bao gồm trong phạm vi. Điều này được trả trên cơ sở chỉ trong một khoảng thời gian; như vậy, sự chỉ dẫn một khu vực bộ nhớ ít nhất 32 byte lớn hơn bất kỳ bộ nhớ được lập chỉ mục trước đó chắc chắn sẽ gây ra thêm phí sử dụng bộ nhớ. Do lệ phí này nó là địa chưa từng vượt qua giới hạn 32-bit. Điều đó nói rằng, việc triển khai phải có khả năng để quản lý tình huống này. Phí lưu trữ có một chút hành vi sắc thái – để khuyến khích giảm thiểu việc sử dụng dung lượng lưu trữ (tương ứng trực tiếp đến một cơ sở dữ liệu trạng thái lớn trên tất cả các nút), lệ phí thực thi cho một giao dịch được xóa một mục trong việc lưu trữ không chỉ từ bỏ, một sự trả lại đủ khả năng được đưa ra; trên thực tế, việc hoàn phí này là một cách hiệu quả trả lên phía trước kể từ khi sử dụng ban đầu của một vị trí lưu trữ chi phí hơn đáng kể hơn so với sử dụng bình thường.
+
+\subsubsection{Môi trường thực thi}
+
+Ngoài trạng thái hệ thống $\sigma$, và lượng gas g còn lại để tính toán, có một vài phần thông tin quan trọng được sử dụng trong các môi trường thực thi mà các tác nhân thực thi phải cung cấp; chúng được chứa trong:
+\begin{itemize}
+\item $I_a, $ địa chỉ của tài khoản công ty sở hữu các mã số thực thi.
+\item $I_o,$ địa chỉ người gửi của các giao dịch hình thành việc thực thi này.
+\item $I_p,$ giá gas trong giao dịch hình thành việc thực thi này.
+\item $I_d,$ các mảng byte dữ liệu đầu vào cho việc thực thi; nếu tác nhân thực thi là một giao dịch, đây sẽ là dữ liệu giao dịch.
+\item $I_s,$ địa chỉ của tài khoản gây ra các mã để thực thi; nếu tác nhân thực thi là một giao dịch, đây sẽ người gửi giao dịch.
+\item $I_v,$ giá trị thông qua tài khoản này như một phần của thủ tục tương tự để thực thi; nếu tác nhân thực thi là một giao dịch, đây sẽ là giá trị giao dịch.
+\item $I_b,$ mảng byte mã máy để thực thi.
+\item $I_H,$ tiêu đề khối của các khối hiện tại.
+\item $I_e,$ độ sâu của cuộc-gọi-thông-điệp hoặc việc tạo-hợp-đồng hiện tại (ví dụ số lượng của CALLs hoặc CREATEs đang được thực thi hiện tại).
+\end{itemize}

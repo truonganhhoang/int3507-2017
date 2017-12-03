@@ -3,7 +3,7 @@
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
-        <p class="modal-card-title">Modal title</p>
+        <p class="modal-card-title">Create Account</p>
         <button class="delete" aria-label="close" @click="close"></button>
       </header>
       <section class="modal-card-body">
@@ -37,7 +37,7 @@
         </div>
       </section>
       <footer class="modal-card-foot">
-        <button class="button is-success" @click="createAccount">Create Account</button>
+        <button class="button is-success" @click="createAccount">Create</button>
         <button class="button" @click="close">Cancel</button>
       </footer>
     </div>
@@ -46,6 +46,7 @@
 
 <script>
   import axios from 'axios'
+  import {getUrl} from '../common'
 
   export default {
     data () {
@@ -73,7 +74,7 @@
           alert('repass is not match')
           return
         }
-        axios.post('http://localhost:3333/api/v1/account',
+        axios.post(getUrl('api/v1/account'),
           self.account
         )
         .then(function(res) {

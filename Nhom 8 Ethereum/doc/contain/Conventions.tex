@@ -1,8 +1,8 @@
 \documentclass[../cnd.tex]{subfiles}
 
-Chúng tôi sử dụng một số công ước đánh máy cho các ký hiệu chính thức, một số trong đó là khá cụ thể cho công việc hiện tại.
+Trong bài, chúng tôi sử dụng một số ký hiệu chính thức được tất mọi người công nhận.
 
-Hai bộ các giá trị được cấu trúc cao, 'cấp trên cùng', trạng thái, được đánh dấu bằng chữ cái Hy Lạp in đậm. Chúng rơi vào các trạng thái của thế giới, được biểu thị bằng $\sigma$ (hoặc một biến thể ở đó) và các trạng thái của máy, $\mu$. 
+Các trạng thái của giao dịch được biểu thị bằng $\sigma$ (hoặc một biến thể ở đó) và các trạng thái của máy, $\mu$. 
 
 Các hàm hoạt động dựa trên các giá trị có cấu trúc cao được biểu thị bằng chữ hoa tiếng Hy Lạp, ví dụ: $\Upsilon$, Ethereum chức năng chuyển trạng thái.
  
@@ -13,5 +13,3 @@ Giá trị vô hướng và các chuỗi byte có kích thước cố định (h
 Trong toàn bộ, chúng ta giả sử các đại lượng vô hướng là các số nguyên dương và do đó thuộc về tập hợp P. Tập các dãy tất cả các byte là B, được định nghĩa chính thức trong Phụ lục B. Nếu như một chuỗi các trình tự được giới hạn ở những đoạn có độ dài đặc biệt, một subscript, do đó tập của tất cả các chuỗi byte có độ dài 32 được đặt tên $B_{32}$ và tập hợp của tất cả các số nguyên dương nhỏ hơn $2^{256}$ được đặt tên $P_{256}$. Điều này được định nghĩa chính thức trong phần tiếp theo.
  
 Dấu ngoặc vuông được sử dụng để lập chỉ mục và tham chiếu các thành phần riêng lẻ hoặc các chuỗi con của các trình tự, ví dụ: $\mu_s$[0] biểu thị mục đầu tiên trên ngăn xếp của máy. Đối với chuỗi con, các điểm elip được sử dụng để xác định phạm vi dự định, bao gồm các phần tử ở cả hai giới hạn, ví dụ: $\mu_m	$ [0 :: 31] biểu thị 32 đầu tiên của bộ nhớ máy.
-
-Khi xem xét việc sử dụng các hàm hiện có, cho một hàm f, hàm f * biểu thị một phiên bản tương đương, phần tử của việc lập bản đồ chức năng thay vì giữa các trình tự. Nó được định nghĩa chính thức trong phần tiếp theo.
