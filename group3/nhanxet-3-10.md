@@ -9,6 +9,7 @@
 ### 2. Tồn tại
 - Giao diện có nhiều chỗ chưa phù hợp, chưa có điều hướng đến các chức năng khác như kiểm tra phát âm, luyện từ vựng.
 - Đôi khi xảy một số lỗi trong lúc chat như nhiều bot trả lời nhiều lần một lúc.
+- Còn một số lỗi chính tả.
 ### 3. Góp ý chỉnh sửa bổ sung:
 - Nên cải thiện thêm về giao diện, chức năng, tăng UI, UX
 - Cần bổ sung thêm dữ liệu để Bot trả lời phong phú, đa dạng hơn.
