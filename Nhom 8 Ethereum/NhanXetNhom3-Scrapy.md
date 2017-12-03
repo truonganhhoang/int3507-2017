@@ -19,3 +19,5 @@
 * Nên trình bày phần tích hợp crawler cho các hệ thống khác ví dụ như (phân loại tài liệu, trích xuất dữ liệu)
 * Nên so sánh về hiệu năng của scrapy chi tiết hơn
 * Nên có ví dụ về việc thu nhập dữ liệu trên các trang sử dụng ajax
+
+## Điểm đánh giá: 9
