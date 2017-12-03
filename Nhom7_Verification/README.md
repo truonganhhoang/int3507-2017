@@ -121,7 +121,7 @@ Ghi chú : Nếu bạn không nhìn thấy điều này, hãy liên hệ với n
             + Sublime Text 2: Để cài đặt hỗ trợ cho Sublime, <a href="https://github.com/erggo/sublime-dafny">xem thêm</a>.<br>
             + Visual Studio (chỉ dành cho Windows): Phần mở rộng Dafny cho Visual Studio hỗ trợ làm sáng cú pháp và xác minh gia tăng. Lấy Visual Studio 2012 (lưu ý: Tôi đã không kiểm tra với các phiên bản mới hơn) từ Dreamspark (xem ở trên cho liên kết), cài đặt nó, và khi kết thúc, chạy DafnyLanguageService.vsix từ tệp phân phối nhị phân Dafny. Chế độ Dafny sẽ hoạt động khi bạn mở tệp có phần mở rộng .dfy trong Visual Studio.<br>
 
-<p> </p>
+<p> Dafny hiện đang lan rộng trên 3 website:</p>
 <ul>
  <li><a href="https://www.microsoft.com/en-us/research/project/dafny-a-language-and-program-verifier-for-functional-correctness/?from=http%3A%2F%2Fresearch.microsoft.com%2Fdafny">Dafny's homepage</a>: nơi bao gồm các thông tin về Dafny</li>
  <li>Sourcecode về Dafby <a href="https://github.com/Microsoft/dafny/releases">binary downloads </a> cho Windows, Mac, GNU/Linux, and FreeBSD.</li>
@@ -871,6 +871,7 @@ ensures (desirable property)
 }
 ```
 <p>Đối với vấn đề tìm kiếm số 0, các thuộc tính mong muốn không có trong số các phần tử index cho đến index + a[index] có thể là số không. Chúng có các mảng và chỉ số bắt đầu từ dạng tham số, với các yêu cầu thông thường từ FindZero:</p>
+
 ```
 lemma SkippingLema (a : array<int>, j:int)
 requires a != null
@@ -960,6 +961,7 @@ ensures count(a+b) == count(a) + count(b)
 {
 }
 ```
+
 **13.5. Chứng minh phân phối thuộc tính (Proving the Distributive Property)**
 <br>
 <p>Để viết bổ đề, chúng ta phải tìm ra một chiến lược để chứng minh nó. Như bạn có thể xác minh ở trên (không có ý định chơi chữ), bổ đề không hoạt động được nêu ra, thì bổ đề sẽ là không cần thiết. Để làm điều này, chúng tôi lưu ý rằng lý do Dafny không phải có thể chứng minh điều này ở nơi đầu tiên mà các chức năng đếm được xác định từ khi bắt đầu của chuỗi, trong khi các thuộc tính phân phối hoạt động vào giữa của một chuỗi. Do đó nếu chúng ta có thể tìm thấy một cách để làm việc từ phía trước trong tiến trình, sau đó Dafny có thể theo dõi bằng cách sử dụng định nghĩa của các chức năng trực tiếp.</p>
@@ -992,7 +994,7 @@ assert count(a+b) == count(a) + count(b);//postcondition
 assert count(a+b) == count([a[0]]) + count(a[1..]) + count(b)
 ```
 <p>Bây giờ điều này trông rất giống với những biểu hiện mà chúng tôi đã nhận sau khi mở rộng count(a + b). Khác biệt duy nhất là count(a[1..] + b) đã trở thành count(a[1..]) + count(b). Nhưng điều này là chính xác tại nơi chúng tôi đang cố gắng để chứng minh!</p>
-
+ 
 **13.6. Cảm ứng (Induction)**
 <br>
 <p>Các đối số, chúng tôi đang cố gắng để làm cho chúng trở thành quy nạp. chúng tôi cho rằng một phiên bản nhỏ hơn của vấn đề là sự thật. Điều này là chính xác các khái niệm của cảm ứng: sử dụng một phiên bản nhỏ hơn của một vấn đề để chứng minh những vấn đề lớn hơn. Để làm điều này, chúng ta gọi là sở hữu đệ quy từ trong mã của chúng tôi. Nó là một phương pháp, do đó, nó có thể được kích hoạt bất cứ khi nào chúng ta cần nó.</p>
@@ -1402,6 +1404,7 @@ module Mod {
 }
 ```
 <p>Nếu hai module cùng được mở và các thành phần có cùng tên thì phải có tiền tố modul thì mới có thể gọi được. Từ khóa opend có thể được sử dụng với bất kì loại khai báo import nào kể cả module trừu tượng.</p>
+
 **14.4. Tính trừu tượng (Module Abstraction)**
 <br>
 <p>Sử dụng một "Import abstract module" khi sử dụng cách thực hiện cụ thể không hiệu quả, cần 1 module thực hiện 1 số interface.</p>
@@ -1440,7 +1443,9 @@ module Mod2 refines Mod {
 }
 ```
 <p>Khi tinh chỉnh "abstract import" thành 1 khối cụ thể, module cụ thể phải là 1 sàng lọc rõ ràng về 1 trừu tượng.( đã được khai báo với refines)</p>
+
 **14.5. Tổ chức và sự phụ thuộc (Module Ordering and Dependencies)**<br>
+
 <p> Dafny không phải quá chú trọng về thứ tự các Module xuất hiện, nhưng họ phải tuân theo một số quy tắc để được hình thành tốt. Theo nguyên tắc chung, cần phải có cách để đặt các Module trong một chương trình sao cho mỗi cái chỉ đề cập đến những điều được định nghĩa trước khi nó xuất hiện trong văn bản nguồn. Điều đó không có nghĩa là các Module phải được đưa ra theo thứ tự đó. Dafny sẽ tìm ra lệnh đó cho bạn, giả sử bạn không thực hiện bất kỳ tài liệu tham khảo thông tư nào. Ví dụ, điều này là khá rõ ràng vô nghĩa:</p>
 
 ```
@@ -1468,7 +1473,9 @@ module M {
 }
 ```
 <p>Bởi vì Module M phải được khai báo đầu tiên trước bất kỳ khai báo nào, chẳng hạn như các phương pháp. Để xác định các hàm toàn cầu như thế này, bạn có thể đặt chúng trong một Module (gọi là Globals) và mở nó vào bất kỳ Module nào cần chức năng của nó. Cuối cùng, nếu bạn import thông qua một đường dẫn, chẳng hạn như nhập khẩu A = B.C, thì điều này tạo ra sự phụ thuộc của A trên B, vì chúng ta cần phải biết B là gì (nó là trừu tượng hay gì).</p>
-**14.6. Tên (Name Resolution)**<br>
+
+**14.6. Tên (Name Resolution)**
+<br>
 <p>Khi Dafny nhìn thấy một cái gì đó giống như A.B.C, làm thế nào nó biết những gì từng phần đề cập đến? Quy trình Dafny sử dụng để xác định trình tự nhận dạng cũng như các qui ước đặt tên. Mặc dù các quy tắc có vẻ phức tạp, thường thì nó sẽ làm những gì bạn mong đợi. Dafny đầu tiên tìm kiếm nhận dạng ban đầu. Tùy thuộc vào những gì nhận diện đầu tiên được đề cập đến, phần còn lại của định danh được tra cứu trong ngữ cảnh thích hợp. Các quy tắc đầy đủ như sau:</p>
 <li>Các biến địa phương, các tham số và các biến ràng buộc. Đây là những thứ như x, y, và i trong var x ;, ... returns (y: int), và forall i :: ....</li>
 <li>Các lớp, kiểu dữ liệu, và tên Module( không là chỉ một phần của định danh). Lớp cho phép các thành viên tĩnh của chúng được truy cập theo cách này, và các loại dữ liệu cho phép các thành phần khởi tạo của nó được truy cập. Các Module cho phép bất kỳ thành viên nào của họ được gọi như thế này.</li>
