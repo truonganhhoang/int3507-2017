@@ -7,7 +7,6 @@ Giảng viên: Trương Anh Hoàng
 - Phạm Thị Thu Hường
 - Phùng Thị Lương
 
-
 ### Nội dung
 <ul>
  <li>I. Giới thiệu về Dafny</li>
