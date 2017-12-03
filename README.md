@@ -2,10 +2,10 @@
 Giảng viên: Trương Anh Hoàng
 
 ## Nhóm 7: Tìm hiểu về công cụ kiểm chứng Dafny
-- Hoàng Thanh Hằng 
 - Lê Thị Xuân 
-- Phạm Thị Thu Hường
+- Hoàng Thanh Hằng 
 - Phùng Thị Lương
+- Phạm Thị Thu Hường
 
 ### Nội dung
 <ul>
