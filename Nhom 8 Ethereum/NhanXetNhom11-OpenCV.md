@@ -1,6 +1,6 @@
 # Nhận xét nhóm 11 - OpenCV
 ## Nhận xét bởi: nhóm 8 - Ethereum
-
+### Người nhận xét: Vũ Nam Tước
 ## I. Góc độ người dùng
 ### 1. Ưu điểm
 * Báo cáo phần lý thuyết khá đầy đủ và chi tiết
@@ -20,5 +20,5 @@
 Nhóm 11 chưa cung cấp tài liệu và mã nguồn nên nhóm 8 chưa nhận xét được ở góc độ này.
 
 -----------------
-## Điểm đánh giá: 9,125
+## Điểm đánh giá: 9
 
