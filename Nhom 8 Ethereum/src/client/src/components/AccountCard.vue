@@ -24,6 +24,13 @@
               Vote App
             </button>
           </p>
+          <p class="control">
+            <a class="button" 
+              :href="getTransaction(account.address)"
+            >
+            Transactions
+            </a>
+          </p>
         </div>
       </div>
     </div>
@@ -32,26 +39,34 @@
 
 <script>
 import axios from 'axios'
+import {getUrl} from '../common'
+import Noty from 'noty'
 
 export default {
   props: ['account'],
   mounted() {
     this.getBalance(this.account.id)
+    setInterval(() => {
+      this.getBalance(this.account.id)
+    }, (30 + Math.random() * 10) * 1000);
   },
   data() {
     return {
-      balance: 0
+      balance: null
     }
   },
   methods: {
     getKeyStore(encrypt) {
       return 'data:text/plain;charset=utf-8,' + encodeURIComponent(encrypt)
     },
+    getTransaction(address) {
+      return 'https://rinkeby.etherscan.io/address/' + address
+    },
     deleteAccount(id) {
       const self = this
       let result = confirm("Bạn muốn xóa không?")
       if(result) {
-        axios.delete('http://localhost:3333/api/v1/account/' + id)
+        axios.delete(getUrl('api/v1/account/' + id))
         .then(function(res) {
           self.$emit('delete', id)
         })
@@ -61,10 +76,20 @@ export default {
       }
     },
     getBalance(id) {
-      axios.get('http://localhost:3333/api/v1/account/' + id + '/balance')
+      axios.get(getUrl('api/v1/account/' + id + '/balance'))
         .then((res) => {
           if(res.data.balance) {
-            this.balance = res.data.balance
+            if(res.data.balance != this.balance) {
+              let text = this.account.address + "'s balance changed"
+              if(this.balance) {
+                new Noty({
+                  text,
+                  type: 'success',
+                  timeout: 1000
+                }).show();
+              }
+              this.balance = res.data.balance
+            }
           }
         })
     },

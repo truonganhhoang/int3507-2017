@@ -28,7 +28,7 @@ class UserController {
     const isLoggedIn = yield req.auth.check()
     if(isLoggedIn) {
       res.ok({
-        user: req.auth.user,
+        login: true,
       })
       return
     }
@@ -40,8 +40,7 @@ class UserController {
     yield user.save()
     const newToken = yield req.auth.attempt(user.username, apiKey)
     res.ok({
-      token: newToken,
-      user
+      token: newToken
     })
   }
 }
