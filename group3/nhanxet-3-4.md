@@ -18,6 +18,7 @@
 ### 2. Tồn tại
 - Giao diện markdown chưa tốt.
 - Tài liệu lộn xộn, chưa có sự liên kết. Gây mất thời gian cho người đọc.
-### 3. Góp ý bổ xung
+### 3. Góp ý bổ sung
 - Sử dụng markdown tạo header rõ ràng.
 - Tạo liên kết trong tài liệu nhiều hơn.
+Chấm điểm: 8/10
