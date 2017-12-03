@@ -14,10 +14,13 @@
 #### I. GIỚI THIỆU CHUNG
 #### 1. Tổng quan về OpenCV
 
-![OpenCV Logo](https://jayrambhia.files.wordpress.com/2012/06/opencv_hor_900_1.jpg)
+<p align="center">
+  <img src="https://jayrambhia.files.wordpress.com/2012/06/opencv_hor_900_1.jpg" width="400" height="200" style="text-align: center;">
+</p>
 
-
-Hình 1. Logo OpenCV
+<p align="center">
+  Hình 1. Logo OpenCV
+</p>
 
 
 OpenCV (OpenSource Computer Vision) là một thư viện mã nguồn mở, được phát hành theo giấy phép BSD (Berkeley Software Distribution), do đó nó hoàn toàn miễn phí cho cả học thuật và thương mại.
@@ -59,29 +62,31 @@ WebSocket là công nghệ hỗ trợ giao tiếp hai chiều giữa client và 
 Hiện tại Websocket đã được hỗ trợ trên 74% các trình duyệt. Bạn có thể xem số liệu mới nhất tại [đây](https://caniuse.com/#search=websocket)
 
 Giao thức bắt tay của WebSocket:
-![img00](https://poesiabinaria.net/wp-content/uploads/2016/10/WebSockets-Diagram.png)
 
+<p align="center">
+  <img src="https://poesiabinaria.net/wp-content/uploads/2016/10/WebSockets-Diagram.png" width="400" height="250" style="text-align: center;">
+</p>
 
 
 Để thực hiện kết nối, client phải gửi một WebSocket handshake request đến server. Server sẽ gửi trả lại WebSocket handshake response như ví dụ bên dưới:
 
 Client request:
 
-  GET /mychat HTTP/1.1
-  Host: server.example.com
-  Upgrade: websocket
-  Connection: Upgrade
-  Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
-  Sec-WebSocket-Protocol: chat
-  Sec-WebSocket-Version: 13
-  Origin: http://example.com
+	GET /mychat HTTP/1.1
+	Host: server.example.com
+	Upgrade: websocket
+	Connection: Upgrade
+	Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
+	Sec-WebSocket-Protocol: chat
+	Sec-WebSocket-Version: 13
+	Origin: http://example.com
 
 Server response:(Server Architecture)
 
-  HTTP/1.1 101 Switching Protocols
-  Upgrade: websocket
-  Connection: Upgrade
-  Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=
+	HTTP/1.1 101 Switching Protocols
+	Upgrade: websocket
+	Connection: Upgrade
+	Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=
 Để xác nhận việc kết nối, client sẽ gửi một giá trị Sec-WebSocket-Key được mã hóa bằng Based64 đến server. Sau đó bên server sẽ thực hiện:
 - Nối thêm chuỗi cố định là “258EAFA5-E914-47DA-95CA-C5AB0DC85B11″ vào Sec-WebSocket-Key để được chuỗi mới là “x3JJHMbDL1EzLkh9GBhXDw==258EAFA5-E914-47DA-95CA-C5AB0DC85B11″.
 - Thực hiện mã hóa SHA-1 chuỗi trên để được “1d29ab734b0c9585240069a6e4e3e91b61da1969″.
@@ -143,11 +148,13 @@ Tìm hiểu thêm tại trang [manual](https://socket.io/#how-to-use)
 
 Ví dụ về cấu trúc của một Class JNI:
 
-![img000](http://vietgamedev.net/file/attachment/2013/08/276f80e2cb29445c46c18d07132d91da_view.png)
+<p align="center">
+  <img src="http://vietgamedev.net/file/attachment/2013/08/276f80e2cb29445c46c18d07132d91da_view.png">
+</p>
 
-
-
-Hình 2. Cấu trúc Class JNI
+<p align="center">
+  Hình 2. Cấu trúc Class JNI
+</p>
 
 JNI (Java Native Interface) là một framework cho phép gọi các hàm Java trong JVM từ các ngôn ngữ cấp thấp như C, C++ hay assembly. Nói nôm na dễ hiểu là mình muốn gọi Java từ C++ thì mình sẽ gọi thông qua JNI. Ta thường dùng JNI khi muốn gọi các phương thức đặc trưng của Android như: gửi tin nhắn, thực hiện cuộc gọi... JniHelper class là lớp singleton cocos2d-x cung cấp để hỗ trợ việc sử dụng JNI một cách dễ dàng hơn. Ta sẽ dùng lớp này để thực hiện các lệnh gọi Java từ C++.
 
@@ -178,11 +185,13 @@ Mã này có thể xoay theo nhiều chiều khác nhau trong môi trường, v�
 
 Hình ảnh ví dụ về mã ArUco:
 
-![img01](https://docs.opencv.org/3.1.0/markers.jpg)
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/markers.jpg">
+</p>
 
-
-
-Hình 3. Mã ArUco
+<p align="center">
+  Hình 3. Mã ArUco
+</p>
 
 ##### b. Từ điển
 
@@ -215,10 +224,14 @@ Trước khi nhận dạng mã, các mã cần được in ra và được đặ
 
 Hình ảnh mã được tạo:
 
-![img02](https://docs.opencv.org/3.1.0/marker23.jpg)
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/marker23.jpg">
+</p>
 
+<p align="center">
+  Hình 4. Mã được tạo
+</p>
 
-Hình 4. Mã được tạo
 
 ---
 #### III. THUẬT TOÁN NHẬN DẠNG MÃ
@@ -237,23 +250,36 @@ Quá trình nhận dạng mã bao gồm 2 bước chính:
 
 Xem xét hình ảnh sau:
 
-![img03](https://docs.opencv.org/3.1.0/singlemarkersoriginal.png)
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/singlemarkersoriginal.png">
+</p>
 
+<p align="center">
+  Hình 5. Ảnh gốc chứa các mã
+</p>
 
-
-Hình 5. Ảnh gốc chứa các mã
 
  Đây là mã được phát hiện (màu xanh lá cây):
-![img04](https://docs.opencv.org/3.1.0/singlemarkersdetection.png)
 
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/singlemarkersdetection.png">
+</p>
 
-Hình 6. Ảnh chứa mã đã phát hiện
+<p align="center">
+  Hình 6. Ảnh chứa mã đã phát hiện
+</p>
+
 
 Và đây là những đối tượng đã bị loại bỏ trong bước nhận dạng (màu hồng):
-![img05](https://docs.opencv.org/3.1.0/singlemarkersrejected.png)
 
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/singlemarkersrejected.png">
+</p>
 
-Hình 7.  Ảnh chứa các đối tượng bị loại bỏ
+<p align="center">
+  Hình 7.  Ảnh chứa các đối tượng bị loại bỏ
+</p>
+
 
 Trong module ArUco, việc phát hiện mã được thực hiện bởi hàm detectMarkers(). Đây là chức năng quan trọng nhất trong module, vì tất cả các phần còn lại của các chức năng được dựa trên các dấu hiệu phát hiện trước đó được trả về bởi detectMarkers().
 Một ví dụ về phát hiện mã:
@@ -289,10 +315,14 @@ Xem ví vụ sau:
   1. image là hình ảnh đầu vào / đầu ra, nơi mã sẽ được lấy ra (nó thường sẽ là hình ảnh tương tự, nơi các mã đã được phát hiện)
   2. markerCorners và markerIds là cấu trúc của các mã được phát hiện trong cùng một định dạng được cung cấp bởi hàm detectMarkers()
 
-![img06](https://docs.opencv.org/3.1.0/singlemarkersrejected.png)
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/singlemarkersrejected.png">
+</p>
 
+<p align="center">
+  Hình 8. Ảnh có mã được phát hiện
+</p>
 
-Hình 8. Ảnh có mã được phát hiện
 
 Chú ý rằng chức năng này chỉ được cung cấp cho việc hình dung mã và việc sử dụng nó có thể được bỏ qua hoàn toàn. Với hai chức năng này, chúng ta có thể tạo ra một vòng lặp dò tìm cơ bản để phát hiện các mã từ máy ảnh.
 
@@ -319,11 +349,14 @@ Module ArUco cung cấp một chức năng để ước lượng các vị trí 
 
 Hệ tọa độ mã được giả định bởi chức năng này được đặt ở chính giữa của mã, được môt tả như trong hình dưới đây. Màu sắc tương ứng với trục X: đỏ, Y: xanh, Z: xanh lam.
 
-![img07](https://docs.opencv.org/3.1.0/singlemarkersaxis.png)
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/singlemarkersaxis.png">
+</p>
 
+<p align="center">
+  Hình 9. Ảnh các mã được gắn với trục tọa độ
+</p>
 
-
-Hình 9. Ảnh các mã được gắn với trục tọa độ
 
 Module ArUco cung cấp một chức năng để vẽ trục như trong hình trên, vì vậy có thể kiểm tra việc đánh giá.
 Xét ví dụ:
@@ -399,10 +432,15 @@ Một trong những bước đầu tiên của quá trình nhận dạng mã là
 
 Ví dụ về phân đoạn cho hình ảnh mẫu được sử dụng ở trên là:
 
-![img08](https://docs.opencv.org/3.1.0/singlemarkersthresh.png)
 
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/singlemarkersthresh.png">
+</p>
 
-Hình 10.  Ảnh đã phân đoạn
+<p align="center">
+  Hình 10.  Ảnh đã phân đoạn
+</p>
+
 
 Phân đoạn ảnh này có thể được tùy chỉnh bằng các tham số sau: int adaptiveThreshWinSizeMin, int adaptiveThreshWinSizeMax, int adaptiveThreshWinSizeStep
 
@@ -415,10 +453,14 @@ Ví dụ, đối với các giá trị adaptiveThreshWinSizeMin = 5 và adaptive
 
 Giá trị kích thước cửa sổ thấp có thể 'phá vỡ' đường viền mã, nếu kích thước mã quá lớn và sẽ không được nhận dạng, như trong hình ảnh sau:
 
-![img09](https://docs.opencv.org/3.1.0/singlemarkersbrokenthresh.png)
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/singlemarkersbrokenthresh.png">
+</p>
 
+<p align="center">
+  Hình 11. Ảnh mã bị hỏng
+</p>
 
-Hình 11. Ảnh mã bị hỏng
 
 Mặt khác, giá trị quá cao có thể tạo ra hiệu quả tương tự nếu các mã quá nhỏ và nó cũng có thể làm giảm hiệu suất. Hơn nữa quá trình này có xu hướng giảm phân đoạn toàn cầu, mất đi các lợi ích thích ứng.
 Trường hợp đơn giản nhất sử dụng cùng một giá trị cho adaptiveThreshWinSizeMin và adaptiveThreshWinSizeMax, tạo ra một giá trị phân đoạn duy nhất. Tuy nhiên, cách tốt hơn đó là sử dụng một loạt các giá trị cho kích thước cửa sổ, mặc dù nhiều giá trị phân đoạn cũng có thể làm giảm hiệu suất đáng kể.
@@ -461,17 +503,25 @@ Sau khi nhận dạng đối tượng, các bit của mỗi đối tượng sẽ
 
 Đây là một ví dụ về hình ảnh thu được sau khi loại bỏ sự méo mó:
 
-![img10](https://docs.opencv.org/3.1.0/removeperspective.png)
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/removeperspective.png">
+</p>
 
+<p align="center">
+  Hình 12. Thay đổi phối cảnh
+</p>
 
-Hình 12. Thay đổi phối cảnh
 
 Sau đó, hình ảnh được chia thành lưới có cùng số ô so với số bit trong mã. Trên mỗi ô, số lượng điểm ảnh màu đen và trắng được tính để quyết định bit được gán cho ô nào (từ giá trị lớn) :
 
-![img11](https://docs.opencv.org/3.1.0/bitsextraction1.png)
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/bitsextraction1.png">
+</p>
 
+<p align="center">
+  Hình 13. Các ô được đánh dấu
+</p>
 
-Hình 13. Các ô được đánh dấu
 
 Một vài tham số có thể tùy chỉnh quá trình này:
   - int markerBorderBits
@@ -490,10 +540,14 @@ Một vài tham số có thể tùy chỉnh quá trình này:
     - Khi giải nén bit của mỗi phần, số lượng điểm ảnh màu đen và trắng được tính. Nói chung, không nên xem xét tất cả các điểm ảnh di động. Thay vào đó, tốt hơn là bỏ qua một số điểm ảnh ở mép của các phần. Vì sau khi loại bỏ sự méo mó, màu của các phần nói chung không tách rời hoàn toàn và các phần trắng có thể lấn chiếm một số pixel của các phần đen (và ngược lại). Vì vậy, tốt hơn là bỏ qua một số điểm ảnh để tránh tính các điểm ảnh sai.
     - Ví dụ, trong hình dưới đây:
 
-![img12](https://docs.opencv.org/3.1.0/bitsextraction2.png)
+<p align="center">
+  <img src="https://docs.opencv.org/3.1.0/bitsextraction2.png">
+</p>
 
+<p align="center">
+  Hình 14. Viền các ô được đánh dấu
+</p>
 
-Hình 14. Viền các ô được đánh dấu
 
 Chỉ các pixel bên trong các ô vuông màu xanh lá cây được xem xét.
 
@@ -537,34 +591,57 @@ Sau khi các mã đã được phát hiện và xác định, bước cuối cù
 
 - Sau khi tải file apk về thiết bị di động của bạn, hãy mở nó ra.
 - Màn hình đăng nhập hiển thị, yêu cầu bạn đăng nhập tài khoản để có thể sử dụng ứng dụng.
+<p align="center">
+  <img src="./image/login1.png" width="200" height="400" style="text-align: center;">
 
-![img13](https://photos.app.goo.gl/xMyIzbgyDZSpJ1ch1)
+</p>
+<p align="center">Hình 15. Màn hình đăng nhập</p>
+- Sau khi đăng nhập thành công, màn hình chính sẽ hiển thị danh sách bài kiểm tra như hình ảnh dưới đây:
+
+<p align="center">
+  <img src="./image/list_exams.png" width="200" height="400" style="text-align: center;">
+
+</p>
+<p align="center">Hình 16. Màn hình danh sách bài kiểm tra</p>
 
 
 
-Hình 15. Màn hình đăng nhập
 
-- Sau khi đăng nhập thành công, màn hình chính sẽ hiển thị như hình ảnh dưới đây:
+- Sau khi chọn bài kiểm tra, ứng dụng sẽ hiển thị danh sách câu hỏi.
 
-![img14](https://photos.app.goo.gl/4jB3O1xjfCxsOcLW2)
+<p align="center">
+  <img src="./image/list_questions.png" width="200" height="400" style="text-align: center;">
 
+</p>
+<p align="center">Hình 17. Màn hình danh sách câu hỏi</p>
 
+- Sau khi chọn câu hỏi, ứng dụng sẽ hiển thị câu hỏi.
 
-Hình 16. Màn hình chính
+<p align="center">
+  <img src="./image/question.png" width="200" height="400" style="text-align: center;">
+
+</p>
+<p align="center">Hình 18. Màn hình câu hỏi</p>
+
 
 - Khi bạn ấn vào nút SCAN, camera sẽ hiển thị, bắt đầu quét các mã trong không gian và nhận dạng chúng.
 
-![img15](https://drive.google.com/file/d/1foXO5nt6uymTgyA2dYOaCVg2nhO1gg8i/view?usp=sharing)
+<p align="center">
+  <img src="./image/detect.png" width="480" height="270" style="text-align: center;">
 
+</p>
+<p align="center">Hình 19. Màn hình camera hiển thị kết quả.
+</p>
 
-
-Hình 17. Màn hình camera hiển thị kết quả.
 
 - Trên màn hình thiết bị sẽ hiển thị các kết quả như hình trên.
 
+**Demo**
 
+<p align="center">
+  <img src="./image/demo.gif" style="text-align: center;">
 
-
+</p>
 
 
 
