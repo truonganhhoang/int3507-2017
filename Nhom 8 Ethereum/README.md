@@ -17,6 +17,30 @@
 
 ------------------------
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->		
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->		
+		
+		
+## Mục lục		
+  - [1. Đặt vấn đề](#1-%C4%91%E1%BA%B7t-v%E1%BA%A5n-%C4%91%E1%BB%81)		
+  - [2. Tổng quan về chuỗi khối](#2-t%E1%BB%95ng-quan-v%E1%BB%81-chu%E1%BB%97i-kh%E1%BB%91i)		
+    - [2.1 Khái niệm chuỗi khối](#21-kh%C3%A1i-ni%E1%BB%87m-chu%E1%BB%97i-kh%E1%BB%91i)		
+    - [2.2 Các thành phần công nghệ của chuỗi khối](#22-c%C3%A1c-th%C3%A0nh-ph%E1%BA%A7n-c%C3%B4ng-ngh%E1%BB%87-c%E1%BB%A7a-chu%E1%BB%97i-kh%E1%BB%91i)		
+    - [2.3 Cách hoạt động của chuỗi khối](#23-c%C3%A1ch-ho%E1%BA%A1t-%C4%91%E1%BB%99ng-c%E1%BB%A7a-chu%E1%BB%97i-kh%E1%BB%91i)		
+  - [3. Tổng quan về Ethereum](#3-t%E1%BB%95ng-quan-v%E1%BB%81-ethereum)		
+    - [3.1 Giới thiệu chung](#31-gi%E1%BB%9Bi-thi%E1%BB%87u-chung)		
+    - [3.1 Lịch sử ra đời](#31-l%E1%BB%8Bch-s%E1%BB%AD-ra-%C4%91%E1%BB%9Di)		
+    - [3.2 Các khái niệm cơ bản [7][8]](#32-c%C3%A1c-kh%C3%A1i-ni%E1%BB%87m-c%C6%A1-b%E1%BA%A3n-78)		
+    - [3.3 Sự khác biệt cơ bản giữa Ethereum và Bitcoin](#33-s%E1%BB%B1-kh%C3%A1c-bi%E1%BB%87t-c%C6%A1-b%E1%BA%A3n-gi%E1%BB%AFa-ethereum-v%C3%A0-bitcoin)		
+    - [3.4 Lộ trình của Ethereum](#34-l%E1%BB%99-tr%C3%ACnh-c%E1%BB%A7a-ethereum)		
+    - [3.5 Ứng dụng của Ethereum [10]](#35-%E1%BB%A9ng-d%E1%BB%A5ng-c%E1%BB%A7a-ethereum-10)		
+  - [4. Các chi tiết trong Ethereum](#4-c%C3%A1c-chi-ti%E1%BA%BFt-trong-ethereum)		
+  - [5. Kết luận](#5-k%E1%BA%BFt-lu%E1%BA%ADn)		
+  - [6. Tài liệu tham khảo](#6-t%C3%A0i-li%E1%BB%87u-tham-kh%E1%BA%A3o)		
+		
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->		
+
+
 # Tìm hiểu về Ethereum
 ## 1. Đặt vấn đề
 Trên thế giới hiện nay, nổi lên các hoạt động mua bán, trao đổi tiền ảo rất sôi nổi, trong đó Bitcoin [1] và Ethereum [2] là hai đồng tiền được nhắc đến nhiều nhất, xoay quanh những chủ đề này nhiều người còn quan tâm tới chuỗi khối - một công nghệ đằng sau những tiền ảo này. Công nghệ này đang giúp mọi người dù xa lạ hay thân quen đều có thể xây dựng một cuốn sổ giao dịch đáng tin cậy cho riêng mình. Đây là yếu tố có ý nghĩa vượt xa cả mọi giao thức mã hóa tiền tệ thông thường.
@@ -310,8 +334,13 @@ Phần này đề cập đến các thuật toán, các phép tính toán trong 
 
 Các bạn có thể tìm hiểu chi tiết trong bản báo cáo của nhóm.
 
-## 5. Tài liệu tham khảo
-
+## 5. Kết luận
+Thông qua quá trình tìm hiểu về Ethereum, nhóm đã trình bày chi tiết về các yếu tố kỹ thuật cũng như ứng dụng của Ethereum trong hiện tại cũng như tương lai. Tại thời điểm viết báo cáo này, giá trị của một đồng Bitcoin (BTC) đã vượt qua 10000 $ và một đồng Ethereum (ETH) đã vượt qua 400 $, điều đó cho thấy giá trị của công nghệ này lớn đến mức nào. Không chỉ có giá trị trong lĩnh vực công nghệ tài chính, nó còn cho chúng ta một phương thức khác để phát triển ứng dụng phi tập trung đầy tiềm năng. Nhóm cũng đã phát triển một ứng dụng nhỏ để thử nghiệm một cách cơ bản, từ đó bạn hoàn toàn có thể phát triển các ứng dụng trên nền tảng này tùy vào yêu cầu bài toán mà bạn gặp phải.		
+		
+Từ việc tìm hiểu này, nhóm đã có hiểu biết rõ hơn về Ethereum nói riêng cũng như chuỗi khối nói chung. Chính bài tập lớn đã giúp nhóm nắm vững cụ thể hơn Ethereum là gì, hiểu nó hoạt động như thế nào và ứng đụng nó thay vì nghi ngờ, lo ngại, và chỉ nhìn vào mặt tiêu cực. Tài liệu nhóm mình viết có thể còn nhiều thiếu sót nên rất mong các bạn có thể góp ý để nhóm mình hoàn thiện bài báo cáo hơn cũng như có thể mở rộng nó hơn trong tương lai.		
+		
+Mong tài liệu này sẽ giúp ích được cho các bạn trong việc tìm hiểu về Ethereum cũng như tận dụng được nó trong công việc của mình.				
+## 6. Tài liệu tham khảo
 * [1] [www.bitcoin.com](www.bitcoin.com)
 * [2] [www.ethereum.org](www.ethereum.org)
 * [3] [www.blockchain.com](www.blockchain.com)
