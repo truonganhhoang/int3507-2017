@@ -7,8 +7,8 @@ a. Ưu điểm:
 
 b. Nhược điểm:
 - Dữ liệu hỗ trợ còn ít.
-Khi vào bot thì nên show ra hướng dẫn, chỉ dẫn cho người dùng.
-Cải thiện khả năng hiểu người dùng của bot (Sử dụng cả tiếng anh và tiếng việt)
+- Khi vào bot thì nên show ra hướng dẫn, chỉ dẫn cho người dùng.
+- Cải thiện khả năng hiểu người dùng của bot (Sử dụng cả tiếng anh và tiếng việt)
 
 **2. Chất lượng sản phẩm bên trong (mã nguồn, tài liệu hướng dẫn phát triển tiếp ).**
 

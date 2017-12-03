@@ -23,5 +23,12 @@ b. Nhược điểm
 không nên dịch theo tài liệu tiếng anh.
 - Một số từ tiếng anh được viết trước đó, sau đó sử dụng từ viết tắt cho nó,
 nhưng bên trên không định nghĩa từ tiếng anh đó được viết tắt là gì.
+- Báo cáo chưa có mục lục để người đọc có thể có cái nhìn tổng quan trước khi xem chi tiết.
+- Chưa deploy được demo để người xem có thể xem trực tiếp được demo trước mà không cần phải cài đặt.
+
+**3.Góp ý**
+
+- Hoàn thiện sản phẩm hơn.
+- Cần bổ sung chiến lược phát triển sau này.
 
 Điểm:8/10
