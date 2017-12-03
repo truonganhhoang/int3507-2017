@@ -1,6 +1,8 @@
 # Nhận xét nhóm 2 - Blockchain
 
-## Cho điểm: 8/10
+**Nhận xét bởi**: Nhóm 5
+
+**Điểm đánh giá**: 8/10
 
 ## Ưu điểm
 

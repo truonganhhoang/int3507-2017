@@ -1,6 +1,8 @@
 # Nhận xét nhóm 9 - BigChainDB
 
-## Cho điểm: 9.5/10
+**Nhận xét bởi**: Nhóm 5
+
+**Điểm đánh giá**: 9.5/10
 
 ## Ưu điểm
 
