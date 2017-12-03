@@ -24,4 +24,5 @@
 ### 3. Góp ý chỉnh sửa bổ sung
 - Nên bổ sung thêm hình ảnh minh họa về các bước tạo Bot trên API.AI
 - Nêu rõ ràng hơn phần xây dựng server, bổ sung các công nghệ sử dụng trong các chức năng kiểm tra phát âm, luyện từ vựng qua hình ảnh.
+
 Chấm điểm: 9/10
