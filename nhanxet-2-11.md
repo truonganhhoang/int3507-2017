@@ -6,6 +6,7 @@
 - Tài liệu khá rõ ràng, có hình ảnh mô tả rất dễ hiểu.
 - Demo chi tiết rõ ràng.
 - Báo cáo dễ hiểu, trình bày tốt.
+- Ứng dụng có tính thực tế cao.
 
 ## 2. Nhược điểm
 - Nên có thêm mục lục để người xem có thể biết được trước nội dung có những gì.
