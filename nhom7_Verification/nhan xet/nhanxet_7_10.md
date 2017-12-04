@@ -33,4 +33,4 @@ b. Nhược điểm
 - Bot có thể làm việc bằng tiếng Việt.
 - Cải thiện sản phẩm hơn.
 
-Điểm: 8.5/10
+Điểm: 9/10
