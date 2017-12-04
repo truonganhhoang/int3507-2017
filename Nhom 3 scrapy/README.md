@@ -21,7 +21,8 @@
  #### 2.6. [Lưu dữ liệu](#save-data)
  #### 2.7. [Cấu hình nâng cao Scrapy](#avanced-config)
  #### 2.8. [Các vấn đề cần giải quyết với Scrapy](#todos)
- ### 3. [Kết luận](#summary)
+ ### 3. [Giới thiệu một số dự án thu thập dữ liệu cụ thể](#project-example)
+ ### 4. [Kết luận](#summary)
  
  Trong báo cáo này sẽ trình bày về các hệ thống mã nguồn mở thu thập dữ liệu.
  Phần 1 sẽ giới thiệu về các khái niệm trong việc thu thập dữ liệu, các thư viện
@@ -29,6 +30,7 @@
  chi tiết kiến trúc, cách cài đặt của thư viện Scrapy. Phần kết luận là những 
  đánh giá của nhóm về những ưu nhược điểm của thư viện sau quá trình nhóm  đã 
  tìm hiểu và thực nghiệm.
+ Để có thể hiểu tổng quan về hệ thống thu thập dữ liệu, các bạn có thể tham khảo tài liệu slide của nhóm tại `presentation.pdf`
 
 # 1. Đặt vấn đề <a name="issue"></a>
 
@@ -174,7 +176,6 @@ vào cơ sở dữ liệu.
     - Sai: Kết thúc.
 
 [1] https://doc.scrapy.org/en/latest/topics/architecture.html
-
 ## 2.2. Cài đặt scrapy <a name="scrapy-setup"></a>
 
 Thư viện Scrapy được viết bằng Python, hỗ trợ cả 2 phiên bản Python 2.7 và Python 3.3 trở lên.
@@ -332,8 +333,8 @@ tạo một selector gắn với nút gốc hoặc toàn bộ tài liệu.
     số biểu thức xpath truyền vào.
     - `css()`: trả về danh sách các selectors, mỗi cái đại diện cho một nút đã được chọn bằng tham số 
     biểu thức css truyền vào.
-    - `extract()`: trả về một danh sách chuỗi unicode với dữ liệu được chọn -> có thể dùng `extract_first()` 
-    để lấy 1 phần tử đầu tiên. 
+    - `extract()`: trả về một danh sách chuỗi unicode với dữ liệu được chọn -> có thể dùng `extract_first()` 
+    để lấy 1 phần tử đầu tiên. 
     - `re()`: trả về danh sách chuỗi unicode đã được trích xuất bằng áp dụng tham số biểu thức chính quy 
     truyền vào.
 
@@ -511,7 +512,6 @@ Spider này hỗ trợ sơ đồ trang web lồng nhau và tìm kiếm sơ đồ
 [2] https://www.sitemaps.org/index.html
 
 [3] http://www.robotstxt.org/
-
 ## 2.4. Trích xuất dữ liệu <a name="extractor"></a>
 ### Duyệt tất cả các trang
 
@@ -603,7 +603,6 @@ Xpath này loại trừ nội dung từ tập lệnh và các thẻ kiểu (styl
 các nút văn bản chỉ có khoảng trắng [1]
 
 [1] http://stackoverflow.com/a/19350897/2572383
-
 ## 2.5. Item pipeline <a name="item-pipeline"></a>
 
 Một item sau khi đã được thu thập bởi spider sẽ được chuyển đến item pipeline để xử lí thông qua một số 
@@ -915,7 +914,66 @@ cache các truy cập đó. Ngoài ra ta nên lưu trữ các đường dẫn v�
 sở dữ liệu như MongoDB để thuận tiện cho việc kiểm tra cũng như phân tích 
 sau này.
 
-## 3. Kết luận <a name="summary"></a>
+## 3. Giới thiệu một số dự án thu thập dữ liệu cụ thể <a name="project-example"></a>
+Để dễ dàng thực hành và tiếp cận với các hệ thống thu thập dữ liệu mã nguồn mở. Nhóm có xây dựng các dự án ví dụ. Mã nguồn của dự án ví dụ này trong thư mục `source`.
+Để thu thập dữ liệu nhóm chia thành 2 cách tiếp cận. Cách tiếp cận thứ nhất là sử dụng thư viện scrapy. Ngoài ra cách tiếp cận thứ hai là sử dụng các API đã có sẵn tại các trang web.
+### 3.1. Ví dụ về thu thập đề thi tại trang tungtung.vn
+ Trang web tungtung.vn là website trắc nghiệm kiến thức từ lớp 1 đến lớp 12. Website sử dụng công nghệ react để làm phần giao diện. Với công nghệ này, sẽ khó khăn để thu thập dữ liệu bằng cách sử dụng scrapy. Nhóm đã khai thác và sử dụng API có sẵn từ phía server của tungtung.vn.
+ Mã nguồn của ví dụ này tại thư mục `source/fetchApi/tungtung`
+ 
+#### Kết quả đạt được:
+ Đề thi: 302 đề thi
+ Câu hỏi: hơn 10000 câu hỏi. Mỗi đề thi có từ 10-50 câu trắc nghiệm (bao gồm đáp án)
+ 
+ Dữ liệu thu thập có trong thư mục `source/fetchApi/tungtung/data`
+
+### 3.2. Ví dụ về thu thập hỏi đáp tại trang BigSchool.vn
+Trang web BigSchool.vn là trang web hệ thống kiến thức cho học sinh từ lớp 1 đến lớp 12. BigSchool có nhiều chức năng học, thi, chơi, hỏi, đọc. Trong ví dụ này, nhóm thu thập dữ liệu hỏi đáp của BigSchool.vn (https://ask.bigschool.vn)
+Dữ liệu trang trả về được gửi từ server vì vậy sử dụng scrapy là cách hiệu quả để thu thập dữ liệu. Mã nguồn của ví dụ này tại `source/scrapy/bigschool` 
+
+Các trang web thu thập được phân trang từ trang 1 đến trang 2594
+
+```python
+def start_requests(self):
+    urlRelative = 'https://ask.bigschool.vn/ask.html?type=&txtSearch=&o=0&c=-1&s=-1&t=-1&p='
+    count = 0
+    for page in range(1, 2594):
+        count = count + 1
+        url = urlRelative + str(page)
+        print('page - ', count)
+        yield scrapy.Request(url, self.parse) # Thêm các trang để crawler
+```
+
+Trích xuất dữ liệu
+```python
+def parse(self, response):
+    for block in response.xpath('//div[@id="result-ask"]/ul/li'):
+        # block = response.xpath('//div[@id="result-ask"]/ul/li')[0]
+        url = block.xpath('div[contains(@class,"ask-title")]/span/a/@href').extract_first()
+        question = "".join(block.xpath('div/a/h5/text()').extract()).strip()
+        subject = block.xpath('div[contains(@class,"ask-title")]/span/text()')[0].extract()
+        grade = block.xpath('div[contains(@class,"ask-title")]/span/text()')[1].extract()
+
+        record = {'question': question, 'subject': subject, 'grade': grade, 'url': url}
+        print(record)
+
+        yield record
+```
+
+Lưu dữ liệu
+```python
+def save(self, item):
+    client = MongoClient('localhost', 27017)
+    db = client.data_crawler
+    bigschool = db.bigschool
+    bigschool.update(item, True)
+    return item
+```
+
+#### Kết quả đạt được
+Tiến hành thực hiện crawler trang bigschool, trong 30 phút nhóm đã thu thập được toàn bộ dữ liệu trang hỏi đáp (với 25931 câu hỏi đáp)
+Dữ liệu thu thập có trong thư mục `source/scrapy/bigschool/out.json`
+## 4. Kết luận <a name="summary"></a>
 
 ### Ưu điểm
 
