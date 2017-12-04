@@ -24,7 +24,7 @@ Xây dựng công cụ quản lý và chia sẻ điểm an toàn dựa vào Bigc
  
 ## II Giới thiệu các công nghệ và kiến thức liên quan
   Đầu tiên để hiểu về BigchainDB ta cần tìm hiểu về công nghệ lõi blockchain.
-### Giới thiệu về chuối khối 
+### Giới thiệu về chuỗi khối 
  Chuỗi khối (blockchain hoặc block chain) là một cơ sở dữ liệu phân cấp lưu trữ thông tin trong các khối thông tin được liên kết với nhau bằng mã hóa và mở rộng theo thời gian. Mỗi khối thông tin đều chứa thông tin về thời gian khởi tạo và được liên kết tới khối trước đó, kèm một mã thời gian và dữ liệu giao dịch. Blockchain được thiết kế để chống lại việc thay đổi của dữ liệu: Một khi dữ liệu đã được mạng lưới chấp nhận thì sẽ không có cách nào thay đổi được nó.
 
 Cấu trúc bockchain gồm các khối (block) liên kết với nhau như một danh sách liên kết, con trỏ trong blockchain có thể lưu thêm mảng băm (hash) của khối trước đó. Như vậy kẻ giả mạo muốn thay đổi giá trị của khối thứ k trong dãy sẽ phải thay đổi tất cả các khổi từ k+1 trở nên, điều này là gần như bất khả thi do việc tạo nhiều giá trị hash là cực kỳ tốn kém.
@@ -385,7 +385,8 @@ Cấu hình lại server tại proxy.conf.json
 ```
 
 mặc định client chạy ở http://127.0.0.1:4200
-### Hình ảnh demo
+### Demo server
+Hiện tại ứng dụng đã được deploy tại địa chỉ http://35.203.157.0/
 
 ## V Kết luận
 
@@ -395,6 +396,11 @@ mặc định client chạy ở http://127.0.0.1:4200
 #### Nhược điểm
 * Việc mã hoá và giải mã làm hao tốn tài nguyên hơn các thao tác truy xuất CSDL thông thường.
 * Việc đồng bộ dữ liệu giữa các node có độ trễ.
+
+#### Hướng phát triên
+* Sẽ hỗ trợ theo dõi lịch sử giao dịch
+* Sẽ hỗ trợ đồng sở hữu đồng tiện
+* Cung cấp api và cơ chế sác thực để kết nối với các hệ thống khác
 
 Tài liệu tham khảo:
 
