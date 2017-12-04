@@ -31,4 +31,4 @@ nhưng bên trên không định nghĩa từ tiếng anh đó được viết t�
 - Hoàn thiện sản phẩm hơn.
 - Cần bổ sung chiến lược phát triển sau này.
 
-Điểm:8/10
+Điểm: 8.5/10
