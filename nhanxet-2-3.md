@@ -5,6 +5,7 @@
 * Thực nghiệm có 3 ví dụ mẫu dễ cài đặt và làm theo hướng dẫn, kết quả crawler ấn tượng
 * Cấu trúc trình bày báo cáo rõ ràng
 * Có Slide trình bày
+* Kiến thức rộng chi tiết có phần nâng cao.
 ## 2. Nhược điểm
 * Phần trích xuất dữ liệu mới có ví dụ sử dụng xpath
 * Phần cấu hình nâng cao scrapy hơi khó hiểu.
