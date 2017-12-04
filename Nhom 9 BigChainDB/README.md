@@ -385,7 +385,8 @@ Cấu hình lại server tại proxy.conf.json
 ```
 
 mặc định client chạy ở http://127.0.0.1:4200
-### Hình ảnh demo
+### Demo server
+Hiện tại ứng dụng đã được deploy tại địa chỉ http://35.203.157.0/
 
 ## V Kết luận
 
@@ -395,6 +396,11 @@ mặc định client chạy ở http://127.0.0.1:4200
 #### Nhược điểm
 * Việc mã hoá và giải mã làm hao tốn tài nguyên hơn các thao tác truy xuất CSDL thông thường.
 * Việc đồng bộ dữ liệu giữa các node có độ trễ.
+
+#### Hướng phát triên
+* Sẽ hỗ trợ theo dõi lịch sử giao dịch
+* Sẽ hỗ trợ đồng sở hữu đồng tiện
+* Cung cấp api và cơ chế sác thực để kết nối với các hệ thống khác
 
 Tài liệu tham khảo:
 
